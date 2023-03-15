@@ -20,7 +20,7 @@ Es posible supervisar el estado de los trabajos de backup y restauración que se
 
 == Use Job Monitor para ver el estado de los trabajos de backup y restauración
 
-Puede ver una lista de todas las operaciones de copia de seguridad y restauración y su estado actual en la ficha *Supervisión de trabajos*. Esto incluye operaciones de Cloud Volumes ONTAP, ONTAP en las instalaciones, aplicaciones, máquinas virtuales y sistemas Kubernetes. Cada operación, o trabajo, tiene un ID exclusivo y un estado. El estado puede ser:
+Puede ver una lista de todas las operaciones de copia de seguridad y restauración y su estado actual en la ficha *Supervisión de trabajos*. Esto incluye operaciones de Cloud Volumes ONTAP, ONTAP en las instalaciones, aplicaciones, máquinas virtuales y sistemas Kubernetes. Cada operación, o trabajo, tiene un ID y un estado exclusivos. El estado puede ser:
 
 * Correcto
 * En curso
@@ -29,8 +29,10 @@ Puede ver una lista de todas las operaciones de copia de seguridad y restauraci�
 * Error
 
 
+Tanto las operaciones de copia de seguridad y restauración iniciadas por el usuario desde la interfaz de usuario y la API de copia de seguridad en la nube, como los trabajos iniciados por el sistema, tales operaciones de copia de seguridad en curso, están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecutan ONTAP 9.13.0 o superior.
 
-NOTE: Los trabajos iniciados por el sistema, tales operaciones de copia de seguridad en curso, no se reflejan en la pestaña *Supervisión de trabajos* en este momento. Sólo se muestran los trabajos iniciados por el usuario.
+
+TIP: Cuando se ejecuta una versión anterior de ONTAP en sistemas Cloud Volumes ONTAP o en sistemas ONTAP en las instalaciones, en este momento solo se muestran los trabajos iniciados por el usuario.
 
 .Pasos
 . En el menú BlueXP, seleccione *Protección > copia de seguridad y recuperación*.

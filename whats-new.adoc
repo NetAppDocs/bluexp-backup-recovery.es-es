@@ -34,9 +34,11 @@ Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados
 
 
 
-=== Job Monitor ofrece filtrado avanzado para encontrar trabajos de backup o restauración específicos
+=== Varias mejoras en el Monitor de trabajo
 
-La página Job Monitoring ha añadido un filtrado avanzado para poder buscar trabajos de backup y restauración en función del tiempo, la carga de trabajo (volúmenes, aplicaciones, máquinas virtuales o Kubernetes), Tipo de trabajo, estado, entorno de trabajo y máquina virtual de almacenamiento. También puede introducir texto libre para buscar cualquier recurso, por ejemplo, "Application_3".  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Consulte cómo utilizar los filtros avanzados"].
+* La página Job Monitoring ha añadido un filtrado avanzado para poder buscar trabajos de backup y restauración en función del tiempo, la carga de trabajo (volúmenes, aplicaciones, máquinas virtuales o Kubernetes), Tipo de trabajo, estado, entorno de trabajo y máquina virtual de almacenamiento. También puede introducir texto libre para buscar cualquier recurso, por ejemplo, "Application_3".  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Consulte cómo utilizar los filtros avanzados"].
+* Tanto las operaciones de copia de seguridad y restauración iniciadas por el usuario desde la interfaz de usuario y la API de copia de seguridad en la nube, como los trabajos iniciados por el sistema, tales operaciones de copia de seguridad en curso, están ahora disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecutan ONTAP 9.13.0 o superior. Las versiones anteriores de los sistemas Cloud Volumes ONTAP y los sistemas ONTAP en las instalaciones mostrarán solo los trabajos iniciados por el usuario en este momento.
+
 
 
 
