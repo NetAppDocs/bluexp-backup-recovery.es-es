@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-aws.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3, govcloud, government 
-summary: Realice algunos pasos para empezar a realizar backups de datos desde sus sistemas ONTAP locales al almacenamiento Amazon S3. 
+summary: Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales al almacenamiento Amazon S3. 
 ---
 = Realizar backups de datos de ONTAP en las instalaciones en Amazon S3
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Realice algunos pasos para empezar a realizar backups de datos desde su
 
 
 [role="lead"]
-Realice algunos pasos para empezar a realizar backups de datos desde sus sistemas ONTAP locales al almacenamiento Amazon S3.
+Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales al almacenamiento Amazon S3.
 
 Cabe destacar que "sistemas ONTAP en las instalaciones" incluyen sistemas FAS, AFF y ONTAP Select.
 

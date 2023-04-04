@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-private-cloud.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
-summary: Complete algunos pasos para empezar a realizar backups de datos desde sus sistemas ONTAP locales a su almacenamiento de objetos en sus sistemas StorageGRID de NetApp. 
+summary: Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales a almacenamiento de objetos en sus sistemas StorageGRID de NetApp. 
 ---
 = Realización de backups de datos de ONTAP en las instalaciones en StorageGRID
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Complete algunos pasos para empezar a realizar backups de datos desde s
 
 
 [role="lead"]
-Complete algunos pasos para empezar a realizar backups de datos desde sus sistemas ONTAP locales a su almacenamiento de objetos en sus sistemas StorageGRID de NetApp.
+Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales a almacenamiento de objetos en sus sistemas StorageGRID de NetApp.
 
 Cabe destacar que "sistemas ONTAP en las instalaciones" incluyen sistemas FAS, AFF y ONTAP Select.
 

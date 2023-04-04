@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-to-gcp.html 
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup 
-summary: Complete unos pasos para empezar a realizar backups de datos de Cloud Volumes ONTAP en el almacenamiento de Google Cloud. 
+summary: Complete unos pasos para empezar a realizar backups de datos de volumen desde sus sistemas Cloud Volumes ONTAP en el almacenamiento de Google Cloud. 
 ---
 = Backups de los datos de Cloud Volumes ONTAP en Google Cloud Storage
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Complete unos pasos para empezar a realizar backups de datos de Cloud V
 
 
 [role="lead"]
-Complete unos pasos para empezar a realizar backups de datos de Cloud Volumes ONTAP en Google Cloud Storage.
+Complete unos pasos para empezar a realizar backups de datos de volumen desde sus sistemas Cloud Volumes ONTAP en Google Cloud Storage.
 
 
 
@@ -28,6 +28,7 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 * Tiene una suscripción válida para GCP para el espacio de almacenamiento donde se ubicará la copia de seguridad.
 * Tiene una cuenta de servicio en Google Cloud Project que tiene el rol de administrador de almacenamiento predefinido.
 * Se ha suscrito a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Oferta de backup de BlueXP Marketplace"^], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["y activado"^] Una licencia BYOL de Cloud Backup de NetApp.
+* Tiene un conector instalado en Google Cloud.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilite Cloud Backup en su sistema nuevo o existente
@@ -81,6 +82,14 @@ Además, necesita una suscripción de Google para el espacio de almacenamiento e
 --
 Regiones compatibles de GCP:: Cloud Backup es compatible en todas las regiones de GCP https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^].
 Cuenta de servicio de GCP:: Es necesario tener una cuenta de servicio en Google Cloud Project que tenga el rol de administrador de almacenamiento predefinido. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^].
+Requisitos del conector:: El conector debe estar instalado en una región de Google con acceso a Internet.
++
+--
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Ponga en marcha un conector en Google Cloud"^]
+
+
+--
 Verifique o agregue permisos al conector:: Para utilizar la funcionalidad "Search & Restore" de Cloud Backup, necesita disponer de permisos específicos en la función del conector para que pueda acceder al servicio de Google Cloud BigQuery. Consulte los siguientes permisos y siga los pasos si necesita modificar la directiva.
 +
 --

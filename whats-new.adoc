@@ -18,6 +18,37 @@ Descubra las novedades de Cloud Backup.
 
 
 
+== 4 de abril de 2023
+
+
+
+=== Capacidad para realizar backups de datos en el cloud desde sistemas Cloud Volumes ONTAP en modo «restringido»
+
+Ahora puede realizar backups de los datos de los sistemas de Cloud Volumes ONTAP instalados en regiones comerciales de AWS, Azure y GCP en el modo "restringido". Esto requiere que primero instale el conector en la región comercial "restringida". Consulte https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+
+
+
+=== Capacidad para realizar un backup de los volúmenes de ONTAP en las instalaciones en ONTAP S3 mediante la API
+
+La nueva funcionalidad de las API le permite realizar backups de sus snapshots de volumen en ONTAP S3 mediante BlueXP Cloud Backup. Esta funcionalidad solo está disponible actualmente para sistemas ONTAP en las instalaciones. Para obtener instrucciones detalladas, consulte el Blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["Integración con ONTAP S3 como destino (mediante las API DE REST)"^].
+
+
+
+=== Capacidad de cambiar el aspecto de redundancia de zona de su cuenta de almacenamiento de Azure de LRS a ZRS
+
+Cuando se crean backups desde sistemas Cloud Volumes ONTAP al almacenamiento de Azure, de forma predeterminada, Cloud Backup aprovisiona el contenedor Blob con redundancia local (LRS) para optimizar los costes. Puede cambiar esta configuración a redundancia de zona (ZRS) si desea que los datos se repliquen entre zonas diferentes. Consulte las instrucciones de Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["cambiar el modo de replicar la cuenta de almacenamiento"^].
+
+
+
+=== Mejoras en el Monitor de trabajo
+
+* Tanto las operaciones de copia de seguridad y restauración iniciadas por el usuario desde la interfaz de usuario y la API de copia de seguridad en la nube, como los trabajos iniciados por el sistema, tales operaciones de copia de seguridad en curso, están ahora disponibles en la pestaña *Supervisión de trabajos* para sistemas ONTAP en las instalaciones que ejecutan ONTAP 9.13.1 o superior. Las versiones anteriores de ONTAP mostrarán únicamente los trabajos iniciados por el usuario.
+* Además de poder descargar un archivo CSV para generar informes de todos los trabajos, ahora puede descargar un archivo JSON para un solo trabajo y ver sus detalles. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["Leer más"].
+* Se han añadido dos nuevas alertas de trabajos de copia de seguridad: "Error de trabajo programado" y "el trabajo de restauración se completa pero con advertencias". https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Revise todas las alertas que puede enviar Cloud Backup"].
+
+
+
+
 == 9 de marzo de 2023
 
 
@@ -30,7 +61,7 @@ Anteriormente, cuando restauró una carpeta, solo se restauran los archivos de e
 
 === Capacidad para realizar backups de datos de sistemas Cloud Volumes ONTAP en sitios oscuros
 
-Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS y Azure en Amazon S3 o Azure Blob. Para ello, es necesario instalar el conector en un host Linux de la región comercial y que también se ponga en marcha el sistema Cloud Volumes ONTAP. Consulte link:task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. link:task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS y Azure en Amazon S3 o Azure Blob. Para ello, es necesario instalar el conector en un host Linux de la región comercial y que también se ponga en marcha el sistema Cloud Volumes ONTAP. Consulte https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 

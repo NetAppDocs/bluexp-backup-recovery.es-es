@@ -155,8 +155,8 @@ Sólo tiene que seleccionar si desea exportar las copias Snapshot existentes y h
 
 == Cambie si las instantáneas "anuales" se eliminan del sistema de origen
 
-Si selecciona la etiqueta de backup "Anual" para una política de backup para cualquiera de los volúmenes, la copia de Snapshot creada es muy grande. De forma predeterminada, estas snapshots anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos. Puede cambiar este comportamiento predeterminado en la sección Eliminación anual de Snapshot.
+Cuando se selecciona la etiqueta de backup "anual" para una política de backup para cualquiera de los volúmenes, la copia de Snapshot que se crea es muy grande. De forma predeterminada, estas copias de Snapshot anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos. Puede cambiar este comportamiento predeterminado en la sección Eliminación anual de Snapshot.
 
-image:screenshot_backup_edit_yearly_snap_delete.png["Captura de pantalla de la entrada IPspace de la página Advanced Settings."]
+image:screenshot_backup_edit_yearly_snap_delete.png["Captura de pantalla de la entrada copias Snapshot anuales en la página Configuración avanzada."]
 
 Seleccione *Desactivado* y haga clic en *aplicar* si desea conservar las instantáneas anuales en el sistema de origen.

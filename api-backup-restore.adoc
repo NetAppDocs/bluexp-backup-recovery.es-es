@@ -26,6 +26,7 @@ Existen nueve categorías de extremos definidos en Cloud Backup:
 * ransomware scan: inicia un análisis de ransomware en un archivo de backup específico
 * restore: permite realizar operaciones de restauración de volumen, archivo y nivel de carpeta
 * sfr - recupera archivos de un archivo de copia de seguridad para operaciones de restauración a nivel de archivo individuales (examinar y restaurar)
+* StorageGRID: Recupera detalles sobre un servidor StorageGRID y le permite descubrir un servidor StorageGRID
 * entorno de trabajo: gestiona las políticas de backup y configura el almacén de objetos de destino asociado a un entorno de trabajo
 
 

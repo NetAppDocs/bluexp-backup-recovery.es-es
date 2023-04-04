@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, kubernetes, applications 
-summary: Cloud Backup es un servicio para entornos de trabajo de BlueXP que proporciona funcionalidades de backup y restauración de datos de protección y archivado a largo plazo de sus datos. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
+summary: El backup y la recuperación de datos de BlueXP proporciona una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de ONTAP de NetApp, tanto en las instalaciones como en el cloud. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
 ---
 = Más información acerca de Cloud Backup
 :hardbreaks:
@@ -14,7 +14,9 @@ summary: Cloud Backup es un servicio para entornos de trabajo de BlueXP que prop
 
 
 [role="lead"]
-Cloud Backup es un servicio para entornos de trabajo BlueXP (anteriormente Cloud Manager) que proporciona funcionalidades de backup y restauración para la protección y archivado a largo plazo de sus datos. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
+Backup y recuperación de datos de BlueXP (Cloud Backup) proporciona protección de datos eficiente, segura y rentable para datos, bases de datos y máquinas virtuales de ONTAP de NetApp, tanto en las instalaciones como en el cloud. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
+
+El servicio realiza una replicación incremental permanente a nivel de bloque y conserva todas las eficiencias del almacenamiento, lo que reduce significativamente la cantidad de datos que se replican y almacenan. Además, solo paga por lo que está protegido y utiliza los niveles de almacenamiento de menor coste disponibles, lo que hace que el backup en el cloud sea muy rentable.
 
 Cuando sea necesario, puede restaurar un _volume_ completo desde una copia de seguridad al mismo entorno de trabajo o diferente. Al realizar una copia de seguridad de los datos de ONTAP, también puede optar por restaurar o uno o varios _Files_ de una copia de seguridad en el mismo entorno de trabajo o en un entorno de trabajo diferente.
 
@@ -86,7 +88,7 @@ endif::gcp[]
 * Los backups anuales comienzan justo después de la medianoche del primer día del año.
 
 
-La hora de inicio se basa en la zona horaria establecida en cada sistema ONTAP de origen. No se pueden programar operaciones de copia de seguridad a una hora especificada por el usuario desde la interfaz de usuario. Para obtener más información, comuníquese con el ingeniero de sistemas.
+La hora de inicio se basa en la zona horaria establecida en cada sistema ONTAP de origen. No es posible programar operaciones de backup en un momento específico del usuario desde la interfaz de usuario de. Para obtener más información, comuníquese con el ingeniero de sistemas.
 
 
 

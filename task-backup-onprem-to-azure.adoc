@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-azure.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
-summary: Complete unos pasos para empezar a realizar backups de datos desde sus sistemas ONTAP locales a almacenamiento de Azure Blob. 
+summary: Complete unos pasos para empezar a realizar backups de datos de volúmenes, desde sus sistemas ONTAP locales hasta el almacenamiento de Azure Blob. 
 ---
 = Realizar backups de datos de ONTAP en las instalaciones en un almacenamiento de Azure Blob
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Complete unos pasos para empezar a realizar backups de datos desde sus 
 
 
 [role="lead"]
-Complete unos pasos para empezar a realizar backups de datos desde sus sistemas ONTAP locales a almacenamiento de Azure Blob.
+Complete unos pasos para empezar a realizar backups de datos de volúmenes, desde sus sistemas ONTAP locales hasta el almacenamiento de Azure Blob.
 
 Cabe destacar que "sistemas ONTAP en las instalaciones" incluyen sistemas FAS, AFF y ONTAP Select.
 

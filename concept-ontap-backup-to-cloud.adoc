@@ -93,10 +93,21 @@ Tenga en cuenta que las referencias a "sistemas ONTAP en las instalaciones" incl
 
 === Compatibilidad con sitios sin conectividad a Internet
 
-Cloud Backup se puede utilizar en un sitio sin conectividad a Internet (también conocido como sitio "sin conexión" o "oscuro") para realizar backups de datos de volumen. Esta configuración también admite tanto la restauración de volúmenes como de archivos. En este caso, deberá desplegar el conector BlueXP en el sitio oscuro.
+Cloud Backup se puede utilizar en un sitio sin conectividad a Internet (también conocido como sitios "de modo privado" o "oscuros") para realizar backups de datos de volumen. Esta configuración también admite tanto la restauración de volúmenes como de archivos. En este caso, deberá desplegar el conector BlueXP en el sitio oscuro.
 
 * Puede realizar backups de datos de sistemas ONTAP locales en las instalaciones en sistemas StorageGRID de NetApp locales. Consulte link:task-backup-onprem-private-cloud.html["Realización de backups de datos de ONTAP en las instalaciones en StorageGRID"] para obtener más detalles.
-* Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS y Azure en Amazon S3 o Azure Blob. Consulte link:task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. link:task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+* Puede realizar backups de los datos de los sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS y de las regiones seguras AWS C2S/SC2S en Amazon S3. Consulte link:task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"].
+* Puede realizar backups de los datos de los sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure y de las regiones seguras de Azure IL6 a Azure Blob. Consulte link:task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+
+
+
+
+=== Soporte para sitios con conectividad limitada
+
+Cloud Backup se puede utilizar en un sitio con conectividad a Internet limitada (también conocida como "modo restringido") para hacer copias de seguridad de datos de volumen. Esta configuración también admite tanto la restauración de volúmenes como de archivos. En este caso, deberá desplegar el conector BlueXP en la región restringida.
+
+* Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. Consulte link:task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"].
+* Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. Consulte link:task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 
@@ -293,7 +304,7 @@ Si desea cambiar el almacén de objetos de destino de un clúster en el futuro, 
 
 Al habilitar Cloud Backup para un entorno de trabajo, todos los volúmenes que inicialmente seleccione se incluirán en los backups con la política de backup predeterminada que haya definido. Si desea asignar diferentes políticas de backup a ciertos volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), es posible crear políticas adicionales para ese clúster y asignar dichas políticas a los otros volúmenes después de activar Cloud Backup.
 
-Se puede elegir una combinación de backups por hora, diarios, semanales, mensuales y anuales de todos los volúmenes. También puede seleccionar una de las políticas definidas por el sistema que proporcione backups y retención durante 3 meses, 1 año y 7 años. Estas políticas son:
+Se puede elegir una combinación de backups por hora, diarios, semanales, mensuales y anuales de todos los volúmenes. La política de Snapshot aplicada al volumen debe ser una de las políticas reconocidas por Cloud Backup. También puede seleccionar una de las políticas definidas por el sistema que proporcione backups y retención durante 3 meses, 1 año y 7 años. Estas políticas son:
 
 [cols="35,16,16,16,26"]
 |===
