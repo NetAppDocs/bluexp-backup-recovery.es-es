@@ -86,7 +86,7 @@ Requisitos del conector:: El conector debe estar instalado en una región de Goo
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Ponga en marcha un conector en Google Cloud"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["Ponga en marcha un conector en Google Cloud"^]
 
 
 --

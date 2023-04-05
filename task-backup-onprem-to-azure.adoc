@@ -149,10 +149,9 @@ Cuando configura Cloud Backup, se le solicita que utilice el espacio IP. Debe el
 Si ya tiene un conector implementado en su vnet de Azure o en sus instalaciones, todo estará configurado. De lo contrario, necesitará crear un conector en cualquiera de esas ubicaciones para realizar backups de los datos de ONTAP en el almacenamiento de Azure Blob. No puede utilizar un conector puesto en marcha en otro proveedor de cloud.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Introducción a conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Instalación de un conector en Azure"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["Instalación de un conector en sus instalaciones"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["Instalación de un conector en una región de gobierno de Azure"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Instalación de un conector en Azure"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Instalación de un conector en sus instalaciones"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["Instalación de un conector en una región de gobierno de Azure"^]
 +
 Cloud Backup es compatible en regiones gubernamentales de Azure cuando el conector se pone en marcha en el cloud, no cuando está instalado en sus instalaciones. Además, debe poner en marcha el conector desde Azure Marketplace. No puede desplegar el conector en una región gubernamental desde el sitio web de BlueXP SaaS.
 

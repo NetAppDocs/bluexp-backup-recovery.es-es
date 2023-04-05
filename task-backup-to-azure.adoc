@@ -27,9 +27,10 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 * Utiliza Cloud Volumes ONTAP 9.7P5 o posterior en Azure (se recomienda ONTAP 9.8P13 y versiones posteriores).
 * Dispone de una suscripción de proveedor de cloud válida para el espacio de almacenamiento en el que se ubicará los backups.
 * Se ha suscrito a https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Oferta de backup de BlueXP Marketplace"^], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["y activado"^] Una licencia BYOL de Cloud Backup de NetApp.
-* Tiene un conector instalado en Azure. El conector se puede instalar en un sitio con acceso completo a Internet ("modo estándar") o con conectividad limitada a Internet ("modo restringido"). .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilite Cloud Backup en su sistema nuevo o existente
+* Tiene un conector instalado en Azure. El conector se puede instalar en un sitio con acceso completo a Internet ("modo estándar") o con conectividad limitada a Internet ("modo restringido").
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilite Cloud Backup en su sistema nuevo o existente
 [role="quick-margin-list"]
 * Nuevos sistemas: Cloud Backup está habilitado de forma predeterminada en el asistente del entorno de trabajo. Asegúrese de mantener la opción habilitada.
 * Sistemas existentes: Seleccione el entorno de trabajo y haga clic en *Activar* junto al servicio copia de seguridad y recuperación del panel derecho y, a continuación, siga el asistente de configuración.
@@ -85,8 +86,8 @@ Requisitos del conector:: El conector se puede instalar en una región de Azure 
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Implemente un conector en Azure"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["Instalar el conector manualmente en un host Linux en una región de Azure"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Implemente un conector en Azure"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["Instalar el conector manualmente en un host Linux en una región de Azure"^]
 
 
 --

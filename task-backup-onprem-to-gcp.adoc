@@ -143,8 +143,7 @@ Si utiliza Google Access privado o Private Service Connect, asegúrese de que lo
 Si ya tiene un conector puesto en marcha en su VPC de Google Cloud Platform, todo estará configurado. De lo contrario, necesitará crear un conector en esa ubicación para realizar backups de los datos de ONTAP en el almacenamiento de Google Cloud. No puede utilizar un conector puesto en marcha en otro proveedor de cloud o en las instalaciones.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Introducción a conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Instalación de un conector en GCP"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["Instalación de un conector en GCP"^]
 
 
 
