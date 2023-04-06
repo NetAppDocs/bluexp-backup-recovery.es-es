@@ -17,41 +17,51 @@ summary: Puede restaurar máquinas virtuales desde el cloud hasta la SnapCenter 
 Las máquinas virtuales se pueden restaurar desde el cloud de nuevo a la instancia de vCenter en las instalaciones. La copia de seguridad se restaurará en la misma ubicación desde donde se realizó la copia de seguridad. Si se realizó el backup del equipo virtual mediante la normativa de archivado, se puede establecer la prioridad de restauración de archivado.
 
 
-NOTE: No es posible restaurar máquinas virtuales que se distribuyen entre almacenes de datos.
+NOTE: No es posible restaurar máquinas virtuales que abarquen diferentes almacenes de datos.
 
-.Lo que necesitará
+.Antes de empezar
 Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de restaurar máquinas virtuales desde la nube.
 
 .Pasos
-. En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales* > *complemento de SnapCenter para VMware vSphere* y seleccione el plugin de SnapCenter para VMware vSphere cuya máquina virtual desee restaurar.
+. En la interfaz de usuario de BlueXP, haga clic en *Protección* > *Backup y recuperación* > *Virtual Machines* > *SnapCenter Plug-in for VMware vSphere* y seleccione el host del complemento de SnapCenter para VMware vSphere.
 
 
 
-NOTE: Si la máquina virtual de origen se mueve a otra ubicación (vMotion) y si el usuario activa una restauración de esa máquina virtual desde BlueXP, la máquina virtual se restaurará a la ubicación de origen original desde donde se realizó el backup.
+NOTE: Si la máquina virtual de origen se mueve a otra ubicación (vMotion) y el usuario activa una restauración de esa máquina virtual desde BlueXP, la máquina virtual se restaura en la ubicación de origen desde donde se realizó el backup.
 
-. Para restaurar desde un almacén de datos:
+. Es posible restaurar desde el almacén de datos o desde máquinas virtuales:
+
+
+|===
+| Si desea... | Realice lo siguiente... 
+
+
+ a| 
+Restauración desde un almacén de datos
+ a| 
+. Haga clic en image:icon-action.png["acción"] Corresponde al almacén de datos que desea restaurar y haga clic en *Ver detalles*.
+. Haga clic en *Restaurar* correspondiente a la copia de seguridad que desea restaurar.
+. Seleccione la máquina virtual que desea restaurar desde el backup.
+. Seleccione *prioridad de restauración de archivos* y haga clic en *Siguiente*.
 +
-.. Haga clic en image:icon-action.png["acción"] Corresponde al almacén de datos que desea restaurar y haga clic en *Ver detalles*.
-.. Haga clic en *Restaurar* correspondiente a la copia de seguridad que desea restaurar.
-.. Seleccione la máquina virtual que desea restaurar desde el backup.
-.. Seleccione *prioridad de restauración de archivos* y haga clic en *Siguiente*.
+Esta opción está disponible solo si la máquina virtual está protegida mediante una directiva donde se configuran las configuraciones de archivado. La prioridad de restauración de archivado compatible con Amazon Web Services es alta, estándar y baja, y la prioridad de restauración de archivado compatible con Microsoft Azure es alta y estándar.
+
+. Revise los detalles y haga clic en *Restaurar*.
+
+
+
+
+ a| 
+Restaurar desde máquinas virtuales
+ a| 
+. Haga clic en image:icon-action.png["acción"] Corresponde a la máquina virtual que desea restaurar y haga clic en *Restaurar*.
+. Seleccione el backup mediante el cual desea restaurar la máquina virtual.
+. Seleccione *prioridad de restauración de archivos* y haga clic en *Siguiente*.
 +
-Esta opción sólo está disponible si la máquina virtual estaba protegida mediante una directiva con la configuración de archivado configurada. La prioridad de restauración de archivado compatible con Amazon Web Services es alta, estándar y baja, y la prioridad de restauración de archivado compatible con Microsoft Azure es alta y estándar.
+Esta opción está disponible solo si la máquina virtual está protegida mediante una directiva donde se configuran las configuraciones de archivado. La prioridad de restauración de archivado compatible con Amazon Web Services es alta, estándar y baja, y la prioridad de restauración de archivado compatible con Microsoft Azure es alta y estándar.
 
-.. Revise los detalles y haga clic en *Restaurar*.
-
-
-. Para restaurar desde máquinas virtuales:
-+
-.. Haga clic en image:icon-action.png["acción"] Corresponde a la máquina virtual que desea restaurar y haga clic en *Restaurar*.
-.. Seleccione el backup mediante el cual desea restaurar la máquina virtual.
-.. Seleccione *prioridad de restauración de archivos* y haga clic en *Siguiente*.
-+
-Esta opción sólo está disponible si la máquina virtual estaba protegida mediante una directiva con la configuración de archivado configurada. La prioridad de restauración de archivado compatible con Amazon Web Services es alta, estándar y baja, y la prioridad de restauración de archivado compatible con Microsoft Azure es alta y estándar.
-
-.. Revise los detalles y haga clic en *Restaurar*.
+. Revise los detalles y haga clic en *Restaurar*.
 
 
-
-
+|===
 La máquina virtual se restaura a la misma ubicación desde la que se realizó el backup.

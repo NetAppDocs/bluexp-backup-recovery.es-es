@@ -14,12 +14,12 @@ summary: Realice backup de sus almacenes de datos desde ONTAP en las instalacion
 
 
 [role="lead"]
-Puede realizar el backup de uno o más almacenes de datos en Amazon Web Services mediante la integración del plugin de SnapCenter para VMware vSphere con BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
+Puede realizar backups y archivar uno o varios almacenes de datos en Amazon Web Services para mejorar la eficiencia del almacenamiento y la transición cloud.
 
-Si el almacén de datos está asociado con una política de archivado, se ofrecerá una opción para seleccionar el nivel de archivado. Los niveles de archivado admitidos son Glacier y Glacier Deep.
+Si el almacén de datos está asociado con una política de archivado, tiene la opción de seleccionar el nivel de archivado. Los niveles de archivado admitidos son Glacier y Glacier Deep.
 
-
-NOTE: Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
+.Antes de empezar
+Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.
@@ -27,13 +27,13 @@ NOTE: Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.ht
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
 . Agregue el entorno de trabajo.
 +
-Configure los clústeres de ONTAP que desea que BlueXP detecte para realizar backups de los almacenes de datos. Después de añadir el entorno de trabajo para uno de los almacenes de datos, se puede reutilizar para todos los demás almacenes de datos que residen en el mismo clúster de ONTAP.
+Configura el LIF de gestión de clústeres que quieras que detecte BlueXP. Después de añadir el entorno de trabajo para uno de los almacenes de datos, se puede reutilizar para todos los demás almacenes de datos que residen en el mismo clúster de ONTAP.
 
 +
 .. Haga clic en *Agregar entorno de trabajo* correspondiente a la SVM.
 .. En el asistente Agregar entorno de trabajo:
 +
-... Especifique la dirección IP del clúster de ONTAP.
+... Especifique la dirección IP de la LIF de gestión del clúster.
 ... Especifique las credenciales del usuario del clúster de ONTAP.
 
 
@@ -46,10 +46,10 @@ Configure los clústeres de ONTAP que desea que BlueXP detecte para realizar bac
 .. En el campo AWS Access Key, especifique la clave para el cifrado de datos.
 .. En el campo AWS Secret Key, especifique la contraseña para el cifrado de datos.
 .. Seleccione la región en la que desea crear los backups.
-.. Especifique las direcciones IP de los clústeres de ONTAP que se añadieron como entornos de trabajo.
+.. Especifique las direcciones IP de la LIF de administración del clúster que se han agregado como entornos de trabajo.
 .. Seleccione el nivel de archivado.
 +
-Se recomienda configurar el nivel de archivado porque se trata de una actividad única y no se le permitirá configurarla más adelante.
+Se recomienda definir el nivel de archivado porque se trata de una actividad única y no se puede configurar más tarde.
 
 
 

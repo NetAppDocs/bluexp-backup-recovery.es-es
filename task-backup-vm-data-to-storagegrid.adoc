@@ -14,10 +14,10 @@ summary: Realice un backup de sus almacenes de datos desde ONTAP en las instalac
 
 
 [role="lead"]
-Puede realizar backups de uno o más almacenes de datos en StorageGRID integrando el plugin de SnapCenter para VMware vSphere con BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
+Puede realizar backups de uno o varios almacenes de datos en StorageGRID si integra el host del plugin de SnapCenter para VMware vSphere con BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
 
-
-NOTE: Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
+.Antes de empezar
+Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.
@@ -25,13 +25,13 @@ NOTE: Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.ht
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
 . Agregue el entorno de trabajo.
 +
-Configure los clústeres de ONTAP que desea que BlueXP detecte para realizar backups de los almacenes de datos. Después de añadir el entorno de trabajo para uno de los almacenes de datos, se puede reutilizar para todos los demás almacenes de datos que residen en el mismo clúster de ONTAP.
+Configura el LIF de gestión de clústeres que quieras que detecte BlueXP. Después de añadir el entorno de trabajo para uno de los almacenes de datos, se puede reutilizar para todos los demás almacenes de datos que residen en el mismo clúster de ONTAP.
 
 +
 .. Haga clic en *Agregar entorno de trabajo* correspondiente a la SVM.
 .. En el asistente Agregar entorno de trabajo:
 +
-... Especifique la dirección IP del clúster de ONTAP.
+... Especifique la dirección IP de la LIF de gestión del clúster.
 ... Especifique las credenciales del usuario del clúster de ONTAP.
 
 
