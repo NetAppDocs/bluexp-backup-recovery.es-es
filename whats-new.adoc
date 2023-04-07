@@ -24,13 +24,13 @@ Descubra las novedades de Cloud Backup.
 
 === Capacidad para realizar backups de datos en el cloud desde sistemas Cloud Volumes ONTAP en modo «restringido»
 
-Ahora puede realizar backups de los datos de los sistemas de Cloud Volumes ONTAP instalados en regiones comerciales de AWS, Azure y GCP en el modo "restringido". Esto requiere que primero instale el conector en la región comercial "restringida". Consulte https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+Ahora puede realizar backups de los datos de los sistemas de Cloud Volumes ONTAP instalados en regiones comerciales de AWS, Azure y GCP en el modo "restringido". Esto requiere que primero instale el conector en la región comercial "restringida". https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de BlueXP"^]. Consulte https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 
 === Capacidad para realizar un backup de los volúmenes de ONTAP en las instalaciones en ONTAP S3 mediante la API
 
-La nueva funcionalidad de las API le permite realizar backups de sus snapshots de volumen en ONTAP S3 mediante BlueXP Cloud Backup. Esta funcionalidad solo está disponible actualmente para sistemas ONTAP en las instalaciones. Para obtener instrucciones detalladas, consulte el Blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["Integración con ONTAP S3 como destino (mediante las API DE REST)"^].
+La nueva funcionalidad de las API le permite realizar backups de sus snapshots de volumen en ONTAP S3 mediante BlueXP Cloud Backup. Esta funcionalidad solo está disponible para sistemas ONTAP en las instalaciones por el momento. Para obtener instrucciones detalladas, consulte el Blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["Integración con ONTAP S3 como destino"^].
 
 
 
