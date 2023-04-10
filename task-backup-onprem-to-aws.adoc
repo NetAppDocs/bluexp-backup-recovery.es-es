@@ -104,7 +104,7 @@ Cloud Backup es compatible en regiones GovCloud cuando el conector se ha puesto 
 
 * Asegúrese de que la red en la que está instalado el conector habilita las siguientes conexiones:
 +
-** Una conexión HTTPS a través del puerto 443 a Cloud Backup Service y al almacenamiento de objetos S3 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["consulte la lista de extremos"^])
+** Una conexión HTTPS a través del puerto 443 a Cloud Backup Service y al almacenamiento de objetos S3 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["consulte la lista de extremos"^])
 ** Una conexión HTTPS a través del puerto 443 para la LIF de gestión del clúster ONTAP
 ** Se requieren reglas adicionales de grupos de seguridad entrantes y salientes para las implementaciones de AWS GovCloud. Consulte https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html["Reglas para el conector en AWS"^] para obtener más detalles.
 

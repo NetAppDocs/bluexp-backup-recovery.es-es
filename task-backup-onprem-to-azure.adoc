@@ -166,8 +166,7 @@ Asegúrese de que el conector tiene las conexiones de red necesarias.
 .Pasos
 . Asegúrese de que la red en la que está instalado el conector habilita las siguientes conexiones:
 +
-** Una conexión a Internet de salida al puerto Cloud Backup Service a través del 443 (HTTPS)
-** Una conexión HTTPS a través del puerto 443 al almacenamiento de objetos Blob
+** Una conexión HTTPS a través del puerto 443 a Cloud Backup Service y al almacenamiento de objetos Blob (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["consulte la lista de extremos"^])
 ** Una conexión HTTPS a través del puerto 443 para la LIF de gestión del clúster ONTAP
 ** Para que la funcionalidad de búsqueda y restauración de Cloud Backup funcione, el puerto 1433 debe estar abierto a la comunicación entre el conector y los servicios SQL de Azure Synapse.
 ** Se requieren reglas adicionales de grupos de seguridad entrantes para implementaciones gubernamentales de Azure y Azure. Consulte https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Reglas para Connector en Azure"^] para obtener más detalles.

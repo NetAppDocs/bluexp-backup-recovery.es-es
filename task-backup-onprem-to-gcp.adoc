@@ -155,8 +155,7 @@ Asegúrese de que el conector tiene las conexiones de red necesarias.
 .Pasos
 . Asegúrese de que la red en la que está instalado el conector habilita las siguientes conexiones:
 +
-** Una conexión a Internet de salida al puerto Cloud Backup Service a través del 443 (HTTPS)
-** Una conexión HTTPS a través del puerto 443 al almacenamiento de Google Cloud
+** Una conexión HTTPS a través del puerto 443 al Cloud Backup Service y al almacenamiento de Google Cloud (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["consulte la lista de extremos"^])
 ** Una conexión HTTPS a través del puerto 443 para la LIF de gestión del clúster ONTAP
 
 

@@ -30,7 +30,7 @@ Puede crear FSX de NetApp con BlueXP o AWS. Si ha creado utilizando AWS, debe de
 
 Un administrador de cuentas tiene que poner en marcha un conector en AWS que permita a BlueXP gestionar recursos y procesos dentro de su entorno de cloud público.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Creación de un conector en AWS desde BlueXP"].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["Creación de un conector en AWS desde BlueXP"].
 
 * Debe utilizar el mismo conector para administrar tanto el entorno de trabajo FSX como las bases de datos Oracle.
 * Si tiene el entorno de trabajo FSX y las bases de datos de Oracle en el mismo VPC, puede implementar el conector en el mismo VPC.
@@ -46,7 +46,7 @@ NOTE: Para usar las cargas de trabajo NAS (NFS), debe tener una pasarela de trá
 
 
 
-Después de crear el conector, haga clic en *almacenamiento* > *Canvas* > *Mis entornos de trabajo* > *Agregar entorno de trabajo* y siga las indicaciones para agregar el entorno de trabajo. Asegúrese de que existe conectividad entre el conector y los hosts de la base de datos Oracle y el entorno de trabajo FSX. El conector debe poder conectarse a la dirección IP de administración del clúster del entorno de trabajo FSX.
+Después de crear el conector, haga clic en *Almacenamiento* > *Lienzo* > *Mis entornos de trabajo* > *Agregar entorno de trabajo* y siga las indicaciones para agregar el entorno de trabajo. Asegúrese de que existe conectividad desde el conector a los hosts de la base de datos Oracle y el entorno de trabajo de FSx. El conector debe poder conectarse a la dirección IP de administración del clúster del entorno de trabajo de FSx.
 
 
 IMPORTANT: Después de crear el conector, haga clic en *conector > gestionar conectores*; seleccione el nombre del conector y copie el ID del conector.

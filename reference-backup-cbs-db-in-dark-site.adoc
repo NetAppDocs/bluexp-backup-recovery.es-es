@@ -105,7 +105,7 @@ Una vez que compruebe que su sistema está en un orden de funcionamiento, le rec
 
 Al instalar un nuevo conector BlueXP, asegúrese de descargar la misma versión de software que había instalado en el conector original. Los cambios periódicos en la estructura de la base de datos de Cloud Backup pueden hacer que las versiones de software más nuevas sean incompatibles con los backups de la base de datos original. Puede hacerlo https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Actualice el software Connector a la versión más reciente después de restaurar la base de datos de copia de seguridad"^].
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["Instale el conector BlueXP en un nuevo host Linux local"^]
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["Instale el conector BlueXP en un nuevo host Linux local"^]
 . Inicie sesión en BlueXP con las credenciales de usuario administrador que acaba de crear.
 
 
