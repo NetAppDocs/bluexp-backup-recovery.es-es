@@ -199,14 +199,18 @@ sidebar:
     - title: Configuración de la política de backup en cloud
       url: "/concept-cloud-backup-policies.html"
     - title: Niveles de almacenamiento de archivado compatibles con AWS
+      flavor: aws
       url: "/reference-aws-backup-tiers.html"
     - title: Niveles de acceso de archivado de Azure compatibles
+      flavor: azure
       url: "/reference-azure-backup-tiers.html"
     - title: Compatibilidad con niveles de almacenamiento de archivado de Google
+      flavor: gcp
       url: "/reference-google-backup-tiers.html"
     - title: Realice un backup de la base de datos de Cloud Backup en un sitio oscuro
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Configure Backup para el acceso de varias cuentas en Azure
+      flavor: azure
       url: "/reference-backup-multi-account-azure.html"
   - title: Conocimiento y apoyo
     entries:

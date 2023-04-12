@@ -95,9 +95,19 @@ Tenga en cuenta que las referencias a "sistemas ONTAP en las instalaciones" incl
 
 Cloud Backup puede utilizarse en un sitio con conectividad a Internet limitada (también conocida como «modo restringido») para realizar copias de seguridad y restaurar datos de volumen. En este caso, deberá desplegar el conector BlueXP en la región restringida.
 
+ifdef::aws[]
+
 * Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. Consulte link:task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"].
+
+
+endif::aws[]
+
+ifdef::azure[]
+
 * Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. Consulte link:task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
+
+endif::azure[]
 
 
 
@@ -105,8 +115,14 @@ Cloud Backup puede utilizarse en un sitio con conectividad a Internet limitada (
 
 Cloud Backup se puede utilizar en un sitio sin conectividad a Internet (también conocido como sitios "de modo privado" o "oscuros") para realizar backups de datos de volumen. En este caso, deberá desplegar el conector BlueXP en el sitio oscuro.
 
-* Puede realizar backups de datos de sistemas ONTAP locales en las instalaciones en sistemas StorageGRID de NetApp locales. Consulte link:task-backup-onprem-private-cloud.html["Realización de backups de datos de ONTAP en las instalaciones en StorageGRID"] para obtener más detalles.
+* Puede realizar backups de datos de sistemas ONTAP locales en las instalaciones en sistemas StorageGRID de NetApp locales. Consulte link:task-backup-onprem-private-cloud.html["Realización de backups de datos de ONTAP en las instalaciones en StorageGRID"] para obtener más detalles. ifdef::aws[]
 
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
 
 
 
@@ -416,8 +432,7 @@ Esta operación podría provocar un aumento único en el coste de leer los datos
 
 === Limitaciones de backup
 
-* La posibilidad de organizar en niveles archivos de backup antiguos en el almacenamiento de datos archivados requiere que el clúster ejecute ONTAP 9.10.1 o posterior. Para restaurar volúmenes a partir de archivos de backup que residen en un almacenamiento de archivado, el clúster de destino tiene que ejecutar ONTAP 9.10.1 o posterior.
-* Cuando se crea o edita una política de backup cuando no se asignan volúmenes a la política, el número de backups retenidos puede ser un máximo de 1018. Como solución alternativa, puede reducir el número de copias de seguridad para crear la directiva. Luego, se puede editar la política para crear hasta 4000 backups después de asignar volúmenes a la política.
+* Cuando se crea o edita una política de backup cuando no se asignan volúmenes a la política, el número de backups retenidos puede ser un máximo de 1018. Después de asignar volúmenes a la política, es posible editar la política para crear hasta 4000 backups.
 * Cuando se realiza un backup de volúmenes de protección de datos (DP):
 +
 ** Relaciones con las etiquetas de SnapMirror `app_consistent` y.. `all_source_snapshot` no se realizarán backups en el cloud.
