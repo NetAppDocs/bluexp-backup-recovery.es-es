@@ -14,12 +14,7 @@ summary: Realice unos pasos para realizar backup de datos de aplicaciones desde 
 
 
 [role="lead"]
-Puede realizar backups de los datos de aplicaciones de ONTAP en Microsoft Azure mediante la integración de Cloud Backup para aplicaciones con BlueXP y SnapCenter en las instalaciones.
-
-Puede proteger una o más aplicaciones simultáneamente al cloud mediante una única política.
-
-
-IMPORTANT: Sólo puede proteger una aplicación a la vez si utiliza la GUI de BlueXP. Sin embargo, si utiliza API DE REST, puede proteger varias aplicaciones en simultáneo.
+Completa unos pasos para hacer un backup de los datos de las aplicaciones desde ONTAP en Microsoft Azure.
 
 * Pasos*
 
@@ -28,16 +23,16 @@ IMPORTANT: Sólo puede proteger una aplicación a la vez si utiliza la GUI de Bl
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
 . Agregue el entorno de trabajo.
 +
-Configure el clúster de ONTAP que aloja la SVM en la que se ejecuta la aplicación. Tras agregar el entorno de trabajo para una de las aplicaciones, se puede reutilizar para todas las demás aplicaciones que residen en el mismo clúster de ONTAP.
+Configura el LIF de gestión de clústeres que quieras que detecte BlueXP. Tras agregar el entorno de trabajo para una de las aplicaciones, se puede reutilizar para todas las demás aplicaciones que residen en el mismo clúster de ONTAP.
 
 +
 .. Seleccione la SVM y haga clic en *Agregar entorno de trabajo*.
 .. En el asistente Agregar entorno de trabajo:
 +
-... Especifique la dirección IP del clúster de ONTAP.
-... Especifique las credenciales de administración.
+... Especifique la dirección IP de la LIF de gestión del clúster.
+... Especifique las credenciales del usuario del clúster de ONTAP.
 +
-Cloud Backup para aplicaciones solo admite administradores de clústeres.
+El backup y la recuperación de BlueXP solo admiten el administrador de clústeres.
 
 
 

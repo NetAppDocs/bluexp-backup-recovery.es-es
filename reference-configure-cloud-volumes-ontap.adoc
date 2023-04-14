@@ -14,7 +14,7 @@ summary: Cree el entorno de trabajo Cloud Volumes ONTAP y el conector
 
 
 [role="lead"]
-Debe crear el entorno de trabajo de Cloud Volumes ONTAP y el conector.
+Con BlueXP, deberías crear un entorno de trabajo de Cloud Volumes ONTAP para añadir y gestionar volúmenes y servicios de datos adicionales. También debes crear un conector para tu entorno de nube que permita a BlueXP gestionar los recursos y procesos dentro de tu entorno de nube pública.
 
 
 
@@ -26,15 +26,15 @@ Puede descubrir y agregar sistemas Cloud Volumes ONTAP existentes a BlueXP. Para
 
 == Cree un conector
 
-Puede empezar a usar Cloud Volumes ONTAP para su entorno de cloud en unos pasos. Para obtener información, consulte una de las siguientes indicaciones:
+Puede empezar a usar Cloud Volumes ONTAP para su entorno de cloud en unos pasos. Para obtener más información, consulte una de las siguientes secciones:
 
 * link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["Inicio rápido para Cloud Volumes ONTAP en AWS"]
 * link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Inicio rápido para Cloud Volumes ONTAP en Azure"]
 * link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Inicio rápido de Cloud Volumes ONTAP en Google Cloud"]
 
 
-Debe utilizar el mismo conector para gestionar tanto el entorno de trabajo CVO como las bases de datos Oracle.
+Debe utilizar el mismo conector para gestionar tanto el entorno de trabajo de Cloud Volumes ONTAP como las bases de datos.
 
-* Si tiene el entorno de trabajo de CVO y las bases de datos de Oracle en el mismo VPC o vnet, puede implementar el conector en el mismo VPC o vnet.
-* Si tiene el entorno de trabajo de CVO y las bases de datos de Oracle en distintos equipos virtuales o Nets, asegúrese de que los equipos VPC o VNets tienen una relación entre iguales.
+* Si tiene el entorno de trabajo de Cloud Volumes ONTAP y las bases de datos en el mismo cloud privado virtual (VPC) o vnet, puede poner en marcha el conector en la misma VPC o vnet.
+* Si dispone del entorno de trabajo de Cloud Volumes ONTAP y de las bases de datos en distintos VPC o VNets, asegúrese de que los VPC o VNets están interconectados.
 

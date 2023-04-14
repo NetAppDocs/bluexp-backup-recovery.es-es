@@ -14,12 +14,7 @@ summary: Realice unos pasos para realizar backup de datos de aplicaciones desde 
 
 
 [role="lead"]
-Puede realizar backups de los datos de aplicaciones de ONTAP en StorageGRID integrando Cloud Backup para aplicaciones con BlueXP y SnapCenter en las instalaciones.
-
-Puede proteger una o varias aplicaciones simultáneamente a StorageGRID mediante una sola política.
-
-
-IMPORTANT: Sólo puede proteger una aplicación a la vez si utiliza la GUI de BlueXP. Sin embargo, si utiliza API DE REST, puede proteger varias aplicaciones en simultáneo.
+Complete unos pasos para hacer un backup de los datos de las aplicaciones desde ONTAP en StorageGRID.
 
 *Lo que necesitará*
 
@@ -34,16 +29,16 @@ Para obtener más información, consulte link:task-backup-onprem-private-cloud.h
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
 . Agregue el entorno de trabajo.
 +
-Configure el clúster de ONTAP que aloja la SVM en la que se ejecuta la aplicación. Tras agregar el entorno de trabajo para una de las aplicaciones, se puede reutilizar para todas las demás aplicaciones que residen en el mismo clúster de ONTAP.
+Configura el LIF de gestión de clústeres que quieras que detecte BlueXP. Tras agregar el entorno de trabajo para una de las aplicaciones, se puede reutilizar para todas las demás aplicaciones que residen en el mismo clúster de ONTAP.
 
 +
 .. Seleccione la SVM y haga clic en *Agregar entorno de trabajo*.
 .. En el asistente Agregar entorno de trabajo:
 +
-... Especifique la dirección IP del clúster de ONTAP.
-... Especifique las credenciales de administración.
+... Especifique la dirección IP de la LIF de gestión de clúster.
+... Especifique las credenciales del usuario del clúster de ONTAP.
 +
-Cloud Backup para aplicaciones solo admite administradores de clústeres.
+El backup y la recuperación de BlueXP solo admiten el administrador de clústeres.
 
 
 
@@ -56,8 +51,8 @@ Cloud Backup para aplicaciones solo admite administradores de clústeres.
 +
 Introduzca los detalles en el formato FQDN:PORT.
 
-.. En el campo Access Key, especifique la clave.
-.. En el campo Secret Key, especifique la contraseña.
+.. En el campo Clave de acceso, especifique la clave para el cifrado de datos.
+.. En el campo Clave secreta, especifique la contraseña para el cifrado de datos.
 .. Especifique el espacio de IP.
 
 

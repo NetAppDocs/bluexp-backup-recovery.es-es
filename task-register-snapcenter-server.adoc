@@ -14,7 +14,7 @@ summary: Realice unos pasos para registrar el servidor SnapCenter.
 
 
 [role="lead"]
-Solo un usuario con el rol de administrador de SnapCenter puede registrar el host en el que se ejecuta SnapCenter Server 4.6 o una versión posterior. Es posible registrar varios hosts de SnapCenter Server.
+Solo un usuario con el rol de administrador de SnapCenter puede registrar el host en el que se ejecuta SnapCenter Server 4.6 o una versión posterior. Puedes registrar varios hosts de servidor de SnapCenter en BlueXP.
 
 * Pasos*
 
@@ -24,9 +24,9 @@ Solo un usuario con el rol de administrador de SnapCenter puede registrar el hos
 . Especifique los siguientes detalles:
 +
 .. En el campo servidor SnapCenter, especifique el FQDN o la dirección IP del host SnapCenter Server.
-.. En el campo Puerto, especifique el número de puerto en el que se está ejecutando el servidor SnapCenter.
+.. En el campo Puerto, especifique el número de puerto en el que se está ejecutando el host del servidor SnapCenter.
 +
-Debe asegurarse de que el puerto esté abierto para que se produzca la comunicación entre SnapCenter Server y el backup en el cloud para las aplicaciones.
+Debe asegurarse de que el puerto está abierto para que se produzca la comunicación entre SnapCenter Server y BlueXP.
 
 .. En el campo Etiquetas, especifique un nombre de sitio, un nombre de ciudad o cualquier nombre personalizado con el que desee etiquetar el servidor SnapCenter.
 +
@@ -35,17 +35,16 @@ Las etiquetas están separadas por comas.
 .. En el campo Username and Password, especifique las credenciales del usuario con el rol SnapCenterAdmin.
 
 
+. Seleccione el conector en la lista desplegable *Connector*.
 . Haga clic en *Registrar*.
 
 
 *Después de terminar*
 
-Haga clic en *copia de seguridad y restauración* > *aplicaciones* para ver todas las aplicaciones protegidas con el host de servidor SnapCenter registrado.
-
-De forma predeterminada, las aplicaciones se detectan automáticamente cada día, a medianoche. Puede configurar la programación para detectar las aplicaciones.
+Haga clic en *copia de seguridad y restauración* > *aplicaciones* para ver todas las aplicaciones protegidas con el host de servidor SnapCenter registrado. De forma predeterminada, las aplicaciones se detectan automáticamente cada día, a medianoche.
 
 
-NOTE: En las bases de datos de SQL Server, la columna Nombre de aplicación muestra el nombre en formato _Application_name (nombre de instancia)_.
+IMPORTANT: Si se añaden SVM a SnapCenter mediante FQDN o la dirección IP, las aplicaciones que se ejecutan en esas SVM no pueden protegerse. El backup y la recuperación de datos de BlueXP para aplicaciones solo reconoce las SVM que se añaden por nombre o las SVM detectadas por SnapCenter que se añadieron como parte del clúster de ONTAP.
 
 Las aplicaciones admitidas y sus configuraciones son:
 
@@ -75,7 +74,7 @@ Debe tener al menos un backup en las ubicaciones primaria y secundaria. Puede de
 
 
 
-No se mostrarán las siguientes bases de datos:
+No se muestran las siguientes bases de datos:
 
 * Bases de datos que no tienen backups
 * Bases de datos que solo tienen políticas bajo demanda o por hora

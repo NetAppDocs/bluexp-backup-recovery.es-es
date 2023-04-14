@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP 
-summary: Integre Cloud Backup para aplicaciones con BlueXP y SnapCenter en las instalaciones para realizar backups de las copias Snapshot consistentes con las aplicaciones, desde ONTAP en las instalaciones al cloud. 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, cloud backup 
+summary: Integra el backup y la recuperación de datos de BlueXP en aplicaciones con BlueXP y SnapCenter en las instalaciones para realizar backups de las copias Snapshot consistentes con la aplicación de ONTAP en las instalaciones al cloud. 
 ---
 = Proteja los datos de las aplicaciones locales
 :hardbreaks:
@@ -14,43 +14,40 @@ summary: Integre Cloud Backup para aplicaciones con BlueXP y SnapCenter en las i
 
 
 [role="lead"]
-Puede integrar Cloud Backup para aplicaciones con BlueXP (anteriormente Cloud Manager) y SnapCenter en las instalaciones para realizar backups de las copias Snapshot consistentes con la aplicación desde ONTAP en las instalaciones al cloud. Cuando sea necesario, puede restaurar desde el cloud a un servidor de SnapCenter en las instalaciones.
+El backup y recuperación de datos de BlueXP para aplicaciones proporciona funcionalidades de protección de datos para copias Snapshot consistentes con aplicaciones de ONTAP principal en las instalaciones al proveedor de cloud.
 
 Puede realizar backups de datos de aplicaciones de Oracle, Microsoft SQL y SAP HANA desde sistemas ONTAP en las instalaciones a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID.
 
-
-NOTE: Debe utilizar el software SnapCenter 4.6 o una versión posterior.
-
-Para obtener más información sobre el backup en el cloud para las aplicaciones, consulte:
+Si desea más información sobre el backup y la recuperación de datos de BlueXP para aplicaciones, consulte:
 
 * https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["Backup para aplicaciones con Cloud Backup y SnapCenter"^]
-* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["Podcast sobre Cloud Backup para aplicaciones"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["Podcast de backup y recuperación de datos de BlueXP para aplicaciones"^]
 
 
 
 
 == Requisitos
 
-Lea los siguientes requisitos para asegurarse de tener una configuración compatible antes de empezar a realizar el backup de datos de aplicación en los servicios de cloud.
+Lea los siguientes requisitos para asegurarse de que tiene una configuración compatible antes de empezar a realizar el backup de los datos de la aplicación en el proveedor de cloud.
 
 * ONTAP 9.8 o posterior
-* BlueXP 3.9
+* BlueXP
 * SnapCenter Server 4.6 o posterior debe utilizar SnapCenter Server 4.7 si desea utilizar las siguientes características:
 +
-** proteja los backups del almacenamiento secundario en las instalaciones
-** Proteja aplicaciones SAP HANA
-** Protección de aplicaciones de Oracle y SQL que se encuentran en un entorno de VMware
-** montar backups
-** desactivar las copias de seguridad
+** Proteja los backups del almacenamiento secundario en las instalaciones
+** Proteja las aplicaciones SAP HANA
+** Proteja las aplicaciones de Oracle y SQL que se encuentran en el entorno VMware
+** Montar backups
+** Desactivar las copias de seguridad
 ** Cancele el registro del servidor SnapCenter
 
 
 * Debe haber al menos un backup por aplicación disponible en SnapCenter Server
-* Al menos una política diaria, semanal o mensual en SnapCenter sin etiqueta ni etiqueta de la política de backup en cloud para aplicaciones en BlueXP.
+* Al menos una política diaria, semanal o mensual en SnapCenter sin etiqueta ni misma etiqueta que la de la política en BlueXP.
 
 
 
-NOTE: Cloud Backup para aplicaciones no admite la protección de aplicaciones que se encuentran en las SVM que se añadieron mediante FQDN o dirección IP.
+NOTE: Si se añaden SVM a SnapCenter mediante FQDN o la dirección IP, las aplicaciones que se ejecutan en esas SVM no pueden protegerse. El backup y la recuperación de datos de BlueXP para aplicaciones solo reconoce las SVM que se añaden por nombre o las SVM detectadas por SnapCenter que se añadieron como parte del clúster de ONTAP.
 
 En la siguiente imagen se muestra cada componente al realizar backups en cloud y las conexiones que necesita preparar entre ellos:
 

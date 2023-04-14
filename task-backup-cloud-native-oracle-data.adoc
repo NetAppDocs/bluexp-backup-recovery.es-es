@@ -14,11 +14,11 @@ summary: Crear backups programados o bajo demanda de bases de datos de Oracle.
 
 
 [role="lead"]
-Debe asignar una política predefinida o la que creó y, a continuación, realizar una copia de seguridad.
+Puede crear un backup asignando una política predeterminada o la política que creó.
 
 
 
-== Crear una política para proteger una base de datos de Oracle
+== Cree una política para proteger la base de datos de Oracle
 
 Puede crear directivas si no desea editar las directivas preparadas previamente.
 
@@ -29,6 +29,62 @@ Puede crear directivas si no desea editar las directivas preparadas previamente.
 . Escriba el nombre de una política.
 . (Opcional) edite el formato del nombre de la copia de seguridad.
 . Especifique los detalles de programación y retención.
+. (Opcional) Introduzca la ruta de script posterior y el valor de tiempo de espera para el script posterior que se ejecutará después del backup correcto para copiar la Snapshot en el almacenamiento secundario.
++
+Opcionalmente, también puede especificar los argumentos.
+
++
+Debe conservar los scripts posteriores en la ruta _/var/opt/snapcenter/spl/scripts_.
+
++
+Las variables de entorno admitidas son:
+
++
+|===
+| Variable ambiental | Descripción 
+
+
+ a| 
+SC_ORACLE_SID
+ a| 
+Especifica el SID de la base de datos Oracle.
+
+
+
+ a| 
+SC_HOST
+ a| 
+Especifica el nombre de host de la base de datos
+
+
+
+ a| 
+SC_BACKUP_NAME
+ a| 
+Especifica el nombre del backup. El nombre de backup de datos y el nombre de backup de registros se concatenan mediante delimitadores.
+
+
+
+ a| 
+SC_BACKUP_POLICY_NAME
+ a| 
+Especifica el nombre de la política utilizada para crear el backup.
+
+
+
+ a| 
+SC_PRIMARY_DATA_VOLUME_FULL_PATH
+ a| 
+Especifica las rutas del volumen de datos concatenadas mediante el delimitador. Para los volúmenes de ANF, la información se concatena con «/» _/{anfaccount}/{subscription_id}/{resource_group}/{capacity_pool}/{volumename}_
+
+
+
+ a| 
+SC_PRIMARY_ARCHIVELOGS_VOLUME_FULL_PATH
+ a| 
+Especifica las rutas de acceso del volumen de registros de archivos concatenadas mediante «,» como delimitador. Para los volúmenes de ANF, la información se concatenó con «/» _/{anfaccount}/{subscription_id}/{resource_group}/{capacity_pool}/{volumename}_
+
+|===
 . Haga clic en *Crear*.
 
 
@@ -36,7 +92,7 @@ Puede crear directivas si no desea editar las directivas preparadas previamente.
 
 == Cree un backup de la base de datos Oracle
 
-Puede asignar una directiva predefinida o crear una directiva y, a continuación, asignarla a la base de datos. Una vez asignada la política, los backups se crean según la programación definida en la política.
+Puede asignar una política predefinida o crear una política y, a continuación, asignarla a la base de datos. Una vez asignada la política, los backups se crean según la programación definida en la política.
 
 
 NOTE: Para Oracle, al crear grupos de discos ASM, asegúrese de que no haya volúmenes comunes entre grupos de discos. Cada grupo de discos debe tener volúmenes dedicados.
@@ -53,7 +109,7 @@ Los backups se crearán según el programa que se defina en la política.
 
 +
 
-NOTE: La cuenta de servicio (_SnapCenter-account-<account_id>_) se utiliza para ejecutar las operaciones de backup programadas.
+NOTE: La cuenta de servicio (_SnapCenter-account-<account_id>_) se usa para ejecutar las operaciones de backup programadas.
 
 
 
@@ -69,21 +125,15 @@ Después de asignar la política, puede crear un backup bajo demanda de la aplic
 . Si se asignan varias directivas a la aplicación, seleccione la directiva, el valor de retención y, a continuación, haga clic en *Crear copia de seguridad*.
 
 
-*Más información*
-
-Después de restaurar una base de datos grande (250 GB o más), si se ejecuta un backup completo en línea en la misma base de datos, la operación puede fallar y generar el siguiente error:
-
-`failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
-
-Para obtener información sobre cómo solucionar este problema, consulte: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["No se permite la operación de Snapshot debido a clones realizados por copias de Snapshot"].
-
 
 
 == Limitaciones
 
-* No admite backups de datos en línea ni solo backups de registros
-* No admite backups sin conexión
-* No admite la copia de seguridad de la base de datos Oracle que reside en puntos de montaje recursivos
 * No admite snapshots de grupos de consistencia para bases de datos de Oracle que residen en varios grupos de discos de ASM con superposición de volúmenes FSX
 * Si las bases de datos de Oracle se configuran en ASM, asegúrese de que los nombres de SVM sean únicos en los sistemas FSX. Si tiene el mismo nombre de SVM en sistemas FSX, no se admite el backup de las bases de datos de Oracle que residen en dichas SVM.
+* Después de restaurar una base de datos grande (250 GB o más), si se ejecuta un backup completo en línea en la misma base de datos, la operación puede fallar y generar el siguiente error:
+`failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
++
+Para obtener información sobre cómo solucionar este problema, consulte: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["No se permite la operación de Snapshot debido a clones realizados por copias de Snapshot"].
+
 

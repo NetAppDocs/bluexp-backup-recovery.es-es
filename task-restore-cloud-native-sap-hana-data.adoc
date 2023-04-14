@@ -16,21 +16,19 @@ summary: Restaure los archivos de datos y, a continuación, recupere la base de 
 [role="lead"]
 En caso de pérdida de datos, es posible restaurar los datos y los archivos que no son de datos, para luego recuperar la base de datos.
 
+*Antes de empezar*
 
+El sistema SAP HANA debe estar en estado detenido. Si el sistema SAP HANA está en funcionamiento, puede proporcionar un script previo para detener el sistema.
 
-== Restaure la base de datos SAP HANA nativa del cloud
+*Acerca de esta tarea*
 
-*Lo que necesita*
-
-. El sistema SAP HANA debe estar en estado detenido.
-. Puede proporcionar un script previo para detener el sistema SAP HANA.
-
+Si se habilitan los backups en un volumen, se ejecuta la operación SnapRestore de archivo único.
 
 * Pasos*
 
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la base de datos que desea restaurar y haga clic en *Ver detalles*.
-. Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la copia de seguridad de datos que desea utilizar para restaurar y haga clic en *Restaurar*.
-. En la página *Restore System*, introduzca los scripts. link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["Leer más."]
+. Haga clic en image:icon-action.png["para seleccionar la acción"] Correspondiente a la copia de seguridad de datos que desea restaurar y haga clic en *Restaurar*.
+. En la página *Restore System*, introduzca los scripts. link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["Scripts previos y posteriores."]
 +
 Para el flujo de trabajo de restauración, las siguientes variables de entorno están disponibles como parte del script previo y posterior.
 
@@ -69,10 +67,9 @@ Se configuró OSDBUser para la base de datos HANA
 . Haga clic en *Restaurar*.
 
 
-*Después de terminar*
+*Qué sigue*
 
-* Una vez realizada la restauración, recupere manualmente el sistema SAP HANA o proporcione un script posterior, que realiza la recuperación del sistema SAP HANA.
-
+Una vez realizada la restauración, recupere manualmente el sistema SAP HANA o proporcione un script posterior, que realiza la recuperación del sistema SAP HANA.
 
 
 

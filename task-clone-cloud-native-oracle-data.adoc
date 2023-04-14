@@ -23,9 +23,9 @@ Pueden clonarse bases de datos por los siguientes motivos:
 * Para recuperar datos que se eliminaron o se modificaron por error.
 
 
-*Lo que necesitará*
+*Antes de empezar*
 
-Antes de clonar la base de datos, debe comprender los conceptos de clon y asegurarse de que se cumplen todos los requisitos. link:concept-clone-cloud-native-oracle-concepts.html["Leer más"].
+Debe comprender los conceptos de clonación y asegurarse de que se cumplan todos los requisitos. link:concept-clone-cloud-native-oracle-concepts.html["Leer más"].
 
 * Pasos*
 
@@ -53,8 +53,12 @@ Si la base de datos se clona en el host de origen, el esquema de nomenclatura de
 .. Especifique la ruta de acceso de inicio de Oracle.
 .. (Opcional) especifique las credenciales de la base de datos.
 +
-*** Credencial de base de datos: Si la autenticación de usuario de sistema operativo está deshabilitada, debe proporcionar una contraseña para que el usuario sys la defina en el host de destino.
+*** Credencial de base de datos: Si la autenticación de usuario del sistema operativo está deshabilitada, debe proporcionar una contraseña para que el usuario sys se conecte a la base de datos clonada en el mismo host o en el de destino.
 *** Credencial ASM: Si la autenticación del usuario del sistema operativo está deshabilitada en el host de destino, debe proporcionar credenciales de usuario con privilegios sysasm para conectarse a la instancia de ASM en el host de destino.
++
+
+NOTE: Asegúrese de que el listener está activo y en ejecución en el host de destino.
+
 
 
 .. Haga clic en *Siguiente*.
@@ -79,8 +83,12 @@ Si desea crear el clon en un host alternativo, seleccione el host que tiene la m
 .. Especifique el SID del clon.
 .. (Opcional) especifique las credenciales de la base de datos.
 +
-*** Credencial de base de datos: Si la autenticación de usuario de sistema operativo está deshabilitada, debe proporcionar una contraseña para que el usuario sys la defina en el host de destino.
+*** Credencial de base de datos: Si la autenticación de usuario del sistema operativo está deshabilitada, debe proporcionar una contraseña para que el usuario sys se conecte a la base de datos clonada en el mismo host o en el de destino.
 *** Credencial ASM: Si la autenticación del usuario del sistema operativo está deshabilitada en el host de destino, debe proporcionar credenciales de usuario con privilegios sysasm para conectarse a la instancia de ASM en el host de destino.
++
+
+NOTE: Asegúrese de que el listener está activo y en ejecución en el host de destino.
+
 
 
 .. Haga clic en *Siguiente*.

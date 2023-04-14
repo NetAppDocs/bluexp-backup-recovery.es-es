@@ -83,92 +83,89 @@ sidebar:
       url: "/task-manage-backups-kubernetes.html"
     - title: Restauración desde backups de Kubernetes
       url: "/task-restore-backups-kubernetes.html"
-  - title: Proteja los datos de las aplicaciones
+  - title: Realice backups y restauraciones de datos de aplicaciones en las instalaciones
     entries:
-    - title: Proteja los datos de las aplicaciones en las instalaciones
+    - title: Proteja los datos de las aplicaciones locales
+      url: "/concept-protect-app-data-to-cloud.html"
+    - title: Registre el servidor SnapCenter
+      url: "/task-register-snapcenter-server.html"
+    - title: Crear una política para realizar backups de aplicaciones
+      url: "/task-create-policies-apps.html"
+    - title: Realice backup de los datos de las aplicaciones en las instalaciones
+        en Amazon Web Services
+      flavor: aws
+      url: "/task-backup-app-data-to-aws.html"
+    - title: Realice backups de los datos de las aplicaciones en las instalaciones
+        en Microsoft Azure
+      flavor: azure
+      url: "/task-backup-app-data-to-azure.html"
+    - title: Realice backups de los datos de las aplicaciones en las instalaciones
+        en Google Cloud
+      flavor: gcp
+      url: "/task-backup-app-data-to-gcp.html"
+    - title: Realice backups de los datos de las aplicaciones en las instalaciones
+        en StorageGRID
+      url: "/task-backup-app-data-to-storagegrid.html"
+    - title: Gestione la protección de aplicaciones
+      url: "/task-manage-app-backups.html"
+    - title: Restaure los datos de las aplicaciones en las instalaciones
       entries:
-      - title: Proteja los datos de las aplicaciones locales
-        url: "/concept-protect-app-data-to-cloud.html"
-      - title: Registre el servidor SnapCenter
-        url: "/task-register-snapcenter-server.html"
-      - title: Crear una política para realizar backups de aplicaciones
-        url: "/task-create-policies-apps.html"
-      - title: Realice backup de los datos de las aplicaciones en las instalaciones
-          en Amazon Web Services
-        flavor: aws
-        url: "/task-backup-app-data-to-aws.html"
-      - title: Realice backups de los datos de las aplicaciones en las instalaciones
-          en Microsoft Azure
+      - title: Restaurar base de datos de Oracle
+        url: "/task-restore-oracle-data.html"
+      - title: Restaurar base de datos de SQL Server
+        url: "/task-restore-sql-data.html"
+    - title: Montar backups de aplicaciones
+      url: "/task-mount-app-backup.html"
+  - title: Realiza backups y restaura los datos de aplicaciones nativas en la nube
+    entries:
+    - title: Proteja los datos de aplicaciones nativas del cloud
+      url: "/concept-protect-cloud-app-data-to-cloud.html"
+    - title: Realice backup de bases de datos de Oracle nativas en el cloud
+      entries:
+      - title: Inicio rápido
+        url: "/task-quick-start-oracle.html"
+      - title: Configure FSX para ONTAP
+        url: "/reference-configure-fsx-for-ontap.html"
+      - title: Configure Cloud Volumes ONTAP
+        url: "/reference-configure-cloud-volumes-ontap.html"
+      - title: Configure Azure NetApp Files
         flavor: azure
-        url: "/task-backup-app-data-to-azure.html"
-      - title: Realice backups de los datos de las aplicaciones en las instalaciones
-          en Google Cloud
-        flavor: gcp
-        url: "/task-backup-app-data-to-gcp.html"
-      - title: Realice backups de los datos de las aplicaciones en las instalaciones
-          en StorageGRID
-        url: "/task-backup-app-data-to-storagegrid.html"
-      - title: Gestione la protección de aplicaciones
-        url: "/task-manage-app-backups.html"
-      - title: Restaure los datos de las aplicaciones en las instalaciones
-        entries:
-        - title: Restaurar base de datos de Oracle
-          url: "/task-restore-oracle-data.html"
-        - title: Restaurar base de datos de SQL Server
-          url: "/task-restore-sql-data.html"
-      - title: Montar backups de aplicaciones
-        url: "/task-mount-app-backup.html"
-    - title: Proteja los datos de aplicaciones nativas en el cloud
+        url: "/reference-configure-azure-netapp-files.html"
+      - title: Ponga en marcha el plugin de SnapCenter para Oracle y añada hosts de
+          base de datos
+        url: "/task-add-host-discover-oracle-databases.html"
+      - title: Realice backup de la base de datos de Oracle
+        url: "/task-backup-cloud-native-oracle-data.html"
+    - title: Realice backup de la base de datos SAP HANA nativa del cloud
       entries:
-      - title: Proteja los datos de aplicaciones nativas del cloud
-        url: "/concept-protect-cloud-app-data-to-cloud.html"
-      - title: Realice backups de datos de aplicaciones nativas en el cloud
-        entries:
-        - title: Realice backup de bases de datos de Oracle nativas en el cloud
-          entries:
-          - title: Acceda a BlueXP
-            url: "/reference-access-bluexp.html"
-          - title: Configure FSX para ONTAP
-            url: "/reference-configure-fsx-for-ontap.html"
-          - title: Configure Cloud Volumes ONTAP
-            url: "/reference-configure-cloud-volumes-ontap.html"
-          - title: Ponga en marcha el plugin de SnapCenter para Oracle y añada hosts
-              de base de datos
-            url: "/task-add-host-discover-oracle-databases.html"
-          - title: Realice backup de la base de datos de Oracle
-            url: "/task-backup-cloud-native-oracle-data.html"
-        - title: Realice backup de la base de datos SAP HANA nativa del cloud
-          entries:
-          - title: Acceda a BlueXP
-            flavor: azure
-            url: "/reference-access-bluexp.html"
-          - title: Configure Azure NetApp Files
-            flavor: azure
-            url: "/reference-configure-azure-netapp-files.html"
-          - title: Ponga en marcha el plugin de SnapCenter para SAP HANA y añada hosts
-              de base de datos
-            flavor: azure
-            url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
-          - title: Realice un backup de la base de datos SAP HANA
-            flavor: azure
-            url: "/task-backup-cloud-native-sap-hana-data.html"
-      - title: Restaure los datos de aplicaciones nativas en el cloud
-        entries:
-        - title: Restaurar base de datos de Oracle nativa en cloud
-          url: "/task-restore-cloud-native-oracle-data.html"
-        - title: Restaure la base de datos SAP HANA nativa del cloud
-          flavor: azure
-          url: "/task-restore-cloud-native-sap-hana-data.html"
-      - title: Clone datos de aplicaciones nativas en el cloud
-        entries:
-        - title: Clone la base de datos de Oracle nativa en el cloud
-          entries:
-          - title: Conceptos y requisitos de los clones
-            url: "/concept-clone-cloud-native-oracle-concepts.html"
-          - title: Clone la base de datos de Oracle nativa en el cloud
-            url: "/task-clone-cloud-native-oracle-data.html"
-      - title: Gestione la protección de datos de aplicaciones nativas en el cloud
-        url: "/task-manage-cloud-native-app-data.html"
+      - title: Inicio rápido
+        flavor: azure
+        url: "/task-quick-start-hana.html"
+      - title: Configure Azure NetApp Files
+        flavor: azure
+        url: "/reference-configure-azure-netapp-files.html"
+      - title: Ponga en marcha el plugin de SnapCenter para SAP HANA y añada hosts
+          de base de datos
+        flavor: azure
+        url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
+      - title: Realice un backup de la base de datos SAP HANA
+        flavor: azure
+        url: "/task-backup-cloud-native-sap-hana-data.html"
+    - title: Restaurar base de datos de Oracle nativa en cloud
+      url: "/task-restore-cloud-native-oracle-data.html"
+    - title: Restaure la base de datos SAP HANA nativa del cloud
+      flavor: azure
+      url: "/task-restore-cloud-native-sap-hana-data.html"
+    - title: Actualice el sistema de destino SAP HANA
+      url: "/task-refresh-sap-hana-target-system.html"
+    - title: Clone la base de datos de Oracle nativa en el cloud
+      entries:
+      - title: Conceptos y requisitos de los clones
+        url: "/concept-clone-cloud-native-oracle-concepts.html"
+      - title: Clone la base de datos de Oracle nativa en el cloud
+        url: "/task-clone-cloud-native-oracle-data.html"
+    - title: Gestione la protección de datos de aplicaciones nativas en el cloud
+      url: "/task-manage-cloud-native-app-data.html"
   - title: Copia de seguridad y restauración de datos de máquinas virtuales
     entries:
     - title: Proteja sus datos de equipos virtuales
@@ -265,7 +262,7 @@ homepage:
     - title: Cluster de Kubernetes a Google Cloud
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
-  - title: Proteja los datos de las aplicaciones
+  - title: Realice backups de los datos de las aplicaciones en el cloud
     links:
     - title: Realice backup de los datos de las aplicaciones en las instalaciones
         en Amazon Web Services

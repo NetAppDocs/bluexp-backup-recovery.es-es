@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-mount-app-backup.html 
 keywords: mount, mount application backups, Oracle database, SAP HANA database 
-summary: Puede montar los backups de SAP HANA y Oracle en la base de datos indicada 
+summary: Puede montar los backups de SAP HANA y Oracle en el host especificado. 
 ---
 = Montar backups de aplicaciones
 :hardbreaks:
@@ -14,11 +14,9 @@ summary: Puede montar los backups de SAP HANA y Oracle en la base de datos indic
 
 
 [role="lead"]
-SnapCenter no admite la restauración de backups de Oracle y HANA en un host alternativo. Así, el backup en cloud para aplicaciones le permite montar los backups de Oracle y HANA en el host determinado.
+El backup y la recuperación de datos de BlueXP para aplicaciones te permite montar los backups de Oracle y HANA en el host alternativo.
 
-*Lo que necesitará*
-
-Si desea montar una copia de seguridad que se haya movido a almacén de objetos desde un almacenamiento secundario, debe añadir los detalles del entorno de trabajo principal y establecer el espacio de IP. Para obtener más información, consulte link:task-manage-app-backups.html#set-ip-space-of-the-primary-working-environment["Establecer el espacio IP del entorno de trabajo principal"].
+SnapCenter no admite la restauración de backups de Oracle y HANA en un host alternativo. Por lo tanto, se ofrece la opción de montaje para montar los backups de Oracle y HANA en el host alternativo.
 
 * Pasos*
 
@@ -29,17 +27,19 @@ Si desea montar una copia de seguridad que se haya movido a almacén de objetos 
 +
 .. Especifique una de las siguientes opciones:
 +
-... Para el entorno NAS, especifique el FQDN o la dirección IP del host al cual se van a exportar los volúmenes alternativos restaurados a partir del almacén de objetos.
-... Para el entorno SAN, especifique los iniciadores del host al cual se asignarán las LUN de un volumen alternativo restaurado en el almacén de objetos.
+... Para el entorno NAS, especifique el FQDN o la dirección IP del host al que se van a exportar los volúmenes restaurados del almacén de objetos.
+... Para el entorno SAN, especifique los iniciadores del host al que se van a asignar las LUN de los volúmenes restaurados desde el almacén de objetos.
 
 
-.. Especifique el sufijo que se añadirá al nombre del volumen alternativo.
+.. Especifique el sufijo que se añadirá al nombre del volumen.
 .. Si la instantánea se encuentra en el almacenamiento de archivado, especifique la prioridad para recuperar los datos del almacenamiento de archivado.
 .. Haga clic en *Mount*.
 
 
 
 
-Esta operación monta solo el almacenamiento en el host especificado. Debe montar manualmente el sistema de archivos y activar la base de datos. Después de utilizar el volumen alternativo, el administrador de almacenamiento puede eliminar el volumen del clúster de ONTAP.
+Esta operación monta solo el almacenamiento en el host especificado. Debe montar manualmente el sistema de archivos y activar la base de datos. Después de utilizar el volumen, el administrador de almacenamiento puede eliminar el volumen del clúster de ONTAP.
 
-Para obtener información sobre cómo preparar la base de datos SAP HANA, consulte https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667: Automatización de las operaciones de copia y clonado del sistema SAP HANA con SnapCenter"^].
+* Para obtener información sobre cómo abrir la base de datos Oracle, consulte, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["Artículo de base de conocimientos"].
+* Para obtener información sobre cómo preparar la base de datos SAP HANA, consulte https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667: Descripción general del flujo de trabajo de copia del sistema SAP con SnapCenter"^] y.. https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667: Descripción general del flujo de trabajo de clones del sistema SAP con SnapCenter"^].
+

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start-hana.html 
+keywords: Cloud Manager, BlueXP, configuration, support, SAP HANA 
+summary: Complete algunos pasos para empezar a hacer el backup de la base de datos SAP HANA. 
+---
+= Inicio rápido
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Comience rápidamente siguiendo estos pasos.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Verifique la compatibilidad con la configuración
+[role="quick-margin-list"]
+* Sistema operativo:
++
+** RHEL 7.5 o posterior, plataformas 8.x certificadas por SAP HANA
+** SLES 12 SP5 o posteriores y 15 plataformas SPX certificadas por SAP HANA
+
+
+* Almacenamiento cloud de NetApp: Azure NetApp Files
+* Distribuciones de almacenamiento: Para archivos de datos y archivos de registro, Azure solo admite NFSv4,1.
+* Diseños de base de datos:
++
+** Contenedor único versión 1.0SPS12
+** Contenedor de bases de datos multitenant (MDC) SAP HANA 2.0SPS4, 2.0SPS5, 2.0SPS6 con uno o varios inquilinos
+** Sistema host único SAP HANA, varios sistemas host SAP HANA (sin un host en espera), replicación de sistemas HANA
+
+
+* Plugin de SAP HANA en el host de la base de datos
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Regístrese en BlueXP
+[role="quick-margin-list"]
+BlueXP es accesible desde una consola basada en Web. Cuando comience a utilizar BlueXP, su primer paso consiste en registrarse con sus credenciales actuales del sitio de soporte de NetApp o mediante la creación de un inicio de sesión en cloud de NetApp. Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-sign-up-saas.html["Regístrese en BlueXP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Inicia sesión en BlueXP
+[role="quick-margin-list"]
+Después de registrarse en BlueXP, puede iniciar sesión desde la consola basada en Web. Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Inicia sesión en BlueXP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Administre su cuenta de BlueXP
+[role="quick-margin-list"]
+Puede administrar su cuenta gestionando usuarios, cuentas de servicio, áreas de trabajo y conectores. Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html["Administre su cuenta de BlueXP"].

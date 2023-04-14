@@ -16,15 +16,15 @@ summary: Restaure los archivos de datos, los archivos de control o ambos y despu
 [role="lead"]
 En caso de pérdida de datos, puede restaurar los archivos de datos, los archivos de control o ambos y recuperar la base de datos.
 
-*Lo que necesitará*
+*Antes de empezar*
 
 Si la base de datos de Oracle 21c está EN estado INICIADO, se produce un error en la operación de restauración. Debe ejecutar lo siguiente para restaurar la base de datos correctamente.
-`cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib ojdbc8-8.jar`
+`cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
 * Pasos*
 
-. Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la base de datos que desea restaurar y haga clic en *Ver detalles*.
-. Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la copia de seguridad de datos que desea utilizar para restaurar y haga clic en *Restaurar*.
+. Haga clic en image:icon-action.png["para seleccionar la acción"] Correspondiente a la base de datos que desea restaurar y haga clic en *Restaurar*.
+. Seleccione el punto de restauración en el que se debe restaurar la base de datos y haga clic en *Restaurar a la ubicación original*.
 . En la sección Restore Scope, realice las siguientes acciones:
 +
 |===
@@ -52,10 +52,6 @@ Seleccione *todos los archivos de datos* y *Archivos de control*.
 
 |===
 +
-
-NOTE: No se admiten la restauración de archivos de datos con archivos de control o solo archivos de control para iSCSI en el diseño de ASM.
-
-+
 También puede seleccionar la casilla de verificación *Forzar restauración in situ*.
 
 +
@@ -69,6 +65,10 @@ En la distribución DE SAN, si el plugin de SnapCenter para Oracle encuentra cua
 ** Archivo de parámetros de ASM.
 +
 La opción *Forzar restauración in situ* reemplaza los archivos externos de tipo parámetro, contraseña y registro de archivo. Debe utilizar la última copia de seguridad cuando se seleccione la opción *Forzar restauración in situ*.
+
++
+
+NOTE: No se admiten la restauración de archivos de datos con archivos de control o solo archivos de control para iSCSI en la distribución de ASM y la restauración de espacios de tabla y PDB.
 
 
 
@@ -88,7 +88,7 @@ Seleccione *todos los registros*.
  a| 
 Desea recuperar a un número de cambio de sistema (SCN) específico
  a| 
-Seleccione *Until System Change Number* y especifique el SCN.
+Seleccione *Until SCN* y especifique el SCN.
 
 
 
@@ -113,15 +113,4 @@ Seleccione la casilla de comprobación si desea abrir la base de datos en modo D
 
 . Haga clic en *Siguiente* y revise los detalles.
 . Haga clic en *Restaurar*.
-
-
-
-
-== Limitaciones
-
-* No admite restauraciones granulares, por ejemplo, la restauración de espacios de tablas y PDB
-* Se utilizan métodos de restauración sin movimiento y de conexión y copia si algunos de los grupos de discos contienen archivos externos. Sin embargo, no se admite el uso de ambos métodos a la vez para realizar la restauración y se produce un error en la operación de restauración. La base de datos se quedará en estado montado y es necesario que la base de datos se abra manualmente.
-+
-El mensaje de error debido a la presencia de archivos externos no se muestra en la página de trabajo de la interfaz de usuario debido a un problema conocido. Compruebe si hay un fallo durante la fase DE restauración previa DE SAN en los registros del conector para conocer la causa del problema.
-
 
