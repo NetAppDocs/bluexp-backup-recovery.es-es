@@ -17,7 +17,7 @@ summary: Realice backups de sus almacenes de datos desde ONTAP en las instalacio
 Puede realizar backups de uno o varios almacenes de datos en Google Cloud Platform mediante la integración del host del plugin de SnapCenter para VMware vSphere con BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
 
 .Antes de empezar
-Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
+Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.

@@ -19,7 +19,7 @@ Puede realizar backups y archivar uno o varios almacenes de datos en Amazon Web 
 Si el almacén de datos está asociado con una política de archivado, tiene la opción de seleccionar el nivel de archivado. Los niveles de archivado admitidos son Glacier y Glacier Deep.
 
 .Antes de empezar
-Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
+Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.

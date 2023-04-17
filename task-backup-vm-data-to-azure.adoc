@@ -19,7 +19,7 @@ Puede realizar backups de uno o varios almacenes de datos en Microsoft Azure si 
 Si el almacén de datos está asociado con una política de archivado, se ofrecerá una opción para seleccionar el nivel de archivado. El nivel de archivado compatible es Azure Archive Blob Storage.
 
 .Antes de empezar
-Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
+Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html["requisitos"] antes de realizar backups de almacenes de datos en el cloud.
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.

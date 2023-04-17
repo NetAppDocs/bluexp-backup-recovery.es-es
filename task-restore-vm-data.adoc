@@ -20,7 +20,7 @@ Las máquinas virtuales se pueden restaurar desde el cloud de nuevo a la instanc
 NOTE: No es posible restaurar máquinas virtuales que abarquen diferentes almacenes de datos.
 
 .Antes de empezar
-Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html#Requirements["requisitos"] antes de restaurar máquinas virtuales desde la nube.
+Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html["requisitos"] antes de restaurar máquinas virtuales desde la nube.
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *Backup y recuperación* > *Virtual Machines* > *SnapCenter Plug-in for VMware vSphere* y seleccione el host del complemento de SnapCenter para VMware vSphere.
