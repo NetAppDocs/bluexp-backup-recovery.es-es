@@ -293,7 +293,11 @@ NOTE: El _CurrentTimeStampNumber_ proporciona la singularidad en el nombre del v
 
 === Esquema de nomenclatura generado automáticamente
 
-Si selecciona el esquema de clonación como *generado automáticamente*, la ubicación de los puntos de montaje y el nombre de los grupos de discos de la base de datos clonada se adjuntarán con un sufijo. * Si ha seleccionado el método básico de clonación, el sufijo será el *SID de clon*. * Si ha seleccionado el método de archivo de especificación, el sufijo será el *sufijo* que se especificó al descargar el archivo de especificación del clon.
+Si selecciona el esquema de clonación como *generado automáticamente*, la ubicación de los puntos de montaje y el nombre de los grupos de discos de la base de datos clonada se adjuntarán con un sufijo.
+
+* Si ha seleccionado el método de clonación básica, el sufijo será el *SID clon*.
+* Si ha seleccionado el método del archivo de especificación, el sufijo será el *Suffix* que se especificó al descargar el archivo de especificación del clon.
+
 
 Por ejemplo, si el punto de montaje de la base de datos de origen es _/netapp_sourcedb/data_1_ y el *SID de clon* o el *sufijo* es _HR_, el punto de montaje de la base de datos clonada será _/netapp_sourcedb/data_1_HR_.
 

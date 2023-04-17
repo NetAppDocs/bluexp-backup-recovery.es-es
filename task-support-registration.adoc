@@ -10,6 +10,7 @@ summary: Antes de poder abrir un caso de soporte con el soporte técnico de NetA
 :imagesdir: ../media/
 
 
+[role="lead"]
 Antes de poder abrir un caso de soporte con el soporte técnico de NetApp, debe añadir una cuenta del sitio de soporte de NetApp (NSS) a BlueXP y, a continuación, registrarse para recibir soporte.
 
 
