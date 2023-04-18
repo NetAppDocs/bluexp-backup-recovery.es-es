@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-cloud-backup-policies.html 
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
-summary: Este documento describe los ajustes de configuración de las políticas de backup para Cloud Backup. 
+summary: El backup y recuperación de datos de BlueXP te permite crear políticas de backup con una variedad de ajustes de configuración para tus sistemas ONTAP y Cloud Volumes ONTAP en las instalaciones. 
 ---
-= Opciones de configuración de la política de Cloud Backup
+= Ajustes de configuración de la política de backup y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Este documento describe los ajustes de configuración de las políticas
 
 
 [role="lead"]
-Este documento describe las opciones de configuración de políticas de backup para sistemas ONTAP en las instalaciones y sistemas Cloud Volumes ONTAP cuando se utiliza Cloud Backup Service.
+El backup y recuperación de datos de BlueXP te permite crear políticas de backup con una variedad de ajustes de configuración para tus sistemas ONTAP y Cloud Volumes ONTAP en las instalaciones.
 
 
 
 == Programaciones de backup
 
-Cloud Backup permite crear varias políticas de backup con programaciones únicas para cada entorno de trabajo (clúster). Es posible asignar diferentes políticas de backup a volúmenes con diferentes objetivos de punto de recuperación (RPO).
+El backup y la recuperación de datos de BlueXP te permite crear varias políticas de backup con programaciones únicas para cada entorno de trabajo (clúster). Es posible asignar diferentes políticas de backup a volúmenes con diferentes objetivos de punto de recuperación (RPO).
 
 Cada directiva de copia de seguridad proporciona una sección para _Labels & Retention_ que puede aplicar a sus archivos de copia de seguridad.
 
@@ -51,9 +51,9 @@ Tenga en cuenta que los backups anuales se eliminarán automáticamente del sist
 
 == Protección de DataLock y ransomware
 
-Cloud Backup ofrece compatibilidad con la protección de DataLock y Ransomware para los backups de volúmenes. Estas funciones le permiten bloquear los archivos de backup y analizarlos para detectar posibles ransomware en los archivos de backup. Este es un ajuste opcional que se puede definir en las políticas de backup cuando se desea contar con protección adicional para los backups de volúmenes para un clúster de.
+El backup y la recuperación de BlueXP ofrece soporte para la protección DataLock y Ransomware para los backups de volúmenes. Estas funciones le permiten bloquear los archivos de backup y analizarlos para detectar posibles ransomware en los archivos de backup. Este es un ajuste opcional que se puede definir en las políticas de backup cuando se desea contar con protección adicional para los backups de volúmenes para un clúster de.
 
-Ambas funciones protegen sus archivos de backup de forma que siempre tendrá un archivo de backup válido para recuperar los datos desde un ataque de ransomware en sus datos de origen. También resulta útil satisfacer ciertos requisitos normativos en los que los backups deben bloquearse y conservarse durante un cierto período de tiempo. Cuando se habilita la protección de DataLock y ransomware, el bloque de cloud que se aprovisiona como parte de la activación de Cloud Backup tendrá habilitado el bloqueo de objetos y el control de versiones de objetos.
+Ambas funciones protegen sus archivos de backup de forma que siempre tendrá un archivo de backup válido para recuperar los datos desde un ataque de ransomware en sus datos de origen. También resulta útil satisfacer ciertos requisitos normativos en los que los backups deben bloquearse y conservarse durante un cierto período de tiempo. Cuando el bloqueo de datos y la protección frente a ransomware estén habilitados, el bloque de cloud que se aprovisiona como parte de la activación del backup y la recuperación de BlueXP tendrá habilitados el bloqueo de objetos y el control de versiones de objetos.
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección de DataLock y Ransomware para obtener más información"^].
 
@@ -61,7 +61,7 @@ Esta función no ofrece protección para los volúmenes de origen, solo para los
 
 [CAUTION]
 ====
-* Si tiene previsto utilizar la protección DataLock y Ransomware, debe habilitarla cuando cree su primera política de backup y active Cloud Backup para ese clúster.
+* Si tienes pensado utilizar la protección DataLock y Ransomware, debe habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster.
 * La protección de DataLock y Ransomware no se puede deshabilitar para un clúster una vez que se ha configurado. No habilite esta función en un clúster para probarlo.
 
 
@@ -80,7 +80,7 @@ Veamos algunos ejemplos de cómo funciona:
 * Si crea una política de backup que crea 30 backups diarios, 7 semanales y 12 mensuales, habrá tres periodos de retención bloqueados. Los backups «30 diarios» se conservarían durante 44 días (30 días más 14 días de búfer), los backups «7 semanales» se conservarían durante 9 semanas (7 semanas más 14 días) y los backups «12 mensuales» se conservarían durante 12 meses (más 14 días).
 * Si crea una programación de backup horaria con 24 retentions, puede pensar que los backups están bloqueados durante 24 horas. Sin embargo, dado que es inferior al mínimo de 30 días, cada backup se bloqueará y conservará durante 44 días (30 días más 14 días de búfer).
 +
-En este último caso, puede comprobar que si cada archivo de copia de seguridad está bloqueado durante 44 días, tendrá muchos más archivos de copia de seguridad de los que se tendrían normalmente con una normativa de repetición por hora/24. Normalmente, cuando Cloud Backup crea el archivo de backup 25, se elimina el backup más antiguo para mantener las retentions máximas en 24 (según la política). En este caso, la configuración de retención de DataLock anula la configuración de retención de directivas de la política de copia de seguridad. Esto podría afectar a los costes de almacenamiento, ya que los archivos de backup se guardarán en el almacén de objetos durante un periodo de tiempo más largo.
+En este último caso, puede comprobar que si cada archivo de copia de seguridad está bloqueado durante 44 días, tendrá muchos más archivos de copia de seguridad de los que se tendrían normalmente con una normativa de repetición por hora/24. Normalmente, cuando el backup y la recuperación de BlueXP crea el archivo de backup de 25th, se eliminaría el backup más antiguo para mantener las retenciones máximas en 24 (según la política). En este caso, la configuración de retención de DataLock anula la configuración de retención de directivas de la política de copia de seguridad. Esto podría afectar a los costes de almacenamiento, ya que los archivos de backup se guardarán en el almacén de objetos durante un periodo de tiempo más largo.
 
 
 
@@ -292,10 +292,10 @@ endif::azure[]
 === Restricciones
 
 * La protección de DataLock y Ransomware no está disponible si ha configurado el almacenamiento de archivado en la normativa de backup.
-* La opción DataLock que seleccione al activar Cloud Backup debe utilizarse para todas las políticas de backup del clúster.
+* La opción DataLock que seleccione al activar el backup y la recuperación de BlueXP debe utilizarse para todas las políticas de backup para ese clúster.
 * No se pueden utilizar ambos modos DataLock en un solo clúster.
 * Si activa DataLock, se bloquearán todas las copias de seguridad de los volúmenes. No se pueden mezclar backups de volúmenes bloqueados y no bloqueados para un solo clúster.
-* La protección de DataLock y ransomware se aplica a backups de volúmenes nuevos con una política de backup con protección de datos Lock y ransomware habilitada. No se puede habilitar esta función después de activar Cloud Backup.
+* La protección de DataLock y ransomware se aplica a backups de volúmenes nuevos con una política de backup con protección de datos Lock y ransomware habilitada. No puedes habilitar esta función una vez que se haya activado el backup y la recuperación de BlueXP.
 
 
 
@@ -317,7 +317,7 @@ ifdef::aws[]
 Si el clúster utiliza ONTAP 9.10.1 o superior, puede organizar en niveles los backups antiguos en el almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_. link:reference-aws-backup-tiers.html["Obtenga más información acerca del almacenamiento de archivado de AWS"^].
 
 +
-Tenga en cuenta que si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en la primera política de backup al activar Cloud Backup, ese nivel será el único nivel de archivado disponible para futuras políticas de backup para ese clúster. Si selecciona ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado para futuras políticas.
+Tenga en cuenta que si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de backup al activar el backup y la recuperación de BlueXP, ese nivel será el único nivel de archivado disponible para futuras políticas de backup para ese clúster. Si selecciona ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado para futuras políticas.
 
 
 
@@ -337,7 +337,7 @@ ifdef::gcp[]
 
 * En GCP, las copias de seguridad están asociadas con la clase de almacenamiento _Standard_.
 +
-Si su clúster local utiliza ONTAP 9.12.1 o más, puede optar por organizar los backups antiguos en el almacenamiento _Archive_ en la interfaz de usuario de backup en el cloud tras un determinado número de días para obtener mayor optimización de los costes. link:reference-google-backup-tiers.html["Más información sobre el almacenamiento de archivos de Google"^].
+Si tu clúster on-premises utiliza ONTAP 9.12.1 o posterior, puedes elegir organizar en niveles los backups antiguos en el almacenamiento _Archive_ en la interfaz de usuario de backup y recuperación de BlueXP después de un determinado número de días para optimizar los costes. link:reference-google-backup-tiers.html["Más información sobre el almacenamiento de archivos de Google"^].
 
 
 

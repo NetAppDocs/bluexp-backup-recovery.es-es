@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-kubernetes-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, aws, azure, s3, blob, google cloud, back up volumes, cloud backup, restore volumes, billing, cost, kubernetes 
-summary: Cloud Backup ofrece funcionalidades de backup y restauración para protección y archivado a largo plazo de sus datos de clúster de Kubernetes. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
+summary: El backup y la recuperación de datos de BlueXP ofrece funcionalidades de backup y restauración para proteger y archivar a largo plazo los datos del clúster de Kubernetes. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
 ---
-= Proteja los datos de clústeres de Kubernetes mediante Cloud Backup
+= Protege tus datos de clústeres de Kubernetes mediante el backup y la recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Cloud Backup ofrece funcionalidades de backup y restauración para prot
 
 
 [role="lead"]
-Cloud Backup ofrece funcionalidades de backup y restauración para protección y archivado a largo plazo de sus datos de clúster de Kubernetes. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
+El backup y la recuperación de datos de BlueXP ofrece funcionalidades de backup y restauración para proteger y archivar a largo plazo los datos del clúster de Kubernetes. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
 
 Cuando sea necesario, puede restaurar un _volume_ completo desde una copia de seguridad al mismo entorno de trabajo o diferente.
 
@@ -41,7 +41,7 @@ Funciones de restauración:
 
 == Entornos de trabajo de Kubernetes compatibles y proveedores de almacenamiento de objetos
 
-Cloud Backup le permite realizar backups de volúmenes de Kubernetes de los siguientes entornos de trabajo en el almacenamiento de objetos, en los siguientes proveedores de cloud público y privado:
+El backup y la recuperación de datos de BlueXP te permite realizar backups de volúmenes de Kubernetes de los siguientes entornos de trabajo en el almacenamiento de objetos en los siguientes proveedores de nube pública y privada:
 
 [cols="45,40"]
 |===
@@ -75,11 +75,11 @@ Es posible restaurar un volumen de un archivo de backup de Kubernetes en los sig
 
 == Coste
 
-Existen dos tipos de costes asociados con el uso de Cloud Backup: Cargos por recursos y cargos por servicio.
+Hay dos tipos de costes asociados al uso de backup y recuperación de datos de BlueXP: Los cargos por recursos y los cargos por servicio.
 
 *gastos de recursos*
 
-Se paga un recargo por los recursos al proveedor de cloud por la capacidad de almacenamiento de objetos en el cloud. Desde que Cloud Backup conserva las eficiencias del almacenamiento del volumen de origen, pagará los costes del almacenamiento de objetos del proveedor de cloud por las eficiencias de los datos _After_ ONTAP (en cuanto a la menor cantidad de datos después de aplicar la deduplicación y la compresión).
+Se paga un recargo por los recursos al proveedor de cloud por la capacidad de almacenamiento de objetos en el cloud. Como el backup y la recuperación de datos de BlueXP conserva las eficiencias de almacenamiento del volumen de origen, usted paga los costes de almacenamiento de objetos del proveedor de cloud para las eficiencias _después_ de la ONTAP de los datos (para una menor cantidad de datos después de aplicar la deduplicación y la compresión).
 
 *cargos por servicio*
 
@@ -91,7 +91,7 @@ El servicio de backup consta de dos formas de pago. La primera opción es suscri
 
 == Licencia
 
-Cloud Backup está disponible en dos opciones de licencia: Pago por uso (PAYGO) y con su propia licencia (BYOL). Hay disponible una prueba gratuita de 30 días si no tiene licencia.
+El backup y recuperación de BlueXP está disponible en dos opciones de licencia: Pago por uso (PAYGO) y BYOL (BYOL). Hay disponible una prueba gratuita de 30 días si no tiene licencia.
 
 
 
@@ -105,7 +105,7 @@ Los archivos de copia de seguridad no se eliminan cuando el servicio está desha
 
 === Suscripción de pago por uso
 
-Cloud Backup ofrece licencias basadas en consumo en un modelo de pago por uso. Después de suscribirse a través del mercado de su proveedor de nube, paga por GB los datos de los que se ha realizado una copia de seguridad: ​there no es el pago inicial. Su proveedor de cloud se le factura con cargo mensual.
+El backup y la recuperación de BlueXP ofrece licencias basadas en el consumo en un modelo de pago por uso. Después de suscribirse a través del mercado de su proveedor de nube, paga por GB los datos de los que se ha realizado una copia de seguridad: ​there no es el pago inicial. Su proveedor de cloud se le factura con cargo mensual.
 
 Debe suscribirse aunque tenga una prueba gratuita o si lleva su propia licencia (BYOL):
 
@@ -121,7 +121,7 @@ Por ejemplo, si tiene una licencia BYOL de 10 TB, toda la capacidad que supere l
 
 No se le cobrará su suscripción de pago por uso durante su prueba gratuita o si no ha superado su licencia BYOL.
 
-link:task-licensing-cloud-backup.html#use-a-cloud-backup-paygo-subscription["Aprenda a configurar una suscripción de pago por uso"].
+link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-paygo-subscription["Aprenda a configurar una suscripción de pago por uso"].
 
 
 
@@ -131,20 +131,20 @@ BYOL se basa en el plazo (12, 24 o 36 meses) en incrementos de 1 TB. Usted paga 
 
 Recibirá un número de serie que introduzca en la página de Blue XP Digital Wallet para activar el servicio. Cuando se alcance cualquiera de los límites, deberá renovar la licencia. La licencia BYOL de copia de seguridad se aplica a todos los sistemas de origen asociados a su https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["Cuenta BlueXP"^].
 
-link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["Aprenda a gestionar sus licencias BYOL"].
+link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Aprenda a gestionar sus licencias BYOL"].
 
 
 
-== Cómo funciona Cloud Backup
+== Funcionamiento del backup y la recuperación de BlueXP
 
-Cuando habilita Cloud Backup en un sistema Kubernetes, el servicio realiza un backup completo de sus datos. Tras el primer backup, todos los backups adicionales son incrementales, lo que significa que solo se realiza un backup de los bloques modificados y los nuevos bloques. De este modo se minimiza el tráfico de red.
+Cuando activas el backup y la recuperación de datos de BlueXP en un sistema Kubernetes, el servicio realiza un backup completo de tus datos. Tras el primer backup, todos los backups adicionales son incrementales, lo que significa que solo se realiza un backup de los bloques modificados y los nuevos bloques. De este modo se minimiza el tráfico de red.
 
 
 CAUTION: Cualquier acción que se realice directamente desde el entorno de su proveedor de cloud para gestionar o cambiar los archivos de copia de seguridad puede dañar los archivos y provocar una configuración no compatible.
 
 La siguiente imagen muestra la relación entre cada componente:
 
-image:diagram_cloud_backup_general_k8s.png["Un diagrama muestra cómo Cloud Backup se comunica con los volúmenes en los sistemas de origen y el almacenamiento de objetos de destino donde se encuentran los archivos de backup."]
+image:diagram_cloud_backup_general_k8s.png["Un diagrama que muestra cómo se comunican el backup y la recuperación de BlueXP con los volúmenes en los sistemas de origen y el almacenamiento de objetos de destino donde se encuentran los archivos de backup."]
 
 
 
@@ -175,7 +175,7 @@ endif::gcp[]
 
 === Configuración de retención y programación de backup personalizable por clúster
 
-Al habilitar Cloud Backup para un entorno de trabajo, todos los volúmenes que inicialmente seleccione se incluirán en los backups con la política de backup predeterminada que haya definido. Si desea asignar diferentes políticas de backup a ciertos volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar dichas políticas a otros volúmenes.
+Al habilitar el backup y la recuperación de BlueXP para un entorno de trabajo, se realiza un backup de todos los volúmenes que seleccionaste inicialmente, con la política de backup predeterminada que definas. Si desea asignar diferentes políticas de backup a ciertos volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar dichas políticas a otros volúmenes.
 
 Se puede elegir una combinación de backups por hora, diarios, semanales y mensuales de todos los volúmenes.
 
@@ -185,7 +185,7 @@ Una vez que haya alcanzado el número máximo de backups para una categoría o i
 
 == Volúmenes compatibles
 
-Cloud Backup es compatible con volúmenes persistentes (VP).
+El backup y la recuperación de BlueXP admiten volúmenes persistentes (VP).
 
 
 

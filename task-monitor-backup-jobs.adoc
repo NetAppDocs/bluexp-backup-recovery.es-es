@@ -31,7 +31,7 @@ El estado del backup y la restauración puede ser:
 * Error
 
 
-Tanto las operaciones de copia de seguridad y restauración iniciadas por el usuario desde la interfaz de usuario y la API de copia de seguridad en la nube, como los trabajos iniciados por el sistema, como las operaciones de copia de seguridad programadas en curso, están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecutan ONTAP 9.13.0 o superior.
+Tanto las operaciones de backup y restauración iniciadas por el usuario que se inician desde la IU y la API de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup programadas continuas, están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecuten ONTAP 9.13.0 o posterior.
 
 
 TIP: Cuando se ejecuta una versión anterior de ONTAP en sistemas Cloud Volumes ONTAP o en sistemas ONTAP locales, solo se muestran los trabajos iniciados por el usuario.
@@ -111,7 +111,7 @@ image:screenshot_backup_job_monitor_details2.png["Captura de pantalla que muestr
 
 === Descargar resultados de monitorización de trabajos como informe
 
-Puede descargar el contenido de la página principal Supervisión de trabajos como un informe después de refinarlo. Cloud Backup genera y descarga un archivo .CSV que puede revisar y enviar a otros grupos según sea necesario. El archivo .CSV incluye hasta 10,000 filas de datos.
+Puede descargar el contenido de la página principal Supervisión de trabajos como un informe después de refinarlo. El backup y recuperación de BlueXP genera y descarga un archivo .CSV que puede revisar y enviar a otros grupos según sea necesario. El archivo .CSV incluye hasta 10,000 filas de datos.
 
 Desde la información Detalles de supervisión de trabajos, puede descargar un archivo JSON que contiene detalles para un solo trabajo.
 
@@ -142,12 +142,12 @@ Error de backup de volumen ad hoc (bajo demanda)
 
 
  a| 
-No se pudo activar Cloud Backup en el entorno de trabajo
+La activación de backup y recuperación de BlueXP falló en el entorno de trabajo
 | Crítico 
 
 
  a| 
-Error en la operación de restauración de backup de cloud
+Error en la operación de backup y restauración de recuperación de BlueXP
 | Crítico 
 
 
@@ -170,7 +170,7 @@ NOTE: A partir de Cloud Volumes ONTAP 9.13.0, se muestran todas las alertas. En 
 
 De forma predeterminada, los administradores de cuentas de BlueXP reciben correos electrónicos para todas las alertas "críticas" y "recomendaciones". Todos los demás usuarios y destinatarios están configurados, de forma predeterminada, para no recibir ningún correo electrónico de notificación. Pueden enviarse correos electrónicos a usuarios de BlueXP que formen parte de su cuenta de cloud de NetApp o a cualquier otro destinatario que tenga que conocer la actividad de backup y restauración.
 
-Para recibir las alertas de correo electrónico de Cloud Backup, deberá seleccionar los tipos de gravedad de notificación "crítico" y "error".
+Para recibir alertas por correo electrónico de backup y recuperación de BlueXP, tendrás que seleccionar los tipos de gravedad de notificaciones «Critical» y «Error».
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
 

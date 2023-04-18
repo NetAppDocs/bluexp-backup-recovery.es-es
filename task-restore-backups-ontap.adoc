@@ -22,7 +22,7 @@ Puede restaurar una carpeta ** en un volumen del entorno de trabajo original, en
 
 Puede restaurar *archivos* en un volumen del entorno de trabajo original, en un volumen de un entorno de trabajo diferente que utiliza la misma cuenta de cloud o en un volumen de un sistema ONTAP local.
 
-Se necesita una licencia de Cloud Backup válida para restaurar datos de archivos de backup a un sistema de producción.
+Se requiere una licencia válida de backup y recuperación de BlueXP para restaurar los datos desde los archivos de backup a un sistema de producción.
 
 
 
@@ -31,7 +31,7 @@ Se necesita una licencia de Cloud Backup válida para restaurar datos de archivo
 Restore Dashboard se utiliza para realizar operaciones de volumen, carpeta y restauración de archivos. Para acceder al Panel de restauración, haga clic en *copia de seguridad y recuperación* en el menú BlueXP y, a continuación, haga clic en la ficha *Restaurar*. También puede hacer clic en image:screenshot_gallery_options.gif["Botón más"] > *Ver el Panel de restauración* desde el servicio de copia de seguridad y recuperación desde el panel Servicios.
 
 
-NOTE: Cloud Backup debe estar activado como mínimo en un entorno de trabajo y deben existir archivos de backup iniciales.
+NOTE: El backup y la recuperación de BlueXP deben estar activados al menos en un entorno de trabajo y deben existir archivos de copia de seguridad iniciales.
 
 image:screenshot_restore_dashboard.png["El Panel de restauración muestra las opciones para utilizar la función examinar  Restaurar o Buscar  Restaurar."]
 
@@ -165,7 +165,7 @@ NOTE: No se pueden restaurar carpetas o archivos si el archivo de copia de segur
 
 === Restaurar volúmenes mediante Browse y Restore
 
-Al restaurar un volumen a partir de un archivo de copia de seguridad, Cloud Backup crea un volumen _new_ utilizando los datos de la copia de seguridad. Puede restaurar los datos en un volumen del entorno de trabajo original o en otro entorno de trabajo ubicado en la misma cuenta de cloud que el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
+Cuando se restaura un volumen a partir de un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Puede restaurar los datos en un volumen del entorno de trabajo original o en otro entorno de trabajo ubicado en la misma cuenta de cloud que el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
 
 image:diagram_browse_restore_volume.png["Diagrama que muestra el flujo para realizar una operación de restauración de volumen mediante examinar  Restore."]
 
@@ -255,7 +255,7 @@ endif::gcp[]
 
 
 .Resultado
-Cloud Backup crea un nuevo volumen según el backup seleccionado. Puede hacerlo link:task-manage-backups-ontap.html["gestione la configuración de backup para este nuevo volumen"] según sea necesario.
+El backup y la recuperación de BlueXP crea un nuevo volumen basado en el backup que has seleccionado. Puede hacerlo link:task-manage-backups-ontap.html["gestione la configuración de backup para este nuevo volumen"] según sea necesario.
 
 Tenga en cuenta que la restauración de un volumen a partir de un archivo de backup que reside en el almacenamiento de archivado puede tardar varios minutos u horas, según el nivel de archivado y la prioridad de restauración. Puede hacer clic en la ficha *Supervisión de trabajos* para ver el progreso de la restauración.
 
@@ -294,7 +294,7 @@ El proceso va como este:
 
 . Cuando desee restaurar una carpeta o uno o más archivos desde una copia de seguridad de volumen, haga clic en la ficha *Restaurar* y haga clic en *Restaurar archivos o carpeta* en _Browse & Restore_.
 . Seleccione el entorno de trabajo de origen, el volumen y el archivo de copia de seguridad en el que residen la carpeta o los archivos.
-. Cloud Backup muestra las carpetas y los archivos que existen dentro del archivo de copia de seguridad seleccionado.
+. La copia de seguridad y recuperación de BlueXP muestra las carpetas y archivos que existen dentro del archivo de copia de seguridad seleccionado.
 . Seleccione la carpeta o los archivos que desea restaurar a partir de esa copia de seguridad.
 . Seleccione la ubicación de destino en la que desea restaurar la carpeta o los archivos (el entorno de trabajo, el volumen y la carpeta) y haga clic en *Restaurar*.
 . Se restauran los archivos.
@@ -425,9 +425,9 @@ Tiene varias opciones para la ubicación al restaurar carpetas y archivos.
 
 Es posible restaurar un volumen, una carpeta o archivos desde un archivo de backup de ONTAP mediante Search & Restore. Search & Restore le permite buscar un volumen, una carpeta o un archivo específicos a partir de todos los backups almacenados en el almacenamiento en cloud para un proveedor en concreto y, a continuación, llevar a cabo una restauración. No necesita conocer el nombre exacto del entorno de trabajo o el nombre del volumen; la búsqueda se realiza mediante todos los archivos de backup de volúmenes.
 
-La operación de búsqueda también busca todas las copias Snapshot locales que existen también para los volúmenes ONTAP. Como la restauración de datos de una copia Snapshot local puede ser más rápida y económica que la restauración desde un archivo de respaldo, es posible que desee restaurar datos de la copia Snapshot. Puede restaurar la snapshot como un volumen nuevo https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Desde la página Detalles de volumen del lienzo"^] (No de Cloud Backup).
+La operación de búsqueda también busca todas las copias Snapshot locales que existen también para los volúmenes ONTAP. Como la restauración de datos de una copia Snapshot local puede ser más rápida y económica que la restauración desde un archivo de respaldo, es posible que desee restaurar datos de la copia Snapshot. Puede restaurar la snapshot como un volumen nuevo https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Desde la página Detalles de volumen del lienzo"^] (No del backup y recuperación de BlueXP).
 
-Al restaurar un volumen a partir de un archivo de copia de seguridad, Cloud Backup crea un volumen _new_ utilizando los datos de la copia de seguridad. Puede restaurar los datos como un volumen en el entorno de trabajo original o a un entorno de trabajo diferente ubicado en la misma cuenta de cloud que el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
+Cuando se restaura un volumen a partir de un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Puede restaurar los datos como un volumen en el entorno de trabajo original o a un entorno de trabajo diferente ubicado en la misma cuenta de cloud que el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
 
 Es posible restaurar carpetas o archivos en la ubicación del volumen original, a un volumen diferente del mismo entorno de trabajo o a un entorno de trabajo diferente que utilice la misma cuenta de cloud. También puede restaurar carpetas y archivos en un volumen de un sistema ONTAP en las instalaciones.
 
@@ -536,7 +536,7 @@ ifdef::aws[]
 +
 ** Deben añadirse permisos específicos de Amazon Athena, AWS Glue y AWS S3 a la función de usuario que proporciona BlueXP con permisos. link:task-backup-onprem-to-aws.html#set-up-s3-permissions["Asegúrese de que todos los permisos estén configurados correctamente"].
 +
-Tenga en cuenta que si ya estaba utilizando Cloud Backup con un conector configurado anteriormente, tendrá que agregar los permisos Athena y Glue al rol de usuario de BlueXP ahora. Estos son nuevos y se requieren para buscar y restaurar.
+Tenga en cuenta que, si ya estaba utilizando la copia de seguridad y la recuperación de BlueXP con un conector que configuró en el pasado, deberá añadir los permisos de Athena y Glue al rol de usuario de BlueXP ahora. Estos son nuevos y se requieren para buscar y restaurar.
 
 
 
@@ -551,7 +551,7 @@ ifdef::azure[]
 ** Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") en su suscripción. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Vea cómo registrar este proveedor de recursos para su suscripción"^]. Debe ser Subscription *Owner* o *Contributor* para registrar el proveedor de recursos.
 ** Los permisos específicos de cuentas de almacenamiento de áreas de trabajo y lagos de datos de Azure Synapse deben agregarse a la función de usuario que proporciona permisos a BlueXP. link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["Asegúrese de que todos los permisos estén configurados correctamente"].
 +
-Tenga en cuenta que si ya estaba utilizando Cloud Backup con un conector configurado anteriormente, tendrá que agregar los permisos de cuenta de Azure Synapse Workspace y de almacenamiento de lagos de datos al rol de usuario de BlueXP ahora. Estos son nuevos y se requieren para buscar y restaurar.
+Tenga en cuenta que, si ya estaba utilizando el backup y la recuperación de BlueXP con un conector que configuró en el pasado, deberá añadir los permisos de la cuenta de almacenamiento de lago de datos y espacio de trabajo de Azure Synapse Workspace ahora al rol de usuario de BlueXP. Estos son nuevos y se requieren para buscar y restaurar.
 
 ** El conector debe configurarse *sin* un servidor proxy para la comunicación HTTP a Internet. Si ha configurado un servidor proxy HTTP para el conector, no puede utilizar la función Buscar y reemplazar.
 
@@ -566,7 +566,7 @@ ifdef::gcp[]
 +
 ** Se deben agregar permisos específicos de Google BigQuery a la función de usuario que proporciona permisos a BlueXP. link:task-backup-onprem-to-gcp.html#verify-or-add-permissions-to-the-connector["Asegúrese de que todos los permisos estén configurados correctamente"].
 +
-Tenga en cuenta que si ya estaba utilizando Cloud Backup con un conector configurado anteriormente, tendrá que agregar los permisos BigQuery a la función de usuario de BlueXP ahora. Estos son nuevos y se requieren para buscar y restaurar.
+Ten en cuenta que, si ya utilizabas la copia de seguridad y la recuperación de BlueXP con un conector que configuraste en el pasado, tendrás que añadir los permisos de BigQuery al rol de usuario de BlueXP ahora. Estos son nuevos y se requieren para buscar y restaurar.
 
 
 
@@ -608,7 +608,7 @@ La página resultados de la búsqueda muestra todas las ubicaciones que tienen u
 
 image:diagram_search_restore_vol_file.png["Diagrama que muestra el flujo para realizar una operación de restauración de volúmenes, carpetas o archivos mediante Search  Restore."]
 
-Como puede ver, sólo necesita conocer un nombre parcial y las búsquedas de Cloud Backup en todos los archivos de copia de seguridad que coincidan con su búsqueda.
+Como puedes ver, realmente solo necesitas saber un nombre parcial y las búsquedas de backup y recuperación de BlueXP a través de todos los archivos de copia de seguridad que coincidan con tu búsqueda.
 
 
 
@@ -616,7 +616,7 @@ Como puede ver, sólo necesita conocer un nombre parcial y las búsquedas de Clo
 
 Antes de poder utilizar Buscar y restaurar, debe habilitar la función "indexación" en cada entorno de trabajo de origen desde el que planea restaurar volúmenes o archivos. Esto permite al catálogo indexado realizar un seguimiento de cada volumen y cada archivo de copia de seguridad, lo que hace que las búsquedas sean muy rápidas y eficaces.
 
-Al habilitar esta funcionalidad, Cloud Backup habilita SnapDiff v3 en la SVM para sus volúmenes y realiza las siguientes acciones:
+Cuando habilita esta funcionalidad, el backup y recuperación de BlueXP permite utilizar SnapDiff v3 en la SVM para los volúmenes y realiza las siguientes acciones:
 
 ifdef::aws[]
 

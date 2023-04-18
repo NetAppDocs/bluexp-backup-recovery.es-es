@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
 keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
-summary: 'Puede obtener una licencia de Cloud Backup al comprar una suscripción de pago por uso (PAYGO) o de mercado anual a su proveedor de cloud, o al adquirir una licencia propia (BYOL) de NetApp. Se necesita una licencia válida para activar Cloud Backup en un entorno de trabajo, para crear backups de los datos de producción y para restaurar los datos de backup en un sistema de producción.' 
+summary: 'Puedes comprar el pago por uso (PAYGO) o una suscripción anual de mercado de tu proveedor de cloud, o bien si compras una licencia BYOL (BYOL) a NetApp para obtener las licencias de backup y recuperación de BlueXP. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción.' 
 ---
-= Configure la licencia para Cloud Backup
+= Configura las licencias para el backup y la recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,29 +14,29 @@ summary: 'Puede obtener una licencia de Cloud Backup al comprar una suscripción
 
 
 [role="lead"]
-Puede obtener una licencia de Cloud Backup al comprar una suscripción de pago por uso (PAYGO) o de mercado anual a su proveedor de cloud, o al adquirir una licencia propia (BYOL) de NetApp. Se necesita una licencia válida para activar Cloud Backup en un entorno de trabajo, para crear backups de los datos de producción y para restaurar los datos de backup en un sistema de producción.
+Puedes comprar el pago por uso (PAYGO) o una suscripción anual de mercado de tu proveedor de cloud, o bien si compras una licencia BYOL (BYOL) a NetApp para obtener las licencias de backup y recuperación de BlueXP. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción.
 
 Antes de leer más:
 
-* Si ya se ha suscrito a la suscripción de pago por uso (PAYGO) en el mercado de su proveedor de cloud para un sistema Cloud Volumes ONTAP, entonces también estará suscrito automáticamente a Cloud Backup. No tendrá que volver a suscribirse.
-* Cloud Backup Bring-Your-Own-License (BYOL) es una licencia flotante que puede utilizar en todos los sistemas asociados con su cuenta de BlueXP. Por lo tanto, si dispone de suficiente capacidad de backup a partir de una licencia BYOL existente, no tendrá que adquirir otra licencia BYOL.
+* Si ya te has suscrito a la suscripción de pago por uso (PAYGO) en el mercado de tu proveedor de cloud para un sistema Cloud Volumes ONTAP, también te suscribirás automáticamente al backup y la recuperación de BlueXP. No tendrá que volver a suscribirse.
+* El backup y recuperación de datos de BlueXP trae tu propia licencia (BYOL) es una licencia flotante que puedes utilizar en todos los sistemas asociados con tu cuenta de BlueXP. Por lo tanto, si dispone de suficiente capacidad de backup a partir de una licencia BYOL existente, no tendrá que adquirir otra licencia BYOL.
 * Si utiliza una licencia BYOL, se recomienda suscribirse también a una suscripción a PAYGO. Si realiza un backup de más datos de los permitidos en su licencia BYOL, el backup continúa a través de su suscripción de pago por uso: El servicio no se interrumpe.
 * Al realizar backups de datos de ONTAP en las instalaciones en StorageGRID, necesita una licencia BYOL, pero no supone ningún coste para el espacio de almacenamiento del proveedor de cloud.
 
 
-link:concept-ontap-backup-to-cloud.html#cost["Obtenga más información sobre los costes relacionados con el uso de Cloud Backup."]
+link:concept-ontap-backup-to-cloud.html#cost["Obtén más información sobre los costes relacionados con el uso de backup y recuperación de BlueXP."]
 
 
 
 == prueba gratuita de 30 días
 
-Hay disponible una prueba gratuita de 30 días de Cloud Backup en la suscripción de pago por uso en el mercado de su proveedor de cloud. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que si paga por la suscripción a Marketplace al poner en marcha un sistema Cloud Volumes ONTAP y después inicia la prueba gratuita de Cloud Backup 10 días después, tendrá 20 días para utilizar la prueba gratuita.
+Hay disponible una prueba gratuita de 30 días para backup y recuperación de BlueXP en la suscripción de pago por uso en el mercado de tu proveedor de cloud. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, tendrá 20 días para utilizar la prueba gratuita.
 
-Cuando finalice la prueba gratuita, se le cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decide no seguir utilizando Cloud Backup, solo link:task-manage-backups-ontap.html#unregistering-cloud-backup-for-a-working-environment["Cancele el registro de Cloud Backup en el entorno de trabajo"] antes de que termine la prueba y no se le cobrará.
+Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decides no continuar utilizando el backup y la recuperación de BlueXP, solo link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro del backup y la recuperación de BlueXP en el entorno de trabajo"] antes de que termine la prueba y no se le cobrará.
 
 
 
-== Utilice una suscripción a Cloud Backup PAYGO
+== Utiliza una suscripción PAYGO de backup y recuperación de BlueXP
 
 En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debe suscribirse aunque tenga una prueba gratuita o si lleva su propia licencia (BYOL):
 
@@ -46,22 +46,16 @@ En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de 
 
 No se le cobrará su suscripción de pago por uso durante su prueba gratuita o si no ha superado su licencia BYOL.
 
-Existen algunos planes de PAYGO para Cloud Backup:
+Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:
 
 * Un paquete "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos ONTAP en las instalaciones.
-* Un paquete "CVO Professional" que le permite agrupar Cloud Volumes ONTAP y Cloud Backup. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
+* Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
+* Un paquete "CVO Edge Cache" tiene las mismas funciones que el paquete "CVO Professional", pero también incluye soporte para https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Caché de archivos global"^]. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
 
-
-ifdef::azure[]
-
-* Un paquete "CVO Edge Cache" tiene las mismas funciones que el paquete "CVO Professional", pero también incluye soporte para https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Caché de archivos global"^]. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción solo está disponible a través de Azure Marketplace y no le permite realizar un backup de datos de ONTAP en las instalaciones.
-
-
-endif::azure[]
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Obtenga más información sobre estos paquetes de licencias basados en capacidad"].
 
-Utilice estos enlaces para suscribirse a Cloud Backup desde su mercado proveedor de cloud:
+Utilice estos enlaces para suscribirse al backup y la recuperación de BlueXP desde su mercado del proveedor de cloud:
 
 ifdef::aws[]
 
@@ -88,7 +82,7 @@ endif::gcp[]
 
 == Utilizar un contrato anual
 
-Pague por los backups en el cloud anualmente al comprar un contrato anual.
+Paga por el backup y la recuperación de BlueXP cada año mediante la compra de un contrato anual.
 
 ifdef::aws[]
 
@@ -98,7 +92,7 @@ Al utilizar AWS, hay dos contratos anuales disponibles en https://aws.amazon.com
 +
 Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Asocie la suscripción con sus credenciales de AWS"^]. Tenga en cuenta que también tendrá que pagar por sus sistemas Cloud Volumes ONTAP mediante esta suscripción anual de contrato, ya que sólo puede asignar una suscripción activa a sus credenciales de AWS en BlueXP.
 
-* Un plan "CVO Professional" que le permite agrupar Cloud Volumes ONTAP y Cloud Backup. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
+* Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
 +
 Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Tema sobre licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
 
@@ -111,41 +105,41 @@ endif::aws[]
 
 ifdef::azure[]
 
-Si utiliza Azure, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Azure Marketplace. Una vez que NetApp comparta la oferta privada con usted, podrá seleccionar el plan anual al suscribirse desde Azure Marketplace durante la activación de Cloud Backup.
+Si utiliza Azure, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Azure Marketplace. Después de que NetApp comparta la oferta privada con usted, puede seleccionar el plan anual al suscribirse desde Azure Marketplace durante la activación del backup y la recuperación de BlueXP.
 
 endif::azure[]
 
 ifdef::gcp[]
 
-Cuando utilice GCP, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Google Cloud Marketplace. Una vez que NetApp comparta la oferta privada con usted, podrá seleccionar el plan anual al suscribirse desde Google Cloud Marketplace durante la activación de Cloud Backup.
+Cuando utilice GCP, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Google Cloud Marketplace. Después de que NetApp comparta la oferta privada con usted, podrá seleccionar el plan anual al suscribirse en Google Cloud Marketplace durante la activación del backup y la recuperación de BlueXP.
 
 endif::gcp[]
 
 
 
-== Usar una licencia BYOL de Cloud Backup
+== Utiliza una licencia BYOL de backup y recuperación de BlueXP
 
 Las licencias que traiga sus propias de NetApp proporcionan períodos de 1, 2 o 3 años. Solo paga por los datos que protege, calculados por la capacidad lógica utilizada (_antes_ cualquier eficiencia) de los volúmenes de ONTAP de origen que se incluirán en el backup. Esta capacidad también se conoce como terabytes de interfaz (FETB).
 
-La licencia de BYOL Cloud Backup es una licencia flotante donde la capacidad total se comparte en todos los sistemas asociados con su cuenta de BlueXP. Para los sistemas ONTAP, puede obtener una estimación aproximada de la capacidad que necesitará ejecutando el comando de la CLI `volume show -fields logical-used-by-afs` para los volúmenes de los que planea realizar backup.
+La licencia de backup y recuperación de BYOL BlueXP es una licencia flotante donde la capacidad total se comparte entre todos los sistemas asociados con tu cuenta de BlueXP. Para los sistemas ONTAP, puede obtener una estimación aproximada de la capacidad que necesitará ejecutando el comando de la CLI `volume show -fields logical-used-by-afs` para los volúmenes de los que planea realizar backup.
 
-Si no tiene una licencia de Cloud Backup BYOL, haga clic en el icono de chat de la parte inferior derecha de BlueXP para comprar una.
+Si no tienes una licencia BYOL de backup y recuperación de BlueXP, haz clic en el icono de chat en la parte inferior derecha de BlueXP para comprar una.
 
-De manera opcional, si tiene una licencia basada en nodo sin asignar para Cloud Volumes ONTAP que no usará, puede convertirla en una licencia de Cloud Backup con la misma equivalencia en dólares y la misma fecha de caducidad. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vaya aquí para obtener más información"^].
+Opcionalmente, si tiene una licencia basada en nodos sin asignar para Cloud Volumes ONTAP que no utilizará, puede convertirla en una licencia de backup y recuperación de BlueXP con la misma equivalencia en dólar y la misma fecha de caducidad. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vaya aquí para obtener más información"^].
 
 La página de Digital Wallet de BlueXP se utiliza para gestionar licencias BYOL. Puede añadir licencias nuevas, actualizar licencias existentes y ver el estado de la licencia desde Digital Wallet.
 
 
 
-=== Obtenga su archivo de licencia de Cloud Backup
+=== Obtenga el archivo de licencia de backup y recuperación de BlueXP
 
-Después de adquirir la licencia de Cloud Backup, activa la licencia en BlueXP introduciendo el número de serie de Cloud Backup y la cuenta NSS o cargando el archivo de licencia de NLF. Los pasos a continuación muestran cómo obtener el archivo de licencia de NLF si planea utilizar ese método.
+Después de comprar tu licencia de backup y recuperación de BlueXP, activa la licencia en BlueXP introduciendo el número de serie de backup y recuperación de BlueXP y la cuenta de NSS, o cargando el archivo de licencia de NLF. Los pasos a continuación muestran cómo obtener el archivo de licencia de NLF si planea utilizar ese método.
 
-Si ejecuta Cloud Backup en un sitio local que no tiene acceso a Internet, lo que significa que ha implementado el conector BlueXP en un host del sitio local sin conexión, necesitará obtener el archivo de licencia de un sistema conectado a Internet. La activación de la licencia con el número de serie y la cuenta de NSS no está disponible para las instalaciones sin conexión (sitio oscuro).
+Si ejecutas el backup y recuperación de BlueXP en un sitio local que no tiene acceso a Internet, lo que significa que has implementado el conector BlueXP en un host de ese sitio local sin conexión, deberás obtener el archivo de licencia de un sistema conectado a Internet. La activación de la licencia con el número de serie y la cuenta de NSS no está disponible para las instalaciones sin conexión (sitio oscuro).
 
 .Pasos
 . Inicie sesión en la https://mysupport.netapp.com["Sitio de soporte de NetApp"^] Y haga clic en *sistemas > licencias de software*.
-. Introduzca el número de serie de la licencia de Cloud Backup.
+. Introduce el número de serie de tu licencia de backup y recuperación de BlueXP.
 +
 image:screenshot_cloud_backup_license_step1.gif["Captura de pantalla que muestra una tabla de licencias después de buscar por número de serie."]
 
@@ -161,9 +155,9 @@ Puede encontrar su ID de cuenta de BlueXP seleccionando el menú desplegable *cu
 
 
 
-=== Añada licencias BYOL de Cloud Backup a su cuenta
+=== Añade licencias BYOL de backup y recuperación de BlueXP a tu cuenta
 
-Después de adquirir una licencia de Cloud Backup para su cuenta de NetApp, tendrá que añadir la licencia a BlueXP.
+Después de comprar una licencia de backup y recuperación de BlueXP para tu cuenta de NetApp, tendrás que añadir la licencia a BlueXP.
 
 .Pasos
 . En el menú BlueXP, haga clic en *Gobierno > cartera digital* y, a continuación, seleccione la ficha *licencias de servicios de datos*.
@@ -176,33 +170,33 @@ Si su cuenta del sitio de soporte de NetApp no está disponible en la lista desp
 
 ** Si tiene el archivo de licencia de copia de seguridad (requerido cuando está instalado en un sitio oscuro), seleccione la opción *cargar archivo de licencia* y siga las indicaciones para adjuntar el archivo.
 +
-image:screenshot_services_license_add2.png["Una captura de pantalla que muestra la página para añadir la licencia BYOL de Cloud Backup."]
+image:screenshot_services_license_add2.png["Una captura de pantalla en la que se muestra la página para añadir la licencia BYOL de backup y recuperación de BlueXP."]
 
 
 
 
 
 .Resultado
-BlueXP añade la licencia para que Cloud Backup esté activo.
+BlueXP añade la licencia para que el backup y la recuperación de BlueXP estén activos.
 
 
 
-=== Actualice una licencia BYOL de Cloud Backup
+=== Actualizar una licencia BYOL de backup y recuperación de BlueXP
 
 Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de cartera digital y en https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"].
 
 image:screenshot_services_license_expire.png["Una captura de pantalla que muestra una licencia que está a punto de caducar en la página de Digital Wallet."]
 
-Puede actualizar su licencia de Cloud Backup antes de que caduque para no interrumpir su capacidad para realizar copias de seguridad y restaurar sus datos.
+Puedes actualizar la licencia de backup y recuperación de BlueXP antes de que caduque para que no se produzcan interrupciones en la capacidad de realizar copias de seguridad y restaurar los datos.
 
 .Pasos
-. Haga clic en el icono de chat situado en la parte inferior derecha de BlueXP o póngase en contacto con Soporte técnico para solicitar una extensión de su término o capacidad adicional a su licencia de Cloud Backup para el número de serie concreto.
+. Haz clic en el icono de chat en la parte inferior derecha de BlueXP, o ponte en contacto con el servicio de soporte de, para solicitar una extensión de tu plazo o capacidad adicional a tu licencia de backup y recuperación de BlueXP para el número de serie concreto.
 +
 Tras pagar la licencia y registrarse en el sitio de soporte de NetApp, BlueXP actualiza automáticamente la licencia en la cartera digital y la página licencias de servicios de datos reflejarán el cambio en 5 a 10 minutos.
 
 . Si BlueXP no puede actualizar automáticamente la licencia (por ejemplo, cuando está instalada en un sitio oscuro), deberá cargar manualmente el archivo de licencia.
 +
-.. Puede hacerlo <<Obtenga su archivo de licencia de Cloud Backup,Obtenga el archivo de licencia del sitio de soporte de NetApp>>.
+.. Puede hacerlo <<Obtenga el archivo de licencia de backup y recuperación de BlueXP,Obtenga el archivo de licencia del sitio de soporte de NetApp>>.
 .. En la ficha licencias de servicios de datos_ de la página cartera digital, haga clic en image:screenshot_horizontal_more_button.gif["Icono más"] Para el número de serie del servicio que está actualizando y haga clic en *Actualizar licencia*.
 +
 image:screenshot_services_license_update1.png["Captura de pantalla de la selección del botón Actualizar licencia de un servicio concreto."]
@@ -213,13 +207,13 @@ image:screenshot_services_license_update1.png["Captura de pantalla de la selecci
 
 
 .Resultado
-BlueXP actualiza la licencia para que Cloud Backup siga estando activo.
+BlueXP actualiza la licencia para que el backup y la recuperación de BlueXP sigan estando activos.
 
 
 
 === Consideraciones sobre la licencia de BYOL
 
-Cuando se utiliza una licencia BYOL de Cloud Backup, BlueXP muestra una advertencia en la interfaz de usuario cuando el tamaño de todos los datos de los que realiza la copia de seguridad se acerca al límite de capacidad o se acerca a la fecha de caducidad de la licencia. Recibirá las siguientes advertencias:
+Cuando se utiliza una licencia BYOL de backup y recuperación de BlueXP, BlueXP muestra una advertencia en la interfaz de usuario cuando el tamaño de todos los datos de los que realiza backups se está acercando al límite de capacidad o está cerca de la fecha de caducidad de la licencia. Recibirá las siguientes advertencias:
 
 * Cuando los backups han alcanzado el 80 % de la capacidad con licencia y nuevamente cuando se ha alcanzado el límite
 * 30 días antes de que caduque una licencia, y de nuevo cuando caduque la licencia
@@ -233,6 +227,6 @@ Pueden ocurrir dos cosas cuando caduca su licencia BYOL:
 * Si la cuenta que está utilizando no tiene una cuenta de mercado, el servicio de copia de seguridad continúa ejecutándose, pero seguirá viendo las advertencias.
 
 
-Una vez que renueve su suscripción BYOL, BlueXP actualiza automáticamente la licencia. Si BlueXP no puede acceder al archivo de licencia a través de la conexión segura a Internet (por ejemplo, cuando está instalado en un sitio oscuro), puede obtener el archivo usted mismo y cargarlo manualmente en BlueXP. Para ver instrucciones, consulte link:task-licensing-cloud-backup.html#update-a-cloud-backup-byol-license["cómo actualizar una licencia de Cloud Backup"].
+Una vez que renueve su suscripción BYOL, BlueXP actualiza automáticamente la licencia. Si BlueXP no puede acceder al archivo de licencia a través de la conexión segura a Internet (por ejemplo, cuando está instalado en un sitio oscuro), puede obtener el archivo usted mismo y cargarlo manualmente en BlueXP. Para ver instrucciones, consulte link:task-licensing-cloud-backup.html#update-a-bluexp-backup-and-recovery-byol-license["Cómo actualizar una licencia de backup y recuperación de BlueXP"].
 
 Los sistemas que se han transferido a una licencia PAYGO se devuelven automáticamente a la licencia BYOL. Y los sistemas que se estaban ejecutando sin una licencia dejarán de ver las advertencias.

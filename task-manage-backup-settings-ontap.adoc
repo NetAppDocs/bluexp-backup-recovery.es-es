@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-backup-settings-ontap.html 
 keywords: cloud backup, cloud backup service, storage keys, network bandwidth, auto backup, delete yearly snapshot, export snapshots 
-summary: 'Puede cambiar muchas opciones de configuración de backup en el nivel del clúster que haya establecido al activar Cloud Backup para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar las claves de almacenamiento, la tasa de transferencia de los backups a su almacenamiento de objetos, si las copias Snapshot históricas se exportan como archivos de backup y más.' 
+summary: 'Puedes cambiar muchas opciones de backup a nivel de clúster que establezcas al activar el backup y la recuperación de BlueXP para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar las claves de almacenamiento, la tasa de transferencia de los backups a su almacenamiento de objetos, si las copias Snapshot históricas se exportan como archivos de backup y más.' 
 ---
 = Gestión de la configuración de backup en el nivel del clúster
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Puede cambiar muchas opciones de configuración de backup en el nivel 
 
 
 [role="lead"]
-Puede cambiar muchas opciones de configuración de backup en el nivel del clúster que haya establecido al activar Cloud Backup para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar las claves de almacenamiento, la tasa de transferencia de los backups a su almacenamiento de objetos, si las copias Snapshot históricas se exportan como archivos de backup y más.
+Puedes cambiar muchas opciones de backup a nivel de clúster que establezcas al activar el backup y la recuperación de BlueXP para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar las claves de almacenamiento, la tasa de transferencia de los backups a su almacenamiento de objetos, si las copias Snapshot históricas se exportan como archivos de backup y más.
 
 La configuración de backup a nivel de clúster está disponible en la página _Advanced Settings_.
 
@@ -101,7 +101,7 @@ Sólo tiene que seleccionar el nuevo espacio IP y hacer clic en *aplicar*. Tras 
 
 == Cambie el ancho de banda de red disponible para cargar backups en el almacenamiento de objetos
 
-Al activar Cloud Backup en un entorno de trabajo, de forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos del backup de volúmenes del entorno de trabajo al almacenamiento de objetos. Si observa que el tráfico de backup afecta a las cargas de trabajo de usuario normales, puede reducir la cantidad de ancho de banda de red utilizado durante la transferencia. Puede elegir un valor entre 1 y 1,000 Mbps como la velocidad máxima de transferencia.
+Al activar el backup y la recuperación de BlueXP en un entorno de trabajo, de forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de backup de los volúmenes del entorno de trabajo al almacenamiento de objetos. Si observa que el tráfico de backup afecta a las cargas de trabajo de usuario normales, puede reducir la cantidad de ancho de banda de red utilizado durante la transferencia. Puede elegir un valor entre 1 y 1,000 Mbps como la velocidad máxima de transferencia.
 
 image:screenshot_backup_edit_transfer_rate.png["Captura de pantalla de la entrada máxima velocidad de transferencia en la página Configuración avanzada."]
 
@@ -129,9 +129,9 @@ endif::aws[]
 
 == Cambie la configuración de backup automático para los volúmenes futuros
 
-Si no habilitó el backup automático de futuros volúmenes al activar Cloud Backup, puede empezar a realizar copias de seguridad automáticas de los volúmenes nuevos en la sección copia de seguridad automática. También puede seleccionar la política de backup que se aplicará a esos nuevos volúmenes. Si se asigna una política de backup a volúmenes recién creados, se garantizan que todos los datos estén protegidos.
+Si no activaste la copia de seguridad automática de futuros volúmenes al activar la copia de seguridad y la recuperación de BlueXP, puedes comenzar a hacer copias de seguridad automáticas de nuevos volúmenes en la sección Copia de seguridad automática. También puede seleccionar la política de backup que se aplicará a esos nuevos volúmenes. Si se asigna una política de backup a volúmenes recién creados, se garantizan que todos los datos estén protegidos.
 
-Si habilitó el backup automático de volúmenes futuros al activar Cloud Backup, puede cambiar la política de backup que se utilizará para los volúmenes recién creados en la sección Automatic Backup.
+Si habilitó el backup automático de futuros volúmenes al activar el backup y la recuperación de BlueXP, puede cambiar la política de backup que se utilizará para los volúmenes recién creados en la sección Backup automático.
 
 Tenga en cuenta que la política que desea aplicar a nuevos volúmenes ya debe existir. link:task-manage-backups-ontap.html#adding-a-new-backup-policy["Descubra cómo crear una nueva normativa de backup para un entorno de trabajo"].
 

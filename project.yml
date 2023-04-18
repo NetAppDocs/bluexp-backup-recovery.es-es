@@ -1,6 +1,6 @@
 ---
 settings:
-  name: Cloud Backup
+  name: BlueXP backup and recovery
   platform: cloud
   internal:
     pdf_enabled: true
@@ -24,13 +24,13 @@ settings:
   langs: es-es,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,fr-fr
 sidebar:
   entries:
-  - title: Documentos de Cloud Backup
+  - title: Documentos de backup y recuperación de BlueXP
     url: "/index.html"
   - title: Notas de la versión
     url: "/whats-new.html"
   - title: Manos a la obra
     entries:
-    - title: Más información acerca de Cloud Backup
+    - title: Descubre el backup y la recuperación de BlueXP
       url: "/concept-backup-to-cloud.html"
     - title: Configurar la licencia
       url: "/task-licensing-cloud-backup.html"
@@ -193,18 +193,16 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: Referencia
     entries:
-    - title: Configuración de la política de backup en cloud
+    - title: Configuración de la política de backup y recuperación de BlueXP
       url: "/concept-cloud-backup-policies.html"
     - title: Niveles de almacenamiento de archivado compatibles con AWS
-      flavor: aws
       url: "/reference-aws-backup-tiers.html"
     - title: Niveles de acceso de archivado de Azure compatibles
-      flavor: azure
       url: "/reference-azure-backup-tiers.html"
     - title: Compatibilidad con niveles de almacenamiento de archivado de Google
-      flavor: gcp
       url: "/reference-google-backup-tiers.html"
-    - title: Realice un backup de la base de datos de Cloud Backup en un sitio oscuro
+    - title: Realiza un backup de la base de datos de backup y recuperación de BlueXP
+        en un sitio oscuro
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Configure Backup para el acceso de varias cuentas en Azure
       flavor: azure
@@ -221,7 +219,7 @@ homepage:
   tiles:
   - title: Manos a la obra
     links:
-    - title: Más información acerca de Cloud Backup
+    - title: Descubre el backup y la recuperación de BlueXP
       url: concept-backup-to-cloud.html
     - title: Novedades
       url: whats-new.html
@@ -327,9 +325,9 @@ homepage:
     links:
     - title: Comunidad de NetApp
       url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS
-    - title: Blogs de Cloud Backup
+    - title: Blogs de backup y recuperación de BlueXP
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
-    - title: Casos prácticos de backup en el cloud
+    - title: Casos prácticos de backup y recuperación de BlueXP
       url: https://bluexp.netapp.com/cloud-backup
     - title: Seminarios web sobre el cloud
       url: https://bluexp.netapp.com/events

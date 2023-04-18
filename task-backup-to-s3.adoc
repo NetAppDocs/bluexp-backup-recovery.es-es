@@ -26,7 +26,7 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 [role="quick-margin-list"]
 * Ejecuta Cloud Volumes ONTAP 9.7P5 o posterior en AWS (se recomienda ONTAP 9.8P13 y versiones posteriores).
 * Dispone de una suscripción de proveedor de cloud válida para el espacio de almacenamiento en el que se ubicará los backups.
-* Se ha suscrito a https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Oferta de backup de BlueXP Marketplace"], an https://aws.amazon.com/marketplace/pp/B086PDWSS8["Contrato anual de AWS"], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["y activado"] Una licencia BYOL de Cloud Backup de NetApp.
+* Se ha suscrito a https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Oferta de backup de BlueXP Marketplace"], an https://aws.amazon.com/marketplace/pp/B086PDWSS8["Contrato anual de AWS"], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["y activado"] Una licencia BYOL de backup y recuperación de BlueXP de NetApp.
 * Tiene un conector instalado en AWS:
 +
 ** El conector se puede instalar en un sitio con acceso completo a Internet ("modo estándar") o con conectividad limitada a Internet ("modo restringido").
@@ -35,9 +35,9 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilite Cloud Backup en su sistema nuevo o existente
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilita el backup y la recuperación de BlueXP en tu sistema nuevo o existente
 [role="quick-margin-list"]
-* Nuevos sistemas: Cloud Backup está habilitado de forma predeterminada en el asistente del entorno de trabajo. Asegúrese de mantener la opción habilitada.
+* Nuevos sistemas: El backup y recuperación de BlueXP están habilitados de forma predeterminada en el asistente del entorno de trabajo. Asegúrese de mantener la opción habilitada.
 * Sistemas existentes: Seleccione el entorno de trabajo y haga clic en *Activar* junto al servicio copia de seguridad y recuperación del panel derecho y, a continuación, siga el asistente de configuración.
 +
 image:screenshot_backup_cvo_enable.png["Una captura de pantalla que muestra el botón Habilitar copia de seguridad y recuperación que está disponible después de seleccionar un entorno de trabajo."]
@@ -59,10 +59,10 @@ La política predeterminada realiza backups de volúmenes todos los días y cons
 Los backups se almacenan de forma predeterminada en el almacenamiento estándar S3. Si el clúster utiliza ONTAP 9.10.1 o superior, puede optar por colocar los backups en niveles en el almacenamiento S3 Glacier o S3 Glacier Deep Archive después de un determinado número de días para aumentar la optimización de los costes.
 
 [role="quick-margin-para"]
-De manera opcional, al usar ONTAP 9.11.1 y versiones posteriores, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando una de las configuraciones _DataLock y Protección de ransomware_. link:concept-cloud-backup-policies.html["Obtenga más información acerca de las opciones de configuración de la política de Cloud Backup disponibles"^].
+De manera opcional, al usar ONTAP 9.11.1 y versiones posteriores, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando una de las configuraciones _DataLock y Protección de ransomware_. link:concept-cloud-backup-policies.html["Obtén más información sobre los ajustes de configuración de la política de backup y recuperación de BlueXP disponibles"^].
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_aws.png["Una captura de pantalla que muestra la configuración de Cloud Backup, en la que puede elegir la programación de copia de seguridad y el período de retención."]
+image:screenshot_backup_policy_aws.png["Una captura de pantalla que muestra la configuración de backup y recuperación de BlueXP donde puede elegir su programa de backup y el período de retención."]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Seleccione los volúmenes de los que desea realizar el backup
 [role="quick-margin-para"]
@@ -76,19 +76,19 @@ Lea los siguientes requisitos para asegurarse de que tenga una configuración co
 
 La siguiente imagen muestra cada componente y las conexiones que necesita preparar entre ellos:
 
-image:diagram_cloud_backup_cvo_aws.png["Un diagrama muestra cómo Cloud Backup se comunica con los volúmenes en los sistemas de origen y el almacenamiento de destino donde se encuentran los archivos de backup."]
+image:diagram_cloud_backup_cvo_aws.png["Un diagrama que muestra cómo se comunican el backup y la recuperación de datos de BlueXP con los volúmenes en los sistemas de origen y el almacenamiento de destino donde se encuentran los archivos de backup."]
 
 El extremo de la puerta de enlace VPC ya debe existir en su VPC. https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["Más información sobre los extremos de puerta de enlace"^].
 
 Versiones de ONTAP compatibles:: Se recomienda un mínimo de ONTAP 9.7P5; ONTAP 9.8P13 y posterior.
-Requisitos de licencia:: Para las licencias de Cloud Backup PAYGO, hay una suscripción a BlueXP disponible en AWS Marketplace que permite poner en marcha Cloud Volumes ONTAP y Cloud Backup. Necesita hacerlo https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["suscríbase a esta suscripción a BlueXP"^] Antes de habilitar Cloud Backup. La facturación de Cloud Backup se realiza mediante esta suscripción.
+Requisitos de licencia:: Para obtener la licencia PAYGO de backup y recuperación de BlueXP, hay una suscripción de BlueXP disponible en AWS Marketplace que permite la implementación de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Necesita hacerlo https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["suscríbase a esta suscripción a BlueXP"^] Antes de habilitar el backup y la recuperación de datos de BlueXP. La facturación para el backup y la recuperación de BlueXP se realiza a través de esta suscripción.
 +
 --
 Para obtener un contrato anual que le permita realizar un backup de los datos de Cloud Volumes ONTAP y de ONTAP en las instalaciones, debe suscribirse al https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace"^] y después https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["Asocie la suscripción con sus credenciales de AWS"^].
 
-Para obtener un contrato anual que le permita agrupar Cloud Volumes ONTAP y Cloud Backup, debe establecer el contrato anual cuando cree un entorno de trabajo de Cloud Volumes ONTAP. Esta opción no le permite realizar un backup de los datos en las instalaciones.
+Para disponer de un contrato anual que te permita agrupar el backup y la recuperación de Cloud Volumes ONTAP y BlueXP, debes configurar el contrato anual cuando crees un entorno de trabajo de Cloud Volumes ONTAP. Esta opción no le permite realizar un backup de los datos en las instalaciones.
 
-Para las licencias BYOL de Cloud Backup, necesita el número de serie de NetApp que le permite usar el servicio durante la duración y la capacidad de la licencia. link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["Aprenda a gestionar sus licencias BYOL"]. Debe utilizar una licencia BYOL cuando el sistema Connector y Cloud Volumes ONTAP se pongan en marcha en un sitio oscuro.
+Para la licencia BYOL de backup y recuperación de BlueXP, necesita el número de serie de NetApp que le permita usar el servicio durante la duración y la capacidad de la licencia. link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Aprenda a gestionar sus licencias BYOL"]. Debe utilizar una licencia BYOL cuando el sistema Connector y Cloud Volumes ONTAP se pongan en marcha en un sitio oscuro.
 
 Además, necesita tener una cuenta de AWS para el espacio de almacenamiento donde se ubicará la copia de seguridad.
 
@@ -174,13 +174,13 @@ A continuación se muestran los permisos específicos de la directiva:
 
 Si ha implementado el conector con la versión 3.9.21 o superior, estos permisos ya deben formar parte del rol IAM. De lo contrario, tendrá que agregar los permisos que faltan. Específicamente los permisos "athena" y "glue", ya que son necesarios para Buscar y restaurar.
 
-Permisos necesarios de AWS Cloud Volumes ONTAP:: Si el sistema Cloud Volumes ONTAP ejecuta software ONTAP 9.12.1 o posterior, la función IAM que proporciona ese entorno de trabajo con permisos debe incluir un nuevo conjunto de permisos S3 específicamente para Cloud Backup desde el último https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["Política de Cloud Volumes ONTAP"^].
+Permisos necesarios de AWS Cloud Volumes ONTAP:: Cuando tu sistema Cloud Volumes ONTAP ejecuta el software de ONTAP 9.12.1 o posterior, el rol de IAM que ofrece ese entorno de trabajo con permisos debe incluir un nuevo conjunto de permisos S3 específicamente para backup y recuperación de BlueXP de la versión más reciente https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["Política de Cloud Volumes ONTAP"^].
 +
 --
 Si ha creado el entorno de trabajo de Cloud Volumes ONTAP con BlueXP versión 3.9.23 o superior, estos permisos ya deberían formar parte del rol IAM. De lo contrario, tendrá que agregar los permisos que faltan.
 
 --
-Regiones admitidas de AWS:: Cloud Backup es compatible en todas las regiones de AWS https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones de AWS GovCloud.
+Regiones admitidas de AWS:: El backup y la recuperación de BlueXP se admiten en todas las regiones de AWS https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones de AWS GovCloud.
 Configuración necesaria para crear backups en una cuenta de AWS diferente:: De manera predeterminada, los backups se crean con la misma cuenta que la utilizada para el sistema Cloud Volumes ONTAP. Si desea usar una cuenta de AWS diferente para sus backups, debe realizar lo siguiente:
 +
 --
@@ -207,9 +207,9 @@ Configuración necesaria para crear backups en una cuenta de AWS diferente:: De 
 
 
 
-== Activación de Cloud Backup en un nuevo sistema
+== Permite el backup y la recuperación de datos de BlueXP en un nuevo sistema
 
-Cloud Backup está habilitado de forma predeterminada en el asistente de entorno de trabajo. Asegúrese de mantener la opción habilitada.
+El backup y la recuperación de BlueXP están habilitados de forma predeterminada en el asistente del entorno de trabajo. Asegúrese de mantener la opción habilitada.
 
 Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["Inicio de Cloud Volumes ONTAP en AWS"^] Para conocer los requisitos y detalles de cómo crear el sistema Cloud Volumes ONTAP.
 
@@ -219,19 +219,19 @@ Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-de
 . Rellene la página Details & Credentials.
 . En la página Servicios, deje el servicio activado y haga clic en *continuar*.
 +
-image:screenshot_backup_to_gcp.png["Muestra la opción Cloud Backup en el asistente de entorno de trabajo."]
+image:screenshot_backup_to_gcp.png["Muestra la opción de backup y recuperación de BlueXP en el asistente del entorno de trabajo."]
 
 . Complete las páginas del asistente para implementar el sistema.
 
 
 .Resultado
-Cloud Backup está habilitado en el sistema y realiza backups de volúmenes cada día y retiene las 30 copias de backup más recientes.
+El backup y la recuperación de datos de BlueXP están habilitados en el sistema, y realiza backups de volúmenes cada día y conserva las 30 copias de backup más recientes.
 
 
 
-== Habilitar Cloud Backup en un sistema existente
+== Habilitar el backup y la recuperación de datos de BlueXP en un sistema existente
 
-Habilite Cloud Backup en cualquier momento directamente desde el entorno de trabajo.
+Habilita el backup y la recuperación de BlueXP en cualquier momento directamente desde el entorno de trabajo.
 
 .Pasos
 . Seleccione el entorno de trabajo y haga clic en *Activar* junto al servicio copia de seguridad y recuperación en el panel derecho.
@@ -261,10 +261,10 @@ image:screenshot_backup_provider_settings_aws.png["Una captura de pantalla que m
 .. De manera opcional, al usar ONTAP 9.11.1 y versiones posteriores, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando una de las configuraciones _DataLock y Protección de ransomware_. _DataLock_ protege sus archivos de copia de seguridad de ser modificados o eliminados, y _Ransomware protection_ analiza sus archivos de copia de seguridad para buscar evidencia de un ataque de ransomware en sus archivos de copia de seguridad. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Obtenga más información acerca de los ajustes de DataLock disponibles"^].
 .. Opcionalmente, al utilizar ONTAP 9.10.1 y superior, se puede optar por organizar los backups en niveles en el almacenamiento S3 Glacier o en el almacenamiento S3 Glacier Deep Archive al cabo de un determinado número de días para una mayor optimización de los costes. Esta función no está disponible cuando se implementa en sitios oscuros. link:reference-aws-backup-tiers.html["Obtenga más información sobre el uso de niveles de archivado"].
 +
-image:screenshot_backup_policy_aws.png["Captura de pantalla que muestra la configuración de Cloud Backup, en la que puede elegir la programación y la retención de la copia de seguridad."]
+image:screenshot_backup_policy_aws.png["Una captura de pantalla que muestra la configuración de backup y recuperación de BlueXP donde puedes elegir tu programación y retención de backups."]
 
 +
-*Importante:* Si planea utilizar DataLock, debe activarlo en su primera directiva al activar Cloud Backup.
+*Importante:* Si planeas usar DataLock, debes habilitarlo en tu primera política al activar la copia de seguridad y recuperación de BlueXP.
 
 
 
@@ -279,7 +279,7 @@ image:screenshot_backup_select_volumes.png["Captura de pantalla de selección de
 ** Si hay copias Snapshot locales para volúmenes de lectura/escritura en este entorno de trabajo que coincidan con la etiqueta de programación de backup que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se mostrará un mensaje adicional "Exportar copias Snapshot existentes a almacenamiento de objetos como copias de backup". Marque esta casilla si desea que todas las Snapshots históricas se copien al almacenamiento de objetos como archivos de backup para garantizar la protección más completa para los volúmenes.
 
 
-. Haga clic en *Activar copia de seguridad* y Cloud Backup comenzará a realizar las copias de seguridad iniciales de cada volumen seleccionado.
+. Haga clic en *Activar copia de seguridad* y la copia de seguridad y recuperación de BlueXP comienza a realizar las copias de seguridad iniciales de cada volumen seleccionado.
 
 
 .Resultado

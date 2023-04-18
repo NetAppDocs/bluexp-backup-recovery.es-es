@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-multi-account-azure.html 
 keywords: microsoft azure, azure, regions, blob, multiple accounts, multiple regions, backup 
-summary: Cloud Backup permite crear archivos de backup en una cuenta de Azure que difieren de dónde residen los volúmenes de Cloud Volumes ONTAP de origen, y que es diferente de la cuenta en la que reside el conector BlueXP. 
+summary: El backup y la recuperación de datos de BlueXP te permite crear archivos de backup en una cuenta de Azure que sea diferente a dónde residen los volúmenes de Cloud Volumes ONTAP de origen y que sea distinto a la cuenta en la que reside el conector de BlueXP. 
 ---
 = Configurar el backup para el acceso de cuentas múltiples en Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Backup permite crear archivos de backup en una cuenta de Azure qu
 
 
 [role="lead"]
-Cloud Backup permite la creación de archivos de backup en una cuenta de Azure que difieren del lugar en el que residen los volúmenes de Cloud Volumes ONTAP de origen. Y ambas cuentas pueden ser diferentes a la cuenta en la que reside BlueXP Connector.
+El backup y la recuperación de datos de BlueXP te permite crear archivos de backup en una cuenta de Azure diferente a la de dónde residen los volúmenes de Cloud Volumes ONTAP de origen. Y ambas cuentas pueden ser diferentes a la cuenta en la que reside BlueXP Connector.
 
 Estos pasos son necesarios solo cuando se encuentre https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en un almacenamiento de Azure Blob"^].
 
@@ -131,5 +131,5 @@ image:screenshot_azure_networking5.png[""]
 +
 Ahora, la cuenta de almacenamiento (de suscripción 1) tiene acceso al sistema Cloud Volumes ONTAP que se ejecuta en la suscripción 2.
 
-. Vuelva a intentar habilitar Cloud Backup en el sistema Cloud Volumes ONTAP y esta vez debe realizarse correctamente.
+. Intenta habilitar el backup y la recuperación de BlueXP en el sistema Cloud Volumes ONTAP y esta vez debe tener éxito.
 

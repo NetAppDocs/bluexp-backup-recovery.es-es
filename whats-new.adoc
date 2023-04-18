@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore' 
-summary: Descubra las novedades de Cloud Backup. 
+summary: Descubre las novedades del backup y recuperación de BlueXP. 
 ---
-= Novedades de Cloud Backup
+= Novedades de backup y recuperación de datos de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Descubra las novedades de Cloud Backup.
 
 
 [role="lead"]
-Descubra las novedades de Cloud Backup.
+Descubre las novedades del backup y recuperación de BlueXP.
 
 
 
@@ -64,21 +64,21 @@ Ahora puede realizar backups de los datos de los sistemas de Cloud Volumes ONTAP
 
 === Capacidad para realizar un backup de los volúmenes de ONTAP en las instalaciones en ONTAP S3 mediante la API
 
-La nueva funcionalidad de las API le permite realizar backups de sus snapshots de volumen en ONTAP S3 mediante BlueXP Cloud Backup. Esta funcionalidad solo está disponible para sistemas ONTAP en las instalaciones por el momento. Para obtener instrucciones detalladas, consulte el Blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["Integración con ONTAP S3 como destino"^].
+Las nuevas funcionalidades en las API te permiten realizar un backup de tus snapshots de volúmenes en ONTAP S3 mediante el backup y la recuperación de BlueXP. Esta funcionalidad solo está disponible para sistemas ONTAP en las instalaciones por el momento. Para obtener instrucciones detalladas, consulte el Blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["Integración con ONTAP S3 como destino"^].
 
 
 
 === Capacidad de cambiar el aspecto de redundancia de zona de su cuenta de almacenamiento de Azure de LRS a ZRS
 
-Cuando se crean backups desde sistemas Cloud Volumes ONTAP al almacenamiento de Azure, de forma predeterminada, Cloud Backup aprovisiona el contenedor Blob con redundancia local (LRS) para optimizar los costes. Puede cambiar esta configuración a redundancia de zona (ZRS) si desea que los datos se repliquen entre zonas diferentes. Consulte las instrucciones de Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["cambiar el modo de replicar la cuenta de almacenamiento"^].
+Al crear backups desde sistemas Cloud Volumes ONTAP en el almacenamiento de Azure, el backup y la recuperación de BlueXP aprovisiona de forma predeterminada el Blob Container con redundancia local (LRS) para la optimización de costes. Puede cambiar esta configuración a redundancia de zona (ZRS) si desea que los datos se repliquen entre zonas diferentes. Consulte las instrucciones de Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["cambiar el modo de replicar la cuenta de almacenamiento"^].
 
 
 
 === Mejoras en el Monitor de trabajo
 
-* Tanto las operaciones de copia de seguridad y restauración iniciadas por el usuario desde la interfaz de usuario y la API de copia de seguridad en la nube, como los trabajos iniciados por el sistema, tales operaciones de copia de seguridad en curso, están ahora disponibles en la pestaña *Supervisión de trabajos* para sistemas ONTAP en las instalaciones que ejecutan ONTAP 9.13.1 o superior. Las versiones anteriores de ONTAP mostrarán únicamente los trabajos iniciados por el usuario.
+* Tanto las operaciones de backup y restauración iniciadas por el usuario que se inician desde la IU y la API de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup en curso, ahora están disponibles en la pestaña *Supervisión de trabajos* para sistemas ONTAP en las instalaciones que ejecutan ONTAP 9.13.1 o posterior. Las versiones anteriores de ONTAP mostrarán únicamente los trabajos iniciados por el usuario.
 * Además de poder descargar un archivo CSV para generar informes de todos los trabajos, ahora puede descargar un archivo JSON para un solo trabajo y ver sus detalles. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["Leer más"].
-* Se han añadido dos nuevas alertas de trabajos de copia de seguridad: "Error de trabajo programado" y "el trabajo de restauración se completa pero con advertencias". https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Revise todas las alertas que puede enviar Cloud Backup"].
+* Se han añadido dos nuevas alertas de trabajos de copia de seguridad: "Error de trabajo programado" y "el trabajo de restauración se completa pero con advertencias". https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Revisa todas las alertas que pueden enviar el backup y la recuperación de BlueXP"].
 
 
 
@@ -102,7 +102,7 @@ Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados
 === Varias mejoras en el Monitor de trabajo
 
 * La página Job Monitoring ha añadido un filtrado avanzado para poder buscar trabajos de backup y restauración en función del tiempo, la carga de trabajo (volúmenes, aplicaciones, máquinas virtuales o Kubernetes), Tipo de trabajo, estado, entorno de trabajo y máquina virtual de almacenamiento. También puede introducir texto libre para buscar cualquier recurso, por ejemplo, "Application_3".  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Consulte cómo utilizar los filtros avanzados"].
-* Tanto las operaciones de copia de seguridad y restauración iniciadas por el usuario desde la interfaz de usuario y la API de copia de seguridad en la nube, como los trabajos iniciados por el sistema, tales operaciones de copia de seguridad en curso, están ahora disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecutan ONTAP 9.13.0 o superior. Las versiones anteriores de los sistemas Cloud Volumes ONTAP y los sistemas ONTAP en las instalaciones mostrarán solo los trabajos iniciados por el usuario en este momento.
+* Tanto las operaciones de backup y restauración iniciadas por el usuario desde la API e IU de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup en curso, ahora están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecuten ONTAP 9.13.0 o posterior. Las versiones anteriores de los sistemas Cloud Volumes ONTAP y los sistemas ONTAP en las instalaciones mostrarán solo los trabajos iniciados por el usuario en este momento.
 
 
 
@@ -135,7 +135,7 @@ Ahora, la protección de DataLock y Ransomware es compatible con los archivos de
 
 === Los sistemas Cloud Volumes ONTAP pueden trasladar los backups más antiguos a un sistema de almacenamiento para archivado de Google
 
-Los archivos de copia de seguridad se crean inicialmente en la clase de almacenamiento de Google Standard. Ahora puede usar Cloud Backup para organizar los backups anteriores en niveles en el almacenamiento de Google Archive y, de este modo, optimizar los costes aún más. La última versión solo admitía esta funcionalidad con clústeres de ONTAP en las instalaciones. Ahora se admiten los sistemas Cloud Volumes ONTAP implementados en Google Cloud.
+Los archivos de copia de seguridad se crean inicialmente en la clase de almacenamiento de Google Standard. Ahora puedes utilizar las funciones de backup y recuperación de datos de BlueXP para organizar en niveles backups antiguos en el almacenamiento de Google Archive y optimizar aún más los costes. La última versión solo admitía esta funcionalidad con clústeres de ONTAP en las instalaciones. Ahora se admiten los sistemas Cloud Volumes ONTAP implementados en Google Cloud.
 
 
 
@@ -167,13 +167,13 @@ Esta funcionalidad está disponible si su clúster local utiliza ONTAP 9.12.1 o 
 
 === Capacidad de seleccionar sus propias claves gestionadas por el cliente para el cifrado de datos en Google Cloud
 
-Al realizar un backup de datos de sus sistemas ONTAP en Google Cloud Storage, ahora puede seleccionar sus propias claves gestionadas por el cliente para el cifrado de datos en el asistente de activación en lugar de usar las claves de cifrado predeterminadas gestionadas por Google. Solo tiene que configurar primero sus claves de cifrado gestionadas por el cliente en Google y, a continuación, introducir los detalles al activar Cloud Backup.
+Al realizar un backup de datos de sus sistemas ONTAP en Google Cloud Storage, ahora puede seleccionar sus propias claves gestionadas por el cliente para el cifrado de datos en el asistente de activación en lugar de usar las claves de cifrado predeterminadas gestionadas por Google. Solo tienes que configurar primero las claves de cifrado gestionadas por el cliente en Google y, a continuación, introducir los detalles al activar el backup y la recuperación de BlueXP.
 
 
 
 === Ya no se necesita el rol de "administrador del almacenamiento" para que la cuenta de servicio cree backups en Google Cloud Storage
 
-En versiones anteriores, se necesitaba el rol de administrador de almacenamiento para la cuenta de servicio que permite que Cloud Backup acceda a los bloques de Google Cloud Storage. Ahora puede crear una función personalizada con un conjunto reducido de permisos que se asignarán a la cuenta de servicio. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Descubra cómo preparar Google Cloud Storage para realizar backups"].
+En versiones anteriores, se necesitaba el rol «Storage Admin» para la cuenta de servicio que permitía realizar el backup y la recuperación de datos de BlueXP para acceder a buckets de Google Cloud Storage. Ahora puede crear una función personalizada con un conjunto reducido de permisos que se asignarán a la cuenta de servicio. https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Descubra cómo preparar Google Cloud Storage para realizar backups"].
 
 
 

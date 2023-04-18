@@ -67,8 +67,8 @@ Puede cambiar los atributos de una política de backup que se aplique actualment
 
 [NOTE]
 ====
-* Si ha activado _DataLock y Protección de ransomware_ en la directiva inicial al activar Cloud Backup para este clúster, las directivas que edite deben configurarse con la misma configuración DataLock (Gobierno o cumplimiento). Y si no ha activado _DataLock y la protección de ransomware_ al activar Cloud Backup, no puede habilitar DataLock ahora.
-* Al crear backups en AWS, si eligió _S3 Glacier_ o _S3 Glacier Deep Archive_ en la primera política de backup al activar Cloud Backup, ese nivel será el único nivel de archivado disponible al editar las políticas de backup. Si no ha seleccionado ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado al editar una directiva.
+* Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar el backup y la recuperación de BlueXP para este clúster, todas las políticas que edite deben configurarse con la misma configuración de DataLock (gobernanza o cumplimiento de normativas). Y si no activaste _DataLock y Ransomware Protection_ al activar el backup y la recuperación de BlueXP, no puedes habilitar DataLock ahora.
+* Al crear backups en AWS, si eligió _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de backup al activar el backup y la recuperación de BlueXP, ese nivel será el único nivel de archivado disponible al editar las políticas de backup. Si no ha seleccionado ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado al editar una directiva.
 
 
 ====
@@ -116,7 +116,7 @@ link:reference-google-backup-tiers.html["Obtenga más información sobre el uso 
 
 endif::gcp[]
 
-+image:screenshot_backup_modify_policy_page2.png["Una captura de pantalla que muestra la configuración de almacenamiento por niveles en archivado para Cloud Backup."]
++image:screenshot_backup_modify_policy_page2.png["Una captura de pantalla que muestra la organización en niveles en la configuración de almacenamiento de archivado para backup y recuperación de BlueXP."]
 
 + tenga en cuenta que todos los archivos de backup organizados en niveles para el almacenamiento de archivado se dejan en ese nivel si se detienen los backups por niveles en el archivado; no se vuelven a transferir automáticamente al nivel estándar. Solo los nuevos backups de volúmenes permanecerán en el nivel estándar.
 
@@ -124,14 +124,14 @@ endif::gcp[]
 
 == Adición de una nueva política de backup
 
-Al habilitar Cloud Backup para un entorno de trabajo, se realizan backups de todos los volúmenes que seleccione inicialmente con la política de backup predeterminada que haya definido. Si desea asignar diferentes políticas de backup a ciertos volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar dichas políticas a otros volúmenes.
+Al habilitar el backup y la recuperación de BlueXP para un entorno de trabajo, se realiza un backup de todos los volúmenes que seleccionó inicialmente, utilizando la política de backup predeterminada que definió. Si desea asignar diferentes políticas de backup a ciertos volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar dichas políticas a otros volúmenes.
 
 Si desea aplicar una nueva política de backup a ciertos volúmenes en un entorno de trabajo, primero debe añadir la política de backup al entorno de trabajo. Ahora puede <<Cambiar la política asignada a los volúmenes existentes,aplique la política a los volúmenes en ese entorno de trabajo>>.
 
 [NOTE]
 ====
-* Si ha activado _DataLock y Protección de ransomware_ en la directiva inicial al activar Cloud Backup para este clúster, cualquier política adicional que cree debe configurarse con la misma configuración DataLock (Gobierno o cumplimiento). Y si no ha activado _DataLock y la protección de ransomware_ al activar Cloud Backup, no puede crear nuevas políticas que utilicen DataLock.
-* Al crear backups en AWS, si eligió _S3 Glacier_ o _S3 Glacier Deep Archive_ en la primera política de backup al activar Cloud Backup, ese nivel será el único nivel de archivado disponible para las futuras políticas de backup para ese clúster. Si ha seleccionado ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado para futuras políticas.
+* Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar el backup y la recuperación de BlueXP para este clúster, todas las políticas adicionales que cree deberán configurarse con la misma configuración de DataLock (gobernanza o cumplimiento de normativas). Y si no activaste _DataLock y Ransomware Protection_ al activar el backup y la recuperación de BlueXP, no puedes crear nuevas políticas que utilicen DataLock.
+* Al crear backups en AWS, si eligió _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de backup al activar el backup y la recuperación de BlueXP, ese nivel será el único nivel de archivado disponible para las futuras políticas de backup para ese clúster. Si ha seleccionado ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado para futuras políticas.
 
 
 ====
@@ -176,7 +176,7 @@ link:reference-google-backup-tiers.html["Obtenga más información sobre el uso 
 
 endif::gcp[]
 
-+image:screenshot_backup_modify_policy_page2.png["Una captura de pantalla que muestra la configuración de almacenamiento por niveles en archivado para Cloud Backup."]
++image:screenshot_backup_modify_policy_page2.png["Una captura de pantalla que muestra la organización en niveles en la configuración de almacenamiento de archivado para backup y recuperación de BlueXP."]
 
 
 
@@ -205,7 +205,7 @@ image:screenshot_backup_change_policy.png["Una captura de pantalla que muestra c
 
 +
 
-NOTE: Si ha activado _DataLock y Protección de ransomware_ en la directiva inicial al activar Cloud Backup para este clúster, solo verá otras directivas que se hayan configurado con DataLock. Y si no ha activado _DataLock y Protección de ransomware_ al activar Cloud Backup, solo verá otras directivas que no tengan DataLock configurado.
+NOTE: Si habilitó _DataLock y Ransomware Protection_ en la política inicial al activar el backup y la recuperación de BlueXP para este clúster, solo verá otras políticas que se hayan configurado con DataLock. Y si no activaste _DataLock y Ransomware Protection_ al activar el backup y la recuperación de BlueXP, solo verás otras políticas que no tengan DataLock configurado.
 
 . Haga clic en *Guardar* para confirmar los cambios.
 
@@ -218,7 +218,7 @@ Es posible crear un backup bajo demanda en cualquier momento para capturar el es
 
 El nombre de backup incluye la Marca de hora para poder identificar el backup bajo demanda desde otros backups programados.
 
-Si ha activado _DataLock y la protección de ransomware_ al activar Cloud Backup para este clúster, la copia de seguridad bajo demanda también se configurará con DataLock y el período de retención será de 30 días. Los análisis de ransomware no se admiten para backups ad hoc. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Más información sobre la protección de DataLock y Ransomware"^].
+Si habilitó _DataLock y Ransomware Protection_ al activar el backup y la recuperación de BlueXP para este clúster, el backup bajo demanda también se configurará con DataLock, y el período de retención será de 30 días. Los análisis de ransomware no se admiten para backups ad hoc. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Más información sobre la protección de DataLock y Ransomware"^].
 
 Es preciso tener en cuenta que al crear un backup ad hoc, se crea una Snapshot en el volumen de origen. Dado que esta instantánea no forma parte de una programación normal de instantánea, no se girará. Puede eliminar manualmente esta snapshot del volumen de origen una vez completado el backup. De este modo, se podrán liberar los bloques relacionados con esta snapshot. El nombre de la snapshot comenzará con `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Consulte cómo eliminar una snapshot con la CLI de ONTAP"^].
 
@@ -282,18 +282,18 @@ La columna Análisis de ransomware mostrará que la exploración está en curso.
 
 == Eliminar backups
 
-Cloud Backup le permite eliminar un único archivo de backup, eliminar todos los backups del volumen o eliminar todos los backups de todos los volúmenes en un entorno de trabajo. Es posible eliminar todos los backups si ya no se necesitan los backups o si se eliminó el volumen de origen y se desean quitar todos los backups.
+El backup y la recuperación de BlueXP te permite eliminar un único archivo de backup, eliminar todos los backups de un volumen o eliminar todas las copias de seguridad de todos los volúmenes en un entorno de trabajo. Es posible eliminar todos los backups si ya no se necesitan los backups o si se eliminó el volumen de origen y se desean quitar todos los backups.
 
 Tenga en cuenta que no puede eliminar los archivos de copia de seguridad bloqueados mediante la protección DataLock y Ransomware. La opción "Eliminar" no estará disponible en la interfaz de usuario si ha seleccionado uno o más archivos de backup bloqueados.
 
 
-CAUTION: Si piensa eliminar un entorno de trabajo o clúster que tiene copias de seguridad, debe eliminar las copias de seguridad *antes de* eliminando el sistema. Cloud Backup no elimina automáticamente las copias de seguridad cuando se elimina un sistema y no hay compatibilidad actual en la interfaz de usuario para eliminar las copias de seguridad después de que el sistema se haya eliminado. Seguirá cobrándose los costes de almacenamiento de objetos por los backups restantes.
+CAUTION: Si piensa eliminar un entorno de trabajo o clúster que tiene copias de seguridad, debe eliminar las copias de seguridad *antes de* eliminando el sistema. El backup y la recuperación de datos de BlueXP no elimina automáticamente los backups cuando se elimina un sistema y no existe compatibilidad actual en la interfaz de usuario para eliminar los backups después de que el sistema se haya eliminado. Seguirá cobrándose los costes de almacenamiento de objetos por los backups restantes.
 
 
 
 === Eliminar todos los archivos de copia de seguridad de un entorno de trabajo
 
-La eliminación de todos los backups de un entorno de trabajo no deshabilita los futuros backups de los volúmenes en este entorno de trabajo. Si desea detener la creación de backups de todos los volúmenes en un entorno de trabajo, puede desactivar los backups <<Desactivación de Cloud Backup en un entorno de trabajo,como se describe aquí>>.
+La eliminación de todos los backups de un entorno de trabajo no deshabilita los futuros backups de los volúmenes en este entorno de trabajo. Si desea detener la creación de backups de todos los volúmenes en un entorno de trabajo, puede desactivar los backups <<Desactivar el backup y la recuperación de BlueXP para un entorno de trabajo,como se describe aquí>>.
 
 .Pasos
 . En la ficha *Volumes*, seleccione *Configuración de copia de seguridad*.
@@ -367,7 +367,7 @@ No es necesario eliminar el volumen de origen. Es posible eliminar la relación 
 
 Esta función solo está disponible si el sistema ejecuta ONTAP 9.12.1 o posterior.
 
-No se puede eliminar el volumen de origen de la interfaz de usuario de Cloud Backup. Sin embargo, puede abrir la página Detalles de volumen en el lienzo y. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimine el volumen desde allí"].
+No se puede eliminar el volumen de origen desde la interfaz de usuario de backup y recuperación de BlueXP. Sin embargo, puede abrir la página Detalles de volumen en el lienzo y. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimine el volumen desde allí"].
 
 
 NOTE: No se pueden eliminar archivos de backup de volúmenes individuales una vez que se ha eliminado la relación. Sin embargo, usted puede link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["elimine todos los backups del volumen"] si desea quitar todos los archivos de backup.
@@ -398,9 +398,9 @@ image:screenshot_backup_view_no_relationship.png["Una captura de pantalla que mu
 
 
 
-== Desactivación de Cloud Backup en un entorno de trabajo
+== Desactivar el backup y la recuperación de BlueXP para un entorno de trabajo
 
-Al desactivar Cloud Backup en un entorno en funcionamiento se deshabilitan los backups de cada volumen del sistema, y también se deshabilita la capacidad de restaurar un volumen. No se eliminarán los backups existentes. Esto no anula el registro del servicio de backup de este entorno de trabajo y básicamente le permite pausar toda la actividad de backup y restauración durante un periodo de tiempo.
+Si se desactiva la copia de seguridad y recuperación de BlueXP para un entorno de trabajo, se desactivan las copias de seguridad de cada volumen del sistema y también se deshabilita la capacidad de restaurar un volumen. No se eliminarán los backups existentes. Esto no anula el registro del servicio de backup de este entorno de trabajo y básicamente le permite pausar toda la actividad de backup y restauración durante un periodo de tiempo.
 
 Tenga en cuenta que su proveedor de cloud seguirá facturando los costes del almacenamiento de objetos por la capacidad que utilicen sus backups a menos que usted <<Eliminar todos los archivos de copia de seguridad de un entorno de trabajo,eliminar los backups>>.
 
@@ -421,15 +421,15 @@ NOTE: Aparece un botón *Activar copia de seguridad* para ese entorno de trabajo
 
 
 
-== Cancelación del registro de Cloud Backup para un entorno de trabajo
+== Cancelar el registro de la copia de seguridad y la recuperación de BlueXP para un entorno de trabajo
 
-Es posible cancelar el registro de Cloud Backup para un entorno de trabajo si ya no desea usar la funcionalidad de backup y quiere dejar de estar cargado por backups en ese entorno de trabajo. Normalmente, esta función se utiliza cuando se planea eliminar un entorno de trabajo y se desea cancelar el servicio de backup.
+Puedes cancelar el registro del backup y la recuperación de BlueXP en un entorno de trabajo si ya no quieres utilizar la funcionalidad de backup y quieres dejar de que se te cobren los backups de ese entorno de trabajo. Normalmente, esta función se utiliza cuando se planea eliminar un entorno de trabajo y se desea cancelar el servicio de backup.
 
-También puede usar esta función si desea cambiar el almacén de objetos de destino donde se almacenan los backups del clúster. Después de cancelar el registro de Cloud Backup para el entorno laboral, puede habilitar Cloud Backup para ese clúster mediante la nueva información del proveedor de cloud.
+También puede usar esta función si desea cambiar el almacén de objetos de destino donde se almacenan los backups del clúster. Después de cancelar el registro de backup y recuperación de BlueXP en el entorno de trabajo, puede habilitar el backup y la recuperación de BlueXP para ese clúster utilizando la nueva información del proveedor de cloud.
 
-Para poder cancelar el registro de Cloud Backup, debe realizar los siguientes pasos en el siguiente orden:
+Antes de poder cancelar el registro de backup y recuperación de BlueXP, debe realizar los siguientes pasos, en este orden:
 
-* Desactivar Cloud Backup en el entorno de trabajo
+* Desactiva el backup y la recuperación de BlueXP para el entorno de trabajo
 * Eliminar todos los backups de ese entorno de trabajo
 
 
