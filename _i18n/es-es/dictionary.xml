@@ -2723,11 +2723,6 @@
   <block id="5afde787e060c3a96f34f757eb507404" category="sidebar">Clúster de Kubernetes a Amazon S3</block>
   <block id="3ef08bbbf058b2bc6a87e3ff1ceecd81" category="sidebar">Clúster de Kubernetes a Azure Blob</block>
   <block id="d5513ddfa26c41caaba3c021a29dbe45" category="sidebar">Cluster de Kubernetes a Google Cloud</block>
-  <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">Realizar backups y restaurar los datos de los equipos virtuales</block>
-  <block id="5a885bd71d1142c7d1b89fcfcf197a41" category="sidebar">Restaurar datos desde archivos de copia de seguridad de ONTAP</block>
-  <block id="e2f83fe82d1e819ed299851d4da320ce" category="sidebar">Restaurar volúmenes de ONTAP</block>
-  <block id="ba9a6951ecf97e593c2140f66a8574bf" category="sidebar">Restaurar archivos y carpetas desde volúmenes de ONTAP</block>
-  <block id="09653b9c7955d4792895fbf1fcaa6ad6" category="sidebar">Restaurar volúmenes de Kubernetes</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">Gestionar los archivos de copia de seguridad de ONTAP</block>
   <block id="c88c557dd4e62b29bc87fc433d1738c6" category="sidebar">Habilitar y deshabilitar los backups de volumen</block>
   <block id="56b3614ad370987e8f2f3583eb78c757" category="sidebar">Editar una política de backup existente</block>
@@ -3740,4 +3735,13 @@
   <block id="2e5d6ff9bc4d6b4194df020bde3f3dca" category="sidebar">Realiza un backup de la base de datos de backup y recuperación de BlueXP en un sitio oscuro</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">Blogs de backup y recuperación de BlueXP</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">Casos prácticos de backup y recuperación de BlueXP</block>
+  <block id="ceffaf94354645ad26052bbc53604f5d" category="sidebar">Realice backups de los datos de las máquinas virtuales en el cloud</block>
+  <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">Restaure datos del cloud</block>
+  <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">Restaurar datos de volúmenes ONTAP</block>
+  <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">Restaure los datos de aplicaciones de Oracle en las instalaciones</block>
+  <block id="6002846df6663ea571e55d74bd085335" category="sidebar">Restaure datos de aplicaciones de SQL Server locales</block>
+  <block id="4bc9a14a4fac8328e801409fa8234e7e" category="sidebar">Restaurar datos de aplicaciones de Oracle nativas en la nube</block>
+  <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">Restaure los datos de aplicaciones SAP HANA nativas de cloud</block>
+  <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">Restaurar datos de equipos virtuales</block>
+  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Restaura los datos del volumen de Kubernetes</block>
 </blocks>

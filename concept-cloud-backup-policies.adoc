@@ -118,6 +118,8 @@ Puede elegir entre los siguientes ajustes para cada política de backup:
 
 [role="tabbed-block"]
 ====
+ifdef::aws[]
+
 .AWS
 --
 * *Ninguno* (predeterminado)
@@ -135,6 +137,10 @@ DataLock se establece en el modo _Compliance_ en el que ningún usuario puede so
 
 
 --
+endif::aws[]
+
+ifdef::azure[]
+
 .Azure
 --
 * *Ninguno* (predeterminado)
@@ -152,6 +158,8 @@ Los archivos de copia de seguridad se protegen durante el período de retención
 
 
 --
+endif::azure[]
+
 .StorageGRID
 --
 * *Ninguno* (predeterminado)

@@ -265,45 +265,51 @@ homepage:
     - title: Realice backup de los datos de las aplicaciones en las instalaciones
         en Amazon Web Services
       flavor: aws
-      url: "/task-backup-app-data-to-aws.html"
+      url: task-backup-app-data-to-aws.html
     - title: Realice backups de los datos de las aplicaciones en las instalaciones
         en Microsoft Azure
       flavor: azure
-      url: "/task-backup-app-data-to-azure.html"
+      url: task-backup-app-data-to-azure.html
     - title: Realice backups de los datos de las aplicaciones en las instalaciones
         en Google Cloud
       flavor: gcp
-      url: "/task-backup-app-data-to-gcp.html"
+      url: task-backup-app-data-to-gcp.html
     - title: Realice backups de los datos de las aplicaciones en las instalaciones
         en StorageGRID
-      url: "/task-backup-app-data-to-storagegrid.html"
+      url: task-backup-app-data-to-storagegrid.html
     - title: Realice backup de bases de datos de Oracle nativas en el cloud
-      url: "/task-backup-cloud-native-oracle-data.html"
+      url: task-backup-cloud-native-oracle-data.html
     - title: Realice backup de la base de datos SAP HANA nativa del cloud
       flavor: azure
-      url: "/task-backup-cloud-native-sap-hana-data.html"
-  - title: Realizar backups y restaurar los datos de los equipos virtuales
+      url: task-backup-cloud-native-sap-hana-data.html
+  - title: Realice backups de los datos de las máquinas virtuales en el cloud
     links:
     - title: Backup de almacenes de datos en Amazon Web Services
       flavor: aws
-      url: "/task-backup-vm-data-to-aws.html"
+      url: task-backup-vm-data-to-aws.html
     - title: Backup de almacenes de datos en Microsoft Azure
       flavor: azure
-      url: "/task-backup-vm-data-to-azure.html"
+      url: task-backup-vm-data-to-azure.html
     - title: Realizar backups de almacenes de datos en Google Cloud Platform
       flavor: gcp
-      url: "/task-backup-vm-data-to-gcp.html"
+      url: task-backup-vm-data-to-gcp.html
     - title: Realizar backup de almacenes de datos en StorageGRID
-      url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: Restaurar máquinas virtuales desde el cloud
-      url: "/task-restore-vm-data.html"
-  - title: Restaurar datos desde archivos de copia de seguridad de ONTAP
+      url: task-backup-vm-data-to-storagegrid.html
+  - title: Restaure datos del cloud
     links:
-    - title: Restaurar volúmenes de ONTAP
+    - title: Restaurar datos de volúmenes ONTAP
       url: task-restore-backups-ontap.html
-    - title: Restaurar archivos y carpetas desde volúmenes de ONTAP
-      url: task-restore-backups-ontap.html
-    - title: Restaurar volúmenes de Kubernetes
+    - title: Restaure los datos de aplicaciones de Oracle en las instalaciones
+      url: task-restore-oracle-data.html
+    - title: Restaure datos de aplicaciones de SQL Server locales
+      url: task-restore-sql-data.html
+    - title: Restaurar datos de aplicaciones de Oracle nativas en la nube
+      url: task-restore-cloud-native-oracle-data.html
+    - title: Restaure los datos de aplicaciones SAP HANA nativas de cloud
+      url: task-restore-cloud-native-sap-hana-data.html
+    - title: Restaurar datos de equipos virtuales
+      url: task-restore-vm-data.html
+    - title: Restaura los datos del volumen de Kubernetes
       url: task-restore-backups-kubernetes.html
   - title: Gestionar los archivos de copia de seguridad de ONTAP
     links:
