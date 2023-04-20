@@ -14,7 +14,7 @@ summary: El backup y la recuperación de datos de BlueXP proporciona una protecc
 
 
 [role="lead"]
-El backup y la recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes persistentes, bases de datos y máquinas virtuales de Kubernetes, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
+El servicio de backup y recuperación de datos de BlueXP proporciona una protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes persistentes de Kubernetes, bases de datos y máquinas virtuales, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
 
 El servicio realiza una replicación incremental permanente a nivel de bloque y conserva todas las eficiencias del almacenamiento, lo que reduce significativamente la cantidad de datos que se replican y almacenan. Además, pagarás solo por los elementos protegidos y utilizarás los niveles de almacenamiento de menor coste disponibles, lo que hace que el backup y la recuperación de datos de BlueXP sean muy rentables.
 

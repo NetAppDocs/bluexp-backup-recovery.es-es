@@ -78,7 +78,6 @@
   <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">Especifique el ID de suscripción de Azure.</block>
   <block id="438d3dd7620068789776c4fbc687ceda" category="list-text">Cree un grupo de recursos nuevo o utilice un grupo de recursos existente.</block>
   <block id="e710c6d8124609e30a4a7712947c1e16" category="paragraph">Se recomienda configurar el nivel de archivado porque se trata de una actividad única y no se le permitirá configurarla más adelante.</block>
-  <block id="fe8f95b60b7c4092ce03adfbb31e89b4" category="summary">Cree una política para realizar backups de equipos virtuales</block>
   <block id="b4866a33463f80d02c65e0910ff4b146" category="paragraph">Puede crear una directiva o utilizar una de las siguientes directivas predefinidas que están disponibles en BlueXP.</block>
   <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">Nombre de la directiva</block>
   <block id="b021df6aac4654c454f46c77646e745f" category="cell">Etiqueta</block>
@@ -101,7 +100,6 @@
   <block id="db2205364549e4c4841dc9b5d66f62a3" category="list-text">Seleccione Primary o Secondary como origen de almacenamiento de backup.</block>
   <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">(Opcional) Si desea mover backups del almacén de objetos al almacenamiento de archivado después de un determinado número de días para la optimización de costes, seleccione la casilla de verificación *Tier backups to Archival* e introduzca el número de días después de los cuales se debe archivar la copia de seguridad.</block>
   <block id="f2a42a68e067e481d094b018459ef895" category="list-text">Haga clic en *Crear*.</block>
-  <block id="2918bd1eb41f17cc6bbd51b50460f7dc" category="admonition">No puede editar ni eliminar una política que está asociada a una máquina virtual.</block>
   <block id="d1e18cf16b83a90a2911458097d3358c" category="summary">Ver los detalles de backup y supervisar el estado de todos los trabajos.</block>
   <block id="a0535e3da7a79865ac35aff6cbcd9919" category="doc">Gestione la protección de datos de aplicaciones nativas en el cloud</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="section-title">Supervisar trabajos</block>
@@ -770,7 +768,6 @@
   <block id="e3b72f702a3b0c42e864fe0ad9eb9453" category="paragraph"><block ref="e3b72f702a3b0c42e864fe0ad9eb9453" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2c9139d12cc7ddacb93c941d4bf412a2" category="paragraph">El conector puede ponerse en marcha en el mismo VPC o vnet que las de las aplicaciones, o en uno diferente. Si el conector y las aplicaciones están en una red diferente, debe establecer una conectividad de red entre ellos.</block>
   <block id="e3a2981d750d1d4a623860068a07cc70" category="admonition">Un único conector BlueXP puede comunicarse con varios sistemas de almacenamiento y múltiples complementos de aplicaciones. Necesitará un único conector para gestionar sus aplicaciones siempre que haya conectividad entre el conector y los hosts de aplicaciones.</block>
-  <block id="11db7b880ef2ebba3ee0a02b685e8da0" category="section-title">Proteja la base de datos de Oracle</block>
   <block id="0f0f84cb9775a6f4ad6b4796bfcedfe9" category="list-text">Sistema operativo:</block>
   <block id="70cfb8b329ca692c676669ef294b37c0" category="list-text">RHEL 7.5 o posterior y 8.x</block>
   <block id="0d9cfc701256d81666be8cc96e8482b8" category="list-text">OL 7.5 o posterior y 8.x.</block>
@@ -801,7 +798,6 @@
   <block id="9518d577aae2b3d43b6dd0f41fb999e1" category="list-text">No es compatible con Oracle 11g</block>
   <block id="d67615cd9765a283fd8a9d06cd5d44a1" category="list-text">No admite las operaciones de montaje, catálogo y verificación en backups</block>
   <block id="9c1f3568b85ef3ac4da7fc528340d6ba" category="list-text">No es compatible con Oracle en RAC y Data Guard</block>
-  <block id="9317a56cfedd80231a539c42f44d9c8d" category="section-title">Proteja la base de datos SAP HANA</block>
   <block id="494c3084e3990387ac3b46cb5749bb65" category="list-text">RHEL 7.5 o posterior, plataformas 8.x certificadas por SAP HANA</block>
   <block id="504d22b0e020e0b365851eef08a1e4ca" category="list-text">SLES 12 SP5 o posteriores y 15 plataformas SPX certificadas por SAP HANA</block>
   <block id="c7325743e6b1be5853672e4ed19d279b" category="list-text">Diseños de base de datos:</block>
@@ -1021,8 +1017,6 @@
   <block id="cb2767bdb3d5e1b97916847c0a3526d3" category="list-text">En la página *aplicaciones*, haga clic en el volumen global que no es de datos que desea restaurar.</block>
   <block id="929d6dd73b50a8d75013d755514fa9af" category="list-text">Haga clic en <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> Corresponde al volumen Global no Data que desea restaurar y haga clic en *Restaurar*.</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">Puede restaurar máquinas virtuales desde el cloud hasta la SnapCenter en las instalaciones.</block>
-  <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">Restaurar máquinas virtuales desde el cloud</block>
-  <block id="9506c95f9ad8061d2b32d45700688c83" category="paragraph">Las máquinas virtuales se pueden restaurar desde el cloud de nuevo a la instancia de vCenter en las instalaciones. La copia de seguridad se restaurará en la misma ubicación desde donde se realizó la copia de seguridad. Si se realizó el backup del equipo virtual mediante la normativa de archivado, se puede establecer la prioridad de restauración de archivado.</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">Haga clic en <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> Corresponde al almacén de datos que desea restaurar y haga clic en *Ver detalles*.</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">Haga clic en *Restaurar* correspondiente a la copia de seguridad que desea restaurar.</block>
   <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">Seleccione la máquina virtual que desea restaurar desde el backup.</block>
@@ -1066,7 +1060,6 @@
   <block id="61d2487e95a87f4488738d2a68c3f065" category="inline-link">Preguntas frecuentes de Amazon sobre estas clases de almacenamiento</block>
   <block id="e65bc43817a0ccba6c96b51583aeb5d2" category="paragraph">Para obtener más información sobre las opciones de recuperación de Amazon S3 Glacier y S3 Glacier Deep Archive, consulte<block ref="b0992f5e2227a70d04a7c3b83b2ca245" category="inline-link-rx"></block>.</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">Es posible ver los almacenes de datos y las máquinas virtuales, y editar las instancias del plugin de SnapCenter para VMware vSphere.</block>
-  <block id="880521c077c3d9130e51f737ddd86b15" category="doc">Gestione la protección de máquinas virtuales</block>
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">Ver políticas</block>
   <block id="8a53d8d9bdff689ff4cea2f3d55f43de" category="list-text">En el menú desplegable *Configuración*, haga clic en *Directivas*.</block>
   <block id="8bdf078d3946fd5743d8283e1dda131b" category="list-text">Haga clic en *Ver detalles* correspondiente a la directiva cuyos detalles desea ver.</block>
@@ -1734,7 +1727,6 @@
   <block id="ddac760f2c60fbb2375807e939befa9d" category="summary">Obtenga más información sobre la protección de datos en los equipos virtuales y conozca las distintas políticas.</block>
   <block id="97bfb69bf5a1d719c6265b922436bbaa" category="doc">Proteja los datos de los equipos virtuales</block>
   <block id="d511399444cf864b695600d159b7c93b" category="list-text">Plugin de SnapCenter para VMware vSphere 4.6P1 o posterior</block>
-  <block id="0fbf3afea399595219e31836afabacc9" category="list-text">Debe utilizar el plugin de SnapCenter para VMware vSphere 4.7P1 o versiones posteriores para realizar el backup de máquinas virtuales desde el almacenamiento secundario en las instalaciones.</block>
   <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">ONTAP 9.8 o posterior</block>
   <block id="8453fab1acf37cb3dad50bd528b75148" category="list-text">Solo se admiten almacenes de datos NFS. No se admiten los almacenes de datos VMFS basados en iSCSI/FC/NVMe y vVols.</block>
   <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">Debe haber al menos un backup en el plugin de SnapCenter para VMware vSphere 4.6P1.</block>
@@ -2314,7 +2306,6 @@
   <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Asegúrese de copiar el número de serie de la cuenta (960xxxx) utilizado anteriormente para el campo de número de serie. Esto agilizará el procesamiento de la cuenta.</block>
   <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp debería ponerse en contacto con usted durante este proceso. Este es un ejercicio de incorporación puntual para nuevos usuarios.</block>
   <block id="1c0e45ef07d0dbc13ca2394d5e285fd7" category="paragraph">Una vez que tenga su cuenta de la página de soporte de NetApp, podrá navegar a BlueXP para añadir esta cuenta de NSS para futuros registros.</block>
-  <block id="8f2653c5938080ffdd57904f850bc430" category="doc">Registre el plugin de SnapCenter para VMware vSphere</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">Haga clic en *Registrar el plugin de SnapCenter para VMware vSphere*.</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">En el campo Username and Password, especifique las credenciales del usuario con la función de administrador.</block>
   <block id="e7626d40bde0cb9f25e876222f0bb5fc" category="doc">Realice backups de los datos de las aplicaciones en las instalaciones en StorageGRID</block>
@@ -2699,10 +2690,6 @@
   <block id="d1444f985888131065bf58d488e5a34f" category="sidebar">Restaure los datos de las aplicaciones en las instalaciones</block>
   <block id="1c157808ae21e883235bd19d5c13f45e" category="sidebar">Realice backup de la base de datos de Oracle</block>
   <block id="b0c92f6f27a434824e7723b42147cce3" category="sidebar">Realice un backup de la base de datos SAP HANA</block>
-  <block id="7c8db0bef9b3c6a1335fe8f0a09bfdef" category="sidebar">Copia de seguridad y restauración de datos de máquinas virtuales</block>
-  <block id="4cfbdcb9aba741b123b3c46a8341bf59" category="sidebar">Proteja sus datos de equipos virtuales</block>
-  <block id="b2736084b30c35472d74c3c29a818a95" category="sidebar">Gestione la protección de máquinas virtuales</block>
-  <block id="c2c86860cad5cd95ae9ef9c003e01d57" category="sidebar">Restaurar datos de máquinas virtuales</block>
   <block id="68b1e52936c426875b2780e91e195546" category="sidebar">Automatización con la API DE REST</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">Referencia</block>
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">Niveles de almacenamiento de archivado compatibles con AWS</block>
@@ -2710,7 +2697,6 @@
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">Compatibilidad con niveles de almacenamiento de archivado de Google</block>
   <block id="37c606e486cf867317024daab096d5c7" category="sidebar">Configure Backup para el acceso de varias cuentas en Azure</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Conocimiento y apoyo</block>
-  <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">Novedades</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">Realice backups de los datos de ONTAP en el cloud</block>
   <block id="8c603f955aa6e872271a6e7adacc3d3b" category="sidebar">De Cloud Volumes ONTAP a Amazon S3</block>
   <block id="9b26267f3d6e18a8491eff1a814d7b23" category="sidebar">De Cloud Volumes ONTAP a Azure Blob</block>
@@ -2924,8 +2910,6 @@
   <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
   <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
   <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
-  <block id="ceb0e703e6fc4ff33d792e51790261e4" category="paragraph">Si desea proteger los datos en sus máquinas virtuales, realice backups de almacenes de datos del almacenamiento primario y secundario en las instalaciones en el cloud. Cuando sea necesario, puede restaurar máquinas virtuales nuevamente en el host del plugin de SnapCenter para VMware vSphere local.</block>
-  <block id="21d7ed1a0ed596af2b79f06576c84ca9" category="paragraph">Puede realizar backups de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Antes de empezar</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">Lea los siguientes requisitos para asegurarse de que tiene una configuración compatible antes de empezar a realizar backups de almacenes de datos y máquinas virtuales en un proveedor de cloud.</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">BlueXP</block>
@@ -2939,12 +2923,10 @@
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">No es posible restaurar máquinas virtuales que abarquen diferentes almacenes de datos.</block>
   <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">En la interfaz de usuario de BlueXP, haga clic en *Protección* &gt; *Backup y recuperación* &gt; *Virtual Machines* &gt; *SnapCenter Plug-in for VMware vSphere* y seleccione el host del complemento de SnapCenter para VMware vSphere.</block>
   <block id="873069930fc1357e9cd4216822243f14" category="admonition">Si la máquina virtual de origen se mueve a otra ubicación (vMotion) y el usuario activa una restauración de esa máquina virtual desde BlueXP, la máquina virtual se restaura en la ubicación de origen desde donde se realizó el backup.</block>
-  <block id="73bc14a460209f6fd497aa9bd91fbaa6" category="list-text">Es posible restaurar desde el almacén de datos o desde máquinas virtuales:</block>
   <block id="5d920b501536441ea32ecc24679c72a2" category="cell">Si desea...</block>
   <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">Restauración desde un almacén de datos</block>
   <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">Esta opción está disponible solo si la máquina virtual está protegida mediante una directiva donde se configuran las configuraciones de archivado. La prioridad de restauración de archivado compatible con Amazon Web Services es alta, estándar y baja, y la prioridad de restauración de archivado compatible con Microsoft Azure es alta y estándar.</block>
   <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">Restaurar desde máquinas virtuales</block>
-  <block id="4eb58c4143c6b0e5561211f7a2425377" category="list-text">Para mover backups del almacén de objetos al almacenamiento de archivado, debe ejecutar ONTAP 9.10.1 o una versión posterior y Amazon Web Services o Azure debe ser el proveedor de cloud.</block>
   <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">Debe configurar el nivel de acceso de archivado para cada proveedor de cloud.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Acerca de esta tarea</block>
   <block id="ca69b8ee34e44ac66b7f0dfd3b786e9c" category="paragraph">BlueXP ofrece las siguientes políticas predefinidas:</block>
@@ -2956,7 +2938,6 @@
   <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">Puede registrar varios hosts del plugin de SnapCenter para VMware vSphere en BlueXP. Sin embargo, una vez registrado, no es posible quitar el host del plugin de SnapCenter para VMware vSphere.</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">En el campo SnapCenter Plug-in for VMware vSphere, especifique la dirección FQDN o IP del host del plugin de SnapCenter para VMware vSphere.</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">En el campo Port, especifique el número de puerto en el que ejecuta el host del plugin de SnapCenter para VMware vSphere.</block>
-  <block id="a3640e12809bb0c58c14ed0dc2515991" category="paragraph">Debe asegurarse de que el puerto esté abierto para que la comunicación ocurra entre el host del plugin de SnapCenter para VMware vSphere y BlueXP.</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">Haga clic en *Backup and recovery* &gt; *Virtual Machines* para ver todos los almacenes de datos y las máquinas virtuales que están protegidas mediante el host del plugin de SnapCenter registrado para VMware vSphere.</block>
   <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
   <block id="26000c50c37289d13041f03c670085a3" category="paragraph">Puede realizar backups de uno o varios almacenes de datos en Microsoft Azure si integra el host del plugin de SnapCenter para VMware vSphere con BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.</block>
@@ -3490,7 +3471,6 @@
   <block id="5c92c4685a32fe7d41d3f537c7f5116b" category="paragraph">*Importante:* Si planeas usar DataLock, debes habilitarlo en tu primera política al activar la copia de seguridad y recuperación de BlueXP.</block>
   <block id="0331809832826b1a244aca026a9b2d64" category="list-text">Haga clic en *Activar copia de seguridad* y la copia de seguridad y recuperación de BlueXP comienza a realizar las copias de seguridad iniciales de cada volumen seleccionado.</block>
   <block id="ba48140a3394818b661e6fd497e203a7" category="doc">Descubre el backup y la recuperación de BlueXP</block>
-  <block id="fa3178fc47dcb8e792e863ce59dac949" category="paragraph">El backup y la recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes persistentes, bases de datos y máquinas virtuales de Kubernetes, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.</block>
   <block id="af4d8d7b56820e969dfbdcfe2654b5b3" category="paragraph">El servicio realiza una replicación incremental permanente a nivel de bloque y conserva todas las eficiencias del almacenamiento, lo que reduce significativamente la cantidad de datos que se replican y almacenan. Además, pagarás solo por los elementos protegidos y utilizarás los niveles de almacenamiento de menor coste disponibles, lo que hace que el backup y la recuperación de datos de BlueXP sean muy rentables.</block>
   <block id="723a81a7ee0b42134a46c1aaa0d99371" category="inline-link">Más información sobre el backup y la recuperación de datos de BlueXP</block>
   <block id="9eb420abad7616344371178eb6cfb9a7" category="paragraph"><block ref="63f4276e2fdf1ca315cba1b1fcff7250" category="inline-link-rx"></block>.</block>
@@ -3735,7 +3715,6 @@
   <block id="2e5d6ff9bc4d6b4194df020bde3f3dca" category="sidebar">Realiza un backup de la base de datos de backup y recuperación de BlueXP en un sitio oscuro</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">Blogs de backup y recuperación de BlueXP</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">Casos prácticos de backup y recuperación de BlueXP</block>
-  <block id="ceffaf94354645ad26052bbc53604f5d" category="sidebar">Realice backups de los datos de las máquinas virtuales en el cloud</block>
   <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">Restaure datos del cloud</block>
   <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">Restaurar datos de volúmenes ONTAP</block>
   <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">Restaure los datos de aplicaciones de Oracle en las instalaciones</block>
@@ -3744,4 +3723,21 @@
   <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">Restaure los datos de aplicaciones SAP HANA nativas de cloud</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">Restaurar datos de equipos virtuales</block>
   <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Restaura los datos del volumen de Kubernetes</block>
+  <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">El servicio de backup y recuperación de datos de BlueXP proporciona una protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes persistentes de Kubernetes, bases de datos y máquinas virtuales, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.</block>
+  <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">Gestionar la protección de datos de almacenes de datos y equipos virtuales</block>
+  <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">Debe asegurarse de que la comunicación esté abierta entre el host del plugin de SnapCenter para VMware vSphere en las instalaciones que se ejecuta en el puerto 8144 predeterminado y la instancia de conector de BlueXP, que puede estar ejecutándose en cualquier proveedor de cloud (Amazon Web Services, Microsoft Azure, Google Cloud Platform) o en las instalaciones.</block>
+  <block id="de437d1f424b507f3d7be645ac0952c2" category="paragraph">El backup y recuperación de datos de BlueXP para máquinas virtuales ofrece funcionalidades de protección de datos al realizar backups de almacenes de datos que restauran máquinas virtuales.</block>
+  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">Es posible realizar backups de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaurar máquinas virtuales en el host del plugin de SnapCenter para VMware vSphere en las instalaciones.</block>
+  <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">Se debe usar el plugin de SnapCenter para VMware vSphere 4.7P1 o versiones posteriores para realizar backups de almacenes de datos desde el almacenamiento secundario en las instalaciones.</block>
+  <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">Crear una política para realizar backups de almacenes de datos</block>
+  <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">Para mover backups del almacén de objetos al almacenamiento de archivado, debe ejecutar ONTAP 9.10.1 o una versión posterior y Amazon Web Services o Microsoft Azure debe ser el proveedor de cloud.</block>
+  <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">No es posible editar ni eliminar una política, que está asociada con un almacén de datos.</block>
+  <block id="ffa1e37a2c6478ff157a0a7d25a607e9" category="doc">Restaure datos de máquinas virtuales desde el cloud</block>
+  <block id="95513dac8a621e64dcee2a0f311b0e66" category="paragraph">Puede restaurar datos de máquinas virtuales desde el cloud de nuevo al vCenter en las instalaciones. La copia de seguridad se restaurará en la misma ubicación desde donde se realizó la copia de seguridad. Si se realizó el backup del equipo virtual mediante la normativa de archivado, se puede establecer la prioridad de restauración de archivado.</block>
+  <block id="6c0dd80335ed3d649017aa79a23eddae" category="list-text">Es posible restaurar desde el almacén de datos o desde las máquinas virtuales:</block>
+  <block id="54a98d3cca3d552c2562869bfcebf735" category="section-title">Proteger bases de datos de Oracle</block>
+  <block id="b45eb079efd4b3748b1efc669c02c01c" category="section-title">Proteger las bases de datos SAP HANA</block>
+  <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">Realizar backups y restaurar los datos de los equipos virtuales</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Novedades</block>
+  <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">Haga backups de almacenes de datos en el cloud</block>
 </blocks>

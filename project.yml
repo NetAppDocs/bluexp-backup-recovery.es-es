@@ -166,13 +166,13 @@ sidebar:
         url: "/task-clone-cloud-native-oracle-data.html"
     - title: Gestione la protección de datos de aplicaciones nativas en el cloud
       url: "/task-manage-cloud-native-app-data.html"
-  - title: Copia de seguridad y restauración de datos de máquinas virtuales
+  - title: Realizar backups y restaurar los datos de los equipos virtuales
     entries:
-    - title: Proteja sus datos de equipos virtuales
+    - title: Proteja los datos de los equipos virtuales
       url: "/concept-protect-vm-data.html"
-    - title: Registre el plugin de SnapCenter para VMware vSphere
+    - title: Registre el host del plugin de SnapCenter para VMware vSphere
       url: "/task-register-snapCenter-plug-in-for-vmware-vsphere.html"
-    - title: Cree una política para realizar backups de equipos virtuales
+    - title: Crear una política para realizar backups de almacenes de datos
       url: "/task-create-policies-vms.html"
     - title: Backup de almacenes de datos en Amazon Web Services
       flavor: aws
@@ -185,9 +185,9 @@ sidebar:
       url: "/task-backup-vm-data-to-gcp.html"
     - title: Realizar backup de almacenes de datos en StorageGRID
       url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: Gestione la protección de máquinas virtuales
+    - title: Gestionar la protección de datos de almacenes de datos y equipos virtuales
       url: "/task-manage-vm-data-in-cloud.html"
-    - title: Restaurar datos de máquinas virtuales
+    - title: Restaurar datos de equipos virtuales
       url: "/task-restore-vm-data.html"
   - title: Automatización con la API DE REST
     url: "/api-backup-restore.html"
@@ -282,7 +282,7 @@ homepage:
     - title: Realice backup de la base de datos SAP HANA nativa del cloud
       flavor: azure
       url: task-backup-cloud-native-sap-hana-data.html
-  - title: Realice backups de los datos de las máquinas virtuales en el cloud
+  - title: Haga backups de almacenes de datos en el cloud
     links:
     - title: Backup de almacenes de datos en Amazon Web Services
       flavor: aws

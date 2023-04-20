@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-create-policies-vms.html 
 keywords: create policy, protection policies, predefined policies, custom policies 
-summary: Cree una política para realizar backups de equipos virtuales 
+summary: Crear una política para realizar backups de almacenes de datos 
 ---
-= Cree una política para realizar backups de equipos virtuales
+= Crear una política para realizar backups de almacenes de datos
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ Puede crear una directiva o utilizar una de las siguientes directivas predefinid
 
 .Antes de empezar
 * Debe crear políticas si no desea editar las políticas predefinidas.
-* Para mover backups del almacén de objetos al almacenamiento de archivado, debe ejecutar ONTAP 9.10.1 o una versión posterior y Amazon Web Services o Azure debe ser el proveedor de cloud.
+* Para mover backups del almacén de objetos al almacenamiento de archivado, debe ejecutar ONTAP 9.10.1 o una versión posterior y Amazon Web Services o Microsoft Azure debe ser el proveedor de cloud.
 * Debe configurar el nivel de acceso de archivado para cada proveedor de cloud.
 
 
@@ -74,6 +74,6 @@ Mensual
 . Haga clic en *Crear*.
 +
 
-NOTE: No puede editar ni eliminar una política que está asociada a una máquina virtual.
+NOTE: No es posible editar ni eliminar una política, que está asociada con un almacén de datos.
 
 

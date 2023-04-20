@@ -4,7 +4,7 @@ permalink: task-manage-vm-data-in-cloud.html
 keywords: manage backups, virtual machines, view datastores, view virtual machines, edit 
 summary: Es posible ver los almacenes de datos y las máquinas virtuales, y editar las instancias del plugin de SnapCenter para VMware vSphere. 
 ---
-= Gestione la protección de máquinas virtuales
+= Gestionar la protección de datos de almacenes de datos y equipos virtuales
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

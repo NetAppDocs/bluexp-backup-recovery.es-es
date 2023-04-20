@@ -51,7 +51,7 @@ IMPORTANT: La infraestructura SaaS Cloud Backup es resiliente a los fallos de la
 
 
 
-== Proteja la base de datos de Oracle
+== Proteger bases de datos de Oracle
 
 
 
@@ -107,7 +107,7 @@ Puede especificar diferentes frecuencias de programación, como por ejemplo, cad
 
 
 
-== Proteja la base de datos SAP HANA
+== Proteger las bases de datos SAP HANA
 
 
 
