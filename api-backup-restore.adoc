@@ -16,7 +16,7 @@ summary: Las funcionalidades de backup y recuperación de datos de BlueXP que es
 [role="lead"]
 Las funcionalidades de backup y recuperación de datos de BlueXP que están disponibles en la interfaz de usuario web también están disponibles en la API RESTful.
 
-Hay nueve categorías de extremos definidos en el backup y la recuperación de BlueXP:
+Hay diez categorías de extremos definidos en el backup y la recuperación de BlueXP:
 
 * backup: gestiona las operaciones de backup de los recursos de cloud y en las instalaciones, y recupera los detalles de los datos de backup
 * catálogo: Gestiona la búsqueda de archivos por catálogo indexado basada en una consulta (Buscar y restaurar).

@@ -50,7 +50,7 @@ Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:
 
 * Un paquete "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos ONTAP en las instalaciones.
 * Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
-* Un paquete "CVO Edge Cache" tiene las mismas funciones que el paquete "CVO Professional", pero también incluye soporte para https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Caché de archivos global"^]. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
+* Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Almacenamiento en caché perimetral de BlueXP"^] servicio. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
 
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Obtenga más información sobre estos paquetes de licencias basados en capacidad"].
@@ -127,7 +127,7 @@ Si no tienes una licencia BYOL de backup y recuperación de BlueXP, haz clic en 
 
 Opcionalmente, si tiene una licencia basada en nodos sin asignar para Cloud Volumes ONTAP que no utilizará, puede convertirla en una licencia de backup y recuperación de BlueXP con la misma equivalencia en dólar y la misma fecha de caducidad. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vaya aquí para obtener más información"^].
 
-La página de Digital Wallet de BlueXP se utiliza para gestionar licencias BYOL. Puede añadir licencias nuevas, actualizar licencias existentes y ver el estado de la licencia desde Digital Wallet.
+Utilizarás la cartera digital de BlueXP para gestionar las licencias de BYOL. Puedes añadir nuevas licencias, actualizar las licencias existentes y ver el estado de la licencia desde la cartera digital de BlueXP.
 
 
 
@@ -183,21 +183,21 @@ BlueXP añade la licencia para que el backup y la recuperación de BlueXP estén
 
 === Actualizar una licencia BYOL de backup y recuperación de BlueXP
 
-Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de cartera digital y en https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"].
+Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de la cartera digital de BlueXP y en https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"].
 
-image:screenshot_services_license_expire.png["Una captura de pantalla que muestra una licencia que está a punto de caducar en la página de Digital Wallet."]
+image:screenshot_services_license_expire.png["Una captura de pantalla que muestra una licencia que va a caducar en la página de la cartera digital de BlueXP."]
 
 Puedes actualizar la licencia de backup y recuperación de BlueXP antes de que caduque para que no se produzcan interrupciones en la capacidad de realizar copias de seguridad y restaurar los datos.
 
 .Pasos
 . Haz clic en el icono de chat en la parte inferior derecha de BlueXP, o ponte en contacto con el servicio de soporte de, para solicitar una extensión de tu plazo o capacidad adicional a tu licencia de backup y recuperación de BlueXP para el número de serie concreto.
 +
-Tras pagar la licencia y registrarse en el sitio de soporte de NetApp, BlueXP actualiza automáticamente la licencia en la cartera digital y la página licencias de servicios de datos reflejarán el cambio en 5 a 10 minutos.
+Después de pagar la licencia y estar registrado en el sitio de soporte de NetApp, BlueXP actualiza automáticamente la licencia en la cartera digital de BlueXP y la página de licencias de servicios de datos reflejará el cambio que se ha producido en un plazo de 5 a 10 minutos.
 
 . Si BlueXP no puede actualizar automáticamente la licencia (por ejemplo, cuando está instalada en un sitio oscuro), deberá cargar manualmente el archivo de licencia.
 +
 .. Puede hacerlo <<Obtenga el archivo de licencia de backup y recuperación de BlueXP,Obtenga el archivo de licencia del sitio de soporte de NetApp>>.
-.. En la ficha licencias de servicios de datos_ de la página cartera digital, haga clic en image:screenshot_horizontal_more_button.gif["Icono más"] Para el número de serie del servicio que está actualizando y haga clic en *Actualizar licencia*.
+.. En la pestaña _Data Services Licenses_ de la página de la cartera digital de BlueXP, haga clic en image:screenshot_horizontal_more_button.gif["Icono más"] Para el número de serie del servicio que está actualizando y haga clic en *Actualizar licencia*.
 +
 image:screenshot_services_license_update1.png["Captura de pantalla de la selección del botón Actualizar licencia de un servicio concreto."]
 

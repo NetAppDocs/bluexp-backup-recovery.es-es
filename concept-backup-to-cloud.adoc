@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
-summary: El backup y la recuperación de datos de BlueXP proporciona una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de ONTAP de NetApp, tanto en las instalaciones como en el cloud. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
+summary: El servicio de backup y recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
 ---
 = Descubre el backup y la recuperación de BlueXP
 :hardbreaks:
