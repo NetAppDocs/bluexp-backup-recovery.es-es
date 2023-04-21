@@ -40,16 +40,16 @@ Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripci
 
 En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debe suscribirse aunque tenga una prueba gratuita o si lleva su propia licencia (BYOL):
 
-* La suscripción garantiza que no se produzcan interrupciones en el servicio una vez que finalice la prueba gratuita. Cuando finalice la prueba, se le cobrará cada hora según la cantidad de datos de los que realiza la copia de seguridad.
+* La suscripción garantiza que no se produzca ninguna interrupción en el servicio una vez que finalice la prueba gratuita. Cuando finalice la prueba, se le cobrará cada hora de acuerdo con la cantidad de datos de los que realice la copia de seguridad.
 * Si realiza un backup de más datos de los permitidos en su licencia BYOL, el backup de datos continúa con su suscripción de pago por uso. Por ejemplo, si tiene una licencia BYOL de 10 TIB, toda la capacidad que supere los 10 TIB se cargará a través de la suscripción PAYGO.
 
 
-No se le cobrará su suscripción de pago por uso durante su prueba gratuita o si no ha superado su licencia BYOL.
+No se le cobrará por su suscripción de pago por uso durante la prueba gratuita o si no ha superado su licencia BYOL.
 
 Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:
 
 * Un paquete "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos ONTAP en las instalaciones.
-* Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
+* Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.
 * Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Almacenamiento en caché perimetral de BlueXP"^] servicio. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
 
 
@@ -90,9 +90,9 @@ Al utilizar AWS, hay dos contratos anuales disponibles en https://aws.amazon.com
 
 * Un plan de "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos de ONTAP en las instalaciones.
 +
-Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Asocie la suscripción con sus credenciales de AWS"^]. Tenga en cuenta que también tendrá que pagar por sus sistemas Cloud Volumes ONTAP mediante esta suscripción anual de contrato, ya que sólo puede asignar una suscripción activa a sus credenciales de AWS en BlueXP.
+Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Asocie la suscripción con sus credenciales de AWS"^]. Ten en cuenta que también tendrás que pagar por tus sistemas Cloud Volumes ONTAP con esta suscripción de contrato anual, ya que solo puedes asignar una suscripción activa a tus credenciales de AWS en BlueXP.
 
-* Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.
+* Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.
 +
 Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Tema sobre licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
 

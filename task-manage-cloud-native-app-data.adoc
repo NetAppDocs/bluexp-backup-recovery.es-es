@@ -74,6 +74,8 @@ Host de Oracle Database
 . Modificar *Connector ID*.
 
 
+ifdef::azure[]
+
 
 
  a| 
@@ -95,7 +97,9 @@ curl --location --request PATCH
 "new_connector_id": "New connector Id"
 }
 ----
-Los detalles del conector se actualizarán correctamente si todos los hosts tienen el servicio del plugin de SnapCenter para SAP HANA instalado y en ejecución, y también si se puede acceder a todos desde el nuevo conector.
+Los detalles del conector se actualizarán correctamente si todos los hosts tienen servicio del plugin de SnapCenter para SAP HANA instalado y en ejecución y también si se puede acceder a todos ellos desde el nuevo conector.
+
+endif::azure[]
 
 |===
 Después de actualizar los detalles del conector para hosts Oracle o SAP HANA, realice lo siguiente para asegurarse de que los detalles del conector se han actualizado correctamente.

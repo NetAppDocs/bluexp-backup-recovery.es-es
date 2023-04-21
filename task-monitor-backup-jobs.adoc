@@ -33,9 +33,13 @@ El estado del backup y la restauración puede ser:
 
 Tanto las operaciones de backup y restauración iniciadas por el usuario que se inician desde la IU y la API de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup programadas continuas, están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecuten ONTAP 9.13.0 o posterior.
 
+[TIP]
+====
+* Cuando se ejecuta una versión anterior de ONTAP en sistemas Cloud Volumes ONTAP o en sistemas ONTAP locales, solo se muestran los trabajos iniciados por el usuario.
+* Si ha actualizado sus sistemas Cloud Volumes ONTAP a la versión 9,13.x y no ve las operaciones de backup programadas continuas en el Monitor de trabajos, deberá reiniciar el servicio de backup y recuperación de BlueXP. link:reference-restart-backup.html["Descubre cómo reiniciar el backup y la recuperación de datos de BlueXP"^].
 
-TIP: Cuando se ejecuta una versión anterior de ONTAP en sistemas Cloud Volumes ONTAP o en sistemas ONTAP locales, solo se muestran los trabajos iniciados por el usuario.
 
+====
 .Pasos
 . En el menú BlueXP, seleccione *Protección > copia de seguridad y recuperación*.
 . Seleccione la ficha *Supervisión de trabajos*.

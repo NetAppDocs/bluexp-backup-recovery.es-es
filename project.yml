@@ -66,23 +66,6 @@ sidebar:
       url: "/task-manage-backup-settings-ontap.html"
     - title: Restaurar desde backups de ONTAP
       url: "/task-restore-backups-ontap.html"
-  - title: Cree backups y restaure datos de Kubernetes
-    entries:
-    - title: Proteja sus datos de Kubernetes
-      url: "/concept-kubernetes-backup-to-cloud.html"
-    - title: Realice el backup en Amazon S3
-      flavor: aws
-      url: "/task-backup-kubernetes-to-s3.html"
-    - title: Backup a Azure Blob
-      flavor: azure
-      url: "/task-backup-kubernetes-to-azure.html"
-    - title: Realice su backup en Google Cloud
-      flavor: gcp
-      url: "/task-backup-kubernetes-to-gcp.html"
-    - title: Gestione los backups de Kubernetes
-      url: "/task-manage-backups-kubernetes.html"
-    - title: Restauración desde backups de Kubernetes
-      url: "/task-restore-backups-kubernetes.html"
   - title: Realice backups y restauraciones de datos de aplicaciones en las instalaciones
     entries:
     - title: Proteja los datos de las aplicaciones locales
@@ -157,6 +140,7 @@ sidebar:
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"
     - title: Actualice el sistema de destino SAP HANA
+      flavor: azure
       url: "/task-refresh-sap-hana-target-system.html"
     - title: Clone bases de datos de Oracle nativas en el cloud
       entries:
@@ -189,6 +173,23 @@ sidebar:
       url: "/task-manage-vm-data-in-cloud.html"
     - title: Restaurar datos de equipos virtuales
       url: "/task-restore-vm-data.html"
+  - title: Cree backups y restaure datos de Kubernetes
+    entries:
+    - title: Proteja sus datos de Kubernetes
+      url: "/concept-kubernetes-backup-to-cloud.html"
+    - title: Realice el backup en Amazon S3
+      flavor: aws
+      url: "/task-backup-kubernetes-to-s3.html"
+    - title: Backup a Azure Blob
+      flavor: azure
+      url: "/task-backup-kubernetes-to-azure.html"
+    - title: Realice su backup en Google Cloud
+      flavor: gcp
+      url: "/task-backup-kubernetes-to-gcp.html"
+    - title: Gestione los backups de Kubernetes
+      url: "/task-manage-backups-kubernetes.html"
+    - title: Restauración desde backups de Kubernetes
+      url: "/task-restore-backups-kubernetes.html"
   - title: Automatización con la API DE REST
     url: "/api-backup-restore.html"
   - title: Referencia
@@ -201,12 +202,14 @@ sidebar:
       url: "/reference-azure-backup-tiers.html"
     - title: Compatibilidad con niveles de almacenamiento de archivado de Google
       url: "/reference-google-backup-tiers.html"
+    - title: Configurar el backup para el acceso de cuentas múltiples en Azure
+      flavor: azure
+      url: "/reference-backup-multi-account-azure.html"
     - title: Realiza un backup de la base de datos de backup y recuperación de BlueXP
         en un sitio oscuro
       url: "/reference-backup-cbs-db-in-dark-site.html"
-    - title: Configure Backup para el acceso de varias cuentas en Azure
-      flavor: azure
-      url: "/reference-backup-multi-account-azure.html"
+    - title: Reinicia el backup y la recuperación de BlueXP
+      url: "/reference-restart-backup.html"
   - title: Conocimiento y apoyo
     entries:
     - title: Regístrese para recibir soporte
@@ -249,17 +252,22 @@ homepage:
       flavor: gcp
     - title: ONTAP en las instalaciones a StorageGRID
       url: task-backup-onprem-private-cloud.html
-  - title: Realice backups de los datos de Kubernetes en el cloud
+  - title: Gestionar los archivos de copia de seguridad de ONTAP
     links:
-    - title: Clúster de Kubernetes a Amazon S3
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: Clúster de Kubernetes a Azure Blob
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: Cluster de Kubernetes a Google Cloud
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
+    - title: Habilitar y deshabilitar los backups de volumen
+      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
+    - title: Editar una política de backup existente
+      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
+    - title: Añada una nueva política de backup
+      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
+    - title: Cambie la política asignada a los volúmenes existentes
+      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
+    - title: Crear un backup de volumen manual
+      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
+    - title: Consulte la lista de backups de cada volumen
+      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
+    - title: Eliminar backups
+      url: task-manage-backups-ontap.html#deleting-backups
   - title: Realice backups de los datos de las aplicaciones en el cloud
     links:
     - title: Realice backup de los datos de las aplicaciones en las instalaciones
@@ -277,9 +285,9 @@ homepage:
     - title: Realice backups de los datos de las aplicaciones en las instalaciones
         en StorageGRID
       url: task-backup-app-data-to-storagegrid.html
-    - title: Realice backup de bases de datos de Oracle nativas en el cloud
+    - title: Realiza un backup de bases de datos de Oracle nativas en la nube
       url: task-backup-cloud-native-oracle-data.html
-    - title: Realice backup de la base de datos SAP HANA nativa del cloud
+    - title: Hacer backup de la base de datos SAP HANA nativa en la nube
       flavor: azure
       url: task-backup-cloud-native-sap-hana-data.html
   - title: Haga backups de almacenes de datos en el cloud
@@ -303,31 +311,26 @@ homepage:
       url: task-restore-oracle-data.html
     - title: Restaure datos de aplicaciones de SQL Server locales
       url: task-restore-sql-data.html
-    - title: Restaurar datos de aplicaciones de Oracle nativas en la nube
+    - title: Restaure los datos de aplicaciones de Oracle nativas de cloud
       url: task-restore-cloud-native-oracle-data.html
-    - title: Restaure los datos de aplicaciones SAP HANA nativas de cloud
+    - title: Restaure los datos de aplicaciones SAP HANA nativas del cloud
       flavor: azure
       url: task-restore-cloud-native-sap-hana-data.html
     - title: Restaurar datos de equipos virtuales
       url: task-restore-vm-data.html
     - title: Restaura los datos del volumen de Kubernetes
       url: task-restore-backups-kubernetes.html
-  - title: Gestionar los archivos de copia de seguridad de ONTAP
+  - title: Realice backups de los datos de Kubernetes en el cloud
     links:
-    - title: Habilitar y deshabilitar los backups de volumen
-      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
-    - title: Editar una política de backup existente
-      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
-    - title: Añada una nueva política de backup
-      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
-    - title: Cambie la política asignada a los volúmenes existentes
-      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
-    - title: Crear un backup de volumen manual
-      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
-    - title: Consulte la lista de backups de cada volumen
-      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
-    - title: Eliminar backups
-      url: task-manage-backups-ontap.html#deleting-backups
+    - title: Clúster de Kubernetes a Amazon S3
+      url: task-backup-kubernetes-to-s3.html
+      flavor: aws
+    - title: Clúster de Kubernetes a Azure Blob
+      url: task-backup-kubernetes-to-azure.html
+      flavor: azure
+    - title: Cluster de Kubernetes a Google Cloud
+      url: task-backup-kubernetes-to-gcp.html
+      flavor: gcp
   - title: Blogs y comunidad
     links:
     - title: Comunidad de NetApp
@@ -336,7 +339,7 @@ homepage:
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
     - title: Casos prácticos de backup y recuperación de BlueXP
       url: https://bluexp.netapp.com/cloud-backup
-    - title: Seminarios web sobre el cloud
+    - title: Seminarios web de BlueXP
       url: https://bluexp.netapp.com/events
 product-family:
   name: BlueXP

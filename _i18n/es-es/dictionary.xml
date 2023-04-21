@@ -118,7 +118,6 @@
   <block id="53cfd7fa3290c6e484ae2c692a63d3a7" category="list-text">En la página Database Details, haga clic en <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> Junto a *Filter by* y seleccione *Clone*.</block>
   <block id="0939e02b7faf70738951c4d3dac49c2d" category="list-text">Haga clic en <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> Correspondiente al clon que desea eliminar y haga clic en *Eliminar*.</block>
   <block id="6c2d45f01ff62f51f26b2e2555360189" category="list-text">(Opcional) Active la casilla de verificación *forzar eliminación*.</block>
-  <block id="d13044a4ef6b89541aeb5868baab390c" category="paragraph">Los detalles del conector se actualizarán correctamente si todos los hosts tienen el servicio del plugin de SnapCenter para SAP HANA instalado y en ejecución, y también si se puede acceder a todos desde el nuevo conector.</block>
   <block id="f713a5b618a13e567bd48c7c23bc1831" category="section-title">Configure el certificado firmado de CA</block>
   <block id="134db136339131109beaeb48cea408f5" category="paragraph">Es posible configurar un certificado firmado de CA si se desea incluir la seguridad adicional en el entorno.</block>
   <block id="dbb66d78c3928dbc0e61b7f884e7d152" category="paragraph">El conector utiliza un certificado autofirmado para comunicarse con el plug-in. El certificado autofirmado se importa al almacén de claves mediante el script de instalación. Puede realizar los siguientes pasos para reemplazar el certificado autofirmado con el certificado firmado de CA.</block>
@@ -501,7 +500,6 @@
   <block id="86013e4eb67d3b4efa98a69c18999663" category="list-text">Si la instantánea se encuentra en el almacenamiento de archivado, especifique la prioridad para recuperar los datos del almacenamiento de archivado.</block>
   <block id="8ece1a3075cf82b4a6288d5a36855ff2" category="list-text">Haga clic en *Mount*.</block>
   <block id="d4f871b7d459c4ece286a475f033ca49" category="summary">Crear backups programados o bajo demanda de la base de datos SAP HANA.</block>
-  <block id="fd8f5388e72a984af8274823defe28fc" category="doc">Realice backup de la base de datos SAP HANA nativa del cloud</block>
   <block id="613bbcbbbc87937c088f5ca502714159" category="section-title">Añada hosts de base de datos SAP HANA</block>
   <block id="54f922a09b59b7f2fce83cc984324d03" category="paragraph">Debe añadir manualmente hosts de base de datos SAP HANA para asignar políticas y crear backups. No se admite la detección automática del host de la base de datos SAP HANA.</block>
   <block id="2d401a77c81793a9ece97156d2f30373" category="list-text">Debe haber agregado el entorno de trabajo y creado el conector.</block>
@@ -1661,7 +1659,6 @@
   <block id="31f730de563a8876975a231ee55bc4d7" category="list-text">Al realizar backups de datos de ONTAP en las instalaciones en StorageGRID, necesita una licencia BYOL, pero no supone ningún coste para el espacio de almacenamiento del proveedor de cloud.</block>
   <block id="5ef05167488611c5bd4ff0f410595ce4" category="section-title">prueba gratuita de 30 días</block>
   <block id="9fddc1f9c7fd56a9a852b0bd4cd2e8e7" category="paragraph">En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debe suscribirse aunque tenga una prueba gratuita o si lleva su propia licencia (BYOL):</block>
-  <block id="54bddc4e25a88aae05bb69520422c997" category="list-text">La suscripción garantiza que no se produzcan interrupciones en el servicio una vez que finalice la prueba gratuita. Cuando finalice la prueba, se le cobrará cada hora según la cantidad de datos de los que realiza la copia de seguridad.</block>
   <block id="5f5358182364ef304e26de4fc2395537" category="list-text">Si realiza un backup de más datos de los permitidos en su licencia BYOL, el backup de datos continúa con su suscripción de pago por uso. Por ejemplo, si tiene una licencia BYOL de 10 TIB, toda la capacidad que supere los 10 TIB se cargará a través de la suscripción PAYGO.</block>
   <block id="20e92bedd41f67c18b032dfcce8e6443" category="list-text">Un paquete "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos ONTAP en las instalaciones.</block>
   <block id="c04e9a5a6565b2a7f08b4191d93602f6" category="inline-link">Obtenga más información sobre estos paquetes de licencias basados en capacidad</block>
@@ -1674,7 +1671,6 @@
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace</block>
   <block id="2ad823c02fc1acdb11ec531ccd53e0f5" category="paragraph">Al utilizar AWS, hay dos contratos anuales disponibles en<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> Para sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Están disponibles en periodos de 1, 2 o 3 años:</block>
   <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">Asocie la suscripción con sus credenciales de AWS</block>
-  <block id="58916e7720d1539d3ab208d053e7dd1d" category="paragraph">Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure<block ref="f1f7c973fce685b876017d26d677c721" category="inline-link-rx"></block>. Tenga en cuenta que también tendrá que pagar por sus sistemas Cloud Volumes ONTAP mediante esta suscripción anual de contrato, ya que sólo puede asignar una suscripción activa a sus credenciales de AWS en BlueXP.</block>
   <block id="5f0364e373bcb99c02ad1b8359683908" category="inline-link">Tema sobre licencias de Cloud Volumes ONTAP</block>
   <block id="798aac57a47adfaf930d9def9b4bbe02" category="paragraph">Consulte<block ref="d58b2dbf2a4616ceca06f8773ed8f738" category="inline-link-rx"></block> para obtener más información sobre esta opción de licencia.</block>
   <block id="d24c531f67e59e16184a6f74c9a59f91" category="paragraph">Si quiere utilizar esta opción, puede configurar el contrato anual al crear un entorno de trabajo de Cloud Volumes ONTAP y BlueXP le solicitará que se suscriba a AWS Marketplace.</block>
@@ -1697,7 +1693,6 @@
   <block id="fc76651edf85f11e6b8f2a81226ab59d" category="paragraph">Si su cuenta del sitio de soporte de NetApp no está disponible en la lista desplegable,<block ref="6d9745cd4f1d60b55f06aef4c5cb6ec4" category="inline-link-rx"></block>.</block>
   <block id="664bf8c6e31ba8a710f5213d1874cd18" category="list-text">Si tiene el archivo de licencia de copia de seguridad (requerido cuando está instalado en un sitio oscuro), seleccione la opción *cargar archivo de licencia* y siga las indicaciones para adjuntar el archivo.</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">Notificaciones</block>
-  <block id="cc51ebad1f268690053194c8639d1a75" category="list-text">Si BlueXP no puede actualizar automáticamente la licencia (por ejemplo, cuando está instalada en un sitio oscuro), deberá cargar manualmente el archivo de licencia.</block>
   <block id="b2b168bd64a341a85c749cb61bba40cb" category="inline-xref">Obtenga el archivo de licencia del sitio de soporte de NetApp</block>
   <block id="3ce750f001c2369e23b68f3210d9f100" category="inline-image-macro">Captura de pantalla de la selección del botón Actualizar licencia de un servicio concreto.</block>
   <block id="9d37072f5a1b76b16e647a14826ade70" category="paragraph"><block ref="9d37072f5a1b76b16e647a14826ade70" category="inline-image-macro-rx" type="image"></block></block>
@@ -2079,7 +2074,6 @@
   <block id="793640ee72b7150dff71a288a821c67c" category="list-text">Versiones de StorageGRID compatibles</block>
   <block id="8a456872aea50fd247449bd552854586" category="list-text">Se admite StorageGRID 10.3 y versiones posteriores.</block>
   <block id="22c37949858e0a6877e1770be16db62b" category="paragraph">Para usar la protección DataLock &amp; Ransomware para sus copias de seguridad, sus sistemas StorageGRID deben ejecutar la versión 11.6.0.3 o posterior.</block>
-  <block id="0276e5d8afdc46e144ae840aae5be338" category="paragraph">Para organizar los backups antiguos en niveles en el almacenamiento de archivado en cloud, los sistemas StorageGRID deben ejecutar la versión 11.3 o posterior.</block>
   <block id="ca00250851f3a70617fb3099c4414b66" category="list-text">Credenciales de S3</block>
   <block id="5a7e671d36e7ddbd948f2001988ffe33" category="inline-link">Consulte los documentos de StorageGRID para obtener más información</block>
   <block id="8891c4e57a35fdfe946dfc0b3b7397a7" category="list-text">Debe haber creado una cuenta de inquilino de S3 para controlar el acceso al almacenamiento de StorageGRID.<block ref="6204e1ab37c5b3d32abd50f4f1f64c36" category="inline-link-rx"></block>.</block>
@@ -2629,7 +2623,6 @@
   <block id="f3753469514d2cda99cee390aa2bf172" category="list-text">Debe haber al menos un backup por aplicación disponible en SnapCenter Server</block>
   <block id="29d7639a0c7b9ce1eeb1a132409265c0" category="paragraph">En la siguiente imagen se muestra cada componente al realizar backups en cloud y las conexiones que necesita preparar entre ellos:</block>
   <block id="d5b842bb75f6d0fd358e7a35f06b5354" category="summary">Crear backups programados o bajo demanda de bases de datos de Oracle.</block>
-  <block id="b83d0a6a6920d792bf1e5421f574e4d8" category="doc">Realice backup de bases de datos de Oracle nativas en el cloud</block>
   <block id="91808c1a7549a55c53468ea4a50927d4" category="paragraph">Puede crear directivas si no desea editar las directivas preparadas previamente.</block>
   <block id="0afc66e0d31a963ebe19ebef4f887a60" category="list-text">En la página aplicaciones, en la lista desplegable Configuración, seleccione *Directivas*.</block>
   <block id="478ed3048c4d215862134df0ae0d59db" category="list-text">(Opcional) edite el formato del nombre de la copia de seguridad.</block>
@@ -2670,7 +2663,6 @@
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">Niveles de almacenamiento de archivado compatibles con AWS</block>
   <block id="9f442565cfeffa804173efd111c4d74c" category="sidebar">Niveles de acceso de archivado de Azure compatibles</block>
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">Compatibilidad con niveles de almacenamiento de archivado de Google</block>
-  <block id="37c606e486cf867317024daab096d5c7" category="sidebar">Configure Backup para el acceso de varias cuentas en Azure</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">Conocimiento y apoyo</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">Realice backups de los datos de ONTAP en el cloud</block>
   <block id="8c603f955aa6e872271a6e7adacc3d3b" category="sidebar">De Cloud Volumes ONTAP a Amazon S3</block>
@@ -2694,7 +2686,6 @@
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="sidebar">Eliminar backups</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blogs y comunidad</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">Comunidad de NetApp</block>
-  <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Seminarios web sobre el cloud</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Toda la documentación de BlueXP</block>
   <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">Proveedor de cloud</block>
   <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">Todos los proveedores de cloud</block>
@@ -3235,7 +3226,6 @@
   <block id="c7a27796e5a5232935a8d038a0a6b895" category="list-text">Inicia sesión en BlueXP Connector VM y realiza los siguientes pasos:</block>
   <block id="28c72bbdc4ab4ab6f8e9dc9141ef35b4" category="list-text">Valide que es posible acceder al plugin desde el conector ejecutando el comando siguiente desde el conector.<block ref="9544839ee9a7e2ffd7168a97cf30d0ba" prefix=" " category="inline-code"></block></block>
   <block id="55f1f4b32fd8584ea3972f97a31dd31a" category="list-text">Copie certificate.p12 desde la ruta _&lt;base_mount_path&gt;/client/certificate/_ de la máquina virtual de conector a _/var/opt/snapcenter/spl/etc/_ en el host del plugin.</block>
-  <block id="21b6afde4d55e5b62a99a8b58006204a" category="list-text">Inicie sesión en el host del plugin y realice los siguientes pasos:</block>
   <block id="760915aa5f89cc3d82d6b1843f2f6bf5" category="section-title">Configurar el certificado firmado por CA para BlueXP Connector</block>
   <block id="d8874bb71961b94426c411c146dd7e73" category="list-text">Realice los siguientes pasos en el conector para utilizar el certificado de CA como certificado de cliente cuando el conector se conecta con el plugin.</block>
   <block id="7e2c20ec1886ae9be86114e609044897" category="list-text">Elimine todos los archivos existentes ubicados en _&lt;base_mount_path&gt;/client/certificate_ en el conector.</block>
@@ -3460,19 +3450,15 @@
   <block id="e54090ec02cffc5025d030f0a386c9e2" category="paragraph">Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decides no continuar utilizando el backup y la recuperación de BlueXP, solo <block ref="c2935260c294740f9f8b38e657590234" category="inline-link-macro-rx"></block> antes de que termine la prueba y no se le cobrará.</block>
   <block id="094ba72a3fdb39776632245f235f26be" category="section-title">Utiliza una suscripción PAYGO de backup y recuperación de BlueXP</block>
   <block id="c04968186bb3df4bd0331429c63f8641" category="paragraph">Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:</block>
-  <block id="d6d65ebf5ad097949fd6fbbf14e96347" category="list-text">Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.</block>
   <block id="c02893129433d085ea6dfbc155a79562" category="paragraph">Utilice estos enlaces para suscribirse al backup y la recuperación de BlueXP desde su mercado del proveedor de cloud:</block>
   <block id="cdf5556d637c931d7fb6a645af6fc805" category="paragraph">Paga por el backup y la recuperación de BlueXP cada año mediante la compra de un contrato anual.</block>
-  <block id="46289439d4ba1052046eac9e7e72ca47" category="list-text">Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar una copia de seguridad de los datos ONTAP en las instalaciones.</block>
   <block id="3d573f2479f035108ed1f84b5258233d" category="paragraph">Si utiliza Azure, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Azure Marketplace. Después de que NetApp comparta la oferta privada con usted, puede seleccionar el plan anual al suscribirse desde Azure Marketplace durante la activación del backup y la recuperación de BlueXP.</block>
   <block id="908abf4dd9a1ea00edbe55bea91d6964" category="paragraph">Cuando utilice GCP, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Google Cloud Marketplace. Después de que NetApp comparta la oferta privada con usted, podrá seleccionar el plan anual al suscribirse en Google Cloud Marketplace durante la activación del backup y la recuperación de BlueXP.</block>
   <block id="1ef27d8ce33d6626bd77a4ae3f7b5f47" category="section-title">Utiliza una licencia BYOL de backup y recuperación de BlueXP</block>
   <block id="5cf4ead1ec9d21f6de70fb6080bd7481" category="paragraph">La licencia de backup y recuperación de BYOL BlueXP es una licencia flotante donde la capacidad total se comparte entre todos los sistemas asociados con tu cuenta de BlueXP. Para los sistemas ONTAP, puede obtener una estimación aproximada de la capacidad que necesitará ejecutando el comando de la CLI<block ref="2a47fed7b3c4b7d59e03f10c018cf5cc" prefix=" " category="inline-code"></block> para los volúmenes de los que planea realizar backup.</block>
-  <block id="ba3d4c64f994030e8b655f5362e255f3" category="paragraph">Si no tienes una licencia BYOL de backup y recuperación de BlueXP, haz clic en el icono de chat en la parte inferior derecha de BlueXP para comprar una.</block>
   <block id="d95a328c11f4185818d313cf84e3e584" category="paragraph">Opcionalmente, si tiene una licencia basada en nodos sin asignar para Cloud Volumes ONTAP que no utilizará, puede convertirla en una licencia de backup y recuperación de BlueXP con la misma equivalencia en dólar y la misma fecha de caducidad.<block ref="c110e5a4a66d7429a8ced7dc2264a8f5" category="inline-link-rx"></block>.</block>
   <block id="78eb4db020e2c993d3997277acf3700c" category="section-title">Obtenga el archivo de licencia de backup y recuperación de BlueXP</block>
   <block id="0ad06cd0a0c0ed5de701c184445a2831" category="paragraph">Después de comprar tu licencia de backup y recuperación de BlueXP, activa la licencia en BlueXP introduciendo el número de serie de backup y recuperación de BlueXP y la cuenta de NSS, o cargando el archivo de licencia de NLF. Los pasos a continuación muestran cómo obtener el archivo de licencia de NLF si planea utilizar ese método.</block>
-  <block id="e68ef95af0155f864fefb5bb57d16dcf" category="paragraph">Si ejecutas el backup y recuperación de BlueXP en un sitio local que no tiene acceso a Internet, lo que significa que has implementado el conector BlueXP en un host de ese sitio local sin conexión, deberás obtener el archivo de licencia de un sistema conectado a Internet. La activación de la licencia con el número de serie y la cuenta de NSS no está disponible para las instalaciones sin conexión (sitio oscuro).</block>
   <block id="df1557a9b76e8e22566ae571ed66d8d5" category="list-text">Introduce el número de serie de tu licencia de backup y recuperación de BlueXP.</block>
   <block id="fda78c118f583aef58210df788084452" category="section-title">Añade licencias BYOL de backup y recuperación de BlueXP a tu cuenta</block>
   <block id="affa7da483903ef78f13bda66b93fbbd" category="paragraph">Después de comprar una licencia de backup y recuperación de BlueXP para tu cuenta de NetApp, tendrás que añadir la licencia a BlueXP.</block>
@@ -3679,8 +3665,6 @@
   <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">Restaurar datos de volúmenes ONTAP</block>
   <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">Restaure los datos de aplicaciones de Oracle en las instalaciones</block>
   <block id="6002846df6663ea571e55d74bd085335" category="sidebar">Restaure datos de aplicaciones de SQL Server locales</block>
-  <block id="4bc9a14a4fac8328e801409fa8234e7e" category="sidebar">Restaurar datos de aplicaciones de Oracle nativas en la nube</block>
-  <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">Restaure los datos de aplicaciones SAP HANA nativas de cloud</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">Restaurar datos de equipos virtuales</block>
   <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">Restaura los datos del volumen de Kubernetes</block>
   <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">El servicio de backup y recuperación de datos de BlueXP proporciona una protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes persistentes de Kubernetes, bases de datos y máquinas virtuales, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.</block>
@@ -3704,7 +3688,6 @@
   <block id="a18f9997a691db43808d1169a31c3670" category="summary">El servicio de backup y recuperación de datos de BlueXP (Cloud Backup) proporciona una protección de datos eficiente, segura y rentable para máquinas virtuales, bases de datos y datos de NetApp ONTAP, tanto en las instalaciones como en el cloud.</block>
   <block id="3daba77ab92b57915950a36f17f965c3" category="summary">El servicio de backup y recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.</block>
   <block id="6192be65cd3fbb101c0f789fab9eae08" category="inline-link">Almacenamiento en caché perimetral de BlueXP</block>
-  <block id="a803d6b73372969b4830a3a6cc9bfeef" category="list-text">Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el<block ref="6a291086b9b2e2c1bf57350866f6f726" category="inline-link-rx"></block> servicio. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.</block>
   <block id="0a190b7a7b571c1c4ae19e069137c2ac" category="paragraph">Utilizarás la cartera digital de BlueXP para gestionar las licencias de BYOL. Puedes añadir nuevas licencias, actualizar las licencias existentes y ver el estado de la licencia desde la cartera digital de BlueXP.</block>
   <block id="ee3c97eeb652fa9d260a05c339bc1004" category="paragraph">Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de la cartera digital de BlueXP y en<block ref="2011e54262643b9060a004b0df801155" category="inline-link-rx"></block>.</block>
   <block id="0553876f11122be0920f9fa9c803d152" category="inline-image-macro">Una captura de pantalla que muestra una licencia que va a caducar en la página de la cartera digital de BlueXP.</block>
@@ -3736,4 +3719,41 @@
   <block id="8c7c81dd2ca4a5ab651c1cfb30a19c0e" category="sidebar">Realiza backups y restaura los datos de aplicaciones nativas en la nube</block>
   <block id="1aac38ab9167eb6ae3a199d0a8bc7915" category="sidebar">Realice backups de bases de datos de Oracle</block>
   <block id="7394e84832837e7d0dc503d85eb3f36c" category="sidebar">Realice un backup de las bases de datos SAP HANA</block>
+  <block id="ebf717b1a7acfe5b3fb0c86dacb00223" category="summary">Puede haber situaciones en las que tengas que reiniciar el servicio de backup y recuperación de BlueXP.</block>
+  <block id="f9ae73c127d2a161124debbe8f6eab30" category="doc">Reinicia el servicio de backup y recuperación de BlueXP</block>
+  <block id="3520561cc3a058255ff7212b8bcde81e" category="paragraph">La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Deberá seguir diferentes pasos iniciales para reiniciar el servicio en función de si ha implementado el conector en la nube o si ha instalado el conector manualmente en un sistema Linux.</block>
+  <block id="11395af5b4ec32a50927d60bf7925600" category="list-text">Conéctese al sistema Linux en el que se está ejecutando el conector.</block>
+  <block id="8a187c4873caea833cba72ae6b49eea9" category="cell">Ubicación del conector</block>
+  <block id="8c4271e6faf2cea4cfc8e5b7108d8ee9" category="cell">Procedimiento</block>
+  <block id="edebbfa87f6d2ec28837893a293192be" category="cell">Puesta en marcha de cloud</block>
+  <block id="189d1f2a5730c1cfef756190279d38e9" category="inline-link">Conexión a la máquina virtual Connector Linux</block>
+  <block id="41329afdd0c2345224823d63b0597ea0" category="cell">Siga las instrucciones para<block ref="87e3254567f43c8ac012dfb521f689b3" category="inline-link-rx"></block> en función del proveedor de cloud que utilice.</block>
+  <block id="d20756c02f9913587a3e83e30f0e10d3" category="cell">Instalación manual</block>
+  <block id="28c6311d2829dc94403ada5d3380ba87" category="cell">Inicie sesión en el sistema Linux.</block>
+  <block id="e09161f04f94284e07a0714770d92acf" category="list-text">Escriba el comando para reiniciar el servicio.</block>
+  <block id="ee97be03cb04119af45014d815621ce1" category="cell">Comando</block>
+  <block id="ab3d1c1d882b63580956b08c5abf67e1" category="cell"><block ref="d95061e3de0e54619667fc995280e47d" prefix="" category="inline-code"></block></block>
+  <block id="2016425a575301c45d7e5cdf171ae115" category="cell">Instalación manual con acceso a Internet</block>
+  <block id="f8d2cf753b5dfff0bf9e240741162b9c" category="cell">Instalación manual sin acceso a Internet</block>
+  <block id="7bbc18e8c81866c16ae2fa4ae7b4faa7" category="cell"><block ref="04dcde0112f87c65139657970e95733e" prefix="" category="inline-code"></block></block>
+  <block id="ea8d6265c6680f6755ec985a9768588e" category="paragraph">Para organizar los backups antiguos en niveles en el almacenamiento de archivado en cloud, los sistemas StorageGRID deben ejecutar la versión 11.3 o posterior. Además, debes descubrir tus sistemas StorageGRID en BlueXP Canvas.</block>
+  <block id="69a28359d3f06d7b3a188d67fc7a9a53" category="inline-link-macro">Descubre cómo reiniciar el backup y la recuperación de datos de BlueXP</block>
+  <block id="c4f3a19a3593db2ced924daf34b54549" category="list-text">Si ha actualizado sus sistemas Cloud Volumes ONTAP a la versión 9,13.x y no ve las operaciones de backup programadas continuas en el Monitor de trabajos, deberá reiniciar el servicio de backup y recuperación de BlueXP. <block ref="d165754676244f505c382efc637eb838" category="inline-link-macro-rx"></block>.</block>
+  <block id="dcb73ed45cf0756ddb50a72607921a55" category="list-text">La suscripción garantiza que no se produzca ninguna interrupción en el servicio una vez que finalice la prueba gratuita. Cuando finalice la prueba, se le cobrará cada hora de acuerdo con la cantidad de datos de los que realice la copia de seguridad.</block>
+  <block id="e54de5915bdbe139637cbbcc25f87fb6" category="paragraph">No se le cobrará por su suscripción de pago por uso durante la prueba gratuita o si no ha superado su licencia BYOL.</block>
+  <block id="e0dc422915e1979552ba5565e14ce286" category="list-text">Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.</block>
+  <block id="a77db6f39e3b494ea3cb168cb24ffc4b" category="list-text">Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el<block ref="6a291086b9b2e2c1bf57350866f6f726" category="inline-link-rx"></block> servicio. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.</block>
+  <block id="9bf18ccfa9bc25aeb3a63e6e237b9363" category="paragraph">Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure<block ref="f1f7c973fce685b876017d26d677c721" category="inline-link-rx"></block>. Ten en cuenta que también tendrás que pagar por tus sistemas Cloud Volumes ONTAP con esta suscripción de contrato anual, ya que solo puedes asignar una suscripción activa a tus credenciales de AWS en BlueXP.</block>
+  <block id="d22f1915c8293b6f49d0b06129807ca5" category="list-text">Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.</block>
+  <block id="6e61fbc9ca4c7e1fac15fae1b823c181" category="paragraph">Si no tienes una licencia BYOL de backup y recuperación de BlueXP, haz clic en el icono de chat en la parte inferior derecha de BlueXP para comprar una.</block>
+  <block id="eb1562e850045c7fa9f6c944656359a5" category="paragraph">Si ejecutas el backup y recuperación de BlueXP en un sitio local que no tiene acceso a Internet, lo que significa que has implementado el conector BlueXP en un host de ese sitio local sin conexión, deberás obtener el archivo de licencia de un sistema conectado a Internet. La activación de la licencia con el número de serie y la cuenta de NSS no está disponible para las instalaciones sin conexión (sitio oscuro).</block>
+  <block id="5810a6765696da7b12979cf90b9b287c" category="list-text">Si BlueXP no puede actualizar automáticamente la licencia (por ejemplo, cuando está instalada en un sitio oscuro), deberá cargar manualmente el archivo de licencia.</block>
+  <block id="889ec023b70caa5a07a4a3f56bf968d0" category="paragraph">Los detalles del conector se actualizarán correctamente si todos los hosts tienen servicio del plugin de SnapCenter para SAP HANA instalado y en ejecución y también si se puede acceder a todos ellos desde el nuevo conector.</block>
+  <block id="640d0fce8cb27172173cedbb3781302e" category="list-text">Inicie sesión en el host del plugin y realice los siguientes pasos:</block>
+  <block id="64d3d37e27efd6f22e6fa648ce465b2e" category="sidebar">Reinicia el backup y la recuperación de BlueXP</block>
+  <block id="b7814feabc73eee3174693c2ffa692c8" category="sidebar">Realiza un backup de bases de datos de Oracle nativas en la nube</block>
+  <block id="5da2654bf0788a90ff3e2ff74e45e114" category="sidebar">Hacer backup de la base de datos SAP HANA nativa en la nube</block>
+  <block id="2f1042d0e59ea2a8ebfd0fb9bb5c169f" category="sidebar">Restaure los datos de aplicaciones de Oracle nativas de cloud</block>
+  <block id="54d6597fa185df5cd22caa81d7e9d4d9" category="sidebar">Restaure los datos de aplicaciones SAP HANA nativas del cloud</block>
+  <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">Seminarios web de BlueXP</block>
 </blocks>
