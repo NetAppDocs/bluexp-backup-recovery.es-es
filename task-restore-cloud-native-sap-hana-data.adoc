@@ -4,7 +4,7 @@ permalink: task-restore-cloud-native-sap-hana-data.html
 keywords: cloud native, application data, restore, data files, SAP HANA, database, recovery, Cloud Manager, BlueXP 
 summary: Restaure los archivos de datos y, a continuación, recupere la base de datos. 
 ---
-= Restaure la base de datos SAP HANA nativa del cloud
+= Restaure bases de datos SAP HANA nativas de cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

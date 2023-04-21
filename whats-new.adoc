@@ -22,7 +22,7 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 
 
-=== Mejoras en el backup y la recuperación de BlueXP para aplicaciones (nativo en la nube)
+=== Mejoras en el backup y recuperación de datos de BlueXP para aplicaciones (nativas en la nube)
 
 * Bases de datos SAP HANA
 +
@@ -211,7 +211,7 @@ Después de filtrar la página Supervisión de trabajos para mostrar los trabajo
 ** Admite backup y restauración basadas en políticas de bases de datos de Oracle que residen en Amazon FSX para ONTAP de NetApp
 ** Admite la restauración de bases de datos de Oracle mediante método de conexión y copia
 ** Compatible con Oracle 21c
-** Admite el clonado de bases de datos de Oracle nativas en el cloud
+** Admite el clonado de bases de datos de Oracle nativas en la nube
 
 
 
@@ -409,7 +409,7 @@ Si la https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-stor
 
 
 
-=== Se ha añadido la compatibilidad con la protección de los datos de aplicaciones nativas en el cloud
+=== Se ha añadido soporte para proteger los datos de aplicaciones nativas de la nube
 
 Cloud Backup para aplicaciones es un servicio basado en SaaS que proporciona funcionalidades de protección de datos para aplicaciones que se ejecutan en el almacenamiento en cloud de NetApp. Cloud Backup para aplicaciones habilitado en BlueXP ofrece backup y restauración eficientes y consistentes con las aplicaciones y basadas en políticas de bases de datos de Oracle que residen en Amazon FSX para ONTAP de NetApp.https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["Leer más"^].
 

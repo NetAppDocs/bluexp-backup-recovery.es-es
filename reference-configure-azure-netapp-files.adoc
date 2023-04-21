@@ -34,8 +34,8 @@ NOTE: No puede actualizar el nuevo Connector_id desde la interfaz de usuario.
 Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Cree un conector en Azure desde BlueXP"].
 
 * Debe utilizar el mismo conector para gestionar tanto el entorno de trabajo de Azure NetApp Files como las bases de datos.
-* Si tiene el entorno de trabajo de Azure NetApp Files y las bases de datos en el mismo cloud privado virtual (VPC), puede implementar el conector en la misma VPC.
-* Si tiene el entorno de trabajo y las bases de datos de Azure NetApp Files en distintos PC y tiene cargas de trabajo NAS (NFS) configuradas en Azure NetApp Files, puede crear el conector en cualquiera de los PC virtuales.
+* Si tiene el entorno de trabajo de Azure NetApp Files y las bases de datos en la misma red virtual (vnet), puede implementar el conector en el mismo vnet.
+* Si tiene el entorno de trabajo y las bases de datos de Azure NetApp Files en distintas VNets y tiene cargas de trabajo NAS (NFS) configuradas en Azure NetApp Files, puede crear el conector en cualquiera de las VNets.
 
 
 Después de crear el conector, realice lo siguiente:

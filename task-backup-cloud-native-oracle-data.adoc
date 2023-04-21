@@ -4,7 +4,7 @@ permalink: task-backup-cloud-native-oracle-data.html
 keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations 
 summary: Crear backups programados o bajo demanda de bases de datos de Oracle. 
 ---
-= Realice backup de bases de datos de Oracle nativas en el cloud
+= Realizar backups de bases de datos de Oracle nativas en el cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

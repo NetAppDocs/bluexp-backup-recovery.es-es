@@ -4,7 +4,7 @@ permalink: concept-protect-cloud-app-data-to-cloud.html
 keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP, cloud backup 
 summary: BlueXP ofrece backup y restauración eficientes y coherentes con las aplicaciones y basadas en normativas de las bases de datos de Oracle® que residen en Amazon FSX para ONTAP o Cloud Volumes ONTAP de NetApp. 
 ---
-= Proteja los datos de aplicaciones nativas del cloud
+= Protege los datos de aplicaciones nativas de la nube
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: BlueXP ofrece backup y restauración eficientes y coherentes con las ap
 
 
 [role="lead"]
-El backup y recuperación de datos de BlueXP para aplicaciones es un servicio basado en SaaS que proporciona funcionalidades de protección de datos consistentes con aplicaciones para aplicaciones que se ejecutan en almacenamiento en cloud de NetApp. El backup y la recuperación de datos de BlueXP para aplicaciones ofrecen una protección eficiente y consistente con las aplicaciones y basada en políticas para las siguientes aplicaciones:
+El backup y recuperación de datos de BlueXP para aplicaciones es un servicio basado en SaaS que proporciona funcionalidades de protección de datos consistentes con aplicaciones para aplicaciones que se ejecutan en almacenamiento en cloud de NetApp. El backup y la recuperación de datos de BlueXP ofrece una protección eficiente, coherente con las aplicaciones y basada en políticas para las siguientes aplicaciones:
 
 * Las bases de datos de Oracle residen en Amazon FSx para ONTAP, Cloud Volumes ONTAP y Azure NetApp Files de NetApp
 * Sistemas SAP HANA que residen en Azure NetApp Files

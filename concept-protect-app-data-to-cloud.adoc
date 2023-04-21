@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, cloud backup 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, backup and recovery 
 summary: Integra el backup y la recuperación de datos de BlueXP en aplicaciones con BlueXP y SnapCenter en las instalaciones para realizar backups de las copias Snapshot consistentes con la aplicación de ONTAP en las instalaciones al cloud. 
 ---
 = Proteja los datos de las aplicaciones locales
@@ -20,7 +20,7 @@ Puede realizar backups de datos de aplicaciones de Oracle, Microsoft SQL y SAP H
 
 Si desea más información sobre el backup y la recuperación de datos de BlueXP para aplicaciones, consulte:
 
-* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["Backup para aplicaciones con Cloud Backup y SnapCenter"^]
+* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["Backup para aplicaciones con backup y recuperación de datos de BlueXP y SnapCenter"^]
 * https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["Podcast de backup y recuperación de datos de BlueXP para aplicaciones"^]
 
 
@@ -51,8 +51,4 @@ NOTE: Si se añaden SVM a SnapCenter mediante FQDN o la dirección IP, las aplic
 
 En la siguiente imagen se muestra cada componente al realizar backups en cloud y las conexiones que necesita preparar entre ellos:
 
-image:diagram_cloud_backup_app.png["Un diagrama muestra cómo Cloud Backup se comunica con las aplicaciones locales y con el almacenamiento de destino donde se encuentran los archivos de backup."]
-
-En la siguiente imagen se muestra cada componente al realizar un backup en StorageGRID y las conexiones que necesita preparar entre ellos:
-
-image:diagram_cloud_backup_onprem_storagegrid.png["Un diagrama muestra cómo Cloud Backup se comunica con los volúmenes en los sistemas de origen y el almacenamiento de destino donde se encuentran los archivos de backup."]
+image:diagram_cloud_backup_app.png["Un diagrama muestra cómo el backup y recuperación de BlueXP se comunican con las aplicaciones en las instalaciones y con el almacenamiento de destino donde se encuentran los archivos de backup."]

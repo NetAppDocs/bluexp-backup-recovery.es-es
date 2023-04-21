@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-cloud-native-sap-hana-data.html 
-keywords: cloud native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups, cloud manager, BlueXP, add hosts, create policy, SAP HANA Database 
+keywords: cloud-native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups, cloud manager, BlueXP, add hosts, create policy, SAP HANA Database 
 summary: Crear backups programados o bajo demanda de la base de datos SAP HANA. 
 ---
-= Realice backup de la base de datos SAP HANA nativa del cloud
+= Realizar un backup de bases de datos SAP HANA nativas en el cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

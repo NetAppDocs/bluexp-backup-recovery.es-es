@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-policies-apps.html 
 keywords: policy, create, pre-canned polices, custom policies, protection policies 
-summary: Utilice las políticas predefinidas o cree sus propias políticas para proteger la aplicación. 
+summary: Cree sus propias políticas para proteger la aplicación. 
 ---
 = Crear una política para realizar backups de aplicaciones
 :hardbreaks:

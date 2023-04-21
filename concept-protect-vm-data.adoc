@@ -14,7 +14,7 @@ summary: Obtenga más información sobre la protección de datos en los equipos 
 
 
 [role="lead"]
-El backup y recuperación de datos de BlueXP para máquinas virtuales ofrece funcionalidades de protección de datos al realizar backups de almacenes de datos que restauran máquinas virtuales.
+El backup y recuperación de datos de BlueXP para máquinas virtuales ofrece funcionalidades de protección de datos al realizar backups de almacenes de datos y restaurar máquinas virtuales.
 
 Es posible realizar backups de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaurar máquinas virtuales en el host del plugin de SnapCenter para VMware vSphere en las instalaciones.
 

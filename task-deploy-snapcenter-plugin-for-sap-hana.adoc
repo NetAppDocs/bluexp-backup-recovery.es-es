@@ -251,12 +251,9 @@ NOTE: El filtro para ver un host específico no funciona. Cuando se especifica u
 
 *Qué sigue*
 
-* Puede modificar o quitar los sistemas SAP HANA desde la interfaz de usuario y también mediante la API DE REST.
-+
+Puede modificar o quitar los sistemas SAP HANA desde la interfaz de usuario y también mediante la API DE REST.
+
 Antes de quitar el sistema SAP HANA, debe eliminar todos los backups asociados y quitar la protección.
-
-* Es posible modificar o quitar los hosts de SAP HANA con la API de REST.
-
 
 
 
