@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP, cloud backup 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP 
 summary: BlueXP ofrece backup y restauración eficientes y coherentes con las aplicaciones y basadas en normativas de las bases de datos de Oracle® que residen en Amazon FSX para ONTAP o Cloud Volumes ONTAP de NetApp. 
 ---
 = Protege los datos de aplicaciones nativas de la nube
@@ -24,13 +24,13 @@ El backup y recuperación de datos de BlueXP para aplicaciones es un servicio ba
 
 == Arquitectura
 
-La arquitectura Cloud Backup incluye los siguientes componentes.
+La arquitectura de backup y recuperación de datos de BlueXP para aplicaciones incluye los siguientes componentes.
 
-* Cloud Backup es un conjunto de servicios de protección de datos alojados como servicio SaaS por NetApp y está basado en la plataforma SaaS de BlueXP.
+* El backup y la recuperación de datos de BlueXP es un conjunto de servicios de protección de datos alojados como servicio SaaS por NetApp y están basados en la plataforma SaaS de BlueXP.
 +
 Organiza los flujos de trabajo de protección de datos para aplicaciones que residen en el almacenamiento en cloud de NetApp.
 
-* La IU de Cloud Backup ofrece funcionalidades de protección de datos para aplicaciones y es posible acceder a ella desde la interfaz de usuario de BlueXP.
+* La interfaz de usuario de BlueXP ofrece funcionalidades de protección de datos para aplicaciones y es posible acceder a ella desde la interfaz de usuario de BlueXP.
 * BlueXP Connector es un componente que se ejecuta en su red cloud e interactúa con sistemas de almacenamiento y complementos específicos de aplicaciones.
 * El plugin específico de la aplicación es un componente que se ejecuta en cada host de la aplicación e interactúa con las bases de datos que se ejecutan en el host mientras se ejecutan operaciones de protección de datos.
 
@@ -39,7 +39,7 @@ La siguiente imagen muestra cada componente y las conexiones que necesita prepar
 
 image:diagram_nativecloud_backup_app.png["Un diagrama que muestra cómo deben prepararse cada componente y las conexiones."]
 
-Para cualquier solicitud iniciada por el usuario, la interfaz de usuario de Cloud Backup se comunica con el SaaS de BlueXP, que, tras validar los procesos de solicitud del mismo. Si se solicita que se ejecute un flujo de trabajo como un backup, una restauración o un clon, el servicio SaaS inicia el flujo de trabajo y, cuando sea necesario, reenvía la llamada al conector BlueXP. A continuación, el conector se comunica con el sistema de almacenamiento y el complemento específico de la aplicación como parte de la ejecución de las tareas del flujo de trabajo.
+Para cualquier solicitud iniciada por el usuario, la interfaz de usuario de BlueXP se comunica con el SaaS de BlueXP, que, tras validar los procesos de solicitud, se procesan igual. Si se solicita que se ejecute un flujo de trabajo como un backup, una restauración o un clon, el servicio SaaS inicia el flujo de trabajo y, cuando sea necesario, reenvía la llamada al conector BlueXP. A continuación, el conector se comunica con el sistema de almacenamiento y el complemento específico de la aplicación como parte de la ejecución de las tareas del flujo de trabajo.
 
 El conector puede ponerse en marcha en el mismo VPC o vnet que las de las aplicaciones, o en uno diferente. Si el conector y las aplicaciones están en una red diferente, debe establecer una conectividad de red entre ellos.
 
@@ -47,7 +47,7 @@ El conector puede ponerse en marcha en el mismo VPC o vnet que las de las aplica
 NOTE: Un único conector BlueXP puede comunicarse con varios sistemas de almacenamiento y múltiples complementos de aplicaciones. Necesitará un único conector para gestionar sus aplicaciones siempre que haya conectividad entre el conector y los hosts de aplicaciones.
 
 
-IMPORTANT: La infraestructura SaaS Cloud Backup es resiliente a los fallos de la zona de disponibilidad dentro de una región. Soporta fallos regionales al conmutar por error a una región nueva y esta conmutación por error implica un tiempo de inactividad de unas 2 horas.
+IMPORTANT: La infraestructura SaaS de BlueXP es resiliente a los fallos de la zona de disponibilidad dentro de una región. Soporta fallos regionales al conmutar por error a una región nueva y esta conmutación por error implica un tiempo de inactividad de unas 2 horas.
 
 
 

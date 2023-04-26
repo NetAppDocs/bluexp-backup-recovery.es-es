@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-vm-data.html 
-keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in, Cloud Manager, BlueXP, Cloud backup for virtual machines 
+keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in, Cloud Manager, BlueXP 
 summary: Obtenga más información sobre la protección de datos en los equipos virtuales y conozca las distintas políticas. 
 ---
 = Proteja los datos de los equipos virtuales
@@ -31,7 +31,7 @@ Lea los siguientes requisitos para asegurarse de que tiene una configuración co
 * Solo se admiten almacenes de datos NFS. No se admiten los almacenes de datos VMFS basados en iSCSI/FC/NVMe y vVols.
 * Debe haber al menos un backup en el plugin de SnapCenter para VMware vSphere 4.6P1.
 * Al menos una política diaria, semanal o mensual en el plugin de SnapCenter para VMware vSphere sin etiqueta ni etiqueta de la política de máquinas virtuales en BlueXP.
-* Para la política predefinida de Cloud Backup, el nivel de programación debe ser el mismo para el almacén de datos del plugin de SnapCenter para VMware vSphere y del cloud.
+* Para la política predefinida, el nivel de programación debe ser el mismo para el almacén de datos del plugin de SnapCenter para VMware vSphere y del cloud.
 * Compruebe que no haya volúmenes de FlexGroup en el almacén de datos debido a que no se admiten el backup y la restauración de volúmenes de FlexGroup.
 * Asegúrese de que ninguno de los volúmenes esté cifrado porque no se admite la restauración de volúmenes cifrados.
 * Desactive "*_Recent*" en los grupos de recursos necesarios. Si tiene activado "*_Recent*" para el grupo de recursos, las copias de seguridad de esos grupos de recursos no se pueden utilizar para la protección de datos en la nube y, posteriormente, no se pueden utilizar para la operación de restauración.
