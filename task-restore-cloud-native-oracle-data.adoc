@@ -55,7 +55,7 @@ Seleccione *todos los archivos de datos* y *Archivos de control*.
 También puede seleccionar la casilla de verificación *Forzar restauración in situ*.
 
 +
-En la distribución DE SAN, si el plugin de SnapCenter para Oracle encuentra cualquier archivo externo distinto a los archivos de datos de Oracle en el grupo de discos de ASM, se realiza el método de restauración de conexión y copia. Los archivos externos pueden ser uno o varios de los siguientes tipos:
+En la distribución de SAN de Cloud Volumes ONTAP o Amazon FSx para ONTAP de NetApp, si el plugin de SnapCenter para Oracle encuentra archivos externos que no sean archivos de datos de Oracle en el grupo de discos de ASM, se ejecuta el método de restauración de conexión y copia. Los archivos externos pueden ser uno o varios de los siguientes tipos:
 
 +
 ** Parámetro

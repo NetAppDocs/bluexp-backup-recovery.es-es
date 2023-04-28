@@ -14,7 +14,7 @@ summary: Comprender los conceptos de clon antes de clonar la base de datos.
 
 
 [role="lead"]
-Es posible clonar una base de datos de Oracle con el backup de la base de datos en el host de la base de datos de origen o en un host alternativo. Puede clonar el backup de sistemas de almacenamiento primarios.
+Puede clonar una base de datos de Oracle que reside en Amazon FSx para ONTAP de NetApp o Cloud Volumes ONTAP con el backup de la base de datos en el host de la base de datos de origen o en un host alternativo. Puede clonar el backup de sistemas de almacenamiento primarios.
 
 Antes de clonar la base de datos, debe comprender los conceptos de clon y asegurarse de que se cumplen todos los requisitos.
 
@@ -53,6 +53,7 @@ Antes de clonar una base de datos de Oracle, debe asegurarse de que se hayan com
 
 == Limitaciones
 
+* No se admite la clonado de bases de datos que residen en Azure NetApp Files.
 * No se admite la clonado de bases de datos que residen en Qtree.
 * No se admite el backup de una base de datos clonada.
 

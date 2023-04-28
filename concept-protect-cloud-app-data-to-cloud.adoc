@@ -59,7 +59,7 @@ IMPORTANT: La infraestructura SaaS de BlueXP es resiliente a los fallos de la zo
 
 * Añada el host y ponga en marcha el plugin
 +
-Puede implementar el complemento manualmente, mediante script o automáticamente.
+Puede implementar el complemento mediante la interfaz de usuario, el script o manualmente.
 
 * Detección automática de las bases de datos Oracle
 * Realizar backups de bases de datos de Oracle que residen en Amazon FSx para NetApp ONTAP, Cloud Volumes ONTAP y Azure NetApp Files

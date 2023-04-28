@@ -14,7 +14,7 @@ summary: Clone la base de datos en el host de origen o alternativo.
 
 
 [role="lead"]
-Es posible clonar una base de datos de Oracle con el backup de la base de datos en el host de la base de datos de origen o en un host alternativo.
+Puede clonar una base de datos de Oracle que reside en Amazon FSx para ONTAP de NetApp o Cloud Volumes ONTAP con el backup de la base de datos en el host de la base de datos de origen o en un host alternativo.
 
 Pueden clonarse bases de datos por los siguientes motivos:
 

@@ -172,18 +172,9 @@ El binario del plugin está disponible en: _cd /var/lib/docker/volumes/service-m
 . Reinicie SPL: `systemctl restart spl`
 . Valide que es posible acceder al plugin desde el conector ejecutando el comando siguiente desde el conector.
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
-. Revise los detalles y haga clic en *Discover Applications*.
-+
-** Muestra todas las bases de datos en el host.
-** Haga clic en *Configuración* y seleccione *hosts* para ver todos los hosts.
-+
-
-NOTE: El filtro para ver un host específico no funciona. Cuando se especifica un nombre de host en el filtro, se muestran todos los hosts.
-
-** Haga clic en *Configuración* y seleccione *Directivas* para ver las directivas preparadas previamente. Revise las políticas predefinidas y puede editarlas para satisfacer sus requisitos o crear una nueva política.
 
 
-
+Después de instalar el plugin, debe <<Añada hosts de base de datos SAP HANA>>.
 
 
 
@@ -248,8 +239,6 @@ Vaya a la página *Canvas* para añadir un nuevo entorno de trabajo
 
 
 NOTE: El filtro para ver un host específico no funciona. Cuando se especifica un nombre de host en el filtro, se muestran todos los hosts.
-
-*Qué sigue*
 
 Puede modificar o quitar los sistemas SAP HANA desde la interfaz de usuario y también mediante la API DE REST.
 
