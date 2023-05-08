@@ -116,11 +116,12 @@ bigquery.tables.create
 
 
 --
-Información necesaria para el uso de claves de cifrado gestionadas por el cliente (CMEK):: Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en lugar de utilizar las claves de cifrado predeterminadas gestionadas por Google. En este caso, deberá tener el timbre y el nombre de la clave para poder agregar esta información en el asistente de activación. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
+Información necesaria para el uso de claves de cifrado gestionadas por el cliente (CMEK):: Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en lugar de utilizar las claves de cifrado predeterminadas gestionadas por Google. Se admiten tanto claves entre regiones como entre proyectos, por lo que puede elegir un proyecto para un depósito que sea diferente al proyecto de la clave CMEK. Si planea utilizar sus propias claves gestionadas por el cliente:
 +
 --
-También tendrá que agregar estos permisos necesarios en la función para que funcione el conector para CMEK:
-
+* Necesitará tener el llavero y el nombre de la clave para poder agregar esta información en el asistente de activación. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
+* Deberá verificar que estos permisos necesarios se incluyan en la función del conector:
++
 [source, json]
 ----
 cloudkms.cryptoKeys.get
@@ -132,13 +133,16 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-*Consideraciones de CMEK:*
+* Deberás verificar que la API de Google “Cloud Key Management Service (KMS)” esté habilitada en tu proyecto. Consulte https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentación de Google Cloud: Habilitar API"] para obtener más detalles.
+* *Consideraciones de CMEK:*
++
+** Se admiten tanto las claves generadas por software como las de HSM (respaldado por hardware).
+** Se admiten las claves de Cloud KMS creadas o importadas recientemente.
+** Solo se admiten claves regionales; las claves globales no son compatibles.
+** Actualmente, sólo se admite el propósito "cifrado/descifrado simétrico".
+** Al agente de servicios asociado con la cuenta de almacenamiento se le asigna el rol IAM «CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)» mediante el backup y la recuperación de datos de BlueXP.
 
-* Se admiten tanto las claves HSM (respaldadas por hardware) como las generadas por software.
-* Se admiten las claves de Cloud KMS creadas o importadas recientemente.
-* Solo se admiten claves regionales; las claves globales no son compatibles.
-* Actualmente, sólo se admite el propósito "cifrado/descifrado simétrico".
-* Al agente de servicios asociado con la cuenta de almacenamiento se le asigna el rol IAM «CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)» mediante el backup y la recuperación de datos de BlueXP.
+
 
 
 --

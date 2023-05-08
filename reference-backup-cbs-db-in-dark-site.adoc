@@ -16,9 +16,9 @@ summary: Al utilizar el backup y la recuperación de BlueXP en un sitio sin acce
 [role="lead"]
 Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, es recomendable realizar backups de los archivos cruciales de backup y recuperación de BlueXP periódicamente por si tiene un problema con el sistema host del conector BlueXP. Esto te permitirá implementar un nuevo Connector y restaurar los datos críticos de backup y recuperación de BlueXP.
 
-Cuando utilizas el backup y la recuperación de datos de BlueXP en un entorno SaaS en el que el conector BlueXP se implementa en tu proveedor de cloud o en tu propio sistema host que tiene acceso a Internet, se realiza un backup y almacenamiento en la nube de todos los datos importantes de configuración de backup y recuperación de BlueXP. Cuando utilizas el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, también conocido como «sitio oscuro», esta información de backup y recuperación de BlueXP se almacena únicamente en el sistema Connector local.
+Cuando utilizas el backup y la recuperación de datos de BlueXP en un entorno SaaS en el que el conector BlueXP se implementa en tu proveedor de cloud o en tu propio sistema host que tiene acceso a Internet, se realiza un backup y almacenamiento en la nube de todos los datos importantes de configuración de backup y recuperación de BlueXP. Cuando utilizas el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, conocido como «modo restringido» o «sitio oscuro», esta información de backup y recuperación de BlueXP se almacena únicamente en el sistema Connector local.
 
-En este tema se describe cómo realizar un backup y los datos cruciales de backup y recuperación de BlueXP en el sistema StorageGRID conectado. También describe cómo restaurar los datos en un conector nuevo cuando sea necesario.
+Describiremos cómo realizar backups de los datos cruciales de backup y recuperación de BlueXP en tu sistema StorageGRID conectado, y cómo restaurar los datos en un nuevo conector cuando sea necesario.
 
 
 

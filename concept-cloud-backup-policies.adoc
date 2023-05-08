@@ -22,7 +22,7 @@ El backup y recuperación de datos de BlueXP te permite crear políticas de back
 
 El backup y la recuperación de datos de BlueXP te permite crear varias políticas de backup con programaciones únicas para cada entorno de trabajo (clúster). Es posible asignar diferentes políticas de backup a volúmenes con diferentes objetivos de punto de recuperación (RPO).
 
-Cada directiva de copia de seguridad proporciona una sección para _Labels & Retention_ que puede aplicar a sus archivos de copia de seguridad.
+Cada directiva de copia de seguridad proporciona una sección para _Labels & Retention_ que puede aplicar a sus archivos de copia de seguridad. Tenga en cuenta que la política de Snapshot aplicada al volumen debe ser una de las políticas reconocidas por los archivos de backup y recuperación o backup de BlueXP no se creará.
 
 image:screenshot_backup_schedule_settings.png["Captura de pantalla de la configuración de la programación de copia de seguridad al crear una política de copia de seguridad."]
 
@@ -53,7 +53,7 @@ Tenga en cuenta que los backups anuales se eliminarán automáticamente del sist
 
 El backup y la recuperación de BlueXP ofrece soporte para la protección DataLock y Ransomware para los backups de volúmenes. Estas funciones le permiten bloquear los archivos de backup y analizarlos para detectar posibles ransomware en los archivos de backup. Este es un ajuste opcional que se puede definir en las políticas de backup cuando se desea contar con protección adicional para los backups de volúmenes para un clúster de.
 
-Ambas funciones protegen sus archivos de backup de forma que siempre tendrá un archivo de backup válido para recuperar los datos desde un ataque de ransomware en sus datos de origen. También resulta útil satisfacer ciertos requisitos normativos en los que los backups deben bloquearse y conservarse durante un cierto período de tiempo. Cuando el bloqueo de datos y la protección frente a ransomware estén habilitados, el bloque de cloud que se aprovisiona como parte de la activación del backup y la recuperación de BlueXP tendrá habilitados el bloqueo de objetos y el control de versiones de objetos.
+Ambas características protegen sus archivos de copia de seguridad para que siempre tenga un archivo de copia de seguridad válido para recuperar los datos en caso de un intento de ataque de ransomware en sus copias de seguridad. También resulta útil satisfacer ciertos requisitos normativos en los que los backups deben bloquearse y conservarse durante un cierto período de tiempo. Cuando el bloqueo de datos y la protección frente a ransomware estén habilitados, el bloque de cloud que se aprovisiona como parte de la activación del backup y la recuperación de BlueXP tendrá habilitados el bloqueo de objetos y el control de versiones de objetos.
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección de DataLock y Ransomware para obtener más información"^].
 
@@ -197,14 +197,11 @@ Puede habilitar la protección de datos Lock y ransomware en volúmenes de ONTAP
 
 === Requisitos
 
-* Sus clústeres deben ejecutar ONTAP 9.11.1 o superior (9.12.1 en el caso de Azure).
-* Debe utilizar BlueXP 3.9.21 o superior
-
-
 ifdef::aws[]
 
 * Para AWS:
 +
+** Los clústeres deben ejecutar ONTAP 9.11.1 o posterior
 ** El conector puede ponerse en marcha en el cloud o en sus instalaciones
 ** Los siguientes permisos S3 deben formar parte del rol IAM que proporciona el conector con permisos. Residen en la sección "backupS3Policy" para el recurso "arn:aws:s3::netapp-backup-*":
 +
@@ -250,6 +247,7 @@ ifdef::azure[]
 
 * Para Azure:
 +
+** Los clústeres deben ejecutar ONTAP 9.12.1 o posterior
 ** El conector puede ponerse en marcha en el cloud o en sus instalaciones
 
 
@@ -259,7 +257,8 @@ endif::azure[]
 
 * Para StorageGRID:
 +
-** Se requiere StorageGRID 11.6.0.3 y superior para una compatibilidad total con las funciones de DataLock
+** Los clústeres deben ejecutar ONTAP 9.11.1 o posterior
+** Sus sistemas StorageGRID deben ejecutar 11.6.0.3 o posterior
 ** El conector debe estar desplegado en sus instalaciones (se puede instalar en un sitio con o sin acceso a Internet)
 ** Los siguientes permisos S3 deben formar parte del rol IAM que proporciona el conector permisos:
 +

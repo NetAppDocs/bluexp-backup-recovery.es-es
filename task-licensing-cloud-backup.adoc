@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
 keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
-summary: 'Puedes comprar el pago por uso (PAYGO) o una suscripción anual de mercado de tu proveedor de cloud, o bien si compras una licencia BYOL (BYOL) a NetApp para obtener las licencias de backup y recuperación de BlueXP. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción.' 
+summary: Puedes obtener licencias de backup y recuperación de datos de BlueXP si compras una suscripción anual de pago por uso o un mercado de pago por uso de tu proveedor de nube, o si compras una licencia con tu propia licencia de NetApp. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción. 
 ---
 = Configura las licencias para el backup y la recuperación de BlueXP
 :hardbreaks:
@@ -50,7 +50,7 @@ Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:
 
 * Un paquete "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos ONTAP en las instalaciones.
 * Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.
-* Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Almacenamiento en caché perimetral de BlueXP"^] servicio. Puede implementar un sistema Edge de caché de archivos global para cada 3 TIB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
+* Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Almacenamiento en caché perimetral de BlueXP"^] servicio. Tienes derecho a poner en marcha un sistema Edge de almacenamiento en caché perimetral de BlueXP por cada 3 TiB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
 
 
 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Obtenga más información sobre estos paquetes de licencias basados en capacidad"].

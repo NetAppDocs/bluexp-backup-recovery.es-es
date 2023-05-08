@@ -27,7 +27,7 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 * Utiliza Cloud Volumes ONTAP 9.7P5 o posterior en Azure (se recomienda ONTAP 9.8P13 y versiones posteriores).
 * Dispone de una suscripción de proveedor de cloud válida para el espacio de almacenamiento en el que se ubicará los backups.
 * Se ha suscrito a https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Oferta de backup de BlueXP Marketplace"^], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["y activado"^] Una licencia BYOL de backup y recuperación de BlueXP de NetApp.
-* Tiene un conector instalado en Azure. El conector se puede instalar en un sitio con acceso completo a Internet ("modo estándar") o con conectividad limitada a Internet ("modo restringido").
+* Tiene un conector instalado en Azure. El Conector se puede instalar en un sitio con acceso completo a Internet (“modo estándar”) o con conectividad a Internet limitada (“modo restringido”).
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilita el backup y la recuperación de BlueXP en tu sistema nuevo o existente
@@ -77,17 +77,17 @@ Versiones de ONTAP compatibles:: Se recomienda un mínimo de ONTAP 9.7P5; ONTAP 
 Requisitos de licencia:: Para las licencias PAYGO de backup y recuperación de BlueXP, es necesaria una suscripción a través de Azure Marketplace antes de habilitar el backup y la recuperación de BlueXP. La facturación para el backup y la recuperación de BlueXP se realiza a través de esta suscripción. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Puede suscribirse desde la página Detalles  Credentials del asistente de entorno de trabajo"^].
 +
 --
-Para la licencia BYOL de backup y recuperación de BlueXP, necesita el número de serie de NetApp que le permita usar el servicio durante la duración y la capacidad de la licencia. link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Aprenda a gestionar sus licencias BYOL"]. Debe utilizar una licencia BYOL cuando el sistema Connector y Cloud Volumes ONTAP se pongan en marcha en un sitio oscuro.
+Para la licencia BYOL de backup y recuperación de BlueXP, necesita el número de serie de NetApp que le permita usar el servicio durante la duración y la capacidad de la licencia. link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Aprenda a gestionar sus licencias BYOL"]. Debe utilizar una licencia BYOL cuando el conector y el sistema Cloud Volumes ONTAP estén implementados en un sitio oscuro (en el «modo privado»).
 
 Además, necesita tener una suscripción a Microsoft Azure para el espacio de almacenamiento en el que se ubicará los backups.
 
 --
-Requisitos del conector:: El conector se puede instalar en una región de Azure con acceso a Internet completo o limitado (modo "Estándar" o "restringido").
+Requisitos del conector:: El conector se puede instalar en una región de Azure con acceso a Internet completo o limitado (modo “estándar” o “restringido”). https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["Consulta los modos de puesta en marcha de BlueXP para obtener más información"^].
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Implemente un conector en Azure"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["Instalar el conector manualmente en un host Linux en una región de Azure"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Implementar un conector en Azure en modo estándar (acceso completo a Internet)"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["Instale el conector en modo restringido (acceso saliente limitado)"^]
 
 
 --
@@ -175,10 +175,11 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 --
 Regiones de Azure compatibles:: El backup y la recuperación de BlueXP se admiten en todas las regiones de Azure https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones gubernamentales de Azure.
-
-
++
+--
 De forma predeterminada, el backup y la recuperación de BlueXP aprovisiona el Blob Container con redundancia local (LRS) para la optimización de costes. Puedes cambiar esta configuración a Redundancia de zona (ZRS) una vez activado el backup y la recuperación de BlueXP, si quieres asegurarte de que tus datos se replican entre diferentes zonas. Consulte las instrucciones de Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["cambiar el modo de replicar la cuenta de almacenamiento"^].
 
+--
 Configuración necesaria para crear backups en una suscripción diferente de Azure:: De forma predeterminada, las copias de seguridad se crean con la misma suscripción que la utilizada para el sistema Cloud Volumes ONTAP. Si desea utilizar una suscripción de Azure diferente para sus backups, debe hacerlo link:reference-backup-multi-account-azure.html["Inicie sesión en el portal de Azure y vincule las dos suscripciones"].
 Información requerida para usar claves gestionadas por el cliente para el cifrado de datos:: Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado gestionadas por Microsoft predeterminadas. En este caso, deberá tener la suscripción a Azure, el nombre de almacén de claves y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo usar sus propias claves"^].
 

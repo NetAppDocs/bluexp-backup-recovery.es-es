@@ -85,7 +85,7 @@ Consulte los requisitos y los pasos de restauración para el tipo de operación 
 
 Antes de empezar a restaurar un volumen, una carpeta o un archivo, debe conocer el nombre del volumen desde el que desea restaurar, el nombre del entorno de trabajo y la SVM donde reside el volumen, así como la fecha aproximada del archivo de backup del que desea restaurar.
 
-*Nota:* Si el archivo de copia de seguridad que contiene los datos que desea restaurar reside en el almacenamiento de archivado (a partir de ONTAP 9.10.1), la operación de restauración tardará más tiempo y incurrirá en un costo. Además, el clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volúmenes, 9.11.1 para la restauración de archivos y 9.12.1 para Google Archive y StorageGRID.
+*Nota:* Si el archivo de copia de seguridad que contiene los datos que desea restaurar reside en el almacenamiento de archivado (a partir de ONTAP 9.10.1), la operación de restauración tardará más tiempo y incurrirá en un costo. Además, el clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volúmenes, 9.11.1 para la restauración de archivos, 9.12.1 para Google Archive y StorageGRID y 9.13.1 para la restauración de carpetas.
 
 ifdef::aws[]
 
@@ -114,7 +114,7 @@ NOTE: La prioridad alta no es compatible cuando se restauran los datos desde el 
 
 Es posible restaurar un volumen, una carpeta o archivos individuales, desde un archivo de backup de ONTAP a los siguientes entornos de trabajo:
 
-[cols="50,50"]
+[cols="35,50"]
 |===
 | Ubicación del archivo de copia de seguridad | Entorno de trabajo de destino ifdef::aws[] 
 
@@ -159,7 +159,7 @@ endif::gcp[]
 Tenga en cuenta que las referencias a "sistemas ONTAP en las instalaciones" incluyen sistemas FAS, AFF y ONTAP Select.
 
 
-NOTE: No se pueden restaurar carpetas o archivos si el archivo de copia de seguridad se ha configurado con DataLock & Ransomware. En este caso, es posible restaurar todo el volumen desde el archivo de backup y, a continuación, acceder a los archivos necesarios.
+NOTE: Si la versión de ONTAP de su sistema es inferior a 9.13.1, no podrá restaurar carpetas o archivos si el archivo de copia de seguridad se ha configurado con DataLock & Ransomware. En este caso, es posible restaurar todo el volumen desde el archivo de backup y, a continuación, acceder a los archivos necesarios.
 
 
 
@@ -271,8 +271,8 @@ Si utiliza ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos 
 
 [NOTE]
 ====
-* Actualmente, no se admite la restauración a nivel de carpeta si el archivo de backup se configuró con DataLock y Ransomware. En este caso, es posible restaurar todo el volumen desde el archivo de backup y, a continuación, acceder a la carpeta y los archivos necesarios.
-* Actualmente, no se admite la restauración a nivel de carpeta si el archivo de backup reside en el almacenamiento de archivado. En este caso, puede restaurar la carpeta desde un nuevo archivo de copia de seguridad que no se haya archivado o restaurar todo el volumen desde la copia de seguridad archivada y, a continuación, acceder a la carpeta y los archivos que necesite.
+* Si el archivo de backup se configuró con protección DataLock & Ransomware, la restauración en el nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o superior. Si utiliza una versión anterior de ONTAP, puede restaurar el volumen entero desde el archivo de backup y luego acceder a la carpeta y los archivos que necesita.
+* Si el archivo de backup reside en un almacenamiento de archivado, la restauración a nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o posterior. Si utiliza una versión anterior de ONTAP, puede restaurar la carpeta desde un archivo de backup más reciente que no se haya archivado, o puede restaurar todo el volumen desde el backup archivado y, a continuación, acceder a la carpeta y los archivos que necesita.
 
 
 ====
@@ -281,10 +281,8 @@ Si utiliza ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos 
 ==== Requisitos previos
 
 * La versión de ONTAP debe ser 9.6 o superior para realizar operaciones de restauración _File_.
-* La versión de ONTAP debe ser 9.11.1 o superior para realizar operaciones de restauración de _folder_. ifdef::aws[]
+* La versión de ONTAP debe ser 9.11.1 o superior para realizar operaciones de restauración de _folder_. Se requiere ONTAP versión 9.13.1 si los datos se encuentran en el almacenamiento de archivado o si el archivo de copia de seguridad utiliza DataLock y protección contra ransomware.
 
-
-endif::aws[]
 
 
 
@@ -326,7 +324,7 @@ image:screenshot_restore_select_source.png["Captura de pantalla de selección de
 
 . Haga clic en *Siguiente* y aparecerá la lista de carpetas y archivos de la copia de seguridad de volumen.
 +
-Si va a restaurar carpetas o archivos desde un archivo de copia de seguridad que reside en un nivel de almacenamiento de archivado (disponible a partir de ONTAP 9.10.1), puede seleccionar la prioridad de restauración.
+Si va a restaurar carpetas o archivos desde un archivo de copia de seguridad que reside en un nivel de almacenamiento de archivado, puede seleccionar la prioridad de restauración.
 
 +
 ifdef::aws[]
@@ -433,7 +431,7 @@ Es posible restaurar carpetas o archivos en la ubicación del volumen original, 
 
 Si utiliza ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos los archivos y subcarpetas dentro de ella. Cuando se utiliza una versión de ONTAP anterior a la 9.13.0, solo se restauran los archivos de esa carpeta, no se restauran ni las subcarpetas ni los archivos de esas carpetas.
 
-Si el archivo de backup del volumen que desea restaurar reside en el almacenamiento de archivado (disponible a partir de ONTAP 9.10.1), la operación de restauración tardará más tiempo y generará costes adicionales. Tenga en cuenta que el clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volúmenes, 9.11.1 para la restauración de archivos y 9.12.1 para Google Archive y StorageGRID.
+Si el archivo de backup del volumen que desea restaurar reside en el almacenamiento de archivado (disponible a partir de ONTAP 9.10.1), la operación de restauración tardará más tiempo y generará costes adicionales. Tenga en cuenta que el clúster de destino también debe ejecutar ONTAP 9.10.1 o superior para la restauración de volúmenes, 9.11.1 para la restauración de archivos, 9.12.1 para Google Archive y StorageGRID y 9.13.1 para la restauración de carpetas.
 
 ifdef::aws[]
 
@@ -455,9 +453,9 @@ endif::gcp[]
 
 [NOTE]
 ====
-* Actualmente, no se admite la restauración a nivel de carpeta si el archivo de backup se configuró con DataLock y Ransomware. En este caso, es posible restaurar todo el volumen desde el archivo de backup y, a continuación, acceder a la carpeta y los archivos necesarios.
-* Actualmente, no se admite la restauración a nivel de carpeta si el archivo de backup reside en el almacenamiento de archivado. En este caso, puede restaurar la carpeta desde un nuevo archivo de copia de seguridad que no se haya archivado o restaurar todo el volumen desde la copia de seguridad archivada y, a continuación, acceder a la carpeta y los archivos que necesite.
-* La prioridad de restauración alta no es compatible cuando se restauran los datos desde el almacenamiento de archivado de Azure a los sistemas StorageGRID.
+* Si el archivo de backup se configuró con protección DataLock & Ransomware, la restauración en el nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o superior. Si utiliza una versión anterior de ONTAP, puede restaurar el volumen entero desde el archivo de backup y luego acceder a la carpeta y los archivos que necesita.
+* Si el archivo de backup reside en un almacenamiento de archivado, la restauración a nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o posterior. Si utiliza una versión anterior de ONTAP, puede restaurar la carpeta desde un archivo de backup más reciente que no se haya archivado, o puede restaurar todo el volumen desde el backup archivado y, a continuación, acceder a la carpeta y los archivos que necesita.
+* La prioridad de restauración «Alta» no se admite al restaurar datos desde el almacenamiento de archivado de Azure en sistemas StorageGRID.
 
 
 ====
@@ -472,7 +470,7 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 
 Es posible restaurar un volumen, una carpeta o archivos individuales, desde un archivo de backup de ONTAP a los siguientes entornos de trabajo:
 
-[cols="35,45"]
+[cols="35,50"]
 |===
 | Ubicación del archivo de copia de seguridad | Entorno de trabajo de destino ifdef::aws[] 
 

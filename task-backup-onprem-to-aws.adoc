@@ -199,7 +199,7 @@ Tendrá que configurar dos conjuntos de permisos:
 
 
 .Pasos
-. Confirme que los siguientes permisos de S3 (desde el más reciente https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Política de BlueXP"^]) Forman parte de la función IAM que proporciona al conector permisos.
+. Confirme que los siguientes permisos de S3 (desde el más reciente https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Política de BlueXP"^]) Forman parte de la función IAM que proporciona al conector permisos. Si no lo son, consulte https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentación de AWS: Editar políticas de IAM"].
 +
 [source, json]
 ----
@@ -261,7 +261,8 @@ Tendrá que configurar dos conjuntos de permisos:
       },
 ----
 +
-Si ha implementado el conector con la versión 3.9.21 o superior, estos permisos ya deben formar parte del rol IAM. De lo contrario, tendrá que agregar los permisos que faltan. Específicamente los permisos "athena" y "glue", ya que son necesarios para Buscar y restaurar. Consulte https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentación de AWS: Editar políticas de IAM"].
+
+NOTE: Cuando cree backups en regiones de AWS China, debe cambiar el nombre de recurso de AWS «arn» en todas las secciones _Resource_ de las políticas de IAM de «aws» a «aws-cn», por ejemplo `arn:aws-cn:s3:::netapp-backup-*`.
 
 . Al activar el servicio, el asistente de backup le solicitará que introduzca una clave de acceso y una clave secreta. Estas credenciales se pasan al clúster de ONTAP para que ONTAP pueda realizar backups y restaurar los datos en el bloque de S3. Para ello, deberá crear un usuario de IAM con los siguientes permisos:
 +
