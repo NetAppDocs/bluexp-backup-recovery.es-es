@@ -134,6 +134,6 @@ Después de asignar la política, puede crear un backup bajo demanda de la aplic
 * Después de restaurar una base de datos grande (250 GB o más), si se ejecuta un backup completo en línea en la misma base de datos, la operación puede fallar y generar el siguiente error:
 `failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
 +
-Para obtener información sobre cómo solucionar este problema, consulte: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["No se permite la operación de Snapshot debido a clones realizados por copias de Snapshot"].
+Para obtener información sobre cómo solucionar este problema, consulte: https://["No se permite la operación de Snapshot debido a clones realizados por copias de Snapshot"].
 
 

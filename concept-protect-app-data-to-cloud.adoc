@@ -20,8 +20,8 @@ Puede realizar backups de datos de aplicaciones de Oracle, Microsoft SQL y SAP H
 
 Si desea más información sobre el backup y la recuperación de datos de BlueXP para aplicaciones, consulte:
 
-* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["Backup para aplicaciones con backup y recuperación de datos de BlueXP y SnapCenter"^]
-* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["Podcast de backup y recuperación de datos de BlueXP para aplicaciones"^]
+* https://["Backup para aplicaciones con backup y recuperación de datos de BlueXP y SnapCenter"^]
+* https://["Podcast de backup y recuperación de datos de BlueXP para aplicaciones"^]
 
 
 

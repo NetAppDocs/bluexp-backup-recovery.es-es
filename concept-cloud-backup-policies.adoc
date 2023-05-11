@@ -55,9 +55,9 @@ El backup y la recuperación de BlueXP ofrece soporte para la protección DataLo
 
 Ambas características protegen sus archivos de copia de seguridad para que siempre tenga un archivo de copia de seguridad válido para recuperar los datos en caso de un intento de ataque de ransomware en sus copias de seguridad. También resulta útil satisfacer ciertos requisitos normativos en los que los backups deben bloquearse y conservarse durante un cierto período de tiempo. Cuando el bloqueo de datos y la protección frente a ransomware estén habilitados, el bloque de cloud que se aprovisiona como parte de la activación del backup y la recuperación de BlueXP tendrá habilitados el bloqueo de objetos y el control de versiones de objetos.
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección de DataLock y Ransomware para obtener más información"^].
+https://["Consulte el blog de protección de DataLock y Ransomware para obtener más información"^].
 
-Esta función no ofrece protección para los volúmenes de origen, solo para los backups de esos volúmenes de origen. Utilice NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights y Cloud Secure"^], o alguna de las https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones contra el ransomware proporcionadas por ONTAP"^] para proteger los volúmenes de origen.
+Esta función no ofrece protección para los volúmenes de origen, solo para los backups de esos volúmenes de origen. Utilice NetApp https://["Cloud Insights y Cloud Secure"^], o alguna de las https://["Protecciones contra el ransomware proporcionadas por ONTAP"^] para proteger los volúmenes de origen.
 
 [CAUTION]
 ====
@@ -233,7 +233,7 @@ ifdef::aws[]
 *** s3:GetBucketLocation
 *** s3:GetObjectVersion
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo para la directiva donde puede copiar y pegar los permisos necesarios"^].
+https://["Vea el formato JSON completo para la directiva donde puede copiar y pegar los permisos necesarios"^].
 
 
 

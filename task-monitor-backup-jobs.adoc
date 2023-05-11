@@ -127,7 +127,7 @@ Desde la información Detalles de supervisión de trabajos, puede descargar un a
 
 El Centro de notificación de BlueXP realiza un seguimiento del progreso de los trabajos de copia de seguridad y restauración que ha iniciado para que pueda comprobar si la operación se ha realizado correctamente o no.
 
-Además de ver las alertas en la lista de notificaciones de BlueXP, puede configurar BlueXP para que envíe notificaciones por correo electrónico como alertas, de modo que pueda ser informado de la actividad importante del sistema incluso cuando no haya iniciado sesión en el sistema. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
+Además de ver las alertas en la lista de notificaciones de BlueXP, puede configurar BlueXP para que envíe notificaciones por correo electrónico como alertas, de modo que pueda ser informado de la actividad importante del sistema incluso cuando no haya iniciado sesión en el sistema. https://["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
 
 Los siguientes eventos activan alertas por correo electrónico:
 
@@ -172,7 +172,7 @@ De forma predeterminada, los administradores de cuentas de BlueXP reciben correo
 
 Para recibir alertas por correo electrónico de backup y recuperación de BlueXP, tendrás que seleccionar los tipos de gravedad de notificaciones «Critical», «Warning» y «Error».
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
+https://["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
 
 .Pasos
 . Seleccione la ficha *Supervisión de trabajos*.

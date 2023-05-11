@@ -26,7 +26,7 @@ Si sus clústeres de origen ejecutan ONTAP 9.10.1 o más, puede optar por coloca
 
 Tenga en cuenta que cuando configure el backup y la recuperación de BlueXP con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el contenedor en su cuenta de Azure.
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Obtenga más información acerca de los niveles de acceso de Azure Blob"^].
+https://["Obtenga más información acerca de los niveles de acceso de Azure Blob"^].
 
 
 
@@ -41,7 +41,7 @@ A pesar de que almacenar archivos de backup antiguos en un almacenamiento de arc
 * *Estándar*: Recuperación más lenta, menor costo
 
 
-Cada método tiene una tarifa de recuperación por GB diferente y una tarifa por solicitud. Para obtener información detallada sobre los precios de Azure Archive por región de Azure, visite la https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Página de precios de Azure"^].
+Cada método tiene una tarifa de recuperación por GB diferente y una tarifa por solicitud. Para obtener información detallada sobre los precios de Azure Archive por región de Azure, visite la https://["Página de precios de Azure"^].
 
 --
 
@@ -61,7 +61,7 @@ NOTE: La prioridad alta no es compatible cuando se restauran datos desde Azure a
 * *Tiempo de restauración*: El tiempo para restaurar los datos del archivo de copia de seguridad en almacenamiento fresco. Esta vez no difiere de la operación de restauración típica directamente del almacenamiento Cool, cuando no se utiliza un nivel de archivado.
 
 
-Para obtener más información sobre las opciones de recuperación de Azure Archive, consulte https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["Estas preguntas frecuentes de Azure"^].
+Para obtener más información sobre las opciones de recuperación de Azure Archive, consulte https://["Estas preguntas frecuentes de Azure"^].
 
 --
 

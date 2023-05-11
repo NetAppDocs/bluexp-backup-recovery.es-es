@@ -26,7 +26,7 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Verifique la compatibilidad con la configuración
 [role="quick-margin-list"]
-* Ha descubierto el clúster en las instalaciones y lo ha añadido a un entorno de trabajo en BlueXP. Consulte https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Detección de clústeres de ONTAP"^] para obtener más detalles.
+* Ha descubierto el clúster en las instalaciones y lo ha añadido a un entorno de trabajo en BlueXP. Consulte https://["Detección de clústeres de ONTAP"^] para obtener más detalles.
 +
 ** El clúster ejecuta ONTAP 9.7P5 o una versión posterior.
 ** El clúster tiene una licencia de SnapMirror, se incluye como parte del paquete Premium o de Data Protection Bundle.
@@ -95,7 +95,7 @@ Cuando el conector y el sistema ONTAP en las instalaciones se instalan en una ub
 
 Debe detectar los clústeres de ONTAP en las instalaciones en BlueXP para poder empezar a realizar backups de datos de volúmenes.
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Aprenda a detectar un clúster"^].
+https://["Aprenda a detectar un clúster"^].
 
 Requisitos de ONTAP::
 +
@@ -106,11 +106,11 @@ Requisitos de ONTAP::
 *Nota:* El “paquete de nube híbrida” no es necesario cuando se utiliza la copia de seguridad y recuperación de BlueXP.
 
 +
-Descubra cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestione las licencias de clúster"^].
+Descubra cómo https://["gestione las licencias de clúster"^].
 
 * La hora y la zona horaria están configuradas correctamente.
 +
-Descubra cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure la hora del clúster"^].
+Descubra cómo https://["configure la hora del clúster"^].
 
 
 
@@ -123,12 +123,12 @@ Requisitos para la red de clúster::
 ONTAP lee y escribe datos en y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, solo responde.
 
 * ONTAP requiere una conexión entrante desde el conector hasta la LIF de administración del clúster. El conector debe residir en sus instalaciones.
-* Se requiere una LIF de interconexión de clústeres en cada nodo ONTAP donde se alojan los volúmenes en los que se desea incluir. La LIF debe estar asociada al _IPspace_ que ONTAP debería utilizar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información acerca de los espacios IP"^].
+* Se requiere una LIF de interconexión de clústeres en cada nodo ONTAP donde se alojan los volúmenes en los que se desea incluir. La LIF debe estar asociada al _IPspace_ que ONTAP debería utilizar para conectarse al almacenamiento de objetos. https://["Obtenga más información acerca de los espacios IP"^].
 +
 Al configurar el backup y la recuperación de BlueXP, se le pedirá que utilice el espacio IP. Debe elegir el espacio IP al que está asociada cada LIF. Puede ser el espacio IP «predeterminado» o un espacio IP personalizado que haya creado.
 
 * Las LIF de interconexión de clústeres de los nodos pueden acceder al almacén de objetos (no es necesario cuando se instala el conector en un sitio «oscuro»).
-* Los servidores DNS se configuraron para la máquina virtual de almacenamiento donde se encuentran los volúmenes. Descubra cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configure los servicios DNS para la SVM"^].
+* Los servidores DNS se configuraron para la máquina virtual de almacenamiento donde se encuentran los volúmenes. Descubra cómo https://["Configure los servicios DNS para la SVM"^].
 * Tenga en cuenta que si utiliza un espacio IP diferente al predeterminado, es posible que deba crear una ruta estática para obtener acceso al almacenamiento de objetos.
 * Actualice las reglas de firewall, si es necesario, para permitir las conexiones del servicio de backup y recuperación de BlueXP desde ONTAP al almacenamiento de objetos a través del puerto que especificó (normalmente con el puerto 443) y el tráfico de resolución de nombres de la máquina virtual de almacenamiento al servidor DNS a través del puerto 53 (TCP/UDP).
 
@@ -140,7 +140,7 @@ Al configurar el backup y la recuperación de BlueXP, se le pedirá que utilice 
 
 === Preparando StorageGRID
 
-StorageGRID debe cumplir con los siguientes requisitos. Consulte https://docs.netapp.com/us-en/storagegrid-116/["Documentación de StorageGRID"^] si quiere más información.
+StorageGRID debe cumplir con los siguientes requisitos. Consulte https://["Documentación de StorageGRID"^] si quiere más información.
 
 Versiones de StorageGRID compatibles:: Se admite StorageGRID 10.3 y versiones posteriores.
 +
@@ -150,7 +150,7 @@ Para usar la protección DataLock & Ransomware para sus copias de seguridad, sus
 Para organizar los backups antiguos en niveles en el almacenamiento de archivado en cloud, los sistemas StorageGRID deben ejecutar la versión 11.3 o posterior. Además, debes descubrir tus sistemas StorageGRID en BlueXP Canvas.
 
 --
-Credenciales de S3:: Debe haber creado una cuenta de inquilino de S3 para controlar el acceso al almacenamiento de StorageGRID. https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["Consulte los documentos de StorageGRID para obtener más información"^].
+Credenciales de S3:: Debe haber creado una cuenta de inquilino de S3 para controlar el acceso al almacenamiento de StorageGRID. https://["Consulte los documentos de StorageGRID para obtener más información"^].
 +
 --
 Al configurar un backup en StorageGRID, el asistente de backup le solicita una clave de acceso de S3 y una clave secreta para una cuenta de inquilino. La cuenta de inquilino permite el backup y la recuperación de BlueXP para autenticar y acceder a los bloques de StorageGRID que se utilizan para almacenar backups. Las claves son necesarias para que StorageGRID sepa quién está haciendo la solicitud.
@@ -176,14 +176,14 @@ Control de versiones de objetos:: No debe habilitar manualmente el control de ve
 
 Al realizar una copia de seguridad de datos en StorageGRID, debe haber un conector disponible en las instalaciones. Tendrá que instalar un conector nuevo o asegurarse de que el conector seleccionado actualmente reside en las instalaciones. El conector se puede instalar en un sitio con o sin acceso a Internet.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Instalación del conector en un host Linux con acceso a Internet"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["Instalación del conector en un host Linux sin acceso a Internet"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["Cambio entre conectores"^]
+* https://["Más información sobre conectores"^]
+* https://["Instalación del conector en un host Linux con acceso a Internet"^]
+* https://["Instalación del conector en un host Linux sin acceso a Internet"^]
+* https://["Cambio entre conectores"^]
 
 
 
-NOTE: La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Cuando esté instalado en un sitio sin conectividad a Internet, deberá actualizar periódicamente el software Connector para obtener acceso a nuevas funciones. Compruebe la link:whats-new.html["Backup y recuperación de BlueXP Novedades"] Para ver las nuevas funciones en cada versión de backup y recuperación de BlueXP, y, a continuación, puedes seguir los pasos a. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Actualice el software del conector"^] cuando desee utilizar nuevas funciones.
+NOTE: La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Cuando esté instalado en un sitio sin conectividad a Internet, deberá actualizar periódicamente el software Connector para obtener acceso a nuevas funciones. Compruebe la link:whats-new.html["Backup y recuperación de BlueXP Novedades"] Para ver las nuevas funciones en cada versión de backup y recuperación de BlueXP, y, a continuación, puedes seguir los pasos a. https://["Actualice el software del conector"^] cuando desee utilizar nuevas funciones.
 
 Recomendamos encarecidamente que cree copias de seguridad locales de los datos de configuración de copia de seguridad y recuperación de BlueXP periódicamente cuando el conector se instala en un sitio sin conectividad a Internet. link:reference-backup-cbs-db-in-dark-site.html["Descubre cómo realizar backups de los datos de backup y recuperación de BlueXP en un sitio oscuro"^].
 
@@ -219,7 +219,7 @@ El soporte actual le permite archivar backups en el almacenamiento AWS _S3 Glaci
 *Requisitos de StorageGRID*
 
 * Su StorageGRID debe usar 11.4 o superior
-* Su StorageGRID debe estar https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["Descubierto y disponible en BlueXP Canvas"^].
+* Su StorageGRID debe estar https://["Descubierto y disponible en BlueXP Canvas"^].
 
 
 *Requisitos de Amazon S3*
@@ -250,7 +250,7 @@ A la hora de definir la configuración de archivado para la política de backup 
 
 image:screenshot_sg_archive_to_cloud.png["Una captura de pantalla de la información que necesitará para archivar archivos de backup de StorageGRID a AWS S3 o Azure Blob."]
 
-La configuración de la política de archivado que seleccione generará una política de gestión del ciclo de vida de la información (ILM) en StorageGRID y añadirá la configuración como "reglas". Si ya existe una política activa de ILM, se añadirán nuevas reglas a la política de ILM para mover los datos al nivel de archivado. Si ya existe una política de ILM en el estado "propuesta", no será posible la creación y activación de una nueva política de ILM. https://docs.netapp.com/us-en/storagegrid-116/ilm/index.html["Obtenga más información acerca de las reglas y políticas de ILM de StorageGRID"^].
+La configuración de la política de archivado que seleccione generará una política de gestión del ciclo de vida de la información (ILM) en StorageGRID y añadirá la configuración como "reglas". Si ya existe una política activa de ILM, se añadirán nuevas reglas a la política de ILM para mover los datos al nivel de archivado. Si ya existe una política de ILM en el estado "propuesta", no será posible la creación y activación de una nueva política de ILM. https://["Obtenga más información acerca de las reglas y políticas de ILM de StorageGRID"^].
 
 
 

@@ -423,7 +423,7 @@ Tiene varias opciones para la ubicación al restaurar carpetas y archivos.
 
 Es posible restaurar un volumen, una carpeta o archivos desde un archivo de backup de ONTAP mediante Search & Restore. Search & Restore le permite buscar un volumen, una carpeta o un archivo específicos a partir de todos los backups almacenados en el almacenamiento en cloud para un proveedor en concreto y, a continuación, llevar a cabo una restauración. No necesita conocer el nombre exacto del entorno de trabajo o el nombre del volumen; la búsqueda se realiza mediante todos los archivos de backup de volúmenes.
 
-La operación de búsqueda también busca todas las copias Snapshot locales que existen también para los volúmenes ONTAP. Como la restauración de datos de una copia Snapshot local puede ser más rápida y económica que la restauración desde un archivo de respaldo, es posible que desee restaurar datos de la copia Snapshot. Puede restaurar la snapshot como un volumen nuevo https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Desde la página Detalles de volumen del lienzo"^] (No del backup y recuperación de BlueXP).
+La operación de búsqueda también busca todas las copias Snapshot locales que existen también para los volúmenes ONTAP. Como la restauración de datos de una copia Snapshot local puede ser más rápida y económica que la restauración desde un archivo de respaldo, es posible que desee restaurar datos de la copia Snapshot. Puede restaurar la snapshot como un volumen nuevo https://["Desde la página Detalles de volumen del lienzo"^] (No del backup y recuperación de BlueXP).
 
 Cuando se restaura un volumen a partir de un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Puede restaurar los datos como un volumen en el entorno de trabajo original o a un entorno de trabajo diferente ubicado en la misma cuenta de cloud que el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
 
@@ -546,7 +546,7 @@ ifdef::azure[]
 
 * Requisitos de Azure:
 +
-** Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") en su suscripción. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Vea cómo registrar este proveedor de recursos para su suscripción"^]. Debe ser Subscription *Owner* o *Contributor* para registrar el proveedor de recursos.
+** Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Microsoft.Synapse") en su suscripción. https://["Vea cómo registrar este proveedor de recursos para su suscripción"^]. Debe ser Subscription *Owner* o *Contributor* para registrar el proveedor de recursos.
 ** Los permisos específicos de cuentas de almacenamiento de áreas de trabajo y lagos de datos de Azure Synapse deben agregarse a la función de usuario que proporciona permisos a BlueXP. link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["Asegúrese de que todos los permisos estén configurados correctamente"].
 +
 Tenga en cuenta que, si ya estaba utilizando el backup y la recuperación de BlueXP con un conector que configuró en el pasado, deberá añadir los permisos de la cuenta de almacenamiento de lago de datos y espacio de trabajo de Azure Synapse Workspace ahora al rol de usuario de BlueXP. Estos son nuevos y se requieren para buscar y restaurar.
@@ -579,7 +579,7 @@ Dependiendo de la configuración, hay dos formas de implementar Search & Restore
 +
 ** Si su cuenta no tiene credenciales de proveedor de cloud, la información del catálogo indexado se almacena en el conector.
 ** Si está utilizando un conector en un sitio oscuro, la información del catálogo indexado se almacena en el conector (requiere la versión 3.9.25 o superior del conector).
-** Si lo tiene https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["Credenciales de AWS"^] o. https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Credenciales de Azure"^] En la cuenta, el catálogo indexado se almacena en el proveedor de cloud, al igual que con un conector puesto en marcha en el cloud. (Si tiene ambas credenciales, AWS está seleccionado de forma predeterminada.)
+** Si lo tiene https://["Credenciales de AWS"^] o. https://["Credenciales de Azure"^] En la cuenta, el catálogo indexado se almacena en el proveedor de cloud, al igual que con un conector puesto en marcha en el cloud. (Si tiene ambas credenciales, AWS está seleccionado de forma predeterminada.)
 +
 Aunque utilice un conector en las instalaciones, deben cumplir los requisitos del proveedor de cloud tanto para los permisos de Connector como para los recursos del proveedor de cloud. Consulte los requisitos anteriores de AWS y Azure al utilizar esta implementación.
 
@@ -618,7 +618,7 @@ Cuando habilita esta funcionalidad, el backup y recuperación de BlueXP permite 
 
 ifdef::aws[]
 
-* Para los backups almacenados en AWS, aprovisiona un nuevo bloque de S3 y el https://aws.amazon.com/athena/faqs/["Servicio de consultas interactivas de Amazon Athena"^] y.. https://aws.amazon.com/glue/faqs/["Servicio de integración de datos sin servidor de AWS"^].
+* Para los backups almacenados en AWS, aprovisiona un nuevo bloque de S3 y el https://["Servicio de consultas interactivas de Amazon Athena"^] y.. https://["Servicio de integración de datos sin servidor de AWS"^].
 
 
 endif::aws[]
@@ -632,7 +632,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* Para los backups almacenados en Google Cloud, aprovisiona un nuevo bloque y el https://cloud.google.com/bigquery["Servicios de Google Cloud BigQuery"^] se aprovisionan en el nivel de cuenta/proyecto.
+* Para los backups almacenados en Google Cloud, aprovisiona un nuevo bloque y el https://["Servicios de Google Cloud BigQuery"^] se aprovisionan en el nivel de cuenta/proyecto.
 
 
 endif::gcp[]

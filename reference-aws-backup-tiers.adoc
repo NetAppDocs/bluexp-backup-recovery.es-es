@@ -28,7 +28,7 @@ Si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de bac
 
 Tenga en cuenta que al configurar el backup y la recuperación de BlueXP con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el bloque en su cuenta de AWS.
 
-https://aws.amazon.com/s3/storage-classes/["Obtenga información acerca de las clases de almacenamiento S3"^].
+https://["Obtenga información acerca de las clases de almacenamiento S3"^].
 
 
 
@@ -52,7 +52,7 @@ A pesar de que el almacenamiento de ficheros de backup antiguos en un almacenami
 
 | *S3 Glacier Deep Archive* |  | Recuperación más rápida, mayor coste | Recuperación más lenta, menor coste 
 |===
-Cada método tiene una tarifa de recuperación por GB diferente y una tarifa por solicitud. Para obtener información detallada sobre los precios de S3 Glacier por región de AWS, visite la https://aws.amazon.com/s3/pricing/["Página de precios de Amazon S3"^].
+Cada método tiene una tarifa de recuperación por GB diferente y una tarifa por solicitud. Para obtener información detallada sobre los precios de S3 Glacier por región de AWS, visite la https://["Página de precios de Amazon S3"^].
 
 --
 ¿Cuánto tiempo tardaría en restaurar los objetos archivados en Amazon S3 Glacier?:: Hay dos partes que componen el tiempo total de restauración:
@@ -76,7 +76,7 @@ Cada método tiene una tarifa de recuperación por GB diferente y una tarifa por
 * *Tiempo de restauración*: Tiempo para restaurar los datos del archivo de copia de seguridad en almacenamiento estándar. Esta vez no difiere de la operación de restauración típica directamente del almacenamiento estándar cuando no se utiliza un nivel de archivado.
 
 
-Para obtener más información sobre las opciones de recuperación de Amazon S3 Glacier y S3 Glacier Deep Archive, consulte https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["Preguntas frecuentes de Amazon sobre estas clases de almacenamiento"^].
+Para obtener más información sobre las opciones de recuperación de Amazon S3 Glacier y S3 Glacier Deep Archive, consulte https://["Preguntas frecuentes de Amazon sobre estas clases de almacenamiento"^].
 
 --
 
