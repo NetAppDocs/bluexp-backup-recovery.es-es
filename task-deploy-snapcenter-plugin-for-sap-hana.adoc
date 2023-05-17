@@ -246,6 +246,40 @@ Antes de quitar el sistema SAP HANA, debe eliminar todos los backups asociados y
 
 
 
+=== Elimine el host de base de datos SAP HANA
+
+Es posible quitar el host de base de datos de SAP HANA usando solo las API DE REST.
+
+* Pasos*
+
+. Elimine todos los sistemas asociados con el host de base de datos SAP HANA mediante la interfaz de usuario o con la API de REST siguiente.
+`DELETE /saphana/and/systems/(id)`
+. Realice los siguientes pasos para quitar el host de la base de datos SAP HANA.
++
+.. Use GET REST API para obtener el ID del host de base de datos SAP HANA que se debe eliminar.
+`GET /saphana/hosts`
+   `{`
+    `"num_records": 1,`
+    `"records": [`
+        `{`
+            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
+            `"host_name": "galaxy-vm134.netapp.com",`
+            `"port": 443,`
+            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
+       
+`}`
+    `]`
+`}`
+.. Elimine el host de la base de datos SAP HANA pasando el ID de la siguiente API de REST.
+`DELETE /saphana/hosts/(id)`
+.. Desinstale el plugin de SAP HANA Linux en el host de la base de datos con el comando siguiente.
+`/opt/NetApp/snapcenter/spl/installation/plugins/uninstall`
+
+
+
+
+
+
 === Añada volúmenes no Data
 
 Después de añadir el contenedor de base de datos multi-tenant o un sistema SAP HANA de tipo de contenedor único, puede añadir los volúmenes sin datos del sistema HANA.
@@ -285,4 +319,29 @@ Después de añadir el contenedor de base de datos multi-tenant o un sistema SAP
 .. Revise todos los detalles y haga clic en *Agregar sistema*.
 
 
+
+
+
+
+=== Modificar el host de base de datos SAP HANA
+
+Después de añadir el host de base de datos SAP HANA, puede modificar el nombre de host o el puerto del plugin mediante la API DE REST.
+
+* Pasos*
+
+. Use GET REST API para obtener el ID del host de base de datos SAP HANA que se debe eliminar. `GET /saphana/hosts`
+   `{`
+    `"num_records": 1,`
+    `"records": [`
+        `{`
+            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
+            `"host_name": "galaxy-vm134.netapp.com",`
+            `"port": 443,`
+            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
+       
+`}`
+    `]`
+`}`
+. Modifique el nombre de host o el puerto del plugin mediante la siguiente API de PARCHE.
+`PATCH /saphana/hosts/(id)``
 
