@@ -27,7 +27,7 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 * Ejecuta Cloud Volumes ONTAP 9.7P5 o posterior en GCP (se recomienda ONTAP 9.8P13 y posterior).
 * Tiene una suscripción válida para GCP para el espacio de almacenamiento donde se ubicará la copia de seguridad.
 * Tiene una cuenta de servicio en Google Cloud Project que tiene el rol de administrador de almacenamiento predefinido.
-* Se ha suscrito a https://["Oferta de backup de BlueXP Marketplace"^], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["y activado"^] Una licencia BYOL de backup y recuperación de BlueXP de NetApp.
+* Se ha suscrito a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Oferta de backup de BlueXP Marketplace"^], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["y activado"^] Una licencia BYOL de backup y recuperación de BlueXP de NetApp.
 * Tiene un conector instalado en Google Cloud.
 
 
@@ -72,7 +72,7 @@ La siguiente imagen muestra cada componente y las conexiones que necesita prepar
 image:diagram_cloud_backup_cvo_google.png["Un diagrama que muestra cómo se comunican el backup y la recuperación de datos de BlueXP con los volúmenes en el sistema de origen y el almacenamiento de destino donde se encuentran los archivos de backup."]
 
 Versiones de ONTAP compatibles:: Se recomienda un mínimo de ONTAP 9.7P5; ONTAP 9.8P13 y posterior.
-Requisitos de licencia:: Para obtener la licencia PAYGO de backup y recuperación de BlueXP, hay una suscripción de BlueXP disponible en Google Marketplace que permite la implementación de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Necesita hacerlo https://["suscríbase a esta suscripción a BlueXP"^] Antes de habilitar el backup y la recuperación de datos de BlueXP. La facturación para el backup y la recuperación de BlueXP se realiza a través de esta suscripción. https://["Puede suscribirse desde la página Detalles  Credentials del asistente de entorno de trabajo"^].
+Requisitos de licencia:: Para obtener la licencia PAYGO de backup y recuperación de BlueXP, hay una suscripción de BlueXP disponible en Google Marketplace que permite la implementación de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Necesita hacerlo https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["suscríbase a esta suscripción a BlueXP"^] Antes de habilitar el backup y la recuperación de datos de BlueXP. La facturación para el backup y la recuperación de BlueXP se realiza a través de esta suscripción. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Puede suscribirse desde la página Detalles  Credentials del asistente de entorno de trabajo"^].
 +
 --
 Para la licencia BYOL de backup y recuperación de BlueXP, necesita el número de serie de NetApp que le permita usar el servicio durante la duración y la capacidad de la licencia. link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Aprenda a gestionar sus licencias BYOL"^].
@@ -80,20 +80,20 @@ Para la licencia BYOL de backup y recuperación de BlueXP, necesita el número d
 Además, necesita una suscripción de Google para el espacio de almacenamiento en el que se localizarán los backups.
 
 --
-Regiones compatibles de GCP:: El backup y la recuperación de datos de BlueXP se admiten en todas las regiones de GCP https://["Donde se admite Cloud Volumes ONTAP"^].
-Cuenta de servicio de GCP:: Es necesario tener una cuenta de servicio en Google Cloud Project que tenga el rol de administrador de almacenamiento predefinido. https://["Aprenda a crear una cuenta de servicio"^].
+Regiones compatibles de GCP:: El backup y la recuperación de datos de BlueXP se admiten en todas las regiones de GCP https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^].
+Cuenta de servicio de GCP:: Es necesario tener una cuenta de servicio en Google Cloud Project que tenga el rol de administrador de almacenamiento predefinido. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^].
 Requisitos del conector:: El conector debe estar instalado en una región de Google con acceso a Internet.
 +
 --
-* https://["Más información sobre conectores"^]
-* https://["Ponga en marcha un conector en Google Cloud"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["Ponga en marcha un conector en Google Cloud"^]
 
 
 --
 Verifique o agregue permisos al conector:: Para utilizar la funcionalidad de «búsqueda y restauración» de backup y recuperación de BlueXP, necesitas contar con permisos específicos en la función del conector para que pueda acceder al servicio de Google Cloud BigQuery. Consulte los siguientes permisos y siga los pasos si necesita modificar la directiva.
 +
 --
-. Pulg https://["Consola de cloud"^], Vaya a la página *roles*.
+. Pulg https://console.cloud.google.com["Consola de cloud"^], Vaya a la página *roles*.
 . Mediante la lista desplegable situada en la parte superior de la página, seleccione el proyecto o la organización que contiene la función que desea editar.
 . Haga clic en una función personalizada.
 . Haga clic en *Editar rol* para actualizar los permisos del rol.
@@ -119,7 +119,7 @@ bigquery.tables.create
 Información necesaria para el uso de claves de cifrado gestionadas por el cliente (CMEK):: Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en lugar de utilizar las claves de cifrado predeterminadas gestionadas por Google. Se admiten tanto claves entre regiones como entre proyectos, por lo que puede elegir un proyecto para un depósito que sea diferente al proyecto de la clave CMEK. Si planea utilizar sus propias claves gestionadas por el cliente:
 +
 --
-* Necesitará tener el llavero y el nombre de la clave para poder agregar esta información en el asistente de activación. https://["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
+* Necesitará tener el llavero y el nombre de la clave para poder agregar esta información en el asistente de activación. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
 * Deberá verificar que estos permisos necesarios se incluyan en la función del conector:
 +
 [source, json]
@@ -133,7 +133,7 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-* Deberás verificar que la API de Google “Cloud Key Management Service (KMS)” esté habilitada en tu proyecto. Consulte https://["Documentación de Google Cloud: Habilitar API"] para obtener más detalles.
+* Deberás verificar que la API de Google “Cloud Key Management Service (KMS)” esté habilitada en tu proyecto. Consulte https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentación de Google Cloud: Habilitar API"] para obtener más detalles.
 * *Consideraciones de CMEK:*
 +
 ** Se admiten tanto las claves generadas por software como las de HSM (respaldado por hardware).
@@ -156,7 +156,7 @@ El backup y la recuperación de BlueXP se pueden habilitar cuando completas el a
 
 Debe tener una cuenta de servicio configurada. Si no selecciona ninguna cuenta de servicio al crear el sistema Cloud Volumes ONTAP, tendrá que apagar el sistema y agregar la cuenta de servicio a Cloud Volumes ONTAP desde la consola de GCP.
 
-Consulte https://["Lanzamiento de Cloud Volumes ONTAP en GCP"^] Para conocer los requisitos y detalles de cómo crear el sistema Cloud Volumes ONTAP.
+Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Lanzamiento de Cloud Volumes ONTAP en GCP"^] Para conocer los requisitos y detalles de cómo crear el sistema Cloud Volumes ONTAP.
 
 .Pasos
 . En la página entornos de trabajo, haga clic en *Agregar entorno de trabajo* y siga las indicaciones.
@@ -180,7 +180,7 @@ image:screenshot_backup_to_gcp_new_env.png["Captura de pantalla que muestra cóm
 +
 image:screenshot_backup_to_gcp.png["Muestra la opción de backup y recuperación de BlueXP en el asistente del entorno de trabajo."]
 
-. Complete las páginas del asistente para implementar el sistema como se describe en https://["Lanzamiento de Cloud Volumes ONTAP en GCP"^].
+. Complete las páginas del asistente para implementar el sistema como se describe en https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["Lanzamiento de Cloud Volumes ONTAP en GCP"^].
 
 
 .Resultado
@@ -203,7 +203,7 @@ image:screenshot_backup_cvo_enable.png["Una captura de pantalla que muestra el b
 . Seleccione los detalles del proveedor y haga clic en *Siguiente*.
 +
 .. Google Cloud Project y la región en la que desea crear el bucket de Google Cloud Storage para backups.
-.. Tanto si va a usar la clave de cifrado predeterminada gestionada por Google como si elige sus propias claves gestionadas por el cliente para gestionar el cifrado de sus datos. Para usar un CMEK, deberá tener el timbre y el nombre de la clave. https://["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
+.. Tanto si va a usar la clave de cifrado predeterminada gestionada por Google como si elige sus propias claves gestionadas por el cliente para gestionar el cifrado de sus datos. Para usar un CMEK, deberá tener el timbre y el nombre de la clave. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
 +
 image:screenshot_backup_provider_settings_gcp.png["Una captura de pantalla que muestra los detalles del proveedor de cloud al realizar backups de volúmenes de un sistema Cloud Volumes ONTAP instalado en GCP en un bloque de Google Cloud Storage."]
 
@@ -239,7 +239,7 @@ image:screenshot_backup_select_volumes.png["Captura de pantalla de selección de
 .Resultado
 Se crea automáticamente un bloque de Google Cloud Storage en la cuenta de servicio indicada por la clave de acceso de Google y la clave secreta introducida; además, los archivos de backup se almacenan allí. La consola de backup de volumen se muestra para poder supervisar el estado de los backups. También es posible supervisar el estado de los trabajos de backup y restauración mediante la link:task-monitor-backup-jobs.html["Panel de control de trabajos"^].
 
-Las copias de seguridad se asocian de forma predeterminada con la clase de almacenamiento _Standard_. Puede utilizar las clases de almacenamiento de bajo coste _Nearline_, _Coldline_ o _Archive_. Sin embargo, configuras la clase de almacenamiento con Google, no con la interfaz de usuario de backup y recuperación de BlueXP. Consulte el tema de Google https://["Cambiar la clase de almacenamiento predeterminada de un bloque"^] para obtener más detalles.
+Las copias de seguridad se asocian de forma predeterminada con la clase de almacenamiento _Standard_. Puede utilizar las clases de almacenamiento de bajo coste _Nearline_, _Coldline_ o _Archive_. Sin embargo, configuras la clase de almacenamiento con Google, no con la interfaz de usuario de backup y recuperación de BlueXP. Consulte el tema de Google https://cloud.google.com/storage/docs/changing-default-storage-class["Cambiar la clase de almacenamiento predeterminada de un bloque"^] para obtener más detalles.
 
 
 

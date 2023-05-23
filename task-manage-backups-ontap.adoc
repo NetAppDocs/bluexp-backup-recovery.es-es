@@ -220,7 +220,7 @@ El nombre de backup incluye la Marca de hora para poder identificar el backup ba
 
 Si habilitó _DataLock y Ransomware Protection_ al activar el backup y la recuperación de BlueXP para este clúster, el backup bajo demanda también se configurará con DataLock, y el período de retención será de 30 días. Los análisis de ransomware no se admiten para backups ad hoc. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Más información sobre la protección de DataLock y Ransomware"^].
 
-Es preciso tener en cuenta que al crear un backup ad hoc, se crea una Snapshot en el volumen de origen. Dado que esta instantánea no forma parte de una programación normal de instantánea, no se girará. Puede eliminar manualmente esta snapshot del volumen de origen una vez completado el backup. De este modo, se podrán liberar los bloques relacionados con esta snapshot. El nombre de la snapshot comenzará con `cbs-snapshot-adhoc-`. https://["Consulte cómo eliminar una snapshot con la CLI de ONTAP"^].
+Es preciso tener en cuenta que al crear un backup ad hoc, se crea una Snapshot en el volumen de origen. Dado que esta instantánea no forma parte de una programación normal de instantánea, no se girará. Puede eliminar manualmente esta snapshot del volumen de origen una vez completado el backup. De este modo, se podrán liberar los bloques relacionados con esta snapshot. El nombre de la snapshot comenzará con `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Consulte cómo eliminar una snapshot con la CLI de ONTAP"^].
 
 
 NOTE: No se admite el backup de volúmenes bajo demanda en los volúmenes de protección de datos.
@@ -367,7 +367,7 @@ No es necesario eliminar el volumen de origen. Es posible eliminar la relación 
 
 Esta función solo está disponible si el sistema ejecuta ONTAP 9.12.1 o posterior.
 
-No se puede eliminar el volumen de origen desde la interfaz de usuario de backup y recuperación de BlueXP. Sin embargo, puede abrir la página Detalles de volumen en el lienzo y. https://["elimine el volumen desde allí"].
+No se puede eliminar el volumen de origen desde la interfaz de usuario de backup y recuperación de BlueXP. Sin embargo, puede abrir la página Detalles de volumen en el lienzo y. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimine el volumen desde allí"].
 
 
 NOTE: No se pueden eliminar archivos de backup de volúmenes individuales una vez que se ha eliminado la relación. Sin embargo, usted puede link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["elimine todos los backups del volumen"] si desea quitar todos los archivos de backup.

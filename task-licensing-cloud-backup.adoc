@@ -50,30 +50,30 @@ Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:
 
 * Un paquete "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos ONTAP en las instalaciones.
 * Un paquete «CVO Professional» que te permite agrupar las tareas de backup y recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.
-* Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://["Almacenamiento en caché perimetral de BlueXP"^] servicio. Tienes derecho a poner en marcha un sistema Edge de almacenamiento en caché perimetral de BlueXP por cada 3 TiB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
+* Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["Almacenamiento en caché perimetral de BlueXP"^] servicio. Tienes derecho a poner en marcha un sistema Edge de almacenamiento en caché perimetral de BlueXP por cada 3 TiB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
 
 
-https://["Obtenga más información sobre estos paquetes de licencias basados en capacidad"].
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Obtenga más información sobre estos paquetes de licencias basados en capacidad"].
 
 Utilice estos enlaces para suscribirse al backup y la recuperación de BlueXP desde su mercado del proveedor de cloud:
 
 ifdef::aws[]
 
-* AWS: https://["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure: https://["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* GCP: https://["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
 
 
 endif::gcp[]
@@ -86,15 +86,15 @@ Paga por el backup y la recuperación de BlueXP cada año mediante la compra de 
 
 ifdef::aws[]
 
-Al utilizar AWS, hay dos contratos anuales disponibles en https://["AWS Marketplace"^] Para sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Están disponibles en periodos de 1, 2 o 3 años:
+Al utilizar AWS, hay dos contratos anuales disponibles en https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace"^] Para sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Están disponibles en periodos de 1, 2 o 3 años:
 
 * Un plan de "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos de ONTAP en las instalaciones.
 +
-Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure https://["Asocie la suscripción con sus credenciales de AWS"^]. Ten en cuenta que también tendrás que pagar por tus sistemas Cloud Volumes ONTAP con esta suscripción de contrato anual, ya que solo puedes asignar una suscripción activa a tus credenciales de AWS en BlueXP.
+Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Asocie la suscripción con sus credenciales de AWS"^]. Ten en cuenta que también tendrás que pagar por tus sistemas Cloud Volumes ONTAP con esta suscripción de contrato anual, ya que solo puedes asignar una suscripción activa a tus credenciales de AWS en BlueXP.
 
 * Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.
 +
-Consulte https://["Tema sobre licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
+Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["Tema sobre licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
 
 +
 Si quiere utilizar esta opción, puede configurar el contrato anual al crear un entorno de trabajo de Cloud Volumes ONTAP y BlueXP le solicitará que se suscriba a AWS Marketplace.
@@ -125,7 +125,7 @@ La licencia de backup y recuperación de BYOL BlueXP es una licencia flotante do
 
 Si no tienes una licencia BYOL de backup y recuperación de BlueXP, haz clic en el icono de chat en la parte inferior derecha de BlueXP para comprar una.
 
-Opcionalmente, si tiene una licencia basada en nodos sin asignar para Cloud Volumes ONTAP que no utilizará, puede convertirla en una licencia de backup y recuperación de BlueXP con la misma equivalencia en dólar y la misma fecha de caducidad. https://["Vaya aquí para obtener más información"^].
+Opcionalmente, si tiene una licencia basada en nodos sin asignar para Cloud Volumes ONTAP que no utilizará, puede convertirla en una licencia de backup y recuperación de BlueXP con la misma equivalencia en dólar y la misma fecha de caducidad. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vaya aquí para obtener más información"^].
 
 Utilizarás la cartera digital de BlueXP para gestionar las licencias de BYOL. Puedes añadir nuevas licencias, actualizar las licencias existentes y ver el estado de la licencia desde la cartera digital de BlueXP.
 
@@ -138,7 +138,7 @@ Después de comprar tu licencia de backup y recuperación de BlueXP, activa la l
 Si ejecutas el backup y recuperación de BlueXP en un sitio local que no tiene acceso a Internet, lo que significa que has implementado el conector BlueXP en un host de ese sitio local sin conexión, deberás obtener el archivo de licencia de un sistema conectado a Internet. La activación de la licencia con el número de serie y la cuenta de NSS no está disponible para las instalaciones sin conexión (sitio oscuro).
 
 .Pasos
-. Inicie sesión en la https://["Sitio de soporte de NetApp"^] Y haga clic en *sistemas > licencias de software*.
+. Inicie sesión en la https://mysupport.netapp.com["Sitio de soporte de NetApp"^] Y haga clic en *sistemas > licencias de software*.
 . Introduce el número de serie de tu licencia de backup y recuperación de BlueXP.
 +
 image:screenshot_cloud_backup_license_step1.gif["Captura de pantalla que muestra una tabla de licencias después de buscar por número de serie."]
@@ -166,7 +166,7 @@ Después de comprar una licencia de backup y recuperación de BlueXP para tu cue
 +
 ** Si tiene el número de serie de la licencia de copia de seguridad y conoce su cuenta de NSS, seleccione la opción *introducir número de serie* e introduzca esa información.
 +
-Si su cuenta del sitio de soporte de NetApp no está disponible en la lista desplegable, https://["Agregue la cuenta NSS a BlueXP"^].
+Si su cuenta del sitio de soporte de NetApp no está disponible en la lista desplegable, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Agregue la cuenta NSS a BlueXP"^].
 
 ** Si tiene el archivo de licencia de copia de seguridad (requerido cuando está instalado en un sitio oscuro), seleccione la opción *cargar archivo de licencia* y siga las indicaciones para adjuntar el archivo.
 +
@@ -183,7 +183,7 @@ BlueXP añade la licencia para que el backup y la recuperación de BlueXP estén
 
 === Actualizar una licencia BYOL de backup y recuperación de BlueXP
 
-Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de la cartera digital de BlueXP y en https://["Notificaciones"].
+Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de la cartera digital de BlueXP y en https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"].
 
 image:screenshot_services_license_expire.png["Una captura de pantalla que muestra una licencia que va a caducar en la página de la cartera digital de BlueXP."]
 

@@ -26,7 +26,7 @@ La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP C
 | Ubicación del conector | Procedimiento 
 
 
-| Puesta en marcha de cloud | Siga las instrucciones para https://["Conexión a la máquina virtual Connector Linux"^] en función del proveedor de cloud que utilice. 
+| Puesta en marcha de cloud | Siga las instrucciones para https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Conexión a la máquina virtual Connector Linux"^] en función del proveedor de cloud que utilice. 
 
 
 | Instalación manual | Inicie sesión en el sistema Linux. 

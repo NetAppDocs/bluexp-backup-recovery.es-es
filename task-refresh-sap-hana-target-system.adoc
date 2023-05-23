@@ -23,7 +23,7 @@ Puede realizar una actualización de un sistema de destino SAP HANA con los dato
 * Compruebe que la versión de la base de datos SAP HANA sea la misma en el sistema de origen y el de destino.
 * Debe haber decidido qué scripts de refrescamiento se van a utilizar. Los scripts de actualización están disponibles en el informe técnico de la solución.
 +
-https://["Ejemplo de automatización de scripts"]
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html#script-sc-system-refresh-sh["Ejemplo de automatización de scripts"]
 
 +
 Puede personalizar los scripts de refrescamiento.
