@@ -20,7 +20,7 @@ Con BlueXP, deberías crear un entorno de trabajo de Azure NetApp Files para añ
 
 == Crear el entorno de trabajo de Azure NetApp Files
 
-Debe crear entornos de trabajo de Azure NetApp Files en los que se alojan las bases de datos. Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html["Más información sobre Azure NetApp Files"] y.. link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-working-env.html["Crear un entorno de trabajo de Azure NetApp Files"].
+Debe crear entornos de trabajo de Azure NetApp Files en los que se alojan las bases de datos. Para obtener más información, consulte link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/concept-azure-netapp-files.html["Más información sobre Azure NetApp Files"] y.. link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-create-working-env.html["Crear un entorno de trabajo de Azure NetApp Files"].
 
 
 
@@ -28,7 +28,7 @@ Debe crear entornos de trabajo de Azure NetApp Files en los que se alojan las ba
 
 Un administrador de cuenta de BlueXP debería poner en marcha un conector en Azure que permita a BlueXP gestionar recursos y procesos dentro de tu entorno de nube pública.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Cree un conector en Azure desde BlueXP"].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-azure.html["Cree un conector en Azure desde BlueXP"].
 
 * Asegúrese de que existe conectividad entre el conector y los hosts de la base de datos.
 * Si tiene el entorno de trabajo de Azure NetApp Files y las bases de datos en la misma red virtual (vnet), puede implementar el conector en el mismo vnet.

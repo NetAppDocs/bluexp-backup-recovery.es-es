@@ -26,7 +26,7 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Verifique la compatibilidad con la configuración
 [role="quick-margin-list"]
-* Ha descubierto el clúster en las instalaciones y lo ha añadido a un entorno de trabajo en BlueXP. Consulte https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Detección de clústeres de ONTAP"^] para obtener más detalles.
+* Ha descubierto el clúster en las instalaciones y lo ha añadido a un entorno de trabajo en BlueXP. Consulte https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Detección de clústeres de ONTAP"^] para obtener más detalles.
 +
 ** El clúster ejecuta ONTAP 9.7P5 o posterior (se recomienda ONTAP 9.8P13 y versiones posteriores).
 ** El clúster tiene una licencia de SnapMirror, se incluye como parte del paquete Premium o de Data Protection Bundle.
@@ -101,7 +101,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["Un diagrama que muestra có
 
 Debe detectar los clústeres de ONTAP en las instalaciones en BlueXP para poder empezar a realizar backups de datos de volúmenes.
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Aprenda a detectar un clúster"^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Aprenda a detectar un clúster"^].
 
 Requisitos de ONTAP::
 +
@@ -148,10 +148,10 @@ Al configurar el backup y la recuperación de BlueXP, se le pedirá que utilice 
 
 Si ya tiene un conector implementado en su vnet de Azure o en sus instalaciones, todo estará configurado. De lo contrario, necesitará crear un conector en cualquiera de esas ubicaciones para realizar backups de los datos de ONTAP en el almacenamiento de Azure Blob. No puede utilizar un conector puesto en marcha en otro proveedor de cloud.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Instalación de un conector en Azure"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Instalación de un conector en sus instalaciones"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["Instalación de un conector en una región de gobierno de Azure"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Más información sobre conectores"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Instalación de un conector en Azure"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Instalación de un conector en sus instalaciones"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["Instalación de un conector en una región de gobierno de Azure"^]
 +
 El backup y la recuperación de BlueXP son compatibles con regiones gubernamentales de Azure cuando el conector se implementa en la nube, no cuando se instala en tus instalaciones. Además, debe poner en marcha el conector desde Azure Marketplace. No puede desplegar el conector en una región gubernamental desde el sitio web de BlueXP SaaS.
 
@@ -166,10 +166,10 @@ Asegúrese de que el conector tiene las conexiones de red necesarias.
 .Pasos
 . Asegúrese de que la red en la que está instalado el conector habilita las siguientes conexiones:
 +
-** Una conexión HTTPS a través del puerto 443 al servicio de backup y recuperación de BlueXP y al almacenamiento de objetos Blob (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["consulte la lista de extremos"^])
+** Una conexión HTTPS a través del puerto 443 al servicio de backup y recuperación de BlueXP y al almacenamiento de objetos Blob (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["consulte la lista de extremos"^])
 ** Una conexión HTTPS a través del puerto 443 para la LIF de gestión del clúster ONTAP
 ** Para que la funcionalidad de búsqueda y restauración de copia de seguridad y recuperación de BlueXP funcione, debe estar abierto el puerto 1433 para la comunicación entre Connector y los servicios SQL de Azure Synapse.
-** Se requieren reglas adicionales de grupos de seguridad entrantes para implementaciones gubernamentales de Azure y Azure. Consulte https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Reglas para Connector en Azure"^] para obtener más detalles.
+** Se requieren reglas adicionales de grupos de seguridad entrantes para implementaciones gubernamentales de Azure y Azure. Consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Reglas para Connector en Azure"^] para obtener más detalles.
 
 
 . Habilite un extremo privado de vnet con el almacenamiento de Azure. Esto es necesario si tiene una conexión ExpressRoute o VPN de su clúster ONTAP a vnet y desea que la comunicación entre el conector y el almacenamiento BLOB permanezca en su red privada virtual (una conexión *privada*).
@@ -246,7 +246,7 @@ Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Mic
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["Vea el formato JSON completo para la política"^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Vea el formato JSON completo para la política"^]
 
 .. Haga clic en *revisar + actualizar* y, a continuación, haga clic en *Actualizar*.
 

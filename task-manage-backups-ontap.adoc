@@ -367,7 +367,7 @@ No es necesario eliminar el volumen de origen. Es posible eliminar la relación 
 
 Esta función solo está disponible si el sistema ejecuta ONTAP 9.12.1 o posterior.
 
-No se puede eliminar el volumen de origen desde la interfaz de usuario de backup y recuperación de BlueXP. Sin embargo, puede abrir la página Detalles de volumen en el lienzo y. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimine el volumen desde allí"].
+No se puede eliminar el volumen de origen desde la interfaz de usuario de backup y recuperación de BlueXP. Sin embargo, puede abrir la página Detalles de volumen en el lienzo y. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimine el volumen desde allí"].
 
 
 NOTE: No se pueden eliminar archivos de backup de volúmenes individuales una vez que se ha eliminado la relación. Sin embargo, usted puede link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["elimine todos los backups del volumen"] si desea quitar todos los archivos de backup.

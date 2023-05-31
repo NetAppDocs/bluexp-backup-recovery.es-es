@@ -19,7 +19,7 @@ summary: Ver los detalles de backup y supervisar el estado de todos los trabajos
 
 Es posible supervisar el estado de los trabajos que se han iniciado en los entornos de trabajo. Esto permite ver los trabajos que se completaron correctamente, los que están en curso en ese momento y los que han fallado para poder diagnosticar y corregir cualquier problema.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html["Supervise el estado del trabajo"].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["Supervise el estado del trabajo"].
 
 
 
@@ -229,4 +229,4 @@ Los archivos CA deben tener el formato pem.
 
 Las API de REST para proteger las aplicaciones al cloud están disponibles en: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/[].
 
-Debe obtener el token de usuario con autenticación federada para acceder a las API DE REST. Para obtener información sobre cómo obtener el token de usuario, consulte https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["Cree un token de usuario con autenticación federada"].
+Debe obtener el token de usuario con autenticación federada para acceder a las API DE REST. Para obtener información sobre cómo obtener el token de usuario, consulte https://docs.netapp.com/us-en/bluexp-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["Cree un token de usuario con autenticación federada"].

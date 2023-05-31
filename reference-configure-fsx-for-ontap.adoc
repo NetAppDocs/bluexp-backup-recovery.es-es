@@ -20,7 +20,7 @@ Con BlueXP, deberías crear un entorno de trabajo FSx para ONTAP para añadir y 
 
 == Crear un entorno de trabajo FSX para ONTAP
 
-Debes crear los entornos de trabajo de FSx para ONTAP en los que estén alojadas las bases de datos. Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["Comience a utilizar Amazon FSX para ONTAP"] y.. link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Crear y gestionar un entorno de trabajo de Amazon FSX para ONTAP"].
+Debes crear los entornos de trabajo de FSx para ONTAP en los que estén alojadas las bases de datos. Para obtener más información, consulte link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Comience a utilizar Amazon FSX para ONTAP"] y.. link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html["Crear y gestionar un entorno de trabajo de Amazon FSX para ONTAP"].
 
 Puedes crear el entorno de trabajo de FSx para ONTAP mediante BlueXP o AWS. Si ha creado utilizando AWS, debe descubrir el FSX para sistemas ONTAP en BlueXP.
 
@@ -30,7 +30,7 @@ Puedes crear el entorno de trabajo de FSx para ONTAP mediante BlueXP o AWS. Si h
 
 Un administrador de cuenta debe crear un conector en AWS que permita a BlueXP gestionar recursos y procesos dentro de tu entorno de nube pública.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["Creación de un conector en AWS desde BlueXP"].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Creación de un conector en AWS desde BlueXP"].
 
 * Deberías utilizar el mismo conector para gestionar tanto el entorno de trabajo como las bases de datos de FSx for ONTAP.
 * Si tiene el entorno de trabajo de FSx para ONTAP y las bases de datos en el mismo cloud privado virtual (VPC), puede poner en marcha el conector en la misma VPC.

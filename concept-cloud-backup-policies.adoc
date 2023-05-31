@@ -233,7 +233,7 @@ ifdef::aws[]
 *** s3:GetBucketLocation
 *** s3:GetObjectVersion
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo para la directiva donde puede copiar y pegar los permisos necesarios"^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo para la directiva donde puede copiar y pegar los permisos necesarios"^].
 
 
 

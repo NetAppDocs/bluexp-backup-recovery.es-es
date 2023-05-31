@@ -69,8 +69,8 @@ Tenga en cuenta que el extremo privado es opcional.
 Requisitos del clúster de Kubernetes::
 +
 --
-* Ha descubierto el clúster de Kubernetes como entorno de trabajo de BlueXP. https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-azure.html["Descubra el clúster de Kubernetes"^].
-* Trident debe instalarse en el clúster y la versión de Trident debe ser un mínimo de 21.1. Consulte https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["cómo instalar Trident"^] o. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["cómo actualizar la versión de Trident"^].
+* Ha descubierto el clúster de Kubernetes como entorno de trabajo de BlueXP. https://docs.netapp.com/us-en/bluexp-kubernetes/task/task-kubernetes-discover-azure.html["Descubra el clúster de Kubernetes"^].
+* Trident debe instalarse en el clúster y la versión de Trident debe ser un mínimo de 21.1. Consulte https://docs.netapp.com/us-en/bluexp-kubernetes/task/task-k8s-manage-trident.html["cómo instalar Trident"^] o. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["cómo actualizar la versión de Trident"^].
 * El clúster debe usar Cloud Volumes ONTAP en Azure para su almacenamiento back-end.
 * El sistema Cloud Volumes ONTAP debe estar en la misma región de Azure que el clúster de Kubernetes, y debe ejecutar ONTAP 9.7P5 o posterior (se recomienda ONTAP 9.8P11 y versiones posteriores).
 +
@@ -129,7 +129,7 @@ spec:
 
 
 --
-Requisitos de licencia:: Para las licencias PAYGO de backup y recuperación de BlueXP, es necesaria una suscripción a través de Azure Marketplace antes de habilitar el backup y la recuperación de BlueXP. La facturación para el backup y la recuperación de BlueXP se realiza a través de esta suscripción. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Puede suscribirse desde la página Detalles  Credentials del asistente de entorno de trabajo"^].
+Requisitos de licencia:: Para las licencias PAYGO de backup y recuperación de BlueXP, es necesaria una suscripción a través de Azure Marketplace antes de habilitar el backup y la recuperación de BlueXP. La facturación para el backup y la recuperación de BlueXP se realiza a través de esta suscripción. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Puede suscribirse desde la página Detalles  Credentials del asistente de entorno de trabajo"^].
 +
 --
 Para la licencia BYOL de backup y recuperación de BlueXP, necesita el número de serie de NetApp que le permita usar el servicio durante la duración y la capacidad de la licencia. link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Aprenda a gestionar sus licencias BYOL"].
