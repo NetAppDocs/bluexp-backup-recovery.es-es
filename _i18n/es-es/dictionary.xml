@@ -2186,7 +2186,6 @@
   <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp debería ponerse en contacto con usted durante este proceso. Este es un ejercicio de incorporación puntual para nuevos usuarios.</block>
   <block id="1c0e45ef07d0dbc13ca2394d5e285fd7" category="paragraph">Una vez que tenga su cuenta de la página de soporte de NetApp, podrá navegar a BlueXP para añadir esta cuenta de NSS para futuros registros.</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">Haga clic en *Registrar el plugin de SnapCenter para VMware vSphere*.</block>
-  <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">En el campo Username and Password, especifique las credenciales del usuario con la función de administrador.</block>
   <block id="e7626d40bde0cb9f25e876222f0bb5fc" category="doc">Realice backups de los datos de las aplicaciones en las instalaciones en StorageGRID</block>
   <block id="3c129ae4117659984e8ff0ffd5717f67" category="paragraph">Al realizar una copia de seguridad de datos en StorageGRID, debe haber un conector disponible en las instalaciones. Tendrá que instalar un conector nuevo o asegurarse de que el conector seleccionado actualmente reside en las instalaciones. El conector se puede instalar en un sitio con o sin acceso a Internet.</block>
   <block id="59a3f2ec9c1e69a907655f1e19a09af2" category="inline-link-macro">Crear conectores para StorageGRID</block>
@@ -3796,4 +3795,5 @@
   <block id="8ff7f40c0012810703dc67d79b10ff7b" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> disponibles en el entorno anterior.</block>
   <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block>.</block>
   <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">Agregue los detalles del sistema StorageGRID asociado a sus entornos de trabajo de ONTAP tal y como se han configurado en la configuración original del conector con la<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>.</block>
+  <block id="eeba430c3c4e0795629fe640359a8730" category="list-text">En el campo Username and Password, especifique las credenciales del usuario de vCenter con el rol administrator.</block>
 </blocks>
