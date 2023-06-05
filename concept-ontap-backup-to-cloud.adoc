@@ -440,7 +440,7 @@ Esta operación podría provocar un aumento único en el coste de leer los datos
 
 
 * Los backups de volúmenes de FlexGroup no se pueden mover al almacenamiento de archivado.
-* Los backups de volúmenes de FlexGroup no pueden usar bloqueo de datos ni protección frente a ransomware.
+* Los backups de volúmenes de FlexGroup pueden usar la protección DataLock y Ransomware si el clúster ejecuta ONTAP 9.13.1 o posterior.
 * Se admite el backup de volúmenes de SVM-DR con las siguientes restricciones:
 +
 ** Los backups solo son compatibles desde el almacenamiento secundario de ONTAP.

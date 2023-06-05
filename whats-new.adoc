@@ -18,6 +18,34 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 
 
+== 5 de junio de 2023
+
+
+
+=== Los volúmenes de FlexGroup pueden realizarse backups y protegerse mediante la protección frente a ransomware y bloqueo de datos
+
+Las políticas de backup para FlexGroup Volumes ahora pueden usar la protección DataLock y Ransomware cuando el clúster ejecuta ONTAP 9.13.1 o posterior.
+
+
+
+=== Nuevas funciones de generación de informes
+
+Ahora existe una pestaña Reports en la que se puede generar un informe de Backup Inventory, que incluye todos los backups de una cuenta, un entorno de trabajo o un inventario de SVM específico. También puede crear un informe de actividad de trabajo de protección de datos, que proporciona información sobre operaciones de Snapshot, backup, clonado y restauración que pueden ayudar con la supervisión de los acuerdos de nivel de servicio. Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-report-inventory.html["Informe sobre la cobertura de protección de datos"].
+
+
+
+=== Mejoras en Job Monitor
+
+Ahora puede revisar _backup lifecycle_ como un tipo de trabajo en la página Job Monitor, lo que le ayudará a realizar un seguimiento de todo el ciclo de vida de la copia de seguridad. También puedes ver detalles de todas las operaciones en la línea de tiempo de BlueXP. Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["Supervisar el estado de los trabajos de backup y restauración"].
+
+
+
+=== Copia de seguridad automática de los archivos críticos de backup y recuperación de BlueXP en sitios oscuros
+
+Cuando utilizas el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, conocido como puesta en marcha en «modo privado», la información de backup y recuperación de BlueXP se almacena únicamente en el sistema Connector local. Esta nueva funcionalidad realiza backups automáticos de los datos críticos de backup y recuperación de BlueXP en un bloque de su sistema StorageGRID conectado para que pueda restaurar estos datos en un nuevo conector si es necesario. https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["Leer más"]
+
+
+
 == 8 de mayo de 2023
 
 
@@ -88,7 +116,7 @@ Los trabajos iniciados por el sistema, como las operaciones de copia de segurida
 
 === Capacidad para realizar backups de datos en el cloud desde sistemas Cloud Volumes ONTAP en modo «restringido»
 
-Ahora puede realizar un backup de los datos de sistemas de Cloud Volumes ONTAP instalados en AWS, Azure y regiones comerciales de GCP en «modo restringido». Esto requiere que primero instale el conector en la región comercial "restringida". https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de BlueXP"^]. Consulte https://docs.netapp.com/us-en/bluexp-backup-restore/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/bluexp-backup-restore/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+Ahora puede realizar un backup de los datos de sistemas de Cloud Volumes ONTAP instalados en AWS, Azure y regiones comerciales de GCP en «modo restringido». Esto requiere que primero instale el conector en la región comercial "restringida". https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de BlueXP"^]. Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 
@@ -106,7 +134,7 @@ Al crear backups desde sistemas Cloud Volumes ONTAP en el almacenamiento de Azur
 
 === Mejoras en el Monitor de trabajo
 
-* Tanto las operaciones de backup y restauración iniciadas por el usuario que se inician desde la IU y la API de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup en curso, ahora están disponibles en la pestaña *Supervisión de trabajos* para sistemas ONTAP en las instalaciones que ejecutan ONTAP 9.13.1 o posterior. Las versiones anteriores de ONTAP mostrarán únicamente los trabajos iniciados por el usuario.
+* Tanto las operaciones de backup y restauración iniciadas por el usuario desde la API e IU de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup en curso, ahora están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecuten ONTAP 9.13.0 o posterior. Las versiones anteriores de ONTAP mostrarán únicamente los trabajos iniciados por el usuario.
 * Además de poder descargar un archivo CSV para generar informes de todos los trabajos, ahora puede descargar un archivo JSON para un solo trabajo y ver sus detalles. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["Leer más"].
 * Se han añadido dos nuevas alertas de trabajos de copia de seguridad: "Error de trabajo programado" y "el trabajo de restauración se completa pero con advertencias". https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Revisa todas las alertas que pueden enviar el backup y la recuperación de BlueXP"].
 
@@ -179,7 +207,7 @@ Ahora puede restaurar datos de volúmenes en diferentes máquinas virtuales de a
 
 Al utilizar ONTAP 9.12.1 GA o superior, ahora se admite el backup cuando se conecta al sistema principal en una configuración MetroCluster. Toda la configuración de backup se transfiere al sistema secundario de forma que los backups al cloud continúan automáticamente tras la conmutación.
 
-https://docs.netapp.com/us-en/bluexp-backup-restore/concept-ontap-backup-to-cloud.html#backup-limitations["Consulte limitaciones de copia de seguridad para obtener más información"].
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html#backup-limitations["Consulte limitaciones de copia de seguridad para obtener más información"].
 
 
 
@@ -562,32 +590,3 @@ Si añadió volúmenes persistentes nuevos a sus clústeres de Kubernetes despu�
 === Las API de Cloud Backup ya están disponibles para gestionar las operaciones de backup y restauración
 
 Las API están disponibles en https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html[]. Consulte link:api-backup-restore.html["esta página"] Para obtener una descripción de las API de.
-
-
-
-== 2 de mayo de 2022
-
-
-
-=== Search & Restore ahora es compatible con archivos de copia de seguridad en Google Cloud Storage
-
-El método Search & Restore de restaurar volúmenes y archivos se introdujo en abril para usuarios que almacenan sus archivos de backup en AWS. Ahora la funcionalidad está disponible para los usuarios que almacenan sus archivos de backup en Google Cloud Storage. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#prerequisites-2["Descubra cómo restaurar sus volúmenes y archivos mediante Search  Restore"].
-
-
-
-=== Configure una política de backup que se aplicará automáticamente a los volúmenes recién creados en los clústeres de Kubernetes
-
-Si añadió volúmenes persistentes nuevos a sus clústeres de Kubernetes después de que se activó Cloud Backup, en el pasado fue necesario recordar configurar los backups de esos volúmenes. Ahora puede seleccionar una política que se aplicará automáticamente a los volúmenes recién creados. Esta opción está disponible en el asistente de configuración cuando se activa Cloud Backup para un nuevo clúster de Kubernetes.
-
-
-
-=== Cloud Backup ahora requiere una licencia antes de activarse en un entorno de trabajo
-
-La implementación de las licencias con Cloud Backup se ha realizado a partir de algunos cambios:
-
-* Debe inscribirse para obtener una suscripción al mercado de PAYGO de su proveedor de cloud o adquirir una licencia BYOL de NetApp para poder activar Cloud Backup.
-* La prueba gratuita de 30 días solo está disponible cuando se usa una suscripción de PAYGO a su proveedor de cloud, pero no está disponible cuando se usa la licencia BYOL.
-* La prueba gratuita comienza el día en que comienza la suscripción a Marketplace. Por ejemplo, si activa la prueba gratuita después de haber utilizado una suscripción a Marketplace durante 30 días para un sistema Cloud Volumes ONTAP, la prueba de Cloud Backup no estará disponible.
-
-
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html["Obtenga más información sobre los modelos de licencias disponibles"].

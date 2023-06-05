@@ -34,6 +34,10 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: Configurar la licencia
       url: "/task-licensing-cloud-backup.html"
+  - title: Supervisar la protección de datos
+    entries:
+    - title: Informe sobre la cobertura de protección de datos
+      url: "/task-report-inventory.html"
     - title: Supervisar el estado de los trabajos de backup y restauración
       url: "/task-monitor-backup-jobs.html"
   - title: Realice backups y restauraciones de datos de ONTAP
@@ -205,8 +209,8 @@ sidebar:
     - title: Configurar el backup para el acceso de cuentas múltiples en Azure
       flavor: azure
       url: "/reference-backup-multi-account-azure.html"
-    - title: Realiza un backup de la base de datos de backup y recuperación de BlueXP
-        en un sitio oscuro
+    - title: Restaurar la base de datos de backup y recuperación de BlueXP en un sitio
+        oscuro
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Reinicia el backup y la recuperación de BlueXP
       url: "/reference-restart-backup.html"
