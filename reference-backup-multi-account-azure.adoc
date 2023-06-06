@@ -14,7 +14,7 @@ summary: El backup y la recuperación de datos de BlueXP te permite crear archiv
 
 
 [role="lead"]
-El backup y la recuperación de datos de BlueXP te permite crear archivos de backup en una cuenta de Azure diferente a la de dónde residen los volúmenes de Cloud Volumes ONTAP de origen. Y ambas cuentas pueden ser diferentes a la cuenta en la que reside BlueXP Connector.
+El backup y la recuperación de datos de BlueXP te permite crear archivos de backup en una cuenta de Azure diferente a la de dónde residen los volúmenes de Cloud Volumes ONTAP de origen. Ambas cuentas pueden ser diferentes a la cuenta en la que reside el conector de BlueXP.
 
 Estos pasos son necesarios solo cuando se encuentre https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en un almacenamiento de Azure Blob"^].
 
@@ -29,11 +29,11 @@ Tenga en cuenta que si desea que BlueXP administre su sistema Cloud Volumes ONTA
 . Inicie sesión en el portal de Azure y desde casa. Seleccione Virtual Networks.
 . Seleccione la suscripción que está utilizando como suscripción 1 y haga clic en el vnet en el que desea configurar Peering.
 +
-image:screenshot_azure_peer1.png[""]
+image:screenshot_azure_peer1.png["Una captura de pantalla de la selección de la suscripción 1 y el vnet en el que desea configurar el peering."]
 
 . Seleccione *cbsnetwork* y, en el panel izquierdo, haga clic en *peerings* y, a continuación, haga clic en *Add*.
 +
-image:screenshot_azure_peer2.png[""]
+image:screenshot_azure_peer2.png["Una captura de pantalla de la adición del peering para vnet para la suscripción 1."]
 
 . Introduzca la siguiente información en la página peering y, a continuación, haga clic en *Add*.
 +
@@ -43,19 +43,19 @@ image:screenshot_azure_peer2.png[""]
 ** En subscripción, seleccione la suscripción 2.
 ** Red virtual, seleccione la red virtual en la suscripción 2 a la que desea configurar la conexión entre iguales.
 +
-image:screenshot_azure_peer3.png[""]
+image:screenshot_azure_peer3.png["Una captura de pantalla de la selección de la suscripción 2 y el vnet en el que desea configurar el peering."]
 
 
 
 . Realice los mismos pasos en la suscripción 2 vnet y especifique los detalles de suscripción y vnet remoto de la suscripción 1.
 +
-image:screenshot_azure_peer4.png[""]
+image:screenshot_azure_peer4.png["Una captura de pantalla de la adición del peering para vnet para la suscripción 2."]
 
 +
 La configuración de relaciones entre iguales se agrega.
 
 +
-image:screenshot_azure_peer5.png[""]
+image:screenshot_azure_peer5.png["Una captura de pantalla que muestra los resultados de la configuración de interconexión."]
 
 
 
@@ -97,9 +97,9 @@ NOTE: Necesita permiso de colaborador de red para realizar la siguiente acción.
   }
 }
 ----
-. Vaya a la cuenta de almacenamiento > redes > conexiones de punto final privado y haga clic en *+ Private Endpoint*.
+. Vaya a la cuenta de almacenamiento > Redes > Conexiones de punto final privado y haga clic en *+ Punto final privado*.
 +
-image:screenshot_azure_networking1.png[""]
+image:screenshot_azure_networking1.png["Una captura de pantalla de la apertura de la configuración de un extremo privado para su cuenta de almacenamiento."]
 
 . En la página Private Endpoint _Basics_:
 +
@@ -107,26 +107,26 @@ image:screenshot_azure_networking1.png[""]
 ** Introduzca un nombre de extremo.
 ** Seleccione la región.
 +
-image:screenshot_azure_networking2.png[""]
+image:screenshot_azure_networking2.png["Una captura de pantalla que muestra los detalles de la página Conceptos básicos de punto final privado."]
 
 
 
 . En la página _Resource_, seleccione Subrecurso destino como *BLOB*.
 +
-image:screenshot_azure_networking3.png[""]
+image:screenshot_azure_networking3.png["Una captura de pantalla que muestra los detalles de la página Recurso de punto final privado."]
 
 . En la página Configuration:
 +
 ** Seleccione la red virtual y la subred.
 ** Haga clic en el botón de opción *Sí* para "integrar con la zona DNS privada".
 +
-image:screenshot_azure_networking4.png[""]
+image:screenshot_azure_networking4.png["Una captura de pantalla que muestra los detalles de la página Configuración de punto final privado."]
 
 
 
 . En la lista Zona DNS privada, asegúrese de que la Zona privada está seleccionada en la región correcta y haga clic en *revisar + Crear*.
 +
-image:screenshot_azure_networking5.png[""]
+image:screenshot_azure_networking5.png["Una captura de pantalla que muestra la selección de zona privada de la página Configuración de punto final privado."]
 
 +
 Ahora, la cuenta de almacenamiento (de suscripción 1) tiene acceso al sistema Cloud Volumes ONTAP que se ejecuta en la suscripción 2.

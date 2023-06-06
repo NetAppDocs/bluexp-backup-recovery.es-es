@@ -180,6 +180,11 @@ De forma predeterminada, el backup y la recuperación de BlueXP aprovisiona el B
 --
 Configuración necesaria para crear backups en una suscripción diferente de Azure:: De forma predeterminada, las copias de seguridad se crean con la misma suscripción que la utilizada para el sistema Cloud Volumes ONTAP. Si desea utilizar una suscripción de Azure diferente para sus backups, debe hacerlo link:reference-backup-multi-account-azure.html["Inicie sesión en el portal de Azure y vincule las dos suscripciones"].
 Información requerida para usar claves gestionadas por el cliente para el cifrado de datos:: Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado gestionadas por Microsoft predeterminadas. En este caso, deberá tener la suscripción a Azure, el nombre de almacén de claves y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo usar sus propias claves"^].
++
+--
+Tenga en cuenta que la copia de seguridad y la recuperación admiten _políticas de acceso de Azure_ como modelo de permiso. Actualmente no se admite el modelo de permiso _Azure Role-Based Access Control_ (Azure RBAC).
+
+--
 
 
 

@@ -32,7 +32,7 @@ NOTE: Las actividades de informe se supervisan en el registro de supervisión de
 Los informes de backup y recuperación de BlueXP ofrecen información sobre los siguientes aspectos:
 
 * *Ubicación del conector*: Local o en la nube
-* *Fuente*: Cloud Volumes ONTAP, on-premises, aplicaciones o Kubernetes
+* *Fuente*: Volúmenes Cloud Volumes ONTAP, volúmenes ONTAP locales, aplicaciones o volúmenes persistentes de Kubernetes
 * *Destino*: Cualquiera de los proveedores de nube, NetApp StorageGRID o ONTAP S3
 * *Versiones ONTAP*: 9.13.0
 

@@ -40,6 +40,14 @@ Ahora puede revisar _backup lifecycle_ como un tipo de trabajo en la página Job
 
 
 
+=== Alerta de notificación adicional para etiquetas de política no coincidentes
+
+Se ha agregado una nueva alerta de backup que indica que no se han creado los archivos de backup porque las etiquetas de políticas de Snapshot no coinciden. Si el _label_ definido en una política de backup no tiene un _label_ coincidente en la política de Snapshot, no se creará ningún archivo de backup. Deberá usar System Manager o la CLI de ONTAP para añadir la etiqueta faltante a la política de Snapshot del volumen.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Revisa todas las alertas que pueden enviar el backup y la recuperación de BlueXP"].
+
+
+
 === Copia de seguridad automática de los archivos críticos de backup y recuperación de BlueXP en sitios oscuros
 
 Cuando utilizas el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, conocido como puesta en marcha en «modo privado», la información de backup y recuperación de BlueXP se almacena únicamente en el sistema Connector local. Esta nueva funcionalidad realiza backups automáticos de los datos críticos de backup y recuperación de BlueXP en un bloque de su sistema StorageGRID conectado para que pueda restaurar estos datos en un nuevo conector si es necesario. https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["Leer más"]

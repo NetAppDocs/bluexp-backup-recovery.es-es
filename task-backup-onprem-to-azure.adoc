@@ -280,6 +280,9 @@ Puede crear backups desde sistemas en las instalaciones a Azure Blob en todas la
 === Preparar el almacenamiento de Azure Blob para backups
 
 . Puede utilizar sus propias claves gestionadas de forma personalizada para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado gestionadas por Microsoft predeterminadas. En este caso, deberá tener la suscripción a Azure, el nombre de almacén de claves y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo usar sus propias claves"^].
++
+Tenga en cuenta que la copia de seguridad y la recuperación admiten _políticas de acceso de Azure_ como modelo de permiso. Actualmente no se admite el modelo de permiso _Azure Role-Based Access Control_ (Azure RBAC).
+
 . Si desea disponer de una conexión más segura a través de Internet pública desde el centro de datos local hasta el vnet, existe una opción para configurar un extremo privado de Azure en el asistente de activación. En este caso, deberá conocer la red y la subred de esta conexión. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Consulte los detalles sobre el uso de un extremo privado"^].
 
 
