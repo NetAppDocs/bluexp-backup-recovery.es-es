@@ -16,8 +16,7 @@ summary: Realice unos pasos para realizar backup de datos de aplicaciones desde 
 [role="lead"]
 Completa algunos pasos para hacer una copia de seguridad de los datos de las aplicaciones desde ONTAP en Google Cloud Platform.
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Activar copia de seguridad*.
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
@@ -42,10 +41,14 @@ El backup y la recuperación de BlueXP solo admiten el administrador de clúster
 . Seleccione *Google Cloud Platform* como proveedor de cloud.
 +
 .. Seleccione Google Cloud Project en el que desea que se cree el bucket de Google Cloud Storage para los backups.
-.. En el campo Clave de acceso de Google Cloud, especifique la clave para el cifrado de datos.
-.. En el campo Clave secreta de Google Cloud, especifique la contraseña para el cifrado de datos.
+.. En el campo Google Cloud Access Key, especifique la clave.
+.. En el campo Google Cloud Secret Key, especifique la contraseña.
 .. Seleccione la región en la que desea crear los backups.
 .. Especifique el espacio de IP.
+.. Seleccione el nivel de archivado.
++
+Se recomienda configurar el nivel de archivado porque se trata de una actividad única y no se le permitirá configurarla más adelante.
+
 
 
 . Revise los detalles y haga clic en *Activar copia de seguridad*.

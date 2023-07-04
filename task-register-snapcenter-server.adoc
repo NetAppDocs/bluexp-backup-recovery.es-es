@@ -16,8 +16,7 @@ summary: Realice unos pasos para registrar el servidor SnapCenter.
 [role="lead"]
 Solo un usuario con el rol de administrador de SnapCenter puede registrar el host en el que se ejecuta SnapCenter Server 4.6 o una versión posterior. Puedes registrar varios hosts de servidor de SnapCenter en BlueXP.
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . En el menú desplegable *Configuración*, haga clic en *servidores SnapCenter*.
 . Haga clic en *Registrar servidor SnapCenter*.
@@ -39,12 +38,8 @@ Las etiquetas están separadas por comas.
 . Haga clic en *Registrar*.
 
 
-*Después de terminar*
-
+.Después de terminar
 Haga clic en *copia de seguridad y restauración* > *aplicaciones* para ver todas las aplicaciones protegidas con el host de servidor SnapCenter registrado. De forma predeterminada, las aplicaciones se detectan automáticamente cada día, a medianoche.
-
-
-IMPORTANT: Si se añaden SVM a SnapCenter mediante FQDN o la dirección IP, las aplicaciones que se ejecutan en esas SVM no pueden protegerse. El backup y la recuperación de datos de BlueXP para aplicaciones solo reconoce las SVM que se añaden por nombre o las SVM detectadas por SnapCenter que se añadieron como parte del clúster de ONTAP.
 
 Las aplicaciones admitidas y sus configuraciones son:
 

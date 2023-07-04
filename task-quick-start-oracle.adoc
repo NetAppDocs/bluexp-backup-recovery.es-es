@@ -22,6 +22,7 @@ Comience rápidamente siguiendo estos pasos.
 +
 ** RHEL 7.5 o posterior y 8.x
 ** OL 7.5 o posterior y 8.x.
+** SLES 15 SP4
 
 
 * Almacenamiento en cloud de NetApp:
@@ -42,7 +43,7 @@ NOTE: Azure NetApp Files no es compatible con entornos SAN.
 
 
 * Distribución de bases de datos: Oracle Standard y Oracle Enterprise Standalone (CDB heredado y multitenant y PDB)
-* Versiones de base de datos: 12cR2, 18c, 19c y 21c
+* Versiones de base de datos: 19C y 21c
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Regístrese en BlueXP

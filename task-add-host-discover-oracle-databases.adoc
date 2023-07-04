@@ -19,10 +19,10 @@ Debe instalar el plugin de SnapCenter para Oracle en cada host de la base de dat
 * Si SSH está habilitado para el host de la base de datos, puede instalar el plugin mediante uno de los métodos:
 +
 ** Instale el plugin y añada el host desde la interfaz de usuario mediante la opción SSH. <<Añada el host desde la interfaz de usuario mediante la opción SSH,Leer más>>.
-** Instale el plugin mediante un script y añada el host desde la interfaz de usuario mediante la opción manual. <<Instale el plugin mediante un script y añada el host desde la interfaz de usuario mediante la opción manual,Leer más>>.
+** Instale el plugin mediante un script y añada el host desde la interfaz de usuario mediante la opción manual. <<Install the plug-in using script and add host from UI using manual option,Leer más>>.
 
 
-* Si SSH está deshabilitado, instale el plugin manualmente y añada el host desde la interfaz de usuario con la opción manual. <<Instale el plugin manualmente y añada el host desde la interfaz de usuario mediante la opción manual,Leer más>>.
+* Si SSH está deshabilitado, instale el plugin manualmente y añada el host desde la interfaz de usuario con la opción manual. <<Install the plug-in manually and add host from UI using manual option,Leer más>>.
 
 
 
@@ -51,6 +51,7 @@ Cuando se pierde el conector o se ha creado un nuevo conector, debe asociar el c
 
 == Añada el host desde la interfaz de usuario mediante la opción SSH
 
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 +
 Si ya ha agregado un host y desea agregar otro host, haga clic en *Aplicaciones* > *Administrar bases de datos* > *Agregar* y, a continuación, continúe con el paso 5.
@@ -90,8 +91,10 @@ NOTE: La clave privada SSH no se almacena en ningún lugar de la aplicación y n
 
 . En la página Configuration, realice lo siguiente:
 +
-.. Configure el acceso sudo para el usuario no raíz (sudo) copiando el texto en el archivo _/etc/sudoers.d/snapcenter_.
-.. Seleccione la casilla de verificación y haga clic en *Siguiente*.
+.. Configure el acceso sudo para el usuario de SnapCenter en el host de la base de datos de Oracle iniciando sesión en la máquina Linux que ejecuta la base de datos de Oracle.
+.. Copia el texto que aparece en la interfaz de usuario de BlueXP.
+.. Cree el archivo _/etc/sudoers.d/snapcenter_ en la máquina Linux y pegue el texto copiado.
+.. En la interfaz de usuario de BlueXP, selecciona la casilla de verificación y haz clic en *Siguiente*.
 
 
 . Revise los detalles y haga clic en *Discover Applications*.
@@ -99,10 +102,6 @@ NOTE: La clave privada SSH no se almacena en ningún lugar de la aplicación y n
 ** Una vez instalado el plugin, se inicia la operación de detección.
 ** Después de completar la operación de detección, se muestran todas las bases de datos del host. Si la autenticación del sistema operativo está desactivada para la base de datos, haga clic en *Configurar* para habilitar la autenticación de la base de datos. Para obtener más información, consulte <<Configurar las credenciales de la base de datos de Oracle>>.
 ** Haga clic en *Configuración* y seleccione *hosts* para ver todos los hosts.
-+
-
-NOTE: El filtro para ver un host específico no funciona. Cuando se especifica un nombre de host en el filtro, se muestran todos los hosts.
-
 ** Haga clic en *Configuración* y seleccione *Directivas* para ver las directivas preparadas previamente. Revise las políticas predefinidas y puede editarlas para satisfacer sus requisitos o crear una nueva política.
 
 
@@ -110,16 +109,14 @@ NOTE: El filtro para ver un host específico no funciona. Cuando se especifica u
 
 
 
-== Instale el plugin mediante un script y añada el host desde la interfaz de usuario mediante la opción manual
+== Añada el host desde la interfaz de usuario con la opción manual e instale el plugin mediante script
 
 Configure la autenticación basada en clave SSH para la cuenta de usuario no raíz del host de Oracle y realice los siguientes pasos para instalar el plugin.
 
-*Antes de empezar*
-
+.Antes de empezar
 Asegúrese de que la conexión SSH al conector está activada.
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en *detectar aplicaciones*.
 . Seleccione *nativo de la nube* y haga clic en *Siguiente*.
@@ -146,13 +143,19 @@ El puerto predeterminado es 8145.
 
 . En la página Configuration, realice lo siguiente:
 +
-.. Configure el acceso sudo para el usuario SnapCenter copiando el texto en `/etc/sudoers.d/snapcenter` archivo.
-.. Seleccione la casilla de verificación y haga clic en *Siguiente*.
+.. Configure el acceso sudo para el usuario de SnapCenter en el host de la base de datos de Oracle iniciando sesión en la máquina Linux que ejecuta la base de datos de Oracle.
+.. Copia el texto que aparece en la interfaz de usuario de BlueXP.
+.. Cree el archivo _/etc/sudoers.d/snapcenter_ en la máquina Linux y pegue el texto copiado.
+.. En la interfaz de usuario de BlueXP, selecciona la casilla de verificación y haz clic en *Siguiente*.
 
 
 . Inicie sesión en el conector VM.
 . Instale el plugin mediante el script proporcionado en el conector.
-`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
+`sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
++
+Si está utilizando un conector antiguo, ejecute el siguiente comando para instalar el plugin.
+`sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
+
 +
 |===
 | Nombre | Descripción | Obligatorio | Predeterminado 
@@ -214,16 +217,16 @@ No
 |===
 +
 Por ejemplo:
-`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
 
-. Revise los detalles y haga clic en *Discover Applications*.
++
+** `sudo  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+** `sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+
+
+. En la interfaz de usuario de BlueXP, revisa los detalles y haz clic en *Descubrir aplicaciones*.
 +
 ** Después de completar la operación de detección, se muestran todas las bases de datos del host. Si la autenticación del sistema operativo está desactivada para la base de datos, haga clic en *Configurar* para habilitar la autenticación de la base de datos. Para obtener más información, consulte <<Configurar las credenciales de la base de datos de Oracle>>.
 ** Haga clic en *Configuración* y seleccione *hosts* para ver todos los hosts.
-+
-
-NOTE: El filtro para ver un host específico no funciona. Cuando se especifica un nombre de host en el filtro, se muestran todos los hosts.
-
 ** Haga clic en *Configuración* y seleccione *Directivas* para ver las directivas preparadas previamente. Revise las políticas predefinidas y puede editarlas para satisfacer sus requisitos o crear una nueva política.
 
 
@@ -231,12 +234,11 @@ NOTE: El filtro para ver un host específico no funciona. Cuando se especifica u
 
 
 
-== Instale el plugin manualmente y añada el host desde la interfaz de usuario mediante la opción manual
+== Añada el host desde la interfaz de usuario con la opción manual e instale el plugin manualmente
 
 Si la autenticación basada en clave SSH no está habilitada en el host de la base de datos de Oracle, debe realizar los siguientes pasos manuales para instalar el plugin y, a continuación, añadir el host desde la interfaz de usuario con la opción manual.
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en *detectar aplicaciones*.
 . Seleccione *nativo de la nube* y haga clic en *Siguiente*.
@@ -261,17 +263,19 @@ El puerto predeterminado es 8145.
 .. Haga clic en *Siguiente*.
 
 
-. En la página *Configuración*, realice lo siguiente:
+. En la página Configuration, realice lo siguiente:
 +
-.. Configure el acceso sudo para el usuario SnapCenter copiando el texto en `/etc/sudoers.d/snapcenter` archivo.
-.. Seleccione la casilla de verificación y haga clic en *Siguiente*.
+.. Configure el acceso sudo para el usuario de SnapCenter en el host de la base de datos de Oracle iniciando sesión en la máquina Linux que ejecuta la base de datos de Oracle.
+.. Copia el texto que aparece en la interfaz de usuario de BlueXP.
+.. Cree el archivo _/etc/sudoers.d/snapcenter_ en la máquina Linux y pegue el texto copiado.
+.. En la interfaz de usuario de BlueXP, selecciona la casilla de verificación y haz clic en *Siguiente*.
 
 
 . Inicie sesión en el conector VM.
 . Descargue el binario del plugin del host Linux de SnapCenter.
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
 +
-El binario del plugin está disponible en: _cd /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/$(sudo docker ps|grep -Po «cloudmanager_scs_cloud:.*? «|sed -e's/ *$/'|cut -f2 -d»:)/sc-linux-host-plugin_
+El binario del plugin está disponible en: _cd /var/lib/docker/volumes/service-manager[1]-2_cloudmanager_scs_cloud_volume/_data/$(sudo docker ps|grep -Po «cloudmanager_scs_cloud:.*? «|sed -e's/ *$/'|cut -f2 -d»:)/sc-linux-host-plugin_
 
 . Copie _snapcenter_linux_host_plugin_scs.bin_ de la ruta anterior a _/home/<non root user (sudo)>/.sc_netapp_ ruta de acceso para cada uno de los hosts de base de datos de Oracle ya sea usando scp u otros métodos alternativos.
 . Inicie sesión en el host de la base de datos Oracle con la cuenta no raíz (sudo).
@@ -285,18 +289,11 @@ El binario del plugin está disponible en: _cd /var/lib/docker/volumes/service-m
 . Reinicie SPL: `systemctl restart spl`
 . Valide que es posible acceder al plugin desde el conector ejecutando el comando siguiente desde el conector.
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
-. Revise los detalles y haga clic en *Discover Applications*.
+. En la interfaz de usuario de BlueXP, revisa los detalles y haz clic en *Descubrir aplicaciones*.
 +
 ** Después de completar la operación de detección, se muestran todas las bases de datos del host. Si la autenticación del sistema operativo está desactivada para la base de datos, haga clic en *Configurar* para habilitar la autenticación de la base de datos. Para obtener más información, consulte <<Configurar las credenciales de la base de datos de Oracle>>.
 ** Haga clic en *Configuración* y seleccione *hosts* para ver todos los hosts.
-+
-
-NOTE: El filtro para ver un host específico no funciona. Cuando se especifica un nombre de host en el filtro, se muestran todos los hosts.
-
 ** Haga clic en *Configuración* y seleccione *Directivas* para ver las directivas preparadas previamente. Revise las políticas predefinidas y puede editarlas para satisfacer sus requisitos o crear una nueva política.
-+
-Navega a la IU de BlueXP.
-
 
 
 
@@ -307,8 +304,7 @@ Navega a la IU de BlueXP.
 
 Es necesario configurar las credenciales de bases de datos que se usan para realizar operaciones de protección de datos en bases de datos de Oracle.
 
-* Pasos*
-
+.Pasos
 . Si la autenticación del sistema operativo está desactivada para la base de datos, haga clic en *Configurar* para modificar la autenticación de la base de datos.
 . Especifique el nombre de usuario, la contraseña y los detalles del puerto.
 +
@@ -326,13 +322,11 @@ El usuario de Oracle debe tener privilegios sysdba y el usuario de ASM debe tene
 
 Debe actualizar el plugin de SnapCenter para Oracle para obtener acceso a las nuevas funciones y mejoras más recientes. Puede realizar una actualización desde la interfaz de usuario de BlueXP o mediante la línea de comandos.
 
-*Antes de empezar*
-
+.Antes de empezar
 * Asegúrese de que no existan operaciones en ejecución en el host.
 
 
-* Pasos*
-
+.Pasos
 . Haga clic en *Copia de seguridad y recuperación* > *Aplicaciones* > *Hosts*.
 . Compruebe si la actualización de plugins está disponible para cualquiera de los hosts mediante la comprobación de la columna Overall Status.
 . Actualice el plugin desde la interfaz de usuario o mediante la línea de comandos.
@@ -343,12 +337,23 @@ Debe actualizar el plugin de SnapCenter para Oracle para obtener acceso a las nu
 
  a| 
 .. Haga clic en image:icon-action.png["para seleccionar la acción"] Correspondiente al host y haga clic en *Upgrade Plug-in*.
-.. Seleccione la casilla de verificación y haga clic en *Actualizar*.
+.. En la página Configuration, realice lo siguiente:
++
+... Configure el acceso sudo para el usuario de SnapCenter en el host de la base de datos de Oracle iniciando sesión en la máquina Linux que ejecuta la base de datos de Oracle.
+... Copia el texto que aparece en la interfaz de usuario de BlueXP.
+... Edite el archivo _/etc/sudoers.d/snapcenter_ en el equipo Linux y pegue el texto copiado.
+... En la interfaz de usuario de BlueXP, selecciona la casilla de verificación y haz clic en *Actualizar*.
+
+
 
  a| 
 .. Inicie sesión en Connector VM.
 .. Ejecute el siguiente script.
-`sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
+`sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
++
+Si utiliza un conector antiguo, ejecute el siguiente comando para actualizar el plugin.
+`sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
+
 
 
 |===

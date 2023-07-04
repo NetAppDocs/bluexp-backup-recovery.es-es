@@ -14,7 +14,7 @@ summary: BlueXP ofrece backup y restauración eficientes y coherentes con las ap
 
 
 [role="lead"]
-El backup y recuperación de datos de BlueXP para aplicaciones es un servicio basado en SaaS que proporciona funcionalidades de protección de datos consistentes con aplicaciones para aplicaciones que se ejecutan en almacenamiento en cloud de NetApp. El backup y la recuperación de datos de BlueXP ofrece una protección eficiente, coherente con las aplicaciones y basada en políticas para las siguientes aplicaciones:
+El backup y la recuperación de datos de BlueXP para aplicaciones ofrece funcionalidades de protección de datos consistentes con las aplicaciones para aplicaciones que se ejecutan en almacenamiento en nube de NetApp. El backup y la recuperación de datos de BlueXP ofrece una protección eficiente, coherente con las aplicaciones y basada en políticas para las siguientes aplicaciones:
 
 * Las bases de datos de Oracle residen en Amazon FSx para ONTAP, Cloud Volumes ONTAP y Azure NetApp Files de NetApp
 * Sistemas SAP HANA que residen en Azure NetApp Files
@@ -72,6 +72,7 @@ Puede especificar diferentes frecuencias de programación, como por ejemplo, cad
 
 
 
+* Es posible catalogar los backups de bases de datos de Oracle en Azure NetApp Files con Oracle RMAN
 * Retención de backups según la política
 * Restaurar bases de datos de Oracle que residen en Amazon FSx para ONTAP de NetApp, Cloud Volumes ONTAP y Azure NetApp Files
 +
@@ -79,6 +80,7 @@ Puede especificar diferentes frecuencias de programación, como por ejemplo, cad
 ** Recuperación de la base de datos de Oracle con Until SCN, Until Time, todos los registros disponibles y las opciones de recuperación no
 
 
+* Restaurar bases de datos de Oracle en Azure NetApp Files para que la ubicación sea alternativa
 * Clonado de bases de datos de Oracle que residen en Amazon FSx para ONTAP de NetApp y Cloud Volumes ONTAP en hosts de destino origen o alternativos
 +
 ** Clon básico con un solo clic

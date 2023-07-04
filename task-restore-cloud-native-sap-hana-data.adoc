@@ -18,11 +18,22 @@ En caso de pérdida de datos, es posible restaurar los datos y los archivos que 
 
 *Antes de empezar*
 
-El sistema SAP HANA debe estar en estado detenido. Si el sistema SAP HANA está en funcionamiento, puede proporcionar un script previo para detener el sistema.
+* El sistema SAP HANA debe estar en estado detenido.
+* Si el sistema SAP HANA está en funcionamiento, puede proporcionar un script previo para detener el sistema.
+
 
 *Acerca de esta tarea*
 
-Si se habilitan los backups en un volumen, se ejecuta la operación SnapRestore de archivo único.
+* Si se habilitan los backups de ANF en un volumen, se ejecuta la operación Single File SnapRestore.
+* En el caso de los volúmenes no de datos y los volúmenes no de datos globales, se ejecuta la operación de restauración CONNECT y COPY.
++
+** Los valores de calidad de servicio (QoS) para las operaciones de restauración CONNECT y COPY se recogen de los volúmenes de origen de los volúmenes que no son de datos o de los volúmenes globales sin datos.
+
+
+
+
+
+NOTE: QoS solo se aplica a los pools de capacidad del tipo «Manual».
 
 * Pasos*
 
@@ -75,6 +86,12 @@ Una vez realizada la restauración, recupere manualmente el sistema SAP HANA o p
 
 == Restaurar volumen no almacenado en datos
 
+*Acerca de esta tarea*
+
+Para la operación de restauración de conexión y copia, vaya al portal de Microsoft Azure, seleccione el volumen, haga clic en *Editar* y habilite *Ocultar ruta de instantánea*.
+
+* Pasos*
+
 . En la página *aplicaciones*, seleccione volumen sin datos en el cuadro desplegable.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la copia de seguridad que desea restaurar y haga clic en *Restaurar*.
 
@@ -82,6 +99,10 @@ Una vez realizada la restauración, recupere manualmente el sistema SAP HANA o p
 
 
 == Restaurar volumen no Data global
+
+*Acerca de esta tarea*
+
+Para la operación de restauración de conexión y copia, vaya al portal de Microsoft Azure, seleccione el volumen, haga clic en *Editar* y habilite *Ocultar ruta de instantánea*.
 
 * Pasos*
 

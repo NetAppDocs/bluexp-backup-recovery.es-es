@@ -16,14 +16,12 @@ summary: Realice unos pasos para realizar backup de datos de aplicaciones desde 
 [role="lead"]
 Complete unos pasos para hacer un backup de los datos de las aplicaciones desde ONTAP en StorageGRID.
 
-*Lo que necesitará*
-
+.Antes de empezar
 Al realizar una copia de seguridad de datos en StorageGRID, debe haber un conector disponible en las instalaciones. Tendrá que instalar un conector nuevo o asegurarse de que el conector seleccionado actualmente reside en las instalaciones. El conector se puede instalar en un sitio con o sin acceso a Internet.
 
 Para obtener más información, consulte link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["Crear conectores para StorageGRID"].
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Activar copia de seguridad*.
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
@@ -51,8 +49,8 @@ El backup y la recuperación de BlueXP solo admiten el administrador de clúster
 +
 Introduzca los detalles en el formato FQDN:PORT.
 
-.. En el campo Clave de acceso, especifique la clave para el cifrado de datos.
-.. En el campo Clave secreta, especifique la contraseña para el cifrado de datos.
+.. En el campo Access Key, especifique la clave.
+.. En el campo Secret Key, especifique la contraseña.
 .. Especifique el espacio de IP.
 
 

@@ -56,6 +56,8 @@ Antes de clonar una base de datos de Oracle, debe asegurarse de que se hayan com
 * No se admite la clonado de bases de datos que residen en Azure NetApp Files.
 * No se admite la clonado de bases de datos que residen en Qtree.
 * No se admite el backup de una base de datos clonada.
+* Si se habilitan los backups automáticos diarios en Amazon FSx para NetApp ONTAP, los volúmenes clonados en Amazon FSx para NetApp ONTAP no se pueden eliminar de la interfaz de usuario de BlueXP porque FSx habría creado backups en los volúmenes clonados.
+Debe eliminar los volúmenes clonados después de eliminar todos los backups del volumen desde la interfaz de usuario de FSx y, a continuación, eliminar los clones de la interfaz de usuario de BlueXP mediante la opción force.
 
 
 

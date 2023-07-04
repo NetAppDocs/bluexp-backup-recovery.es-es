@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-cloud-native-app-data.html 
-keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
-summary: Ver los detalles de backup y supervisar el estado de todos los trabajos. 
+keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP, delete clone, audit data, CA certificate, host maintenance 
+summary: Puede visualizar los detalles del backup, supervisar el estado de todos los trabajos, eliminar clon, datos de auditoría, actualizar los detalles del conector, configurar certificados de CA, y gestione hosts. 
 ---
 = Gestionar la protección de los datos de aplicaciones nativas del cloud
 :hardbreaks:
@@ -23,6 +23,42 @@ Para obtener más información, consulte link:https://docs.netapp.com/us-en/blue
 
 
 
+== Mantenimiento de hosts de Oracle Database
+
+Un administrador puede poner manualmente los hosts de la base de datos en modo de mantenimiento para realizar tareas de mantenimiento en los hosts. Durante la actualización, los hosts se ponen automáticamente en modo de mantenimiento y después de la actualización, los hosts cambian automáticamente al modo de producción.
+
+Cuando los hosts se ponen en modo de mantenimiento, se producen un error en las operaciones bajo demanda y los trabajos programados se omiten.
+
+
+NOTE: No puede verificar si hay algún trabajo en ejecución para los recursos en los hosts antes de poner los hosts en modo de mantenimiento.
+
+.Pasos
+. En la interfaz de usuario de BlueXP, haz clic en *Protección* > *Copia de seguridad y recuperación* > *Aplicaciones*
+. Seleccione *oracle* como tipo de aplicación.
+. Haga clic en *Ajustes* > *Hosts*.
+. Ejecute una de las siguientes acciones:
++
+|===
+| Si... | Realice lo siguiente... 
+
+
+ a| 
+Desea poner el host en modo de mantenimiento
+ a| 
+Haga clic en image:icon-action.png["para seleccionar la acción"] Correspondiente al host y seleccione *Activar modo de mantenimiento*.
+
+
+
+ a| 
+Desea sacar el host del modo de mantenimiento
+ a| 
+Haga clic en image:icon-action.png["para seleccionar la acción"] Correspondiente al host que se encuentra en mantenimiento y seleccione *Desactivar el modo de mantenimiento*.
+
+|===
+
+
+
+
 == Datos de auditoría
 
 Cuando ejecuta una API directamente o utiliza la interfaz de usuario para realizar una llamada a cualquiera de las API expuestas externamente del backup y recuperación de BlueXP para aplicaciones, los detalles de la solicitud, como encabezados, rol, cuerpo de solicitud, Asimismo, la información de la API se registrará en la línea de tiempo de BlueXP y las entradas de auditoría se conservarán para siempre en la línea de tiempo. El estado y la respuesta de error de la llamada API también se auditan tras la finalización de la operación. En el caso de respuestas asincrónicas de la API como los trabajos, el ID de trabajo también se registra como parte de la respuesta.
@@ -35,6 +71,7 @@ El backup y la recuperación de BlueXP para las aplicaciones registran las entra
 
 Es posible ver la cantidad total de backups creados, las políticas que se usan para crear backups, la versión de la base de datos y el ID de agente.
 
+.Pasos
 . Haga clic en *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Ver detalles*.
 
@@ -48,6 +85,7 @@ IMPORTANT: El ID de agente está asociado al conector. Si ya no existe un conect
 
 Es posible eliminar un clon si ya no se necesita.
 
+.Pasos
 . Haga clic en image:button_plus_sign_square.png["para seleccionar la acción"] Junto a *Filter by* y seleccione *Clone options* > *Clone parents*.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Ver detalles*.
 . En la página Database Details, haga clic en image:button_plus_sign_square.png["para seleccionar la acción"] Junto a *Filter by* y seleccione *Clone*.
@@ -61,6 +99,25 @@ Es posible eliminar un clon si ya no se necesita.
 
 Debe desplegar un nuevo conector si el conector utilizado durante el registro del host de la aplicación ya no existe o está dañado. Después de implementar el nuevo conector, debe ejecutar la *API Connector-update* para actualizar los detalles del conector para todos los hosts registrados utilizando el conector antiguo.
 
+Después de actualizar los detalles del conector para hosts Oracle o SAP HANA, realice lo siguiente para asegurarse de que los detalles del conector se han actualizado correctamente.
+
+.Pasos
+. Inicia sesión en BlueXP Connector VM y realiza los siguientes pasos:
++
+.. Valide que es posible acceder al plugin desde el conector ejecutando el comando siguiente desde el conector.
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
+.. Obtenga la ruta de montaje base.
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+.. Copie certificate.pem de la ruta _<base_mount_path>/client/certificate/_ de la máquina virtual de conector a _/var/opt/snapcenter/spl/etc/_ en el host del plugin.
+
+
+. Inicie sesión en el host del plugin y realice los siguientes pasos:
++
+.. Desplácese hasta _/var/opt/snapcenter/spl/etc_ y ejecute el comando keytool para importar el archivo certificate.p12.
+`keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
+.. Reinicie SPL: `systemctl restart spl`
+.. Realice una de las siguientes acciones:
++
 |===
 | Si está en... | Realice lo siguiente... 
 
@@ -68,21 +125,19 @@ Debe desplegar un nuevo conector si el conector utilizado durante el registro de
  a| 
 Host de Oracle Database
  a| 
-. Asegúrese de que todos los link:task-add-host-discover-oracle-databases.html#prerequisites["requisitos previos"] son cumplidos.
-. Haga clic en *Copia de seguridad y recuperación* > *Aplicaciones*
-. Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Ver detalles*.
-. Modificar *Connector ID*.
+... Asegúrese de que todos los link:task-add-host-discover-oracle-databases.html#prerequisites["requisitos previos"] son cumplidos.
+... Haga clic en *Copia de seguridad y recuperación* > *Aplicaciones*
+... Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Ver detalles*.
+... Modificar *Connector ID*.
 
-
-ifdef::azure[]
 
 
 
  a| 
 Host de base de datos SAP HANA
  a| 
-. Asegúrese de que todos los link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["requisitos previos"] son cumplidos.
-. Ejecute el siguiente comando:
+... Asegúrese de que todos los link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["requisitos previos"] son cumplidos.
+... Ejecute el siguiente comando:
 
 
 [listing]
@@ -94,30 +149,11 @@ curl --location --request PATCH
 --header 'Content-Type: application/json' \
 --data-raw '{
 "old_connector_id": "Old connector id that no longer exists",
-"new_connector_id": "New connector Id"
-}
+"new_connector_id": "New connector Id"}
 ----
 Los detalles del conector se actualizarán correctamente si todos los hosts tienen servicio del plugin de SnapCenter para SAP HANA instalado y en ejecución y también si se puede acceder a todos ellos desde el nuevo conector.
 
-endif::azure[]
-
 |===
-Después de actualizar los detalles del conector para hosts Oracle o SAP HANA, realice lo siguiente para asegurarse de que los detalles del conector se han actualizado correctamente.
-
-. Inicia sesión en BlueXP Connector VM y realiza los siguientes pasos:
-+
-.. Valide que es posible acceder al plugin desde el conector ejecutando el comando siguiente desde el conector.
-`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
-.. Obtenga la ruta de montaje base.
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-.. Copie certificate.p12 desde la ruta _<base_mount_path>/client/certificate/_ de la máquina virtual de conector a _/var/opt/snapcenter/spl/etc/_ en el host del plugin.
-
-
-. Inicie sesión en el host del plugin y realice los siguientes pasos:
-+
-.. Desplácese hasta _/var/opt/snapcenter/spl/etc_ y ejecute el comando keytool para importar el archivo certificate.p12.
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
-.. Reinicie SPL: `systemctl restart spl`
 
 
 
@@ -134,16 +170,12 @@ Es posible configurar un certificado firmado de CA si se desea incluir la seguri
 
 El conector utiliza un certificado autofirmado para comunicarse con el plug-in. El certificado autofirmado se importa al almacén de claves mediante el script de instalación. Puede realizar los siguientes pasos para reemplazar el certificado autofirmado con el certificado firmado de CA.
 
-*Antes de empezar*
-
-Puede ejecutar el siguiente comando para obtener el _<base_mount_path>_:
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-
-* Pasos*
-
+.Pasos
 . Realice los siguientes pasos en el conector para utilizar el certificado de CA como certificado de cliente cuando el conector se conecta con el plugin.
 +
 .. Inicie sesión en el conector.
+.. Ejecute el siguiente comando para obtener _<base_mount_path>_:
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 .. Elimine todos los archivos existentes ubicados en _<base_mount_path>/client/certificate_ en el conector.
 .. Copie el certificado firmado por CA y el archivo de claves en _<base_mount_path>/client/certificate_ en el conector.
 +
@@ -153,18 +185,18 @@ El nombre del archivo debe ser certificate.pem y key.pem. El certificate.pem deb
 +
 Ejemplo: openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12
 
-.. Copie el certificado.p12 y los certificados de todas la CA intermedia y la CA raíz en el host del plugin en _/var/opt/snapcenter/spl/etc/_.
-+
-
-NOTE: El formato de la CA intermedia y del certificado de CA raíz debe estar en formato .crt.
-
 
 
 . Realice los siguientes pasos en el host del plugin para validar el certificado enviado por el conector.
 +
 .. Inicie sesión en el host del plugin.
-.. Desplácese hasta _/var/opt/snapcenter/spl/etc_ y ejecute el comando keytool para importar el archivo certificate.p12.
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+.. Copie el archivo certificate.pem y los certificados para todas la CA intermedia y la CA raíz del conector en el host del plugin en _/var/opt/snapcenter/spl/etc/_.
++
+
+NOTE: El formato de la CA intermedia y del certificado de CA raíz debe estar en formato .crt.
+
+.. Desplácese hasta _/var/opt/snapcenter/spl/etc_ y ejecute el comando keytool para importar el archivo certificate.pem.
+`keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. Importe la CA raíz y los certificados intermedios.
 `keytool -import -trustcacerts -keystore keystore.jks -storepass snapcenter -alias trustedca -file <certificate.crt>`
 +
@@ -182,13 +214,7 @@ NOTE: El certificate.crt hace referencia a los certificados de CA raíz así com
 
 El certificado de CA debe tener el mismo nombre que registrado en Cloud Backup para el host del plugin.
 
-*Antes de empezar*
-
-Puede ejecutar el siguiente comando para obtener el _<base_mount_path>_:
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-
-* Pasos*
-
+.Pasos
 . Realice los siguientes pasos en el host del plugin para alojar el plugin con el certificado de CA.
 +
 .. Desplácese hasta la carpeta que contiene el almacén de claves del SPL _/var/opt/snapcenter/spl/etc_.
@@ -209,6 +235,8 @@ Ejemplo: openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certific
 . Realice los siguientes pasos en el conector para que pueda verificar el certificado del plugin.
 +
 .. Inicie sesión en el conector como usuario no raíz.
+.. Ejecute el siguiente comando para obtener _<base_mount_path>_:
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 .. Copie los archivos CA raíz y CA intermedios en el directorio del servidor.
 `cd <base_mount_path>`
 `mkdir server`

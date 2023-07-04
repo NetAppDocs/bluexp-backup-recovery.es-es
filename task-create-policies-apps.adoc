@@ -16,14 +16,18 @@ summary: Cree sus propias políticas para proteger la aplicación.
 [role="lead"]
 Debe crear una política para realizar un backup de los datos de la aplicación en el cloud.
 
-*Antes de empezar*
+.Antes de empezar
+* Si desea mover backups del almacén de objetos al almacenamiento de archivado, asegúrese de utilizar la versión de ONTAP requerida.
++
+** Si utiliza Amazon Web Services, debe usar ONTAP 9.10.1 o una versión posterior
+** Si utiliza Microsoft Azure, debe usar ONTAP 9.10.1 o una versión posterior
+** Si utiliza Google Cloud, debería utilizar ONTAP 9.12.1 o una versión posterior
 
-* Si desea mover backups del almacén de objetos al almacenamiento de archivado, asegúrese de que utiliza ONTAP 9.10.1 o versiones posteriores y Amazon Web Services o Azure como proveedor de cloud.
+
 * Debe configurar el nivel de acceso de archivado para cada proveedor de cloud.
 
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . En el menú desplegable Configuración, haga clic en *Directivas* > *Crear directiva*.
 . En la sección Policy Details, especifique el nombre de la política.

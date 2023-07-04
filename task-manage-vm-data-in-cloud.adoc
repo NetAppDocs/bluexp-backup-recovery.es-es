@@ -55,17 +55,34 @@ Puede editar los detalles del host del plugin de SnapCenter para VMware vSphere 
 
 
 
-== Actualice el estado de protección
+== Actualice los recursos y los backups
 
-Cuando se añaden volúmenes nuevos a la base de datos, o si hay un cambio en la política o el grupo de recursos, debe actualizar el estado de protección.
+Si desea ver los almacenes de datos y los backups más recientes que se han añadido a la aplicación, debe actualizar los recursos y los backups. De este modo, se iniciará la detección de los recursos y backups y se mostrarán los detalles más recientes.
 
 . Haga clic en *copia de seguridad y recuperación* > *Máquinas virtuales*.
 . En el menú desplegable *Configuración*, haga clic en *SnapCenter Plug-in for VMware vSphere*.
-. Haga clic en image:icon-action.png["acción"] Correspondiente al host del plugin de SnapCenter para VMware vSphere y haga clic en *Refresh*.
-+
-Se detectan los nuevos cambios.
+. Haga clic en image:icon-action.png["acción"] Correspondiente al host del plugin de SnapCenter para VMware vSphere y haga clic en *Refresh Resources and Backups*.
 
-. Haga clic en image:icon-action.png["acción"] Correspondiente al almacén de datos y haga clic en *Actualizar protección* para activar la protección en la nube para los cambios.
+
+
+
+== Actualice la política o el grupo de recursos
+
+Si existe un cambio en la política o el grupo de recursos, debe actualizar la relación de protección.
+
+. Haga clic en *copia de seguridad y recuperación* > *Máquinas virtuales*.
+. Haga clic en image:icon-action.png["acción"] Correspondiente al almacén de datos y haga clic en *Refresh Protection*.
+
+
+
+
+== Cancele el registro del plugin de SnapCenter para el host de VMware vSphere
+
+Todos los almacenes de datos y máquinas virtuales asociados con el host del plugin de SnapCenter para VMware vSphere estarán desprotegidos.
+
+. Haga clic en *copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En el menú desplegable *Configuración*, haga clic en *SnapCenter Plug-in for VMware vSphere*.
+. Haga clic en image:icon-action.png["acción"] Correspondiente al host del plugin de SnapCenter para VMware vSphere y haga clic en *Anular registro*.
 
 
 

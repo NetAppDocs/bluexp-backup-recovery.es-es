@@ -16,8 +16,7 @@ summary: Complete unos pasos para realizar backup de datos de aplicaciones desde
 [role="lead"]
 Complete algunos pasos para hacer una copia de seguridad de los datos de las aplicaciones desde ONTAP en Amazon Web Services.
 
-* Pasos*
-
+.Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Activar copia de seguridad*.
 . En la página asignar directiva, seleccione la directiva y haga clic en *Siguiente*.
@@ -42,8 +41,8 @@ El backup y la recuperación de BlueXP solo admiten el administrador de clúster
 . Seleccione *Amazon Web Services* como proveedor de la nube.
 +
 .. Especifique la cuenta de AWS.
-.. En el campo AWS Access Key, especifique la clave para el cifrado de datos.
-.. En el campo AWS Secret Key, especifique la contraseña para el cifrado de datos.
+.. En el campo AWS Access Key, especifique la clave.
+.. En el campo AWS Secret Key, especifique la contraseña.
 .. Seleccione la región en la que desea crear los backups.
 .. Especifique el espacio de IP.
 .. Seleccione el nivel de archivado.

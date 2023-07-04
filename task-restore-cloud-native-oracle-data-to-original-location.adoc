@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-restore-cloud-native-oracle-data.html 
-keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
-summary: Restaure los archivos de datos, los archivos de control o ambos y después recupere la base de datos. 
+permalink: task-restore-cloud-native-oracle-data-to-original-location.html 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle, original location 
+summary: Restaure los archivos de datos, los archivos de control o ambos en la ubicación original y luego recupere la base de datos. 
 ---
-= Restaurar bases de datos de Oracle nativas en la nube
+= Restaurar bases de datos de Oracle nativas de la nube a la ubicación original
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,13 @@ summary: Restaure los archivos de datos, los archivos de control o ambos y despu
 
 
 [role="lead"]
-En caso de pérdida de datos, puede restaurar los archivos de datos, los archivos de control o ambos y recuperar la base de datos.
+En caso de pérdida de datos, es posible restaurar los archivos de datos, los archivos de control o ambos en la ubicación original para luego recuperar la base de datos.
 
-*Antes de empezar*
-
+.Antes de empezar
 Si la base de datos de Oracle 21c está EN estado INICIADO, se produce un error en la operación de restauración. Debe ejecutar el siguiente comando para restaurar la base de datos correctamente.
 `cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
-* Pasos*
-
+.Pasos
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Correspondiente a la base de datos que desea restaurar y haga clic en *Restaurar*.
 . Seleccione el punto de restauración en el que se debe restaurar la base de datos y haga clic en *Restaurar a la ubicación original*.
 . En la sección Restore Scope, realice las siguientes acciones:
@@ -65,10 +63,6 @@ En la distribución de SAN de Cloud Volumes ONTAP o Amazon FSx para ONTAP de Net
 ** Archivo de parámetros de ASM.
 +
 La opción *Forzar restauración in situ* reemplaza los archivos externos de tipo parámetro, contraseña y registro de archivo. Debe utilizar la última copia de seguridad cuando se seleccione la opción *Forzar restauración in situ*.
-
-+
-
-NOTE: No se admiten la restauración de archivos de datos con archivos de control o solo archivos de control para iSCSI en la distribución de ASM y la restauración de espacios de tabla y PDB.
 
 
 
