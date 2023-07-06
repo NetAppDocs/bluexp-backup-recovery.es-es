@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-azure.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
 summary: Complete unos pasos para empezar a realizar backups de datos de volúmenes, desde sus sistemas ONTAP locales hasta el almacenamiento de Azure Blob. 
 ---
-= Realizar backups de datos de ONTAP en las instalaciones en un almacenamiento de Azure Blob
+= Realice un backup de los datos de ONTAP en las instalaciones en almacenamiento Azure Blob
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,78 +14,70 @@ summary: Complete unos pasos para empezar a realizar backups de datos de volúme
 
 
 [role="lead"]
-Complete unos pasos para empezar a realizar backups de datos de volúmenes, desde sus sistemas ONTAP locales hasta el almacenamiento de Azure Blob.
+Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales a un sistema de almacenamiento secundario y en el almacenamiento Blob de Azure.
 
-Cabe destacar que "sistemas ONTAP en las instalaciones" incluyen sistemas FAS, AFF y ONTAP Select.
+
+NOTE: Entre los «sistemas ONTAP en las instalaciones» se incluyen los sistemas FAS, AFF y ONTAP Select.
 
 
 
 == Inicio rápido
 
-Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las secciones restantes para obtener todos los detalles.
+Comience rápidamente siguiendo estos pasos. En las siguientes secciones del tema se proporcionan detalles sobre cada paso.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Verifique la compatibilidad con la configuración
-[role="quick-margin-list"]
-* Ha descubierto el clúster en las instalaciones y lo ha añadido a un entorno de trabajo en BlueXP. Consulte https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Detección de clústeres de ONTAP"^] para obtener más detalles.
-+
-** El clúster ejecuta ONTAP 9.7P5 o posterior (se recomienda ONTAP 9.8P13 y versiones posteriores).
-** El clúster tiene una licencia de SnapMirror, se incluye como parte del paquete Premium o de Data Protection Bundle.
-** El clúster debe tener las conexiones de red necesarias al almacenamiento Blob y al conector.
-
-
-* El conector debe tener las conexiones de red necesarias al almacenamiento Blob y al clúster, así como los permisos necesarios.
-* Tiene una suscripción válida de Azure para el espacio de almacenamiento de objetos donde se ubicará los backups.
-
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Habilite el backup y la recuperación de datos de BlueXP en el sistema
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Identifica el método de conexión que usarás
 [role="quick-margin-para"]
-Seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de volúmenes* junto al servicio copia de seguridad y recuperación en el panel derecho y, a continuación, siga el asistente de configuración.
+Elija si conectará su clúster local de ONTAP directamente a Azure a través de la Internet pública, o si usará una VPN o Azure ExpressRoute y enrutará el tráfico a través de una interfaz privada de VPC Endpoint a Azure.
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_enable.png["Una captura de pantalla que muestra el botón Habilitar copia de seguridad y recuperación que está disponible después de seleccionar un entorno de trabajo."]
+<<Identifique el método de conexión>>.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Seleccione el proveedor de cloud e introduzca los detalles del proveedor
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Prepare el conector BlueXP
 [role="quick-margin-para"]
-Seleccione Microsoft Azure como proveedor y, a continuación, introduzca los detalles del proveedor. Tendrá que seleccionar la suscripción a Azure y la región en la que desea crear los backups. También puede elegir su propia clave gestionada por el cliente para el cifrado de datos en lugar de utilizar la clave de cifrado predeterminada gestionada por Microsoft.
-
-[role="quick-margin-para"]
-image:screenshot_backup_onprem_to_azure.png["Una captura de pantalla que muestra los detalles del proveedor de cloud al realizar backups de volúmenes de un clúster en las instalaciones a un almacenamiento de Azure Blob."]
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Seleccione el espacio IP del clúster y el uso opcional de un extremo de vnet privado
-[role="quick-margin-para"]
-Seleccione el espacio IP en el clúster de ONTAP donde residen los volúmenes. También puede elegir utilizar un extremo privado de Azure existente para una conexión más segura con vnet desde su centro de datos en las instalaciones.
+Si ya tiene un conector implementado en su vnet de Azure o en sus instalaciones, todo estará configurado. De lo contrario, deberás crear un conector BlueXP para realizar backups de los datos de ONTAP en almacenamiento de Azure Blob. También tendrá que personalizar la configuración de red del conector para que pueda conectarse a Azure.
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_azure_networking.png["Una captura de pantalla que muestra los detalles de redes al realizar backups de volúmenes desde un sistema ONTAP a un almacenamiento BLOB de Azure."]
+<<Prepare el conector BlueXP,Aprenda a crear un conector y a definir la configuración de red necesaria.>>
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Defina la política de backup predeterminada
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Verifique los requisitos de licencia
 [role="quick-margin-para"]
-La política predeterminada realiza backups de volúmenes todos los días y conserva las 30 copias de backup más recientes de cada volumen. Cambiar a backups por hora, por día, por semana, por mes o por año, o bien seleccione una de las políticas definidas por el sistema que ofrezca más opciones. También es posible cambiar la cantidad de copias de backup que se desean retener.
-
-[role="quick-margin-para"]
-De manera opcional, al usar ONTAP 9.12.1 y versiones posteriores, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando una de las configuraciones _DataLock y Protección de ransomware_. link:concept-cloud-backup-policies.html["Obtén más información sobre los ajustes de configuración de la política de backup y recuperación de BlueXP disponibles"^].
+Tendrás que comprobar los requisitos de licencias tanto de Azure como de BlueXP.
 
 [role="quick-margin-para"]
-De forma predeterminada, los backups se almacenan en el nivel de acceso Cool. Si su clúster utiliza ONTAP 9.10.1 o superior, puede optar por organizar los backups en niveles en el almacenamiento de Azure Archive después de un determinado número de días para optimizar aún más los costes. link:concept-cloud-backup-policies.html["Obtén más información sobre los ajustes de configuración de la política de backup y recuperación de BlueXP disponibles"^].
+Consulte <<Verifique los requisitos de licencia>>.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Prepare los clústeres ONTAP
+[role="quick-margin-para"]
+Detecta tus clústeres de ONTAP en BlueXP, comprueba que los clústeres cumplan con los requisitos mínimos y personaliza la configuración de red para que los clústeres se puedan conectar a Azure.
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_azure.png["Una captura de pantalla que muestra la configuración de backup y recuperación de BlueXP donde puede elegir el programa de backup y el período de retención."]
+<<Prepare los clústeres ONTAP,Descubra cómo preparar sus clústeres de ONTAP.>>
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Seleccione los volúmenes de los que desea realizar el backup
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Preparar Azure Blob como destino de backup
 [role="quick-margin-para"]
-Identifique los volúmenes para los que se desea realizar el backup con la política de backup predeterminada en la página Select Volumes. Si desea asignar diferentes políticas de backup a ciertos volúmenes, puede crear políticas adicionales y aplicarlas más adelante.
+Configure los permisos para que Connector cree y gestione el bucket de Azure. También necesitará configurar permisos para el clúster de ONTAP en las instalaciones para que pueda leer y escribir datos en el bucket de Azure.
+
+[role="quick-margin-para"]
+De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Azure predeterminadas. <<Preparar Azure Blob como destino de backup,Descubre cómo preparar tu entorno de Azure para recibir backups de ONTAP.>>
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Active backups en sus ONTAP Volumes
+[role="quick-margin-para"]
+Seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de volúmenes* junto al servicio copia de seguridad y recuperación del panel derecho. A continuación, siga el asistente de configuración para seleccionar las políticas de replicación y backup que usará y los volúmenes de los que desea realizar un backup.
+
+[role="quick-margin-para"]
+<<Active backups en sus ONTAP Volumes>>.
 
 
 
-== Requisitos
+== Identifique el método de conexión
 
-Lea los siguientes requisitos para asegurarse de que tiene una configuración compatible antes de empezar a realizar un backup de los volúmenes en las instalaciones al almacenamiento de Azure Blob.
+Elija cuál de los dos métodos de conexión utilizará al configurar backups desde sistemas ONTAP en las instalaciones en Azure Blob.
 
-Existen dos métodos de conexión que puede utilizar al configurar backups de sistemas ONTAP en las instalaciones a Azure Blob.
+* * Conexión pública * - Conecte directamente el sistema ONTAP al almacenamiento de Azure Blob utilizando un punto final público de Azure.
+* *Conexión privada* - Utilice una VPN o ExpressRoute y enrute el tráfico a través de un punto final privado de vnet que utilice una dirección IP privada.
 
-* Conexión pública: Conecte directamente el sistema ONTAP al almacenamiento de Azure Blob mediante un extremo de Azure público.
-* Conexión privada: Utilice una VPN o ExpressRoute y enrute el tráfico a través de un extremo privado de vnet que utiliza una dirección IP privada.
 
+Opcionalmente, puede conectarse a un sistema ONTAP secundario para volúmenes replicados también mediante la conexión pública o privada.
 
 El siguiente diagrama muestra el método *de conexión pública* y las conexiones que necesita preparar entre los componentes. Puede utilizar un conector que haya instalado en sus instalaciones o un conector que haya implementado en la vnet de Azure.
 
@@ -97,61 +89,22 @@ image:diagram_cloud_backup_onprem_azure_private.png["Un diagrama que muestra có
 
 
 
-=== Preparar los clústeres de ONTAP
+== Prepare el conector BlueXP
 
-Debe detectar los clústeres de ONTAP en las instalaciones en BlueXP para poder empezar a realizar backups de datos de volúmenes.
-
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Aprenda a detectar un clúster"^].
-
-Requisitos de ONTAP::
-+
---
-* Se recomienda un mínimo de ONTAP 9.7P5; ONTAP 9.8P13 y posterior.
-* Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
-+
-*Nota:* El “paquete de nube híbrida” no es necesario cuando se utiliza la copia de seguridad y recuperación de BlueXP.
-
-+
-Descubra cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestione las licencias de clúster"^].
-
-* La hora y la zona horaria están configuradas correctamente.
-+
-Descubra cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure la hora del clúster"^].
+El conector BlueXP es el software principal para la funcionalidad BlueXP. Se necesita un conector para realizar una copia de seguridad y restaurar los datos de ONTAP.
 
 
 
---
-Requisitos para la red de clúster::
-+
---
-* El clúster de ONTAP inicia una conexión HTTPS a través del puerto 443 desde la LIF entre clústeres al almacenamiento BLOB de Azure para realizar operaciones de backup y restauración.
-+
-ONTAP lee y escribe datos en y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, solo responde.
+=== Cree o cambie conectores
 
-* ONTAP requiere una conexión entrante desde el conector hasta la LIF de administración del clúster. El conector puede residir en una vnet de Azure.
-* Se requiere una LIF de interconexión de clústeres en cada nodo ONTAP donde se alojan los volúmenes en los que se desea incluir. La LIF debe estar asociada al _IPspace_ que ONTAP debería utilizar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información acerca de los espacios IP"^].
-+
-Al configurar el backup y la recuperación de BlueXP, se le pedirá que utilice el espacio IP. Debe elegir el espacio IP al que está asociada cada LIF. Puede ser el espacio IP «predeterminado» o un espacio IP personalizado que haya creado.
+Si ya tiene un conector implementado en su vnet de Azure o en sus instalaciones, todo estará configurado.
 
-* Las LIF de interconexión de clústeres y los nodos pueden acceder al almacén de objetos.
-* Los servidores DNS se configuraron para la máquina virtual de almacenamiento donde se encuentran los volúmenes. Descubra cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configure los servicios DNS para la SVM"^].
-* Tenga en cuenta que si utiliza un espacio IP diferente al predeterminado, es posible que deba crear una ruta estática para obtener acceso al almacenamiento de objetos.
-* Actualice las reglas de firewall, si es necesario, para permitir las conexiones del servicio de backup y recuperación de BlueXP desde ONTAP al almacenamiento de objetos a través del puerto 443 y el tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS por el puerto 53 (TCP/UDP).
-
-
---
-
-
-
-
-=== Creación o conmutación de conectores
-
-Si ya tiene un conector implementado en su vnet de Azure o en sus instalaciones, todo estará configurado. De lo contrario, necesitará crear un conector en cualquiera de esas ubicaciones para realizar backups de los datos de ONTAP en el almacenamiento de Azure Blob. No puede utilizar un conector puesto en marcha en otro proveedor de cloud.
+Si no es así, deberá crear un conector en una de esas ubicaciones para realizar backups de los datos de ONTAP en el almacenamiento de Azure Blob. No puede utilizar un conector puesto en marcha en otro proveedor de cloud.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Más información sobre conectores"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Instalación de un conector en Azure"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Instalación de un conector en sus instalaciones"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["Instalación de un conector en una región de gobierno de Azure"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Instale un conector en Azure"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Instale un conector en sus instalaciones"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["Instale un conector en una región gubernamental de Azure"^]
 +
 El backup y la recuperación de BlueXP son compatibles con regiones gubernamentales de Azure cuando el conector se implementa en la nube, no cuando se instala en tus instalaciones. Además, debe poner en marcha el conector desde Azure Marketplace. No puede desplegar el conector en una región gubernamental desde el sitio web de BlueXP SaaS.
 
@@ -159,7 +112,7 @@ El backup y la recuperación de BlueXP son compatibles con regiones gubernamenta
 
 
 
-=== Preparación de la conexión a redes para el conector
+=== Prepare la conexión a redes para el conector
 
 Asegúrese de que el conector tiene las conexiones de red necesarias.
 
@@ -189,18 +142,20 @@ Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Mic
 +
 .. En el portal de Azure, abra el servicio Virtual Machines.
 .. Seleccione la máquina virtual conector.
-.. En Configuración, seleccione *identidad*.
-.. Haga clic en *asignaciones de roles de Azure*.
+.. En *Configuración*, selecciona *Identidad*.
+.. Seleccione *Asignaciones de roles de Azure*.
 .. Anote la función personalizada asignada a la máquina virtual conector.
 
 
 . Actualice el rol personalizado:
 +
 .. En el portal de Azure, abra su suscripción a Azure.
-.. Haga clic en *Control de acceso (IAM) > roles*.
-.. Haga clic en los puntos suspensivos (...). Para la función personalizada y, a continuación, haga clic en *Editar*.
-.. Haga clic en JSON y añada los siguientes permisos:
+.. Selecciona *Control de acceso (IAM) > Roles*.
+.. Seleccione los puntos suspensivos (*...*) para el rol personalizado y luego seleccione *Editar*.
+.. Seleccione *JSON* y agregue los siguientes permisos:
 +
+[%collapsible]
+====
 [source, json]
 ----
 "Microsoft.Compute/virtualMachines/read",
@@ -245,23 +200,20 @@ Debe registrar el proveedor de recursos de Azure Synapse Analytics (llamado "Mic
 "Microsoft.Synapse/workspaces/operationResults/read",
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
+====
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Vea el formato JSON completo para la política"^]
 
-.. Haga clic en *revisar + actualizar* y, a continuación, haga clic en *Actualizar*.
+.. Selecciona *Revisar + actualizar* y luego selecciona *Actualizar*.
 
 
 
 
 
 
-=== Regiones admitidas
+== Verifique los requisitos de licencia
 
-Puede crear backups desde sistemas en las instalaciones a Azure Blob en todas las regiones https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones gubernamentales de Azure. Especifica la región en la que se almacenarán las copias de seguridad al configurar el servicio.
-
-
-
-=== Verifique los requisitos de licencia
+Tendrás que verificar los requisitos de licencias para Azure y BlueXP:
 
 * Antes de poder activar el backup y la recuperación de BlueXP para tu clúster, deberás suscribirte a una oferta de pago por uso (PAYGO) BlueXP Marketplace desde Azure, o comprar y activar una licencia BYOL de backup y recuperación de BlueXP desde NetApp. Estas licencias son para su cuenta y se pueden utilizar en varios sistemas.
 +
@@ -270,84 +222,321 @@ Puede crear backups desde sistemas en las instalaciones a Azure Blob en todas la
 
 
 * Necesita tener una suscripción de Azure para el espacio de almacenamiento de objetos donde se ubicará los backups.
+
+
+*Regiones apoyadas*
+
+Puede crear backups desde sistemas en las instalaciones a Azure Blob en todas las regiones https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones gubernamentales de Azure. Especifica la región en la que se almacenarán las copias de seguridad al configurar el servicio.
+
+
+
+== Prepare los clústeres ONTAP
+
+Tendrá que preparar su sistema ONTAP de origen en las instalaciones y cualquier sistema ONTAP o Cloud Volumes ONTAP secundario en las instalaciones.
+
+La preparación de los clústeres de ONTAP implica los siguientes pasos:
+
+* Descubre tus sistemas de ONTAP en BlueXP
+* Compruebe los requisitos del sistema ONTAP
+* Comprobar los requisitos de red de ONTAP para realizar backup de los datos en el almacenamiento de objetos
+* Compruebe los requisitos de red de ONTAP para replicar volúmenes
+
+
+
+
+=== Descubre tus sistemas de ONTAP en BlueXP
+
+Tanto su sistema ONTAP de origen en las instalaciones como todos los sistemas ONTAP o Cloud Volumes ONTAP secundarios en las instalaciones deben estar disponibles en BlueXP Canvas.
+
+Tendrá que conocer la dirección IP de gestión del clúster y la contraseña de la cuenta de usuario administrador para añadir el clúster.
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Aprenda a detectar un clúster"^].
+
+
+
+=== Compruebe los requisitos del sistema ONTAP
+
+Asegúrese de que se cumplen los siguientes requisitos de ONTAP:
+
+* Se recomienda un mínimo de ONTAP 9,8; ONTAP 9.8P13 y posterior.
+* Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
 +
-Puede crear backups desde sistemas en las instalaciones a Azure Blob en todas las regiones https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones gubernamentales de Azure. Especifique la región en la que se almacenarán las copias de seguridad al configurar el servicio.
+*Nota:* El “paquete de nube híbrida” no es necesario cuando se utiliza la copia de seguridad y recuperación de BlueXP.
+
++
+Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestione las licencias de clúster"^].
+
+* La hora y la zona horaria están configuradas correctamente. Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure la hora del clúster"^].
+* Si va a replicar datos, debe comprobar que los volúmenes de origen y de destino ejecutan versiones de ONTAP compatibles antes de replicar datos.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Consulte versiones de ONTAP compatibles para relaciones de SnapMirror"^].
 
 
 
 
 
-=== Preparar el almacenamiento de Azure Blob para backups
+=== Comprobar los requisitos de red de ONTAP para realizar backup de los datos en el almacenamiento de objetos
 
-. Puede utilizar sus propias claves gestionadas de forma personalizada para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado gestionadas por Microsoft predeterminadas. En este caso, deberá tener la suscripción a Azure, el nombre de almacén de claves y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo usar sus propias claves"^].
+Debe configurar los siguientes requisitos en el sistema que se conecta al almacenamiento de objetos.
+
+* Para una arquitectura de copia de seguridad ramificada, configure los siguientes ajustes en el sistema _primary_.
+* Para una arquitectura de copia de seguridad en cascada, configure los siguientes ajustes en el sistema _secondary_.
+
+
+Se necesitan los siguientes requisitos de red de clúster de ONTAP:
+
+* El clúster de ONTAP inicia una conexión HTTPS a través del puerto 443 desde la LIF entre clústeres al almacenamiento BLOB de Azure para realizar operaciones de backup y restauración.
++
+ONTAP lee y escribe datos en y desde el almacenamiento de objetos. El almacenamiento de objetos nunca se inicia, solo responde.
+
+* ONTAP requiere una conexión entrante desde el conector hasta la LIF de administración del clúster. El conector puede residir en una vnet de Azure.
+* Se requiere una LIF de interconexión de clústeres en cada nodo ONTAP donde se alojan los volúmenes en los que se desea incluir. La LIF debe estar asociada al _IPspace_ que ONTAP debería utilizar para conectarse al almacenamiento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Obtenga más información acerca de los espacios IP"^].
++
+Al configurar el backup y la recuperación de BlueXP, se le pedirá que utilice el espacio IP. Debe elegir el espacio IP al que está asociada cada LIF. Puede ser el espacio IP «predeterminado» o un espacio IP personalizado que haya creado.
+
+* Las LIF de interconexión de clústeres y los nodos pueden acceder al almacén de objetos.
+* Los servidores DNS se configuraron para la máquina virtual de almacenamiento donde se encuentran los volúmenes. Descubra cómo https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Configure los servicios DNS para la SVM"^].
+* Si utiliza un espacio IP diferente al predeterminado, es posible que deba crear una ruta estática para obtener acceso al almacenamiento de objetos.
+* Actualice las reglas de firewall, si es necesario, para permitir las conexiones del servicio de backup y recuperación de BlueXP desde ONTAP al almacenamiento de objetos a través del puerto 443 y el tráfico de resolución de nombres desde la máquina virtual de almacenamiento al servidor DNS por el puerto 53 (TCP/UDP).
+
+
+
+
+=== Compruebe los requisitos de red de ONTAP para replicar volúmenes
+
+Antes de activar los backups en el backup y la recuperación de BlueXP, asegúrese de que los sistemas de origen y destino cumplan con los requisitos de red y la versión de ONTAP.
+
+
+
+==== Requisitos de red de Cloud Volumes ONTAP
+
+El grupo de seguridad de la instancia debe incluir las reglas entrantes y salientes necesarias: Específicamente, las reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
+
+
+
+==== Requisitos de red de ONTAP en las instalaciones
+
+* Si el clúster se encuentra en sus instalaciones, debe tener una conexión entre la red corporativa y la red virtual del proveedor de cloud. Normalmente se trata de una conexión VPN.
+* Los clústeres de ONTAP deben cumplir con requisitos adicionales de subred, puerto, firewall y clúster.
++
+Al poder replicar en Cloud Volumes ONTAP o un sistema en las instalaciones, revise los requisitos de las paridad de los sistemas de ONTAP en las instalaciones. Consulte https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
+
+
+
+
+
+== Preparar Azure Blob como destino de backup
+
+. Puede utilizar sus propias claves gestionadas de forma personalizada para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado gestionadas por Microsoft predeterminadas. En este caso, deberá tener la suscripción a Azure, el nombre de almacén de claves y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Aprende a usar tus propias claves"^].
 +
 Tenga en cuenta que la copia de seguridad y la recuperación admiten _políticas de acceso de Azure_ como modelo de permiso. Actualmente no se admite el modelo de permiso _Azure Role-Based Access Control_ (Azure RBAC).
 
-. Si desea disponer de una conexión más segura a través de Internet pública desde el centro de datos local hasta el vnet, existe una opción para configurar un extremo privado de Azure en el asistente de activación. En este caso, deberá conocer la red y la subred de esta conexión. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Consulte los detalles sobre el uso de un extremo privado"^].
+. Si desea disponer de una conexión más segura a través de Internet pública desde el centro de datos local hasta el vnet, existe una opción para configurar un extremo privado de Azure en el asistente de activación. En este caso, deberá conocer la red y la subred de esta conexión. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Consulte los detalles sobre el uso de un punto final privado"^].
 
 
 
 
-== Permite el backup y recuperación de datos de BlueXP
+=== Crea tus propios cubos
 
-Habilita el backup y la recuperación de BlueXP en cualquier momento directamente desde el entorno de trabajo on-premises.
+De forma predeterminada, el servicio crea buckets para usted. O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copias de seguridad y, a continuación, seleccionar esos bloques en el asistente.
+
+
+
+== Active backups en sus ONTAP Volumes
+
+Active los backups en cualquier momento directamente desde su entorno de trabajo local.
+
+Un asistente le llevará por los siguientes pasos principales:
+
+* <<Seleccione los volúmenes de los que desea realizar el backup>>
+* <<Defina la estrategia de backup>>
+* <<Revise las selecciones>>
+
+
+También puede hacerlo <<Muestra los comandos de la API>> en el paso de revisión, puede copiar el código para automatizar la activación de la copia de seguridad para entornos de trabajo futuros.
+
+
+
+=== Inicie el asistente
 
 .Pasos
-. En el lienzo, seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de volúmenes* junto al servicio copia de seguridad y recuperación del panel derecho.
+. Acceda al asistente Activar copia de seguridad y recuperación de una de las siguientes maneras:
 +
-Si el destino de Azure Blob para sus backups existe como un entorno de trabajo en el lienzo, puede arrastrar el clúster al entorno de trabajo de Azure Blob para iniciar el asistente de configuración.
+** En el lienzo de BlueXP, selecciona el entorno de trabajo y selecciona *Habilitar > Volúmenes de copia de seguridad* junto al servicio de copia de seguridad y recuperación en el panel derecho.
++
+image:screenshot_backup_onprem_enable.png["Una captura de pantalla que muestra el botón de habilitación de copia de seguridad y recuperación que está disponible después de seleccionar un entorno de trabajo."]
 
 +
-image:screenshot_backup_onprem_enable.png["Una captura de pantalla que muestra el botón Habilitar copia de seguridad y recuperación que está disponible después de seleccionar un entorno de trabajo."]
+Si el destino de Azure para sus backups existe como entorno de trabajo en Canvas, puede arrastrar el clúster de ONTAP al almacenamiento de objetos de Azure Blob.
 
-. Seleccione Microsoft Azure como proveedor y haga clic en *Siguiente*.
-. Introduzca los detalles del proveedor y haga clic en *Siguiente*.
+** Seleccione *Volúmenes* en la barra Copia de seguridad y recuperación. En la pestaña Volúmenes, seleccione la opción *Acciones (...)* y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga la replicación o copia de seguridad en el almacenamiento de objetos ya habilitados).
+
+
 +
-.. La suscripción de Azure utilizada para backups y la región de Azure donde se almacenarán los backups.
-.. El grupo de recursos que administra el contenedor Blob: Puede crear un grupo de recursos nuevo o seleccionar un grupo de recursos existente.
-.. Tanto si va a utilizar la clave de cifrado predeterminada gestionada por Microsoft como si elige sus propias claves gestionadas por el cliente para gestionar el cifrado de sus datos. (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo usar sus propias claves"^]).
+La página Introducción del asistente muestra las opciones de protección, incluidas las instantáneas locales, la replicación y las copias de seguridad. Si realizó la segunda opción en este paso, aparecerá la página Definir estrategia de copia de seguridad con un volumen seleccionado.
+
+. Continúe con las siguientes opciones:
 +
-image:screenshot_backup_onprem_to_azure.png["Una captura de pantalla que muestra los detalles del proveedor de cloud al realizar backups de volúmenes de un clúster en las instalaciones a un almacenamiento de Azure Blob."]
+** Si ya tienes un conector BlueXP, ya lo tendrás todo. Solo tienes que seleccionar *Siguiente*.
+** Si aún no tienes un conector BlueXP, aparece la opción *Add a Connector*. Consulte <<Prepare el conector BlueXP>>.
 
 
 
-. Si aún no tienes una licencia de backup y recuperación de BlueXP para tu cuenta, en este momento se te pedirá que selecciones el tipo de método de carga que quieres utilizar. Puede suscribirse a una oferta de pago por uso (PAYGO) BlueXP Marketplace desde Azure (o si tiene varias suscripciones, tendrá que seleccionar una) o comprar y activar una licencia BYOL de backup y recuperación de BlueXP desde NetApp. link:task-licensing-cloud-backup.html["Descubre cómo configurar las licencias de backup y recuperación de BlueXP."]
-. Introduzca los detalles de la red y haga clic en *Siguiente*.
+
+
+
+=== Seleccione los volúmenes de los que desea realizar el backup
+
+Elija los volúmenes que desea proteger. Puede optar por proteger FlexVol o FlexGroup Volumes; sin embargo, no puede seleccionar una combinación de ellos para el entorno de trabajo que decida proteger.
+
+[NOTE]
+====
+* Puede activar un backup solo en un único volumen de FlexGroup a la vez.
+* Los volúmenes que seleccione también deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Actualmente los volúmenes en el modo SnapLock Compliance no son compatibles). No puede seleccionar una combinación de volúmenes bloqueados y desbloqueados.
+
+
+====
+Un volumen protegido es uno que tiene uno o varios de los siguientes: Política de Snapshot, política de replicación, backup en política de objetos.
+
+
+NOTE: Si los volúmenes que elija tienen distintas políticas de Snapshot y de replicación a las políticas que seleccione más adelante, se sobrescribirán las políticas existentes.
+
+.Pasos
+. En la página Select Volumes, seleccione el o los volúmenes que desea proteger.
 +
-.. El espacio IP del clúster de ONTAP en el que residen los volúmenes de los que desea realizar backup. Las LIF entre clústeres de este espacio IP deben tener acceso a Internet saliente.
-.. De manera opcional, elija si va a configurar un extremo privado de Azure. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Consulte los detalles sobre el uso de un extremo privado"^].
+** Opcionalmente, filtre las filas para mostrar solo los volúmenes con ciertos tipos de volumen, estilos y más para facilitar la selección.
+** Después de seleccionar el primer volumen, puede seleccionar All FlexVol Volumes. Para realizar un backup de todos los volúmenes FlexVol existentes y de todos los volúmenes FlexVol añadidos en el futuro, primero marque un volumen y, a continuación, marque la casilla en la fila del título. (image:button_backup_all_volumes.png[""]).
 +
-image:screenshot_backup_onprem_azure_networking.png["Una captura de pantalla que muestra los detalles de redes al realizar backups de volúmenes desde un sistema ONTAP a un almacenamiento BLOB de Azure."]
 
+TIP: Recomendamos esta opción para que se haga un backup de todos los volúmenes y que nunca tendrá que recordar para habilitar los backups para volúmenes nuevos.
 
-
-. Introduzca los detalles de la política de copia de seguridad que se utilizarán para su directiva predeterminada y haga clic en *Siguiente*. Puede seleccionar una política existente o crear una nueva introduciendo sus selecciones en cada sección:
-+
-.. Escriba el nombre de la política predeterminada. No es necesario cambiar el nombre.
-.. Defina la programación de backup y elija la cantidad de backups que se retendrán. link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["Consulte la lista de políticas existentes que puede elegir"^].
-.. De manera opcional, al usar ONTAP 9.12.1 y versiones posteriores, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando una de las configuraciones _DataLock y Protección de ransomware_. _DataLock_ protege sus archivos de copia de seguridad de ser modificados o eliminados, y _Ransomware protection_ analiza sus archivos de copia de seguridad para buscar evidencia de un ataque de ransomware en sus archivos de copia de seguridad. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Obtenga más información acerca de los ajustes de DataLock disponibles"^].
-.. Al usar ONTAP 9.10.1 y versiones posteriores, puede elegir colocar los backups en niveles en el almacenamiento de Azure Archive después de un determinado número de días para optimizar los costes aún más. link:reference-azure-backup-tiers.html["Obtenga más información sobre el uso de niveles de archivado"].
-+
-image:screenshot_backup_policy_azure.png["Una captura de pantalla que muestra la configuración de backup y recuperación de BlueXP donde puedes elegir tu programación y retención de backups."]
-
-
-
-. Seleccione los volúmenes de los que desea realizar un backup mediante la política de backup definida en la página Select Volumes. Si desea asignar diferentes políticas de backup a ciertos volúmenes, puede crear políticas adicionales y aplicarlas más adelante.
-+
-** Para realizar un backup de todos los volúmenes existentes y cualquier volumen añadido en el futuro, active la casilla "realizar backup de todos los volúmenes existentes y futuros...". Recomendamos esta opción para que se haga un backup de todos los volúmenes y que nunca tendrá que recordar para habilitar los backups para volúmenes nuevos.
-** Para realizar un backup solo de los volúmenes existentes, active la casilla de la fila de título (image:button_backup_all_volumes.png[""]).
 ** Para realizar un backup de volúmenes individuales, active la casilla de cada volumen (image:button_backup_1_volume.png[""]).
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+=== Defina la estrategia de backup
+
+Definir la estrategia de backup implica configurar las siguientes opciones:
+
+* Tanto si desea una como todas las opciones de backup: Copias Snapshot locales, replicación y backup en el almacenamiento de objetos
+* Arquitectura
+* Política de Snapshot local
+* Objetivo y política de replicación
 +
-image:screenshot_backup_select_volumes.png["Captura de pantalla de selección de los volúmenes de los que se realizará una copia de seguridad."]
 
-** Si hay copias Snapshot locales para volúmenes de lectura/escritura en este entorno de trabajo que coincidan con la etiqueta de programación de backup que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se mostrará un mensaje adicional "Exportar copias Snapshot existentes a almacenamiento de objetos como copias de backup". Marque esta casilla si desea que todas las Snapshots históricas se copien al almacenamiento de objetos como archivos de backup para garantizar la protección más completa para los volúmenes.
+NOTE: Si los volúmenes seleccionados tienen distintas políticas de Snapshot y de replicación a las políticas seleccionadas en este paso, se sobrescribirán las políticas existentes.
+
+* Backup en la información de almacenamiento de objetos (proveedor, cifrado, conexión a redes, política de backup y opciones de exportación).
 
 
-. Haz clic en *Activar copia de seguridad* y la copia de seguridad y recuperación de BlueXP comienza a realizar las copias de seguridad iniciales de tus volúmenes.
+.Pasos
+. En la página Definir estrategia de copia de seguridad, seleccione una o todas las siguientes opciones. Los tres están seleccionados de forma predeterminada:
++
+** *Instantáneas locales*: Si está realizando una replicación o una copia de seguridad en el almacenamiento de objetos, se deben crear instantáneas locales.
+** *Replicación*: Crea volúmenes replicados en otro sistema de almacenamiento ONTAP.
+** *Backup*: Realiza copias de seguridad de los volúmenes en el almacenamiento de objetos.
+
+
+. *Arquitectura*: Si elige replicación y copia de seguridad, elija uno de los siguientes flujos de información:
++
+** *Cascading*: La información fluye de lo primario a lo secundario, y de lo secundario al almacenamiento de objetos.
+** *Fan Out*: La información fluye del primario al secundario _and_ del almacenamiento primario al objeto.
++
+Para obtener información detallada sobre estas arquitecturas, consulte link:concept-protection-journey.html["Planifica tu proceso de protección"].
+
+
+
+. *Instantánea local*: Elija una política de Snapshot existente.
++
+
+TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+
+. *Replicación*: Establezca las siguientes opciones:
++
+** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
+** *Política de replicación*: Elija una política de replicación existente.
+
+
+. *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
++
+** *Proveedor*: Selecciona *Microsoft Azure*.
+** *Configuración del proveedor*: Introduzca los detalles del proveedor y la región donde se almacenarán las copias de seguridad.
++
+Cree una nueva cuenta de almacenamiento o seleccione una existente.
+
++
+Cree su propio grupo de recursos que gestione el contenedor Blob o seleccione el tipo y el grupo de recursos.
+
++
+
+TIP: Si desea proteger los archivos de copia de seguridad para evitar que se modifiquen o eliminen, asegúrese de que la cuenta de almacenamiento se haya creado con almacenamiento inmutable habilitado mediante un período de retención de 30 días.
+
++
+
+TIP: Si desea organizar en niveles archivos de copia de seguridad antiguos en Azure Archive Storage para obtener una mayor optimización de los costes, asegúrese de que la cuenta de almacenamiento tenga la regla de ciclo de vida adecuada.
+
+** *Clave de cifrado*: Si creó una nueva cuenta de almacenamiento de Azure, ingrese la información de clave de cifrado que le dio el proveedor. Elija si utilizará las claves de cifrado predeterminadas de Azure o elija sus propias claves gestionadas por el cliente de su cuenta de Azure para administrar el cifrado de sus datos.
++
+Si decide utilizar sus propias claves gestionadas por el cliente, introduzca el almacén de claves y la información de clave.
+
+
+
++
+
+NOTE: Si eligió una cuenta de almacenamiento de Microsoft existente, la información de cifrado ya está disponible, por lo que no necesita ingresarla ahora.
+
++
+** *Redes*: Elige el espacio IP y si vas a usar un Punto Final Privado. El punto final privado está desactivado de forma predeterminada.
++
+... El espacio IP del clúster de ONTAP en el que residen los volúmenes de los que desea realizar backup. Las LIF entre clústeres de este espacio IP deben tener acceso a Internet saliente.
+... Opcionalmente, seleccione si utilizará un punto final privado de Azure que haya configurado previamente. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Obtenga más información sobre el uso de un extremo privado de Azure"].
+
+
+** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente.
++
+
+TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+
+** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes de lectura/escritura en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+=== Revise las selecciones
+
+Esta es la oportunidad de revisar sus selecciones y hacer ajustes, si es necesario.
+
+.Pasos
+. En la página Review, revise las selecciones.
+. Opcionalmente marque la casilla para *sincronizar automáticamente las etiquetas de la política de Snapshot con las etiquetas de la política de replicación y copia de seguridad*. De este modo, se crea Snapshot con una etiqueta que coincide con las etiquetas de las políticas de replicación y backup.
+. Seleccione *Activar copia de seguridad*.
 
 
 .Resultado
-Un contenedor de almacenamiento Blob se crea automáticamente en el grupo de recursos introducido y los archivos de backup se almacenan allí. La consola de backup de volumen se muestra para poder supervisar el estado de los backups. También es posible supervisar el estado de los trabajos de backup y restauración mediante la link:task-monitor-backup-jobs.html["Panel de control de trabajos"^].
+El backup y la recuperación de datos de BlueXP comienzan a realizar los backups iniciales de tus volúmenes. La transferencia básica del volumen replicado y el archivo de backup incluye una copia completa de los datos del sistema de almacenamiento principal. Las transferencias posteriores contienen copias diferenciales de los datos del sistema de almacenamiento primario contenidos en las copias Snapshot.
+
+Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen primario.
+
+Se crea una cuenta de almacenamiento Blob en el grupo de recursos introducido, y los archivos de backup se almacenan allí. La consola de backup de volumen se muestra para poder supervisar el estado de los backups.
+
+También es posible supervisar el estado de los trabajos de backup y restauración mediante la link:task-monitor-backup-jobs.html["Panel de control de trabajos"^].
+
+
+
+=== Muestra los comandos de la API
+
+Puede ser conveniente mostrar y copiar, opcionalmente, los comandos API que se utilizan en el asistente Activar backup y recuperación. Se recomienda hacer esto para automatizar la activación del backup en entornos de trabajo futuros.
+
+.Pasos
+. En el asistente Activar copia de seguridad y recuperación, seleccione *Ver solicitud de API*.
+. Para copiar los comandos en el portapapeles, seleccione el icono *Copiar*.
+
 
 
 

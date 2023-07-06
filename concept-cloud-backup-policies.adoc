@@ -17,6 +17,9 @@ summary: El backup y recuperación de datos de BlueXP te permite crear política
 El backup y recuperación de datos de BlueXP te permite crear políticas de backup con una variedad de ajustes de configuración para tus sistemas ONTAP y Cloud Volumes ONTAP en las instalaciones.
 
 
+NOTE: Estas configuraciones de políticas son relevantes únicamente para el backup en el almacenamiento de objetos. Ninguna de estas configuraciones afecta a las políticas de Snapshot o de replicación. En el futuro se añadirán configuraciones de directiva similares para instantáneas y replicaciones.
+
+
 
 == Programaciones de backup
 
@@ -70,7 +73,7 @@ Esta función no ofrece protección para los volúmenes de origen, solo para los
 
 === Qué es DataLock
 
-DataLock protege sus archivos de copia de seguridad de ser modificados o eliminados durante un período de tiempo determinado. Esta funcionalidad utiliza la tecnología del proveedor de almacenamiento de objetos para "bloqueo de objetos". El período de tiempo durante el que el archivo de copia de seguridad está bloqueado (y retenido) se denomina período de retención de DataLock. Se basa en la programación de la política de backup y la configuración de retención que haya definido, más un búfer de 14 días. Cualquier política de retención de DataLock que sea inferior a 30 días se redondea a un mínimo de 30 días.
+DataLock protege sus archivos de copia de seguridad de ser modificados o eliminados durante un cierto período de tiempo, también llamado almacenamiento inmutable. Esta funcionalidad utiliza la tecnología del proveedor de almacenamiento de objetos para "bloqueo de objetos". El período de tiempo durante el que el archivo de copia de seguridad está bloqueado (y retenido) se denomina período de retención de DataLock. Se basa en la programación de la política de backup y la configuración de retención que haya definido, más un búfer de 14 días. Cualquier política de retención de DataLock que sea inferior a 30 días se redondea a un mínimo de 30 días.
 
 Tenga en cuenta que los backups antiguos se eliminan una vez que caduca el período de retención de DataLock, no después de que caduque el período de retención de la política de backup.
 
@@ -325,7 +328,10 @@ ifdef::aws[]
 Si el clúster utiliza ONTAP 9.10.1 o superior, puede organizar en niveles los backups antiguos en el almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_. link:reference-aws-backup-tiers.html["Obtenga más información acerca del almacenamiento de archivado de AWS"^].
 
 +
-Tenga en cuenta que si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de backup al activar el backup y la recuperación de BlueXP, ese nivel será el único nivel de archivado disponible para futuras políticas de backup para ese clúster. Si selecciona ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado para futuras políticas.
+** Si seleccionas ningún nivel de archivado en tu primera política de backup al activar el backup y la recuperación de BlueXP, _S3 Glacier_ será tu única opción de archivado para futuras políticas.
+** Si selecciona _S3 Glacier_ en su primera política de copia de seguridad, puede cambiar a la capa _S3 Glacier Deep Archive_ para futuras políticas de copia de seguridad para ese cluster.
+** Si selecciona _S3 Glacier Deep Archive_ en su primera política de copia de seguridad, ese nivel será el único nivel de archivado disponible para futuras políticas de copia de seguridad para ese cluster.
+
 
 
 

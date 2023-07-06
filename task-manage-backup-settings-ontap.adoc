@@ -4,7 +4,7 @@ permalink: task-manage-backup-settings-ontap.html
 keywords: cloud backup, cloud backup service, storage keys, network bandwidth, auto backup, delete yearly snapshot, export snapshots 
 summary: 'Puedes cambiar muchas opciones de backup a nivel de clúster que establezcas al activar el backup y la recuperación de BlueXP para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar las claves de almacenamiento, la tasa de transferencia de los backups a su almacenamiento de objetos, si las copias Snapshot históricas se exportan como archivos de backup y más.' 
 ---
-= Gestión de la configuración de backup en el nivel del clúster
+= Gestione la configuración de backup en el nivel del clúster
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,25 +14,21 @@ summary: 'Puedes cambiar muchas opciones de backup a nivel de clúster que estab
 
 
 [role="lead"]
-Puedes cambiar muchas opciones de backup a nivel de clúster que establezcas al activar el backup y la recuperación de BlueXP para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar las claves de almacenamiento, la tasa de transferencia de los backups a su almacenamiento de objetos, si las copias Snapshot históricas se exportan como archivos de backup y más.
+Puedes cambiar muchas opciones de backup a nivel de clúster que establezcas al activar el backup y la recuperación de BlueXP para cada sistema ONTAP. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar la tasa de transferencia de los backups al almacenamiento de objetos, si las copias de Snapshot históricas se exportan como archivos de backup, etc.
+
+
+NOTE: Estos ajustes solo están disponibles para las copias de seguridad en el almacenamiento de objetos. Ninguna de estas opciones afecta a la configuración Snapshot o de replicación. En el futuro se añadirán configuraciones similares de replicaciones a nivel de clúster para instantáneas y replicaciones.
 
 La configuración de backup a nivel de clúster está disponible en la página _Advanced Settings_.
 
 El conjunto completo de ajustes de copia de seguridad que puede cambiar incluye:
 
-* Cambiar las claves de almacenamiento que otorgan a su sistema ONTAP permiso para acceder al almacenamiento de objetos
-* Cambiar el espacio IP de la ONTAP conectado al almacenamiento de objetos
 * Cambiar el ancho de banda de red asignado para cargar backups en el almacenamiento de objetos
-
-
 ifdef::aws[]
-
-* Cambiar la clase de almacenamiento de archivado (solo AWS)
 
 
 endif::aws[]
 
-* Cambiar la configuración (y la política) automática de backup para volúmenes futuros
 * Cambiar si se incluyen las copias snapshot históricas en los archivos de backup de base iniciales para volúmenes futuros
 * Cambiar si las copias Snapshot "anuales" se eliminan del sistema de origen
 
@@ -67,38 +63,6 @@ Tenga en cuenta que algunas opciones no están disponibles según la versión de
 
 
 
-== Cambie las claves de almacenamiento para que ONTAP acceda al almacenamiento en cloud
-
-Si tiene una política de empresa que le obliga a rotar periódicamente todas las credenciales, por ejemplo, cada 6 meses o un año, así será como sincronizará la clave de acceso y la clave secreta del proveedor de cloud con su sistema ONTAP. Esto le permite actualizar las credenciales de su proveedor de cloud y cambiar las claves de su sistema de ONTAP para que los dos sistemas sigan comunicándose.
-
-Esta opción solo está disponible para sistemas ONTAP en las instalaciones y solo cuando se almacenan backups en Amazon S3, Google Cloud Storage y StorageGRID.
-
-image:screenshot_backup_edit_storage_key.png["Captura de pantalla de la entrada de la clave de almacenamiento en la página Advanced Settings."]
-
-Sólo tiene que introducir la nueva clave de acceso y la clave secreta, y hacer clic en *aplicar*.
-
-
-
-== Cambie el espacio IP de la ONTAP que está conectado al almacenamiento de objetos
-
-Puede cambiar el espacio IP de la ONTAP que está conectado al almacenamiento de objetos. Esta opción está disponible cuando se realiza un backup de datos solo de sistemas ONTAP en las instalaciones; no está disponible para sistemas Cloud Volumes ONTAP.
-
-Esta opción no se debe utilizar en un sistema que realice backups activos de datos de volumen en un almacenamiento de objetos. Solo se debe utilizar en caso de que se haya seleccionado un espacio IP incorrecto al activar inicialmente el backup en un sistema ONTAP en las instalaciones.
-
-Consulte la documentación de introducción para realizar backups de los datos de los sistemas ONTAP en las instalaciones en su proveedor de cloud específico a fin de asegurarse de que la configuración de ONTAP se ha configurado correctamente para el espacio IP nuevo. Por ejemplo:
-
-* Se requiere una LIF de interconexión de clústeres en cada nodo ONTAP donde se alojan los volúmenes en los que se desea incluir.
-* La LIF debe estar asociada al espacio IP que ONTAP debe utilizar para conectarse al almacenamiento de objetos.
-* Las LIF de interconexión de clústeres de los nodos deben poder acceder al almacén de objetos.
-* Si utiliza un espacio IP diferente al _default_, es posible que deba crear una ruta estática para obtener acceso al almacenamiento de objetos.
-
-
-image:screenshot_backup_edit_ipspace.png["Captura de pantalla de la entrada IPspace de la página Advanced Settings."]
-
-Sólo tiene que seleccionar el nuevo espacio IP y hacer clic en *aplicar*. Tras ello, podrá seleccionar los volúmenes de los que desea realizar copias de seguridad de los agregados en ese espacio IP.
-
-
-
 == Cambie el ancho de banda de red disponible para cargar backups en el almacenamiento de objetos
 
 Al activar el backup y la recuperación de BlueXP en un entorno de trabajo, de forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de backup de los volúmenes del entorno de trabajo al almacenamiento de objetos. Si observa que el tráfico de backup afecta a las cargas de trabajo de usuario normales, puede reducir la cantidad de ancho de banda de red utilizado durante la transferencia. Puede elegir un valor entre 1 y 1,000 Mbps como la velocidad máxima de transferencia.
@@ -107,37 +71,11 @@ image:screenshot_backup_edit_transfer_rate.png["Captura de pantalla de la entrad
 
 Seleccione el botón de opción *limitado* e introduzca el ancho de banda máximo que puede utilizarse, o seleccione *ilimitado* para indicar que no hay límite.
 
+Esta configuración no afecta al ancho de banda asignado a ninguna otra relación de replicación que se pueda configurar para volúmenes en el entorno de trabajo.
+
 ifdef::aws[]
 
-
-
-== Cambie la clase de almacenamiento de archivado
-
-Si desea cambiar la clase de almacenamiento de archivado que se utiliza cuando los archivos de copia de seguridad se han almacenado durante un determinado número de días (normalmente más de 30 días), puede realizar el cambio aquí. Todas las normativas de backup que utilizan almacenamiento de archivado han cambiado inmediatamente para utilizar este nuevo tipo de almacenamiento.
-
-Esta opción está disponible para los sistemas ONTAP y Cloud Volumes ONTAP en las instalaciones (con ONTAP 9.10.1 o superior) al escribir archivos de backups en Amazon S3.
-
-Tenga en cuenta que sólo puede cambiar de _S3 Glacier_ a _S3 Glacier Deep Archive_. Una vez que haya seleccionado Glacier Deep Archive, no podrá volver a Glacier.
-
-image:screenshot_backup_edit_storage_class.png["Captura de pantalla de la entrada Archival Storage Class de la página Advanced Settings."]
-
-link:concept-cloud-backup-policies.html#archival-storage-settings["Obtenga más información sobre la configuración de almacenamiento de archivado"].link:reference-aws-backup-tiers.html["Obtenga más información sobre el uso del almacenamiento de archivado de AWS"].
-
 endif::aws[]
-
-
-
-== Cambie la configuración de backup automático para los volúmenes futuros
-
-Si no activaste la copia de seguridad automática de futuros volúmenes al activar la copia de seguridad y la recuperación de BlueXP, puedes comenzar a hacer copias de seguridad automáticas de nuevos volúmenes en la sección Copia de seguridad automática. También puede seleccionar la política de backup que se aplicará a esos nuevos volúmenes. Si se asigna una política de backup a volúmenes recién creados, se garantizan que todos los datos estén protegidos.
-
-Si habilitó el backup automático de futuros volúmenes al activar el backup y la recuperación de BlueXP, puede cambiar la política de backup que se utilizará para los volúmenes recién creados en la sección Backup automático.
-
-Tenga en cuenta que la política que desea aplicar a nuevos volúmenes ya debe existir. link:task-manage-backups-ontap.html#adding-a-new-backup-policy["Descubra cómo crear una nueva normativa de backup para un entorno de trabajo"].
-
-image:screenshot_backup_edit_auto_backup.png["Captura de pantalla de la entrada copia de seguridad automática en la página Configuración avanzada."]
-
-Una vez habilitada, esta normativa de backup se aplicará a los volúmenes nuevos creados en este entorno de trabajo mediante BlueXP, System Manager, la CLI de ONTAP o las API.
 
 
 

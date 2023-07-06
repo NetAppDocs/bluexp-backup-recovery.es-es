@@ -97,7 +97,7 @@ Puede ver detalles como el tipo de trabajo de backup (programado o bajo demanda)
 Las tareas de restauración muestran detalles, como el proveedor objetivo de backup (Amazon Web Services, Microsoft Azure, Google Cloud, en las instalaciones), nombre de bloque de S3, Nombre de SVM, nombre del volumen de origen, volumen de destino, etiqueta de Snapshot, número de objetos recuperados, nombres de archivo, tamaños de archivo, fecha de última modificación y ruta completa de archivo.
 
 
-NOTE: Los detalles de trabajos aparecen solo para los trabajos de backup y restauración de ONTAP Volumes. Los detalles de los trabajos de backup programados se muestran solo para sistemas Cloud Volumes ONTAP que empiezan por ONTAP 9.13.0. Se mostrarán detalles del trabajo para los trabajos en curso y los trabajos finalizados.
+NOTE: Se muestran los detalles del trabajo para los trabajos de backup de ONTAP (tanto ad hoc como programados, con trabajos programados que solo aparecen para ONTAP 9.13.0 o una versión posterior), y todos los trabajos de restauración. Se mostrarán detalles del trabajo para los trabajos en curso y los trabajos finalizados.
 
 .Pasos
 . Seleccione la ficha *Supervisión de trabajos*.
@@ -145,9 +145,9 @@ El tipo de trabajo «Ciclo de vida de backup» captura todos los trabajos de eli
 
 El Centro de notificación de BlueXP realiza un seguimiento del progreso de los trabajos de copia de seguridad y restauración que ha iniciado para que pueda comprobar si la operación se ha realizado correctamente o no.
 
-Además de ver las alertas en la lista de notificaciones de BlueXP, puede configurar BlueXP para que envíe notificaciones por correo electrónico como alertas, de modo que pueda ser informado de la actividad importante del sistema incluso cuando no haya iniciado sesión en el sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
+Además de ver las alertas en el Centro de notificaciones, puedes configurar BlueXP para que envíe ciertos tipos de notificaciones por correo electrónico como alertas, de modo que se te informe de la actividad importante del sistema incluso si no has iniciado sesión en el sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
 
-Los siguientes eventos activan alertas por correo electrónico:
+El Centro de notificaciones muestra varios eventos, pero solo los siguientes eventos de copia de seguridad y restauración activan alertas por correo electrónico:
 
 [cols="3a,1d"]
 |===
@@ -189,13 +189,13 @@ Error de trabajo programado
 | Error 
 |===
 
-NOTE: A partir de Cloud Volumes ONTAP 9.13.0, se muestran todas las alertas. En el caso de los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP en las instalaciones, solo aparece la alerta relacionada con el trabajo de restauración completado con advertencias.
+NOTE: A partir de ONTAP 9.13.0, todas las alertas aparecen para los sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Para los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP on-premises, solo aparece la alerta relacionada con «Trabajo de restauración completado, pero con advertencias».
 
 De forma predeterminada, los administradores de cuentas de BlueXP reciben correos electrónicos para todas las alertas "críticas" y "recomendaciones". Todos los demás usuarios y destinatarios están configurados, de forma predeterminada, para no recibir ningún correo electrónico de notificación. Pueden enviarse correos electrónicos a usuarios de BlueXP que formen parte de su cuenta de cloud de NetApp o a cualquier otro destinatario que tenga que conocer la actividad de backup y restauración.
 
-Para recibir alertas por correo electrónico de backup y recuperación de BlueXP, tendrás que seleccionar los tipos de gravedad de notificaciones «Critical», «Warning» y «Error».
+Para recibir alertas por correo electrónico de backup y recuperación de BlueXP, tendrás que seleccionar los tipos de gravedad de notificaciones «Critical», «Warning» y «Error» en la página Configuración de alertas y notificaciones.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Aprenda a enviar correos electrónicos de alerta para trabajos de copia de seguridad y restauración"^].
 
 .Pasos
 . Seleccione la ficha *Supervisión de trabajos*.

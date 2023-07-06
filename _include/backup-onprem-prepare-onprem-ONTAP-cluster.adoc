@@ -1,0 +1,43 @@
+= Descubre tus sistemas de ONTAP en BlueXP
+:allow-uri-read: 
+
+
+Tendrá que preparar su sistema ONTAP de origen en las instalaciones y cualquier sistema ONTAP o Cloud Volumes ONTAP secundario en las instalaciones.
+
+La preparación de los clústeres de ONTAP implica los siguientes pasos:
+
+* Descubre tus sistemas de ONTAP en BlueXP
+* Compruebe los requisitos del sistema ONTAP
+* Comprobar los requisitos de red de ONTAP para realizar backup de los datos en el almacenamiento de objetos
+* Compruebe los requisitos de red de ONTAP para replicar volúmenes
+
+
+
+
+=== Descubre tus sistemas de ONTAP en BlueXP
+
+Tanto su sistema ONTAP de origen en las instalaciones como todos los sistemas ONTAP o Cloud Volumes ONTAP secundarios en las instalaciones deben estar disponibles en BlueXP Canvas.
+
+Tendrá que conocer la dirección IP de gestión del clúster y la contraseña de la cuenta de usuario administrador para añadir el clúster.
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Aprenda a detectar un clúster"^].
+
+
+
+=== Compruebe los requisitos del sistema ONTAP
+
+Asegúrese de que se cumplen los siguientes requisitos de ONTAP:
+
+* Se recomienda un mínimo de ONTAP 9,8; ONTAP 9.8P13 y posterior.
+* Una licencia de SnapMirror (incluida como parte del paquete Premium o del paquete de protección de datos).
++
+*Nota:* El “paquete de nube híbrida” no es necesario cuando se utiliza la copia de seguridad y recuperación de BlueXP.
+
++
+Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestione las licencias de clúster"^].
+
+* La hora y la zona horaria están configuradas correctamente. Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure la hora del clúster"^].
+* Si va a replicar datos, debe comprobar que los volúmenes de origen y de destino ejecutan versiones de ONTAP compatibles antes de replicar datos.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Consulte versiones de ONTAP compatibles para relaciones de SnapMirror"^].
+
+

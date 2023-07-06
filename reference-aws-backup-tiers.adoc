@@ -24,7 +24,10 @@ Cuando los archivos de copia de seguridad se crean inicialmente, se almacenan en
 
 Si los clústeres de origen ejecutan ONTAP 9.10.1 o superior, puede optar por organizar los backups en niveles en el almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_ tras un determinado número de días (normalmente más de 30 días) para obtener una mayor optimización de los costes. No se puede acceder inmediatamente a los datos de estos niveles cuando sea necesario y exige un mayor coste de recuperación, por lo que debe plantearse la frecuencia con la que es necesario restaurar los datos de estos ficheros de backup archivados. Consulte la sección Acerca de <<Restaurar datos desde el almacenamiento de archivado,restaurar datos desde el almacenamiento de archivado>>.
 
-Si elige _S3 Glacier_ o _S3 Glacier Deep Archive_ en su primera política de backup al activar el backup y la recuperación de BlueXP, ese nivel será el único nivel de archivado disponible para futuras políticas de backup para ese clúster. Si selecciona ningún nivel de archivado en su primera política de copia de seguridad, _S3 Glacier_ será la única opción de archivado para futuras políticas.
+* Si seleccionas ningún nivel de archivado en tu primera política de backup al activar el backup y la recuperación de BlueXP, _S3 Glacier_ será tu única opción de archivado para futuras políticas.
+* Si selecciona _S3 Glacier_ en su primera política de copia de seguridad, puede cambiar a la capa _S3 Glacier Deep Archive_ para futuras políticas de copia de seguridad para ese cluster.
+* Si selecciona _S3 Glacier Deep Archive_ en su primera política de copia de seguridad, ese nivel será el único nivel de archivado disponible para futuras políticas de copia de seguridad para ese cluster.
+
 
 Tenga en cuenta que al configurar el backup y la recuperación de BlueXP con este tipo de regla de ciclo de vida, no debe configurar ninguna regla de ciclo de vida al configurar el bloque en su cuenta de AWS.
 
