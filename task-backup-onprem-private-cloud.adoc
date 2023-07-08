@@ -34,7 +34,7 @@ Revise cómo conectará su clúster local de ONTAP directamente a StorageGRID a 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Prepare el conector BlueXP
 [role="quick-margin-para"]
-Si ya tiene un conector puesto en marcha en su StorageGRID o en sus instalaciones, entonces está todo listo. De lo contrario, tendrás que crear un conector BlueXP para realizar backups de los datos de ONTAP en StorageGRID. También tendrá que personalizar la configuración de red del conector para que pueda conectarse a StorageGRID.
+Si ya tiene un conector puesto en marcha en sus instalaciones, entonces está todo listo. De lo contrario, tendrás que crear un conector BlueXP para realizar backups de los datos de ONTAP en StorageGRID. También tendrá que personalizar la configuración de red del conector para que pueda conectarse a StorageGRID.
 
 [role="quick-margin-para"]
 <<Prepare el conector BlueXP,Aprenda a crear un conector y a definir la configuración de red necesaria.>>
@@ -73,7 +73,7 @@ Seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de
 
 La siguiente imagen muestra cada componente cuando se realiza un backup de un sistema ONTAP local en StorageGRID y las conexiones necesarias para preparar entre ellos.
 
-Opcionalmente, puede conectarse a un sistema ONTAP secundario para volúmenes replicados también mediante la conexión pública o privada.
+Opcionalmente, se puede conectar a un sistema ONTAP secundario en la misma ubicación local para replicar volúmenes.
 
 image:diagram_cloud_backup_onprem_storagegrid.png["Un diagrama que muestra cómo se comunican el backup y la recuperación de datos de BlueXP con los volúmenes en los sistemas de origen y el almacenamiento de destino donde se encuentran los archivos de backup."]
 
@@ -113,6 +113,9 @@ Asegúrese de que la red en la que está instalado el conector habilita las sigu
 ==== Consideraciones sobre el modo privado (sitio oscuro)
 
 * La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Cuando se instala en modo privado, deberá actualizar el software Connector periódicamente para obtener acceso a nuevas funciones. Compruebe la link:whats-new.html["Backup y recuperación de BlueXP Novedades"] Para ver las nuevas funciones de cada versión de backup y recuperación de BlueXP. Cuando desee utilizar las nuevas funciones, siga los pasos a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Actualice el software del conector"^].
++
+La nueva versión de backup y recuperación de datos de BlueXP, que incluye la capacidad de programar y crear copias de Snapshot y volúmenes replicados, además de crear backups en el almacenamiento de objetos, requiere que esté utilizando la versión 3.9.31 o superior de BlueXP Connector. Por lo tanto, se recomienda que obtenga esta última versión para gestionar todos sus backups.
+
 * Cuando utilizas backup y recuperación de BlueXP en un entorno SaaS, se realiza un backup de los datos de configuración de backup y recuperación de BlueXP en el cloud. Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, los datos de configuración de backup y recuperación de BlueXP se copian en el bloque de StorageGRID, donde se almacenan los backups. Si alguna vez tiene un fallo de conector en su sitio de modo privado, puede hacerlo link:reference-backup-cbs-db-in-dark-site.html["Restaura los datos de backup y recuperación de BlueXP en un nuevo conector"^].
 
 
@@ -177,8 +180,8 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 Debe configurar los siguientes requisitos en el sistema que se conecta al almacenamiento de objetos.
 
-* Si utiliza una arquitectura de backup ramificada, deben configurarse los siguientes ajustes en el sistema de almacenamiento principal.
-* Cuando utiliza una arquitectura de backup en cascada, los siguientes ajustes deben configurarse en el sistema de almacenamiento secundario.
+* Si utiliza una arquitectura de backup ramificada, los siguientes ajustes deben configurarse en el sistema de almacenamiento _primary_.
+* Cuando se utiliza una arquitectura de copia de seguridad en cascada, los siguientes ajustes deben configurarse en el sistema de almacenamiento _secondary_.
 
 
 Se necesitan los siguientes requisitos de red de clúster de ONTAP:
@@ -225,7 +228,7 @@ Al poder replicar en Cloud Volumes ONTAP o un sistema en las instalaciones, revi
 
 == Preparar StorageGRID como destino de backup
 
-StorageGRID debe cumplir con los siguientes requisitos. Consulte https://docs.netapp.com/us-en/storagegrid-116/["Documentación de StorageGRID"^] si quiere más información.
+StorageGRID debe cumplir con los siguientes requisitos. Consulte https://docs.netapp.com/us-en/storagegrid-117/["Documentación de StorageGRID"^] si quiere más información.
 
 Versiones de StorageGRID compatibles:: Se admite StorageGRID 10.3 y versiones posteriores.
 +
@@ -235,7 +238,7 @@ Para usar la protección DataLock & Ransomware para sus copias de seguridad, sus
 Para organizar los backups antiguos en niveles en el almacenamiento de archivado en cloud, los sistemas StorageGRID deben ejecutar la versión 11.3 o posterior. Además, debes descubrir tus sistemas StorageGRID en BlueXP Canvas.
 
 --
-Credenciales de S3:: Debe haber creado una cuenta de inquilino de S3 para controlar el acceso al almacenamiento de StorageGRID. https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["Consulte los documentos de StorageGRID para obtener más información"^].
+Credenciales de S3:: Debe haber creado una cuenta de inquilino de S3 para controlar el acceso al almacenamiento de StorageGRID. https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["Consulte los documentos de StorageGRID para obtener más información"^].
 +
 --
 Al configurar un backup en StorageGRID, el asistente de backup le solicita una clave de acceso de S3 y una clave secreta para una cuenta de inquilino. La cuenta de inquilino permite el backup y la recuperación de BlueXP para autenticar y acceder a los bloques de StorageGRID que se utilizan para almacenar backups. Las claves son necesarias para que StorageGRID sepa quién está haciendo la solicitud.
@@ -406,10 +409,10 @@ NOTE: Si los volúmenes seleccionados tienen distintas políticas de Snapshot y 
 ** *Backup*: Realiza copias de seguridad de los volúmenes en el almacenamiento de objetos.
 
 
-. *Arquitectura*: Si elige replicación y copia de seguridad, elija uno de los siguientes flujos de información:
+. *Arquitectura*: Si elige tanto la replicación como la copia de seguridad, elija uno de los siguientes flujos de información:
 +
-** *Cascading*: La información fluye del almacenamiento primario al secundario al almacenamiento de objetos y del almacenamiento secundario al de objetos.
-** *Fan Out*: La información fluye del primario al secundario _and_ del origen al almacenamiento de objetos.
+** *Cascading*: La información fluye desde el primario al secundario, y luego desde el secundario al almacenamiento de objetos.
+** *Fan Out*: La información fluye del primario al secundario _and_ del almacenamiento primario al objeto.
 +
 Para obtener información detallada sobre estas arquitecturas, consulte link:concept-protection-journey.html["Planifica tu proceso de protección"].
 
@@ -498,6 +501,6 @@ Puede ser conveniente mostrar y copiar, opcionalmente, los comandos API que se u
 == El futuro
 
 * Puede hacerlo link:task-manage-backups-ontap.html["gestione los archivos de copia de seguridad y las políticas de copia de seguridad"^]. Esto incluye iniciar y detener copias de seguridad, eliminar copias de seguridad, agregar y cambiar la programación de copia de seguridad, etc.
-* Puede hacerlo link:task-manage-backup-settings-ontap.html["gestione la configuración de backup en el nivel del clúster"^]. Esto incluye cambiar las claves de almacenamiento que utiliza ONTAP para acceder al almacenamiento en cloud, cambiar el ancho de banda de red disponible para cargar backups en el almacenamiento de objetos, cambiar la configuración de backup automático para volúmenes futuros, etc.
+* Puede hacerlo link:task-manage-backup-settings-ontap.html["gestione la configuración de backup en el nivel del clúster"^]. Esto incluye cambiar el ancho de banda de red disponible para cargar backups en el almacenamiento de objetos, cambiar la configuración de backup automático para volúmenes futuros, etc.
 * También puede hacerlo link:task-restore-backups-ontap.html["restaure volúmenes, carpetas o archivos individuales desde un archivo de backup"^] En un sistema ONTAP en las instalaciones.
 
