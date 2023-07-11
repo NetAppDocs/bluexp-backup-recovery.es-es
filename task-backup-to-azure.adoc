@@ -200,11 +200,11 @@ El backup y la recuperación de BlueXP admite las _políticas de acceso de Azure
 
 
 
-=== Crea tus propios cubos
+=== Cree su cuenta de almacenamiento de Azure Blob
 
-De forma predeterminada, el servicio crea buckets para usted. O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copias de seguridad y, a continuación, seleccionar esos bloques en el asistente.
+De forma predeterminada, el servicio crea cuentas de almacenamiento para usted. Si desea utilizar sus propias cuentas de almacenamiento, puede crearlas antes de iniciar el asistente de activación de copia de seguridad y, a continuación, seleccionar esas cuentas de almacenamiento en el asistente.
 
-Si creas tus propios buckets, debes usar el nombre de bucket de «netapp-backup».
+Si crea sus propias cuentas de almacenamiento, debe utilizar el nombre de cuenta de almacenamiento «netapp-backup».
 
 
 
@@ -216,7 +216,7 @@ Antes de activar los backups en el backup y la recuperación de BlueXP, asegúre
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-El grupo de seguridad de la instancia debe incluir las reglas entrantes y salientes necesarias: Específicamente, las reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
+El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida necesarias: Específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
 
 
 
@@ -225,7 +225,7 @@ El grupo de seguridad de la instancia debe incluir las reglas entrantes y salien
 * Si el clúster se encuentra en sus instalaciones, debe tener una conexión entre la red corporativa y la red virtual del proveedor de cloud. Normalmente se trata de una conexión VPN.
 * Los clústeres de ONTAP deben cumplir con requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Al poder replicar en Cloud Volumes ONTAP o un sistema en las instalaciones, revise los requisitos de las paridad de los sistemas de ONTAP en las instalaciones. Consulte https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
+Al poder replicar en Cloud Volumes ONTAP o en sistemas en las instalaciones, revise los requisitos de los pares de los sistemas de ONTAP en las instalaciones. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
 
 
 
@@ -260,7 +260,7 @@ image:screenshot_backup_to_gcp.png["Muestra la opción de backup y recuperación
 
 
 .Resultado
-El backup y la recuperación de datos de BlueXP están habilitados en el sistema, y realiza backups de volúmenes cada día y conserva las 30 copias de backup más recientes.
+El backup y la recuperación de datos de BlueXP están activados en el sistema. Después de crear volúmenes en estos sistemas Cloud Volumes ONTAP, inicie el backup y la recuperación de datos de BlueXP y. link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["active el backup en cada volumen que desee proteger"].
 
 *Habilitar la copia de seguridad y recuperación de BlueXP en un sistema existente*
 

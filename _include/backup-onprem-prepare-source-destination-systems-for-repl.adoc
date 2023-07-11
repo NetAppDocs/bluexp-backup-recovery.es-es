@@ -8,7 +8,7 @@ Antes de activar los backups en el backup y la recuperación de BlueXP, asegúre
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-El grupo de seguridad de la instancia debe incluir las reglas entrantes y salientes necesarias: Específicamente, las reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
+El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida necesarias: Específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
 
 
 
@@ -17,6 +17,6 @@ El grupo de seguridad de la instancia debe incluir las reglas entrantes y salien
 * Si el clúster se encuentra en sus instalaciones, debe tener una conexión entre la red corporativa y la red virtual del proveedor de cloud. Normalmente se trata de una conexión VPN.
 * Los clústeres de ONTAP deben cumplir con requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Al poder replicar en Cloud Volumes ONTAP o un sistema en las instalaciones, revise los requisitos de las paridad de los sistemas de ONTAP en las instalaciones. Consulte https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
+Al poder replicar en Cloud Volumes ONTAP o en sistemas en las instalaciones, revise los requisitos de los pares de los sistemas de ONTAP en las instalaciones. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
 
 

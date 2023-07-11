@@ -27,7 +27,7 @@ Comience rápidamente siguiendo estos pasos. En las siguientes secciones del tem
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Identifica el método de conexión que usarás
 [role="quick-margin-para"]
-Elige si conectarás tu clúster local de ONTAP directamente a Google Cloud Storage a través de Internet pública, o si usarás una VPN o una interconexión de Google Cloud y enrutarás el tráfico a través de una interfaz privada de Google Access que use una dirección IP privada.
+Elige si conectarás tu clúster local de ONTAP directamente a Google Cloud Storage a través de Internet pública, o si usarás una VPN o una interconexión de Google Cloud y enrutarás el tráfico a través de una interfaz privada de Google Access que utilice una dirección IP privada.
 
 [role="quick-margin-para"]
 <<Identifique el método de conexión>>.
@@ -55,10 +55,10 @@ Detecte sus clústeres de ONTAP en BlueXP, compruebe que los clústeres cumplan 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Prepare Google Cloud como destino de backup
 [role="quick-margin-para"]
-Configure los permisos para que Connector cree y gestione el bucket de Azure. También necesitará configurar permisos para el clúster de ONTAP en las instalaciones para que pueda leer y escribir datos en el bucket de Azure.
+Configura permisos para que Connector cree y administre el bucket de Google Cloud. También necesitará configurar permisos para el clúster de ONTAP en las instalaciones para que pueda leer y escribir datos en el bucket de Google Cloud.
 
 [role="quick-margin-para"]
-De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Azure predeterminadas. <<Preparar Azure Blob como destino de backup,Descubre cómo preparar tu entorno de Azure para recibir backups de ONTAP.>>
+De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Google Cloud predeterminadas. <<Prepare Google Cloud as your backup target,Descubre cómo preparar tu entorno de Google Cloud para recibir backups de ONTAP.>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Active backups en sus ONTAP Volumes
 [role="quick-margin-para"]
@@ -254,7 +254,7 @@ Antes de activar los backups en el backup y la recuperación de BlueXP, asegúre
 
 ==== Requisitos de red de Cloud Volumes ONTAP
 
-El grupo de seguridad de la instancia debe incluir las reglas entrantes y salientes necesarias: Específicamente, las reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
+El grupo de seguridad de la instancia debe incluir las reglas de entrada y salida necesarias: Específicamente, reglas para ICMP y los puertos 11104 y 11105. Estas reglas se incluyen en el grupo de seguridad predefinido.
 
 
 
@@ -263,7 +263,7 @@ El grupo de seguridad de la instancia debe incluir las reglas entrantes y salien
 * Si el clúster se encuentra en sus instalaciones, debe tener una conexión entre la red corporativa y la red virtual del proveedor de cloud. Normalmente se trata de una conexión VPN.
 * Los clústeres de ONTAP deben cumplir con requisitos adicionales de subred, puerto, firewall y clúster.
 +
-Al poder replicar en Cloud Volumes ONTAP o un sistema en las instalaciones, revise los requisitos de las paridad de los sistemas de ONTAP en las instalaciones. Consulte https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
+Al poder replicar en Cloud Volumes ONTAP o en sistemas en las instalaciones, revise los requisitos de los pares de los sistemas de ONTAP en las instalaciones. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
 
 
 

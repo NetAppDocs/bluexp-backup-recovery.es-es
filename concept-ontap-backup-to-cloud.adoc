@@ -23,7 +23,7 @@ Tras la activación, el backup y la recuperación crean backups incrementales pe
 * Backup del volumen en el almacenamiento de objetos
 
 
-image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de backup en el sistema de origen como copias Snapshot, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de backup en el almacenamiento de objetos."]
+image:diagram-321-overview-mkt.png["Un diagrama que muestra cómo existen los archivos de backup en el sistema de origen como copias Snapshot, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de backup en el almacenamiento de objetos."]
 
 El backup y la recuperación de datos de BlueXP aprovecha la tecnología de replicación de datos de SnapMirror de NetApp para garantizar que todos los backups estén totalmente sincronizados creando copias de Snapshot y transfiriéndolas a las ubicaciones de backup.
 
