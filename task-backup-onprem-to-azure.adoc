@@ -339,7 +339,7 @@ Tenga en cuenta que la copia de seguridad y la recuperación admiten _políticas
 
 De forma predeterminada, el servicio crea cuentas de almacenamiento para usted. Si desea utilizar sus propias cuentas de almacenamiento, puede crearlas antes de iniciar el asistente de activación de copia de seguridad y, a continuación, seleccionar esas cuentas de almacenamiento en el asistente.
 
-Si crea sus propias cuentas de almacenamiento, debe utilizar el nombre de cuenta de almacenamiento «netapp-backup».
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Obtenga más información sobre la creación de sus propias cuentas de almacenamiento"^].
 
 
 

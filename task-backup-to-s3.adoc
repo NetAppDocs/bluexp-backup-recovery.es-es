@@ -218,7 +218,7 @@ Configuración necesaria para crear backups en una cuenta de AWS diferente:: De 
 Crea tus propios cubos:: De forma predeterminada, el servicio crea buckets para usted. Si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copias de seguridad y, a continuación, seleccionar esos depósitos en el asistente.
 +
 --
-Si crea sus propios buckets, debe utilizar el nombre de bucket de «netapp-backup».
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Obtenga más información sobre cómo crear sus propios cubos"^].
 
 --
 

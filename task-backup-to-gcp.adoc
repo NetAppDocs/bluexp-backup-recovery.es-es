@@ -39,7 +39,7 @@ Si ya tienes un conector implementado en una región de GCP, entonces estás tod
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Verifique los requisitos de licencia
 [role="quick-margin-para"]
-Tendrás que comprobar los requisitos de licencias tanto de Azure como de BlueXP.
+Tendrás que comprobar los requisitos de licencias tanto para Google Cloud como para BlueXP.
 
 [role="quick-margin-para"]
 <<Verifique los requisitos de licencia>>.
@@ -170,7 +170,7 @@ cloudkms.keyRings.setIamPolicy
 
 De forma predeterminada, el servicio crea buckets para usted. Si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copias de seguridad y, a continuación, seleccionar esos depósitos en el asistente.
 
-Si crea sus propios buckets, debe utilizar el nombre de bucket de «netapp-backup».
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Obtenga más información sobre cómo crear sus propios cubos"^].
 
 
 

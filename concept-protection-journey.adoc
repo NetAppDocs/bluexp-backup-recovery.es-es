@@ -193,18 +193,42 @@ Si usa las directivas predeterminadas que existen en todos los sistemas ONTAP, e
 
 
 
-== ¿Desea que el servicio cree los buckets de cloud por usted
+== ¿Desea crear su propio contenedor de almacenamiento de objetos
 
-Al crear archivos de copia de seguridad en el almacenamiento en la nube, de forma predeterminada, el servicio de copia de seguridad y recuperación creará los depósitos en los que residirán los archivos de copia de seguridad. Puede crear los cubos usted mismo si desea utilizar un nombre determinado o asignar propiedades especiales. Si desea crear su propio bucket, debe crearlo antes de iniciar el asistente de activación.
+Cuando crea archivos de copia de seguridad en el almacenamiento de objetos para un entorno de trabajo, de forma predeterminada, el servicio de copia de seguridad y recuperación crea el contenedor (cuenta de almacenamiento o depósito) para los archivos de copia de seguridad en la cuenta de almacenamiento de objetos que haya configurado. El bucket AWS o GCP se denomina «netapp-backup-<uuid>» de forma predeterminada. La cuenta de almacenamiento de Azure Blob se llama «netappbackup<uuid>».
 
-Puede crear el contenedor desde BlueXP o desde su proveedor de cloud.
+Puede crear el contenedor usted mismo en la cuenta del proveedor de objetos si desea utilizar un prefijo determinado o asignar propiedades especiales. Si desea crear su propio contenedor, debe crearlo antes de iniciar el asistente de activación. El contenedor debe utilizarse exclusivamente para almacenar archivos de backup de volúmenes de ONTAP; no se puede utilizar para ningún otro fin. El asistente de activación de copia de seguridad detectará automáticamente los contenedores aprovisionados para la cuenta y las credenciales seleccionadas para que pueda seleccionar el que desea utilizar.
+
+Puede crear el bloque en BlueXP o desde su proveedor de cloud.
 
 * https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Crea bloques S3 de BlueXP"]
 * https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html["Crea cuentas de almacenamiento de Azure Blob desde BlueXP"]
 * https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["Crea buckets de almacenamiento de Google Cloud a partir de BlueXP"]
 
 
-Tenga en cuenta que no puede crear sus propios buckets S3 al crear backups en sistemas StorageGRID.
+*Nota:* En este momento no puede usar sus propios cubos S3 al crear copias de seguridad en sistemas StorageGRID.
+
+Si tiene pensado utilizar un prefijo de bloque diferente al «netapp-backup-xxxxxx», deberá modificar los permisos S3 para el rol Connector IAM. Consulte los temas para crear backups en AWS S3 para obtener más detalles.
+
+
+
+=== Configuración avanzada de bloques
+
+Si planeas mover archivos de copia de seguridad antiguos al almacenamiento de archivado, o si planeas habilitar la protección DataLock y Ransomware para bloquear tus archivos de copia de seguridad y escanearlos en busca de un posible ransomware, tendrás que crear el contenedor con ciertas opciones de configuración:
+
+* El almacenamiento de archivado en sus propios bloques se admite en el almacenamiento de AWS S3 en este momento si se utiliza software de ONTAP 9.10.1 o superior en sus clústeres. De forma predeterminada, los backups comienzan en la clase de almacenamiento S3 _Standard_. Asegúrese de crear el depósito con las reglas de ciclo de vida adecuadas:
++
+** Mueva los objetos en todo el ámbito del depósito a S3 _Standard-IA_ después de 30 días.
+** Mueva los objetos con la etiqueta «smc_push_to_archive: True» a _Glacier Flexible Retrieval_ (anteriormente S3 Glacier)
+
+
+* La protección contra bloqueo de datos y ransomware es compatible con el almacenamiento de AWS cuando se usa software de ONTAP 9.11.1 o posterior en los clústeres, y en el almacenamiento de Azure cuando se utiliza el software de ONTAP 9.12.1 o posterior.
++
+** Para AWS, debe habilitar el bloqueo de objetos en el bloque con un período de retención de 30 días.
+** Para Azure, debe crear la clase de almacenamiento con compatibilidad de inmutabilidad a nivel de versión.
+
+
+
 
 
 

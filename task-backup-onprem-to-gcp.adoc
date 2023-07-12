@@ -329,6 +329,8 @@ Tendrá que introducir las claves en el backup y la recuperación de BlueXP más
 
 De forma predeterminada, el servicio crea buckets para usted. O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copias de seguridad y, a continuación, seleccionar esos bloques en el asistente.
 
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Obtenga más información sobre cómo crear sus propios cubos"^].
+
 
 
 === Configurar claves de cifrado gestionadas por el cliente (CMEK) para el cifrado de datos

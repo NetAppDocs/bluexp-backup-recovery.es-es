@@ -46,9 +46,9 @@ A continuación, puede gestionar los clústeres más antiguos con la versión an
 
 
 
-=== Capacidad de crear sus buckets para el backup en el almacenamiento de objetos
+=== Capacidad de crear su contenedor de almacenamiento para backup en el almacenamiento de objetos
 
-Cuando cree archivos de backup en el almacenamiento de objetos, de forma predeterminada, el servicio de backup y recuperación creará los buckets en el almacenamiento de objetos para usted. Puede crear los cubos usted mismo si desea utilizar un nombre determinado o asignar propiedades especiales. Si desea crear su propio bucket, debe crearlo antes de iniciar el asistente de activación.
+Cuando cree archivos de backup en el almacenamiento de objetos, de forma predeterminada, el servicio de backup y recuperación creará los buckets en el almacenamiento de objetos para usted. Puede crear los cubos usted mismo si desea utilizar un nombre determinado o asignar propiedades especiales. Si desea crear su propio bucket, debe crearlo antes de iniciar el asistente de activación. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Aprende a crear tus buckets de almacenamiento de objetos"].
 
 Actualmente, esta funcionalidad no es compatible al crear archivos de backup en sistemas StorageGRID.
 
