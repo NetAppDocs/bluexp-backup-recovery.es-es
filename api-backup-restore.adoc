@@ -97,8 +97,6 @@ Esta API devolverá una respuesta como la siguiente. Puede recuperar el ID de ag
 
 El siguiente ejemplo muestra una llamada API para activar el backup y la recuperación de datos de BlueXP en un entorno de trabajo con una nueva política que tiene establecidas etiquetas diarias, cada hora y semanales, después de los días establecidos en 180 días, en la región Este-US-2 en la nube de Azure. Tenga en cuenta que esto solo permite realizar backups en el entorno de trabajo, pero no se realiza ningún backup de los volúmenes.
 
-Si elige "autobackup habilitado": "True", se realizará un backup de todos los volúmenes existentes en el sistema y también se realizará un backup de todos los volúmenes futuros.
-
 .Solicitud API
 Verá que utilizamos el ID de cuenta de BlueXP `account-DpTFcxN3`, BlueXP Connector ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`, y token de usuario `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` en este comando.
 

@@ -114,7 +114,28 @@ Sistema ONTAP en las instalaciones | Fin de Google Cloud Storage::gcp[]
 
 
 | Sistema ONTAP en las instalaciones | Cloud Volumes ONTAP
-Sistema ONTAP en las instalaciones | Ifdef::aws[] Amazon S3 endif::aws[] ifdef::Azure[] endif de Azure Blob::Azure[] ifdef::gcp[] Google Cloud Storage endif::gcp[] NetApp StorageGRID 
+Sistema ONTAP en las instalaciones | ifdef::aws[]
+
+Amazon S3
+
+endif::aws[]
+
+
+ifdef::azure[]
+
+Azure Blob
+
+endif::azure[]
+
+
+ifdef::gcp[]
+
+Google Cloud Storage
+
+endif::gcp[]
+
+StorageGRID de NetApp
+ONTAP S3 
 |===
 
 
@@ -143,6 +164,10 @@ Sistema ONTAP en las instalaciones | Cloud Volumes ONTAP en Google on-local ONTA
 
 
 | StorageGRID de NetApp | Sistema ONTAP en las instalaciones
+Cloud Volumes ONTAP | Sistema ONTAP en las instalaciones 
+
+
+| ONTAP S3 | Sistema ONTAP en las instalaciones
 Cloud Volumes ONTAP | Sistema ONTAP en las instalaciones 
 |===
 Tenga en cuenta que las referencias a "sistemas ONTAP en las instalaciones" incluyen sistemas FAS, AFF y ONTAP Select.
@@ -231,6 +256,8 @@ El backup y la recuperación de datos de BlueXP están disponibles con los sigui
 * *Anual*: Un contrato anual del mercado de su proveedor de cloud.
 
 
+Una licencia de backup solo se requiere para backup y restauración desde el almacenamiento de objetos. La creación de copias Snapshot y volúmenes replicados no requiere una licencia.
+
 
 
 === Con su propia licencia
@@ -298,6 +325,8 @@ Este diagrama muestra los volúmenes que se replican en un sistema Cloud Volumes
 
 === La ubicación de los backups
 
+Las copias de seguridad residen en ubicaciones de deffent según el tipo de copia de seguridad:
+
 * _Snapshot copies_ residen en el volumen de origen en el entorno de trabajo de origen.
 * _Los volúmenes replicados_ residen en el sistema de almacenamiento secundario: Un sistema Cloud Volumes ONTAP o ONTAP en las instalaciones.
 * _Backup copies_ se almacenan en un almacén de objetos que BlueXP crea en tu cuenta de cloud. Hay un almacén de objetos por clúster/entorno de trabajo y BlueXP asigna el nombre del almacén de objetos de la siguiente forma: "netapp-backup-clusterUUID". Asegúrese de no eliminar este almacén de objetos.
@@ -325,9 +354,11 @@ ifdef::gcp[]
 endif::gcp[]
 
 +
-** En StorageGRID, BlueXP utiliza una cuenta de almacenamiento existente para el bloque de almacenamiento de objetos.
+** En StorageGRID, BlueXP utiliza una cuenta de inquilino existente para el bloque de S3.
 
 +
+** En ONTAP S3, BlueXP utiliza una cuenta de usuario existente para el bloque de S3.
+
 Si desea cambiar el almacén de objetos de destino de un clúster en el futuro, tendrá que hacerlo link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro de backup y recuperación de BlueXP para el entorno de trabajo"^], Y, a continuación, habilita el backup y la recuperación de BlueXP con la nueva información del proveedor de nube.
 
 

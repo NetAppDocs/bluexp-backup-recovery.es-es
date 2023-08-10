@@ -168,7 +168,7 @@ Asegúrese de que se cumplen los siguientes requisitos de ONTAP:
 Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestione las licencias de clúster"^].
 
 * La hora y la zona horaria están configuradas correctamente. Aprenda cómo https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure la hora del clúster"^].
-* Si va a replicar datos, debe comprobar que los volúmenes de origen y de destino ejecutan versiones de ONTAP compatibles antes de replicar datos.
+* Si va a replicar datos, debe comprobar que los sistemas de origen y de destino ejecutan versiones de ONTAP compatibles antes de replicar datos.
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Consulte versiones de ONTAP compatibles para relaciones de SnapMirror"^].
 
@@ -205,7 +205,7 @@ Al configurar el backup y la recuperación de BlueXP, se le pedirá que utilice 
 
 === Compruebe los requisitos de red de ONTAP para replicar volúmenes
 
-Antes de activar los backups en el backup y la recuperación de BlueXP, asegúrese de que los sistemas de origen y destino cumplan con los requisitos de red y la versión de ONTAP.
+Antes de activar los backups en el backup y la recuperación de BlueXP, asegúrese de que los sistemas de origen y destino cumplan los siguientes requisitos de red.
 
 
 
@@ -217,7 +217,7 @@ El grupo de seguridad de la instancia debe incluir las reglas de entrada y salid
 
 ==== Requisitos de red de ONTAP en las instalaciones
 
-* Si el clúster se encuentra en sus instalaciones, debe tener una conexión entre la red corporativa y la red virtual del proveedor de cloud. Normalmente se trata de una conexión VPN.
+* Si el clúster se encuentra en sus instalaciones, debe tener una conexión entre la red corporativa y la red virtual en el proveedor de cloud. Normalmente se trata de una conexión VPN.
 * Los clústeres de ONTAP deben cumplir con requisitos adicionales de subred, puerto, firewall y clúster.
 +
 Al poder replicar en Cloud Volumes ONTAP o en sistemas en las instalaciones, revise los requisitos de los pares de los sistemas de ONTAP en las instalaciones. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP"^].
@@ -355,29 +355,24 @@ La página Introducción del asistente muestra las opciones de protección, incl
 
 === Seleccione los volúmenes de los que desea realizar el backup
 
-Elija los volúmenes que desea proteger. Puede optar por proteger FlexVol o FlexGroup Volumes; sin embargo, no puede seleccionar una combinación de ellos para el entorno de trabajo que decida proteger.
+Elija los volúmenes que desea proteger. Un volumen protegido es uno que tiene uno o varios de los siguientes: Política de Snapshot, política de replicación, backup en política de objetos.
+
+Puede optar por proteger los volúmenes de FlexVol o FlexGroup; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar el backup para un entorno de trabajo. Descubra cómo link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["active el backup para volúmenes adicionales en el entorno de trabajo"] (FlexVol o FlexGroup) después de configurar el backup de los volúmenes iniciales.
 
 [NOTE]
 ====
 * Puede activar un backup solo en un único volumen de FlexGroup a la vez.
-* Los volúmenes que seleccione también deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Actualmente los volúmenes en el modo SnapLock Compliance no son compatibles). No puede seleccionar una combinación de volúmenes bloqueados y desbloqueados.
+* Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Actualmente los volúmenes en el modo SnapLock Compliance no son compatibles).
 
 
 ====
-Un volumen protegido es uno que tiene uno o varios de los siguientes: Política de Snapshot, política de replicación, backup en política de objetos.
-
-
-NOTE: Si los volúmenes que elija tienen distintas políticas de Snapshot y de replicación a las políticas que seleccione más adelante, se sobrescribirán las políticas existentes.
-
 .Pasos
+Tenga en cuenta que si los volúmenes que elija ya tienen aplicadas políticas de Snapshot o de replicación, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.
+
 . En la página Select Volumes, seleccione el o los volúmenes que desea proteger.
 +
 ** Opcionalmente, filtre las filas para mostrar solo los volúmenes con ciertos tipos de volumen, estilos y más para facilitar la selección.
-** Después de seleccionar el primer volumen, puede seleccionar All FlexVol Volumes. Para realizar un backup de todos los volúmenes FlexVol existentes y de todos los volúmenes FlexVol añadidos en el futuro, primero marque un volumen y, a continuación, marque la casilla en la fila del título. (image:button_backup_all_volumes.png[""]).
-+
-
-TIP: Recomendamos esta opción para que se haga un backup de todos los volúmenes y que nunca tendrá que recordar para habilitar los backups para volúmenes nuevos.
-
+** Después de seleccionar el primer volumen, puede seleccionar All FlexVol Volumes (los volúmenes de FlexGroup se pueden seleccionar de uno por vez solo). Para realizar un backup de todos los volúmenes FlexVol existentes, active primero un volumen y, a continuación, marque la casilla en la fila del título. (image:button_backup_all_volumes.png[""]).
 ** Para realizar un backup de volúmenes individuales, active la casilla de cada volumen (image:button_backup_1_volume.png[""]).
 
 
@@ -456,7 +451,7 @@ Si el clúster utiliza ONTAP 9.12.1 o posterior y el sistema StorageGRID utiliza
 +
 Seleccione o cree un clúster de StorageGRID nuevo. Para obtener más detalles sobre la creación de un clúster de StorageGRID para que BlueXP pueda detectarlo, consulte https://docs.netapp.com/us-en/storagegrid-117/["Documentación de StorageGRID"^].
 
-** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes de lectura/escritura en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
+** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
 
 
 . Seleccione *Siguiente*.

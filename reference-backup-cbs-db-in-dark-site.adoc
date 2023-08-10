@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database 
-summary: Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, lo que se conoce como «modo privado», los datos de configuración de backup y recuperación de BlueXP se copian en el bloque de StorageGRID donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP. 
+summary: Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, lo que se conoce como «modo privado», los datos de configuración de backup y recuperación de BlueXP se copian en el bloque StorageGRID o ONTAP S3 donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP. 
 ---
 = Restaurar datos de backup y recuperación de BlueXP en un sitio oscuro
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Al utilizar el backup y la recuperación de BlueXP en un sitio sin acce
 
 
 [role="lead"]
-Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, lo que se conoce como «modo privado» o «sitio oscuro», los datos de configuración de backup y recuperación de BlueXP se copian en el depósito de StorageGRID donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP.
+Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, lo que se conoce como «modo privado», los datos de configuración de backup y recuperación de BlueXP se copian en el bloque StorageGRID o ONTAP S3 donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP.
 
 Tenga en cuenta que cuando utilice el backup y la recuperación de datos de BlueXP en un entorno SaaS donde se implementa el conector BlueXP en su proveedor de cloud o en su propio sistema host que tiene acceso a Internet, todos los datos importantes de configuración de backup y recuperación de BlueXP se copian y se protegen en el cloud. Si tiene un problema con el conector, simplemente cree un nuevo conector y agregue sus entornos de trabajo y los detalles de la copia de seguridad se restaurarán automáticamente.
 
@@ -46,7 +46,7 @@ Hay 4 tareas que necesitarás realizar para que el sistema de backup y recuperac
 Una vez que compruebe que su sistema está en un orden de funcionamiento, le recomendamos que cree nuevos archivos de copia de seguridad.
 
 .Lo que necesitará
-Tendrá que acceder a las copias de seguridad de base de datos e índices más recientes desde el depósito de StorageGRID donde se almacenan los archivos de copia de seguridad:
+Tendrá que acceder a las copias de seguridad de base de datos e índices más recientes desde el bucket de StorageGRID o ONTAP S3 donde se almacenan los archivos de copia de seguridad:
 
 * Archivo de base de datos MySQL de backup y recuperación de BlueXP
 +
@@ -131,7 +131,7 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 
 === Detectar los clústeres de ONTAP y los sistemas StorageGRID
 
-. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Descubra todos los entornos de trabajo de ONTAP en las instalaciones"^] disponibles en el entorno anterior.
+. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Descubra todos los entornos de trabajo de ONTAP en las instalaciones"^] disponibles en el entorno anterior. Esto incluye el sistema ONTAP que ha utilizado como servidor S3.
 . https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["Descubra sus sistemas StorageGRID"^].
 
 

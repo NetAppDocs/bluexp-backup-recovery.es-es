@@ -66,6 +66,8 @@ sidebar:
       url: "/task-backup-onprem-to-gcp.html"
     - title: Realice backup en las instalaciones de ONTAP en StorageGRID
       url: "/task-backup-onprem-private-cloud.html"
+    - title: Realice un backup del ONTAP en las instalaciones a ONTAP S3
+      url: "/task-backup-onprem-to-ontap-s3.html"
     - title: Gestión de backups de ONTAP
       url: "/task-manage-backups-ontap.html"
     - title: Restaurar desde backups de ONTAP
@@ -264,6 +266,8 @@ homepage:
       flavor: gcp
     - title: ONTAP en las instalaciones a StorageGRID
       url: task-backup-onprem-private-cloud.html
+    - title: De ONTAP en las instalaciones a ONTAP S3
+      url: task-backup-onprem-to-ontap-s3.html
   - title: Gestionar los archivos de copia de seguridad de ONTAP
     links:
     - title: Habilite backups de volúmenes en volúmenes adicionales
@@ -353,6 +357,8 @@ homepage:
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
     - title: Casos prácticos de backup y recuperación de BlueXP
       url: https://bluexp.netapp.com/cloud-backup
+    - title: Vídeos de backup y recuperación de BlueXP
+      url: https://youtube.com/playlist?list=PLdXI3bZJEw7modoLQEVUHoQ8DJyVk_1wU
     - title: Seminarios web de BlueXP
       url: https://bluexp.netapp.com/events
 product-family:
