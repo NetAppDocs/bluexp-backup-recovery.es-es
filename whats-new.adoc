@@ -22,7 +22,7 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 [IMPORTANT]
 ====
-Debido a una mejora importante de la seguridad, su conector ahora requiere acceso saliente a Internet a dos puntos finales adicionales para administrar los recursos de copia de seguridad y recuperación dentro de su entorno de nube pública. Si estos puntos finales no se han puesto en la lista blanca en su firewall, verá un error en la interfaz de usuario sobre el servicio no disponible o el error al determinar el estado del servicio:
+Debido a una mejora importante de la seguridad, su conector ahora requiere acceso saliente a Internet a dos puntos finales adicionales para administrar los recursos de copia de seguridad y recuperación dentro de su entorno de nube pública. Si estos puntos finales no se han agregado a la lista de permisos en su firewall, verá un error en la interfaz de usuario sobre el servicio no disponible o el error al determinar el estado del servicio:
 
 \https://api.cloud.netapp.com
 \https://netapp-cloud-account.auth0.com/userinfo

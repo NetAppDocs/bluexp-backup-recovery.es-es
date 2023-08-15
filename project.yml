@@ -64,6 +64,8 @@ sidebar:
     - title: Realice backup en las instalaciones de ONTAP en Google Cloud
       flavor: gcp
       url: "/task-backup-onprem-to-gcp.html"
+    - title: Realice un backup del ONTAP en las instalaciones a ONTAP S3
+      url: "/task-backup-onprem-to-ontap-s3.html"
     - title: Realice backup en las instalaciones de ONTAP en StorageGRID
       url: "/task-backup-onprem-private-cloud.html"
     - title: Realice un backup del ONTAP en las instalaciones a ONTAP S3
@@ -264,6 +266,8 @@ homepage:
     - title: ONTAP en las instalaciones a Google Cloud
       url: task-backup-onprem-to-gcp.html
       flavor: gcp
+    - title: De ONTAP en las instalaciones a ONTAP S3
+      url: task-backup-onprem-to-ontap-s3.html
     - title: ONTAP en las instalaciones a StorageGRID
       url: task-backup-onprem-private-cloud.html
     - title: De ONTAP en las instalaciones a ONTAP S3

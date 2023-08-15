@@ -1317,7 +1317,6 @@
   <block id="f68bf28051d836364652b5a91d1bcd3a" category="list-text">Introduzca su ID de cuenta de BlueXP (esto se denomina ID de inquilino en el sitio de soporte) y haga clic en *Enviar* para descargar el archivo de licencia.</block>
   <block id="56273f3344c87fabbf5196fba9816fff" category="inline-image-macro">Una captura de pantalla que muestra el cuadro de diálogo obtener licencia donde se introduce el ID de inquilino y, a continuación, haga clic en Enviar para descargar el archivo de licencia.</block>
   <block id="7ca3a83129f844a42c263755a0fa4a32" category="paragraph"><block ref="7ca3a83129f844a42c263755a0fa4a32" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="257ff1df6b80ed0bf9b3463d53be79f9" category="paragraph">Puede encontrar su ID de cuenta de BlueXP seleccionando el menú desplegable *cuenta* de la parte superior de BlueXP y, a continuación, haciendo clic en *Administrar cuenta* junto a su cuenta. Su ID de cuenta se encuentra en la ficha Descripción general.</block>
   <block id="8d080a0104c2b8b29f5fc2be913926af" category="list-text">En el menú BlueXP, haga clic en *Gobierno &gt; cartera digital* y, a continuación, seleccione la ficha *licencias de servicios de datos*.</block>
   <block id="ea9a2b9ac34c9aab133f21aa5b67976e" category="list-text">Haga clic en *Agregar licencia*.</block>
   <block id="c1b2dc0798d3960e25b8a12c751f53ec" category="list-text">En el cuadro de diálogo _Add License_, introduzca la información de la licencia y haga clic en *Add License*:</block>
@@ -4456,7 +4455,6 @@ ONTAP S3</block>
   <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">Tendrá que acceder a las copias de seguridad de base de datos e índices más recientes desde el bucket de StorageGRID o ONTAP S3 donde se almacenan los archivos de copia de seguridad:</block>
   <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> disponibles en el entorno anterior. Esto incluye el sistema ONTAP que ha utilizado como servidor S3.</block>
   <block id="ca8395d0f02816c74d48e7e263466096" category="section-title">1 de agosto de 2023</block>
-  <block id="a94cc1f58758ef957ce137579b41fcfe" category="paragraph">Debido a una mejora importante de la seguridad, su conector ahora requiere acceso saliente a Internet a dos puntos finales adicionales para administrar los recursos de copia de seguridad y recuperación dentro de su entorno de nube pública. Si estos puntos finales no se han puesto en la lista blanca en su firewall, verá un error en la interfaz de usuario sobre el servicio no disponible o el error al determinar el estado del servicio:</block>
   <block id="0d087a4d2e8c88a4f4a80cf0360fd410" category="paragraph">\https://api.cloud.netapp.com
 \https://netapp-cloud-account.auth0.com/userinfo</block>
   <block id="e752fa0925615f823987d88e457d59fd" category="section-title">Se ha añadido soporte para realizar backups de volúmenes en buckets en sistemas ONTAP configurados con S3</block>
@@ -4474,4 +4472,6 @@ ONTAP S3</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>.</block>
   <block id="f0de192c113fd89f1d8027714c573105" category="sidebar">De ONTAP en las instalaciones a ONTAP S3</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">Vídeos de backup y recuperación de BlueXP</block>
+  <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">Puede encontrar su ID de cuenta de BlueXP seleccionando el menú desplegable *cuenta* de la parte superior de BlueXP y, a continuación, haciendo clic en *Administrar cuenta* junto a su cuenta. Su ID de cuenta se encuentra en la ficha Descripción general. Para el sitio de modo privado sin acceso a Internet, utilice *CUENTA-DARKSITE1*.</block>
+  <block id="c098886cae0a337e7ab216f45f15ced7" category="paragraph">Debido a una mejora importante de la seguridad, su conector ahora requiere acceso saliente a Internet a dos puntos finales adicionales para administrar los recursos de copia de seguridad y recuperación dentro de su entorno de nube pública. Si estos puntos finales no se han agregado a la lista de permisos en su firewall, verá un error en la interfaz de usuario sobre el servicio no disponible o el error al determinar el estado del servicio:</block>
 </blocks>

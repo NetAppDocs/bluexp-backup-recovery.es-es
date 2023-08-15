@@ -148,7 +148,7 @@ Busque este número en su pedido de ventas o póngase en contacto con el equipo 
 
 * ID de cuenta de BlueXP
 +
-Puede encontrar su ID de cuenta de BlueXP seleccionando el menú desplegable *cuenta* de la parte superior de BlueXP y, a continuación, haciendo clic en *Administrar cuenta* junto a su cuenta. Su ID de cuenta se encuentra en la ficha Descripción general.
+Puede encontrar su ID de cuenta de BlueXP seleccionando el menú desplegable *cuenta* de la parte superior de BlueXP y, a continuación, haciendo clic en *Administrar cuenta* junto a su cuenta. Su ID de cuenta se encuentra en la ficha Descripción general. Para el sitio de modo privado sin acceso a Internet, utilice *CUENTA-DARKSITE1*.
 
 
 
