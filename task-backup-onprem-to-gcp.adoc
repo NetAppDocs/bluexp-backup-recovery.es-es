@@ -34,7 +34,7 @@ Elige si conectarás tu clúster local de ONTAP directamente a Google Cloud Stor
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"] Prepare el conector BlueXP
 [role="quick-margin-para"]
-Si ya tienes un conector instalado en tu Google Cloud o en tus instalaciones, entonces todo está listo. De lo contrario, tendrás que crear un conector BlueXP para realizar backups de los datos de ONTAP en el almacenamiento de Google Cloud. También tendrás que personalizar la configuración de red del conector para que pueda conectarse a Google Cloud.
+Si ya tiene un conector puesto en marcha en su VPC de Google Cloud Platform, todo estará configurado. De lo contrario, tendrás que crear un conector BlueXP para realizar backups de los datos de ONTAP en el almacenamiento de Google Cloud. También tendrás que personalizar la configuración de red del conector para que pueda conectarse a Google Cloud.
 
 [role="quick-margin-para"]
 <<Prepare el conector BlueXP,Aprenda a crear un conector y a definir la configuración de red necesaria.>>

@@ -148,11 +148,11 @@ El Centro de notificación de BlueXP realiza un seguimiento del progreso de los 
 
 Además de ver las alertas en el Centro de notificaciones, puedes configurar BlueXP para que envíe ciertos tipos de notificaciones por correo electrónico como alertas, de modo que se te informe de la actividad importante del sistema incluso si no has iniciado sesión en el sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
 
-El Centro de notificaciones muestra numerosos eventos de snapshot, replicación, backup en cloud y restauración, pero solo los siguientes eventos activan alertas por correo electrónico:
+El Centro de notificaciones muestra numerosos eventos de snapshot, replicación, backup en cloud y restauración, pero solo ciertos eventos activan alertas por correo electrónico:
 
 [cols="1,2,1,1"]
 |===
-| Tipo de operación | Funcionamiento | Nivel de alerta | Correo electrónico enviado 
+| Tipo de operación | Evento | Nivel de alerta | Correo electrónico enviado 
 
 
 | Activación | Error en la activación de la copia de seguridad y la recuperación para el entorno de trabajo | Error | Sí 
