@@ -362,7 +362,7 @@ Puede optar por proteger los volúmenes de FlexVol o FlexGroup; sin embargo, no 
 [NOTE]
 ====
 * Puede activar un backup solo en un único volumen de FlexGroup a la vez.
-* Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Actualmente los volúmenes en el modo SnapLock Compliance no son compatibles).
+* Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Los volúmenes con el modo SnapLock Compliance requieren ONTAP 9,14 o posterior).
 
 
 ====
@@ -416,13 +416,19 @@ Para obtener información detallada sobre estas arquitecturas, consulte link:con
 . *Instantánea local*: Elija una política de Snapshot existente.
 +
 
-TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+TIP: Para crear una política personalizada, consulte
+link:task-create-policies-ontap.html["Crear una política"].
 
 . *Replicación*: Establezca las siguientes opciones:
 +
 ** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
 ** *Política de replicación*: Elija una política de replicación existente.
 
+
++
+
+TIP: Para crear una política personalizada, consulte
+link:task-create-policies-ontap.html["Crear una política"].
 
 . *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
 +
@@ -436,10 +442,11 @@ La clave de acceso y la clave secreta son las del usuario de IAM que se creó pa
 
 TIP: Al seleccionar el espacio IP correcto, se garantiza que el backup y la recuperación de BlueXP puedan configurar una conexión desde ONTAP a tu almacenamiento de objetos de StorageGRID.
 
-** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente.
+** *Política de copia de seguridad*: Seleccione una política existente de copia de seguridad para almacenamiento de objetos.
 +
 
-TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+TIP: Para crear una política personalizada, consulte
+link:task-create-policies-ontap.html["Crear una política"].
 
 +
 Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando _DataLock y Protección de ransomware_. _DataLock_ protege sus archivos de copia de seguridad de ser modificados o eliminados, y _Ransomware protection_ analiza sus archivos de copia de seguridad para buscar evidencia de un ataque de ransomware en sus archivos de copia de seguridad. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Obtenga más información acerca de los ajustes de DataLock disponibles"^].

@@ -312,7 +312,7 @@ Puede optar por proteger los volúmenes de FlexVol o FlexGroup; sin embargo, no 
 [NOTE]
 ====
 * Puede activar un backup solo en un único volumen de FlexGroup a la vez.
-* Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Actualmente los volúmenes en el modo SnapLock Compliance no son compatibles).
+* Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Los volúmenes con el modo SnapLock Compliance requieren ONTAP 9,14 o posterior).
 
 
 ====
@@ -386,6 +386,10 @@ TIP: Al seleccionar el espacio IP correcto, se garantiza que el backup y la recu
 +
 
 TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+
++
+
+TIP: Para crear una política personalizada usando la interfaz de usuario de, consulte link:task-create-policies-ontap.html["Crear una política"].
 
 
 

@@ -1,0 +1,195 @@
+---
+sidebar: sidebar 
+permalink: task-create-policies-ontap.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+summary: Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen el tipo de backup, la arquitectura de backup, los sistemas de almacenamiento y la frecuencia de backup. 
+---
+= Gestione políticas de backup para volúmenes de ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen la frecuencia de las copias de seguridad, el tiempo que se realiza la copia de seguridad y el número de archivos de copia de seguridad que se retienen.
+
+Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, debe crear la política antes de iniciar el asistente de activación.
+
+Para obtener más información sobre las políticas de backup predeterminadas proporcionadas, consulte link:concept-protection-journey.html["Planifica tu proceso de protección"].
+
+El backup y la recuperación de datos de BlueXP ofrece tres tipos de backups de los datos de ONTAP: Snapshots, replicaciones y backups en el almacenamiento de objetos. Sus políticas residen en ubicaciones diferentes debido a la arquitectura que se utiliza y al tipo de backup:
+
+[cols="25,25,25,25"]
+|===
+| Arquitectura | Ubicación de almacenamiento de la política de Snapshot | Ubicación de almacenamiento de la política de replicación | Backup en la ubicación de almacenamiento de políticas de objetos 
+
+
+| *Fan-out* | Primario | Secundario | Primario 
+
+
+| *Cascada* | Primario | Secundario | Secundario 
+|===
+Cree políticas de backup con las siguientes herramientas en función del entorno, sus preferencias y el tipo de protección:
+
+* Interfaz de usuario de BlueXP
+* Interfaz de usuario de System Manager
+* CLI de ONTAP
+
+
+
+TIP: Cuando utilice System Manager, seleccione *Asynchronous* como el tipo de política para las políticas de replicación y seleccione *Asynchronous* y *Back up to cloud* para realizar copias de seguridad en las políticas de objetos.
+
+
+
+== Ver políticas para un entorno de trabajo
+
+. En la interfaz de usuario de BlueXP, selecciona *Volúmenes* > *Configuración de copia de seguridad*.
+. En la página Configuración de copia de seguridad, seleccione el entorno de trabajo, seleccione las acciones * image:icon-action.png["El icono Actions"] Y seleccione *Administración de políticas*.
++
+Aparece la página Gestión de Políticas.
+
++
+image:screenshot_policies_management.png["Página de gestión de políticas"]
+
++
+Las políticas de Snapshot se muestran de forma predeterminada.
+
+. Para ver otras políticas que existen en el entorno de trabajo, seleccione *Políticas de replicación* o *Políticas de copia de seguridad*. Si las políticas existentes se pueden utilizar para sus planes de respaldo, está todo configurado. Si necesita tener una política con características diferentes, puede crear nuevas políticas desde esta página.
+
+
+
+
+== Cree una política de Snapshot
+
+Parte de su estrategia 3-2-1 implica la creación de una copia Snapshot del volumen en el sistema de almacenamiento * primario *.
+
+Parte del proceso de creación de políticas implica identificar etiquetas de Snapshot y SnapMirror que denoten la programación y retención. Puede utilizar etiquetas predefinidas o crear las suyas propias.
+
+.Pasos
+. En la página Policies, selecciona *Create new policy* > *Create snapshot policy*.
+. Escriba el nombre de la política.
+. Seleccione la programación de Snapshot o las programaciones. Puede tener un máximo de 5 etiquetas. O bien, cree una programación.
+. Si decide crear una programación:
++
+.. Seleccione la frecuencia horaria, diaria, semanal, mensual o anual.
+.. Especifique las etiquetas de Snapshot que indican la programación y la retención.
+.. Introduzca cuándo y con qué frecuencia se tomará la snapshot.
+.. Retention: Introduzca el número de Snapshots que se van a conservar.
+
+
+. Seleccione *Crear*.
+
+
+
+
+=== Ejemplo de política de Snapshot mediante arquitectura en cascada
+
+En este ejemplo, se crea una política de Snapshot con dos clústeres:
+
+. Clúster 1:
++
+.. Seleccione Cluster 1 en la página policy.
+.. Ignore las secciones de política Replicación y Copia de Seguridad en Objetos.
+.. Cree la política de Snapshot.
+
+
+. Clúster 2:
++
+.. Seleccione Cluster 2 en la página Policy.
+.. Ignore la sección Snapshot policy.
+.. Configure las políticas de replicación y backup en objetos.
+
+
+
+
+
+
+== Cree una política de replicación
+
+Su estrategia 3-2-1 podría incluir la replicación de un volumen en otro sistema de almacenamiento. La política de replicación reside en el sistema de almacenamiento *secundario*.
+
+.Pasos
+. En la página Políticas, selecciona *Crear nueva política* > *Crear nueva política de replicación*.
+. En la sección Policy Details, especifique el nombre de la política.
+. Especifique las etiquetas de SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
+. Especifique el programa de transferencia.
+. Seleccione *Crear*.
+
+
+
+
+== Cree una política de almacenamiento de backup en objetos
+
+Su estrategia 3-2-1 puede incluir realizar un backup de un volumen en un almacenamiento de objetos.
+
+Esta normativa de almacenamiento reside en diferentes ubicaciones del sistema de almacenamiento según la arquitectura de backup:
+
+* Fan-out: Sistema de almacenamiento principal
+* En cascada: Sistema de almacenamiento secundario
+
+
+.Pasos
+. En la página de administración de políticas, selecciona *Crear nueva política* > *Crear nueva política de copia de seguridad*.
+. En la sección Policy Details, especifique el nombre de la política.
+. Especifique las etiquetas de SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
+. Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.
+. (Opcional) Para mover archivos de copia de seguridad antiguos a una clase de almacenamiento o nivel de acceso más baratos después de un cierto número de días, seleccione la opción *Archive* e indique el número de días que deben transcurrir antes de que los datos se archiven.
++
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["Obtenga más información sobre la configuración de almacenamiento de archivado"].
+
+. (Opcional) Para evitar que sus copias de seguridad se modifiquen o eliminen, seleccione la opción *DataLock & Ransomware protection*.
++
+Si su clúster utiliza ONTAP 9.11.1 o posterior, puede optar por proteger sus backups de la eliminación configurando _DataLock_ y _Ransomware protection_.
+
++
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Obtenga más información acerca de los ajustes de DataLock disponibles"^].
+
+. Seleccione *Crear*.
+
+
+
+
+== Editar una política
+
+Puede editar una política de Snapshot, replicación o backup personalizada.
+
+El cambio en la política de backup afecta a todos los volúmenes que usan esa política.
+
+.Pasos
+. En la página de administración de políticas, seleccione la política, seleccione las acciones * image:icon-action.png["El icono Actions"] Y seleccione *Editar política*.
++
+
+NOTE: El proceso es el mismo para las políticas de replicación y backup.
+
+. En la página Edit Policy, realice los cambios.
+. Seleccione *Guardar*.
+
+
+
+
+== Eliminar una política
+
+Es posible eliminar políticas que no estén asociadas a ningún volumen.
+
+Si hay una política asociada con un volumen y desea eliminar la política, primero debe quitar la política del volumen.
+
+.Pasos
+. En la página de administración de políticas, seleccione la política, seleccione las acciones * image:icon-action.png["El icono Actions"] Y seleccione *Delete Snapshot policy*.
+. Seleccione *Eliminar*.
+
+
+
+
+== Obtenga más información
+
+Para obtener instrucciones sobre la creación de políticas con System Manager o la interfaz de línea de comandos de ONTAP, consulte lo siguiente:
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Cree una política de Snapshot mediante System Manager"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Cree una política de Snapshot mediante la CLI de ONTAP"^]
+https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Cree una política de replicación mediante System Manager"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Cree una política de replicación mediante la CLI de ONTAP"^]
+https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Cree un backup a la política de almacenamiento de objetos mediante System Manager"^]
+https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Cree un backup en la política de almacenamiento de objetos mediante la CLI de ONTAP"^]

@@ -193,7 +193,6 @@
   <block id="d461a54e93e8dcbd189b38f0ff2865bc" category="list-text">Volúmenes FlexVol de lectura y escritura</block>
   <block id="913b0ac6158d64b39b9d1e539ad326d3" category="list-text">Volúmenes de destino de protección de datos (DP) de SnapMirror</block>
   <block id="53356882cec477de26a5ac4371a30b82" category="list-text">SnapLock Enterprise Volumes (requiere ONTAP 9.11.1 o posterior)</block>
-  <block id="650c5c3b9794e3433e90f3f1f307a2c3" category="list-text">Actualmente, los volúmenes de SnapLock Compliance no son compatibles.</block>
   <block id="bab09e9304b5c4bff1eb4287ce6071b7" category="list-text">FlexGroup Volumes (requiere ONTAP 9.12.1 o posterior)</block>
   <block id="92524402c108ab284bc6798e0addc26d" category="inline-xref">Limitaciones de backup y restauración</block>
   <block id="459e9c0a518eab1d9e4ab7cdc89584d8" category="paragraph">Consulte las secciones de <block ref="253106289c94848c578475b45290aa80" category="inline-xref-macro-rx"></block> para requisitos y limitaciones adicionales.</block>
@@ -567,7 +566,6 @@
   <block id="53cfd5032381d05f65cbc6d64e0004f5" category="list-text">s3:GetObject</block>
   <block id="63c20717f207c238dd1a7f80b31c8b44" category="list-text">s3:PutBucketObjectLockConfiguration</block>
   <block id="0c1b0b85cf95eb29ecb3d5b774e010c2" category="list-text">s3:GetLifecycleConfiguration</block>
-  <block id="2720ba253382275ebb851de5d590b5cc" category="list-text">s3:ListBucketByTags</block>
   <block id="70c72880a06cb649d8a568819cf5e5d1" category="list-text">s3:GetBucketTagging</block>
   <block id="538e4e83b58b6bce3bde0ae671e33b67" category="list-text">s3:DeleteObjectVersion</block>
   <block id="30756eb77e955d4514eb285a2d31ee73" category="list-text">s3:ListBucketVersions</block>
@@ -3720,7 +3718,6 @@ No se conservan todos los datos escritos en el volumen de origen original entre 
   <block id="0d8299302957cb3fba22b94473c12c7d" category="paragraph">Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en lugar de utilizar las claves de cifrado predeterminadas gestionadas por Google. Se admiten tanto claves entre regiones como entre proyectos, por lo que puede elegir un proyecto para un depósito que sea diferente al proyecto de la clave CMEK.</block>
   <block id="309939239d7103f08e00804428d22284" category="paragraph">Si planea utilizar sus propias claves gestionadas por el cliente:</block>
   <block id="8b9e35eb97786c146adac12f589d404b" category="paragraph">Si el destino de Google Cloud Storage para sus copias de seguridad existe como un entorno de trabajo en Canvas, puede arrastrar el clúster de ONTAP al almacenamiento de objetos de Google Cloud.</block>
-  <block id="ce60c44daed8a68a91ece5b6596057cc" category="list-text">Seleccione *Volúmenes* en la barra Copia de seguridad y recuperación. En la pestaña Volúmenes, seleccione la opción *Acciones (...)* y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tenga la replicación o copia de seguridad en el almacenamiento de objetos ya habilitados). .</block>
   <block id="6726285215cd3fb82b2bc565d1c05a91" category="list-text">*Cascading*: La información fluye de lo primario a lo secundario y de lo secundario al almacenamiento de objetos.</block>
   <block id="cd20fb22a544b75dcfdc55e676a57177" category="list-text">*Fan Out*: La información fluye del primario al secundario _and_ del almacenamiento primario al objeto.</block>
   <block id="62f87cf8c16c2da5d5b4f260c306b995" category="paragraph">Cree un nuevo depósito o seleccione uno que ya haya creado.</block>
@@ -3730,7 +3727,6 @@ No se conservan todos los datos escritos en el volumen de origen original entre 
   <block id="351ef22e858cc4f3282062dfc08b26c6" category="admonition">Si eligió una cuenta de almacenamiento de Google Cloud existente, la información de cifrado ya está disponible, por lo que no necesita ingresarla ahora.</block>
   <block id="e0278e3316b81b329baced2d53dcdc63" category="paragraph">Si decide utilizar sus propias claves gestionadas por el cliente, introduzca el timbre y el nombre de la clave.<block ref="f8e0e63bffb58004a25f7278cd43c42c" category="inline-link-rx"></block>.</block>
   <block id="5ff1fe0a088aed28b3f32142c788c3d5" category="list-text">*Networking*: Elige el espacio IP.</block>
-  <block id="880f6f7d5949be70d701b695256a4761" category="admonition">Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP. Consulte &lt;link&gt;.</block>
   <block id="bf125f3150943c9c18a4cd821384babe" category="paragraph">Se crea un volumen replicado en el clúster de destino que se sincronizará con el volumen de origen.</block>
   <block id="a3c584a28c3b65e7dd15a0fab91559ce" category="paragraph">Se crea automáticamente un bloque de Google Cloud Storage en la cuenta de servicio indicada por la clave de acceso de Google y la clave secreta introducida; además, los archivos de backup se almacenan allí. La consola de backup de volumen se muestra para poder supervisar el estado de los backups.</block>
   <block id="be7c136f5c48ebfb72acc7a3f7f76696" category="doc">Realice backup de los datos de Cloud Volumes ONTAP en Amazon S3</block>
@@ -4311,7 +4307,6 @@ Se requiere ONTAP 9.9.1 y versiones posteriores para los sistemas Cloud Volumes 
   <block id="51c1c5aa077ac8366955ff0cfc3e181a" category="paragraph">Elija los volúmenes que desea proteger. Un volumen protegido es uno que tiene uno o varios de los siguientes: Política de Snapshot, política de replicación, backup en política de objetos.</block>
   <block id="e16bee3ecafb1ee1c54b43ad85dd8215" category="inline-link-macro">active el backup para volúmenes adicionales en el entorno de trabajo</block>
   <block id="bb3015339c2686a35dc74324b8e4e4ea" category="paragraph">Puede optar por proteger los volúmenes de FlexVol o FlexGroup; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar el backup para un entorno de trabajo. Descubra cómo <block ref="d59114f3cd03b41fa3f830654247699f" category="inline-link-macro-rx"></block> (FlexVol o FlexGroup) después de configurar el backup de los volúmenes iniciales.</block>
-  <block id="6af8d284e8fb7d947e52105e66ccd610" category="list-text">Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Actualmente los volúmenes en el modo SnapLock Compliance no son compatibles).</block>
   <block id="cc54d40dc91fd9f2adf463d5e6a20e64" category="paragraph">Tenga en cuenta que si los volúmenes que elija ya tienen aplicadas políticas de Snapshot o de replicación, las políticas que seleccione más adelante sobrescribirán estas políticas existentes.</block>
   <block id="faf9e3428a892363316a8c1e34a4551b" category="list-text">Opcionalmente, filtre las filas para mostrar solo los volúmenes con ciertos tipos de volumen, estilos y más para facilitar la selección.</block>
   <block id="0e118ce24ee3412ae2c2aa20c222f02f" category="list-text">Después de seleccionar el primer volumen, puede seleccionar All FlexVol Volumes (los volúmenes de FlexGroup se pueden seleccionar de uno por vez solo). Para realizar un backup de todos los volúmenes FlexVol existentes, active primero un volumen y, a continuación, marque la casilla en la fila del título. (<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>).</block>
@@ -4362,7 +4357,6 @@ ifdef::aws[]</block>
   <block id="470964c6383a21c37ec7c78148306066" category="list-text">Para ONTAP S3, el conector se puede implementar en sus instalaciones (con o sin acceso a Internet) o en un entorno de proveedor de cloud</block>
   <block id="f19394f3b7f64df50fbe3cf08b518aa3" category="list-text">Cuando se restaure desde ONTAP S3, introduzca el FQDN del servidor ONTAP S3 y el puerto que ONTAP debe utilizar para la comunicación HTTPS con ONTAP S3, seleccione la clave de acceso y la clave secreta necesarias para acceder al almacenamiento de objetos. y el espacio IP del clúster de ONTAP donde residirá el volumen de destino.</block>
   <block id="6b2e325b80840b0a9d8b16c541de5ba2" category="list-text">Puede restaurar una carpeta o archivos individuales solo desde un archivo de backup en el almacenamiento de objetos en este momento. Actualmente no es posible restaurar archivos y carpetas desde una copia Snapshot local ni desde un archivo de backup que se encuentra en un entorno de trabajo secundario (un volumen replicado).</block>
-  <block id="74869d9e98fa5c8ed15010d55dad05c7" category="list-text">Actualmente, no se admite la restauración de archivos y carpetas desde volúmenes en el almacenamiento de objetos de ONTAP S3.</block>
   <block id="24ac68c9fd3a2031d9d90480b0b100c4" category="list-text">Actualmente, no se admite la restauración de carpetas desde los volúmenes en el almacenamiento de objetos de ONTAP S3.</block>
   <block id="6f09a8c8e8b4f8b3acf1f96e43dca354" category="list-text">Requisitos de StorageGRID y ONTAP S3:</block>
   <block id="8100b28bcfd3e23e2256df4e160ffe93" category="list-text">Para los backups almacenados en StorageGRID o ONTAP S3, se aprovisiona el espacio en el conector o en el entorno del proveedor de cloud.</block>
@@ -4473,4 +4467,118 @@ ONTAP S3</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">Evento</block>
   <block id="94798620994cb827b675957027c80437" category="paragraph">Debido a una mejora importante de la seguridad, su conector ahora requiere acceso saliente a Internet a un punto final adicional para administrar los recursos de copia de seguridad y recuperación dentro de su entorno de nube pública. Si este punto final no se ha agregado a la lista de permitidos en su firewall, verá un error en la interfaz de usuario sobre el servicio no disponible o el error al determinar el estado del servicio:</block>
   <block id="300f031c227ed1b4448a8bb51abec2bb" category="paragraph">\https://netapp-cloud-account.auth0.com</block>
+  <block id="809c75c03a253c08bfaa32177821bc49" category="list-text">Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Los volúmenes con el modo SnapLock Compliance requieren ONTAP 9,14 o posterior).</block>
+  <block id="437f900a689b3effaba13525bf426e50" category="inline-link-macro">Crear una política</block>
+  <block id="e4847718f673436ca61df1d6ff85e9ad" category="admonition">Para crear una política personalizada usando la interfaz de usuario de, consulte <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>.</block>
+  <block id="63ded913a4470920f93edd534ec90156" category="section-title">11 de septiembre de 2023</block>
+  <block id="101143ec501ddd03e76bf93ad136c2de" category="section-title">Gestión de nuevas políticas para datos de ONTAP</block>
+  <block id="d3744875712ea1e210c10ab00d139b5b" category="paragraph">Esta versión incluye la capacidad dentro de la interfaz de usuario de crear políticas Snapshot personalizadas, políticas de replicación y políticas para backups en el almacenamiento de objetos para los datos de ONTAP.</block>
+  <block id="99a56480b438dfe7afa3558f8c8e61d0" category="inline-link">Obtenga más información sobre las políticas</block>
+  <block id="53a26cd89d8676b12d682e92f9b49a79" category="paragraph"><block ref="99a3bdb35a901d86516bb48e573064a3" category="inline-link-rx"></block>.</block>
+  <block id="90bd868a90cdf44166755a0fdec24b6e" category="section-title">Soporte para restaurar archivos y carpetas a partir de volúmenes en el almacenamiento de objetos ONTAP S3</block>
+  <block id="efec702225db296adcaac3abb0665451" category="paragraph">Anteriormente, no era posible restaurar archivos y carpetas con la función «Examinar y restaurar» cuando se realizaban backups de volúmenes en el almacenamiento de objetos de ONTAP S3. Esta versión elimina esa restricción.</block>
+  <block id="38da59f967f6f913365cf5cefb459344" category="inline-link">Obtenga más información sobre la restauración de datos</block>
+  <block id="7b3040066d7e59383891bdcb2977076f" category="paragraph"><block ref="bfc7bc1f2f7fff3212c093c1fc6b6317" category="inline-link-rx"></block>.</block>
+  <block id="52cc7bb26d5185a2c3b92b71a3d6e319" category="section-title">Compatibilidad adicional para realizar backups y restaurar volúmenes de SnapLock</block>
+  <block id="4cb4cd292be9258bfc850d1aa644d9f6" category="paragraph">Ahora, los backups y la recuperación de datos pueden realizar backups de los volúmenes de FlexVol y FlexGroup que se configuren mediante los modos de protección SnapLock Compliance o SnapLock Enterprise. Los clústeres deben ejecutar ONTAP 9,14 o superior para esta compatibilidad. El backup de los volúmenes de FlexVol con el modo SnapLock Enterprise se admite desde la versión 9.11.1 de ONTAP. Las versiones anteriores de ONTAP no ofrecen compatibilidad para realizar backups de volúmenes de protección de SnapLock.</block>
+  <block id="115e674b1dc0942f53bc91e279bbd7eb" category="inline-link">Obtenga más información sobre la protección de datos de ONTAP</block>
+  <block id="5ea7c922bf64f9c4520ccdf833e34e39" category="paragraph"><block ref="287ce1c3ffcd9fd04ac3fb9608fef690" category="inline-link-rx"></block>.</block>
+  <block id="7b666c0edc9876b87778d0969629cfbf" category="list-text">Seleccione *Volúmenes* en la barra Copia de seguridad y recuperación. En la pestaña Volúmenes, selecciona las *Acciones* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tiene replicación o copia de seguridad en el almacenamiento de objetos ya activado).</block>
+  <block id="fee16c8f65e9221b33938ce4c94bb0de" category="admonition">Para crear una política personalizada, consulte <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>.</block>
+  <block id="c1e74c6339bd5a7ce0c8f49560afe41d" category="list-text">*Política de copia de seguridad*: Seleccione una política existente de copia de seguridad para almacenamiento de objetos.</block>
+  <block id="718dfdf9ba4cd59f98163d4d75844472" category="list-text">Volúmenes de cumplimiento de normativas de SnapLock (requiere ONTAP 9,14 o posterior)</block>
+  <block id="ef8c31bba1fe5a62e7a6cfedbb9d29da" category="summary">Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen el tipo de backup, la arquitectura de backup, los sistemas de almacenamiento y la frecuencia de backup.</block>
+  <block id="defb6c38e16057d80b8b116a92ab8665" category="doc">Gestione políticas de backup para volúmenes de ONTAP</block>
+  <block id="7ee9b8ccc530c51b1215b5f1266eee5e" category="paragraph">Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen la frecuencia de las copias de seguridad, el tiempo que se realiza la copia de seguridad y el número de archivos de copia de seguridad que se retienen.</block>
+  <block id="1023513b30fa21977b0dbd6b2e65992c" category="paragraph">Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, debe crear la política antes de iniciar el asistente de activación.</block>
+  <block id="c5e61d7841bf9a1c1ef625157d503535" category="paragraph">Para obtener más información sobre las políticas de backup predeterminadas proporcionadas, consulte <block ref="26e6d65b3efbcdaf9fdb0f41b6ffe1ab" category="inline-link-macro-rx"></block>.</block>
+  <block id="bea7279384d85082d745d10903672658" category="paragraph">El backup y la recuperación de datos de BlueXP ofrece tres tipos de backups de los datos de ONTAP: Snapshots, replicaciones y backups en el almacenamiento de objetos. Sus políticas residen en ubicaciones diferentes debido a la arquitectura que se utiliza y al tipo de backup:</block>
+  <block id="9c2cf3d903ec11e031aac200337d550f" category="cell">Ubicación de almacenamiento de la política de Snapshot</block>
+  <block id="03cef7774b631377e1518e05ea03e5f0" category="cell">Ubicación de almacenamiento de la política de replicación</block>
+  <block id="47678324688906f6896f307bc4023541" category="cell">Backup en la ubicación de almacenamiento de políticas de objetos</block>
+  <block id="1be22c5f78f317083889cb6e2929d752" category="paragraph">Cree políticas de backup con las siguientes herramientas en función del entorno, sus preferencias y el tipo de protección:</block>
+  <block id="4539bbf69cf6212ec275958c8953cb21" category="list-text">Interfaz de usuario de BlueXP</block>
+  <block id="4b5f4ae9ecbdcd94e894932f499d9381" category="list-text">Interfaz de usuario de System Manager</block>
+  <block id="de134183bea5df515a6756a539ce6f18" category="list-text">CLI de ONTAP</block>
+  <block id="9ea44de032373e29ccec8880ba060c49" category="admonition">Cuando utilice System Manager, seleccione *Asynchronous* como el tipo de política para las políticas de replicación y seleccione *Asynchronous* y *Back up to cloud* para realizar copias de seguridad en las políticas de objetos.</block>
+  <block id="7677a1d2704f93f5cc1c8fd7d26f85d3" category="section-title">Ver políticas para un entorno de trabajo</block>
+  <block id="72fb2dcef5a06d29aaae7643f0eb8635" category="list-text">En la interfaz de usuario de BlueXP, selecciona *Volúmenes* &gt; *Configuración de copia de seguridad*.</block>
+  <block id="5af3f75fe74a0c63676cb0ebc8ea40bb" category="list-text">En la página Configuración de copia de seguridad, seleccione el entorno de trabajo, seleccione las acciones * <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Y seleccione *Administración de políticas*.</block>
+  <block id="ad1858c9b18af8cbe0b4325833b61ce0" category="paragraph">Aparece la página Gestión de Políticas.</block>
+  <block id="e3b8283edc07b71aba66f3cad9a2de47" category="inline-image-macro">Página de gestión de políticas</block>
+  <block id="296b9ff4c428eb1b284df172e8f937be" category="paragraph"><block ref="296b9ff4c428eb1b284df172e8f937be" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0829ebf3236644a786e081485a185704" category="paragraph">Las políticas de Snapshot se muestran de forma predeterminada.</block>
+  <block id="490ebe8423732c19d7c4ed267db26f2f" category="list-text">Para ver otras políticas que existen en el entorno de trabajo, seleccione *Políticas de replicación* o *Políticas de copia de seguridad*. Si las políticas existentes se pueden utilizar para sus planes de respaldo, está todo configurado. Si necesita tener una política con características diferentes, puede crear nuevas políticas desde esta página.</block>
+  <block id="8fb446fc6204f4002da66fd95a8ebf7d" category="section-title">Cree una política de Snapshot</block>
+  <block id="cbad557bcb30ebd6fc0cb19c52d98918" category="paragraph">Parte de su estrategia 3-2-1 implica la creación de una copia Snapshot del volumen en el sistema de almacenamiento * primario *.</block>
+  <block id="87d7b16c83e147764f7157c544e8b1f0" category="paragraph">Parte del proceso de creación de políticas implica identificar etiquetas de Snapshot y SnapMirror que denoten la programación y retención. Puede utilizar etiquetas predefinidas o crear las suyas propias.</block>
+  <block id="5bbd322028180cb2d9c51ea786314b04" category="list-text">En la página Policies, selecciona *Create new policy* &gt; *Create snapshot policy*.</block>
+  <block id="b7eb033e2f95b4885d2ab78242e53701" category="list-text">Escriba el nombre de la política.</block>
+  <block id="8ea6a94b6e34dd5df6320e7e8b8a2514" category="list-text">Seleccione la programación de Snapshot o las programaciones. Puede tener un máximo de 5 etiquetas. O bien, cree una programación.</block>
+  <block id="4b97d1b547dd6a60145647bd089cb09b" category="list-text">Si decide crear una programación:</block>
+  <block id="7106575767318bcd310114183d6baad1" category="list-text">Seleccione la frecuencia horaria, diaria, semanal, mensual o anual.</block>
+  <block id="e44b517397b0ade092a5c512079728c8" category="list-text">Especifique las etiquetas de Snapshot que indican la programación y la retención.</block>
+  <block id="0779f4f56c0897ff7ffb03c6b275ee51" category="list-text">Introduzca cuándo y con qué frecuencia se tomará la snapshot.</block>
+  <block id="f5ed7a849165313457c0aac7b3379f97" category="list-text">Retention: Introduzca el número de Snapshots que se van a conservar.</block>
+  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">Seleccione *Crear*.</block>
+  <block id="8bddac47f7f2312dbc2c31cf92766f2b" category="section-title">Ejemplo de política de Snapshot mediante arquitectura en cascada</block>
+  <block id="ab3e57896123f7580b91c4f58922e7db" category="paragraph">En este ejemplo, se crea una política de Snapshot con dos clústeres:</block>
+  <block id="dc30a10b7f3dac3bcce7b54e12502e89" category="list-text">Clúster 1:</block>
+  <block id="021a6f1742e889f9d4e45828420cb0cf" category="list-text">Seleccione Cluster 1 en la página policy.</block>
+  <block id="6bb6c0bda8ce0184ecb36d092b4d1e63" category="list-text">Ignore las secciones de política Replicación y Copia de Seguridad en Objetos.</block>
+  <block id="1714f47626850cab3042950c5841ba26" category="list-text">Cree la política de Snapshot.</block>
+  <block id="83655cf6beab33b344c9ae17bec532d0" category="list-text">Clúster 2:</block>
+  <block id="e2db720dd9637e04a09a88a6c179ea4c" category="list-text">Seleccione Cluster 2 en la página Policy.</block>
+  <block id="0ef5b185a636e8d973f33fc4c87833bd" category="list-text">Ignore la sección Snapshot policy.</block>
+  <block id="8dd072d2922c8edc60aa60c9bc0cdc46" category="list-text">Configure las políticas de replicación y backup en objetos.</block>
+  <block id="b67380033d7d5bdab053c0dad43a80c0" category="section-title">Cree una política de replicación</block>
+  <block id="3dec072d7e14f395b6012bebe3b45fad" category="paragraph">Su estrategia 3-2-1 podría incluir la replicación de un volumen en otro sistema de almacenamiento. La política de replicación reside en el sistema de almacenamiento *secundario*.</block>
+  <block id="a279488f43a48271cf71b391369880a3" category="list-text">En la página Políticas, selecciona *Crear nueva política* &gt; *Crear nueva política de replicación*.</block>
+  <block id="82927e590f678cf898b673e8ed85274d" category="list-text">Especifique las etiquetas de SnapMirror (máximo de 5) que indican la retención de cada etiqueta.</block>
+  <block id="d034072367cfae53d523d1b9d4c614d7" category="list-text">Especifique el programa de transferencia.</block>
+  <block id="f578bfb9ea0e0cda707a0426ef4bdd1e" category="section-title">Cree una política de almacenamiento de backup en objetos</block>
+  <block id="4a9a4e09559bd837deb6b0db0f17b586" category="paragraph">Su estrategia 3-2-1 puede incluir realizar un backup de un volumen en un almacenamiento de objetos.</block>
+  <block id="1a730740674df2bc24af9ce2e66da7df" category="paragraph">Esta normativa de almacenamiento reside en diferentes ubicaciones del sistema de almacenamiento según la arquitectura de backup:</block>
+  <block id="7c8ffe07bb7dc70647a194385ea66773" category="list-text">Fan-out: Sistema de almacenamiento principal</block>
+  <block id="96ab2d22b4464dc324915df8e5067ca9" category="list-text">En cascada: Sistema de almacenamiento secundario</block>
+  <block id="868680c8c14bb13ca00e6f4892aeb3c3" category="list-text">En la página de administración de políticas, selecciona *Crear nueva política* &gt; *Crear nueva política de copia de seguridad*.</block>
+  <block id="bfd2bf5ca91b1984485de4fe52e739a9" category="list-text">Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.</block>
+  <block id="ddb011fe917012a700049a04ecd807d0" category="list-text">(Opcional) Para mover archivos de copia de seguridad antiguos a una clase de almacenamiento o nivel de acceso más baratos después de un cierto número de días, seleccione la opción *Archive* e indique el número de días que deben transcurrir antes de que los datos se archiven.</block>
+  <block id="88b38144f5678f838e589bb3f66fb7c3" category="inline-link">Obtenga más información sobre la configuración de almacenamiento de archivado</block>
+  <block id="2f06c0f9a9c55e002f0fca564655709f" category="paragraph"><block ref="2b8c84e24d5058cbeba0f5b8c6d03c2f" category="inline-link-rx"></block>.</block>
+  <block id="de7befde4d7cc6f9bdfc275272097393" category="list-text">(Opcional) Para evitar que sus copias de seguridad se modifiquen o eliminen, seleccione la opción *DataLock &amp; Ransomware protection*.</block>
+  <block id="2d9688ca19f23219c0b4f9a9455f77b5" category="paragraph">Si su clúster utiliza ONTAP 9.11.1 o posterior, puede optar por proteger sus backups de la eliminación configurando _DataLock_ y _Ransomware protection_.</block>
+  <block id="8b8b4afe72e073cb2f31b19794927e17" category="paragraph"><block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>.</block>
+  <block id="fb6e9d876191a4c0c156e739e377be59" category="section-title">Editar una política</block>
+  <block id="b633d734395141aa32f026fd1762bc20" category="paragraph">Puede editar una política de Snapshot, replicación o backup personalizada.</block>
+  <block id="dab1e1444e686afc30710bb64ca8164a" category="paragraph">El cambio en la política de backup afecta a todos los volúmenes que usan esa política.</block>
+  <block id="4285bd228d80d45d4b3b9af468f2244e" category="list-text">En la página de administración de políticas, seleccione la política, seleccione las acciones * <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Y seleccione *Editar política*.</block>
+  <block id="34297ffa69670c3dc8b036dedd867ac3" category="admonition">El proceso es el mismo para las políticas de replicación y backup.</block>
+  <block id="58a58cd0a42d2dd49b74b06f28da7dda" category="list-text">En la página Edit Policy, realice los cambios.</block>
+  <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">Seleccione *Guardar*.</block>
+  <block id="8b6af900279ab887f7d317420c8ef15c" category="section-title">Eliminar una política</block>
+  <block id="75ce7dc717739caa5a73dc6d99a13b85" category="paragraph">Es posible eliminar políticas que no estén asociadas a ningún volumen.</block>
+  <block id="8e387edf6d63170eca6d1d1b9175d85b" category="paragraph">Si hay una política asociada con un volumen y desea eliminar la política, primero debe quitar la política del volumen.</block>
+  <block id="7c8a6ef0dcbcbfb263df1c751ccb1918" category="list-text">En la página de administración de políticas, seleccione la política, seleccione las acciones * <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Y seleccione *Delete Snapshot policy*.</block>
+  <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">Seleccione *Eliminar*.</block>
+  <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">Obtenga más información</block>
+  <block id="739525550bd3f8378558eb1d87764bde" category="paragraph">Para obtener instrucciones sobre la creación de políticas con System Manager o la interfaz de línea de comandos de ONTAP, consulte lo siguiente:</block>
+  <block id="4a7bfaa61b260e84e240b222e517825e" category="inline-link">Cree una política de Snapshot mediante System Manager</block>
+  <block id="18f722142cf1242ec6d2b1e76122b14a" category="inline-link">Cree una política de Snapshot mediante la CLI de ONTAP</block>
+  <block id="9d089a52567a29f4f420f7f2f76246ac" category="inline-link">Cree un backup a la política de almacenamiento de objetos mediante System Manager</block>
+  <block id="fb258284d7569744ca758873d339532b" category="inline-link">Cree un backup en la política de almacenamiento de objetos mediante la CLI de ONTAP</block>
+  <block id="bc7ba4c7d62d6d4917e638edbc43dbb5" category="paragraph"><block ref="1d5508fcd8027e26b48962bd984558d5" category="inline-link-rx"></block>
+<block ref="25d9216966497b44f1274c2fdc3f62ee" category="inline-link-rx"></block>
+<block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
+<block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
+<block ref="ab2445e139747cf732d46d877cc62a64" category="inline-link-rx"></block>
+<block ref="9c225a8772c7b3c40b62701739b123cf" category="inline-link-rx"></block></block>
+  <block id="b58c28277f6391f0fef677b518977600" category="list-text">Seleccione *Volúmenes* en la barra Copia de seguridad y recuperación. En la pestaña Volúmenes, selecciona las *Acciones* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tiene replicación o copia de seguridad en el almacenamiento de objetos ya activado). .</block>
+  <block id="fd3268ccfb501d98109da6d282e89db0" category="list-text">Seleccione *Volúmenes* en la barra Copia de seguridad y recuperación. En la pestaña Volúmenes, selecciona las *Acciones* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Icono y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tiene replicación o copia de seguridad en el almacenamiento de objetos ya activado).</block>
+  <block id="78720f30e58d9a141f5d550176409702" category="admonition">Para crear una política personalizada, consulte <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>..</block>
+  <block id="311000e4ce9d283fb43e8211781ee9e3" category="list-text">Seleccione *Volúmenes* en la barra Copia de seguridad y recuperación. En la pestaña Volúmenes, selecciona las *Acciones* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> Y seleccione *Activar copia de seguridad* para un solo volumen (que aún no tiene replicación o copia de seguridad en el almacenamiento de objetos ya activado).</block>
+  <block id="e89b128dbf2037e11616e345055bbd03" category="list-text">Los volúmenes que seleccione deben tener la misma configuración de SnapLock. Todos los volúmenes deben tener SnapLock Enterprise habilitado o SnapLock deshabilitado. (Los volúmenes con el modo SnapLock Compliance no son compatibles actualmente requieren ONTAP 9,14 o posterior).</block>
+  <block id="33846815732f0a61e794b0e44401b00f" category="admonition">Para crear una política personalizada, consulte
+<block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>.</block>
+  <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">Gestione políticas para volúmenes de ONTAP</block>
 </blocks>

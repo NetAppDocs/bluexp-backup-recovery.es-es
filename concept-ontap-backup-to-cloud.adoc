@@ -179,13 +179,10 @@ Tenga en cuenta que las referencias a "sistemas ONTAP en las instalaciones" incl
 El backup y la recuperación de BlueXP admiten los siguientes tipos de volúmenes:
 
 * Volúmenes FlexVol de lectura y escritura
-* Volúmenes de destino de protección de datos (DP) de SnapMirror
-* SnapLock Enterprise Volumes (requiere ONTAP 9.11.1 o posterior)
-+
-** Actualmente, los volúmenes de SnapLock Compliance no son compatibles.
-
-
 * FlexGroup Volumes (requiere ONTAP 9.12.1 o posterior)
+* SnapLock Enterprise Volumes (requiere ONTAP 9.11.1 o posterior)
+* Volúmenes de cumplimiento de normativas de SnapLock (requiere ONTAP 9,14 o posterior)
+* Volúmenes de destino de protección de datos (DP) de SnapMirror
 
 
 Consulte las secciones de <<Limitaciones,Limitaciones de backup y restauración>> para requisitos y limitaciones adicionales.

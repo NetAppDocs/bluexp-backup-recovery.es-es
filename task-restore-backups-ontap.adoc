@@ -16,11 +16,10 @@ summary: Los backups de tus datos de volúmenes de ONTAP están disponibles desd
 [role="lead"]
 Los backups de tus datos de volúmenes de ONTAP están disponibles desde las ubicaciones donde se crearon los backups: Copias Snapshot, volúmenes replicados y backups almacenados en el almacenamiento de objetos. Es posible restaurar datos desde un momento específico desde cualquiera de estas ubicaciones de backups. Es posible restaurar un volumen completo de ONTAP desde un archivo de backup, o bien, si solo necesita restaurar unos pocos archivos, puede restaurar una carpeta o archivos individuales.
 
-Puede restaurar un *volumen* (como un volumen nuevo) al entorno de trabajo original, a un entorno de trabajo diferente que utiliza la misma cuenta de cloud o a un sistema ONTAP local.
+* Puede restaurar un *volumen* (como un volumen nuevo) al entorno de trabajo original, a un entorno de trabajo diferente que utiliza la misma cuenta de cloud o a un sistema ONTAP local.
+* Puede restaurar una carpeta ** en un volumen del entorno de trabajo original, en un volumen de un entorno de trabajo diferente que utiliza la misma cuenta de cloud o en un volumen de un sistema ONTAP local.
+* Puede restaurar *archivos* en un volumen del entorno de trabajo original, en un volumen de un entorno de trabajo diferente que utiliza la misma cuenta de cloud o en un volumen de un sistema ONTAP local.
 
-Puede restaurar una carpeta ** en un volumen del entorno de trabajo original, en un volumen de un entorno de trabajo diferente que utiliza la misma cuenta de cloud o en un volumen de un sistema ONTAP local.
-
-Puede restaurar *archivos* en un volumen del entorno de trabajo original, en un volumen de un entorno de trabajo diferente que utiliza la misma cuenta de cloud o en un volumen de un sistema ONTAP local.
 
 Se requiere una licencia válida de backup y recuperación de BlueXP para restaurar los datos desde los archivos de backup a un sistema de producción.
 
@@ -313,13 +312,9 @@ Tenga en cuenta que la restauración de un volumen a partir de un archivo de bac
 
 Si solo necesita restaurar algunos archivos desde un backup de volumen de ONTAP, puede optar por restaurar una carpeta o archivos individuales en lugar de restaurar el volumen completo. Es posible restaurar carpetas y archivos a un volumen existente en el entorno de trabajo original o a un entorno de trabajo diferente que utilice la misma cuenta de cloud. También puede restaurar carpetas y archivos en un volumen de un sistema ONTAP en las instalaciones.
 
-[NOTE]
-====
-* Puede restaurar una carpeta o archivos individuales solo desde un archivo de backup en el almacenamiento de objetos en este momento. Actualmente no es posible restaurar archivos y carpetas desde una copia Snapshot local ni desde un archivo de backup que se encuentra en un entorno de trabajo secundario (un volumen replicado).
-* Actualmente, no se admite la restauración de archivos y carpetas desde volúmenes en el almacenamiento de objetos de ONTAP S3.
 
+NOTE: Puede restaurar una carpeta o archivos individuales solo desde un archivo de backup en el almacenamiento de objetos en este momento. Actualmente no es posible restaurar archivos y carpetas desde una copia Snapshot local ni desde un archivo de backup que se encuentra en un entorno de trabajo secundario (un volumen replicado).
 
-====
 Si selecciona varios archivos, todos los archivos se restauran en el mismo volumen de destino que se elija. Por lo tanto, si desea restaurar archivos en diferentes volúmenes, deberá ejecutar el proceso de restauración varias veces.
 
 Si utiliza ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos los archivos y subcarpetas dentro de ella. Cuando se utiliza una versión de ONTAP anterior a la 9.13.0, solo se restauran los archivos de esa carpeta, no se restauran ni las subcarpetas ni los archivos de esas carpetas.

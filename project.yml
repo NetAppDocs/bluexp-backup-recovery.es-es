@@ -46,6 +46,8 @@ sidebar:
       url: "/concept-ontap-backup-to-cloud.html"
     - title: Planifica tu proceso de protección
       url: "/concept-protection-journey.html"
+    - title: Gestione políticas para volúmenes de ONTAP
+      url: "/task-create-policies-ontap.html"
     - title: Realice el backup de Cloud Volumes ONTAP en Amazon S3
       flavor: aws
       url: "/task-backup-to-s3.html"
