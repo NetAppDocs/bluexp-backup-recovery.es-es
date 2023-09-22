@@ -306,9 +306,9 @@ Anteriormente, cuando restauró una carpeta, solo se restauran los archivos de e
 
 
 
-=== Capacidad para realizar backups de datos de sistemas Cloud Volumes ONTAP en sitios oscuros
+=== Capacidad para realizar backups de datos de sistemas Cloud Volumes ONTAP en ubicaciones con conectividad saliente limitada
 
-Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS y Azure en Amazon S3 o Azure Blob. Para ello, es necesario instalar el conector en un host Linux de la región comercial y que también se ponga en marcha el sistema Cloud Volumes ONTAP. Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS y Azure en Amazon S3 o Azure Blob. Esto requiere que instale el conector en modo restringido en un host Linux en la región comercial, y que también implemente el sistema Cloud Volumes ONTAP allí. Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Realizar backups de los datos de Cloud Volumes ONTAP en Amazon S3"] y.. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Realizar backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 
