@@ -70,8 +70,6 @@ sidebar:
       url: "/task-backup-onprem-to-ontap-s3.html"
     - title: Realice backup en las instalaciones de ONTAP en StorageGRID
       url: "/task-backup-onprem-private-cloud.html"
-    - title: Realice un backup del ONTAP en las instalaciones a ONTAP S3
-      url: "/task-backup-onprem-to-ontap-s3.html"
     - title: Gestión de backups de ONTAP
       url: "/task-manage-backups-ontap.html"
     - title: Restaurar desde backups de ONTAP
@@ -250,30 +248,28 @@ homepage:
       url: task-report-inventory.html
   - title: Realice backups de los datos de ONTAP en el cloud
     links:
-    - title: De Cloud Volumes ONTAP a Amazon S3
+    - title: Realice el backup de Cloud Volumes ONTAP en Amazon S3
       url: task-backup-to-s3.html
       flavor: aws
-    - title: De Cloud Volumes ONTAP a Azure Blob
+    - title: Realice un backup de Cloud Volumes ONTAP en Azure Blob
       url: task-backup-to-azure.html
       flavor: azure
-    - title: De Cloud Volumes ONTAP a Google Cloud
+    - title: Realice backups de Cloud Volumes ONTAP en Google Cloud
       url: task-backup-to-gcp.html
       flavor: gcp
-    - title: ONTAP en las instalaciones a Amazon S3
+    - title: Realice backup de la ONTAP local en Amazon S3
       url: task-backup-onprem-to-aws.html
       flavor: aws
-    - title: ONTAP en las instalaciones a Azure Blob
+    - title: Backup de ONTAP en las instalaciones a Azure Blob
       url: task-backup-onprem-to-azure.html
       flavor: azure
-    - title: ONTAP en las instalaciones a Google Cloud
+    - title: Realice backup en las instalaciones de ONTAP en Google Cloud
       url: task-backup-onprem-to-gcp.html
       flavor: gcp
-    - title: De ONTAP en las instalaciones a ONTAP S3
+    - title: Realice un backup del ONTAP en las instalaciones a ONTAP S3
       url: task-backup-onprem-to-ontap-s3.html
-    - title: ONTAP en las instalaciones a StorageGRID
+    - title: Realice backup en las instalaciones de ONTAP en StorageGRID
       url: task-backup-onprem-private-cloud.html
-    - title: De ONTAP en las instalaciones a ONTAP S3
-      url: task-backup-onprem-to-ontap-s3.html
   - title: Gestionar los archivos de copia de seguridad de ONTAP
     links:
     - title: Habilite backups de volúmenes en volúmenes adicionales
@@ -346,13 +342,13 @@ homepage:
       url: task-restore-backups-kubernetes.html
   - title: Realice backups de los datos de Kubernetes en el cloud
     links:
-    - title: Clúster de Kubernetes a Amazon S3
+    - title: Realice backups del clúster de Kubernetes en Amazon S3
       url: task-backup-kubernetes-to-s3.html
       flavor: aws
-    - title: Clúster de Kubernetes a Azure Blob
+    - title: Backups del clúster de Kubernetes en Azure Blob
       url: task-backup-kubernetes-to-azure.html
       flavor: azure
-    - title: Cluster de Kubernetes a Google Cloud
+    - title: Realice backups del clúster de Kubernetes en Google Cloud
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
   - title: Blogs y comunidad
