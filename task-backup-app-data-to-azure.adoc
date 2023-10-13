@@ -16,6 +16,8 @@ summary: Realice unos pasos para realizar backup de datos de aplicaciones desde 
 [role="lead"]
 Completa unos pasos para hacer un backup de los datos de las aplicaciones desde ONTAP en Microsoft Azure.
 
+BlueXP admite el bloqueo de datos y la protección frente al ransomware. Si el clúster de ONTAP se ejecuta en ONTAP 9.12.1 o una versión posterior y no ha configurado almacenamiento de archivado, puede proteger los backups frente a amenazas de sobrescritura, eliminación y ransomware.
+
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
 . Haga clic en image:icon-action.png["para seleccionar la acción"] Corresponde a la aplicación y haga clic en *Activar copia de seguridad*.
@@ -44,11 +46,12 @@ El backup y la recuperación de BlueXP solo admiten el administrador de clúster
 .. Seleccione la región en la que desea crear los backups.
 .. Cree un grupo de recursos nuevo o utilice un grupo de recursos existente.
 .. Especifique el espacio de IP.
-.. Seleccione el nivel de archivado.
+.. Seleccione el nivel de archivado si ha configurado el almacenamiento de archivado en la política.
 +
 Se recomienda configurar el nivel de archivado porque se trata de una actividad única y no se le permitirá configurarla más adelante.
 
 
 
+. Configurar el bloqueo de datos y la protección frente al ransomware.
 . Revise los detalles y haga clic en *Activar copia de seguridad*.
 

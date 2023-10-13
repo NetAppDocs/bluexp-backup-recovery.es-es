@@ -67,6 +67,9 @@ Debe tener al menos un backup en las ubicaciones primaria y secundaria. Puede de
 ** Recursos de volúmenes sin datos (NDV), como los binarios de HANA, el volumen de registro de archivos de HANA, el volumen compartido de HANA, etc.
 
 
+* MongoDB
+* MySQL
+* PostgreSQL
 
 
 No se muestran las siguientes bases de datos:

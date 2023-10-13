@@ -56,6 +56,7 @@ IMPORTANT: El tiempo que se tardará en incluir los backups depende de la progra
 * Para las bases de datos de Microsoft SQL Server, solo se muestran los backups completos y la fecha de finalización de cada backup. Es posible seleccionar el backup y restaurar la base de datos a la ubicación original o alternativa.
 * Para la instancia de Microsoft SQL Server, se muestran los backups de las bases de datos en esa instancia.
 * Para las bases de datos SAP HANA, solo se muestran los backups de datos y la fecha de finalización de cada backup. Puede seleccionar el backup y realizar la exportación de almacenamiento en un determinado host.
+* Para MongoDB, MySQL y PostgreSQL, solo se muestran los backups de datos y la fecha de finalización de cada backup. Puede seleccionar el backup y realizar la exportación de almacenamiento en un determinado host.
 
 
 

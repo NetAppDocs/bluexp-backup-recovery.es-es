@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-restore-hana-backup.html 
-keywords: restore, mount application backups, SAP HANA database 
+permalink: task-restore-customplugin-backup.html 
+keywords: restore, mount application backups, MongoDB, MySQL, PostgreSQL 
 summary: Puede restaurar la base de datos SAP HANA desde el cloud al servidor SnapCenter en las instalaciones. 
 ---
-= Restaurar la base de datos SAP HANA
+= Restaurar bases de datos MongoDB, MySQL y PostgreSQL
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: Puede restaurar la base de datos SAP HANA desde el cloud al servidor Sn
 
 
 [role="lead"]
-Es posible restaurar una base de datos SAP HANA a cualquier host.
+Es posible restaurar bases de datos MongoDB, MySQL y PostgreSQL en cualquier host.
 
 * Pasos*
 
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.
-. En el campo *Filtrar por*, selecciona el filtro *Tipo* y en el menú desplegable selecciona *HANA*.
+. En el campo *Filtrar por*, seleccione el filtro *Tipo* y en el menú desplegable seleccione *MongoDB*, *MySQL* o *PostgreSQL*.
 . Haga clic en *Ver detalles* correspondiente a la base de datos que desea restaurar y haga clic en *Restaurar*.
 . En la página Restore options, especifique una de las siguientes opciones:
 +
@@ -39,5 +39,3 @@ Si selecciona *Cambiar ubicación de almacenamiento*, puede agregar un sufijo al
 
 
 Esta operación solo hace la exportación de almacenamiento del backup seleccionado en el host determinado. Debe montar manualmente el sistema de archivos y activar la base de datos. Después de utilizar el volumen, el administrador de almacenamiento puede eliminar el volumen del clúster de ONTAP.
-
-Para obtener información sobre cómo preparar la base de datos SAP HANA, consulte https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667: Descripción general del flujo de trabajo de copia del sistema SAP con SnapCenter"^] y.. https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667: Descripción general del flujo de trabajo de clones del sistema SAP con SnapCenter"^].

@@ -16,7 +16,7 @@ summary: Obtenga más información sobre la protección de datos en los equipos 
 [role="lead"]
 El backup y recuperación de datos de BlueXP para máquinas virtuales ofrece funcionalidades de protección de datos al realizar backups de almacenes de datos y restaurar máquinas virtuales.
 
-Es posible realizar backups de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaurar máquinas virtuales en el host del plugin de SnapCenter para VMware vSphere en las instalaciones.
+Es posible realizar backups de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaurar máquinas virtuales en el host del plugin de SnapCenter para VMware vSphere en las instalaciones. El backup y recuperación de BlueXP para máquinas virtuales también admite el modelo de puesta en marcha de proxy de conector.
 
 .Antes de empezar
 Lea los siguientes requisitos para asegurarse de que tiene una configuración compatible antes de empezar a realizar backups de almacenes de datos y máquinas virtuales en un proveedor de cloud.
@@ -37,6 +37,7 @@ Lea los siguientes requisitos para asegurarse de que tiene una configuración co
 * Desactive "*_Recent*" en los grupos de recursos necesarios. Si tiene activado "*_Recent*" para el grupo de recursos, las copias de seguridad de esos grupos de recursos no se pueden utilizar para la protección de datos en la nube y, posteriormente, no se pueden utilizar para la operación de restauración.
 * Asegúrese de que el almacén de datos de destino donde se restaurará la máquina virtual tenga espacio suficiente para acomodar una copia de todos los archivos de equipos virtuales, como VMDK, VMX, VMSD, etc.
 * Asegúrese de que el almacén de datos de destino no tenga archivos obsoletos de máquinas virtuales en formato RESTORE_xxx_xxxxxx_FILENAME de los errores anteriores de la operación de restauración. Debe eliminar los archivos obsoletos antes de activar una operación de restauración.
+* Para implementar un conector con proxy configurado, asegúrese de que todas las llamadas de conector salientes se enruten a través del servidor proxy.
 
 
 La siguiente imagen muestra cada componente y las conexiones que necesita preparar entre ellos:

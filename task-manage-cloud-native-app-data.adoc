@@ -19,6 +19,9 @@ summary: Puede visualizar los detalles del backup, supervisar el estado de todos
 
 Es posible supervisar el estado de los trabajos que se han iniciado en los entornos de trabajo. Esto permite ver los trabajos que se completaron correctamente, los que están en curso en ese momento y los que han fallado para poder diagnosticar y corregir cualquier problema.
 
+
+NOTE: Los trabajos programados se enumerarán en la página de supervisión de trabajos de BlueXP tras un retraso de 5 minutos (máximo) desde la hora de finalización del trabajo.
+
 Para obtener más información, consulte link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["Supervise el estado del trabajo"].
 
 
@@ -113,7 +116,7 @@ Después de actualizar los detalles del conector para hosts Oracle o SAP HANA, r
 
 . Inicie sesión en el host del plugin y realice los siguientes pasos:
 +
-.. Desplácese hasta _/var/opt/snapcenter/spl/etc_ y ejecute el comando keytool para importar el archivo certificate.p12.
+.. Desplácese hasta _/var/opt/snapcenter/spl/etc_ y ejecute el comando keytool para importar el archivo certificate.pem.
 `keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. Reinicie SPL: `systemctl restart spl`
 .. Realice una de las siguientes acciones:

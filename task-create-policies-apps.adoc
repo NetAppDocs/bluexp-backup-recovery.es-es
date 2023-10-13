@@ -22,6 +22,7 @@ Debe crear una política para realizar un backup de los datos de la aplicación 
 ** Si utiliza Amazon Web Services, debe usar ONTAP 9.10.1 o una versión posterior
 ** Si utiliza Microsoft Azure, debe usar ONTAP 9.10.1 o una versión posterior
 ** Si utiliza Google Cloud, debería utilizar ONTAP 9.12.1 o una versión posterior
+** Si utiliza StorageGRID, debe usar ONTAP 9.12.1 o una versión posterior
 
 
 * Debe configurar el nivel de acceso de archivado para cada proveedor de cloud.

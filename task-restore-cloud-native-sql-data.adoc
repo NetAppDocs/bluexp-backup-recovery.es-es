@@ -1,0 +1,182 @@
+---
+sidebar: sidebar 
+permalink: task-restore-cloud-native-sql-data.html 
+keywords: restore, SQL database, BlueXP 
+summary: Puede restaurar base de datos SQL desde el cloud en el mismo host. 
+---
+= Restaure la base de datos de Microsoft SQL Server
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede restaurar base de datos de Microsoft SQL Server al mismo host. Primero debe obtener la lista de bases de datos y, a continuación, restaurar la base de datos.
+
+
+
+== Consulte la lista de bases de datos
+
+Puede ejecutar esta API para ver la lista de bases de datos.
+
+'OBTENGA snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases'
+
+Para obtener más información, consulte: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Databases/GetMSSQLDatabasesRequest[]
+
+
+
+=== Respuesta
+
+Si la API se ejecuta correctamente, se muestra el código de respuesta 200.
+
+Ejemplo:
+
+[listing]
+----
+{
+    "num_records": 3,
+    "total_records": 3,
+    "records": [
+        {
+            "id": "348901e5-aeaa-419f-88b1-80240de3b1fe",
+            "name": "DB4",
+            "hostname": "scspa2722211001.rtp.openenglab.netapp.com",
+            "size": 0.078125,
+            "instance_id": "454c8413-5351-41fc-88bf-f20fb050ec87",
+            "instance": "scspa2722211001\\NAMEDINSTANCE1",
+            "db_status": "Normal",
+            "db_access": "eUndefined",
+            "db_type": "User",
+            "recovery_mode": "Full"
+        },
+        {
+            "id": "c79d33ab-7322-4ed6-92f5-51ad7a6944e0",
+            "name": "DB5",
+            "hostname": "scspa2722211001.rtp.openenglab.netapp.com",
+            "size": 0.078125,
+            "instance_id": "454c8413-5351-41fc-88bf-f20fb050ec87",
+            "instance": "scspa2722211001\\NAMEDINSTANCE1",
+            "db_status": "Normal",
+            "db_access": "eUndefined",
+            "db_type": "User",
+            "recovery_mode": "Full"
+        },
+        {
+            "id": "40d6f35a-f4fb-48bc-8e0a-0ac93ddf0888",
+            "name": "model",
+            "hostname": "scspa2722211001.rtp.openenglab.netapp.com",
+            "size": 0.015625,
+            "instance_id": "454c8413-5351-41fc-88bf-f20fb050ec87",
+            "instance": "scspa2722211001\\NAMEDINSTANCE1",
+            "db_status": "Normal",
+            "db_access": "eUndefined",
+            "db_type": "System",
+            "recovery_mode": "Full"
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----
+
+
+== Restaure y recupere la base de datos de MSSQL
+
+Puede ejecutar esta API para restaurar la base de datos de MSSQL.
+
+'POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases/{id}/restore'
+
+Donde, _id_ es el identificador de base de datos MSSQL obtenido mediante la ejecución de la API de base de datos de vista. Para obtener más información, consulte <<Consulte la lista de bases de datos>>.
+
+Para obtener más información, consulte: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Database%20Restore/RestoreMSSQLDatabaseRequest[]
+
+Esta API crea un trabajo que se puede rastrear desde la pestaña *Job Monitor* en la interfaz de usuario de BlueXP.
+
+
+
+=== Parámetros
+
+|===
+| Nombre | Tipo | Obligatorio 
+
+
+ a| 
+id_copia_seguridad
+ a| 
+cadena
+ a| 
+Verdadero
+
+
+
+ a| 
+sobrescribir_base de datos
+ a| 
+bool
+ a| 
+Verdadero
+
+
+
+ a| 
+retain_replication_settings
+ a| 
+bool
+ a| 
+Falso
+
+
+
+ a| 
+modo de recuperación
+ a| 
+cadena
+
+Las 3 cadenas admitidas son _Operational_, _nonoperational_ y _ReadOnly_.
+ a| 
+Verdadero
+
+
+
+ a| 
+directorio_archivo_deshacer
+ a| 
+cadena
+ a| 
+Verdadero
+
+
+
+ a| 
+restore_type
+ a| 
+cadena
+ a| 
+Verdadero
+
+|===
+
+
+=== Respuesta
+
+Si la API se ejecuta correctamente, se muestra el código de respuesta 202.
+
+Ejemplo:
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----

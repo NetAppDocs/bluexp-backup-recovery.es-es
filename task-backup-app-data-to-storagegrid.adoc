@@ -16,6 +16,8 @@ summary: Realice unos pasos para realizar backup de datos de aplicaciones desde 
 [role="lead"]
 Complete unos pasos para hacer un backup de los datos de las aplicaciones desde ONTAP en StorageGRID.
 
+BlueXP admite el bloqueo de datos y la protección frente al ransomware. Si el clúster de ONTAP se ejecuta en ONTAP 9.11.1 o una versión posterior, los sistemas StorageGRID abarcan la versión 11.6.0.3 o posterior y si no ha configurado almacenamiento de archivado, puede proteger los backups contra la sobrescritura, la eliminación y las amenazas de ransomware.
+
 .Antes de empezar
 Al realizar una copia de seguridad de datos en StorageGRID, debe haber un conector disponible en las instalaciones. Tendrá que instalar un conector nuevo o asegurarse de que el conector seleccionado actualmente reside en las instalaciones. El conector se puede instalar en un sitio con o sin acceso a Internet.
 
@@ -52,7 +54,41 @@ Introduzca los detalles en el formato FQDN:PORT.
 .. En el campo Access Key, especifique la clave.
 .. En el campo Secret Key, especifique la contraseña.
 .. Especifique el espacio de IP.
+.. Especifique el nivel de archivado si ha configurado el almacenamiento de archivado en la política.
++
+|===
+| Si selecciona... | Realice lo siguiente... 
 
 
+ a| 
+AWS
+ a| 
+... Seleccione la dirección StorageGRID de la lista desplegable o añada el clúster de StorageGRID.
+... Especifique la cuenta de AWS.
+... En el campo AWS Access Key, especifique la clave.
+... En el campo AWS Secret Key, especifique la contraseña.
+... Seleccione la región en la que desea crear los backups.
+... Haga clic en *Guardar*.
+
+
+
+
+ a| 
+Azure
+ a| 
+... Seleccione el clúster de StorageGRID en la lista desplegable o añada el clúster.
+... Especifique el ID de suscripción de Azure.
+... Seleccione la región en la que desea crear los backups.
+... Cree un grupo de recursos nuevo o utilice un grupo de recursos existente.
+... Haga clic en *Guardar*.
+
+
+|===
++
+Se recomienda configurar el nivel de archivado porque se trata de una actividad única y no se le permitirá configurarla más adelante.
+
+
+
+. Configurar el bloqueo de datos y la protección frente al ransomware.
 . Revise los detalles y haga clic en *Activar copia de seguridad*.
 

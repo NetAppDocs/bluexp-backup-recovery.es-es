@@ -14,12 +14,12 @@ summary: Realice una actualización de un sistema SAP HANA de origen, que es la 
 
 
 [role="lead"]
-Puede realizar una actualización de un sistema de destino SAP HANA con los datos de un sistema de origen SAP HANA. Esto se puede utilizar para proporcionar los datos de producción actuales en un sistema de prueba. El backup en el cloud le permite seleccionar una copia Snapshot de un sistema de origen y crear un nuevo volumen Azure NetApp Files en función de la copia de Snapshot. Hay scripts de ejemplo disponibles, que ejecuta las operaciones necesarias en el host de la base de datos para recuperar la base de datos SAP HANA.
+Puede realizar una actualización de un sistema de destino SAP HANA con los datos de un sistema de origen SAP HANA. Esto se puede utilizar para proporcionar los datos de producción actuales en un sistema de prueba. El backup y la recuperación de datos de BlueXP te permite seleccionar una copia Snapshot de un sistema de origen y crear un nuevo volumen Azure NetApp Files basado en la copia de Snapshot. Hay scripts de ejemplo disponibles, que ejecuta las operaciones necesarias en el host de la base de datos para recuperar la base de datos SAP HANA.
 
 *Antes de empezar*
 
 * Debe instalar el sistema de destino SAP HANA antes de ejecutar la primera operación de actualización.
-* Debe añadir manualmente los sistemas HANA de origen y de destino al backup en el cloud.
+* Debe añadir manualmente los sistemas HANA de origen y destino en el backup y la recuperación de BlueXP.
 * Compruebe que la versión de la base de datos SAP HANA sea la misma en el sistema de origen y el de destino.
 * Debe haber decidido qué scripts de refrescamiento se van a utilizar. Los scripts de actualización están disponibles en el informe técnico de la solución.
 +
@@ -36,6 +36,9 @@ Puede personalizar los scripts de refrescamiento.
 ** TENANT_DATABASE_NAMES
 
 
+* Debe actualizar el plugin a una versión 3,0.
+* Las rutas de montaje deben ser las mismas para el volumen de datos en los sistemas SAP HANA de origen y de destino.
+* Antes de la primera operación de actualización, asegúrese de que el archivo '/etc/fstab' no tenga entradas para los volúmenes de datos del sistema SAP HANA de destino.
 
 
 *Acerca de esta tarea*
@@ -58,6 +61,7 @@ NOTE: El volumen nuevo se colocará en el mismo pool de capacidad que los volúm
 * La ruta de unión será la misma que el nombre del volumen.
 * El «número de rendimiento máximo» para el volumen nuevo se selecciona del volumen del sistema de destino con pools de capacidad de calidad de servicio (QoS) manuales.
 Para pools de capacidad de calidad de servicio automática, el rendimiento se define en la capacidad del volumen de origen.
+* Durante la actualización del sistema, el montaje y el desmontaje automáticos de los volúmenes se ejecutan usando flujos de trabajo en lugar de scripts.
 
 
 * Pasos*
@@ -67,7 +71,8 @@ Para pools de capacidad de calidad de servicio automática, el rendimiento se de
 . En la página *System Refresh*, realice las siguientes acciones:
 +
 .. Seleccione el sistema de origen y la copia Snapshot.
-.. Introduzca las direcciones de exportación desde las que se puede acceder a los nuevos volúmenes.
+.. (Opcional) Introduzca las direcciones de exportación desde las cuales se puede acceder a los nuevos volúmenes.
+.. (Opcional) Introduzca el rendimiento máximo del almacenamiento (MIB).
 .. Introduzca scripts previos, scripts posteriores y en las rutas de scripts de fallo. En caso de fallo, el script se ejecuta solo cuando falla la operación de actualización del sistema.
 .. Haga clic en *Actualizar*.
 

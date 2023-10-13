@@ -37,10 +37,6 @@ Desea restaurar a la ubicación original
  a| 
 .. Seleccione *Restaurar a la ubicación original*.
 .. Si la instantánea se encuentra en el almacenamiento de archivado, seleccione la prioridad para restaurar los datos desde el almacenamiento de archivado.
-+
-
-NOTE: Solo si usa Amazon Web Services o Microsoft Azure como proveedor de cloud, debe especificar la prioridad.
-
 .. Haga clic en *Siguiente*.
 .. Seleccione *Estado de la base de datos* si desea cambiar el estado de la base de datos al estado requerido para realizar operaciones de restauración y recuperación.
 +
@@ -77,11 +73,10 @@ Desea restaurar temporalmente a otro almacenamiento y, a continuación, copiar l
  a| 
 .. Seleccione *Restaurar a la ubicación original*.
 .. Si la instantánea se encuentra en el almacenamiento de archivado, seleccione la prioridad para restaurar los datos desde el almacenamiento de archivado.
-+
-
-NOTE: Solo si usa Amazon Web Services o Microsoft Azure como proveedor de cloud, debe especificar la prioridad.
-
 .. Selecciona *Cambiar ubicación de almacenamiento*.
++
+Si selecciona *Cambiar ubicación de almacenamiento*, puede agregar un sufijo al volumen de destino. Si no ha seleccionado la casilla de comprobación, se agrega de forma predeterminada *_restore* al volumen de destino.
+
 .. Haga clic en *Siguiente*.
 .. En la página Storage mapping, especifique los detalles de la ubicación de almacenamiento alternativo donde los datos restaurados del almacén de objetos se almacenarán temporalmente.
 +
@@ -123,13 +118,12 @@ Desea restaurar a una ubicación alternativa
  a| 
 .. Seleccione *Restaurar a ubicación alternativa*.
 .. Si la instantánea se encuentra en el almacenamiento de archivado, seleccione la prioridad para restaurar los datos desde el almacenamiento de archivado.
-+
-
-NOTE: Solo si usa Amazon Web Services o Microsoft Azure como proveedor de cloud, debe especificar la prioridad.
-
 .. Si desea restaurar en almacenamiento alternativo, realice lo siguiente:
 +
 ... Selecciona *Cambiar ubicación de almacenamiento*.
++
+Si selecciona *Cambiar ubicación de almacenamiento*, puede agregar un sufijo al volumen de destino. Si no ha seleccionado la casilla de comprobación, se agrega de forma predeterminada *_restore* al volumen de destino.
+
 ... Haga clic en *Siguiente*.
 ... En la página Storage mapping, especifique los detalles de la ubicación de almacenamiento alternativo donde los datos del almacén de objetos deben restaurarse.
 

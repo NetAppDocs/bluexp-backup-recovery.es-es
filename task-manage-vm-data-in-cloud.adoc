@@ -89,7 +89,7 @@ Todos los almacenes de datos y máquinas virtuales asociados con el host del plu
 
 == Supervisar trabajos
 
-Se crean trabajos para todas las operaciones de backup en el cloud. Puede supervisar todos los trabajos y todas las subtareas que se realizan como parte de cada tarea.
+Se crean trabajos para todas las operaciones de backup y recuperación de BlueXP. Puede supervisar todos los trabajos y todas las subtareas que se realizan como parte de cada tarea.
 
 . Haga clic en *copia de seguridad y recuperación* > *Supervisión de trabajos*.
 +

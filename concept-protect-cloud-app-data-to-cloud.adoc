@@ -18,6 +18,7 @@ El backup y la recuperación de datos de BlueXP para aplicaciones ofrece funcion
 
 * Las bases de datos de Oracle residen en Amazon FSx para ONTAP, Cloud Volumes ONTAP y Azure NetApp Files de NetApp
 * Sistemas SAP HANA que residen en Azure NetApp Files
+* Bases de datos de Microsoft SQL Server que residen en Amazon FSx para NetApp ONTAP
 
 
 
@@ -139,4 +140,37 @@ Puede especificar diferentes frecuencias de programación, como por ejemplo, cad
 
 * Para la configuración de HSR, solo se admite HSR de 2 nodos (1 principal y 1 secundario)
 * La retención no se activará si el script posterior falla durante la operación de restauración
+
+
+
+
+== Proteger la base de datos de Microsoft SQL Server
+
+
+
+=== Funciones
+
+* Añada manualmente el host e implemente el plugin
+* Detectar las bases de datos manualmente
+* Realice backups de las instancias de SQL Server que residen en Amazon FSx para NetApp ONTAP
++
+** Backup bajo demanda
+** Backup programado según la política
+** Backup de registro de la instancia de Microsoft SQL Server
+
+
+* Restaurar la base de datos a la ubicación original
+
+
+
+
+=== Limitaciones
+
+* Backup solo se admite para instancias de SQL Server
+* No se admite la configuración de la instancia de clúster de conmutación por error (FCI)
+* BlueXP UI no es compatible con operaciones específicas de bases de datos de SQL
++
+Todas las operaciones específicas de bases de datos de Microsoft SQL Server se realizan ejecutando las API DE REST.
+
+* No se admite la restauración en una ubicación alternativa
 
