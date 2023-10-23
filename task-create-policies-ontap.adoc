@@ -16,7 +16,7 @@ summary: Puede usar las políticas de backup predeterminadas proporcionadas por 
 [role="lead"]
 Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen la frecuencia de las copias de seguridad, el tiempo que se realiza la copia de seguridad y el número de archivos de copia de seguridad que se retienen.
 
-Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, debe crear la política antes de iniciar el asistente de activación.
+Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, puede crear la política antes o mientras utiliza el asistente de activación.
 
 Para obtener más información sobre las políticas de backup predeterminadas proporcionadas, consulte link:concept-protection-journey.html["Planifica tu proceso de protección"].
 
@@ -62,14 +62,19 @@ Las políticas de Snapshot se muestran de forma predeterminada.
 
 
 
-== Cree una política de Snapshot
+== Cree una política de Snapshot antes de iniciar la snapshot
 
 Parte de su estrategia 3-2-1 implica la creación de una copia Snapshot del volumen en el sistema de almacenamiento * primario *.
 
 Parte del proceso de creación de políticas implica identificar etiquetas de Snapshot y SnapMirror que denoten la programación y retención. Puede utilizar etiquetas predefinidas o crear las suyas propias.
 
 .Pasos
-. En la página Policies, selecciona *Create new policy* > *Create snapshot policy*.
+. En la interfaz de usuario de BlueXP, selecciona *Volúmenes* > *Configuración de copia de seguridad*.
+. En la página Configuración de copia de seguridad, seleccione el entorno de trabajo, seleccione las acciones * image:icon-action.png["El icono Actions"] Y seleccione *Administración de políticas*.
++
+Aparece la página Gestión de Políticas.
+
+. En la página Políticas, selecciona *Crear política* > *Crear política de Snapshot*.
 . Escriba el nombre de la política.
 . Seleccione la programación de Snapshot o las programaciones. Puede tener un máximo de 5 etiquetas. O bien, cree una programación.
 . Si decide crear una programación:
@@ -107,12 +112,12 @@ En este ejemplo, se crea una política de Snapshot con dos clústeres:
 
 
 
-== Cree una política de replicación
+== Cree una política de replicación antes de iniciar la replicación
 
 Su estrategia 3-2-1 podría incluir la replicación de un volumen en otro sistema de almacenamiento. La política de replicación reside en el sistema de almacenamiento *secundario*.
 
 .Pasos
-. En la página Políticas, selecciona *Crear nueva política* > *Crear nueva política de replicación*.
+. En la página Políticas, selecciona *Crear política* > *Crear política de replicación*.
 . En la sección Policy Details, especifique el nombre de la política.
 . Especifique las etiquetas de SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
 . Especifique el programa de transferencia.
@@ -121,7 +126,7 @@ Su estrategia 3-2-1 podría incluir la replicación de un volumen en otro sistem
 
 
 
-== Cree una política de almacenamiento de backup en objetos
+== Cree una política de almacenamiento de backup a objetos antes de iniciar el backup
 
 Su estrategia 3-2-1 puede incluir realizar un backup de un volumen en un almacenamiento de objetos.
 
@@ -132,7 +137,7 @@ Esta normativa de almacenamiento reside en diferentes ubicaciones del sistema de
 
 
 .Pasos
-. En la página de administración de políticas, selecciona *Crear nueva política* > *Crear nueva política de copia de seguridad*.
+. En la página de administración de políticas, selecciona *Crear política* > *Crear política de copia de seguridad*.
 . En la sección Policy Details, especifique el nombre de la política.
 . Especifique las etiquetas de SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
 . Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.

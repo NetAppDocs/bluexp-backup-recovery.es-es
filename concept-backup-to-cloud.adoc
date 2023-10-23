@@ -18,7 +18,7 @@ El servicio de backup y recuperación de datos de BlueXP proporciona una protecc
 
 El servicio realiza una replicación incremental permanente a nivel de bloque y conserva todas las eficiencias del almacenamiento, lo que reduce significativamente la cantidad de datos que se replican y almacenan. Además, pagarás solo por los elementos protegidos y utilizarás los niveles de almacenamiento de menor coste disponibles, lo que hace que el backup y la recuperación de datos de BlueXP sean muy rentables.
 
-Cuando sea necesario, puede restaurar un _volume_ completo desde una copia de seguridad al mismo entorno de trabajo o diferente. Al realizar una copia de seguridad de los datos de ONTAP, también puede optar por restaurar o uno o varios _Files_ de una copia de seguridad en el mismo entorno de trabajo o en un entorno de trabajo diferente.
+Cuando sea necesario, puede restaurar un _volume_ completo desde una copia de seguridad al mismo entorno de trabajo o diferente. Al realizar copias de seguridad de los datos de ONTAP, también puede optar por restaurar una carpeta o uno o más _files_ de una copia de seguridad en el mismo entorno de trabajo o en otro diferente.
 
 https://bluexp.netapp.com/cloud-backup["Más información sobre el backup y la recuperación de datos de BlueXP"^].
 
@@ -73,11 +73,12 @@ ifdef::gcp[]
 endif::gcp[]
 
 * En StorageGRID, BlueXP utiliza una cuenta de almacenamiento existente para el bloque de almacenamiento de objetos.
+* En ONTAP S3, BlueXP utiliza una cuenta de usuario existente para el bloque de S3.
 
 
 
 
-=== Los backups se realizan a medianoche
+=== Cuándo se realizan las copias de seguridad
 
 * Los backups cada hora comienzan 5 minutos a partir de la hora, cada hora.
 * Los backups diarios comienzan justo después de la medianoche cada día.

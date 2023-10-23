@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protection-journey.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
+keywords: backing up, restoring, recovery, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
 summary: El servicio de backup y recuperación de datos de BlueXP permite crear hasta tres copias de los volúmenes de origen para proteger los datos. Hay muchas opciones que puede seleccionar al habilitar este servicio en sus volúmenes, por lo que debe revisar sus opciones para estar preparado. 
 ---
 = Planifica tu proceso de protección
@@ -20,7 +20,7 @@ Repasaremos las siguientes opciones:
 
 * Qué funciones de protección usarán: Copias Snapshot, volúmenes replicados y/o backup en cloud
 * Qué arquitectura de backup utilizará: Un backup en cascada o ramificado de sus volúmenes
-* Utilizarán las políticas de backup predeterminadas o tendrá que crear políticas personalizadas antes de empezar
+* Utilizarán las políticas de backup predeterminadas o tendrán que crear políticas personalizadas
 * ¿Desea que el servicio cree los buckets de cloud para usted o desea crear sus contenedores de almacenamiento de objetos antes de empezar
 * Qué modo de puesta en marcha de BlueXP Connector utiliza (modo estándar, restringido o privado)
 
@@ -58,7 +58,7 @@ En resumen, estos son los flujos de protección válidos que puede crear para vo
 
 
 
-NOTE: La creación inicial de un volumen replicado o un archivo de backup incluye una copia completa de los datos de origen; a esto se denomina transferencia básica. Las transferencias posteriores solo contienen copias diferenciales de los datos de origen (Snapshot).
+NOTE: La creación inicial de un volumen replicado o un archivo de copia de seguridad incluye una copia completa de los datos de origen -- esto se denomina _transferencia de línea base_. Las transferencias posteriores solo contienen copias diferenciales de los datos de origen (Snapshot).
 
 
 
@@ -113,18 +113,20 @@ Esta tabla proporciona una comparación de las arquitecturas ramificadas y en ca
 |===
 
 
-== Utilizará las políticas de backup predeterminadas para snapshots, replicaciones y backups
+== Utilizará las políticas de backup predeterminadas para copias de Snapshot, replicaciones y backups
 
-Puede usar las políticas predeterminadas que proporciona NetApp para crear sus backups, o bien puede crear políticas personalizadas. Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, debe crear la política antes de iniciar el asistente de activación.
+Puede usar las políticas predeterminadas que proporciona NetApp para crear sus backups, o bien puede crear políticas personalizadas. Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, puede crear la política antes de iniciar o mientras utiliza el asistente de activación.
 
-* La política de Snapshot predeterminada crea copias de Snapshot por hora, diarias y semanales, reteniendo 6 copias Snapshot cada hora, 2 diarias y 2 copias Snapshot semanales.
+* La política de Snapshot predeterminada crea copias Snapshot por hora, diarias y semanales, reteniendo 6 copias Snapshot cada hora, 2 diarias y 2 copias Snapshot semanales.
 * La política de replicación predeterminada replica copias Snapshot diarias y semanales, reteniendo 7 copias Snapshot diarias y 52 semanales.
 * La política de backup predeterminada replica copias Snapshot diarias y semanales, reteniendo 7 copias Snapshot diarias y 52 semanales.
 
 
-Si crea políticas personalizadas para replicación o backup, las etiquetas de políticas (por ejemplo, «diaria» o «semanal») deben coincidir con las etiquetas existentes en sus políticas de Snapshot o no se crearán los volúmenes replicados y los archivos de backup. Puede crear políticas personalizadas mediante System Manager o la interfaz de línea de comandos (CLI) de ONTAP.
+Si crea políticas personalizadas para replicación o backup, las etiquetas de políticas (por ejemplo, «diaria» o «semanal») deben coincidir con las etiquetas existentes en sus políticas de Snapshot o no se crearán los volúmenes replicados y los archivos de backup.
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Crear una política de snapshots mediante System Manager"^]
+Puedes crear políticas personalizadas con la recuperación de backup de BlueXP, System Manager o la interfaz de línea de comandos (CLI) de ONTAP.
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Cree una política de Snapshot mediante System Manager"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Cree una política de Snapshot mediante la CLI de ONTAP"^]
 https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Cree una política de replicación mediante System Manager"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Cree una política de replicación mediante la CLI de ONTAP"^]
@@ -133,7 +135,7 @@ https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#descr
 
 *Nota:* Cuando utilice System Manager, seleccione *Asíncrono* como el tipo de política para las políticas de replicación y seleccione *Asíncrono* y *Copia de seguridad en la nube* para realizar copias de seguridad en las políticas de objetos.
 
-Puede crear un backup en las políticas de almacenamiento de objetos en la interfaz de usuario de backup y recuperación de BlueXP. Consulte la sección para link:task-manage-backups-ontap.html#add-a-new-backup-policy["añada una nueva política de backup"] para obtener más detalles. Necesitará crear políticas de Snapshot y replicación mediante System Manager o la CLI de ONTAP.
+Puede crear copias Snapshot, replicación y backup en políticas de almacenamiento de objetos en la interfaz de usuario de backup y recuperación de BlueXP. Consulte la sección para link:task-manage-backups-ontap.html#add-a-new-backup-policy["añada una nueva política de backup"] para obtener más detalles.
 
 A continuación se muestran algunos comandos CLI de ONTAP de ejemplo que pueden ser útiles si está creando políticas personalizadas. Tenga en cuenta que debe utilizar el Vserver _admin_ (VM de almacenamiento) como el `<vserver_name>` en estos comandos.
 

@@ -325,7 +325,7 @@ La página Introducción del asistente muestra las opciones de protección, incl
 
 === Seleccione los volúmenes de los que desea realizar el backup
 
-Elija los volúmenes que desea proteger. Un volumen protegido es uno que tiene uno o varios de los siguientes: Política de Snapshot, política de replicación, backup en política de objetos.
+Elija los volúmenes que desea proteger. Un volumen protegido es uno que tiene uno o varios de los siguientes: Política de Snapshot, política de replicación, política de backup en objeto.
 
 Puede optar por proteger los volúmenes de FlexVol o FlexGroup; sin embargo, no puede seleccionar una combinación de estos volúmenes al activar el backup para un entorno de trabajo. Descubra cómo link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["active el backup para volúmenes adicionales en el entorno de trabajo"] (FlexVol o FlexGroup) después de configurar el backup de los volúmenes iniciales.
 
@@ -342,7 +342,7 @@ Tenga en cuenta que si los volúmenes que elija ya tienen aplicadas políticas d
 . En la página Select Volumes, seleccione el o los volúmenes que desea proteger.
 +
 ** Opcionalmente, filtre las filas para mostrar solo los volúmenes con ciertos tipos de volumen, estilos y más para facilitar la selección.
-** Después de seleccionar el primer volumen, puede seleccionar All FlexVol Volumes (los volúmenes de FlexGroup se pueden seleccionar de uno por vez solo). Para realizar un backup de todos los volúmenes FlexVol existentes, active primero un volumen y, a continuación, marque la casilla en la fila del título. (image:button_backup_all_volumes.png[""]).
+** Después de seleccionar el primer volumen, puede seleccionar All FlexVol Volumes. (Los volúmenes de FlexGroup se pueden seleccionar de uno a la vez). Para realizar un backup de todos los volúmenes FlexVol existentes, active primero un volumen y, a continuación, marque la casilla en la fila del título. (image:button_backup_all_volumes.png[""]).
 ** Para realizar un backup de volúmenes individuales, active la casilla de cada volumen (image:button_backup_1_volume.png[""]).
 
 
@@ -383,18 +383,36 @@ Para obtener información detallada sobre estas arquitecturas, consulte link:con
 
 
 
-. *Instantánea local*: Elija una política de Snapshot existente.
+. *Instantánea local*: Elija una política de Snapshot existente o cree una.
 +
 
-TIP: Para crear una política personalizada, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar la instantánea, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+** Introduzca el nombre de la política.
+** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+** Seleccione *Crear*.
+
 
 . *Replicación*: Establezca las siguientes opciones:
 +
 ** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
-** *Política de replicación*: Elija una política de replicación existente.
+** *Política de replicación*: Elija una política de replicación existente o cree una.
 +
 
-TIP: Para crear una política personalizada, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar la replicación, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
 
 
 
@@ -439,10 +457,19 @@ NOTE: Si eligió una cuenta de almacenamiento de Microsoft existente, la informa
 ... Opcionalmente, seleccione si utilizará un punto final privado de Azure que haya configurado previamente. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Obtenga más información sobre el uso de un extremo privado de Azure"].
 
 
-** *Política de copia de seguridad*: Seleccione una política existente de copia de seguridad para almacenamiento de objetos.
+** *Política de copia de seguridad*: Seleccione una política de almacenamiento de copia de seguridad a objeto existente.
 +
 
-TIP: Para crear una política personalizada, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar el backup, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
 
 ** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
 

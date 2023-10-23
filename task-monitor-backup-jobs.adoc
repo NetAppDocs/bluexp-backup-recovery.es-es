@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-monitor-backup-jobs.html 
 keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
-summary: Es posible supervisar el estado de las copias de Snapshot locales, las replicaciones y el backup en trabajos de almacenamiento de objetos que inició, y restaurar trabajos que inició. Puede ver los trabajos completados, en curso o fallidos para poder diagnosticar y corregir problemas. Con el Centro de notificaciones de BlueXP, puedes habilitar el envío de notificaciones por correo electrónico para que se te informe de la actividad importante del sistema incluso sin haber iniciado sesión en el sistema. Gracias a la línea de tiempo de BlueXP, puedes ver detalles de todas las acciones que se han iniciado a través de la interfaz de usuario o la API. 
+summary: Es posible supervisar el estado de las copias Snapshot locales, las replicaciones y los backups en trabajos de almacenamiento de objetos que haya iniciado o que hayan sido programados, y restaurar trabajos que haya iniciado o programado. Puede ver los trabajos completados, en curso o fallidos para poder diagnosticar y corregir problemas. Con el Centro de notificaciones de BlueXP, puedes habilitar el envío de notificaciones por correo electrónico para que se te informe de la actividad importante del sistema incluso sin haber iniciado sesión en el sistema. Gracias a la línea de tiempo de BlueXP, puedes ver detalles de todas las acciones que se han iniciado a través de la interfaz de usuario o la API. 
 ---
 = Supervisar el estado de los trabajos de backup y restauración
 :hardbreaks:
@@ -31,7 +31,7 @@ El estado puede ser:
 * Error
 
 
-Las Snapshot, las replicaciones, los backups en las operaciones de almacenamiento de objetos y restauración que se iniciaron desde la API e IU de backup y recuperación de BlueXP, y los trabajos iniciados por el sistema como las operaciones de backup programadas continuas, están disponibles en la pestaña Job Monitoring. Sin embargo, esto solo se aplica a sistemas Cloud Volumes ONTAP que ejecutan ONTAP 9.13.0 o posterior y sistemas ONTAP on-premises que ejecutan ONTAP 9.13.1 o posterior. Cuando se ejecutan versiones anteriores de ONTAP, solo se muestran los trabajos iniciados por el usuario.
+Las copias Snapshot, las replicaciones, los backups en el almacenamiento de objetos y las operaciones de restauración que inició desde la API e IU de backup y recuperación de BlueXP están disponibles en la pestaña Job Monitoring.
 
 
 NOTE: Si ha actualizado sus sistemas ONTAP a la versión 9,13.x y no ve las operaciones de backup programadas continuas en el Monitor de trabajos, deberá reiniciar el servicio de backup y recuperación de BlueXP. link:reference-restart-backup.html["Descubre cómo reiniciar el backup y la recuperación de datos de BlueXP"].
@@ -128,7 +128,7 @@ Desde la información Detalles de supervisión de trabajos, puede descargar un a
 
 == Revisar trabajos de retención (ciclo de vida del backup)
 
-La supervisión de flujos de retención (ciclo de vida del backup) le ayuda con la integridad de las auditorías, la responsabilidad y la seguridad del backup. Para facilitar el seguimiento del ciclo de vida de backup, quizás desee identificar la caducidad de todas las copias de backup.
+La supervisión de los flujos de retención (o _BACKUP lifecycle_) le ayuda con la integridad de las auditorías, la responsabilidad y la seguridad de las copias de seguridad. Para facilitar el seguimiento del ciclo de vida de backup, quizás desee identificar la caducidad de todas las copias de backup.
 
 Un trabajo de ciclo de vida de backup realiza un seguimiento de todas las copias de Snapshot que se han eliminado o en la cola que se van a eliminar. A partir de ONTAP 9,13, puede ver todos los tipos de trabajos denominados «Retención» en la página Supervisión de trabajos.
 
@@ -137,7 +137,7 @@ El tipo de trabajo «Retención» captura todos los trabajos de eliminación de 
 .Pasos
 . Seleccione la ficha *Supervisión de trabajos*.
 . Seleccione el área *Búsqueda avanzada y filtrado* para abrir el panel de búsqueda.
-. Seleccione el tipo de trabajo de Retención.
+. Seleccione Retención como tipo de trabajo.
 
 
 

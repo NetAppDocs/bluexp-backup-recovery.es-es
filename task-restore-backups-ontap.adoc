@@ -206,7 +206,12 @@ NOTE: Si la versión de ONTAP de su sistema es inferior a 9.13.1, no podrá rest
 
 === Restaure volúmenes mediante la función examinar & Restore
 
-Cuando se restaura un volumen a partir de un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Al utilizar una copia de seguridad en la nube, puedes restaurar los datos en un volumen en el entorno de trabajo original o en un entorno de trabajo diferente que se encuentre en la misma cuenta de nube que en el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
+Cuando se restaura un volumen a partir de un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Al utilizar un backup a partir del almacenamiento de objetos, es posible restaurar los datos en un volumen en el entorno de trabajo original, en un entorno de trabajo diferente ubicado en la misma cuenta de cloud que el entorno de trabajo de origen o en un sistema ONTAP on-premises.
+
+Cuando restaure un backup cloud en un sistema Cloud Volumes ONTAP con ONTAP 9.13.0 o posterior, tendrá la opción de realizar una operación de «restauración rápida». La restauración rápida es ideal para situaciones de recuperación ante desastres en las que se necesita proporcionar acceso a un volumen lo antes posible. Una restauración rápida restaura los metadatos del archivo de backup a un volumen en lugar de restaurar todo el archivo de backup. No se recomienda la restauración rápida para aplicaciones sensibles al rendimiento ni a la latencia, ni se admite con backups en el almacenamiento archivado.
+
+
+NOTE: La restauración rápida solo es compatible con los volúmenes de FlexGroup si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.12.1 o posterior. Y solo se admite para volúmenes de SnapLock si el sistema de origen ejecutaba ONTAP 9.11.0 o posterior.
 
 Al restaurar desde un volumen replicado, puede restaurar el volumen en el entorno de trabajo original o en un sistema Cloud Volumes ONTAP o ONTAP on-premises.
 
@@ -268,9 +273,12 @@ endif::gcp[]
 * Al restaurar desde StorageGRID, introduzca el FQDN del servidor StorageGRID y el puerto que ONTAP debe usar para la comunicación HTTPS con StorageGRID, seleccione la clave de acceso y la clave secreta necesarias para acceder al almacenamiento de objetos, y el espacio IP del clúster ONTAP donde reside el volumen de destino.
 * Cuando se restaure desde ONTAP S3, introduzca el FQDN del servidor ONTAP S3 y el puerto que ONTAP debe utilizar para la comunicación HTTPS con ONTAP S3, seleccione la clave de acceso y la clave secreta necesarias para acceder al almacenamiento de objetos. y el espacio IP del clúster de ONTAP donde residirá el volumen de destino.
 +
-.. Introduzca el nombre que desea usar para el volumen restaurado y seleccione la máquina virtual de almacenamiento y el agregado donde reside el volumen. Al restaurar un volumen de FlexGroup, puede elegir varios agregados. De forma predeterminada, se utiliza *<source_volume_name>_restore* como nombre del volumen.
+.. Introduzca el nombre que desea usar para el volumen restaurado y seleccione la máquina virtual de almacenamiento y el agregado donde reside el volumen. Cuando restaure un volumen de FlexGroup, deberá seleccionar varios agregados. De forma predeterminada, se utiliza *<source_volume_name>_restore* como nombre del volumen.
 +
 image:screenshot_restore_new_vol_name.png["Captura de pantalla de introducción del nombre del nuevo volumen que desea restaurar."]
+
++
+Cuando restaure un backup a partir de un almacenamiento de objetos a un sistema Cloud Volumes ONTAP mediante ONTAP 9.13.0 o posterior, tendrá la opción de realizar una operación de restauración rápida.
 
 +
 Además, si va a restaurar el volumen a partir de un archivo de backup que reside en un nivel de almacenamiento de archivado (disponible a partir de ONTAP 9.10.1), puede seleccionar la prioridad de restauración.
@@ -475,9 +483,11 @@ Es posible restaurar un volumen, una carpeta o archivos desde un archivo de back
 
 La operación de búsqueda busca todas las copias Snapshot locales que existen para los volúmenes ONTAP, todos los volúmenes replicados en los sistemas de almacenamiento secundario y todos los archivos de backup existentes en el almacenamiento de objetos. Como restaurar datos desde una copia Snapshot local o un volumen replicado puede ser más rápido y menos costoso que la restauración desde un archivo de backup en un almacenamiento de objetos, quizás desee restaurar datos desde estas otras ubicaciones.
 
-Cuando se restaura un volumen a partir de un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Puede restaurar los datos como un volumen en el entorno de trabajo original o a un entorno de trabajo diferente ubicado en la misma cuenta de cloud que el entorno de trabajo de origen. También es posible restaurar volúmenes en un sistema ONTAP en las instalaciones.
+Cuando restaura un _full volume_ desde un archivo de backup, el backup y la recuperación de BlueXP crean un volumen _new_ con los datos del backup. Puede restaurar los datos como un volumen en el entorno de trabajo original, en un entorno de trabajo diferente ubicado en la misma cuenta de cloud que el entorno de trabajo de origen o en un sistema ONTAP on-premises.
 
-Es posible restaurar carpetas o archivos en la ubicación del volumen original, a un volumen diferente del mismo entorno de trabajo o a un entorno de trabajo diferente que utilice la misma cuenta de cloud. También puede restaurar carpetas y archivos en un volumen de un sistema ONTAP en las instalaciones.
+Cuando restaure un backup cloud en un sistema Cloud Volumes ONTAP con ONTAP 9.13.0 o posterior, tendrá la opción de realizar una operación de «restauración rápida». La restauración rápida es ideal para situaciones de recuperación ante desastres en las que se necesita proporcionar acceso a un volumen lo antes posible. Una restauración rápida restaura los metadatos del archivo de backup a un volumen en lugar de restaurar todo el archivo de backup. No se recomienda la restauración rápida para aplicaciones sensibles al rendimiento ni a la latencia, ni se admite con backups en el almacenamiento archivado.
+
+Puede restaurar _carpetas o archivos_ a la ubicación del volumen original, a otro volumen en el mismo entorno de trabajo, a un entorno de trabajo diferente que utilice la misma cuenta de cloud o a un volumen en un sistema ONTAP local.
 
 Si utiliza ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos los archivos y subcarpetas dentro de ella. Cuando se utiliza una versión de ONTAP anterior a la 9.13.0, solo se restauran los archivos de esa carpeta, no se restauran ni las subcarpetas ni los archivos de esas carpetas.
 
@@ -505,6 +515,7 @@ endif::gcp[]
 ====
 * Si el archivo de backup del almacenamiento de objetos se configuró con protección DataLock y Ransomware, la restauración en el nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o posterior. Si utiliza una versión anterior de ONTAP, puede restaurar el volumen entero desde el archivo de backup y luego acceder a la carpeta y los archivos que necesita.
 * Si el archivo de backup del almacenamiento de objetos reside en un almacenamiento de archivado, la restauración a nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o posterior. Si utiliza una versión anterior de ONTAP, puede restaurar la carpeta desde un archivo de backup más reciente que no se haya archivado, o puede restaurar todo el volumen desde el backup archivado y, a continuación, acceder a la carpeta y los archivos que necesita.
+* La restauración rápida solo es compatible con los volúmenes de FlexGroup si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.12.1 o posterior. La restauración rápida para volúmenes de SnapLock solo se admite si el sistema de origen desde el que se creó el backup en el cloud ejecutaba ONTAP 9.11.0 o posterior. No hay un requisito mínimo para los volúmenes de FlexVol.
 * La prioridad de restauración «Alta» no se admite al restaurar datos desde el almacenamiento de archivado de Azure en sistemas StorageGRID.
 * Actualmente, no se admite la restauración de carpetas desde los volúmenes en el almacenamiento de objetos de ONTAP S3.
 
@@ -753,7 +764,10 @@ Tenga en cuenta que los resultados también identifican las copias Snapshot de v
 
 . Seleccione la ubicación de destino en la que desea restaurar el volumen, la carpeta o los archivos y haga clic en *Restaurar*.
 +
-** Para los volúmenes, es posible seleccionar el entorno de trabajo de destino original o bien seleccionar un entorno de trabajo alternativo. Al restaurar un volumen de FlexGroup, puede elegir varios agregados.
+** Para los volúmenes, es posible seleccionar el entorno de trabajo de destino original o bien seleccionar un entorno de trabajo alternativo. Cuando restaure un volumen de FlexGroup, debe elegir varios agregados.
++
+Cuando restaure un backup a partir de un almacenamiento de objetos a un sistema Cloud Volumes ONTAP mediante ONTAP 9.13.0 o posterior, tendrá la opción de realizar una operación de restauración rápida.
+
 ** Para las carpetas, puede restaurar a la ubicación original o seleccionar una ubicación alternativa, incluido el entorno de trabajo, el volumen y la carpeta.
 ** Para los archivos, es posible restaurar a la ubicación original o seleccionar una ubicación alternativa, incluido el entorno de trabajo, el volumen y la carpeta. Al seleccionar la ubicación original, puede elegir sobrescribir los archivos de origen o crear archivos nuevos.
 +

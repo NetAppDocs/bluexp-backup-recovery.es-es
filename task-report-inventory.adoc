@@ -41,7 +41,7 @@ Los informes de backup y recuperación de BlueXP ofrecen información sobre los 
 
 == Cree un informe de inventario de copia de seguridad
 
-En la pestaña Informes de backup y recuperación de BlueXP, puede crear el informe de inventario de backup y filtrar el contenido. Con el informe Backup Inventory, puede ver todos los backups de una cuenta, un entorno de trabajo o un inventario de SVM específicos.
+En la pestaña Informes de backup y recuperación de BlueXP, puede crear el informe de inventario de backup y filtrar el contenido. Con el informe Backup Inventory, puede visualizar todos los backups de una cuenta, un entorno de trabajo o un inventario de SVM específico.
 
 El informe Inventario de copia de seguridad muestra la siguiente información, entre otras cosas:
 
@@ -83,6 +83,7 @@ El informe Inventario de copia de seguridad muestra los siguientes gráficos:
 TIP: Puede seleccionar varios entornos de trabajo y SVM.
 
 . Seleccione el marco de tiempo: Últimas 24 horas, semana o mes.
+. Revise las secciones de informes (Políticas de Snapshot, Políticas de replicación o Políticas de backup), según las selecciones de los informes.
 . (Opcional) Filtrar los resultados por estado del trabajo.
 . (Opcional) Exporte el contenido del informe en formato .CSV seleccionando *Descargar CSV*.
 
@@ -93,7 +94,7 @@ TIP: Puede seleccionar varios entornos de trabajo y SVM.
 
 La supervisión proactiva puede reducir el esfuerzo necesario para supervisar todos los recursos de su ecosistema. A partir de ONTAP 9.13.0, el informe de actividad de trabajos de protección de datos proporciona información sobre operaciones de Snapshot, backup, clonado y restauración que puede utilizar con la supervisión de acuerdos de nivel de servicio y realizar un seguimiento de las tasas de backup y recuperación.
 
-El informe se aplica a las operaciones de backup y recuperación de BlueXP para Cloud Volumes ONTAP, en las instalaciones, aplicaciones y Kubernetes.
+El informe se aplica a las operaciones de backup y recuperación de BlueXP para los datos de Cloud Volumes ONTAP, on-premises, aplicaciones y Kubernetes.
 
 El informe Actividad de trabajo de protección de datos muestra, entre otras cosas, la siguiente información:
 

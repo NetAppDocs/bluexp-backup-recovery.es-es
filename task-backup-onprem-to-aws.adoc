@@ -597,20 +597,38 @@ Para obtener información detallada sobre estas arquitecturas, consulte link:con
 
 
 
-. *Instantánea local*: Elija una política de Snapshot existente.
+. *Instantánea local*: Elija una política de Snapshot existente o cree una política.
 +
 
-TIP: Para crear una política personalizada, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar la instantánea, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+** Introduzca el nombre de la política.
+** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+** Seleccione *Crear*.
+
 
 . *Replicación*: Establezca las siguientes opciones:
 +
 ** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
-** *Política de replicación*: Elija una política de replicación existente.
-
-
+** *Política de replicación*: Elija una política de replicación existente o cree una política.
 +
 
-TIP: Para crear una política personalizada, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar la replicación, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+
 
 . *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
 +
@@ -634,10 +652,19 @@ NOTE: Si eligió un depósito existente, la información de cifrado ya está dis
 ... Si lo desea, puede elegir si va a utilizar un AWS PrivateLink que haya configurado previamente. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulte detalles sobre el uso de AWS PrivateLink para Amazon S3"^].
 
 
-** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente.
+** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente o cree una política.
 +
 
-TIP: Para crear una política personalizada, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar el backup, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
 
 ** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
 

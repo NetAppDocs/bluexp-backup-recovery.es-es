@@ -413,22 +413,38 @@ Para obtener información detallada sobre estas arquitecturas, consulte link:con
 
 
 
-. *Instantánea local*: Elija una política de Snapshot existente.
+. *Instantánea local*: Elija una política de Snapshot existente o cree una nueva.
 +
 
-TIP: Para crear una política personalizada, consulte
-link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar la instantánea, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+** Introduzca el nombre de la política.
+** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+** Seleccione *Crear*.
+
 
 . *Replicación*: Establezca las siguientes opciones:
 +
 ** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
-** *Política de replicación*: Elija una política de replicación existente.
-
-
+** *Política de replicación*: Elija una política de replicación existente o cree una.
 +
 
-TIP: Para crear una política personalizada, consulte
-link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar la replicación, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+
 
 . *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
 +
@@ -442,17 +458,25 @@ La clave de acceso y la clave secreta son las del usuario de IAM que se creó pa
 
 TIP: Al seleccionar el espacio IP correcto, se garantiza que el backup y la recuperación de BlueXP puedan configurar una conexión desde ONTAP a tu almacenamiento de objetos de StorageGRID.
 
-** *Política de copia de seguridad*: Seleccione una política existente de copia de seguridad para almacenamiento de objetos.
+** *Política de copia de seguridad*: Seleccione una política existente de copia de seguridad para almacenamiento de objetos o cree una.
 +
 
-TIP: Para crear una política personalizada, consulte
-link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar el backup, consulte link:task-create-policies-ontap.html["Crear una política"].
 
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
 +
 Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando _DataLock y Protección de ransomware_. _DataLock_ protege sus archivos de copia de seguridad de ser modificados o eliminados, y _Ransomware protection_ analiza sus archivos de copia de seguridad para buscar evidencia de un ataque de ransomware en sus archivos de copia de seguridad. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Obtenga más información acerca de los ajustes de DataLock disponibles"^].
 
 +
 Si el clúster utiliza ONTAP 9.12.1 o posterior y el sistema StorageGRID utiliza la versión 11.4 o posterior, puede optar por organizar en niveles los backups antiguos en niveles de archivado en cloud público después de un determinado número de días. Actualmente es compatible con los niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Preparing to archive older backup files to public cloud storage,Vea cómo configurar sus sistemas para esta funcionalidad>>.
+
+
 
 ** *Copia de seguridad de nivel en la nube pública*: Seleccione el proveedor de nube al que desea organizar las copias de seguridad en niveles e introduzca los detalles del proveedor.
 +

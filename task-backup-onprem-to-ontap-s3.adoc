@@ -359,15 +359,37 @@ Para obtener información detallada sobre estas arquitecturas, consulte link:con
 
 
 
-. *Instantánea local*: Elija una política de Snapshot existente.
+. *Instantánea local*: Elija una política de Snapshot existente o cree una nueva.
 +
 
-TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+TIP: Si desea crear una política personalizada antes de activar la Snapshot, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+
++
+
+TIP: Para crear una política personalizada utilizando este servicio antes de activar la instantánea, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+** Introduzca el nombre de la política.
+** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+** Seleccione *Crear*.
+
 
 . *Replicación*: Si seleccionaste *Replicación*, establece las siguientes opciones:
 +
 ** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado de destino (o agregados para volúmenes de FlexGroup) y un prefijo o sufijo que se añadirá al nombre del volumen replicado.
-** *Política de replicación*: Elija una política de replicación existente.
+** *Política de replicación*: Elija una política de replicación existente o cree una nueva.
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
 
 
 . *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
@@ -382,14 +404,23 @@ La clave de acceso y la clave secreta se aplican al usuario que se creó para ot
 
 TIP: Al seleccionar el espacio IP correcto, se garantiza que el backup y la recuperación de BlueXP puedan configurar una conexión desde ONTAP a su almacenamiento de objetos de ONTAP S3.
 
-** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente.
+** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente o cree una nueva.
 +
 
-TIP: Si desea crear una política personalizada, puede usar System Manager o la CLI de ONTAP `snapmirror policy create` comando. Consulte.
+TIP: Puede crear una política con System Manager o la CLI de ONTAP. Para crear una política personalizada mediante la CLI de ONTAP `snapmirror policy create` consulte.
 
 +
 
-TIP: Para crear una política personalizada usando la interfaz de usuario de, consulte link:task-create-policies-ontap.html["Crear una política"].
+TIP: Para crear una política personalizada antes de activar el backup con la interfaz de usuario de, consulte link:task-create-policies-ontap.html["Crear una política"].
+
++
+Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
+
++
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
 
 
 

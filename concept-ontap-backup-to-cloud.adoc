@@ -77,6 +77,7 @@ Consulte <<Limitaciones de replicación,Limitaciones de replicación>> Para acce
 * Restaura datos desde un momento específico a partir de copias Snapshot locales, volúmenes replicados o backups de volúmenes en el almacenamiento de objetos.
 * Restaure un volumen, una carpeta o archivos individuales, al sistema de origen o a otro sistema.
 * Restaure los datos a un entorno de trabajo utilizando una cuenta o suscripción diferente o que se encuentre en una región diferente.
+* Capacidad para realizar una «restauración rápida» de un volumen del almacenamiento en cloud a un sistema Cloud Volumes ONTAP; perfecto para situaciones de recuperación ante desastres en las que necesita proporcionar acceso a un volumen lo antes posible.
 * Los datos se restauran en el nivel de bloque, colocando los datos directamente en la ubicación especificada, siempre que se conservan las ACL originales.
 * Catálogos de archivos que se pueden examinar y realizar búsquedas para seleccionar fácilmente carpetas y archivos individuales para restaurar un solo archivo.
 
@@ -322,7 +323,7 @@ Este diagrama muestra los volúmenes que se replican en un sistema Cloud Volumes
 
 === La ubicación de los backups
 
-Las copias de seguridad residen en ubicaciones de deffent según el tipo de copia de seguridad:
+Los backups residen en distintas ubicaciones según el tipo de backup:
 
 * _Snapshot copies_ residen en el volumen de origen en el entorno de trabajo de origen.
 * _Los volúmenes replicados_ residen en el sistema de almacenamiento secundario: Un sistema Cloud Volumes ONTAP o ONTAP en las instalaciones.
@@ -463,7 +464,7 @@ Esta operación podría provocar un aumento único en el coste de leer los datos
 
 === Limitaciones de replicación
 
-* Solo puede seleccionar un volumen de FlexGroup a la vez para la replicación. Deberá activar el backup por separado para cada volumen de FlexGroup.
+* Solo puede seleccionar un volumen de FlexGroup a la vez para la replicación. Deberás activar los backups por separado para cada volumen FlexGroup.
 +
 Para los volúmenes de FlexVol no hay limitación: Puede seleccionar todos los volúmenes de FlexVol en el entorno de trabajo y asignar las mismas políticas de backup.
 
@@ -481,7 +482,7 @@ Para los volúmenes de FlexVol no hay limitación: Puede seleccionar todos los v
 
 === Limitaciones de backup de objetos
 
-* Cuando se crea o edita una política de backup cuando no se asignan volúmenes a la política, el número de backups retenidos puede ser un máximo de 1018. Después de asignar volúmenes a la política, es posible editar la política para crear hasta 4000 backups.
+* Cuando se crea o edita una política de backup cuando no se asignan volúmenes a la política, la cantidad de backups retenidos puede ser como máximo de 1018. Después de asignar volúmenes a la política, es posible editar la política para crear hasta 4000 backups.
 * Cuando se realiza un backup de volúmenes de protección de datos (DP):
 +
 ** Relaciones con las etiquetas de SnapMirror `app_consistent` y.. `all_source_snapshot` no se realizarán backups en el cloud.
@@ -500,8 +501,8 @@ Para los volúmenes de FlexVol no hay limitación: Puede seleccionar todos los v
 
 * Soporte de MetroCluster:
 +
-** Cuando se utiliza ONTAP 9.12.1 GA o superior, el backup es compatible cuando se conecta al sistema primario. Toda la configuración de backup se transfiere al sistema secundario de forma que los backups al cloud continúan automáticamente tras la conmutación. No es necesario configurar el backup en el sistema secundario (de hecho, ya no se tiene la restricción de hacerlo).
-** Cuando se utiliza ONTAP 9.12.0 y versiones anteriores, el backup solo es compatible desde el sistema secundario ONTAP.
+** Cuando se utiliza ONTAP 9.12.1 GA o superior, se admite el backup cuando se conecta al sistema primario. Toda la configuración de backup se transfiere al sistema secundario de forma que los backups al cloud continúan automáticamente tras la conmutación. No es necesario configurar el backup en el sistema secundario (de hecho, ya no se tiene la restricción de hacerlo).
+** Cuando se utiliza ONTAP 9.12.0 y versiones anteriores, el backup solo se admite desde el sistema secundario ONTAP.
 ** Por el momento no se admiten backups de volúmenes de FlexGroup.
 
 
@@ -533,4 +534,12 @@ Si se utiliza una versión de ONTAP anterior a la 9.11.1, no se admite la restau
 * No se admite la restauración de volúmenes de FlexGroup a volúmenes de FlexVol o volúmenes de FlexVol a volúmenes de FlexGroup.
 * El archivo que se va a restaurar debe estar utilizando el mismo idioma que el del volumen de destino. Recibirá un mensaje de error si los idiomas no son los mismos.
 * La prioridad de restauración _High_ no se admite al restaurar datos desde el almacenamiento de archivado de Azure a los sistemas StorageGRID.
+* Limitaciones de restauración rápida:
++
+** La ubicación de destino debe ser un sistema Cloud Volumes ONTAP que utilice ONTAP 9.13.0 o superior.
+** No es compatible con copias de seguridad ubicadas en el almacenamiento archivado.
+** Los volúmenes de FlexGroup solo son compatibles si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.12.1 o una versión posterior.
+** Los volúmenes de SnapLock solo son compatibles si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.11.0 o una versión posterior.
+
+
 
