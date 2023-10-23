@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-create-policies-ontap.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen el tipo de backup, la arquitectura de backup, los sistemas de almacenamiento y la frecuencia de backup. 
 ---
 = Gestione políticas de backup para volúmenes de ONTAP
@@ -141,9 +141,9 @@ Esta normativa de almacenamiento reside en diferentes ubicaciones del sistema de
 . En la sección Policy Details, especifique el nombre de la política.
 . Especifique las etiquetas de SnapMirror (máximo de 5) que indican la retención de cada etiqueta.
 . Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.
-. (Opcional) Para mover archivos de copia de seguridad antiguos a una clase de almacenamiento o nivel de acceso más baratos después de un cierto número de días, seleccione la opción *Archive* e indique el número de días que deben transcurrir antes de que los datos se archiven.
+. (Opcional) Para mover archivos de copia de seguridad antiguos a una clase de almacenamiento o nivel de acceso más baratos después de un cierto número de días, seleccione la opción *Archive* e indique el número de días que deben transcurrir antes de que los datos se archiven. Introduzca *0* como el “Archivo después de días” para enviar su archivo de copia de seguridad directamente al almacenamiento de archivos.
 +
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["Obtenga más información sobre la configuración de almacenamiento de archivado"].
+link:concept-cloud-backup-policies.html#archival-storage-settings["Obtenga más información sobre la configuración de almacenamiento de archivado"].
 
 . (Opcional) Para evitar que sus copias de seguridad se modifiquen o eliminen, seleccione la opción *DataLock & Ransomware protection*.
 +

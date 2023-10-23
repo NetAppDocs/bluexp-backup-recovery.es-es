@@ -311,10 +311,17 @@ endif::azure[]
 
 == Configuración de almacenamiento de archivado
 
-Al usar cierto almacenamiento en cloud, se pueden mover los archivos de backup antiguos a un nivel de acceso/clase de almacenamiento más económico tras un determinado número de días. Tenga en cuenta que el almacenamiento de archivado no se puede utilizar si ha habilitado DataLock.
+Al utilizar el almacenamiento en cloud de AWS, Azure o Google, puede mover archivos de backup antiguos a un nivel de acceso o clase de almacenamiento de archivado menos costoso al cabo de un cierto número de días. También puede optar por enviar sus archivos de copia de seguridad al almacenamiento de archivos inmediatamente sin ser escrito en el almacenamiento en la nube estándar. Simplemente ingrese *0* como el “Archivo después de días” para enviar su archivo de copia de seguridad directamente al almacenamiento de archivos. Esto puede ser especialmente útil para los usuarios que rara vez necesitan acceder a los datos de backups en la nube o los usuarios que están reemplazando una solución de copia de seguridad a cinta.
 
-No se puede acceder inmediatamente a los datos en el nivel de archivado cuando sea necesario y exige un mayor coste de recuperación, por lo que debe plantearse la frecuencia con la que es necesario restaurar datos desde ficheros de backup archivados.
+No es posible acceder a los datos de los niveles de archivado inmediatamente cuando sea necesario y el coste de recuperación será superior, por lo que debe tener en cuenta con qué frecuencia puede necesitar restaurar los datos de los archivos de backup antes de decidir archivar los archivos de backup.
 
+[NOTE]
+====
+* El almacenamiento de archivado no se puede utilizar si ha habilitado DataLock.
+* No puede cambiar la política de archivado después de seleccionar *0* días (archivo inmediatamente).
+
+
+====
 Cada directiva de copia de seguridad proporciona una sección para _Archival Policy_ que puede aplicar a los archivos de copia de seguridad.
 
 image:screenshot_archive_tier_settings.png["Captura de pantalla de la configuración de la directiva de archivado al crear una directiva de copia de seguridad."]

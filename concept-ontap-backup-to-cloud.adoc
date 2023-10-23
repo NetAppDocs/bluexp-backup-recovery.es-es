@@ -55,7 +55,7 @@ Cuando sea necesario, puede restaurar un _volume_ entero, una _folder_ o uno o v
 
 
 
-Consulte <<Limitaciones de replicación,Limitaciones de replicación>> Para acceder a una lista de funciones de replicación que no están disponibles con el backup y la recuperación de datos de BlueXP.
+Consulte link:reference-limitations.html#replication-limitations["Limitaciones de replicación"] Para acceder a una lista de funciones de replicación que no están disponibles con el backup y la recuperación de datos de BlueXP.
 
 * Copia de seguridad a las características del objeto:*
 
@@ -186,7 +186,7 @@ El backup y la recuperación de BlueXP admiten los siguientes tipos de volúmene
 * Volúmenes de destino de protección de datos (DP) de SnapMirror
 
 
-Consulte las secciones de <<Limitaciones,Limitaciones de backup y restauración>> para requisitos y limitaciones adicionales.
+Consulte las secciones de link:reference-limitations.html#backup-to-object-limitations["Limitaciones de backup y restauración"] para requisitos y limitaciones adicionales.
 
 
 
@@ -398,7 +398,7 @@ TIP: No se puede habilitar DataLock si se dispone de la organización en niveles
 
 === Almacenamiento de archivado para ficheros de backup antiguos
 
-Al usar cierto almacenamiento en cloud, se pueden mover los archivos de backup antiguos a un nivel de acceso/clase de almacenamiento más económico tras un determinado número de días. Tenga en cuenta que el almacenamiento de archivado no se puede utilizar si ha habilitado DataLock.
+Al usar cierto almacenamiento en cloud, se pueden mover los archivos de backup antiguos a un nivel de acceso/clase de almacenamiento más económico tras un determinado número de días. También puede optar por enviar sus archivos de copia de seguridad al almacenamiento de archivos inmediatamente sin ser escrito en el almacenamiento en la nube estándar. Tenga en cuenta que el almacenamiento de archivado no se puede utilizar si ha habilitado DataLock.
 
 ifdef::aws[]
 
@@ -454,92 +454,4 @@ Esta operación podría provocar un aumento único en el coste de leer los datos
 
 
 * Tenga en cuenta el impacto de los backups antes de asignar el `all` la política de organización en niveles en los volúmenes. Como los datos se organizan en niveles de inmediato, el backup y la recuperación de datos de BlueXP leerán datos del nivel de cloud en lugar de del nivel local. Como las operaciones de backup simultáneas comparten el enlace de red con el almacén de objetos en cloud, se puede producir una degradación del rendimiento si los recursos de red se saturan. En este caso, puede que desee configurar de forma proactiva varias interfaces de red (LIF) para reducir este tipo de saturación de red.
-
-
-
-
-== Limitaciones
-
-
-
-=== Limitaciones de replicación
-
-* Solo puede seleccionar un volumen de FlexGroup a la vez para la replicación. Deberás activar los backups por separado para cada volumen FlexGroup.
-+
-Para los volúmenes de FlexVol no hay limitación: Puede seleccionar todos los volúmenes de FlexVol en el entorno de trabajo y asignar las mismas políticas de backup.
-
-* Las siguientes funciones son compatibles con el https://docs.netapp.com/us-en/bluexp-replication/index.html["Servicio de replicación de BlueXP"], Pero no cuando se utiliza la función de replicación de copia de seguridad y recuperación de BlueXP:
-+
-** No se admite una configuración en cascada en la que la replicación se produce del volumen A al volumen B y del volumen B al volumen C. El soporte incluye la replicación del volumen A al volumen B.
-** No existe soporte para replicar datos hacia y desde FSx para sistemas de ONTAP.
-** No hay soporte para crear una replicación única de un volumen.
-
-
-* Al crear replicaciones desde sistemas ONTAP en las instalaciones, si la versión de ONTAP en el sistema Cloud Volumes ONTAP de destino es 9,8, 9,9 o 9,11, solo se permiten las políticas de reflejo-almacén.
-
-
-
-
-=== Limitaciones de backup de objetos
-
-* Cuando se crea o edita una política de backup cuando no se asignan volúmenes a la política, la cantidad de backups retenidos puede ser como máximo de 1018. Después de asignar volúmenes a la política, es posible editar la política para crear hasta 4000 backups.
-* Cuando se realiza un backup de volúmenes de protección de datos (DP):
-+
-** Relaciones con las etiquetas de SnapMirror `app_consistent` y.. `all_source_snapshot` no se realizarán backups en el cloud.
-** Si crea copias locales de Snapshot en el volumen de destino de SnapMirror (independientemente de las etiquetas de SnapMirror utilizadas), estas Snapshots no se moverán al cloud como backups. En este momento, deberá crear una política de Snapshot con las etiquetas que desee en el volumen de DP de origen para que el backup y la recuperación de BlueXP los respalde.
-
-
-* Los backups de volúmenes de FlexGroup no se pueden mover al almacenamiento de archivado.
-* Los backups de volúmenes de FlexGroup pueden usar la protección DataLock y Ransomware si el clúster ejecuta ONTAP 9.13.1 o posterior.
-* Se admite el backup de volúmenes de SVM-DR con las siguientes restricciones:
-+
-** Los backups solo son compatibles desde el almacenamiento secundario de ONTAP.
-** La política de Snapshot aplicada al volumen debe ser una de las políticas reconocidas por el backup y la recuperación de BlueXP, incluidas diaria, semanal, mensual, etc. No se reconoce la política «sm_created» predeterminada (utilizada para *Mirror All Snapshots*) y el volumen DP no se mostrará en la lista de volúmenes de los que se puede realizar una copia de seguridad.
-
-
-
-
-* Soporte de MetroCluster:
-+
-** Cuando se utiliza ONTAP 9.12.1 GA o superior, se admite el backup cuando se conecta al sistema primario. Toda la configuración de backup se transfiere al sistema secundario de forma que los backups al cloud continúan automáticamente tras la conmutación. No es necesario configurar el backup en el sistema secundario (de hecho, ya no se tiene la restricción de hacerlo).
-** Cuando se utiliza ONTAP 9.12.0 y versiones anteriores, el backup solo se admite desde el sistema secundario ONTAP.
-** Por el momento no se admiten backups de volúmenes de FlexGroup.
-
-
-* La copia de seguridad de volumen ad-hoc con el botón *Backup Now* no se admite en los volúmenes de protección de datos.
-* No se admiten las configuraciones de SM-BC.
-* ONTAP no admite relaciones ramificadas de SnapMirror desde un único volumen a múltiples almacenes de objetos; por lo tanto, el backup y la recuperación de BlueXP no admite esta configuración.
-* En este momento, EL modo WORM y cumplimiento de normativas en un almacén de objetos es compatible con Amazon S3, Azure y StorageGRID. Esto se conoce como la función DataLock, y debe gestionarse mediante la configuración de copia de seguridad y recuperación de BlueXP, no mediante el uso de la interfaz del proveedor de la nube.
-
-
-
-
-=== Limitaciones de la restauración
-
-Estas limitaciones se aplican tanto a los métodos de restauración de archivos y carpetas como a los métodos de búsqueda y restauración, a menos que se especifique lo contrario.
-
-* Browse & Restore permite restaurar hasta 100 archivos individuales a la vez.
-* Search & Restore puede restaurar 1 fichero cada vez.
-* Al utilizar ONTAP 9.13.0 o superior, Browse & Restore y Search & Restore pueden restaurar una carpeta junto con todos los archivos y subcarpetas del mismo.
-+
-Cuando se utiliza una versión de ONTAP superior a 9.11.1 pero anterior a la 9.13.0, la operación de restauración solo puede restaurar la carpeta seleccionada y los archivos de esa carpeta; no se restauran ninguna subcarpeta ni los archivos de las subcarpetas.
-
-+
-Si se utiliza una versión de ONTAP anterior a la 9.11.1, no se admite la restauración de carpetas.
-
-* La restauración de directorio/carpeta es compatible para datos que se encuentran en el almacenamiento de archivado solo cuando el clúster ejecuta ONTAP 9.13.1 y versiones posteriores.
-* La restauración de directorios o carpetas es compatible para los datos que se protegen mediante DataLock solo si el clúster ejecuta ONTAP 9.13.1 y versiones posteriores.
-* La restauración de directorios/carpetas no se admite actualmente en los backups de volúmenes de FlexGroup.
-* Actualmente, la restauración de directorios/carpetas no se admite desde replicaciones o snapshots locales.
-* No se admite la restauración de volúmenes de FlexGroup a volúmenes de FlexVol o volúmenes de FlexVol a volúmenes de FlexGroup.
-* El archivo que se va a restaurar debe estar utilizando el mismo idioma que el del volumen de destino. Recibirá un mensaje de error si los idiomas no son los mismos.
-* La prioridad de restauración _High_ no se admite al restaurar datos desde el almacenamiento de archivado de Azure a los sistemas StorageGRID.
-* Limitaciones de restauración rápida:
-+
-** La ubicación de destino debe ser un sistema Cloud Volumes ONTAP que utilice ONTAP 9.13.0 o superior.
-** No es compatible con copias de seguridad ubicadas en el almacenamiento archivado.
-** Los volúmenes de FlexGroup solo son compatibles si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.12.1 o una versión posterior.
-** Los volúmenes de SnapLock solo son compatibles si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.11.0 o una versión posterior.
-
-
 
