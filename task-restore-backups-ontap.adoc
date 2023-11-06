@@ -238,7 +238,7 @@ image:screenshot_restore_select_volume_snapshot.png["Captura de pantalla de sele
 
 . Haga clic en *Siguiente*.
 +
-Tenga en cuenta que si selecciona un archivo de backup en el almacenamiento de objetos y la protección contra ransomware está activa para ese backup (si habilitó DataLock y Ransomware Protection en la política de backup), se le pedirá que ejecute un análisis de ransomware adicional en el archivo de backup antes de restaurar los datos. Se recomienda que escanee el archivo de backup como ransomware.
+Tenga en cuenta que si selecciona un archivo de backup en el almacenamiento de objetos y la protección contra ransomware está activa para ese backup (si habilitó DataLock y Ransomware Protection en la política de backup), se le pedirá que ejecute un análisis de ransomware adicional en el archivo de backup antes de restaurar los datos. Se recomienda que escanee el archivo de backup como ransomware. (Incurrirá en costes adicionales de salida de su proveedor de cloud para acceder al contenido del archivo de backup).
 
 . En la página _Select Destination_, seleccione *entorno de trabajo* donde desea restaurar el volumen.
 +
@@ -405,7 +405,8 @@ link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["M�
 
 endif::gcp[]
 
-+ y si la protección contra ransomware está activa para el archivo de copia de seguridad (si habilitó DataLock y la protección contra ransomware en la política de copia de seguridad), se le solicitará que ejecute un análisis adicional de ransomware en el archivo de copia de seguridad antes de restaurar los datos. Se recomienda que escanee el archivo de backup como ransomware.
++
+Y, si la protección contra ransomware está activa para el archivo de backup (si habilitó DataLock y Ransomware Protection en la política de backup), se le pedirá que ejecute un análisis adicional de ransomware en el archivo de backup antes de restaurar los datos. Se recomienda que escanee el archivo de backup como ransomware. (Incurrirá en costes adicionales de salida de su proveedor de cloud para acceder al contenido del archivo de backup).
 
 +image:screenshot_restore_select_files.png["Captura de pantalla de la página Seleccionar elementos para que pueda desplazarse a los elementos que desea restaurar."]
 

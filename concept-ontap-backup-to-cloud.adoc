@@ -234,7 +234,8 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* Si necesita restaurar datos de volumen desde un archivo de backup que se ha movido al almacenamiento de objetos de archivado, el proveedor de cloud tendrá una tarifa adicional por recuperación por GiB y una tarifa por solicitud.
+* Si piensa restaurar datos de volumen desde un archivo de backup que se ha movido al almacenamiento de objetos archivados, el proveedor de cloud tendrá una tarifa por recuperación por GiB y una tarifa por solicitud.
+* Si tiene pensado analizar un archivo de backup en busca de ransomware durante el proceso de restauración de datos de volumen (si ha habilitado DataLock y Ransomware Protection para sus backups en el cloud), también incurrirá en costes adicionales de salida de su proveedor de cloud.
 
 
 *cargos por servicio*
