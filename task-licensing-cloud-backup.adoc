@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
 summary: Puedes obtener licencias de backup y recuperación de datos de BlueXP si compras una suscripción anual de pago por uso o un mercado de pago por uso de tu proveedor de nube, o si compras una licencia con tu propia licencia de NetApp. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción. 
 ---
 = Configura las licencias para el backup y la recuperación de BlueXP
@@ -30,7 +30,7 @@ link:concept-ontap-backup-to-cloud.html#cost["Obtén más información sobre los
 
 == prueba gratuita de 30 días
 
-Hay disponible una prueba gratuita de 30 días para backup y recuperación de BlueXP en la suscripción de pago por uso en el mercado de tu proveedor de cloud. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, tendrá 20 días para utilizar la prueba gratuita.
+Hay disponible una prueba gratuita de 30 días para backup y recuperación de BlueXP si te registras para obtener una suscripción de pago por uso en el mercado de tu proveedor de cloud. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, dispondrá de 20 días para usar la prueba gratuita.
 
 Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decides no continuar utilizando el backup y la recuperación de BlueXP, solo link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro del backup y la recuperación de BlueXP en el entorno de trabajo"] antes de que termine la prueba y no se le cobrará.
 
@@ -41,7 +41,7 @@ Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripci
 En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debe suscribirse aunque tenga una prueba gratuita o si lleva su propia licencia (BYOL):
 
 * La suscripción garantiza que no se produzca ninguna interrupción en el servicio una vez que finalice la prueba gratuita. Cuando finalice la prueba, se le cobrará cada hora de acuerdo con la cantidad de datos de los que realice la copia de seguridad.
-* Si realiza un backup de más datos de los permitidos en su licencia BYOL, el backup de datos continúa con su suscripción de pago por uso. Por ejemplo, si tiene una licencia BYOL de 10 TIB, toda la capacidad que supere los 10 TIB se cargará a través de la suscripción PAYGO.
+* Si realiza un backup de más datos de los que lo permite su licencia BYOL, las operaciones de backup y restauración de datos continúan con su suscripción de pago por uso. Por ejemplo, si tiene una licencia BYOL de 10 TIB, toda la capacidad que supere los 10 TIB se cargará a través de la suscripción PAYGO.
 
 
 No se le cobrará por su suscripción de pago por uso durante la prueba gratuita o si no ha superado su licencia BYOL.
@@ -62,7 +62,7 @@ Utilice estos enlaces para suscribirse al backup y la recuperación de BlueXP de
 
 ifdef::aws[]
 
-* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
 
 
 endif::aws[]
@@ -76,7 +76,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
 
 
 endif::gcp[]
@@ -85,11 +85,13 @@ endif::gcp[]
 
 == Utilizar un contrato anual
 
-Paga por el backup y la recuperación de BlueXP cada año mediante la compra de un contrato anual.
+Paga por el backup y la recuperación de BlueXP cada año mediante la compra de un contrato anual. Están disponibles en plazos de 1, 2 o 3 años.
+
+Si tienes un contrato anual en un mercado, todo el consumo de backup y recuperación de BlueXP se cargará en ese contrato. No se puede mezclar y combinar un contrato anual de mercado con una licencia propia.
 
 ifdef::aws[]
 
-Al utilizar AWS, hay dos contratos anuales disponibles en https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace"^] Para sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Están disponibles en periodos de 1, 2 o 3 años:
+Al utilizar AWS, hay dos contratos anuales disponibles en https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace"^] Para sistemas ONTAP Cloud Volumes ONTAP y en las instalaciones:
 
 * Un plan de "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos de ONTAP en las instalaciones.
 +
@@ -108,17 +110,30 @@ endif::aws[]
 
 ifdef::azure[]
 
-Si utiliza Azure, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Azure Marketplace. Después de que NetApp comparta la oferta privada con usted, puede seleccionar el plan anual al suscribirse desde Azure Marketplace durante la activación del backup y la recuperación de BlueXP.
+Al utilizar Azure, hay dos contratos anuales disponibles en el https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Página de Azure Marketplace"^] Para sistemas ONTAP Cloud Volumes ONTAP y en las instalaciones:
+
+* Un plan de "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos de ONTAP en las instalaciones.
++
+Si desea utilizar esta opción, configure su suscripción desde la página Marketplace y, a continuación, configure https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe["Asocie la suscripción a sus credenciales de Azure"^]. Ten en cuenta que también tendrás que pagar por tus sistemas Cloud Volumes ONTAP con esta suscripción de contrato anual, ya que solo puedes asignar una suscripción activa a tus credenciales de Azure en BlueXP.
+
+* Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados para el sistema Cloud Volumes ONTAP con la licencia (la capacidad de backup no se cuenta con la capacidad de la licencia). Esta opción no le permite realizar un backup de los datos de ONTAP locales.
++
+Consulte https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Tema sobre licencias de Cloud Volumes ONTAP"^] para obtener más información sobre esta opción de licencia.
+
++
+Si quieres usar esta opción, puedes configurar el contrato anual al crear un entorno de trabajo de Cloud Volumes ONTAP y BlueXP te pide que te suscribas a Azure Marketplace.
+
+
 
 endif::azure[]
 
 ifdef::gcp[]
 
-Cuando utilice GCP, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Google Cloud Marketplace. Después de que NetApp comparta la oferta privada con usted, podrá seleccionar el plan anual al suscribirse en Google Cloud Marketplace durante la activación del backup y la recuperación de BlueXP.
+Cuando utilice GCP, póngase en contacto con su representante de ventas de NetApp para adquirir un contrato anual. El contrato está disponible como oferta privada en Google Cloud Marketplace.
+
+Después de que NetApp comparta la oferta privada con usted, podrá seleccionar el plan anual al suscribirse en Google Cloud Marketplace durante la activación del backup y la recuperación de BlueXP.
 
 endif::gcp[]
-
-Si tienes un contrato anual en un mercado, todo el consumo de backup y recuperación de BlueXP se cargará en ese contrato. No se puede mezclar y combinar un contrato anual de mercado con una licencia propia.
 
 
 
@@ -238,7 +253,7 @@ Utilice el icono de chat situado en la parte inferior derecha de la interfaz de 
 
 Pueden ocurrir dos cosas cuando caduca su licencia BYOL:
 
-* Si la cuenta que está utilizando tiene una cuenta de Marketplace, el servicio de copia de seguridad continúa ejecutándose, pero se pasa a un modelo de licencia de PAYGO. Usted tiene la carga de la capacidad que usan los backups.
+* Si la cuenta que está utilizando tiene una cuenta PAYGO de Marketplace, el servicio de copia de seguridad continúa ejecutándose, pero se cambia a un modelo de licencia PAYGO. Usted tiene la carga de la capacidad que usan los backups.
 * Si la cuenta que está utilizando no tiene una cuenta de mercado, el servicio de copia de seguridad continúa ejecutándose, pero seguirá viendo las advertencias.
 
 
