@@ -362,12 +362,7 @@ Consulte la https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for
             "Resource": "arn:aws:s3:::netapp-backup-*",
             "Effect": "Allow",
             "Sid": "backupPolicy"
-        }
-    ]
-}
-{
-    "Version": "2012-10-17",
-    "Statement": [
+        },
         {
             "Action": [
                 "s3:ListBucket",
