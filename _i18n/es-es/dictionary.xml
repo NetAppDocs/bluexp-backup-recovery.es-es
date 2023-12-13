@@ -712,9 +712,7 @@
   <block id="5938ac938681497e7209c89bcf1fc58f" category="inline-link">Vea cómo usar sus propias claves</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">Configure el sistema para una conexión privada mediante una interfaz de extremo VPC</block>
   <block id="d37ada70a820c5c84f992a48e05045cf" category="inline-link-macro">primer diagrama</block>
-  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">Si desea utilizar una conexión a Internet pública estándar, el conector establece todos los permisos y no hay nada más que deba hacer. Este tipo de conexión se muestra en la <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>.</block>
   <block id="7cb65d7424b08922f4902800ae6b79d0" category="inline-link-macro">segundo diagrama</block>
-  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">Si desea disponer de una conexión más segura a través de Internet desde el centro de datos en las instalaciones al VPC, hay una opción para seleccionar una conexión de AWS PrivateLink en el asistente de activación de copias de seguridad. Es necesario si planea utilizar una VPN o AWS Direct Connect para conectar su sistema local a través de una interfaz VPC Endpoint que utilice una dirección IP privada. Este tipo de conexión se muestra en la <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>.</block>
   <block id="a08b285fd78cf03936887841fbc87805" category="inline-link">Consulte detalles sobre el uso de AWS PrivateLink para Amazon S3</block>
   <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">Añada los permisos S3 desde la política de backup</block>
   <block id="f59bbb6de7b8eafb6ccb2f617135ff84" category="list-text">Modifique la configuración del grupo de seguridad asociada al conector BlueXP. Debe cambiar la política a "personalizada" (desde "acceso completo") y debe hacerlo <block ref="52cd24ecfd99d5b16a10d03c54f9d16b" category="inline-xref-macro-rx"></block> como se ha mostrado anteriormente.</block>
@@ -2794,7 +2792,6 @@
   <block id="9af84f05d8931a3676e35cb449e96606" category="list-text">Deberás verificar que la API de Google “Cloud Key Management Service (KMS)” esté habilitada en tu proyecto. Consulte<block ref="5b19b983398533c382bb79968f58dbf1" category="inline-link-rx"></block> para obtener más detalles.</block>
   <block id="db058563d6eb243b453d48635769d049" category="list-text">Se admiten tanto las claves generadas por software como las de HSM (respaldado por hardware).</block>
   <block id="90a4c64194204c56808168a2ae360226" category="summary">Puedes obtener licencias de backup y recuperación de datos de BlueXP si compras una suscripción anual de pago por uso o un mercado de pago por uso de tu proveedor de nube, o si compras una licencia con tu propia licencia de NetApp. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción.</block>
-  <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">Cuando cree backups en regiones de AWS China, debe cambiar el nombre de recurso de AWS «arn» en todas las secciones _Resource_ de las políticas de IAM de «aws» a «aws-cn», por ejemplo<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>.</block>
   <block id="72c7fe989ff4840809134384de3dd80c" category="admonition">Si ha actualizado sus sistemas ONTAP a la versión 9,13.x y no ve las operaciones de backup programadas continuas en el Monitor de trabajos, deberá reiniciar el servicio de backup y recuperación de BlueXP. <block ref="bdf197dfe0363b0f0f92ecc4a997870a" category="inline-link-macro-rx"></block>.</block>
   <block id="53775c897cfb7fba4b875a6f0ce56341" category="admonition">Si piensa eliminar un entorno de trabajo o clúster que tiene copias de seguridad, debe eliminar las copias de seguridad *antes de* eliminando el sistema. El backup y la recuperación de datos de BlueXP no elimina automáticamente los backups cuando se elimina un sistema y no existe compatibilidad actual en la interfaz de usuario para eliminar los backups después de que el sistema se haya eliminado. Seguirá cobrándose los costes de almacenamiento de objetos por los backups restantes.</block>
   <block id="7063b7db80bf8574d1141e84ae0a1c85" category="list-text">Los backups de volúmenes de FlexGroup no se pueden mover al almacenamiento de archivado.</block>
@@ -3828,28 +3825,6 @@ ifdef::aws[]</block>
   <block id="12486a40437a6b66be9b1d2eaf68dacb" category="list-text">(Opcional) Configure el sistema para una conexión privada mediante una interfaz de punto final de VPC.</block>
   <block id="27481ab02cd2907ee58a87a01de37de2" category="list-text">Al activar el servicio, el Asistente de copia de seguridad le solicitará que introduzca una clave de acceso y una clave secreta. Estas credenciales se pasan al clúster de ONTAP para que ONTAP pueda realizar backups y restaurar los datos en el bloque de S3. Para ello, deberá crear un usuario de IAM con los siguientes permisos.</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">Consulte la<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>.</block>
-  <block id="50b086f5a622de5e2ad8e86ada10bc12" category="paragraph">«Acción»: [
-    «S3:ListBucket»
-    «S3:GetBucketLocation»
-]
-«Recurso»: «arn:aws:S3::*»,
-“Efecto”: “Permitir”
-},
-{
-    «Acción»: [
-        «S3:GetObject»,
-        «S3:PutObject»,
-        «S3:DeleteObject»,
-        «S3:ListAllMyBuckets»,
-        «S3:PutObjectTagging»,
-        «S3:GetObjectTagging»,
-        «S3:RestoreObject»,
-        «S3:GetBucketObjectLockConfiguration»,
-        «S3:GetObjectRetention»,
-        «S3:PutBucketObjectLockConfiguration»,
-        «S3:PutObjectRetention»
-        ]
-    «Recurso»: «arn:aws:S3::*»,</block>
   <block id="e2eb08f750d15308f8411635e75fc5e7" category="inline-link">Consulte cómo utilizar sus propias claves</block>
   <block id="de4ef5a5f97836ab944189954e7907e4" category="paragraph">Si, en cambio, quieres utilizar tus propias claves gestionadas por el cliente para el cifrado de datos en lugar de usar las claves predeterminadas, debes que las claves gestionadas de cifrado ya estén configuradas antes de iniciar el asistente de backup y recuperación de BlueXP.<block ref="4f334d1f128fd0a003f5f48bc9fc4cbc" category="inline-link-rx"></block>.</block>
   <block id="b08fc812a1a1619370d32b6eda413475" category="inline-link">Consulte los detalles sobre el uso de AWS PrivateLink para Amazon S3</block>
@@ -4078,7 +4053,6 @@ ifdef::aws[]</block>
   <block id="594ef985d417f60832e167b7a55944ba" category="paragraph"><block ref="90242aed4d9e662a807d0696ac4bc7d5" category="inline-link-macro-rx"></block>.</block>
   <block id="11a8a2e103fceba512eb133362ab467a" category="inline-link-macro">Obtenga más información sobre la creación de sus propias cuentas de almacenamiento</block>
   <block id="b1864ef3e1c982ea79e143744ce2e778" category="paragraph"><block ref="5168b6a061fd7575c70ed688cdecff09" category="inline-link-macro-rx"></block>.</block>
-  <block id="24c3f29f7b3c09228614448507eb27eb" category="paragraph">Si creas tus propios buckets, debes usar el nombre de bucket de «netapp-backup». Si necesita utilizar un nombre personalizado, edite el<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> IAMRole para los CVO existentes y agregue la siguiente lista a los permisos S3. Usted necesita incluir<block ref="a99022ed92fce54cbefc53cc3a7bb0a9" prefix=" " category="inline-code"></block> y asigne todos los permisos necesarios que se deben asociar al depósito.</block>
   <block id="28543445b2c93df38084996ffc019a63" category="section-title">¿Desea crear su propio contenedor de almacenamiento de objetos</block>
   <block id="44f63148cdcdb30b0f9a4cc99944e0cb" category="paragraph">Cuando crea archivos de copia de seguridad en el almacenamiento de objetos para un entorno de trabajo, de forma predeterminada, el servicio de copia de seguridad y recuperación crea el contenedor (cuenta de almacenamiento o depósito) para los archivos de copia de seguridad en la cuenta de almacenamiento de objetos que haya configurado. El bucket AWS o GCP se denomina «netapp-backup-&lt;uuid&gt;» de forma predeterminada. La cuenta de almacenamiento de Azure Blob se llama «netappbackup&lt;uuid&gt;».</block>
   <block id="f108f3b7f4cf5d3e79e581222e60586a" category="paragraph">Puede crear el contenedor usted mismo en la cuenta del proveedor de objetos si desea utilizar un prefijo determinado o asignar propiedades especiales. Si desea crear su propio contenedor, debe crearlo antes de iniciar el asistente de activación. El contenedor debe utilizarse exclusivamente para almacenar archivos de backup de volúmenes de ONTAP; no se puede utilizar para ningún otro fin. El asistente de activación de copia de seguridad detectará automáticamente los contenedores aprovisionados para la cuenta y las credenciales seleccionadas para que pueda seleccionar el que desea utilizar.</block>
@@ -4775,4 +4749,14 @@ Y, si la protección contra ransomware está activa para el archivo de backup (s
   <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">Soporte para los trabajos programados en Job Monitor</block>
   <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">El Job Monitor de backup y recuperación de BlueXP supervisaba previamente trabajos de backup y restauración programados de volumen a almacén de objetos, pero no trabajos de Snapshot, replicación, backup y restauración locales que se habían programado a través de la interfaz de usuario o la API.</block>
   <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">El supervisor de tareas de backup y recuperación de BlueXP ahora incluye trabajos programados para copias Snapshot locales, replicaciones y backups en el almacenamiento de objetos.</block>
+  <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">Si va a crear copias de seguridad en las regiones de AWS GovCloud o AWS China, deberá cambiar el nombre de recurso de AWS “arn” en todas las secciones _Resource_ en los dos conjuntos de permisos siguientes:</block>
+  <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">Para las regiones de AWS GovCloud, debe cambiar «aws» por «aws-us-gov», por ejemplo<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>.</block>
+  <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">Para las regiones de AWS China, debe cambiar «aws» a «aws-cn»; por ejemplo<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>.</block>
+  <block id="c791030455c6b061d69eaa3110693967" category="paragraph">Si creas tus propios buckets, debes usar el nombre de bucket de «netapp-backup». Si necesita utilizar un nombre personalizado, edite el<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> IAMRole para los CVO existentes y agregue la siguiente lista a los permisos S3.</block>
+  <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">Si sus buckets personalizados se encuentran en las regiones de AWS GovCloud o AWS China, deberá cambiar el nombre de recurso de AWS «arn» en todas las secciones _Resource_ de los permisos:</block>
+  <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">Para las regiones de AWS GovCloud, debe cambiar «aws» por «aws-us-gov», por ejemplo<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>.</block>
+  <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">Para las regiones de AWS China, debe cambiar «aws» a «aws-cn»; por ejemplo<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>.</block>
+  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">Si desea utilizar una conexión a Internet pública estándar, el conector establece todos los permisos y no hay nada más que deba hacer. Este tipo de conexión se muestra en la <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>.</block>
+  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">Si desea disponer de una conexión más segura a través de Internet desde el centro de datos en las instalaciones al VPC, hay una opción para seleccionar una conexión de AWS PrivateLink en el asistente de activación de copias de seguridad. Es necesario si planea utilizar una VPN o AWS Direct Connect para conectar su sistema local a través de una interfaz VPC Endpoint que utilice una dirección IP privada. Este tipo de conexión se muestra en la <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>.</block>
+  <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">Si está creando copias de seguridad en las regiones de AWS GovCloud o AWS China, deberá cambiar el nombre de recurso de AWS “arn” en todas las secciones _Resource_ en los conjuntos de permisos anteriores y siguientes:</block>
 </blocks>

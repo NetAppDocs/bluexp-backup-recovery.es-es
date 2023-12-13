@@ -182,9 +182,15 @@ A continuación se muestran los permisos específicos de la directiva:
         },
 ----
 ====
+[NOTE]
+====
+Si está creando copias de seguridad en las regiones de AWS GovCloud o AWS China, deberá cambiar el nombre de recurso de AWS “arn” en todas las secciones _Resource_ en los conjuntos de permisos anteriores y siguientes:
 
-NOTE: Cuando cree backups en regiones de AWS China, debe cambiar el nombre de recurso de AWS «arn» en todas las secciones _Resource_ de las políticas de IAM de «aws» a «aws-cn», por ejemplo `arn:aws-cn:s3:::netapp-backup-*`.
+* Para las regiones de AWS GovCloud, debe cambiar «aws» por «aws-us-gov», por ejemplo `arn:aws-us-gov:s3:::netapp-backup-*`.
+* Para las regiones de AWS China, debe cambiar «aws» a «aws-cn»; por ejemplo `arn:aws-cn:s3:::netapp-backup-*`.
 
+
+====
 Permisos necesarios de AWS Cloud Volumes ONTAP:: Cuando tu sistema Cloud Volumes ONTAP ejecuta el software de ONTAP 9.12.1 o posterior, el rol de IAM que ofrece ese entorno de trabajo con permisos debe incluir un nuevo conjunto de permisos S3 específicamente para backup y recuperación de BlueXP de la versión más reciente https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-iam-roles.html["Política de Cloud Volumes ONTAP"^].
 +
 --
