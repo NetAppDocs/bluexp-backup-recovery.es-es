@@ -466,10 +466,6 @@ Si desea disponer de una conexión más segura a través de Internet desde el ce
 
 .Pasos
 . Cree una configuración de extremo de interfaz mediante la consola de Amazon VPC o la línea de comandos. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulte los detalles sobre el uso de AWS PrivateLink para Amazon S3"^].
-. Modifique la configuración del grupo de seguridad asociada al conector BlueXP. Debe cambiar la política a "personalizada" (desde "acceso completo") y debe hacerlo <<Configure permisos de S3,Añada los permisos S3 desde la política de backup>> como se ha mostrado anteriormente.
-+
-image:screenshot_backup_aws_sec_group.png["Captura de pantalla del grupo de seguridad de AWS asociado con el conector."]
-
 +
 Si está utilizando el puerto 80 (HTTP) para la comunicación con el extremo privado, está configurado. Puede habilitar el backup y la recuperación de datos de BlueXP en el clúster ahora.
 
