@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-report-inventory.html 
 keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory 
-summary: Con los informes de backup y recuperación de datos de BlueXP, puedes garantizar que los datos cruciales estén protegidos según las políticas definidas por la organización y respaldar de manera eficiente las auditorías para los procesos de cumplimiento de normativas. Con el informe de inventario de backup, puede visualizar todos los backups de una cuenta, un entorno de trabajo o un inventario de SVM específico. 
+summary: Con los informes de backup y recuperación de datos de BlueXP, puedes garantizar que los datos cruciales estén protegidos según las políticas definidas por la organización y respaldar de manera eficiente las auditorías para los procesos de cumplimiento de normativas. Con el informe de inventario de backup, puedes ver todas tus copias Snapshot, las replicaciones y los backups locales. 
 ---
 = Informe sobre la cobertura de protección de datos
 :hardbreaks:
@@ -41,18 +41,18 @@ Los informes de backup y recuperación de BlueXP ofrecen información sobre los 
 
 == Cree un informe de inventario de copia de seguridad
 
-En la pestaña Informes de backup y recuperación de BlueXP, puede crear el informe de inventario de backup y filtrar el contenido. Con el informe Backup Inventory, puede visualizar todos los backups de una cuenta, un entorno de trabajo o un inventario de SVM específico.
+En la pestaña Informes de backup y recuperación de BlueXP, puede crear un informe de inventario de backup y filtrar el contenido. Con el informe Backup Inventory, puedes ver todas las copias de Snapshot locales, las replicaciones en almacenamiento secundario y los backups de una cuenta, un entorno de trabajo o un inventario de SVM específicos.
 
 El informe Inventario de copia de seguridad muestra la siguiente información, entre otras cosas:
 
 * De datos, entorno de trabajo y SVM
 * Volúmenes protegidos y no protegidos
-* Destino de backup
-* Aplicación de la política de backup
+* Destino
+* Política aplicada
 * Estilo de cifrado (clave gestionada por el proveedor o clave gestionada por el usuario)
 * Estado de protección contra bloqueo de datos y ransomware (gobierno, cumplimiento de normativas o ninguno)
 * Estado de archivado activado
-* Número de copias de backup
+* Recuento de copias Snapshot, replicaciones o copias de backup locales
 * Tipo de backup (backup ad hoc programado o iniciado por el usuario)
 * Clase de almacenamiento
 * Etiqueta de Snapshot
@@ -63,28 +63,25 @@ NOTE: El informe Inventario de backup no incluye información de backup caducada
 
 La parte superior del informe incluye un gráfico que muestra la siguiente información:
 
-* Recuento de volúmenes en ámbito con al menos un backup
+* Recuento de volúmenes con al menos una snapshot local, replicación o backup (según la pestaña que se muestre)
 * Total de volúmenes inactivos más volúmenes activos
 
 
-El informe Inventario de copia de seguridad muestra los siguientes gráficos:
-
-* *Estado de copia de seguridad del volumen*: Muestra los volúmenes protegidos en comparación con los volúmenes no protegidos para el alcance seleccionado.
-* *Volúmenes por recuento de copias de seguridad*: Agrupa volúmenes por el número de copias de seguridad disponibles para este volumen.
-
+image:screenshot-report-backup-accountlevel.png["Un informe de ejemplo de inventario de copia de seguridad"]
 
 .Pasos
 . En el menú superior, selecciona *Informes*.
 . Seleccione *Inventario de copia de seguridad*.
 . Selecciona *Crear informe*.
-. Seleccione la cuenta, el entorno de trabajo y la SVM.
+. Seleccione el alcance del informe de nivel de cuenta o Personalizado.
+. Seleccione los filtros para el informe:
 +
+** Volúmenes
+** Protección: Seleccione el tipo de protección (copias Snapshot locales, replicación o backups) que desee en el informe. Puede seleccionar los tres. Además, seleccione si desea incluir volúmenes no protegidos.
 
-TIP: Puede seleccionar varios entornos de trabajo y SVM.
 
-. Seleccione el marco de tiempo: Últimas 24 horas, semana o mes.
-. Revise las secciones de informes (Políticas de Snapshot, Políticas de replicación o Políticas de backup), según las selecciones de los informes.
-. (Opcional) Filtrar los resultados por estado del trabajo.
+. Selecciona *Crear informe*.
+. Revise las pestañas del informe (Instantánea local, Replicación o Copia de seguridad), en función de las selecciones de informe.
 . (Opcional) Exporte el contenido del informe en formato .CSV seleccionando *Descargar CSV*.
 
 

@@ -24,7 +24,7 @@ Existen 2 tipos de datos de los que se realiza una copia de seguridad:
 * Archivos de catálogo indexados: Contiene índices detallados que se utilizan para la función de búsqueda y restauración que hacen que las búsquedas sean rápidas y eficaces cuando se buscan datos de volumen que se desean restaurar.
 
 
-Se realiza una copia de seguridad de estos datos una vez al día a medianoche, y se conserva un máximo de 7 copias de cada archivo. Si el conector gestiona varios entornos de trabajo de ONTAP en las instalaciones, los archivos de backup y recuperación de BlueXP se ubicarán en el depósito del entorno de trabajo que se activó primero.
+Se realiza una copia de seguridad de estos datos una vez al día a medianoche, y se conserva un máximo de 30 copias de cada archivo. Si el conector gestiona varios entornos de trabajo de ONTAP en las instalaciones, los archivos de backup y recuperación de BlueXP se ubicarán en el depósito del entorno de trabajo que se activó primero.
 
 
 TIP: Nunca se incluyen datos de volumen en la base de datos de backup y recuperación de BlueXP o en los archivos de catálogo indexado.

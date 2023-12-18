@@ -40,7 +40,7 @@ NOTE: Si ha actualizado sus sistemas ONTAP a la versión 9,13.x y no ve las oper
 . En el menú BlueXP, seleccione *Protección > copia de seguridad y recuperación*.
 . Seleccione la ficha *Supervisión de trabajos*.
 +
-image:screenshot_backup_job_monitor.png["Captura de pantalla que muestra los trabajos de copia de seguridad y restauración en el panel Supervisión de trabajos."]
+image:screenshot_backup_job_monitor2.png["Captura de pantalla que muestra los trabajos de copia de seguridad y restauración en el panel Supervisión de trabajos."]
 
 +
 Esta captura de pantalla muestra los encabezados de columna predeterminados.
@@ -52,7 +52,7 @@ Esta captura de pantalla muestra los encabezados de columna predeterminados.
 
 === Busque y filtre la lista de trabajos
 
-Puede filtrar las operaciones en la página Job Monitoring con varios filtros, como política, etiqueta de Snapshot, tipo de operación (protección, restauración, retención u otros) y tipo de protección (Snapshot local, replicación o backup en el cloud).
+Puede filtrar las operaciones en la página Job Monitoring con varios filtros, como política, etiqueta de Snapshot, tipo de operación (protección, restauración, retención u otros), etiquetas personalizadas en volúmenes y tipo de protección (Snapshot local, replicación o backup en el cloud).
 
 De forma predeterminada, la página Job Monitoring muestra los trabajos de protección y recuperación de las últimas 24 horas. Puede cambiar el marco temporal mediante el filtro de marco temporal.
 
