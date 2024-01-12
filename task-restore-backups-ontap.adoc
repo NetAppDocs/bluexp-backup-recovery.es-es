@@ -23,6 +23,9 @@ Los backups de tus datos de volúmenes de ONTAP están disponibles desde las ubi
 
 Se requiere una licencia válida de backup y recuperación de BlueXP para restaurar los datos desde los archivos de backup a un sistema de producción.
 
+
+NOTE: Las snapshots deben tener nombres únicos o las operaciones de restauración no funcionarán correctamente.
+
 En resumen, estos son los flujos válidos que se pueden utilizar para restaurar los datos de volúmenes en un entorno de trabajo de ONTAP:
 
 * Archivo de backup -> Volumen restaurado

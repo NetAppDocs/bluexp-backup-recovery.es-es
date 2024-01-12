@@ -46,6 +46,9 @@ Antes de seleccionar las funciones que va a utilizar, aquí hay una explicación
 |===
 Las copias Snapshot son la base de todos los métodos de backup y se requieren para usar el servicio de backup y recuperación. Una copia Snapshot es una imagen puntual de solo lectura de un volumen. La imagen consume un espacio de almacenamiento mínimo y tiene una sobrecarga del rendimiento mínima, ya que solo registra los cambios que se han realizado en los ficheros desde que se realizó la última copia Snapshot. La copia Snapshot que se crea en el volumen se utiliza para mantener el volumen replicado y el archivo de backup sincronizados con los cambios realizados en el volumen de origen, como se muestra en la figura.
 
+
+NOTE: Las snapshots deben tener nombres únicos o las operaciones de restauración no funcionarán correctamente.
+
 image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de backup en el sistema de origen como copias Snapshot, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de backup en el almacenamiento de objetos."]
 
 Puede elegir crear volúmenes replicados en otro sistema de almacenamiento de ONTAP y archivos de backup en el cloud. O puede elegir simplemente crear volúmenes replicados o archivos de copia de seguridad - es su elección.
@@ -236,7 +239,7 @@ Si planeas mover archivos de copia de seguridad antiguos al almacenamiento de ar
 
 == El modo de puesta en marcha de BlueXP Connector utiliza
 
-Si ya usas BlueXP para gestionar tu almacenamiento, ya se ha instalado un conector BlueXP. Si tienes pensado utilizar el mismo conector con backup y recuperación de datos de BlueXP, ya lo tienes todo. Si necesita usar un conector diferente, deberá instalarlo antes de iniciar la implementación de copia de seguridad y recuperación.
+Si ya usas BlueXP para gestionar tu almacenamiento, ya se ha instalado un conector BlueXP. Si tienes pensado utilizar el mismo conector con backup y recuperación de datos de BlueXP, ya lo tienes todo. Si necesita utilizar un conector diferente, deberá implementarlo antes de iniciar la implementación de copia de seguridad y recuperación.
 
 BlueXP ofrece múltiples modos de implementación que le permiten utilizar BlueXP de forma que se adapte a sus necesidades empresariales y de seguridad. _Standard Mode_ aprovecha la capa SaaS de BlueXP para proporcionar todas las funciones, mientras que _restricted mode_ y _private mode_ están disponibles para organizaciones que tienen restricciones de conectividad.
 
@@ -245,11 +248,11 @@ https://www.netapp.tv/details/30567["Mira este vídeo sobre los modos de impleme
 
 
 
-=== Soporte para sitios con conectividad completa a Internet
+=== Soporte cuando se utiliza el modo estándar
 
-Cuando se utilizan el backup y la recuperación de BlueXP en un sitio con conectividad completa a Internet (también conocido como «modo estándar» o «modo SaaS»), puedes crear volúmenes replicados en cualquier sistema Cloud Volumes ONTAP o ONTAP on-premises gestionado por BlueXP, además, puede crear archivos de backup en el almacenamiento de objetos en cualquiera de los proveedores de cloud admitidos. link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["Consulte la lista completa de destinos de backup compatibles"].
+El backup y la recuperación de BlueXP son totalmente compatibles en el modo estándar: Sitios con conectividad completa a Internet. En este caso, puede crear volúmenes replicados en cualquier sistema ONTAP o Cloud Volumes ONTAP en las instalaciones gestionado por BlueXP, y crear archivos de backup en el almacenamiento de objetos en cualquiera de los proveedores de cloud compatibles. link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["Consulte la lista completa de destinos de backup compatibles"].
 
-Consulte el tema de copia de seguridad del proveedor de cloud en el que planea crear archivos de copia de seguridad para la lista de ubicaciones de conector válidas. Existen algunas restricciones en las que el conector debe instalarse manualmente en una máquina Linux o implementarse en un proveedor de nube específico.
+Consulte el tema de copia de seguridad del proveedor de cloud en el que planea crear archivos de copia de seguridad para la lista de ubicaciones de conector válidas. Puede haber algunas restricciones cuando el conector se implementa en un proveedor de nube específico o cuando se instala manualmente en una máquina Linux.
 
 ifdef::aws[]
 
@@ -281,9 +284,9 @@ endif::gcp[]
 
 
 
-=== Soporte para sitios con conectividad a Internet limitada
+=== Soporte cuando se utiliza el modo restringido
 
-El backup y la recuperación de datos de BlueXP se pueden utilizar en un sitio con una conectividad a Internet limitada (también conocida como «modo restringido») para hacer copias de seguridad de datos de volumen. En este caso, deberá desplegar el conector BlueXP en la región restringida.
+El backup y la recuperación de BlueXP están disponibles en modo restringido, es decir, sitios con conectividad a Internet limitada. En este caso, puede crear archivos de copia de seguridad solo en un conjunto limitado de proveedores de nube. Tendrás que poner en marcha el conector BlueXP en la región restringida.
 
 ifdef::aws[]
 
@@ -301,9 +304,9 @@ endif::azure[]
 
 
 
-=== Compatibilidad con sitios sin conectividad a Internet
+=== Soporte cuando se utiliza el modo privado
 
-El backup y la recuperación de datos de BlueXP se pueden utilizar en un sitio sin conectividad a Internet (también conocido como sitios «en modo privado» o «oscuros») para hacer backups de los datos del volumen. En este caso, tendrá que poner en marcha el conector BlueXP en un host Linux en el mismo sitio.
+El backup y la recuperación de BlueXP se admiten en modo privado: Sitios sin conectividad a Internet. En este caso, puede crear archivos de backup solo en un conjunto limitado de proveedores de almacenamiento de objetos. Tendrás que poner en marcha el conector BlueXP en un host Linux en el mismo sitio local.
 
 * Puede realizar backups de datos de sistemas ONTAP locales en las instalaciones en sistemas StorageGRID de NetApp locales. Descubra cómo link:task-backup-onprem-private-cloud.html["Realice un backup de los datos de ONTAP en las instalaciones en StorageGRID"] para obtener más detalles.
 * Puede realizar backups de datos de sistemas ONTAP locales en las instalaciones de en sistemas ONTAP locales o sistemas Cloud Volumes ONTAP configurados para el almacenamiento de objetos S3. Descubra cómo link:task-backup-onprem-to-ontap-s3.html["Realice un backup de los datos de ONTAP en las instalaciones en ONTAP S3"] para obtener más detalles.
