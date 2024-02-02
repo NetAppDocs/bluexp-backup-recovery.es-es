@@ -23,9 +23,6 @@ Los backups de tus datos de volúmenes de ONTAP están disponibles desde las ubi
 
 Se requiere una licencia válida de backup y recuperación de BlueXP para restaurar los datos desde los archivos de backup a un sistema de producción.
 
-
-NOTE: Las snapshots deben tener nombres únicos o las operaciones de restauración no funcionarán correctamente.
-
 En resumen, estos son los flujos válidos que se pueden utilizar para restaurar los datos de volúmenes en un entorno de trabajo de ONTAP:
 
 * Archivo de backup -> Volumen restaurado
@@ -234,13 +231,10 @@ image:screenshot_restore_volume_selection.png["Captura de pantalla de la selecci
 
 . En la página _Select Source_, desplácese hasta el archivo de copia de seguridad del volumen que desea restaurar. Seleccione *entorno de trabajo*, *volumen* y el archivo *copia de seguridad* que tiene la Marca de fecha/hora desde la que desea restaurar.
 +
-De manera opcional, busque etiquetas personalizadas para enumerar solo los volúmenes que tengan una etiqueta específica.
-
-+
-image:screenshot_restore_select_volume_snapshot2.png["Captura de pantalla de selección del entorno de trabajo, volumen y archivo de copia de seguridad de volumen que desea restaurar."]
-
-+
 La columna *Ubicación* muestra si el archivo de copia de seguridad (instantánea) es *Local* (una copia de Snapshot en el sistema de origen), *Secundario* (un volumen replicado en un sistema ONTAP secundario) o *Almacenamiento de objetos* (un archivo de copia de seguridad en el almacenamiento de objetos). Elija el archivo que desea restaurar.
+
++
+image:screenshot_restore_select_volume_snapshot.png["Captura de pantalla de selección del entorno de trabajo, volumen y archivo de copia de seguridad de volumen que desea restaurar."]
 
 . Haga clic en *Siguiente*.
 +

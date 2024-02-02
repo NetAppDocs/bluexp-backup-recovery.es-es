@@ -42,6 +42,17 @@ Se muestran los almacenes de datos y las máquinas virtuales que están protegid
 
 
 
+== Desproteger los almacenes de datos
+
+Es posible desproteger un almacén de datos que ya estaba protegido anteriormente. Puede anular la protección de un almacén de datos cuando desee eliminar los backups del cloud o ya no quiera hacerlo en el cloud. El almacén de datos puede volver a protegerse una vez que la desprotección se haya realizado correctamente.
+
+.Pasos
+. En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.
+. Haga clic en image:icon-action.png["acción"] Correspondiente al almacén de datos que desea desproteger y haga clic en *Desproteger*.
+
+
+
+
 == Edite la instancia del plugin de SnapCenter para VMware vSphere
 
 Puede editar los detalles del host del plugin de SnapCenter para VMware vSphere en BlueXP.
