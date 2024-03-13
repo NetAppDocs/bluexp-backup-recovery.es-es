@@ -18,6 +18,30 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 
 
+== 12 de marzo de 2024
+
+
+
+=== Capacidad para realizar «Restauraciones rápidas» desde backups en el cloud a volúmenes de ONTAP en las instalaciones
+
+Ahora puede realizar una restauración _rápida_ de un volumen desde un almacenamiento en cloud a un volumen de destino de ONTAP en las instalaciones. Antes, podía realizar una restauración rápida solo en un sistema Cloud Volumes ONTAP. La restauración rápida es ideal para situaciones de recuperación ante desastres en las que se necesita proporcionar acceso a un volumen lo antes posible. Una restauración rápida es mucho más rápida que la restauración de volúmenes completos; restaura los metadatos desde una snapshot de la nube a un volumen de destino de ONTAP. La fuente podría ser AWS S3, Azure Blob, Google Cloud Services o NetApp StorageGRID.
+
+El sistema de destino local de ONTAP debe ejecutar ONTAP versión 9.14.1 o posterior.
+
+Puede hacerlo mediante el proceso Examinar y Restaurar, no mediante el proceso Buscar y Restaurar.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["Restaurar datos de ONTAP de archivos de backup"].
+
+
+
+=== Capacidad de restaurar archivos y carpetas desde copias de Snapshot y replicación
+
+Anteriormente, solo podía restaurar archivos y carpetas desde copias de backup en AWS, Azure y Google Cloud Services. Ahora puede restaurar archivos y carpetas desde copias Snapshot locales y desde copias de replicación.
+
+Puede realizar esta función mediante el proceso de búsqueda y restauración, no mediante el proceso de exploración y restauración.
+
+
+
 == 01 de febrero de 2024
 
 

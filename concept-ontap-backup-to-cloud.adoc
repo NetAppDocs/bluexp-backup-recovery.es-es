@@ -78,7 +78,7 @@ Consulte link:reference-limitations.html#replication-limitations["Limitaciones d
 * Restaura datos desde un momento específico a partir de copias Snapshot locales, volúmenes replicados o backups de volúmenes en el almacenamiento de objetos.
 * Restaure un volumen, una carpeta o archivos individuales, al sistema de origen o a otro sistema.
 * Restaure los datos a un entorno de trabajo utilizando una cuenta o suscripción diferente o que se encuentre en una región diferente.
-* Capacidad para realizar una «restauración rápida» de un volumen del almacenamiento en cloud a un sistema Cloud Volumes ONTAP; perfecto para situaciones de recuperación ante desastres en las que necesita proporcionar acceso a un volumen lo antes posible.
+* Capacidad para realizar una _restauración rápida_ de un volumen desde un almacenamiento en cloud a un sistema Cloud Volumes ONTAP o a un sistema en las instalaciones; perfecto para situaciones de recuperación ante desastres en las que necesita ofrecer acceso a un volumen lo antes posible.
 * Los datos se restauran en el nivel de bloque, colocando los datos directamente en la ubicación especificada, siempre que se conservan las ACL originales.
 * Catálogos de archivos que se pueden examinar y realizar búsquedas para seleccionar fácilmente carpetas y archivos individuales para restaurar un solo archivo.
 
