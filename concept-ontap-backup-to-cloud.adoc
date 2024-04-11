@@ -58,7 +58,7 @@ Cuando sea necesario, puede restaurar un _volume_ entero, una _folder_ o uno o v
 
 Consulte link:reference-limitations.html#replication-limitations["Limitaciones de replicación"] Para acceder a una lista de funciones de replicación que no están disponibles con el backup y la recuperación de datos de BlueXP.
 
-* Copia de seguridad a las características del objeto:*
+* Características de copia de seguridad a objeto:*
 
 * Realice backups de copias independientes de sus volúmenes de datos en un almacenamiento de objetos de bajo coste.
 * Aplique una única política de backup a todos los volúmenes de un clúster o asigne diferentes políticas de backup a los volúmenes que tengan objetivos de punto de recuperación únicos.
@@ -78,9 +78,9 @@ Consulte link:reference-limitations.html#replication-limitations["Limitaciones d
 * Restaura datos desde un momento específico a partir de copias Snapshot locales, volúmenes replicados o backups de volúmenes en el almacenamiento de objetos.
 * Restaure un volumen, una carpeta o archivos individuales, al sistema de origen o a otro sistema.
 * Restaure los datos a un entorno de trabajo utilizando una cuenta o suscripción diferente o que se encuentre en una región diferente.
-* Capacidad para realizar una _restauración rápida_ de un volumen desde un almacenamiento en cloud a un sistema Cloud Volumes ONTAP o a un sistema en las instalaciones; perfecto para situaciones de recuperación ante desastres en las que necesita ofrecer acceso a un volumen lo antes posible.
-* Los datos se restauran en el nivel de bloque, colocando los datos directamente en la ubicación especificada, siempre que se conservan las ACL originales.
-* Catálogos de archivos que se pueden examinar y realizar búsquedas para seleccionar fácilmente carpetas y archivos individuales para restaurar un solo archivo.
+* Realice una _restauración rápida_ de un volumen desde un almacenamiento en el cloud a un sistema Cloud Volumes ONTAP o a un sistema local; perfecto para situaciones de recuperación ante desastres en las que necesite proporcionar acceso a un volumen lo antes posible.
+* Restaure los datos a nivel de bloque, colocando los datos directamente en la ubicación que especifique, conservando las ACL originales.
+* Examine y busque en catálogos de archivos para seleccionar fácilmente carpetas y archivos individuales para restaurar un solo archivo.
 
 
 
@@ -389,13 +389,23 @@ TIP: El período de retención para backups de volúmenes de protección de dato
 
 === Configuración de protección de archivos de copia de seguridad
 
-Si su clúster utiliza ONTAP 9.11.1 o posterior, puede proteger sus backups en el almacenamiento de objetos contra la eliminación y los ataques de ransomware. Cada política de copia de seguridad ofrece una sección de _DataLock y Protección de ransomware_ que se puede aplicar a sus archivos de copia de seguridad durante un período de tiempo específico: El _período de retención_. _DataLock_ protege los archivos de copia de seguridad de que no se modifican o eliminan. _Ransomware Protection_ analiza sus archivos de copia de seguridad para buscar pruebas de un ataque de ransomware cuando se crea un archivo de copia de seguridad y cuando se restauran los datos de un archivo de copia de seguridad.
+Si su clúster utiliza ONTAP 9.11.1 o posterior, puede proteger sus backups en el almacenamiento de objetos contra la eliminación y los ataques de ransomware. Cada política de copia de seguridad ofrece una sección de _DataLock y Protección de ransomware_ que se puede aplicar a sus archivos de copia de seguridad durante un período de tiempo específico: El _período de retención_.
+
+* _DataLock_ protege los archivos de copia de seguridad de que no se modifican o eliminan.
+* _Ransomware Protection_ analiza sus archivos de copia de seguridad para buscar pruebas de un ataque de ransomware cuando se crea un archivo de copia de seguridad y cuando se restauran los datos de un archivo de copia de seguridad.
+
+
+Los análisis programados de protección contra ransomware se habilitan de forma predeterminada. La configuración predeterminada para la frecuencia de exploración es de 7 días. El análisis se realiza sólo en la última copia Snapshot. Los análisis programados se pueden desactivar para reducir los costes. Puede habilitar o deshabilitar los análisis de ransomware programados en la última copia de Snapshot usando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan semanalmente de forma predeterminada. Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
 
 El período de retención de backup es igual al período de retención de programa de backup; más 14 días. Por ejemplo, las copias de seguridad _Weekly_ con _5_ copias retenidas bloquearán cada archivo de copia de seguridad durante 5 semanas. _Mensual_ los backups con _6_ copias retenidas bloquearán cada archivo de copia de seguridad durante 6 meses.
 
 Actualmente, existe soporte disponible si su destino de backup es Amazon S3, Azure Blob o StorageGRID de NetApp. En futuras versiones se añadirán otros destinos proveedores de almacenamiento.
 
-Consulte link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Protección de DataLock y ransomware"^] Para obtener más detalles sobre cómo funciona la protección DataLock y Ransomware.
+Para obtener más detalles, consulte esta información:
+
+* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Cómo funcionan DataLock y la protección contra ransomware"].
+* link:manage-backup-settings-ontap.html["Cómo actualizar las opciones de protección contra ransomware en la página Configuración avanzada"].
+
 
 
 TIP: No se puede habilitar DataLock si se dispone de la organización en niveles de los backups en el almacenamiento de archivado.

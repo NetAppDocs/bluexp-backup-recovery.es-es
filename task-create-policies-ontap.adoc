@@ -20,7 +20,7 @@ Al utilizar el asistente de activación para habilitar el servicio de backup y r
 
 Para obtener más información sobre las políticas de backup predeterminadas proporcionadas, consulte link:concept-protection-journey.html["Planifica tu proceso de protección"].
 
-El backup y la recuperación de datos de BlueXP ofrece tres tipos de backups de los datos de ONTAP: Snapshots, replicaciones y backups en el almacenamiento de objetos. Sus políticas residen en ubicaciones diferentes debido a la arquitectura que se utiliza y al tipo de backup:
+El backup y la recuperación de datos de BlueXP ofrece tres tipos de backups de los datos de ONTAP: Snapshots, replicaciones y backups en el almacenamiento de objetos. Sus políticas residen en distintas ubicaciones según la arquitectura que se utilice y el tipo de backup:
 
 [cols="25,25,25,25"]
 |===
@@ -62,7 +62,18 @@ Las políticas de Snapshot se muestran de forma predeterminada.
 
 
 
-== Cree una política de Snapshot antes de iniciar la snapshot
+== Crear políticas
+
+Puede crear políticas que rijan sus copias de Snapshot, replicaciones y backups en el almacenamiento de objetos:
+
+* <<Cree una política de Snapshot antes de iniciar la snapshot>>
+* <<Cree una política de replicación antes de iniciar la replicación>>
+* <<Cree una política de almacenamiento de backup a objetos antes de iniciar el backup>>
+
+
+
+
+=== Cree una política de Snapshot antes de iniciar la snapshot
 
 Parte de su estrategia 3-2-1 implica la creación de una copia Snapshot del volumen en el sistema de almacenamiento * primario *.
 
@@ -88,9 +99,7 @@ Aparece la página Gestión de Políticas.
 . Seleccione *Crear*.
 
 
-
-
-=== Ejemplo de política de Snapshot mediante arquitectura en cascada
+*Ejemplo de política de instantáneas usando arquitectura en cascada*
 
 En este ejemplo, se crea una política de Snapshot con dos clústeres:
 
@@ -112,7 +121,7 @@ En este ejemplo, se crea una política de Snapshot con dos clústeres:
 
 
 
-== Cree una política de replicación antes de iniciar la replicación
+=== Cree una política de replicación antes de iniciar la replicación
 
 Su estrategia 3-2-1 podría incluir la replicación de un volumen en otro sistema de almacenamiento. La política de replicación reside en el sistema de almacenamiento *secundario*.
 
@@ -126,7 +135,7 @@ Su estrategia 3-2-1 podría incluir la replicación de un volumen en otro sistem
 
 
 
-== Cree una política de almacenamiento de backup a objetos antes de iniciar el backup
+=== Cree una política de almacenamiento de backup a objetos antes de iniciar el backup
 
 Su estrategia 3-2-1 puede incluir realizar un backup de un volumen en un almacenamiento de objetos.
 

@@ -261,7 +261,7 @@ Después de seleccionar una acción, BlueXP actualiza la relación.
 
 
 
-== Edite una política de backup existente en el cloud
+== Edite una política de backup en el cloud existente
 
 Puede cambiar los atributos de una política de backup que se aplique actualmente a los volúmenes en un entorno de trabajo. Los cambios que se aplican en la política de backup afectan a todos los volúmenes existentes que usan la política.
 
@@ -319,7 +319,7 @@ endif::gcp[]
 
 
 
-== Añada una nueva política de backup a cloud
+== Añada una nueva política de backup en el cloud
 
 Al habilitar el backup y la recuperación de BlueXP para un entorno de trabajo, se realiza un backup de todos los volúmenes que seleccionó inicialmente, utilizando la política de backup predeterminada que definió. Si desea asignar diferentes políticas de backup a ciertos volúmenes que tienen diferentes objetivos de punto de recuperación (RPO), puede crear políticas adicionales para ese clúster y asignar dichas políticas a otros volúmenes.
 

@@ -14,7 +14,7 @@ summary: Al utilizar el backup y la recuperación de BlueXP en un sitio sin acce
 
 
 [role="lead"]
-Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, lo que se conoce como «modo privado», los datos de configuración de backup y recuperación de BlueXP se copian en el bloque StorageGRID o ONTAP S3 donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP.
+Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de backup y recuperación de BlueXP se copian en el bloque StorageGRID o ONTAP S3 donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP.
 
 Tenga en cuenta que cuando utilice el backup y la recuperación de datos de BlueXP en un entorno SaaS donde se implementa el conector BlueXP en su proveedor de cloud o en su propio sistema host que tiene acceso a Internet, todos los datos importantes de configuración de backup y recuperación de BlueXP se copian y se protegen en el cloud. Si tiene un problema con el conector, simplemente cree un nuevo conector y agregue sus entornos de trabajo y los detalles de la copia de seguridad se restaurarán automáticamente.
 

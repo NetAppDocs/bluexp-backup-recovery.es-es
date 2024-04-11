@@ -4,7 +4,7 @@ permalink: concept-cloud-backup-policies.html
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: El backup y recuperación de datos de BlueXP te permite crear políticas de backup con una variedad de ajustes de configuración para tus sistemas ONTAP y Cloud Volumes ONTAP en las instalaciones. 
 ---
-= Ajustes de configuración de la política de backup y recuperación de BlueXP
+= Opciones de políticas de backup en objeto
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: El backup y recuperación de datos de BlueXP te permite crear política
 
 
 [role="lead"]
-El backup y recuperación de datos de BlueXP te permite crear políticas de backup con una variedad de ajustes de configuración para tus sistemas ONTAP y Cloud Volumes ONTAP en las instalaciones.
+El backup y la recuperación de datos de BlueXP te permite crear políticas de backup con una variedad de configuraciones para tus sistemas ONTAP y Cloud Volumes ONTAP on-premises.
 
 
-NOTE: Estas configuraciones de políticas son relevantes únicamente para el backup en el almacenamiento de objetos. Ninguna de estas configuraciones afecta a las políticas de Snapshot o de replicación. En el futuro se añadirán configuraciones de directiva similares para instantáneas y replicaciones.
+NOTE: Estas configuraciones de políticas son relevantes únicamente para el almacenamiento de backup en objetos. Ninguna de estas configuraciones afecta a las políticas de Snapshot o de replicación. En el futuro se añadirán configuraciones de directiva similares para instantáneas y replicaciones.
 
 
 
-== Programaciones de backup
+== Opciones de programación de backups
 
 El backup y la recuperación de datos de BlueXP te permite crear varias políticas de backup con programaciones únicas para cada entorno de trabajo (clúster). Es posible asignar diferentes políticas de backup a volúmenes con diferentes objetivos de punto de recuperación (RPO).
 
@@ -52,7 +52,7 @@ Tenga en cuenta que los backups anuales se eliminarán automáticamente del sist
 
 
 
-== Protección de DataLock y ransomware
+== Opciones de protección contra DataLock y Ransomware
 
 El backup y la recuperación de BlueXP ofrece soporte para la protección DataLock y Ransomware para los backups de volúmenes. Estas funciones le permiten bloquear los archivos de backup y analizarlos para detectar posibles ransomware en los archivos de backup. Este es un ajuste opcional que se puede definir en las políticas de backup cuando se desea contar con protección adicional para los backups de volúmenes para un clúster de.
 
@@ -64,8 +64,8 @@ Esta función no ofrece protección para los volúmenes de origen, solo para los
 
 [CAUTION]
 ====
-* Si tienes pensado utilizar la protección DataLock y Ransomware, debe habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster.
-* La protección de DataLock y Ransomware no se puede deshabilitar para un clúster una vez que se ha configurado. No habilite esta función en un clúster para probarlo.
+* Si tienes pensado utilizar la protección DataLock y Ransomware, puedes habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster. Más adelante, puedes habilitarlo con la configuración avanzada de backup y recuperación de BlueXP.
+* La protección DataLock y Ransomware se puede deshabilitar para un clúster después de que se ha configurado para ahorrar costes.
 * Cuando BlueXP analiza un archivo de backup de ransomware al restaurar datos de volumen, tu proveedor de cloud incurrirá en costes adicionales de salida para acceder al contenido del archivo de backup.
 
 
@@ -96,7 +96,10 @@ La protección contra ransomware analiza sus archivos de backup para buscar prue
 
 Los análisis de ransomware se producen en 3 puntos del proceso de backup y restauración:
 
-* Cuando se crea un archivo de copia de seguridad
+* Cuando se crea un archivo de copia de seguridad.
++
+También puede habilitar o deshabilitar los análisis programados de ransomware.
+
 +
 La exploración no se realiza en el archivo de copia de seguridad cuando se escribe por primera vez en el almacenamiento en nube, pero cuando se escribe el archivo de copia de seguridad *siguiente*. Por ejemplo, si tiene un programa de backup semanal establecido para el martes, el martes 14 se crea un backup. A continuación, se crea el martes 21 otro backup. El escaneado de ransomware se ejecuta en el archivo de copia de seguridad desde el 14 en este momento.
 
@@ -112,11 +115,15 @@ Puede ejecutar un análisis de protección contra ransomware bajo demanda en cua
 
 
 
-=== Configuración de protección de DataLock y Ransomware
+=== Opciones de bloqueo de datos y protección frente a ransomware
 
 Cada política de copia de seguridad proporciona una sección para _DataLock y Protección de ransomware_ que puede aplicar a sus archivos de copia de seguridad.
 
 image:screenshot_datalock_ransomware_settings.png["Una captura de pantalla de la configuración de protección de datos con bloqueo y ransomware para AWS, Azure y StorageGRID al crear una política de backup."]
+
+Los análisis programados de protección contra ransomware se habilitan de forma predeterminada. La configuración predeterminada para la frecuencia de exploración es de 7 días. El análisis se realiza sólo en la última copia Snapshot. Puede habilitar o deshabilitar los análisis de ransomware programados en la última copia de Snapshot usando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan cada 7 días de forma predeterminada. Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
+
+Consulte link:manage-backup-settings-ontap.html["Cómo actualizar las opciones de protección contra ransomware en la página Configuración avanzada"].
 
 Puede elegir entre los siguientes ajustes para cada política de backup:
 
@@ -209,6 +216,9 @@ ifdef::aws[]
 ** El conector puede ponerse en marcha en el cloud o en sus instalaciones
 ** Los siguientes permisos S3 deben formar parte del rol IAM que proporciona el conector con permisos. Residen en la sección "backupS3Policy" para el recurso "arn:aws:s3::netapp-backup-*":
 +
+.Permisos de AWS S3
+[%collapsible]
+====
 *** s3:GetObjectVersionTagging
 *** s3:GetBucketObjectLockConfiguration
 *** s3:GetObjectVersionAcl
@@ -235,10 +245,11 @@ ifdef::aws[]
 *** s3:PutObjectRetention
 *** s3:GetBucketLocation
 *** s3:GetObjectVersion
+
+
+====
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["Vea el formato JSON completo para la directiva donde puede copiar y pegar los permisos necesarios"^].
-
-
 
 
 
@@ -265,6 +276,9 @@ endif::azure[]
 ** El conector debe estar desplegado en sus instalaciones (se puede instalar en un sitio con o sin acceso a Internet)
 ** Los siguientes permisos S3 deben formar parte del rol IAM que proporciona el conector permisos:
 +
+.Permisos de StorageGRID S3
+[%collapsible]
+====
 *** s3:GetObjectVersionTagging
 *** s3:GetBucketObjectLockConfiguration
 *** s3:GetObjectVersionAcl
@@ -292,6 +306,7 @@ endif::azure[]
 *** s3:GetObjectVersion
 
 
+====
 
 
 
@@ -304,13 +319,13 @@ endif::azure[]
 * La opción DataLock que seleccione al activar el backup y la recuperación de BlueXP debe utilizarse para todas las políticas de backup para ese clúster.
 * No puede utilizar varios modos DataLock en un único cluster.
 * Si activa DataLock, se bloquearán todas las copias de seguridad de los volúmenes. No se pueden mezclar backups de volúmenes bloqueados y no bloqueados para un solo clúster.
-* La protección de DataLock y ransomware se aplica a backups de volúmenes nuevos con una política de backup con protección de datos Lock y ransomware habilitada. No puedes habilitar esta función una vez que se haya activado el backup y la recuperación de BlueXP.
+* La protección de DataLock y ransomware se aplica a backups de volúmenes nuevos con una política de backup con protección de datos Lock y ransomware habilitada. Puede activar o desactivar esta función más adelante con la opción Configuración avanzada.
 * Los volúmenes de FlexGroup pueden usar la protección DataLock y Ransomware solo si se utilizan ONTAP 9.13.1 o posterior.
 
 
 
 
-== Configuración de almacenamiento de archivado
+== Opciones de almacenamiento de archivado
 
 Al utilizar el almacenamiento en cloud de AWS, Azure o Google, puede mover archivos de backup antiguos a un tipo de almacenamiento de archivado más económico o a un nivel de acceso transcurridos un cierto número de días. También puede optar por enviar sus archivos de copia de seguridad al almacenamiento de archivos inmediatamente sin ser escrito en el almacenamiento en la nube estándar. Simplemente ingrese *0* como el “Archivo después de días” para enviar su archivo de copia de seguridad directamente al almacenamiento de archivos. Esto puede ser especialmente útil para los usuarios que rara vez necesitan acceder a los datos de backups en la nube o los usuarios que están reemplazando una solución de copia de seguridad a cinta.
 
