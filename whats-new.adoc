@@ -26,13 +26,13 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 Anteriormente, cuando habilitó la detección de ransomware en una política de backup, los análisis se realizaban automáticamente cuando se creó el primer backup y cuando restauró un backup. Anteriormente, el servicio analizaba todas las copias snapshot y no podía desactivar las exploraciones.
 
-Con este lanzamiento, ahora puede habilitar o deshabilitar los análisis de ransomware en la última copia de Snapshot usando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan semanalmente de forma predeterminada. Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
+Con este lanzamiento, ahora puede habilitar o deshabilitar los análisis de ransomware en la última copia de Snapshot usando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan semanalmente de forma predeterminada.
 
 Consulte la siguiente información para obtener más detalles:
 
-* link:task-manage-backup-settings-ontap.html["Gestionar la configuración de copia de seguridad"]
-* link:task-create-policies-ontap.html["Gestione políticas para volúmenes de ONTAP"]
-* link:concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backup-settings-ontap.html["Gestionar la configuración de copia de seguridad"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["Gestione políticas para volúmenes de ONTAP"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"]
 
 
 

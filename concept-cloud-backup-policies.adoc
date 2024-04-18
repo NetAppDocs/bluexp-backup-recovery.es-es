@@ -98,7 +98,7 @@ Los análisis de ransomware se producen en 3 puntos del proceso de backup y rest
 
 * Cuando se crea un archivo de copia de seguridad.
 +
-También puede habilitar o deshabilitar los análisis programados de ransomware.
+También puede habilitar o deshabilitar los análisis de ransomware.
 
 +
 La exploración no se realiza en el archivo de copia de seguridad cuando se escribe por primera vez en el almacenamiento en nube, pero cuando se escribe el archivo de copia de seguridad *siguiente*. Por ejemplo, si tiene un programa de backup semanal establecido para el martes, el martes 14 se crea un backup. A continuación, se crea el martes 21 otro backup. El escaneado de ransomware se ejecuta en el archivo de copia de seguridad desde el 14 en este momento.
@@ -121,7 +121,7 @@ Cada política de copia de seguridad proporciona una sección para _DataLock y P
 
 image:screenshot_datalock_ransomware_settings.png["Una captura de pantalla de la configuración de protección de datos con bloqueo y ransomware para AWS, Azure y StorageGRID al crear una política de backup."]
 
-Los análisis programados de protección contra ransomware se habilitan de forma predeterminada. La configuración predeterminada para la frecuencia de exploración es de 7 días. El análisis se realiza sólo en la última copia Snapshot. Puede habilitar o deshabilitar los análisis de ransomware programados en la última copia de Snapshot usando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan cada 7 días de forma predeterminada. Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
+Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de exploración es de 7 días. El análisis se realiza sólo en la última copia Snapshot. Puede habilitar o deshabilitar los análisis de ransomware en la última copia Snapshot usando la opción de la página Advanced Settings. Si la activa, las exploraciones se realizan cada 7 días de forma predeterminada.
 
 Consulte link:manage-backup-settings-ontap.html["Cómo actualizar las opciones de protección contra ransomware en la página Configuración avanzada"].
 

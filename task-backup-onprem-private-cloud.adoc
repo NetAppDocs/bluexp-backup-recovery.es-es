@@ -474,13 +474,11 @@ Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
 +
 Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus backups de ataques de eliminación y ransomware configurando _DataLock y Protección de ransomware_. _DataLock_ protege sus archivos de copia de seguridad de ser modificados o eliminados, y _Ransomware Protection_ analiza sus archivos de copia de seguridad para buscar pruebas de un ataque de ransomware en sus archivos de copia de seguridad.
 
+*** Seleccione *Crear*.
 
 
 
 
-
-
-* Seleccione *Crear*.
 +
 Si el clúster utiliza ONTAP 9.12.1 o posterior y el sistema StorageGRID utiliza la versión 11.4 o posterior, puede optar por organizar en niveles los backups antiguos en niveles de archivado en cloud público después de un determinado número de días. Actualmente es compatible con los niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Preparing to archive older backup files to public cloud storage,Vea cómo configurar sus sistemas para esta funcionalidad>>.
 
@@ -490,12 +488,9 @@ Si el clúster utiliza ONTAP 9.12.1 o posterior y el sistema StorageGRID utiliza
 Seleccione o cree un clúster de StorageGRID nuevo. Para obtener más detalles sobre la creación de un clúster de StorageGRID para que BlueXP pueda detectarlo, consulte https://docs.netapp.com/us-en/storagegrid-117/["Documentación de StorageGRID"^].
 
 ** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
-+
-... Seleccione *Siguiente*.
 
 
-
-
+. Seleccione *Siguiente*.
 
 
 

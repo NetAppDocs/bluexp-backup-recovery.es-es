@@ -598,9 +598,7 @@ Para obtener información detallada sobre estas arquitecturas, consulte link:con
 
 TIP: Para crear una política personalizada antes de activar la instantánea, consulte link:task-create-policies-ontap.html["Crear una política"].
 
-+
-Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
-
+. Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
 +
 ** Introduzca el nombre de la política.
 ** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
@@ -608,17 +606,13 @@ Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
 *** En el caso de políticas de backup a objeto, se deben establecer los ajustes de DataLock y Ransomware Protection. Para obtener más información sobre DataLock y Protección contra ransomware, consulte link:concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"].
 
 
+** Seleccione *Crear*.
 
 
-
-
-* Seleccione *Crear*.
+. *Replicación*: Establezca las siguientes opciones:
 +
-.. *Replicación*: Establezca las siguientes opciones:
-
-
-* *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
-* *Política de replicación*: Elija una política de replicación existente o cree una política.
+** *Objetivo de replicación*: Seleccione el entorno de trabajo de destino y SVM. De manera opcional, seleccione el agregado o los agregados de destino y el prefijo o sufijo que se agregará al nombre del volumen replicado.
+** *Política de replicación*: Elija una política de replicación existente o cree una política.
 +
 
 TIP: Para crear una política personalizada antes de activar la replicación, consulte link:task-create-policies-ontap.html["Crear una política"].
@@ -627,33 +621,36 @@ TIP: Para crear una política personalizada antes de activar la replicación, co
 Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
 
 +
-** Introduzca el nombre de la política.
-** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
-** Seleccione *Crear*.
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
+
+
+
+
+. *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
 +
-... *Copia de seguridad en Object*: Si seleccionaste *Copia de seguridad*, establece las siguientes opciones:
-
-
-
-
-* *Proveedor*: Selecciona *Amazon Web Services*.
-* *Configuración del proveedor*: Introduzca los detalles del proveedor y la región de AWS donde se almacenarán las copias de seguridad.
+** *Proveedor*: Selecciona *Amazon Web Services*.
+** *Configuración del proveedor*: Introduzca los detalles del proveedor y la región de AWS donde se almacenarán las copias de seguridad.
 +
 La clave de acceso y la clave secreta corresponden al usuario IAM que se ha creado para proporcionar acceso al clúster ONTAP al bloque de S3.
 
-* *Bucket*: Elija un cubo S3 existente o cree uno nuevo. Consulte https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Añadir bloques S3"^].
-* *Clave de cifrado*: Si creaste un nuevo depósito de S3, ingresa la información de la clave de cifrado que se te haya proporcionado del proveedor. Elija si utilizará las claves de cifrado predeterminadas de Amazon S3 o elija sus propias claves gestionadas por el cliente de su cuenta de AWS para administrar el cifrado de sus datos.
+** *Bucket*: Elija un cubo S3 existente o cree uno nuevo. Consulte https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Añadir bloques S3"^].
+** *Clave de cifrado*: Si creaste un nuevo depósito de S3, ingresa la información de la clave de cifrado que se te haya proporcionado del proveedor. Elija si utilizará las claves de cifrado predeterminadas de Amazon S3 o elija sus propias claves gestionadas por el cliente de su cuenta de AWS para administrar el cifrado de sus datos.
+
+
 +
 
 NOTE: Si eligió un depósito existente, la información de cifrado ya está disponible, por lo que no necesita introducirla ahora.
 
-* *Redes*: Elige el espacio IP y si vas a usar un Punto Final Privado. El punto final privado está desactivado de forma predeterminada.
 +
-.. El espacio IP del clúster de ONTAP en el que residen los volúmenes de los que desea realizar backup. Las LIF entre clústeres de este espacio IP deben tener acceso a Internet saliente.
-.. Si lo desea, puede elegir si va a utilizar un AWS PrivateLink que haya configurado previamente. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulte detalles sobre el uso de AWS PrivateLink para Amazon S3"^].
+** *Redes*: Elige el espacio IP y si vas a usar un Punto Final Privado. El punto final privado está desactivado de forma predeterminada.
++
+... El espacio IP del clúster de ONTAP en el que residen los volúmenes de los que desea realizar backup. Las LIF entre clústeres de este espacio IP deben tener acceso a Internet saliente.
+... Si lo desea, puede elegir si va a utilizar un AWS PrivateLink que haya configurado previamente. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulte detalles sobre el uso de AWS PrivateLink para Amazon S3"^].
 
 
-* *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente o cree una política.
+** *Política de copia de seguridad*: Seleccione una política de copia de seguridad existente o cree una política.
 +
 
 TIP: Para crear una política personalizada antes de activar el backup, consulte link:task-create-policies-ontap.html["Crear una política"].
@@ -662,16 +659,15 @@ TIP: Para crear una política personalizada antes de activar el backup, consulte
 Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
 
 +
-** Introduzca el nombre de la política.
-** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
-** Seleccione *Crear*.
+*** Introduzca el nombre de la política.
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
 
 
-* *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
-+
-.. Seleccione *Siguiente*.
+** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
 
 
+. Seleccione *Siguiente*.
 
 
 
