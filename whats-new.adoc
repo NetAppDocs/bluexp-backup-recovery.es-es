@@ -18,6 +18,25 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 
 
+== 30 de abril de 2024
+
+
+
+=== Capacidad para habilitar o deshabilitar los análisis programados de ransomware
+
+Anteriormente, podía habilitar o deshabilitar los análisis de ransomware, pero no podía hacer esto para los análisis programados.
+
+Con este lanzamiento, ahora puede habilitar o deshabilitar los análisis programados de ransomware en la última copia de Snapshot utilizando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan semanalmente de forma predeterminada. Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
+
+Consulte la siguiente información para obtener más detalles:
+
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backup-settings-ontap.html["Gestionar la configuración de copia de seguridad"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["Gestione políticas para volúmenes de ONTAP"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"]
+
+
+
+
 == 04 de abril de 2024
 
 
