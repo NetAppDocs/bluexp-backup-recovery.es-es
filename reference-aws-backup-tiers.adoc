@@ -24,7 +24,7 @@ Cuando los archivos de copia de seguridad se crean inicialmente, se almacenan en
 
 Si los clústeres de origen ejecutan ONTAP 9.10.1 o superior, puede optar por organizar los backups en niveles en el almacenamiento _S3 Glacier_ o _S3 Glacier Deep Archive_ tras un determinado número de días (normalmente más de 30 días) para obtener una mayor optimización de los costes. Puede establecer esto en “0” o en 1-999 días. Si lo establece en “0” días, no podrá cambiarlo más tarde a 1-999 días.
 
-No se puede acceder inmediatamente a los datos de estos niveles cuando sea necesario y exige un mayor coste de recuperación, por lo que debe plantearse la frecuencia con la que es necesario restaurar los datos de estos ficheros de backup archivados. Consulte la sección Acerca de <<Restaurar datos desde el almacenamiento de archivado,restaurar datos desde el almacenamiento de archivado>>.
+No se puede acceder inmediatamente a los datos de estos niveles cuando sea necesario y exige un mayor coste de recuperación, por lo que debe plantearse la frecuencia con la que es necesario restaurar los datos de estos ficheros de backup archivados. Consulte la sección Acerca de <<restore data from archival storage,restaurar datos desde el almacenamiento de archivado>>.
 
 * Si seleccionas ningún nivel de archivado en tu primera política de backup al activar el backup y la recuperación de BlueXP, _S3 Glacier_ será tu única opción de archivado para futuras políticas.
 * Si selecciona _S3 Glacier_ en su primera política de copia de seguridad, puede cambiar a la capa _S3 Glacier Deep Archive_ para futuras políticas de copia de seguridad para ese cluster.
@@ -37,7 +37,7 @@ https://aws.amazon.com/s3/storage-classes/["Obtenga información acerca de las c
 
 
 
-== Restaurar datos desde el almacenamiento de archivado
+== Restaurar datos del almacenamiento de archivado
 
 A pesar de que el almacenamiento de ficheros de backup antiguos en un almacenamiento de archivado es mucho más barato que en los sistemas estándar o estándar, el acceso a los datos desde un archivo de backup del almacenamiento de archivado para las operaciones de restauración requiere más tiempo y supondrá un coste mayor.
 

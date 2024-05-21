@@ -442,9 +442,9 @@ Si, en cambio, quieres utilizar tus propias claves gestionadas por el cliente pa
 
 === Configure el sistema para una conexión privada mediante una interfaz de extremo VPC
 
-Si desea utilizar una conexión a Internet pública estándar, el conector establece todos los permisos y no hay nada más que deba hacer. Este tipo de conexión se muestra en la link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["primer diagrama"].
+Si desea utilizar una conexión a Internet pública estándar, el conector establece todos los permisos y no hay nada más que deba hacer. Este tipo de conexión se muestra en la link:task-backup-onprem-to-aws.html#identify-the-connection-method["primer diagrama"].
 
-Si desea disponer de una conexión más segura a través de Internet desde el centro de datos en las instalaciones al VPC, hay una opción para seleccionar una conexión de AWS PrivateLink en el asistente de activación de copias de seguridad. Es necesario si planea utilizar una VPN o AWS Direct Connect para conectar su sistema local a través de una interfaz VPC Endpoint que utilice una dirección IP privada. Este tipo de conexión se muestra en la link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["segundo diagrama"].
+Si desea disponer de una conexión más segura a través de Internet desde el centro de datos en las instalaciones al VPC, hay una opción para seleccionar una conexión de AWS PrivateLink en el asistente de activación de copias de seguridad. Es necesario si planea utilizar una VPN o AWS Direct Connect para conectar su sistema local a través de una interfaz VPC Endpoint que utilice una dirección IP privada. Este tipo de conexión se muestra en la link:task-backup-onprem-to-aws.html#identify-the-connection-method["segundo diagrama"].
 
 .Pasos
 . Cree una configuración de extremo de interfaz mediante la consola de Amazon VPC o la línea de comandos. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulte los detalles sobre el uso de AWS PrivateLink para Amazon S3"^].

@@ -58,7 +58,7 @@ Detecte sus clústeres de ONTAP en BlueXP, compruebe que los clústeres cumplan 
 Configura permisos para que Connector cree y administre el bucket de Google Cloud. También necesitará configurar permisos para el clúster de ONTAP en las instalaciones para que pueda leer y escribir datos en el bucket de Google Cloud.
 
 [role="quick-margin-para"]
-De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Google Cloud predeterminadas. <<Prepare Google Cloud as your backup target,Descubre cómo preparar tu entorno de Google Cloud para recibir backups de ONTAP.>>
+De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Google Cloud predeterminadas. <<Prepare Google Cloud storage as your backup target,Descubre cómo preparar tu entorno de Google Cloud para recibir backups de ONTAP.>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Active backups en sus ONTAP Volumes
 [role="quick-margin-para"]

@@ -363,7 +363,7 @@ endif::gcp[]
 +
 ** En ONTAP S3, BlueXP utiliza una cuenta de usuario existente para el bloque de S3.
 
-Si desea cambiar el almacén de objetos de destino de un clúster en el futuro, tendrá que hacerlo link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro de backup y recuperación de BlueXP para el entorno de trabajo"^], Y, a continuación, habilita el backup y la recuperación de BlueXP con la nueva información del proveedor de nube.
+Si desea cambiar el almacén de objetos de destino de un clúster en el futuro, tendrá que hacerlo link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro de backup y recuperación de BlueXP para el entorno de trabajo"^], Y, a continuación, habilita el backup y la recuperación de BlueXP con la nueva información del proveedor de nube.
 
 
 
@@ -378,9 +378,9 @@ NOTE: La política de Snapshot aplicada al volumen debe tener una de las etiquet
 
 Una vez que haya alcanzado el número máximo de copias de seguridad de una categoría o intervalo, se eliminan las copias de seguridad más antiguas, de modo que siempre tenga las copias de seguridad más actualizadas (para que las copias de seguridad obsoletas no sigan ocupando espacio).
 
-Consulte link:concept-cloud-backup-policies.html#backup-schedules["Programaciones de backup"^] para obtener más información acerca de las opciones de programación disponibles.
+Consulte link:concept-cloud-backup-policies.html["Programaciones de backup"^] para obtener más información acerca de las opciones de programación disponibles.
 
-Tenga en cuenta que puede link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time["crear un backup bajo demanda de un volumen"] Desde la consola de backup en cualquier momento, además de los archivos de backup creados a partir de las copias de seguridad programadas.
+Tenga en cuenta que puede link:task-manage-backups-ontap.html#create-a-manual-volume-backup-at-any-time["crear un backup bajo demanda de un volumen"] Desde la consola de backup en cualquier momento, además de los archivos de backup creados a partir de las copias de seguridad programadas.
 
 
 TIP: El período de retención para backups de volúmenes de protección de datos es el mismo que se define en la relación de SnapMirror de origen. Puede cambiar esto si lo desea con la API de.
@@ -403,8 +403,8 @@ Actualmente, existe soporte disponible si su destino de backup es Amazon S3, Azu
 
 Para obtener más detalles, consulte esta información:
 
-* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Cómo funcionan DataLock y la protección contra ransomware"].
-* link:manage-backup-settings-ontap.html["Cómo actualizar las opciones de protección contra ransomware en la página Configuración avanzada"].
+* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["Cómo funcionan DataLock y la protección contra ransomware"].
+* link:task-manage-backup-settings-ontap.html["Cómo actualizar las opciones de protección contra ransomware en la página Configuración avanzada"].
 
 
 
@@ -448,11 +448,11 @@ endif::gcp[]
 
 * En StorageGRID, las copias de seguridad están asociadas con la clase de almacenamiento _Standard_.
 +
-Si su clúster de instalaciones utiliza ONTAP 9.12.1 o superior y su sistema StorageGRID utiliza 11.4 o más, puede archivar archivos de backup antiguos al almacenamiento de archivado en cloud público tras un determinado número de días. Actualmente es compatible con los niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["Obtenga más información sobre el archivado de archivos de backup desde StorageGRID"^].
+Si su clúster de instalaciones utiliza ONTAP 9.12.1 o superior y su sistema StorageGRID utiliza 11.4 o más, puede archivar archivos de backup antiguos al almacenamiento de archivado en cloud público tras un determinado número de días. Actualmente es compatible con los niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. link:task-backup-onprem-private-cloud.html#prepare-to-archive-older-backup-files-to-public-cloud-storage["Obtenga más información sobre el archivado de archivos de backup desde StorageGRID"^].
 
 
 
-Consulte link:concept-cloud-backup-policies.html#archival-storage-settings["Configuración de almacenamiento de archivado"] para obtener más información acerca del archivado de archivos de copia de seguridad antiguos.
+Consulte link:concept-cloud-backup-policies.html#archival-storage-options["Configuración de almacenamiento de archivado"] para obtener más información acerca del archivado de archivos de copia de seguridad antiguos.
 
 
 

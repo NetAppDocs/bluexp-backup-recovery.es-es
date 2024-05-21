@@ -64,7 +64,7 @@ NOTE: La creación inicial de un volumen replicado o un archivo de copia de segu
 
 En la siguiente tabla se muestra una comparación generalizada de los tres métodos de copia de seguridad. Si bien el espacio de almacenamiento de objetos generalmente es menos costoso que el almacenamiento en disco local, si cree que puede restaurar los datos desde el cloud con frecuencia, las tasas de salida por parte de los proveedores de cloud pueden reducir parte de sus ahorros. Tendrá que identificar con qué frecuencia necesita restaurar los datos de los archivos de backup en el cloud.
 
-Además de estos criterios, el almacenamiento en la nube ofrece opciones de seguridad adicionales si usa la función DataLock y Ransomware Protection, y ahorros adicionales en costos al seleccionar clases de almacenamiento de archivado para archivos de copia de seguridad más antiguos. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Más información sobre la protección de DataLock y Ransomware"] y.. link:concept-cloud-backup-policies.html#archival-storage-settings["configuración de almacenamiento de archivado"].
+Además de estos criterios, el almacenamiento en la nube ofrece opciones de seguridad adicionales si usa la función DataLock y Ransomware Protection, y ahorros adicionales en costos al seleccionar clases de almacenamiento de archivado para archivos de copia de seguridad más antiguos. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["Más información sobre la protección de DataLock y Ransomware"] y.. link:concept-cloud-backup-policies.html#archival-storage-options["configuración de almacenamiento de archivado"].
 
 [cols="18,18,22,18,22"]
 |===
@@ -120,7 +120,7 @@ Puede usar las políticas predeterminadas que proporciona NetApp para crear sus 
 
 Si crea políticas personalizadas para replicación o backup, las etiquetas de políticas (por ejemplo, «diaria» o «semanal») deben coincidir con las etiquetas existentes en sus políticas de Snapshot o no se crearán los volúmenes replicados y los archivos de backup.
 
-Puede crear copias Snapshot, replicación y backup en políticas de almacenamiento de objetos en la interfaz de usuario de backup y recuperación de BlueXP. Consulte la sección para link:task-manage-backups-ontap.html#add-a-new-backup-policy["añada una nueva política de backup"] para obtener más detalles.
+Puede crear copias Snapshot, replicación y backup en políticas de almacenamiento de objetos en la interfaz de usuario de backup y recuperación de BlueXP. Consulte la sección para link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["añada una nueva política de backup"] para obtener más detalles.
 
 Además de utilizar la recuperación de backup de BlueXP para crear políticas personalizadas, puede usar System Manager o la interfaz de línea de comandos (CLI) de ONTAP.
 

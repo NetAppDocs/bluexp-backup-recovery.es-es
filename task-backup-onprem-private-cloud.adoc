@@ -480,7 +480,7 @@ Si su clúster utiliza ONTAP 9.11.1 o superior, puede optar por proteger sus bac
 
 
 +
-Si el clúster utiliza ONTAP 9.12.1 o posterior y el sistema StorageGRID utiliza la versión 11.4 o posterior, puede optar por organizar en niveles los backups antiguos en niveles de archivado en cloud público después de un determinado número de días. Actualmente es compatible con los niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Preparing to archive older backup files to public cloud storage,Vea cómo configurar sus sistemas para esta funcionalidad>>.
+Si el clúster utiliza ONTAP 9.12.1 o posterior y el sistema StorageGRID utiliza la versión 11.4 o posterior, puede optar por organizar en niveles los backups antiguos en niveles de archivado en cloud público después de un determinado número de días. Actualmente es compatible con los niveles de almacenamiento de AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Prepárese para archivar archivos de backup antiguos en almacenamiento en cloud público,Vea cómo configurar sus sistemas para esta funcionalidad>>.
 
 +
 ** *Copia de seguridad de nivel en la nube pública*: Seleccione el proveedor de nube al que desea organizar las copias de seguridad en niveles e introduzca los detalles del proveedor.

@@ -40,7 +40,7 @@ Para los volúmenes de FlexVol no hay limitación: Puede seleccionar todos los v
 
 
 
-=== Limitaciones de backup de objetos
+=== Limitaciones de backup a objeto
 
 * Cuando se crea o edita una política de backup cuando no se asignan volúmenes a la política, la cantidad de backups retenidos puede ser como máximo de 1018. Después de asignar volúmenes a la política, es posible editar la política para crear hasta 4000 backups.
 * Cuando se realiza un backup de volúmenes de protección de datos (DP):
@@ -103,3 +103,24 @@ Si se utiliza una versión de ONTAP anterior a la 9.11.1, no se admite la restau
 
 
 
+
+
+
+=== Limitaciones al utilizar RHEL 8+ con Podman
+
+
+
+==== No se admite la restauración de archivo único
+
+La funcionalidad de exploración y restauración para la restauración de archivos individuales y la restauración de directorios no se admite si se utiliza Podman. Todos los demás tipos de operaciones de restauración son compatibles cuando se utiliza Podman, por lo que puede restaurar los datos con estos otros métodos hasta que se resuelva este problema:
+
+* Restaure los archivos o carpetas desde un volumen replicado, si existe un volumen replicado.
+* Restaure los archivos o carpetas desde una copia de seguridad en la nube con la función Buscar y restaurar.
+* Restaure el volumen desde un backup en cloud mediante Examinar y restaurar y, a continuación, acceda a los archivos y carpetas que necesite.
+
+
+
+
+==== No es posible analizar sus backups en el cloud
+
+El análisis de backups en el cloud para detectar ransomware no es compatible si se utiliza el motor Podman. Si utiliza la función DataLock & Ransomware para sus backups en el cloud, tendrá que deshabilitar los análisis de ransomware. link:task-manage-backup-settings-ontap.html#enable-or-disable-ransomware-scans["Vea cómo deshabilitar el análisis de ransomware"].

@@ -152,14 +152,14 @@ Esta normativa de almacenamiento reside en diferentes ubicaciones del sistema de
 . Especifique la configuración, incluido el programa de transferencia y cuándo archivar las copias de seguridad.
 . (Opcional) Para mover archivos de copia de seguridad antiguos a una clase de almacenamiento o nivel de acceso más baratos después de un cierto número de días, seleccione la opción *Archive* e indique el número de días que deben transcurrir antes de que los datos se archiven. Introduzca *0* como el “Archivo después de días” para enviar su archivo de copia de seguridad directamente al almacenamiento de archivos.
 +
-link:concept-cloud-backup-policies.html#archival-storage-settings["Obtenga más información sobre la configuración de almacenamiento de archivado"].
+link:concept-cloud-backup-policies.html#archival-storage-options["Obtenga más información sobre la configuración de almacenamiento de archivado"].
 
 . (Opcional) Para evitar que sus copias de seguridad se modifiquen o eliminen, seleccione la opción *DataLock & Ransomware protection*.
 +
 Si su clúster utiliza ONTAP 9.11.1 o posterior, puede optar por proteger sus backups de la eliminación configurando _DataLock_ y _Ransomware protection_.
 
 +
-link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Obtenga más información acerca de los ajustes de DataLock disponibles"^].
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["Obtenga más información acerca de los ajustes de DataLock disponibles"^].
 
 . Seleccione *Crear*.
 

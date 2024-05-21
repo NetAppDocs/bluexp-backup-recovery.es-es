@@ -32,7 +32,7 @@ link:concept-ontap-backup-to-cloud.html#cost["Obtén más información sobre los
 
 Hay disponible una prueba gratuita de 30 días para backup y recuperación de BlueXP si te registras para obtener una suscripción de pago por uso en el mercado de tu proveedor de cloud. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, dispondrá de 20 días para usar la prueba gratuita.
 
-Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decides no continuar utilizando el backup y la recuperación de BlueXP, solo link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro del backup y la recuperación de BlueXP en el entorno de trabajo"] antes de que termine la prueba y no se le cobrará.
+Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decides no continuar utilizando el backup y la recuperación de BlueXP, solo link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro del backup y la recuperación de BlueXP en el entorno de trabajo"] antes de que termine la prueba y no se le cobrará.
 
 
 
@@ -213,7 +213,7 @@ BlueXP añade la licencia para que el backup y la recuperación de BlueXP estén
 
 === Actualizar una licencia BYOL de backup y recuperación de BlueXP
 
-Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de la cartera digital de BlueXP y en https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"].
+Si el término con licencia se acerca a la fecha de vencimiento o si la capacidad con licencia está alcanzando el límite, se le notificará en la interfaz de usuario de Backup. Este estado también aparece en la página de la cartera digital de BlueXP y en https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitor-operations-status-using-the-notification-center["Notificaciones"].
 
 image:screenshot_services_license_expire.png["Una captura de pantalla que muestra una licencia que va a caducar en la página de la cartera digital de BlueXP."]
 
