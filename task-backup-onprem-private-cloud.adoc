@@ -94,7 +94,7 @@ Cuando haces backups de los datos en StorageGRID, debe haber un conector BlueXP 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Más información sobre conectores"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Instalación del conector en un host Linux con acceso a Internet"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Instalación del conector en un host Linux sin acceso a Internet"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["Cambio entre conectores"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Cambio entre conectores"^]
 
 
 
@@ -112,7 +112,7 @@ Asegúrese de que la red en la que está instalado el conector habilita las sigu
 
 ==== Consideraciones sobre el modo privado (sitio oscuro)
 
-* La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Cuando se instala en modo privado, deberá actualizar el software Connector periódicamente para obtener acceso a nuevas funciones. Compruebe la link:whats-new.html["Backup y recuperación de BlueXP Novedades"] Para ver las nuevas funciones de cada versión de backup y recuperación de BlueXP. Cuando desee utilizar las nuevas funciones, siga los pasos a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Actualice el software del conector"^].
+* La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Cuando se instala en modo privado, deberá actualizar el software Connector periódicamente para obtener acceso a nuevas funciones. Compruebe la link:whats-new.html["Backup y recuperación de BlueXP Novedades"] Para ver las nuevas funciones de cada versión de backup y recuperación de BlueXP. Cuando desee utilizar las nuevas funciones, siga los pasos a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Actualice el software del conector"^].
 +
 La nueva versión de backup y recuperación de datos de BlueXP, que incluye la capacidad de programar y crear copias de Snapshot y volúmenes replicados, además de crear backups en el almacenamiento de objetos, requiere que esté utilizando la versión 3.9.31 o superior de BlueXP Connector. Por lo tanto, se recomienda que obtenga esta última versión para gestionar todos sus backups.
 

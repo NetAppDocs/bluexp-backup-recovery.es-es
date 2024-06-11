@@ -62,7 +62,7 @@ Este archivo se encuentra en la siguiente ubicación del depósito `netapp-backu
 
 === Instale un nuevo conector en un nuevo host Linux local
 
-Al instalar un nuevo conector BlueXP, asegúrese de descargar la misma versión de software que había instalado en el conector original. Los cambios periódicos en la estructura de la base de datos de backup y recuperación de BlueXP pueden hacer que las versiones de software más nuevas sean incompatibles con las copias de seguridad de la base de datos originales. Puede hacerlo https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Actualice el software Connector a la versión más reciente después de restaurar la base de datos de copia de seguridad"^].
+Al instalar un nuevo conector BlueXP, asegúrese de descargar la misma versión de software que había instalado en el conector original. Los cambios periódicos en la estructura de la base de datos de backup y recuperación de BlueXP pueden hacer que las versiones de software más nuevas sean incompatibles con las copias de seguridad de la base de datos originales. Puede hacerlo https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Actualice el software Connector a la versión más reciente después de restaurar la base de datos de copia de seguridad"^].
 
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Instale el conector BlueXP en un nuevo host Linux local"^]
 . Inicie sesión en BlueXP con las credenciales de usuario administrador que acaba de crear.
