@@ -3337,7 +3337,6 @@ No se conservan todos los datos escritos en el volumen de origen original entre 
   <block id="d7bb556723e915c43fe4fd9b0f90d545" category="inline-link">Ver requisitos previos para la relación de clústeres entre iguales en la documentación de ONTAP</block>
   <block id="c08b01fe5c09939cdbabcb370734dad8" category="list-text">Para replicar datos entre dos sistemas Cloud Volumes ONTAP en subredes diferentes, las subredes deben enrutarse juntas (esta es la configuración predeterminada).</block>
   <block id="a8597301498b7ba277bd04c5d9cec26a" category="section-title">Habilita el backup y la recuperación de datos de BlueXP en Cloud Volumes ONTAP</block>
-  <block id="3a3585e7353e26db7ebd817873594905" category="paragraph">Habilitar la copia de seguridad y recuperación de BluXP es fácil. Los pasos difieren ligeramente dependiendo de si tiene un sistema Cloud Volumes ONTAP existente o uno nuevo.</block>
   <block id="8a8476fd6836ec12c30dec20bc5004af" category="paragraph">*Habilitar la copia de seguridad y recuperación de BlueXP en un nuevo sistema*</block>
   <block id="901ae31ede407d1b2f9642db905682f2" category="list-text">En BlueXP Canvas, selecciona *Agregar entorno de trabajo*, elige el proveedor de la nube y selecciona *Agregar nuevo*. Selecciona *Crear Cloud Volumes ONTAP*.</block>
   <block id="2804562bc1e662a5b5b8ecf3b0be67c6" category="admonition">Para modificar la configuración de copia de seguridad o agregar replicación, consulte <block ref="5cd1a7d7fa9fd41e0b8e095748eb7b5f" category="inline-link-macro-rx"></block>.</block>
@@ -4916,4 +4915,8 @@ ifdef::aws[]</block>
   <block id="df0ff0042be8059301b11ae842882f69" category="list-text"><block ref="df0ff0042be8059301b11ae842882f69" category="inline-link-rx"></block></block>
   <block id="26a96558efb5aff5b97e24187bdedaaa" category="list-text">La funcionalidad de backup y recuperación de BlueXP está integrada en BlueXP Connector. Cuando se instala en modo privado, deberá actualizar el software Connector periódicamente para obtener acceso a nuevas funciones. Compruebe la <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> Para ver las nuevas funciones de cada versión de backup y recuperación de BlueXP. Cuando desee utilizar las nuevas funciones, siga los pasos a.<block ref="2d7f0c488acd05ac12707e13e58fd7d1" category="inline-link-rx"></block>.</block>
   <block id="8adbc3c324aa6698c29b0a7962b11b00" category="list-text">Obtenga el certificado del extremo VPC S3. Para hacerlo<block ref="b93c91598d8e86da04085f6831b06e68" category="inline-link-rx"></block> y ejecute el siguiente comando. Al introducir el nombre DNS del punto final, agregue “bucket” al principio, reemplazando el “*”:</block>
+  <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">Regiones admitidas</block>
+  <block id="90463a14d4c78ea524911daef7d9cf71" category="paragraph">El backup y la recuperación de datos de BlueXP es compatible con Cloud Volumes ONTAP en muchas regiones de Amazon Web Services, Microsoft Azure y Google Cloud.</block>
+  <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">Obtenga más información utilizando el Mapa de regiones globales</block>
+  <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
 </blocks>
