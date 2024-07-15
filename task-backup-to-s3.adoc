@@ -39,36 +39,21 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 [role="quick-margin-para"]
 Si ya tiene un conector desplegado en una región de AWS, entonces está todo listo. De lo contrario, tendrás que instalar un conector BlueXP en AWS para realizar backups de los datos de Cloud Volumes ONTAP en AWS. El Conector se puede instalar en un sitio con acceso completo a Internet (“modo estándar”) o con conectividad a Internet limitada (“modo restringido”).
 
-[role="quick-margin-para"]
-<<Prepare el conector BlueXP>>
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Verifique los requisitos de licencia
 [role="quick-margin-para"]
 Tendrás que comprobar los requisitos de licencias tanto para AWS como para BlueXP.
-
-[role="quick-margin-para"]
-<<Verifique los requisitos de licencia>>.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Compruebe los requisitos de red de ONTAP para replicar volúmenes
 [role="quick-margin-para"]
 Asegúrese de que los sistemas de almacenamiento principal y secundario cumplan con los requisitos de red y versión de ONTAP.
 
-[role="quick-margin-para"]
-<<Compruebe los requisitos de red de ONTAP para replicar volúmenes>>.
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Habilita el backup y la recuperación de datos de BlueXP
 [role="quick-margin-para"]
 Seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de volúmenes* junto al servicio copia de seguridad y recuperación del panel derecho.
 
-[role="quick-margin-para"]
-<<Habilita el backup y la recuperación de datos de BlueXP en Cloud Volumes ONTAP>>.
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Active backups en sus ONTAP Volumes
 [role="quick-margin-para"]
 Siga el asistente de configuración para seleccionar las políticas de replicación y backup que usará y los volúmenes de los que desea realizar un backup.
-
-[role="quick-margin-para"]
-<<Active backups en sus ONTAP Volumes>>.
 
 
 
