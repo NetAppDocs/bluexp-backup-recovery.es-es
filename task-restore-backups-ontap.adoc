@@ -31,6 +31,9 @@ En resumen, estos son los flujos válidos que se pueden utilizar para restaurar 
 
 
 
+NOTE: Para conocer las limitaciones relacionadas con la restauración de datos de ONTAP, consulte link:reference-limitations.html["Limitaciones de backup y restauración de los volúmenes de ONTAP"].
+
+
 
 == La Consola de restauración
 
