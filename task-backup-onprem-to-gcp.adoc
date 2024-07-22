@@ -33,22 +33,25 @@ Elige si conectarás tu clúster local de ONTAP directamente a Google Cloud Stor
 [role="quick-margin-para"]
 Si ya tiene un conector puesto en marcha en su VPC de Google Cloud Platform, todo estará configurado. De lo contrario, tendrás que crear un conector BlueXP para realizar backups de los datos de ONTAP en el almacenamiento de Google Cloud. También tendrás que personalizar la configuración de red del conector para que pueda conectarse a Google Cloud.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Verifique los requisitos de licencia
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Prepare la conexión en red para el conector
+[role="quick-margin-para"]
+Asegúrese de que el conector tiene las conexiones de red necesarias.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Verifique los requisitos de licencia
 [role="quick-margin-para"]
 Tendrás que comprobar los requisitos de licencias tanto para Google Cloud como para BlueXP.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Prepare los clústeres ONTAP
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Prepare los clústeres ONTAP
 [role="quick-margin-para"]
 Detecte sus clústeres de ONTAP en BlueXP, compruebe que los clústeres cumplan con los requisitos mínimos y personalice la configuración de red para que los clústeres se puedan conectar a Google Cloud.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Prepare Google Cloud como destino de backup
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Prepare Google Cloud como destino de backup
 [role="quick-margin-para"]
 Configura permisos para que Connector cree y administre el bucket de Google Cloud. También necesitará configurar permisos para el clúster de ONTAP en las instalaciones para que pueda leer y escribir datos en el bucket de Google Cloud.
 
-[role="quick-margin-para"]
 De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Google Cloud predeterminadas.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Active backups en sus ONTAP Volumes
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Siete"] Active backups en sus ONTAP Volumes
 [role="quick-margin-para"]
 Seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de volúmenes* junto al servicio copia de seguridad y recuperación del panel derecho. A continuación, siga el asistente de configuración para seleccionar las políticas de replicación y backup que usará y los volúmenes de los que desea realizar un backup.
 
@@ -268,7 +271,7 @@ Preparar Google Cloud Storage como destino de copia de seguridad implica los sig
 
 === Configure los permisos
 
-Cuando se configura el backup, hay que proporcionar claves de acceso de almacenamiento para una cuenta de servicio con permisos específicos. Una cuenta de servicio permite el backup y la recuperación de datos de BlueXP para autenticar y acceder a los depósitos de Cloud Storage que se usan para almacenar backups. Las claves son necesarias para que Google Cloud Storage sepa quién está haciendo la solicitud.
+Debe proporcionar claves de acceso de almacenamiento para una cuenta de servicio que tenga permisos específicos mediante un rol personalizado. Una cuenta de servicio permite el backup y la recuperación de datos de BlueXP para autenticar y acceder a los depósitos de Cloud Storage que se usan para almacenar backups. Las claves son necesarias para que Google Cloud Storage sepa quién está haciendo la solicitud.
 
 .Pasos
 . En la https://console.cloud.google.com["Consola de Google Cloud"^], Vaya a la página *roles*.

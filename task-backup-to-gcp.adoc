@@ -26,7 +26,11 @@ Empiece rápidamente siguiendo estos pasos o desplácese hacia abajo hasta las s
 [role="quick-margin-list"]
 * Está ejecutando Cloud Volumes ONTAP 9,8 o posterior en GCP (se recomienda ONTAP 9.8P13 y versiones posteriores).
 * Tiene una suscripción válida para GCP para el espacio de almacenamiento donde se ubicará la copia de seguridad.
-* Tiene una cuenta de servicio en Google Cloud Project que tiene el rol de administrador de almacenamiento predefinido.
+* Tienes una cuenta de servicio en tu proyecto de Google Cloud que tiene un rol personalizado con un conjunto reducido de permisos.
++
+
+NOTE: El rol Storage Admin ya no es necesario para la cuenta de servicio que permite acceder al backup y la recuperación de datos de BlueXP para acceder a los buckets de almacenamiento de Google Cloud.
+
 * Se ha suscrito a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Oferta de backup de BlueXP Marketplace"^], o usted ha comprado link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["y activado"^] Una licencia BYOL de backup y recuperación de BlueXP de NetApp.
 
 
@@ -46,7 +50,14 @@ Asegúrese de que los sistemas de origen y destino cumplen con los requisitos de
 [role="quick-margin-para"]
 Seleccione el entorno de trabajo y haga clic en *Activar > copia de seguridad de volúmenes* junto al servicio copia de seguridad y recuperación del panel derecho.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Active backups en sus ONTAP Volumes
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Seis"] Prepare Google Cloud como destino de backup
+[role="quick-margin-para"]
+Configura permisos para que Connector cree y administre el bucket de Google Cloud.
+
+[role="quick-margin-para"]
+De manera opcional, puede configurar sus propias claves gestionadas personalizadas para el cifrado de datos en lugar de utilizar las claves de cifrado de Google Cloud predeterminadas. <<Preparar Google Cloud Storage como destino de backup,Descubre cómo preparar tu entorno de Google Cloud para recibir backups de ONTAP.>>
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Siete"] Active backups en sus ONTAP Volumes
 [role="quick-margin-para"]
 Siga el asistente de configuración para seleccionar las políticas de replicación y backup que usará y los volúmenes de los que desea realizar un backup.
 
@@ -64,8 +75,11 @@ image:diagram_cloud_backup_cvo_google.png["Un diagrama que muestra cómo se comu
 
 Versiones de ONTAP compatibles:: Se recomienda un mínimo de ONTAP 9,8; ONTAP 9.8P13 y posterior.
 Regiones compatibles de GCP:: El backup y la recuperación de datos de BlueXP se admiten en todas las regiones de GCP https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^].
-Cuenta de servicio de GCP:: Es necesario tener una cuenta de servicio en Google Cloud Project que tenga el rol de administrador de almacenamiento predefinido. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^].
+Cuenta de servicio de GCP:: Necesitas tener una cuenta de servicio en tu proyecto de Google Cloud que tenga el rol personalizado. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^]
 
+
+
+NOTE: El rol Storage Admin ya no es necesario para la cuenta de servicio que permite acceder al backup y la recuperación de datos de BlueXP para acceder a los buckets de almacenamiento de Google Cloud.
 
 
 
@@ -224,7 +238,7 @@ image:screenshot_backup_to_gcp.png["Muestra la opción de backup y recuperación
 
 
 
-TIP: Para modificar la configuración de copia de seguridad o agregar replicación, consulte link:../task-manage-backups-ontap.html["Gestión de backups de ONTAP"].
+TIP: Para modificar la configuración de copia de seguridad o agregar replicación, consulte link:task-manage-backups-ontap.html["Gestión de backups de ONTAP"].
 
 .Resultado
 El backup y la recuperación de datos de BlueXP están activados en el sistema. Después de crear volúmenes en estos sistemas Cloud Volumes ONTAP, inicie el backup y la recuperación de datos de BlueXP y. link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["active el backup en cada volumen que desee proteger"].
@@ -244,7 +258,105 @@ image:screenshot_backup_cvo_enable.png["Una captura de pantalla que muestra el b
 
 
 
-TIP: Para modificar la configuración de copia de seguridad o agregar replicación, consulte link:../task-manage-backups-ontap.html["Gestión de backups de ONTAP"].
+TIP: Para modificar la configuración de copia de seguridad o agregar replicación, consulte link:task-manage-backups-ontap.html["Gestión de backups de ONTAP"].
+
+
+
+== Preparar Google Cloud Storage como destino de backup
+
+Preparar Google Cloud Storage como destino de copia de seguridad implica los siguientes pasos:
+
+* Configure los permisos.
+* (Opcional) Cree sus propios buckets. (El servicio creará cubos para usted si lo desea.)
+* (Opcional) Configurar claves gestionadas por el cliente para el cifrado de los datos
+
+
+
+
+=== Configure los permisos
+
+Debe proporcionar claves de acceso de almacenamiento para una cuenta de servicio que tenga permisos específicos mediante un rol personalizado. Una cuenta de servicio permite el backup y la recuperación de datos de BlueXP para autenticar y acceder a los depósitos de Cloud Storage que se usan para almacenar backups. Las claves son necesarias para que Google Cloud Storage sepa quién está haciendo la solicitud.
+
+.Pasos
+. En la https://console.cloud.google.com["Consola de Google Cloud"^], Vaya a la página *roles*.
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Crear un rol nuevo"^] con los siguientes permisos:
++
+[source, json]
+----
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
+----
+. En la consola de Google Cloud, https://console.cloud.google.com/iam-admin/serviceaccounts["Vaya a la página de cuentas de servicio"^].
+. Seleccione su proyecto de cloud.
+. Seleccione *Crear cuenta de servicio* y proporcione la información requerida:
++
+.. *Detalles de la cuenta de servicio*: Introduzca un nombre y una descripción.
+.. *Conceder acceso a esta cuenta de servicio al proyecto*: Seleccione la función personalizada que acaba de crear.
+.. Seleccione *Listo*.
+
+
+. Vaya a. https://console.cloud.google.com/storage/settings["Configuración de almacenamiento para GCP"^] y crear claves de acceso para la cuenta de servicio:
++
+.. Seleccione un proyecto y seleccione *Interoperabilidad*. Si aún no lo ha hecho, seleccione *Habilitar acceso a interoperabilidad*.
+.. En *Claves de acceso para cuentas de servicio*, selecciona *Crear una clave para una cuenta de servicio*, selecciona la cuenta de servicio que acabas de crear y haz clic en *Crear clave*.
++
+Tendrá que introducir las claves en el backup y la recuperación de BlueXP más adelante cuando configure el servicio de backup.
+
+
+
+
+
+
+
+=== Crea tus propios cubos
+
+De forma predeterminada, el servicio crea buckets para usted. O bien, si desea utilizar sus propios depósitos, puede crearlos antes de iniciar el asistente de activación de copias de seguridad y, a continuación, seleccionar esos bloques en el asistente.
+
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Obtenga más información sobre cómo crear sus propios cubos"^].
+
+
+
+=== Configurar claves de cifrado gestionadas por el cliente (CMEK) para el cifrado de datos
+
+Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en lugar de utilizar las claves de cifrado predeterminadas gestionadas por Google. Se admiten tanto claves entre regiones como entre proyectos, por lo que puede elegir un proyecto para un depósito que sea diferente al proyecto de la clave CMEK.
+
+Si planea utilizar sus propias claves gestionadas por el cliente:
+
+* Necesitará tener el llavero y el nombre de la clave para poder agregar esta información en el asistente de activación. https://cloud.google.com/kms/docs/cmek["Obtenga más información sobre las claves de cifrado gestionadas por el cliente"^].
+* Deberá verificar que estos permisos necesarios se incluyan en la función del conector:
++
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* Deberás verificar que la API de Google “Cloud Key Management Service (KMS)” esté habilitada en tu proyecto. Consulte https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentación de Google Cloud: Habilitar API"] para obtener más detalles.
+
+
+*Consideraciones de CMEK:*
+
+* Se admiten tanto las claves generadas por software como las de HSM (respaldado por hardware).
+* Se admiten las claves de Cloud KMS creadas o importadas recientemente.
+* Solo se admiten claves regionales; las claves globales no son compatibles.
+* Actualmente, sólo se admite el propósito "cifrado/descifrado simétrico".
+* Al agente de servicios asociado con la cuenta de almacenamiento se le asigna el rol IAM «CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)» mediante el backup y la recuperación de datos de BlueXP.
+
 
 
 
