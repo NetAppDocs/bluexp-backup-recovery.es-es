@@ -3774,7 +3774,6 @@ Cloud Volumes ONTAP</block>
   <block id="5e91843f25a40c882d43652a02c8f50e" category="list-text"><block ref="5e91843f25a40c882d43652a02c8f50e" category="inline-link-rx"></block></block>
   <block id="bd83bdfad11f4eb2160cecbaafa5771f" category="section-title">El modo de puesta en marcha de BlueXP Connector utiliza</block>
   <block id="40f7e0f171ae7f38e670d73e8a4c284b" category="paragraph">BlueXP ofrece múltiples modos de implementación que le permiten utilizar BlueXP de forma que se adapte a sus necesidades empresariales y de seguridad. _Standard Mode_ aprovecha la capa SaaS de BlueXP para proporcionar todas las funciones, mientras que _restricted mode_ y _private mode_ están disponibles para organizaciones que tienen restricciones de conectividad.</block>
-  <block id="fb67e88bd0479a55df78c8a83275d5e7" category="inline-link">Mira este vídeo sobre los modos de implementación de BlueXP</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">Consulte la lista completa de destinos de backup compatibles</block>
   <block id="2e87d4ef1e0516d893da73de140af706" category="inline-link-macro">Realice backups de los datos de Cloud Volumes ONTAP en Azure Blob</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">Realice un backup de los datos de ONTAP en las instalaciones en Azure Blob</block>
@@ -4902,7 +4901,6 @@ ifdef::aws[]</block>
   <block id="90463a14d4c78ea524911daef7d9cf71" category="paragraph">El backup y la recuperación de datos de BlueXP es compatible con Cloud Volumes ONTAP en muchas regiones de Amazon Web Services, Microsoft Azure y Google Cloud.</block>
   <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">Obtenga más información utilizando el Mapa de regiones globales</block>
   <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
-  <block id="a0833f9e76bfd36f87ee1d758fbe0cf4" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>. <block ref="1335d5eb0bcdbaf6050d71dc83f5893f" category="inline-link-rx"></block>.</block>
   <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">Si se realiza el backup de un volumen de DP y, a continuación, se decide interrumpir la relación de SnapMirror con dicho volumen, no podrá restaurar archivos en ese volumen a menos que también elimine la relación de SnapMirror o invierta la dirección de SnapMirror.</block>
   <block id="97a40c9bbf6946a2928acd09286296b8" category="paragraph">La funcionalidad de exploración y restauración para la restauración de archivos individuales y la restauración de directorios no es compatible si se utilizan conectores de BlueXP que se ejecutan en Podman (conectores de BlueXP creados manualmente al ejecutarse en RHEL 8 o 9). Todos los demás tipos de operaciones de restauración son compatibles cuando se utiliza Podman, por lo que puede restaurar los datos con estos otros métodos hasta que se resuelva este problema:</block>
   <block id="210a764f3461866061c80320620c0eec" category="admonition">Para conocer las limitaciones relacionadas con la restauración de datos de ONTAP, consulte <block ref="15bd83aed33bf3bd63f2e9166e3e91ba" category="inline-link-macro-rx"></block>.</block>
@@ -4960,4 +4958,5 @@ ifdef::aws[]</block>
   <block id="cd4619af82dfe7627dc934e29e85a6e9" category="paragraph">Con esta versión, el soporte para la restauración de carpetas de FlexGroup es una vista previa de la tecnología.</block>
   <block id="9b7af6cb2e410e55ce793003b7110047" category="paragraph">Para obtener más información, consulte <block ref="07023d18b01371174abc5a157da41b99" category="inline-link-macro-rx"></block>.</block>
   <block id="707304f314bfa71975e8ffb352535092" category="paragraph">Para obtener más información sobre cómo activarlo manualmente, consulte<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>.</block>
+  <block id="0459722050fe78ea88f3bdcad4866ce0" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>.</block>
 </blocks>
