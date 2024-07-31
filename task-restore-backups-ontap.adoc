@@ -356,7 +356,10 @@ Si utiliza ONTAP 9.13.0 o superior, puede restaurar una carpeta junto con todos 
 ====
 * Si el archivo de backup se configuró con protección DataLock & Ransomware, la restauración en el nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o superior. Si utiliza una versión anterior de ONTAP, puede restaurar el volumen entero desde el archivo de backup y luego acceder a la carpeta y los archivos que necesita.
 * Si el archivo de backup reside en un almacenamiento de archivado, la restauración a nivel de carpeta solo se admite si la versión de ONTAP es 9.13.1 o posterior. Si utiliza una versión anterior de ONTAP, puede restaurar la carpeta desde un archivo de backup más reciente que no se haya archivado, o puede restaurar todo el volumen desde el backup archivado y, a continuación, acceder a la carpeta y los archivos que necesita.
-* Con ONTAP 9.15.1 P2, puede restaurar carpetas de FlexGroup con la opción Examinar y restaurar.
+* Con ONTAP 9.15.1, puede restaurar carpetas de FlexGroup utilizando la opción «Examinar y restaurar». Esta función se encuentra en el modo Vista previa de tecnología.
++
+Puede probarlo utilizando un indicador especial descrito en el https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Backup y recuperación de BlueXP Julio 2024 Release blog"^].
+
 
 
 ====
