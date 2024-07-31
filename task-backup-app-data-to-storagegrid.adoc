@@ -21,7 +21,7 @@ BlueXP admite el bloqueo de datos y la protección frente al ransomware. Si el c
 .Antes de empezar
 Al realizar una copia de seguridad de datos en StorageGRID, debe haber un conector disponible en las instalaciones. Tendrá que instalar un conector nuevo o asegurarse de que el conector seleccionado actualmente reside en las instalaciones. El conector se puede instalar en un sitio con o sin acceso a Internet.
 
-Para obtener más información, consulte link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["Crear conectores para StorageGRID"].
+Para obtener más información, consulte link:task-backup-onprem-private-cloud.html#create-or-switch-connectors["Crear conectores para StorageGRID"].
 
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *aplicaciones*.

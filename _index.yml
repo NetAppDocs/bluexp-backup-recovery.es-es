@@ -78,13 +78,6 @@ indexpage:
     - title: Realice backups de los datos de las aplicaciones en las instalaciones
         en StorageGRID
       url: task-backup-app-data-to-storagegrid.html
-    - title: Realiza un backup de bases de datos de Oracle nativas en la nube
-      url: task-backup-cloud-native-oracle-data.html
-    - title: Hacer backup de la base de datos SAP HANA nativa en la nube
-      flavor: azure
-      url: task-backup-cloud-native-sap-hana-data.html
-    - title: Realice un backup de la base de datos de SQL Server nativa en el cloud
-      url: task-backup-cloud-native-sql-data.html
   - title: Haga backups de almacenes de datos en el cloud
     links:
     - title: Backup de almacenes de datos en Amazon Web Services
@@ -106,13 +99,6 @@ indexpage:
       url: task-restore-oracle-data.html
     - title: Restaure datos de aplicaciones de SQL Server locales
       url: task-restore-sql-data.html
-    - title: Restaure los datos de aplicaciones de Oracle nativas de cloud
-      url: task-restore-cloud-native-oracle-data-to-original-location.html
-    - title: Restaure los datos de aplicaciones SAP HANA nativas del cloud
-      flavor: azure
-      url: task-restore-cloud-native-sap-hana-data.html
-    - title: Restaure datos de SQL Server nativos del cloud
-      url: task-restore-cloud-native-sql-data.html
     - title: Restaurar datos de equipos virtuales
       url: task-restore-vm-data.html
     - title: Restaura los datos del volumen de Kubernetes

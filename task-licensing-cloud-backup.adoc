@@ -53,7 +53,6 @@ Hay algunos planes PAYGO para el backup y la recuperación de BlueXP:
 +
 Tenga en cuenta que esta opción también requiere una suscripción PAYGO de backup y recuperación, pero no se incurrirá en cargos por los sistemas Cloud Volumes ONTAP que cumplan los requisitos.
 
-* Un paquete «CVO Edge Cache» tiene las mismas capacidades que el paquete «CVO Professional», pero también incluye soporte para el https://docs.netapp.com/us-en/bluexp-edge-caching/concept-gfc.html["Almacenamiento en caché perimetral de BlueXP"^] servicio. Tienes derecho a poner en marcha un sistema Edge de almacenamiento en caché perimetral de BlueXP por cada 3 TiB de capacidad aprovisionada en el sistema Cloud Volumes ONTAP. Esta opción está disponible a través de Azure y Google Marketplaces, y no le permite realizar backups de los datos de ONTAP locales.
 
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Obtenga más información sobre estos paquetes de licencias basados en capacidad"].
