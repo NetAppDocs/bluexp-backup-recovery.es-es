@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-report-inventory.html 
-keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory 
+keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory, bluexp 
 summary: Con los informes de backup y recuperación de datos de BlueXP, puedes garantizar que los datos cruciales estén protegidos según las políticas definidas por la organización y respaldar de manera eficiente las auditorías para los procesos de cumplimiento de normativas. Con el informe de inventario de backup, puede visualizar todos los backups de una cuenta, un entorno de trabajo o un inventario de SVM específico. 
 ---
 = Informe sobre la cobertura de protección de datos
@@ -32,7 +32,7 @@ NOTE: Las actividades de informe se supervisan en el registro de supervisión de
 Los informes de backup y recuperación de BlueXP ofrecen información sobre los siguientes aspectos:
 
 * *Ubicación del conector*: Local o en la nube
-* *Fuente*: Volúmenes Cloud Volumes ONTAP, volúmenes ONTAP locales, aplicaciones o volúmenes persistentes de Kubernetes
+* *Fuente*: Volúmenes Cloud Volumes ONTAP, volúmenes ONTAP locales o aplicaciones
 * *Destino*: Cualquiera de los proveedores de nube, NetApp StorageGRID o ONTAP S3
 * *Versiones ONTAP*: 9.13.0
 
@@ -94,7 +94,7 @@ TIP: Puede seleccionar varios entornos de trabajo y SVM.
 
 La supervisión proactiva puede reducir el esfuerzo necesario para supervisar todos los recursos de su ecosistema. A partir de ONTAP 9.13.0, el informe de actividad de trabajos de protección de datos proporciona información sobre operaciones de Snapshot, backup, clonado y restauración que puede utilizar con la supervisión de acuerdos de nivel de servicio y realizar un seguimiento de las tasas de backup y recuperación.
 
-El informe se aplica a las operaciones de backup y recuperación de BlueXP para los datos de Cloud Volumes ONTAP, on-premises, aplicaciones y Kubernetes.
+El informe aplica a las operaciones de backup y recuperación de BlueXP  para datos de aplicaciones, en las instalaciones y Cloud Volumes ONTAP.
 
 El informe Actividad de trabajo de protección de datos muestra, entre otras cosas, la siguiente información:
 
@@ -114,7 +114,6 @@ Los gráficos de la parte superior de la página muestran la siguiente informaci
 ** Recuento de trabajos de backup y restauración de volúmenes de ONTAP
 ** Número de trabajos de backup y restauración de aplicaciones
 ** Recuento de tareas de backup y restauración de máquinas virtuales
-** Recuento de tareas de backup y restauración de Kubernetes
 
 
 * Actividad laboral diaria

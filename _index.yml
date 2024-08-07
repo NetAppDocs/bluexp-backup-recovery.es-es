@@ -1,16 +1,14 @@
 ---
 indexpage:
   title: Documentación de backup y recuperación de BlueXP
-  summary: El servicio de backup y recuperación de datos de BlueXP proporciona una
-    protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP,
-    los volúmenes persistentes, las bases de datos y las máquinas virtuales de Kubernetes,
-    tanto en las instalaciones como en la nube.
-  keywords: bluexp, bluexp backup recovery, ontap, kubernetes, virtual machines, vm,
-    on-premises, data protection
-  lead: El servicio de backup y recuperación de datos de BlueXP proporciona una protección
-    de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes
-    persistentes de Kubernetes, bases de datos y máquinas virtuales, tanto en las
-    instalaciones como en la nube.
+  summary: El servicio de backup y recuperación de datos de BlueXP  proporciona una
+    protección de datos eficiente, segura y rentable para los datos, bases de datos
+    y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en el cloud.
+  keywords: bluexp, bluexp backup recovery, ontap, virtual machine, vm, on-premises,
+    data protection
+  lead: El servicio de backup y recuperación de datos de BlueXP ofrece una protección
+    de datos eficiente, segura y rentable para los datos, bases de datos y máquinas
+    virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube.
   tiles:
   - title: Manos a la obra
     links:
@@ -101,19 +99,6 @@ indexpage:
       url: task-restore-sql-data.html
     - title: Restaurar datos de equipos virtuales
       url: task-restore-vm-data.html
-    - title: Restaura los datos del volumen de Kubernetes
-      url: task-restore-backups-kubernetes.html
-  - title: Realice backups de los datos de Kubernetes en el cloud
-    links:
-    - title: Realice backups del clúster de Kubernetes en Amazon S3
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: Backups del clúster de Kubernetes en Azure Blob
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: Realice backups del clúster de Kubernetes en Google Cloud
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
   - title: Blogs y comunidad
     links:
     - title: Comunidad de NetApp

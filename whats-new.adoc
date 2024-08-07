@@ -560,7 +560,7 @@ Ahora puede realizar backups de datos de sistemas Cloud Volumes ONTAP instalados
 
 === Varias mejoras en el Monitor de trabajo
 
-* La página Job Monitoring ha añadido un filtrado avanzado para poder buscar trabajos de backup y restauración en función del tiempo, la carga de trabajo (volúmenes, aplicaciones, máquinas virtuales o Kubernetes), Tipo de trabajo, estado, entorno de trabajo y máquina virtual de almacenamiento. También puede introducir texto libre para buscar cualquier recurso, por ejemplo, "Application_3".  https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Consulte cómo utilizar los filtros avanzados"].
+* La página Job Monitoring ha agregado filtrado avanzado para que pueda buscar trabajos de backup y restauración por tiempo, carga de trabajo (volúmenes, aplicaciones o máquinas virtuales), tipo de trabajo, estado, entorno de trabajo y máquina virtual de almacenamiento. También puede introducir texto libre para buscar cualquier recurso, por ejemplo, "Application_3".  https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Consulte cómo utilizar los filtros avanzados"].
 * Tanto las operaciones de backup y restauración iniciadas por el usuario desde la API e IU de backup y recuperación de BlueXP, como los trabajos iniciados por el sistema, como las operaciones de backup en curso, ahora están disponibles en la pestaña *Supervisión de trabajos* para sistemas Cloud Volumes ONTAP que ejecuten ONTAP 9.13.0 o posterior. Las versiones anteriores de los sistemas Cloud Volumes ONTAP y los sistemas ONTAP en las instalaciones mostrarán solo los trabajos iniciados por el usuario en este momento.
 
 
@@ -789,7 +789,7 @@ En este momento, el conector debe ponerse en marcha en Google Cloud Platform al 
 
 Se han realizado las siguientes actualizaciones en https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["Página Job Monitoring"]:
 
-* Hay una columna para "Workload" disponible para filtrar la página con el fin de ver los trabajos de los siguientes servicios de backup: Volúmenes, aplicaciones, máquinas virtuales y Kubernetes.
+* Hay una columna para «Carga de trabajo» disponible para que pueda filtrar la página para ver los trabajos de los siguientes servicios de backup: Volúmenes, aplicaciones y máquinas virtuales.
 * Puede añadir nuevas columnas para "Nombre de usuario" y "Tipo de trabajo" si desea ver estos detalles para una tarea de copia de seguridad específica.
 * En la página Job Details, se muestran todos los subtrabajos que se ejecutan para completar el trabajo principal.
 * La página se actualiza automáticamente cada 15 minutos para que siempre vea los resultados más recientes sobre el estado del trabajo. Y puede hacer clic en el botón *Actualizar* para actualizar la página inmediatamente.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: El servicio de backup y recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. 
 ---
 = Descubre el backup y la recuperación de BlueXP
@@ -14,7 +14,7 @@ summary: El servicio de backup y recuperación de datos de BlueXP ofrece una pro
 
 
 [role="lead"]
-El servicio de backup y recuperación de datos de BlueXP proporciona una protección de datos eficiente, segura y rentable para los datos de NetApp ONTAP, volúmenes persistentes de Kubernetes, bases de datos y máquinas virtuales, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
+El servicio de backup y recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado.
 
 El servicio realiza una replicación incremental permanente a nivel de bloque y conserva todas las eficiencias del almacenamiento, lo que reduce significativamente la cantidad de datos que se replican y almacenan. Además, pagarás solo por los elementos protegidos y utilizarás los niveles de almacenamiento de menor coste disponibles, lo que hace que el backup y la recuperación de datos de BlueXP sean muy rentables.
 
@@ -25,7 +25,6 @@ https://bluexp.netapp.com/cloud-backup["Más información sobre el backup y la r
 El backup y la recuperación de datos se pueden utilizar para:
 
 * Realice backups y restauraciones de datos de volúmenes de ONTAP desde sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. link:concept-ontap-backup-to-cloud.html["Consulte las características detalladas aquí"].
-* Realice backups y restaure volúmenes persistentes de Kubernetes. link:concept-kubernetes-backup-to-cloud.html["Consulte las características detalladas aquí"].
 * Haz un backup de las copias Snapshot consistentes con las aplicaciones desde los sistemas ONTAP en las instalaciones mediante el backup y la recuperación de datos de BlueXP para aplicaciones. link:concept-protect-app-data-to-cloud.html["Consulte las características detalladas aquí"].
 * Haz backups de almacenes de datos en la nube y restaura máquinas virtuales de nuevo en la instancia de vCenter on-premises mediante el backup y la recuperación de datos de BlueXP para VMware. link:concept-protect-vm-data.html["Consulte las características detalladas aquí"].
 
@@ -33,7 +32,7 @@ El backup y la recuperación de datos se pueden utilizar para:
 https://www.youtube.com/watch?v=DF0knrH2a80["Vea una demostración rápida"^]
 
 
-TIP: Cuando el conector BlueXP se pone en marcha en una región gubernamental en el cloud o en un sitio sin acceso a Internet (un sitio oscuro), el backup y la recuperación de BlueXP solo admiten las operaciones de backup y restauración de los sistemas ONTAP. Cuando se utilizan estos tipos de métodos de puesta en marcha, el backup y la recuperación de BlueXP no son compatibles con las operaciones de backup y restauración desde clústeres, aplicaciones o máquinas virtuales de Kubernetes.
+TIP: Cuando el conector BlueXP se pone en marcha en una región gubernamental en el cloud o en un sitio sin acceso a Internet (un sitio oscuro), el backup y la recuperación de BlueXP solo admiten las operaciones de backup y restauración de los sistemas ONTAP. Cuando se utilizan estos tipos de métodos de puesta en marcha, backup y recuperación de BlueXP  no admiten operaciones de backup y restauración desde aplicaciones o máquinas virtuales.
 
 
 

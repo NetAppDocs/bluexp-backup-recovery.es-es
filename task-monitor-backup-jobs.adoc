@@ -20,7 +20,7 @@ Es posible supervisar el estado de Snapshot locales, las replicaciones y el back
 
 == Ver el estado del trabajo en Job Monitor
 
-Puede ver una lista de todas las instantáneas, la replicación, la copia de seguridad en el almacenamiento de objetos y las operaciones de restauración y su estado actual en la pestaña *Supervisión de trabajos*. Esto incluye operaciones de Cloud Volumes ONTAP, ONTAP en las instalaciones, aplicaciones, máquinas virtuales y sistemas Kubernetes. Cada operación, o trabajo, tiene un ID exclusivo y un estado.
+Puede ver una lista de todas las instantáneas, la replicación, la copia de seguridad en el almacenamiento de objetos y las operaciones de restauración y su estado actual en la pestaña *Supervisión de trabajos*. Esto incluye operaciones de tu Cloud Volumes ONTAP, ONTAP on-premises, aplicaciones y máquinas virtuales. Cada operación, o trabajo, tiene un ID exclusivo y un estado.
 
 El estado puede ser:
 
@@ -76,7 +76,6 @@ La mayoría de los filtros son autoexplicativos. El filtro de «Carga de trabajo
 ** Volúmenes (Cloud Volumes ONTAP y ONTAP Volumes en las instalaciones)
 ** Más grandes
 ** Equipos virtuales
-** Kubernetes
 
 
 +

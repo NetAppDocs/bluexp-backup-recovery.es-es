@@ -141,23 +141,6 @@ sidebar:
       url: "/task-manage-vm-data-in-cloud.html"
     - title: Restaurar datos de equipos virtuales
       url: "/task-restore-vm-data.html"
-  - title: Cree backups y restaure datos de Kubernetes
-    entries:
-    - title: Proteja sus datos de Kubernetes
-      url: "/concept-kubernetes-backup-to-cloud.html"
-    - title: Realice el backup en Amazon S3
-      flavor: aws
-      url: "/task-backup-kubernetes-to-s3.html"
-    - title: Backup a Azure Blob
-      flavor: azure
-      url: "/task-backup-kubernetes-to-azure.html"
-    - title: Realice su backup en Google Cloud
-      flavor: gcp
-      url: "/task-backup-kubernetes-to-gcp.html"
-    - title: Gestione los backups de Kubernetes
-      url: "/task-manage-backups-kubernetes.html"
-    - title: Restauración desde backups de Kubernetes
-      url: "/task-restore-backups-kubernetes.html"
   - title: Automatización con la API DE REST
     url: "/api-backup-restore.html"
   - title: Referencia
