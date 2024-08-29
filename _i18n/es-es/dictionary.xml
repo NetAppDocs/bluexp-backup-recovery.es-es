@@ -3043,7 +3043,6 @@ ONTAP S3</block>
   <block id="3b2352f9f987ea3f850c59d97818e5b2" category="cell">Error de las tareas de backup y recuperación de Snapshot ad hoc de BlueXP</block>
   <block id="7dfd6144b0880ea61dc9ca44cde23608" category="cell">Error de los trabajos de replicación ad-hoc de backup y recuperación de BlueXP</block>
   <block id="44fb2635a11260b2cc484928766b933c" category="cell">Error de las tareas de pausa de replicación de backup y recuperación de BlueXP</block>
-  <block id="ebc078a09fc4b31b91b35b54aa44f5c4" category="cell">Error de las tareas de replicación de backup y recuperación de BlueXP</block>
   <block id="c55e60943b328ba5333135136a72eed3" category="cell">La replicación del backup y recuperación de BlueXP vuelve a sincronizar el error de las tareas de sincronización</block>
   <block id="5e67cebd99d17acfd6723171138a26c0" category="cell">La replicación del backup y la recuperación de BlueXP detiene el fallo de las tareas</block>
   <block id="148858fe75d91455e16176a0e57a23a4" category="cell">El backup y la replicación de recuperación de BlueXP invierten un error de resincronización de las tareas</block>
@@ -3735,4 +3734,5 @@ ifdef::aws[]</block>
   <block id="0d80ea71f9929ca6943ff4f16a27de3e" category="list-text">Hay una columna para «Carga de trabajo» disponible para que pueda filtrar la página para ver los trabajos de los siguientes servicios de backup: Volúmenes, aplicaciones y máquinas virtuales.</block>
   <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">El servicio de backup y recuperación de datos de BlueXP ofrece una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube.</block>
   <block id="e117f11185531a360eff8bfed09af453" category="sidebar">El servicio de backup y recuperación de datos de BlueXP  proporciona una protección de datos eficiente, segura y rentable para los datos, bases de datos y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en el cloud.</block>
+  <block id="0760245e68680af16b611d238a130354" category="cell">Error de las tareas de interrupción de la replicación de backup y recuperación de BlueXP </block>
 </blocks>

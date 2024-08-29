@@ -169,7 +169,7 @@ El Centro de notificaciones muestra numerosos eventos de snapshot, replicación,
 | Replicación | Error de las tareas de pausa de replicación de backup y recuperación de BlueXP | Error | No 
 
 
-| Replicación | Error de las tareas de replicación de backup y recuperación de BlueXP | Error | No 
+| Replicación | Error de las tareas de interrupción de la replicación de backup y recuperación de BlueXP  | Error | No 
 
 
 | Replicación | La replicación del backup y recuperación de BlueXP vuelve a sincronizar el error de las tareas de sincronización | Error | No 
