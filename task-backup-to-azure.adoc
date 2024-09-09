@@ -191,7 +191,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 
 Puede utilizar sus propias claves gestionadas por el cliente para el cifrado de datos en el asistente de activación en lugar de utilizar las claves de cifrado gestionadas por Microsoft predeterminadas. En este caso, deberá tener la suscripción de Azure, el nombre del almacén de claves y la clave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Vea cómo usar sus propias claves"^].
 
-El backup y la recuperación de BlueXP admite las _políticas de acceso de Azure_ como modelo de permiso. Actualmente no se admite el modelo de permiso _Azure Role-Based Access Control_ (Azure RBAC).
+El backup y la recuperación de BlueXP  admite _Azure access policies_, el modelo de permisos _Azure role-based access control_ (Azure RBAC) y _Managed Hardware Security Model_ (HSM) (consulte https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["¿Qué es el HSM gestionado por Azure Key Vault?"] ).
 
 
 
