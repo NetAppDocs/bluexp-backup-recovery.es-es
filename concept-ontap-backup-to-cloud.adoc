@@ -291,7 +291,7 @@ Tenga en cuenta que está disponible una prueba gratuita de 30 días cuando se i
 
 ifdef::aws[]
 
-Al utilizar AWS, hay dos contratos anuales disponibles para 1, 2 o 3 años:
+Cuando utiliza AWS, hay dos contratos anuales disponibles para 1, 2 o 3 años:
 
 * Un plan de "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos de ONTAP en las instalaciones.
 * Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados de volúmenes de Cloud Volumes ONTAP cargados con esta licencia (la capacidad de backup no se cuenta con la licencia).
@@ -301,7 +301,7 @@ endif::aws[]
 
 ifdef::azure[]
 
-Al utilizar Azure, hay dos contratos anuales disponibles para 1, 2 o 3 años:
+Cuando usa Azure, hay dos contratos anuales disponibles para 1, 2 o 3 años:
 
 * Un plan de "Backup en el cloud" que le permite realizar backups de datos de Cloud Volumes ONTAP y de datos de ONTAP en las instalaciones.
 * Un plan «CVO Professional» que te permite agrupar el backup y la recuperación de datos de Cloud Volumes ONTAP y BlueXP. Esto incluye backups ilimitados de volúmenes de Cloud Volumes ONTAP cargados con esta licencia (la capacidad de backup no se cuenta con la licencia).
@@ -311,7 +311,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-Al usar GCP, puedes solicitar una oferta privada a NetApp y, después, seleccionar el plan al suscribirte desde Google Cloud Marketplace durante la activación del backup y la recuperación de BlueXP.
+Cuando usas GCP, puedes solicitar una oferta privada a NetApp y, después, seleccionar el plan al suscribirte desde Google Cloud Marketplace durante la activación del backup y la recuperación de BlueXP .
 
 endif::gcp[]
 
@@ -404,7 +404,7 @@ Si su clúster utiliza ONTAP 9.11.1 o posterior, puede proteger sus backups en e
 
 Los análisis programados de protección contra ransomware se habilitan de forma predeterminada. La configuración predeterminada para la frecuencia de exploración es de 7 días. El análisis se realiza sólo en la última copia Snapshot. Los análisis programados se pueden desactivar para reducir los costes. Puede habilitar o deshabilitar los análisis de ransomware programados en la última copia de Snapshot usando la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan semanalmente de forma predeterminada. Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
 
-El período de retención de backup es igual al período de retención de programa de backup; más 14 días. Por ejemplo, las copias de seguridad _Weekly_ con _5_ copias retenidas bloquearán cada archivo de copia de seguridad durante 5 semanas. _Mensual_ los backups con _6_ copias retenidas bloquearán cada archivo de copia de seguridad durante 6 meses.
+El período de retención de la copia de seguridad es el mismo que el período de retención del programa de copia de seguridad, más un búfer máximo de 31 días. Por ejemplo, las copias de seguridad _Weekly_ con _5_ copias retenidas bloquearán cada archivo de copia de seguridad durante 5 semanas. _Mensual_ los backups con _6_ copias retenidas bloquearán cada archivo de copia de seguridad durante 6 meses.
 
 Actualmente, existe soporte disponible si su destino de backup es Amazon S3, Azure Blob o StorageGRID de NetApp. En futuras versiones se añadirán otros destinos proveedores de almacenamiento.
 
