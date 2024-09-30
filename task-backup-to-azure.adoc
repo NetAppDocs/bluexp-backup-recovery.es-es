@@ -464,22 +464,14 @@ Para crear una política, selecciona *Crear nueva política* y haz lo siguiente:
 +
 *** Introduzca el nombre de la política.
 *** En el caso de políticas de backup a objeto, se deben establecer los ajustes de DataLock y Ransomware Protection. Para obtener más información sobre DataLock y Protección contra ransomware, consulte link:concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"].
+*** Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
+*** Seleccione *Crear*.
 
 
-
-
-
-
-* Seleccione hasta 5 horarios, normalmente de diferentes frecuencias.
-* Seleccione *Crear*.
-+
 ** *Exporte las copias Snapshot existentes al almacenamiento de objetos como copias de seguridad*: Si hay alguna copia Snapshot local para volúmenes en este entorno de trabajo que coincida con la etiqueta de programación de copia de seguridad que acaba de seleccionar para este entorno de trabajo (por ejemplo, diario, semanal, etc.), se muestra este mensaje adicional. Marque esta casilla para que se copien todas las copias Snapshot históricas en el almacenamiento de objetos como archivos de backup a fin de garantizar la protección más completa de los volúmenes.
-+
-... Seleccione *Siguiente*.
 
 
-
-
+. Seleccione *Siguiente*.
 
 
 
