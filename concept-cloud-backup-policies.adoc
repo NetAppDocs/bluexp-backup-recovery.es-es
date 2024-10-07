@@ -64,8 +64,7 @@ Esta función no ofrece protección para los volúmenes de origen, solo para los
 
 [CAUTION]
 ====
-* Si tienes pensado utilizar la protección DataLock y Ransomware, puedes habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster. Más adelante, puedes habilitarlo con la configuración avanzada de backup y recuperación de BlueXP.
-* La protección DataLock y Ransomware se puede deshabilitar para un clúster después de que se ha configurado para ahorrar costes.
+* Si tienes pensado utilizar la protección DataLock y Ransomware, puedes habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster. Más adelante, puede habilitar o deshabilitar el análisis de ransomware utilizando la configuración avanzada de copia de seguridad y recuperación de BlueXP .
 * Cuando BlueXP analiza un archivo de backup de ransomware al restaurar datos de volumen, tu proveedor de cloud incurrirá en costes adicionales de salida para acceder al contenido del archivo de backup.
 
 

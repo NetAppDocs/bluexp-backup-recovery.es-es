@@ -3506,8 +3506,6 @@ ifdef::aws[]</block>
   <block id="216ef706f9f25f4eb179f940b530a4d5" category="admonition">Estas configuraciones de políticas son relevantes únicamente para el almacenamiento de backup en objetos. Ninguna de estas configuraciones afecta a las políticas de Snapshot o de replicación. En el futuro se añadirán configuraciones de directiva similares para instantáneas y replicaciones.</block>
   <block id="a2e6f50bd5494a56ee0794883aeee5e5" category="section-title">Opciones de programación de backups</block>
   <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">Opciones de protección contra DataLock y Ransomware</block>
-  <block id="5eab2e069820454037ee67f5a8712f35" category="list-text">Si tienes pensado utilizar la protección DataLock y Ransomware, puedes habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster. Más adelante, puedes habilitarlo con la configuración avanzada de backup y recuperación de BlueXP.</block>
-  <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">La protección DataLock y Ransomware se puede deshabilitar para un clúster después de que se ha configurado para ahorrar costes.</block>
   <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">Cuando se crea un archivo de copia de seguridad.</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">Opciones de bloqueo de datos y protección frente a ransomware</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">Permisos de AWS S3</block>
@@ -3757,4 +3755,5 @@ ifdef::aws[]</block>
   <block id="8d9ab45267715f2ac0f3956dcc48c029" category="paragraph">Consulte<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block>.</block>
   <block id="78d043c8f38ceca4388c8f7251b8d0a4" category="paragraph">En versiones anteriores, se necesitaba el rol «Storage Admin» para la cuenta de servicio que permitía realizar el backup y la recuperación de datos de BlueXP para acceder a buckets de Google Cloud Storage. Ahora puede crear una función personalizada con un conjunto reducido de permisos que se asignarán a la cuenta de servicio.</block>
   <block id="c3fc4078f4f9169223583aa65515bc3a" category="paragraph"><block ref="dc783245fae5a9dea930533d2d02d38a" category="inline-link-rx"></block>.</block>
+  <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">Si tienes pensado utilizar la protección DataLock y Ransomware, puedes habilitarla al crear tu primera política de backup y activar el backup y la recuperación de BlueXP para ese clúster. Más adelante, puede habilitar o deshabilitar el análisis de ransomware utilizando la configuración avanzada de copia de seguridad y recuperación de BlueXP .</block>
 </blocks>
