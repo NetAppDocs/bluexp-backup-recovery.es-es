@@ -186,7 +186,7 @@ El Centro de notificaciones muestra numerosos eventos de snapshot, replicación,
 
 NOTE: A partir de ONTAP 9.13.0, todas las alertas aparecen para los sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Para los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP on-premises, solo aparece la alerta relacionada con «Trabajo de restauración completado, pero con advertencias».
 
-De forma predeterminada, los administradores de cuentas de BlueXP reciben correos electrónicos para todas las alertas "críticas" y "recomendaciones". Todos los demás usuarios y destinatarios están configurados, de forma predeterminada, para no recibir ningún correo electrónico de notificación. Pueden enviarse correos electrónicos a usuarios de BlueXP que formen parte de su cuenta de cloud de NetApp o a cualquier otro destinatario que tenga que conocer la actividad de backup y restauración.
+De forma predeterminada, los administradores de cuentas y organizaciones de BlueXP  reciben correos electrónicos para todas las alertas «críticas» y «recomendaciones». Todos los demás usuarios y destinatarios están configurados, de forma predeterminada, para no recibir ningún correo electrónico de notificación. Pueden enviarse correos electrónicos a usuarios de BlueXP que formen parte de su cuenta de cloud de NetApp o a cualquier otro destinatario que tenga que conocer la actividad de backup y restauración.
 
 Para recibir alertas por correo electrónico de backup y recuperación de BlueXP, tendrás que seleccionar los tipos de gravedad de notificaciones «Critical», «Warning» y «Error» en la página Configuración de alertas y notificaciones.
 
