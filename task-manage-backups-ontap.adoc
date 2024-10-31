@@ -96,6 +96,8 @@ Al trabajar con varios volúmenes, todos los volúmenes deben tener las siguient
 * Mismo tipo (volumen de lectura-escritura o protección de datos)
 
 
+Cuando se habilitan más de cinco volúmenes para el backup, el backup y recuperación de datos de BlueXP  inicializa únicamente cinco volúmenes a la vez. Una vez finalizados, crea el siguiente lote de cinco subtrabajos para iniciar el siguiente conjunto y continúa hasta que se inicializan todos los volúmenes.
+
 .Pasos
 . Desde la pestaña *Volúmenes*, filtra por el entorno de trabajo en el que residen los volúmenes.
 . Seleccione todos los volúmenes en los cuales desea gestionar la configuración de backup.

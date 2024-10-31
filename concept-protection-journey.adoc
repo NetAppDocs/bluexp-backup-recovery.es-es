@@ -275,18 +275,18 @@ endif::gcp[]
 
 === Soporte para sitios con conectividad a Internet limitada
 
-El backup y la recuperación de datos de BlueXP se pueden utilizar en un sitio con una conectividad a Internet limitada (también conocida como _restricted mode_) para hacer copias de seguridad de datos de volumen. En este caso, deberá desplegar el conector BlueXP en la región restringida.
+El backup y la recuperación de datos de BlueXP se pueden utilizar en un sitio con una conectividad a Internet limitada (también conocida como _restricted mode_) para hacer copias de seguridad de datos de volumen. En este caso, tendrá que poner en marcha el conector BlueXP  en la región de cloud de destino.
 
 ifdef::aws[]
 
-* Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de AWS en Amazon S3. link:task-backup-to-s3.html["Realice backup de los datos de Cloud Volumes ONTAP en Amazon S3"].
+* Puede realizar un backup de los datos de sistemas ONTAP en las instalaciones o sistemas Cloud Volumes ONTAP instalados en las regiones comerciales de AWS en Amazon S3. link:task-backup-to-s3.html["Realice backup de los datos de Cloud Volumes ONTAP en Amazon S3"].
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Puede realizar backups de los datos de sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob.  link:task-backup-to-azure.html["Realice backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
+* Puede realizar backup de datos de sistemas ONTAP en las instalaciones o sistemas Cloud Volumes ONTAP instalados en regiones comerciales de Azure en Azure Blob. link:task-backup-to-azure.html["Realice backups de los datos de Cloud Volumes ONTAP en Azure Blob"].
 
 
 endif::azure[]
