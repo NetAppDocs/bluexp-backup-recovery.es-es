@@ -60,7 +60,7 @@ Ambas características protegen sus archivos de copia de seguridad para que siem
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Consulte el blog de protección de DataLock y Ransomware para obtener más información"^].
 
-Esta función no ofrece protección para los volúmenes de origen, solo para los backups de esos volúmenes de origen. Utilice NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Cloud Insights y Cloud Secure"^], o alguna de las https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones contra el ransomware proporcionadas por ONTAP"^] para proteger los volúmenes de origen.
+Esta función no ofrece protección para los volúmenes de origen, solo para los backups de esos volúmenes de origen. Use NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Información relativa a la infraestructura de datos y Cloud Secure"^] o algunos de https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protecciones contra el ransomware proporcionadas por ONTAP"^] para proteger los volúmenes de origen.
 
 [CAUTION]
 ====

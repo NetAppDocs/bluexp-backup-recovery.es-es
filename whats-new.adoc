@@ -18,32 +18,6 @@ Descubre las novedades del backup y recuperación de BlueXP.
 
 
 
-== 6 de noviembre de 2024
-
-
-
-=== Modos de protección SnapLock Compliance y SnapLock Enterprise
-
-Ahora, el backup y la recuperación de datos de BlueXP  puede realizar backups de volúmenes en las instalaciones tanto de FlexVol como de FlexGroup configurados mediante modos de protección SnapLock Compliance o SnapLock Enterprise. Los clústeres deben ejecutar ONTAP 9,14 o superior para esta compatibilidad. El backup de los volúmenes de FlexVol con el modo SnapLock Enterprise se admite desde la versión 9.11.1 de ONTAP. Las versiones anteriores de ONTAP no ofrecen compatibilidad para realizar backups de volúmenes de protección de SnapLock.
-
-Consulte la lista completa de los volúmenes compatibles en la https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["Descubre el backup y la recuperación de BlueXP"].
-
-
-
-=== Indización del proceso de búsqueda y restauración en la página de volúmenes
-
-Para poder utilizar Search & Restore, debe habilitar "Indexing" en cada entorno de trabajo de origen desde el que desea restaurar datos de volumen. Esto permite que el catálogo indexado realice un seguimiento de los archivos de copia de seguridad de cada volumen. Ahora, la página Volúmenes muestra el estado de indexación:
-
-* Indexado: Los volúmenes se han indexado.
-* En curso
-* No indexado
-* Indización en pausa
-* Error
-* Deshabilitado
-
-
-
-
 == 27 de septiembre de 2024
 
 
