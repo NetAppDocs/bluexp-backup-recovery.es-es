@@ -122,9 +122,3 @@ La funcionalidad de exploración y restauración para la restauración de archiv
 * Restaure los archivos o carpetas desde una copia de seguridad en la nube con la función Buscar y restaurar.
 * Restaure el volumen desde un backup en cloud mediante Examinar y restaurar y, a continuación, acceda a los archivos y carpetas que necesite.
 
-
-
-
-==== No es posible analizar sus backups en el cloud
-
-El análisis de backups en el cloud para detectar ransomware no es compatible si se utiliza el motor Podman. Si utiliza la función DataLock & Ransomware para sus backups en el cloud, tendrá que deshabilitar los análisis de ransomware. link:task-manage-backup-settings-ontap.html#enable-or-disable-ransomware-scans["Vea cómo deshabilitar el análisis de ransomware"].
