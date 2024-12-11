@@ -38,6 +38,7 @@ Lea los siguientes requisitos para asegurarse de que tiene una configuración co
 * Asegúrese de que el almacén de datos de destino donde se restaurará la máquina virtual tenga espacio suficiente para acomodar una copia de todos los archivos de equipos virtuales, como VMDK, VMX, VMSD, etc.
 * Asegúrese de que el almacén de datos de destino no tenga archivos obsoletos de máquinas virtuales en formato RESTORE_xxx_xxxxxx_FILENAME de los errores anteriores de la operación de restauración. Debe eliminar los archivos obsoletos antes de activar una operación de restauración.
 * Para implementar un conector con proxy configurado, asegúrese de que todas las llamadas de conector salientes se enruten a través del servidor proxy.
+* Si un volumen que realiza un backup de un almacén de datos ya está protegido en la pestaña Volumes (BlueXP  Backup and recovery -> Volumes), no podrá volver a protegerse el mismo almacén de datos en la pestaña Virtual Machines (BlueXP  Backup and recovery -> Virtual Machines).
 
 
 La siguiente imagen muestra cada componente y las conexiones que necesita preparar entre ellos:

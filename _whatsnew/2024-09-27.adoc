@@ -1,0 +1,21 @@
+= Compatibilidad con Podman en RHEL 8 o 9 con Browse and Restore
+:allow-uri-read: 
+
+
+
+
+=== Compatibilidad con Podman en RHEL 8 o 9 con Browse and Restore
+
+El backup y la recuperación de datos de BlueXP  ahora admite la restauración de archivos y carpetas en Red Hat Enterprise Linux (RHEL) versiones 8 y 9 mediante el uso del motor Podman. Esto se aplica al método de exploración y restauración de backup y recuperación de BlueXP .
+
+El conector BlueXP  versión 3.9.40 admite ciertas versiones de Red Hat Enterprise Linux versiones 8 y 9 para cualquier instalación manual del software Connector en un host RHEL 8 o 9, independientemente de la ubicación, además de los sistemas operativos mencionados en el https://docs.netapp.com/us-en/bluexp-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisitos del host"^]. Estas versiones más recientes de RHEL requieren el motor Podman en lugar del motor Docker. Anteriormente, el backup y la recuperación de BlueXP  tenían dos limitaciones cuando se utilizaba el motor Podman. Estas limitaciones se han eliminado.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["Obtenga más información sobre la restauración de datos de ONTAP a partir de archivos de backup"].
+
+
+
+=== Una indexación más rápida por catálogos mejora las tareas de búsqueda y restauración
+
+Esta versión incluye un índice de catálogo mejorado que completa la indexación de línea base mucho más rápido. Una indización más rápida permite utilizar la función de búsqueda y restauración más rápidamente.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["Obtenga más información sobre la restauración de datos de ONTAP a partir de archivos de backup"].

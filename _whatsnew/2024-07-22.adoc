@@ -1,0 +1,45 @@
+= Restaure volúmenes de menos de 1 GB
+:allow-uri-read: 
+
+
+
+
+=== Restaure volúmenes de menos de 1 GB
+
+Con esta versión, ahora puede restaurar volúmenes que creó en ONTAP que tengan menos de 1 GB. El tamaño mínimo de volumen que se puede crear con ONTAP es 20 MB.
+
+
+
+=== Consejos sobre cómo mitigar los costes de DataLock
+
+La función DataLock protege los archivos de copia de seguridad de ser modificados o eliminados durante un período de tiempo especificado. Esto es útil para proteger sus archivos contra ataques de ransomware.
+
+Para obtener más información sobre DataLock y consejos sobre cómo mitigar los costes asociados, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"] .
+
+
+
+=== Integración de AWS IAM Roles Anywhere
+
+El servicio Roles Anywhere de Amazon Web Services (AWS) Identity and Access Management (IAM) le permite utilizar roles de IAM y credenciales a corto plazo para sus cargas de trabajo _outside_ de AWS para acceder a las API de AWS de forma segura, de la misma manera que utiliza roles de IAM para cargas de trabajo _on_ AWS. Cuando utiliza la infraestructura de claves privadas de IAM Roles Anywhere y los tokens de AWS, no necesita claves de acceso de AWS ni claves secretas a largo plazo. Esto le permite rotar las credenciales con mayor frecuencia, lo que mejora la seguridad.
+
+Con esta versión, el soporte para el servicio AWS IAM Roles Anywhere es una vista previa de la tecnología.
+
+ifdef::aws[]
+
+Esto se aplica a link:task-backup-to-s3.html["Backups de Cloud Volumes ONTAP en AWS"]. Esto se aplica a link:task-backup-onprem-to-aws.html["Realizar backups de los datos de ONTAP locales en AWS"].
+
+endif::aws[]
+
+Consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Backup y recuperación de BlueXP Lanzamiento de julio de 2024"].
+
+
+
+=== Restauración de directorios o carpetas de FlexGroup ahora disponible
+
+Anteriormente, se podían restaurar los volúmenes de FlexVol, pero no era posible restaurar carpetas o directorios de FlexGroup. Con ONTAP 9.15.1 P2, puede restaurar carpetas de FlexGroup con la opción Examinar y restaurar.
+
+Con esta versión, el soporte para la restauración de carpetas de FlexGroup es una vista previa de la tecnología.
+
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-browse-restore["Restaure carpetas y archivos utilizando examinar  Restore"] .
+
+Para obtener más información sobre cómo activarlo manualmente, consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Backup y recuperación de BlueXP Lanzamiento de julio de 2024"].

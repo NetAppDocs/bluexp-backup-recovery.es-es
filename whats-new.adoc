@@ -94,12 +94,6 @@ El servicio Roles Anywhere de Amazon Web Services (AWS) Identity and Access Mana
 
 Con esta versión, el soporte para el servicio AWS IAM Roles Anywhere es una vista previa de la tecnología.
 
-ifdef::aws[]
-
-Esto se aplica a link:task-backup-to-s3.html["Backups de Cloud Volumes ONTAP en AWS"]. Esto se aplica a link:task-backup-onprem-to-aws.html["Realizar backups de los datos de ONTAP locales en AWS"].
-
-endif::aws[]
-
 Consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Backup y recuperación de BlueXP Lanzamiento de julio de 2024"].
 
 

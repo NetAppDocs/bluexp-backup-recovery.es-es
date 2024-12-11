@@ -1444,7 +1444,6 @@
   <block id="06ac0cb7b7615ba7b7f08032fcc97c6a" category="summary">Registra el host del plugin de SnapCenter para VMware vSphere en BlueXP.</block>
   <block id="437ae89009b207d1aafce3d11e58f524" category="doc">Registre el host del plugin de SnapCenter para VMware vSphere</block>
   <block id="8d69a4a1581a5dfb55d085bec9816e72" category="paragraph">Debe registrar el host del plugin de SnapCenter para VMware vSphere en BlueXP para que se muestren los almacenes de datos y las máquinas virtuales. Solo un usuario con acceso administrativo puede registrar el host del plugin de SnapCenter para VMware vSphere.</block>
-  <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">Puede registrar varios hosts del plugin de SnapCenter para VMware vSphere en BlueXP. Sin embargo, una vez registrado, no es posible quitar el host del plugin de SnapCenter para VMware vSphere.</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">En el campo SnapCenter Plug-in for VMware vSphere, especifique la dirección FQDN o IP del host del plugin de SnapCenter para VMware vSphere.</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">En el campo Port, especifique el número de puerto en el que ejecuta el host del plugin de SnapCenter para VMware vSphere.</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">Haga clic en *Backup and recovery* &gt; *Virtual Machines* para ver todos los almacenes de datos y las máquinas virtuales que están protegidas mediante el host del plugin de SnapCenter registrado para VMware vSphere.</block>
@@ -3769,4 +3768,5 @@ ifdef::aws[]</block>
   <block id="838534d879f74e7af515a7de57e72b71" category="list-text">No indexado</block>
   <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">Indización en pausa</block>
   <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">Deshabilitado</block>
+  <block id="8ce617f9e6329a3aea4d9a3a19e56086" category="list-text">Si un volumen que realiza un backup de un almacén de datos ya está protegido en la pestaña Volumes (BlueXP  Backup and recovery -&gt; Volumes), no podrá volver a protegerse el mismo almacén de datos en la pestaña Virtual Machines (BlueXP  Backup and recovery -&gt; Virtual Machines).</block>
 </blocks>

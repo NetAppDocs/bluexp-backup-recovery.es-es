@@ -16,9 +16,6 @@ summary: Registra el host del plugin de SnapCenter para VMware vSphere en BlueXP
 [role="lead"]
 Debe registrar el host del plugin de SnapCenter para VMware vSphere en BlueXP para que se muestren los almacenes de datos y las máquinas virtuales. Solo un usuario con acceso administrativo puede registrar el host del plugin de SnapCenter para VMware vSphere.
 
-
-NOTE: Puede registrar varios hosts del plugin de SnapCenter para VMware vSphere en BlueXP. Sin embargo, una vez registrado, no es posible quitar el host del plugin de SnapCenter para VMware vSphere.
-
 .Pasos
 . En la interfaz de usuario de BlueXP, haga clic en *Protección* > *copia de seguridad y recuperación* > *Máquinas virtuales*.
 . En el menú desplegable *Configuración*, haga clic en *SnapCenter Plug-in for VMware vSphere*.
