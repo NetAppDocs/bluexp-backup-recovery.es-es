@@ -142,8 +142,12 @@ Si selecciona *Cambiar ubicación de almacenamiento*, puede agregar un sufijo al
 . Revise los detalles y haga clic en *Restaurar*.
 
 
+.Resultados
 La opción *Restore to alternate location* monta la copia de seguridad seleccionada en el host dado. Debe abrir manualmente la base de datos.
 
 Después de montar el backup, no se podrá volver a montar hasta que se desmonte. Puede utilizar la opción *Unmount* de la interfaz de usuario para desmontar la copia de seguridad.
 
 Para obtener información sobre cómo abrir la base de datos Oracle, consulte, https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["Artículo de base de conocimientos"].
+
+
+NOTE: Si la operación de restauración no se completa, no vuelva a intentar el proceso de restauración hasta que Job Monitor muestre que se produjo un error en la operación de restauración. Si se vuelve a intentar el proceso de restauración antes de que Job Monitor muestre que la operación de restauración falló, la operación de restauración volverá a fallar. Cuando vea el estado de Job Monitor como “Failed”, puede intentar nuevamente el proceso de restauración.

@@ -3769,4 +3769,5 @@ ifdef::aws[]</block>
   <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">Indización en pausa</block>
   <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">Deshabilitado</block>
   <block id="8ce617f9e6329a3aea4d9a3a19e56086" category="list-text">Si un volumen que realiza un backup de un almacén de datos ya está protegido en la pestaña Volumes (BlueXP  Backup and recovery -&gt; Volumes), no podrá volver a protegerse el mismo almacén de datos en la pestaña Virtual Machines (BlueXP  Backup and recovery -&gt; Virtual Machines).</block>
+  <block id="569af965dbd3ebb866de69518b576d23" category="admonition">Si la operación de restauración no se completa, no vuelva a intentar el proceso de restauración hasta que Job Monitor muestre que se produjo un error en la operación de restauración. Si se vuelve a intentar el proceso de restauración antes de que Job Monitor muestre que la operación de restauración falló, la operación de restauración volverá a fallar. Cuando vea el estado de Job Monitor como “Failed”, puede intentar nuevamente el proceso de restauración.</block>
 </blocks>

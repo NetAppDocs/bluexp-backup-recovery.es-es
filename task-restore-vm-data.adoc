@@ -109,3 +109,5 @@ La prioridad de restauración de archivado compatible con Amazon Web Services es
 
 
 |===
+
+NOTE: Si la operación de restauración no se completa, no vuelva a intentar el proceso de restauración hasta que Job Monitor muestre que se produjo un error en la operación de restauración. Si se vuelve a intentar el proceso de restauración antes de que Job Monitor muestre que la operación de restauración falló, la operación de restauración volverá a fallar. Cuando vea el estado de Job Monitor como “Failed”, puede intentar nuevamente el proceso de restauración.

@@ -39,3 +39,6 @@ Si selecciona *Cambiar ubicación de almacenamiento*, puede agregar un sufijo al
 
 
 Esta operación solo hace la exportación de almacenamiento del backup seleccionado en el host determinado. Debe montar manualmente el sistema de archivos y activar la base de datos. Después de utilizar el volumen, el administrador de almacenamiento puede eliminar el volumen del clúster de ONTAP.
+
+
+NOTE: Si la operación de restauración no se completa, no vuelva a intentar el proceso de restauración hasta que Job Monitor muestre que se produjo un error en la operación de restauración. Si se vuelve a intentar el proceso de restauración antes de que Job Monitor muestre que la operación de restauración falló, la operación de restauración volverá a fallar. Cuando vea el estado de Job Monitor como “Failed”, puede intentar nuevamente el proceso de restauración.
