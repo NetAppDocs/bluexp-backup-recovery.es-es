@@ -89,7 +89,6 @@ Si se utiliza una versión de ONTAP anterior a la 9.11.1, no se admite la restau
 
 * La restauración de directorio/carpeta es compatible para datos que se encuentran en el almacenamiento de archivado solo cuando el clúster ejecuta ONTAP 9.13.1 y versiones posteriores.
 * La restauración de directorios o carpetas es compatible para los datos que se protegen mediante DataLock solo si el clúster ejecuta ONTAP 9.13.1 y versiones posteriores.
-* La restauración de directorios/carpetas no se admite actualmente en los backups de volúmenes de FlexGroup.
 * Actualmente, la restauración de directorios/carpetas no se admite desde replicaciones o snapshots locales.
 * No se admite la restauración de volúmenes de FlexGroup a volúmenes de FlexVol o volúmenes de FlexVol a volúmenes de FlexGroup.
 * El archivo que se va a restaurar debe estar utilizando el mismo idioma que el del volumen de destino. Recibirá un mensaje de error si los idiomas no son los mismos.
@@ -103,22 +102,4 @@ Si se utiliza una versión de ONTAP anterior a la 9.11.1, no se admite la restau
 ** Los volúmenes de SnapLock solo son compatibles si el sistema de origen desde el cual se creó el backup de cloud ejecutaba ONTAP 9.11.0 o una versión posterior.
 
 
-
-
-
-
-=== Limitaciones al utilizar RHEL 8+ con Podman
-
-
-
-==== Compatibilidad con restauración de archivos únicos
-
-
-IMPORTANT: A partir del lanzamiento del 30 de septiembre de 2024, esta limitación se ha eliminado.
-
-La funcionalidad de exploración y restauración para la restauración de archivos individuales y la restauración de directorios no es compatible si se utilizan conectores de BlueXP que se ejecutan en Podman (conectores de BlueXP creados manualmente al ejecutarse en RHEL 8 o 9). Todos los demás tipos de operaciones de restauración son compatibles cuando se utiliza Podman, por lo que puede restaurar los datos con estos otros métodos hasta que se resuelva este problema:
-
-* Restaure los archivos o carpetas desde un volumen replicado, si existe un volumen replicado.
-* Restaure los archivos o carpetas desde una copia de seguridad en la nube con la función Buscar y restaurar.
-* Restaure el volumen desde un backup en cloud mediante Examinar y restaurar y, a continuación, acceda a los archivos y carpetas que necesite.
 
