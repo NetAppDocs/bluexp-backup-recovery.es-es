@@ -36,7 +36,7 @@ Antes de seleccionar las funciones que va a utilizar, aquí hay una explicación
 | Tipo de backup | Descripción 
 
 
-| Snapshot | Crea una imagen de un momento específico de solo lectura de un volumen dentro del volumen de origen como una copia Snapshot. Puede usar la copia Snapshot para recuperar archivos individuales o para restaurar todo el contenido de un volumen. 
+| Snapshot | Crea una imagen de un momento específico de solo lectura de un volumen dentro del volumen de origen como copia Snapshot. Es posible usar la copia Snapshot para recuperar archivos individuales o para restaurar todo el contenido de un volumen. 
 
 
 | Replicación | Crea una copia secundaria de los datos en otro sistema de almacenamiento de ONTAP y actualiza continuamente los datos secundarios. Sus datos estarán actualizados y disponibles siempre que haga falta. 
@@ -44,7 +44,7 @@ Antes de seleccionar las funciones que va a utilizar, aquí hay una explicación
 
 | Backup en el cloud | Crea backups de sus datos en el cloud para protegerlos y archivarlos a largo plazo. Si es necesario, puede restaurar un volumen, una carpeta o archivos individuales desde el backup en el mismo entorno de trabajo o en uno diferente. 
 |===
-Las copias Snapshot son la base de todos los métodos de backup y se requieren para usar el servicio de backup y recuperación. Una copia Snapshot es una imagen puntual de solo lectura de un volumen. La imagen consume un espacio de almacenamiento mínimo y tiene una sobrecarga del rendimiento mínima, ya que solo registra los cambios que se han realizado en los ficheros desde que se realizó la última copia Snapshot. La copia Snapshot que se crea en el volumen se utiliza para mantener el volumen replicado y el archivo de backup sincronizados con los cambios realizados en el volumen de origen, como se muestra en la figura.
+Las copias Snapshot son la base de todos los métodos de backup y se requieren para usar el servicio de backup y recuperación. Una copia Snapshot es una imagen de un momento específico de solo lectura de un volumen. La imagen consume un espacio de almacenamiento mínimo y apenas supone una sobrecarga de rendimiento, ya que sólo registra los cambios realizados en los archivos desde que se realizó la última copia Snapshot. La copia Snapshot que se crea en el volumen se usa para mantener el volumen replicado y el archivo de backup sincronizados con los cambios que se hacen en el volumen de origen, como se muestra en la figura.
 
 image:diagram-321-overview.png["Un diagrama que muestra cómo existen los archivos de backup en el sistema de origen como copias Snapshot, como volúmenes replicados en el sistema de almacenamiento secundario y como archivos de backup en el almacenamiento de objetos."]
 
@@ -58,7 +58,7 @@ En resumen, estos son los flujos de protección válidos que puede crear para vo
 
 
 
-NOTE: La creación inicial de un volumen replicado o un archivo de copia de seguridad incluye una copia completa de los datos de origen -- esto se denomina _transferencia de línea base_. Las transferencias posteriores solo contienen copias diferenciales de los datos de origen (Snapshot).
+NOTE: La creación inicial de un volumen replicado o un archivo de copia de seguridad incluye una copia completa de los datos de origen -- esto se denomina _transferencia de línea base_. Las transferencias posteriores solo contienen copias diferenciales de los datos de origen (la instantánea).
 
 *Comparación de los diferentes métodos de copia de seguridad*
 
@@ -85,13 +85,13 @@ Además de estos criterios, el almacenamiento en la nube ofrece opciones de segu
 
 Al crear volúmenes replicados y archivos de backup, puede elegir una arquitectura ramificada o en cascada para realizar backup de sus volúmenes.
 
-Una arquitectura *fan-out* transfiere la copia Snapshot de forma independiente tanto al sistema de almacenamiento de destino como al objeto de copia de seguridad en la nube.
+Una arquitectura *fan-out* transfiere la copia snapshot de forma independiente tanto al sistema de almacenamiento de destino como al objeto de copia de seguridad en la nube.
 
-image:diagram-321-fanout-detailed.png["Diagrama que muestra cómo se usa una copia snapshot de un volumen para crear y actualizar un volumen replicado y un archivo de backup."]
+image:diagram-321-fanout-detailed.png["Diagrama que muestra cómo se usa una copia snapshot de un volumen para crear y actualizar un volumen replicado y un archivo de copia de seguridad."]
 
-Una arquitectura *Cascade* transfiere primero la copia Snapshot al sistema de almacenamiento de destino, y luego ese sistema transfiere la copia al objeto de copia de seguridad en la nube.
+Una arquitectura *Cascade* transfiere primero la copia snapshot al sistema de almacenamiento de destino y, a continuación, el sistema transfiere la copia al objeto de copia de seguridad en la nube.
 
-image:diagram-321-cascade-detailed.png["Diagrama que muestra cómo se usa una copia snapshot de un volumen para crear y actualizar un volumen replicado y un archivo de backup."]
+image:diagram-321-cascade-detailed.png["Diagrama que muestra cómo se usa una copia snapshot de un volumen para crear y actualizar un volumen replicado y un archivo de copia de seguridad."]
 
 *Comparación de las diferentes opciones de arquitectura*
 
@@ -102,45 +102,42 @@ Esta tabla proporciona una comparación de las arquitecturas ramificadas y en ca
 | Dispersión | Cascada 
 
 
-| Pequeña repercusión en el rendimiento del sistema de origen, ya que envía copias Snapshot a 2 sistemas diferentes | Menor efecto en el rendimiento del sistema de almacenamiento de origen, ya que envía la copia Snapshot una sola vez 
+| Pequeña repercusión en el rendimiento del sistema de origen, ya que envía copias snapshot a 2 sistemas distintos | Menor efecto en el rendimiento del sistema de almacenamiento de origen, ya que envía la copia de Snapshot una sola vez 
 
 
 | Es más fácil de configurar porque todas las políticas, redes y configuraciones de ONTAP se realizan en el sistema de origen | Requiere que se realice un poco de configuración de redes y ONTAP también desde el sistema secundario. 
 |===
 
 
-== ¿Utilizará las políticas predeterminadas para las copias de Snapshot, las replicaciones y los backups
+== Utilizará las políticas predeterminadas para snapshots, replicaciones y backups
 
 Puede usar las políticas predeterminadas que proporciona NetApp para crear sus backups, o bien puede crear políticas personalizadas. Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, puede crear la política antes de iniciar o mientras utiliza el asistente de activación.
 
-* La política de Snapshot predeterminada crea copias Snapshot por hora, diarias y semanales, reteniendo 6 copias Snapshot cada hora, 2 diarias y 2 copias Snapshot semanales.
-* La política de replicación predeterminada replica copias Snapshot diarias y semanales, reteniendo 7 copias Snapshot diarias y 52 semanales.
-* La política de backup predeterminada replica copias Snapshot diarias y semanales, reteniendo 7 copias Snapshot diarias y 52 semanales.
+* La política de Snapshot predeterminada crea copias Snapshot por hora, diarias y semanales, reteniendo 6 copias Snapshot por hora, 2 diarias y 2 copias Snapshot semanales.
+* La política de replicación predeterminada replica copias snapshot diarias y semanales, reteniendo 7 copias snapshot diarias y 52 semanales.
+* La política de backup predeterminada replica copias snapshot diarias y semanales, reteniendo 7 copias snapshot diarias y 52 semanales.
 
 
-Si crea políticas personalizadas para replicación o backup, las etiquetas de políticas (por ejemplo, «diaria» o «semanal») deben coincidir con las etiquetas existentes en sus políticas de Snapshot o no se crearán los volúmenes replicados y los archivos de backup.
+Si crea políticas personalizadas para replicación o backup, las etiquetas de la política (por ejemplo, «diaria» o «semanal») deben coincidir con las etiquetas que existen en sus políticas de snapshots o no se crearán los volúmenes replicados y los archivos de backup.
 
-Puede crear copias Snapshot, replicación y backup en políticas de almacenamiento de objetos en la interfaz de usuario de backup y recuperación de BlueXP. Consulte la sección para link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["añada una nueva política de backup"] para obtener más detalles.
+Puede crear Snapshot, replicación y backup en políticas de almacenamiento de objetos en la interfaz de usuario de backup y recuperación de BlueXP . Consulte la sección para link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["añada una nueva política de backup"] obtener más información.
 
-Además de utilizar la recuperación de backup de BlueXP para crear políticas personalizadas, puede usar System Manager o la interfaz de línea de comandos (CLI) de ONTAP.
+Además de utilizar el backup y la recuperación de datos de BlueXP  para crear políticas personalizadas, puede usar System Manager o la interfaz de línea de comandos (CLI) de ONTAP:
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Cree una política de Snapshot mediante System Manager"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Cree una política de Snapshot mediante la CLI de ONTAP"^]
-https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Cree una política de replicación mediante System Manager"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Cree una política de replicación mediante la CLI de ONTAP"^]
-https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Cree una política de backup mediante System Manager"^]
-https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Cree una política de backup mediante la CLI de ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Cree una política de Snapshot mediante System Manager o la interfaz de línea de comandos de ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Cree una política de replicación mediante System Manager o la CLI de ONTAP"^]
+
 
 *Nota:* Cuando utilice System Manager, seleccione *Asíncrono* como el tipo de política para las políticas de replicación y seleccione *Asíncrono* y *Copia de seguridad en la nube* para realizar copias de seguridad en las políticas de objetos.
 
-A continuación se muestran algunos comandos CLI de ONTAP de ejemplo que pueden ser útiles si está creando políticas personalizadas. Tenga en cuenta que debe utilizar el Vserver _admin_ (VM de almacenamiento) como el `<vserver_name>` en estos comandos.
+Aquí se muestran algunos comandos CLI de ONTAP de ejemplo que pueden ser útiles si está creando políticas personalizadas. Tenga en cuenta que debe utilizar el vserver _admin_ (VM de almacenamiento) como `<vserver_name>` en estos comandos.
 
 [cols="30,70"]
 |===
 | Descripción de la política | Comando 
 
 
-| Política de Snapshot simple | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
+| Política de snapshot simple | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
 
 
 | Backup sencillo en el cloud | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
