@@ -3759,4 +3759,13 @@ ifdef::aws[]</block>
   <block id="f179e47ab5bf8661b5b27f915bed468d" category="list-text"><block ref="f179e47ab5bf8661b5b27f915bed468d" category="inline-link-rx"></block></block>
   <block id="6990fc7ee6c7db5f6430ee974dfb8cfa" category="paragraph">Aquí se muestran algunos comandos CLI de ONTAP de ejemplo que pueden ser útiles si está creando políticas personalizadas. Tenga en cuenta que debe utilizar el vserver _admin_ (VM de almacenamiento) como<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block> en estos comandos.</block>
   <block id="aca1b97d5bf0573ac64cc6e0f6f4dc09" category="cell">Política de snapshot simple</block>
+  <block id="f5ccb197277a619c88128af4cd2e1114" category="list-text">Backup y recuperación de BlueXP  realizando un backup de Cloud Volume ONTAP en un almacén de objetos en las regiones de AWS China (incluidas Pekín y Ningxia); sin embargo, es posible que primero deba modificar manualmente las políticas de gestión de identidad y acceso (IAM).</block>
+  <block id="cd10ae990b1a676dcb9da574833197dc" category="inline-link">Instalación de un conector en AWS</block>
+  <block id="bfd50db7da0325053eeebfa5cb52b3a4" category="paragraph">Para obtener más información sobre la creación de un conector en AWS, consulte<block ref="ed99b863e2b8e641bb0c2fedb58f3636" category="inline-link-rx"></block> .</block>
+  <block id="fe99cb308e076a8fe35419694145d10e" category="inline-link">Blog de funciones de backup y recuperación de BlueXP , mayo de 2023</block>
+  <block id="2753f358d85a358faa8e64a04217f62d" category="paragraph">Para obtener más información en una publicación de blog, consulte <block ref="a5e59c531cbb1038287f1b734bd79714" category="inline-link-rx"></block>.</block>
+  <block id="c6e0dd289d2bd12103cead1918541bfb" category="list-text">El backup y la recuperación de datos de BlueXP  no son compatibles con las regiones de Microsoft Azure China.</block>
+  <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">Instalación de un conector en Azure</block>
+  <block id="e65cf67a9fbc4609855f67bb18ecf589" category="paragraph">Para obtener más información sobre la creación de un conector en Azure, consulte<block ref="eb0bd2c194a1c467beaf233333f1c26d" category="inline-link-rx"></block> .</block>
+  <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">SVM-DR y el backup y recuperación de volúmenes funcionan de forma totalmente independiente cuando el backup se toma del origen o el destino. La única restricción es que SVM-DR no replica la relación de cloud de SnapMirror. En la situación de recuperación ante desastres, cuando la SVM pasa a estar en línea en la ubicación secundaria, debe actualizar manualmente la relación de cloud de SnapMirror.</block>
 </blocks>
