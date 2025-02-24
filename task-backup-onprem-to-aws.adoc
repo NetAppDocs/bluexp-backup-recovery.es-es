@@ -374,7 +374,11 @@ Si creas tus propios buckets, debes usar el nombre de bucket de «netapp-backup�
 
 Si desea utilizar las claves de cifrado predeterminadas de Amazon S3 para cifrar los datos que se transmiten entre su clúster local y el bloque de S3, entonces está todo establecido porque la instalación predeterminada utiliza ese tipo de cifrado.
 
-Si, en cambio, quieres utilizar tus propias claves gestionadas por el cliente para el cifrado de datos en lugar de usar las claves predeterminadas, debes que las claves gestionadas de cifrado ya estén configuradas antes de iniciar el asistente de backup y recuperación de BlueXP. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["Consulte cómo utilizar sus propias claves"^].
+Si, en cambio, quieres utilizar tus propias claves gestionadas por el cliente para el cifrado de datos en lugar de usar las claves predeterminadas, debes que las claves gestionadas de cifrado ya estén configuradas antes de iniciar el asistente de backup y recuperación de BlueXP.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["Consulta cómo usar tus propias claves de cifrado de Amazon con Cloud Volumes ONTAP"^].
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Consulta cómo usar tus propias claves de cifrado de Amazon con la copia de seguridad y recuperación de BlueXP "^].
 
 
 

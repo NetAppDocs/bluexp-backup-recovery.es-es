@@ -685,6 +685,9 @@ Dependiendo de la configuración, hay dos formas de implementar Search & Restore
 
 +
 ** Si su cuenta no tiene credenciales de proveedor de cloud, la información del catálogo indexado se almacena en el conector.
++
+Para obtener información sobre el catálogo indexado v2, consulte la sección siguiente acerca de cómo activar el catálogo indexado.
+
 ** Si utiliza un conector en un sitio privado (oscuro), la información del catálogo indexado se almacena en el conector (requiere la versión 3.9.25 o superior del conector).
 ** Si lo tiene https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["Credenciales de AWS"^] o. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html["Credenciales de Azure"^] En la cuenta, el catálogo indexado se almacena en el proveedor de cloud, al igual que con un conector puesto en marcha en el cloud. (Si tiene ambas credenciales, AWS está seleccionado de forma predeterminada.)
 +
@@ -721,6 +724,30 @@ Como puedes ver, realmente solo necesitas saber un nombre parcial y las búsqued
 
 Antes de poder utilizar Buscar y restaurar, debe habilitar la función "indexación" en cada entorno de trabajo de origen desde el que planea restaurar volúmenes o archivos. Esto permite al catálogo indexado realizar un seguimiento de cada volumen y cada archivo de copia de seguridad, lo que hace que las búsquedas sean muy rápidas y eficaces.
 
+El catálogo indexado es una base de datos que almacena metadatos sobre todos los volúmenes y archivos de copia de seguridad del entorno de trabajo. La función de búsqueda y restauración lo utiliza para encontrar rápidamente los archivos de copia de seguridad que contienen los datos que desea restaurar.
+
+.Características del catálogo indexado v2
+El catálogo indexado v2, lanzado en febrero de 2025, tiene nuevas características que lo hacen más eficiente y fácil de usar. Esta versión tiene una mejora significativa del rendimiento y está habilitada por defecto para todos los nuevos clientes.
+
+Revise las siguientes consideraciones con respecto a v2:
+
+* El catálogo indexado v2 está disponible en modo de vista previa.
+* Si ya es cliente y desea utilizar el Catálogo v2, debe volver a indexar completamente su entorno.
+* El Catálogo v2 indexa sólo las instantáneas que tienen una etiqueta de instantánea.
+* Los backups y las recuperaciones de BlueXP  no indexan los snapshots con etiquetas de SnapMirror cada hora. Si desea indexar las instantáneas con la etiqueta SnapMirror “horaria”, debe habilitarla manualmente mientras el v2 está en modo de vista previa.
+* Las funciones de backup y recuperación de BlueXP  indicarán los volúmenes y las instantáneas asociadas a entornos de trabajo protegidos por el backup y la recuperación de BlueXP  sólo con el Catálogo v2. Otros entornos de trabajo descubiertos en la plataforma BlueXP  no se indexarán.
+
+
+El catálogo indexado v2 admite lo siguiente:
+
+* Eficacia de la búsqueda global en menos de 3 minutos
+* Hasta 5 millones de archivos
+* Hasta 5000 volúmenes por clúster
+* Hasta 100K snapshots por volumen
+* El tiempo máximo para la indexación de línea base es inferior a 7 días. El tiempo real variará según tu entorno.
+
+
+.Activación del catálogo indexado para un entorno de trabajo
 Cuando habilita esta funcionalidad, el backup y recuperación de BlueXP permite utilizar SnapDiff v3 en la SVM para los volúmenes y realiza las siguientes acciones:
 
 ifdef::aws[]
@@ -749,12 +776,17 @@ endif::gcp[]
 
 Si ya se ha activado la indización para el entorno de trabajo, vaya a la siguiente sección para restaurar los datos.
 
-Para habilitar la indización para un entorno de trabajo:
+.Pasos para activar la indexación para un entorno de trabajo:
+. Debe realizar una de las siguientes acciones:
++
+** Si no se ha indexado ningún entorno de trabajo, en el Panel de restauración en _Search & Restore_, seleccione *Enable Indexing for Working Environments*.
+** Si ya se ha indexado al menos un entorno de trabajo, en el Panel de restauración en _Search & Restore_, haga clic en *Configuración de indexación*.
 
-* Si no se han indizado los entornos de trabajo, en el Panel de restauración, en _Search & Restore_, haga clic en *Activar indexación para entornos de trabajo* y haga clic en *Activar indexación* para el entorno de trabajo.
-* Si ya se ha indizado al menos un entorno de trabajo, en el Panel de restauración, en _Search & Restore_, haga clic en *Configuración de indexación* y haga clic en *Activar indexación* para el entorno de trabajo.
+
+. Seleccione *Activar indexación* para el entorno de trabajo.
 
 
+.Resultado
 Una vez que se han aprovisionado todos los servicios y se ha activado el catálogo indexado, el entorno de trabajo se muestra como "activo".
 
 image:screenshot_restore_enable_indexing.png["Captura de pantalla que muestra los entornos de trabajo que han activado el catálogo indexado."]
