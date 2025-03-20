@@ -55,7 +55,7 @@ Para los volúmenes de FlexVol no hay limitación: Puede seleccionar todos los v
 
 === Limitaciones de backup a objeto
 
-* El backup y la recuperación de datos de BlueXP  no realiza backups de volúmenes en un almacenamiento de objetos que tengan habilitado el cifrado de volúmenes de NetApp (NVE) y el cifrado de agregados de NetApp (NAE) en ONTAP.
+* Cuando se realice un backup de datos, el backup y la recuperación de datos de BlueXP  no mantendrán el cifrado de volúmenes de NetApp (NVE). Esto significa que los datos cifrados en el volumen de NVE se descifran mientras se transfieren los datos al destino y el cifrado no se mantendrá.
 +
 Para obtener una explicación sobre estos tipos de cifrado, consulte https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Configure la información general de cifrado de volúmenes de NetApp"^].
 

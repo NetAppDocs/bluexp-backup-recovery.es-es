@@ -51,7 +51,6 @@ Cuando sea necesario, puede restaurar un _volume_ entero, una _folder_ o uno o v
 +
 ** Replique varios volúmenes de FlexVol de una vez en un sistema secundario.
 ** Restaure un volumen replicado en el sistema de origen o en otro sistema mediante la interfaz de usuario de.
-** Gestionar políticas de replicación
 
 
 
