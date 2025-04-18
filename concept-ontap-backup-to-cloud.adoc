@@ -194,6 +194,9 @@ El backup y la recuperación de BlueXP admiten los siguientes tipos de volúmene
 * Volúmenes de destino de protección de datos (DP) de SnapMirror
 
 
+
+NOTE: El backup y la recuperación de datos de BlueXP  no admiten backups de volúmenes de FlexCache.
+
 Consulte las secciones de link:reference-limitations.html#backup-to-object-limitations["Limitaciones de backup y restauración"] para requisitos y limitaciones adicionales.
 
 

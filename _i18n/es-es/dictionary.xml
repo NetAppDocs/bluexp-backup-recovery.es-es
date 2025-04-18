@@ -3765,4 +3765,28 @@ ifdef::aws[]</block>
   <block id="23bb8a9252b3eccc5dbbed85d71a4b89" category="list-text">Cuando se realice un backup de datos, el backup y la recuperación de datos de BlueXP  no mantendrán el cifrado de volúmenes de NetApp (NVE). Esto significa que los datos cifrados en el volumen de NVE se descifran mientras se transfieren los datos al destino y el cifrado no se mantendrá.</block>
   <block id="499d067ffbbd553e23809aa38aa67bfa" category="section-title">17 de marzo de 2025</block>
   <block id="c11347a85201b35f4b0302aff21bc226" category="cell"><block ref="c9017d174080d415365a112c68422e95" prefix="" category="inline-code"></block></block>
+  <block id="46c8a90c914cf567466d573545fb57d9" category="doc">Consola de volumen mejorado (vista previa)</block>
+  <block id="d4400da5c041019019538ea47e6a4d7e" category="paragraph">Ahora, la consola de volúmenes se carga en menos de 10 segundos, lo que proporciona una interfaz mucho más rápida y eficiente. Esta versión de vista previa está disponible para seleccionar clientes, ofreciéndoles una vista previa de estas mejoras.</block>
+  <block id="a43e01afb7862afba8cef123bb022bd8" category="section-title">Mejoras en la interfaz de usuario</block>
+  <block id="d631beb153bc97ac47e69041180f2bda" category="paragraph">Esta versión mejora tu experiencia al simplificar la interfaz:</block>
+  <block id="7945214ab9edda2604c048e3254b6820" category="list-text">La eliminación de la columna Agregado de las tablas de volúmenes, junto con las columnas Política de Snapshot, Política de backup y Política de replicación de la tabla Volumen de la consola V2, da como resultado un diseño más sencillo.</block>
+  <block id="1f4ea4d0a55155c1ea9271081e2e118f" category="list-text">La exclusión de los entornos de trabajo no activados de la lista desplegable hace que la interfaz esté menos desordenada, la navegación sea más eficiente y la carga sea más rápida.</block>
+  <block id="c42ae4d1274def078f227f6b5526ed38" category="list-text">Mientras la clasificación en la columna Etiquetas está desactivada, puede ver las etiquetas, garantizando que la información importante permanezca fácilmente accesible.</block>
+  <block id="ee5a89c90c463c21f6188d8945b6a165" category="list-text">La eliminación de etiquetas en los iconos de protección contribuye a un aspecto más limpio y reduce el tiempo de carga.</block>
+  <block id="4deca0db77c0cb1d491b7636aff218c4" category="list-text">Durante el proceso de activación del entorno de trabajo, un cuadro de diálogo muestra un icono de carga para proporcionar información hasta que se complete el proceso de detección, lo que mejora la transparencia y la confianza en las operaciones del sistema.</block>
+  <block id="e933dec5f784259760ab3c9400fb8e0b" category="section-title">Soporte para almacén de objetos Wasabi de terceros (Preview)</block>
+  <block id="57a83bf4b6d8f755d141ebf2bb282ed3" category="paragraph">El backup y la recuperación de BlueXP  ahora amplía su compatibilidad con almacenes de objetos de terceros con un enfoque principal en Wasabi. Esta nueva función de vista previa te permite aprovechar cualquier almacén de objetos compatible con S3 para satisfacer tus necesidades de backup y recuperación.</block>
+  <block id="da21b58c44ce1975cb8550ec689df5b3" category="section-title">Empezar con Wasabi</block>
+  <block id="f3afa8b48aa14a1da6a21d82ad964f5d" category="paragraph">Para comenzar a usar esta función, debe habilitar una marca en la interfaz de usuario de BlueXP . A continuación, puede introducir los detalles de conexión de su almacén de objetos de terceros e integrarlos en sus flujos de trabajo de backup y recuperación.</block>
+  <block id="9b6d9b582a741bc832b2557c16d31b09" category="section-title">Limitaciones del modo de vista previa</block>
+  <block id="fdf10a1d090d444123d00414152f7943" category="paragraph">Mientras esta función está en la vista preliminar, tenga en cuenta las siguientes limitaciones:</block>
+  <block id="7ebc42140a656312f7a985f14e55f3a6" category="list-text">Traiga su propio depósito (BYOB) no es compatible.</block>
+  <block id="1361fc3308297e6892c65225fef43d57" category="list-text">No se admite la activación del bloqueo de datos en una política.</block>
+  <block id="250e26d77f45f9c60f2e7d28e0011265" category="list-text">No se admite la activación del modo Archivado en una política.</block>
+  <block id="b86033acef55ce16df9b8accc019fc9d" category="list-text">Solo se admiten entornos ONTAP en las instalaciones.</block>
+  <block id="5ba05bcaf18ef618c0ef794d4ae3e855" category="list-text">No se admite MetroCluster.</block>
+  <block id="2a9854e98da75bbc07132378bef6de4d" category="list-text">No se admiten las opciones para habilitar el cifrado a nivel de bloque.</block>
+  <block id="f98d5407ffd34a829996a4bb36d6e582" category="paragraph">Durante esta vista previa, le animamos a explorar esta nueva función y proporcionar comentarios sobre la integración con almacenes de objetos de terceros antes de que se implemente toda la funcionalidad.</block>
+  <block id="c2539a9855f013822344851d0fcb1184" category="admonition">El backup y la recuperación de datos de BlueXP  no admiten backups de volúmenes de FlexCache.</block>
+  <block id="801c0fa0d304ca22d8afec06189bcf93" category="section-title">16 de abril de 2025</block>
 </blocks>
