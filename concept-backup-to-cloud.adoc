@@ -76,6 +76,9 @@ endif::gcp[]
 
 
 
+NOTE: El backup y recuperación de BlueXP  amplía su compatibilidad con almacenes de objetos de terceros como opción de vista previa. Esta función de vista previa te permite aprovechar cualquier almacén de objetos compatible con S3 para satisfacer tus necesidades de backup y recuperación. Para obtener más información acerca de la activación de esta función de vista previa, consulte link:whats-new.html["Compatibilidad con almacenes de objetos de terceros"]la sección.
+
+
 
 === Cuándo se realizan las copias de seguridad
 

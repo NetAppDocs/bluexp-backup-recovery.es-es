@@ -14,11 +14,11 @@ summary: Al utilizar el backup y la recuperación de BlueXP en un sitio sin acce
 
 
 [role="lead"]
-Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de backup y recuperación de BlueXP se copian en el bloque StorageGRID o ONTAP S3 donde se almacenan los backups. Si tienes un problema con el sistema de host del conector de BlueXP en el futuro, puedes implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP.
+Al utilizar el backup y la recuperación de BlueXP en un sitio sin acceso a Internet, conocido como _modo privado_, los datos de configuración de backup y recuperación de BlueXP se copian en el bloque StorageGRID o ONTAP S3 donde se almacenan los backups. Si tiene un problema con el sistema de host de conector BlueXP , puede implementar un nuevo conector y restaurar los datos críticos de backup y recuperación de BlueXP .
 
-Tenga en cuenta que cuando utilice el backup y la recuperación de datos de BlueXP en un entorno SaaS donde se implementa el conector BlueXP en su proveedor de cloud o en su propio sistema host que tiene acceso a Internet, todos los datos importantes de configuración de backup y recuperación de BlueXP se copian y se protegen en el cloud. Si tiene un problema con el conector, simplemente cree un nuevo conector y agregue sus entornos de trabajo y los detalles de la copia de seguridad se restaurarán automáticamente.
+Cuando utiliza el backup y la recuperación de datos de BlueXP  en un entorno SaaS en el que el conector BlueXP  se implementa en el proveedor de cloud o en su propio sistema host con acceso a Internet, todos los datos importantes de configuración de backup y recuperación de datos de BlueXP  se incluyen en el cloud y se protegen en el cloud. Si tiene un problema con el conector, simplemente cree un nuevo conector y agregue sus entornos de trabajo y los detalles de la copia de seguridad se restaurarán automáticamente.
 
-Existen 2 tipos de datos de los que se realiza una copia de seguridad:
+Existen dos tipos de datos de los que se realiza la copia de seguridad:
 
 * Base de datos de backup y recuperación de BlueXP: Contiene una lista de todos los volúmenes, archivos de backup, políticas de backup y información de configuración.
 * Archivos de catálogo indexados: Contiene índices detallados que se utilizan para la función de búsqueda y restauración que hacen que las búsquedas sean rápidas y eficaces cuando se buscan datos de volumen que se desean restaurar.
@@ -31,11 +31,11 @@ TIP: Nunca se incluyen datos de volumen en la base de datos de backup y recupera
 
 
 
-== Restaurar los datos de backup y recuperación de BlueXP en un nuevo conector
+== Restaure los datos de backup y recuperación de BlueXP  en un nuevo conector BlueXP 
 
-Si tu conector on-premises tiene un fallo catastrófico, tendrás que instalar un nuevo conector y restaurar los datos de backup y recuperación de BlueXP en el nuevo conector.
+Si su conector BlueXP  local tiene un fallo catastrófico, tendrá que instalar un nuevo conector y restaurar los datos de backup y recuperación de BlueXP  en el nuevo conector.
 
-Hay 4 tareas que necesitarás realizar para que el sistema de backup y recuperación de BlueXP regrese a un estado de trabajo:
+Deberá realizar las siguientes tareas para devolver el sistema de copia de seguridad y recuperación de BlueXP  a un estado de funcionamiento:
 
 * Instale un conector BlueXP nuevo
 * Restaura la base de datos de backup y recuperación de BlueXP
@@ -151,15 +151,20 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 
 Agregue los detalles del sistema StorageGRID asociado a sus entornos de trabajo de ONTAP tal y como se han configurado en la configuración original del conector con la https://docs.netapp.com/us-en/bluexp-automation/index.html["API de BlueXP"^].
 
+La siguiente información se aplica a las instalaciones de modo privado a partir de BlueXP  3,9.xx. Para versiones anteriores, utilice el siguiente procedimiento: https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["DarkSite Cloud Backup: Copia de seguridad y restauración de catálogos indexados y de MySQL"^].
+
 Tendrá que realizar estos pasos en cada sistema ONTAP que esté realizando una copia de seguridad de los datos en StorageGRID.
 
 . Extraiga el token de autorización mediante la siguiente API de autenticación/token.
 +
 [source, http]
 ----
-curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":admin@netapp.com,"password":"Netapp@123","grant_type":"password"}
+curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":"admin@netapp.com","password":"Netapp@123","grant_type":"password"}
 > '
 ----
++
+Aunque la dirección IP, el nombre de usuario y las contraseñas son valores personalizados, el nombre de cuenta no lo es. El nombre de la cuenta es siempre “account-DARKSITE1”.
+
 +
 Esta API devolverá una respuesta como la siguiente. Puede recuperar el token de autorización como se muestra a continuación.
 
@@ -177,7 +182,7 @@ curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARK
 +
 Esta API devolverá una respuesta como la siguiente. El valor bajo "resourceIdentifier" denota el _WorkingEnvironment ID_ y el valor bajo "agentId" denota _x-agent-id_.
 
-. Actualiza la base de datos de backup y recuperación de BlueXP con los detalles del sistema StorageGRID asociado con los entornos de trabajo. Asegúrese de introducir el nombre de dominio completo de la StorageGRID, así como la clave de acceso y la clave de almacenamiento, como se muestra a continuación:
+. Actualice la base de datos de copia de seguridad y recuperación de BlueXP  con los detalles del sistema StorageGRID asociado a los entornos de trabajo. Asegúrese de introducir el nombre de dominio completo de la StorageGRID, así como la clave de acceso y la clave de almacenamiento, como se muestra a continuación:
 +
 [source, http]
 ----
