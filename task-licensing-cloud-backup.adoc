@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual, netapp intelligent services 
 summary: Puedes obtener licencias de backup y recuperación de datos de BlueXP si compras una suscripción anual de pago por uso o un mercado de pago por uso de tu proveedor de nube, o si compras una licencia con tu propia licencia de NetApp. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción. 
 ---
 = Configura las licencias para el backup y la recuperación de BlueXP
@@ -14,7 +14,7 @@ summary: Puedes obtener licencias de backup y recuperación de datos de BlueXP s
 
 
 [role="lead"]
-Puedes comprar el pago por uso (PAYGO) o una suscripción anual de mercado de tu proveedor de cloud, o bien si compras una licencia BYOL (BYOL) a NetApp para obtener las licencias de backup y recuperación de BlueXP. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción.
+Puedes obtener una licencia de copia de seguridad y recuperación de BlueXP  comprando una suscripción de pago por uso (PAYGO) o una suscripción anual de mercado a *Servicios inteligentes de NetApp* de tu proveedor de nube, o comprando una licencia BYOL (BYOL) de NetApp. Es necesaria una licencia válida para activar el backup y la recuperación de BlueXP en un entorno de trabajo, crear backups de tus datos de producción y restaurar los datos de backup en un sistema de producción.
 
 Antes de leer más:
 
@@ -30,7 +30,7 @@ link:concept-ontap-backup-to-cloud.html#cost["Obtén más información sobre los
 
 == prueba gratuita de 30 días
 
-Hay disponible una prueba gratuita de 30 días para backup y recuperación de BlueXP si te registras para obtener una suscripción de pago por uso en el mercado de tu proveedor de cloud. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, dispondrá de 20 días para usar la prueba gratuita.
+Una prueba gratuita de 30 días de copia de seguridad y recuperación de BlueXP  está disponible si se registra para una suscripción de pago por uso en el mercado de su proveedor de nube a *Servicios inteligentes de NetApp*. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, dispondrá de 20 días para usar la prueba gratuita.
 
 Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decides no continuar utilizando el backup y la recuperación de BlueXP, solo link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["Cancela el registro del backup y la recuperación de BlueXP en el entorno de trabajo"] antes de que termine la prueba y no se le cobrará.
 
@@ -38,7 +38,7 @@ Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripci
 
 == Utiliza una suscripción PAYGO de backup y recuperación de BlueXP
 
-En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debe suscribirse aunque tenga una prueba gratuita o si lleva su propia licencia (BYOL):
+En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debes suscribirte a *Servicios Inteligentes de NetApp* en el Mercado incluso si tienes una prueba gratuita o si llevas tu propia licencia (BYOL):
 
 * La suscripción garantiza que no se produzca ninguna interrupción en el servicio una vez que finalice la prueba gratuita. Cuando finalice la prueba, se le cobrará cada hora de acuerdo con la cantidad de datos de los que realice la copia de seguridad.
 * Si realiza un backup de más datos de los que lo permite su licencia BYOL, las operaciones de backup y restauración de datos continúan con su suscripción de pago por uso. Por ejemplo, si tiene una licencia BYOL de 10 TIB, toda la capacidad que supere los 10 TIB se cargará a través de la suscripción PAYGO.
@@ -61,21 +61,21 @@ Utilice estos enlaces para suscribirse al backup y la recuperación de BlueXP de
 
 ifdef::aws[]
 
-* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* AWS https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Vaya a la oferta del mercado para los servicios inteligentes de NetApp para obtener información detallada sobre los precios"^]: .
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* Azure https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Vaya a la oferta del mercado para los servicios inteligentes de NetApp para obtener información detallada sobre los precios"^]: .
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta de BlueXP Marketplace para obtener información sobre precios"^].
+* Google Cloud https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Vaya a la oferta del mercado para los servicios inteligentes de NetApp para obtener información detallada sobre los precios"^]: .
 
 
 endif::gcp[]
