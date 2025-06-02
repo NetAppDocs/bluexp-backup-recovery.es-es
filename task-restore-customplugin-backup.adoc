@@ -4,7 +4,7 @@ permalink: task-restore-customplugin-backup.html
 keywords: restore, mount application backups, MongoDB, MySQL, PostgreSQL 
 summary: Puede restaurar la base de datos SAP HANA desde el cloud al servidor SnapCenter en las instalaciones. 
 ---
-= Restaurar bases de datos MongoDB, MySQL y PostgreSQL
+= Restaure bases de datos MongoDB, MySQL y PostgreSQL con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede restaurar la base de datos SAP HANA desde el cloud al servidor Sn
 
 
 [role="lead"]
-Es posible restaurar bases de datos MongoDB, MySQL y PostgreSQL en cualquier host.
+Puede restaurar bases de datos MongoDB, MySQL y PostgreSQL en cualquier host con la copia de seguridad y recuperación de BlueXP.
 
 * Pasos*
 

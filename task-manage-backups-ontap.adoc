@@ -4,7 +4,7 @@ permalink: task-manage-backups-ontap.html
 keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup, bluexp 
 summary: Puede gestionar backups para sus sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones cambiando la programación de backups, creando nuevas políticas de backup, habilitando/deshabilitando backups de volúmenes, haciendo una pausa en los backups, eliminando backups, etc. Esto incluye todos los tipos de backups, incluidas las copias Snapshot, los volúmenes replicados y los archivos de backup en el almacenamiento de objetos. 
 ---
-= Gestione los backups para sus sistemas ONTAP
+= Administre copias de seguridad de sus sistemas ONTAP con BlueXP Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede gestionar backups para sus sistemas Cloud Volumes ONTAP y ONTAP e
 
 
 [role="lead"]
-Puede gestionar backups en sus sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones si cambia la programación de backups, habilita o deshabilita backups de volúmenes, pausa los backups, elimina backups, etc. Esto incluye todos los tipos de backups, incluidas las copias Snapshot, los volúmenes replicados y los archivos de backup en el almacenamiento de objetos.
+Con la copia de seguridad y recuperación de BlueXP, administre las copias de seguridad de sus Cloud Volumes ONTAP y los sistemas ONTAP locales cambiando el programa de copia de seguridad, habilitando o deshabilitando las copias de seguridad de volúmenes, pausando las copias de seguridad, eliminando las copias de seguridad y más. Esto incluye todos los tipos de backups, incluidas las copias Snapshot, los volúmenes replicados y los archivos de backup en el almacenamiento de objetos.
 
 
 CAUTION: No gestione ni modifique los archivos de backup directamente en sus sistemas de almacenamiento ni desde su entorno de proveedor de cloud. Esto puede dañar los archivos y dar como resultado una configuración no compatible.

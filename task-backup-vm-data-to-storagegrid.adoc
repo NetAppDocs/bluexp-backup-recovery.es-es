@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-storagegrid.html
 keywords: back up, backup, backup datastore, storagegrid, backup datastores 
 summary: Realice un backup de sus almacenes de datos desde ONTAP en las instalaciones a StorageGRID. 
 ---
-= Realizar backup de almacenes de datos en StorageGRID
+= Realice copias de seguridad de almacenes de datos en StorageGRID con BlueXP Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Realice un backup de sus almacenes de datos desde ONTAP en las instalac
 
 
 [role="lead"]
-Puede realizar backups de uno o varios almacenes de datos en StorageGRID si integra el host del plugin de SnapCenter para VMware vSphere con BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
+Puede realizar una copia de seguridad de uno o más almacenes de datos en StorageGRID integrando el complemento SnapCenter para el host VMware vSphere con la copia de seguridad y recuperación de BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
 
 .Antes de empezar
 Asegúrese de haber cumplido con todos los link:concept-protect-vm-data.html["requisitos"] antes de realizar backups de almacenes de datos en el cloud.

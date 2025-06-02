@@ -4,7 +4,7 @@ permalink: task-restore-oracle-data.html
 keywords: restore, Azure, Amazon Web services, Oracle database 
 summary: Puede restaurar bases de datos de Oracle desde el cloud al servidor de SnapCenter en las instalaciones. 
 ---
-= Restaurar base de datos de Oracle
+= Restaure bases de datos de Oracle con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede restaurar bases de datos de Oracle desde el cloud al servidor de 
 
 
 [role="lead"]
-Es posible restaurar una base de datos de Oracle en la ubicación original o en la ubicación alternativa. Para una base de datos RAC, los datos se restauran en el nodo en las instalaciones donde se creó el backup.
+Puede restaurar bases de datos de Oracle con la copia de seguridad y recuperación de BlueXP en la ubicación original o en la ubicación alternativa. Para una base de datos RAC, los datos se restauran en el nodo en las instalaciones donde se creó el backup.
 
 Solo es compatible una base de datos completa con restauración de archivos de control. Si los registros de archivo no están presentes en el AFS, debe especificar la ubicación que contiene los registros de archivo necesarios para la recuperación.
 

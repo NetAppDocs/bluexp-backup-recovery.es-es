@@ -4,7 +4,7 @@ permalink: task-create-policies-ontap.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen el tipo de backup, la arquitectura de backup, los sistemas de almacenamiento y la frecuencia de backup. 
 ---
-= Gestione políticas de backup para volúmenes de ONTAP
+= Administre políticas de respaldo para volúmenes ONTAP con BlueXP Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede usar las políticas de backup predeterminadas proporcionadas por 
 
 
 [role="lead"]
-Puede usar las políticas de backup predeterminadas proporcionadas por NetApp para crear los backups, o bien puede crear políticas personalizadas. Las políticas rigen la frecuencia de las copias de seguridad, el tiempo que se realiza la copia de seguridad y el número de archivos de copia de seguridad que se retienen.
+Con la copia de seguridad y recuperación de BlueXP, utilice las políticas de copia de seguridad predeterminadas proporcionadas por NetApp para crear sus copias de seguridad o cree políticas personalizadas. Las políticas rigen la frecuencia de las copias de seguridad, el tiempo que se realiza la copia de seguridad y el número de archivos de copia de seguridad que se retienen.
 
 Al utilizar el asistente de activación para habilitar el servicio de backup y recuperación para los volúmenes, puede seleccionar entre las políticas predeterminadas y todas las demás políticas que ya existan en el entorno de trabajo (Cloud Volumes ONTAP o ONTAP en las instalaciones). Si desea utilizar una política diferente a las políticas existentes, puede crear la política antes o mientras utiliza el asistente de activación.
 

@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-azure.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
 summary: Complete unos pasos para empezar a realizar backups de datos de volúmenes, desde sus sistemas ONTAP locales hasta el almacenamiento de Azure Blob. 
 ---
-= Realice un backup de los datos de ONTAP en las instalaciones en almacenamiento Azure Blob
+= Realice una copia de seguridad de los datos de ONTAP locales en el almacenamiento de blobs de Azure con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Complete unos pasos para empezar a realizar backups de datos de volúme
 
 
 [role="lead"]
-Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales a un sistema de almacenamiento secundario y en el almacenamiento Blob de Azure.
+Complete algunos pasos en la copia de seguridad y recuperación de BlueXP para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales a un sistema de almacenamiento secundario y al almacenamiento de blobs de Azure.
 
 
 NOTE: Entre los «sistemas ONTAP en las instalaciones» se incluyen los sistemas FAS, AFF y ONTAP Select.
@@ -221,7 +221,7 @@ Tendrás que verificar los requisitos de licencias para Azure y BlueXP:
 
 *Regiones apoyadas*
 
-Puede crear backups desde sistemas en las instalaciones a Azure Blob en todas las regiones https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^]; Incluidas las regiones gubernamentales de Azure. Especifica la región en la que se almacenarán las copias de seguridad al configurar el servicio.
+Puede crear copias de seguridad desde sistemas locales a Azure Blob en todas las regiones, incluidas las regiones de Azure Government. Especifica la región en la que se almacenarán las copias de seguridad al configurar el servicio.
 
 
 

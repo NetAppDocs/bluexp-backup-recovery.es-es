@@ -4,7 +4,7 @@ permalink: task-create-policies-vms.html
 keywords: create policy, protection policies, predefined policies, custom policies 
 summary: Crear una política para realizar backups de almacenes de datos 
 ---
-= Crear una política para realizar backups de almacenes de datos
+= Cree una política para realizar copias de seguridad de almacenes de datos con BlueXP Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Crear una política para realizar backups de almacenes de datos
 
 
 [role="lead"]
-Puede crear una directiva o utilizar una de las siguientes directivas predefinidas que están disponibles en BlueXP.
+Puede crear una política o utilizar una de las siguientes políticas predefinidas que están disponibles en la copia de seguridad y recuperación de BlueXP.
 
 .Antes de empezar
 * Debe crear políticas si no desea editar las políticas predefinidas.

@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-aws.html
 keywords: back up, backup, backup datastore, aws, Amazon Web Services, backup datastores 
 summary: Realice backup de sus almacenes de datos desde ONTAP en las instalaciones a AWS. 
 ---
-= Backup de almacenes de datos en Amazon Web Services
+= Realice copias de seguridad de almacenes de datos en Amazon Web Services con BlueXP Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Realice backup de sus almacenes de datos desde ONTAP en las instalacion
 
 
 [role="lead"]
-Puede realizar backups y archivar uno o varios almacenes de datos en Amazon Web Services para mejorar la eficiencia del almacenamiento y la transición cloud.
+Puede realizar copias de seguridad y archivar uno o más almacenes de datos con la copia de seguridad y recuperación de BlueXP en Amazon Web Services para mejorar la eficiencia del almacenamiento y la transición a la nube.
 
 Si el almacén de datos está asociado con una política de archivado, tiene la opción de seleccionar el nivel de archivado. Los niveles de archivado admitidos son Glacier y Glacier Deep.
 

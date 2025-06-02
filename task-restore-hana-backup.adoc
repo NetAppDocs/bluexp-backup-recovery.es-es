@@ -4,7 +4,7 @@ permalink: task-restore-hana-backup.html
 keywords: restore, mount application backups, SAP HANA database 
 summary: Puede restaurar la base de datos SAP HANA desde el cloud al servidor SnapCenter en las instalaciones. 
 ---
-= Restaurar la base de datos SAP HANA
+= Restaure la base de datos de SAP HANA con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede restaurar la base de datos SAP HANA desde el cloud al servidor Sn
 
 
 [role="lead"]
-Es posible restaurar una base de datos SAP HANA a cualquier host.
+Puede restaurar la base de datos de SAP HANA en cualquier host con la copia de seguridad y recuperación de BlueXP
 
 * Pasos*
 

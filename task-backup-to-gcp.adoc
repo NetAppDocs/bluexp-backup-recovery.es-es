@@ -4,7 +4,7 @@ permalink: task-backup-to-gcp.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: Complete unos pasos para empezar a realizar backups de datos de volumen desde sus sistemas Cloud Volumes ONTAP en el almacenamiento de Google Cloud. 
 ---
-= Haga un backup de los datos de Cloud Volumes ONTAP en Google Cloud Storage
+= Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Google Cloud Storage con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Complete unos pasos para empezar a realizar backups de datos de volumen
 
 
 [role="lead"]
-Complete unos pasos para empezar a realizar backups de datos de volumen desde sus sistemas Cloud Volumes ONTAP en Google Cloud Storage.
+Complete algunos pasos en la copia de seguridad y recuperación de BlueXP para comenzar a realizar copias de seguridad de los datos de volumen de sus sistemas Cloud Volumes ONTAP en Google Cloud Storage.
 
 
 
@@ -74,7 +74,7 @@ Opcionalmente, puede conectarse a un sistema ONTAP secundario para volúmenes re
 image:diagram_cloud_backup_cvo_google.png["Un diagrama que muestra cómo se comunican el backup y la recuperación de datos de BlueXP con los volúmenes en el sistema de origen y el almacenamiento de destino donde se encuentran los archivos de backup."]
 
 Versiones de ONTAP compatibles:: Se recomienda un mínimo de ONTAP 9,8; ONTAP 9.8P13 y posterior.
-Regiones compatibles de GCP:: El backup y la recuperación de datos de BlueXP se admiten en todas las regiones de GCP https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^].
+Regiones compatibles de GCP:: La copia de seguridad y recuperación de BlueXP es compatible con todas las regiones de GCP.
 Cuenta de servicio de GCP:: Necesitas tener una cuenta de servicio en tu proyecto de Google Cloud que tenga el rol personalizado. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["Aprenda a crear una cuenta de servicio"^]
 
 

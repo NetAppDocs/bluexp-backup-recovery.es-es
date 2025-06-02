@@ -4,7 +4,7 @@ permalink: task-backup-to-s3.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, cloud backup 
 summary: Complete unos pasos para comenzar a realizar backups de datos de volúmenes desde sus sistemas Cloud Volumes ONTAP en Amazon S3. 
 ---
-= Realice backup de los datos de Cloud Volumes ONTAP en Amazon S3
+= Realice una copia de seguridad de los datos de Cloud Volumes ONTAP en Amazon S3 con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Complete unos pasos para comenzar a realizar backups de datos de volúm
 
 
 [role="lead"]
-Complete unos pasos para comenzar a realizar backups de datos de volúmenes desde sus sistemas Cloud Volumes ONTAP en Amazon S3.
+Complete algunos pasos en la copia de seguridad y recuperación de BlueXP para comenzar a realizar copias de seguridad de los datos de volumen de sus sistemas Cloud Volumes ONTAP en Amazon S3.
 
 
 
@@ -176,7 +176,7 @@ Permisos necesarios de AWS Cloud Volumes ONTAP:: Cuando tu sistema Cloud Volumes
 Si ha creado el entorno de trabajo de Cloud Volumes ONTAP con BlueXP versión 3.9.23 o superior, estos permisos ya deberían formar parte del rol IAM. De lo contrario, tendrá que agregar los permisos que faltan.
 
 --
-Regiones admitidas de AWS:: El backup y la recuperación de BlueXP se admiten en todas las regiones de AWS https://cloud.netapp.com/cloud-volumes-global-regions["Donde se admite Cloud Volumes ONTAP"^], Incluidas las regiones de AWS GovCloud.
+Regiones admitidas de AWS:: La copia de seguridad y recuperación de BlueXP es compatible con todas las regiones de AWS, incluidas las regiones de AWS GovCloud.
 Configuración necesaria para crear backups en una cuenta de AWS diferente:: De manera predeterminada, los backups se crean con la misma cuenta que la utilizada para el sistema Cloud Volumes ONTAP. Si desea usar una cuenta de AWS diferente para sus backups, debe realizar lo siguiente:
 +
 --

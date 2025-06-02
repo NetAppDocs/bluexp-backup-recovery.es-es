@@ -4,7 +4,7 @@ permalink: task-backup-onprem-private-cloud.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
 summary: Complete unos pasos para empezar a realizar backups de datos de volúmenes desde sus sistemas ONTAP locales a almacenamiento de objetos en sus sistemas StorageGRID de NetApp. 
 ---
-= Realice un backup de los datos de ONTAP en las instalaciones en StorageGRID
+= Realice una copia de seguridad de los datos locales de ONTAP en StorageGRID con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Complete unos pasos para empezar a realizar backups de datos de volúme
 
 
 [role="lead"]
-Complete unos pocos pasos para empezar a hacer backups de datos de volúmenes desde sus sistemas ONTAP principales locales a un sistema de almacenamiento secundario y en el almacenamiento de objetos en sus sistemas NetApp StorageGRID.
+Complete algunos pasos en la copia de seguridad y recuperación de BlueXP para comenzar a realizar copias de seguridad de datos de volumen desde sus sistemas ONTAP locales primarios a un sistema de almacenamiento secundario y al almacenamiento de objetos en sus sistemas NetApp StorageGRID.
 
 
 NOTE: Entre los «sistemas ONTAP en las instalaciones» se incluyen los sistemas FAS, AFF y ONTAP Select.
@@ -239,6 +239,10 @@ Versiones de StorageGRID compatibles:: Se admite StorageGRID 10.3 y versiones po
 Para usar la protección DataLock & Ransomware para sus copias de seguridad, sus sistemas StorageGRID deben ejecutar la versión 11.6.0.3 o posterior.
 
 Para organizar los backups antiguos en niveles en el almacenamiento de archivado en cloud, los sistemas StorageGRID deben ejecutar la versión 11.3 o posterior. Además, debes descubrir tus sistemas StorageGRID en BlueXP Canvas.
+
+Para el almacenamiento de archivos del usuario, se necesita acceso a la IP del nodo de administrador.
+
+Siempre es necesario el acceso a IP de puerta de enlace.
 
 --
 Credenciales de S3:: Debe haber creado una cuenta de inquilino de S3 para controlar el acceso al almacenamiento de StorageGRID. https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["Consulte los documentos de StorageGRID para obtener más información"^].

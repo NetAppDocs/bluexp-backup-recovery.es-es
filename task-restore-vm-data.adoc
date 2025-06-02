@@ -4,7 +4,7 @@ permalink: task-restore-vm-data.html
 keywords: restore virtual machines 
 summary: Puede restaurar máquinas virtuales desde el cloud hasta la SnapCenter en las instalaciones. 
 ---
-= Restaure datos de máquinas virtuales desde el cloud
+= Restaure datos de máquinas virtuales desde la nube con la copia de seguridad y recuperación de BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puede restaurar máquinas virtuales desde el cloud hasta la SnapCenter 
 
 
 [role="lead"]
-Puede restaurar datos de máquinas virtuales desde el cloud de nuevo al vCenter en las instalaciones. Es posible restaurar el equipo virtual a la misma ubicación exacta desde donde se realizó el backup o a otra ubicación alternativa. Si se realizó el backup del equipo virtual mediante la normativa de archivado, se puede establecer la prioridad de restauración de archivado.
+Puede restaurar datos de máquinas virtuales desde la nube al vCenter local con la copia de seguridad y recuperación de BlueXP. Es posible restaurar el equipo virtual a la misma ubicación exacta desde donde se realizó el backup o a otra ubicación alternativa. Si se realizó el backup del equipo virtual mediante la normativa de archivado, se puede establecer la prioridad de restauración de archivado.
 
 
 NOTE: No es posible restaurar máquinas virtuales que abarquen diferentes almacenes de datos.
