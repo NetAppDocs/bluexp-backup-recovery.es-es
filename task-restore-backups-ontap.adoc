@@ -749,29 +749,13 @@ El catálogo indexado v2 admite lo siguiente:
 
 
 .Activación del catálogo indexado para un entorno de trabajo
-Cuando habilita esta funcionalidad, el backup y recuperación de BlueXP permite utilizar SnapDiff v3 en la SVM para los volúmenes y realiza las siguientes acciones:
+El servicio no proporciona un depósito independiente al usar el Catálogo Indexado v2. En cambio, para las copias de seguridad almacenadas en AWS, Azure, Google Cloud Platform, StorageGRID u ONTAP S3, el servicio proporciona espacio en el Conector o en el entorno del proveedor de nube.
 
-ifdef::aws[]
+Si habilitó el Catálogo indexado antes del lanzamiento de la versión v2, ocurrirá lo siguiente con los entornos de trabajo:
 
 * Para los backups almacenados en AWS, aprovisiona un nuevo bloque de S3 y el https://aws.amazon.com/athena/faqs/["Servicio de consultas interactivas de Amazon Athena"^] y.. https://aws.amazon.com/glue/faqs/["Servicio de integración de datos sin servidor de AWS"^].
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Para los backups almacenados en Azure, aprovisiona un espacio de trabajo Azure Synapse y un sistema de archivos Data Lake como el contenedor donde se almacenan los datos del espacio de trabajo.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Para los backups almacenados en Google Cloud, aprovisiona un nuevo bloque y el https://cloud.google.com/bigquery["Servicios de Google Cloud BigQuery"^] se aprovisionan en el nivel de cuenta/proyecto.
-
-
-endif::gcp[]
-
 * Para los backups almacenados en StorageGRID o ONTAP S3, se aprovisiona el espacio en el conector o en el entorno del proveedor de cloud.
 
 

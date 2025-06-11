@@ -23,6 +23,8 @@ Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-ba
 
 Normalmente, BlueXP Backup and Recovery establece un punto final privado con el proveedor de la nube para gestionar diversas tareas de protección. Esta versión incluye una configuración opcional que permite habilitar o deshabilitar la creación automática de un punto final privado por parte de BlueXP Backup and Recovery. Esto puede resultar útil si desea mayor control sobre el proceso de creación de puntos finales privados.
 
+Puede habilitar o deshabilitar esta opción al habilitar la protección o iniciar el proceso de restauración.
+
 Si deshabilita esta configuración, deberá crear manualmente el punto final privado para que la copia de seguridad y la recuperación de BlueXP funcionen correctamente. Sin una conectividad adecuada, es posible que no pueda realizar las tareas de copia de seguridad y recuperación correctamente.
 
 
