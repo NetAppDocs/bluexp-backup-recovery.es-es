@@ -47,7 +47,7 @@ NOTE: El backup y la recuperación de BlueXP deben estar activados al menos en u
 
 image:screenshot_restore_dashboard.png["El Panel de restauración muestra las opciones para utilizar la función examinar  Restaurar o Buscar  Restaurar."]
 
-Como puede ver, Restore Dashboard ofrece dos formas diferentes de restaurar datos de archivos de copia de seguridad: *Browse & Restore* y *Search & Restore*.
+Como puede ver, el Panel de restauración ofrece dos formas diferentes de restaurar datos de archivos de respaldo: *Explorar y restaurar* y *Buscar y restaurar*.
 
 
 
@@ -246,7 +246,7 @@ video::9Og5agUWyRk[youtube,width=848,height=480,end=164]
 . Haga clic en la ficha *Restaurar* y aparecerá el Panel de restauración.
 . En la sección _Browse & Restore_, haga clic en *Restore Volume*.
 +
-image:screenshot_restore_volume_selection.png["Captura de pantalla de la selección del botón Restaurar volúmenes del Panel de restauración."]
+image:screenshot_restore_dashboard.png["El Panel de restauración muestra las opciones para utilizar la función examinar  Restaurar o Buscar  Restaurar."]
 
 . En la página _Select Source_, desplácese hasta el archivo de copia de seguridad del volumen que desea restaurar. Seleccione *entorno de trabajo*, *volumen* y el archivo *copia de seguridad* que tiene la Marca de fecha/hora desde la que desea restaurar.
 +
@@ -407,7 +407,7 @@ video::9Og5agUWyRk[youtube,width=848,height=480,start=165]
 . Haga clic en la ficha *Restaurar* y aparecerá el Panel de restauración.
 . En la sección _Browse & Restore_, haga clic en *Restaurar archivos o carpeta*.
 +
-image:screenshot_restore_files_selection.png["Captura de pantalla de la selección del botón Restaurar archivos o carpeta del Panel de restauración."]
+image:screenshot_restore_dashboard.png["El Panel de restauración muestra las opciones para utilizar la función examinar  Restaurar o Buscar  Restaurar."]
 
 . En la página _Select Source_, desplácese hasta el archivo de copia de seguridad del volumen que contiene la carpeta o los archivos que desea restaurar. Seleccione *entorno de trabajo*, *volumen* y *copia de seguridad* que tenga la Marca de fecha/hora desde la que desea restaurar archivos.
 +
@@ -727,7 +727,7 @@ Antes de poder utilizar Buscar y restaurar, debe habilitar la función "indexaci
 El catálogo indexado es una base de datos que almacena metadatos sobre todos los volúmenes y archivos de copia de seguridad del entorno de trabajo. La función de búsqueda y restauración lo utiliza para encontrar rápidamente los archivos de copia de seguridad que contienen los datos que desea restaurar.
 
 .Características del catálogo indexado v2
-El catálogo indexado v2, lanzado en febrero de 2025, tiene nuevas características que lo hacen más eficiente y fácil de usar. Esta versión tiene una mejora significativa del rendimiento y está habilitada por defecto para todos los nuevos clientes.
+El Catálogo Indexado v2, publicado en febrero de 2025 y actualizado en junio de 2025, incluye características que lo hacen más eficiente y fácil de usar. Esta versión tiene una mejora significativa del rendimiento y está habilitada por defecto para todos los nuevos clientes.
 
 Revise las siguientes consideraciones con respecto a v2:
 
@@ -736,6 +736,7 @@ Revise las siguientes consideraciones con respecto a v2:
 * El Catálogo v2 indexa sólo las instantáneas que tienen una etiqueta de instantánea.
 * Los backups y las recuperaciones de BlueXP  no indexan los snapshots con etiquetas de SnapMirror cada hora. Si desea indexar las instantáneas con la etiqueta SnapMirror “horaria”, debe habilitarla manualmente mientras el v2 está en modo de vista previa.
 * Las funciones de backup y recuperación de BlueXP  indicarán los volúmenes y las instantáneas asociadas a entornos de trabajo protegidos por el backup y la recuperación de BlueXP  sólo con el Catálogo v2. Otros entornos de trabajo descubiertos en la plataforma BlueXP  no se indexarán.
+* La indexación de datos con Catalog v2 se realiza en entornos locales y en entornos de Amazon Web Services, Microsoft Azure y Google Cloud Platform (GCP).
 
 
 El catálogo indexado v2 admite lo siguiente:
@@ -801,31 +802,34 @@ Después de haberlo hecho <<enable-the-indexed-catalog-for-each-working-environm
 
 .Pasos
 . En el menú BlueXP, seleccione *Protección > copia de seguridad y recuperación*.
-. Haga clic en la ficha *Restaurar* y aparecerá el Panel de restauración.
-. En la sección _Search & Restore_, haga clic en *Search & Restore*.
+. Haga clic en la ficha *Restaurar*.
 +
-image:screenshot_restore_start_search_restore.png["Captura de pantalla de la selección del botón Search  Restore del panel Restore."]
+Se muestra el Panel de restauración.
 
-. Desde la página Buscar en Restaurar:
+. Desde la sección _Buscar y restaurar_, seleccione *Buscar y restaurar*.
++
+image:screenshot_restore_dashboard.png["El Panel de restauración muestra las opciones para utilizar la función examinar  Restaurar o Buscar  Restaurar."]
+
+. Desde la página Buscar y restaurar:
 +
 .. En la barra _Search_, introduzca un nombre de volumen completo o parcial, un nombre de carpeta o un nombre de archivo.
 .. Seleccione el tipo de recurso: *Volúmenes*, *Archivos*, *carpetas* o *todo*.
 .. En el área _Filter by_, seleccione los criterios de filtro. Por ejemplo, puede seleccionar el entorno de trabajo donde residen los datos y el tipo de archivo, por ejemplo un archivo .JPEG. También puede seleccionar el tipo de Ubicación de backup si desea buscar resultados solo dentro de las copias Snapshot disponibles o los archivos de backup en el almacenamiento de objetos.
 
 
-. Haga clic en *Buscar* y el área resultados de la búsqueda mostrará todos los recursos que tengan un archivo, carpeta o volumen que coincida con la búsqueda.
+. Seleccione *Buscar* y el área Resultados de la búsqueda mostrará todos los recursos que tienen un archivo, carpeta o volumen que coincide con su búsqueda.
 +
 image:screenshot_restore_step1_search_restore.png["Captura de pantalla que muestra los criterios de búsqueda y los resultados de búsqueda en la página Buscar  Restaurar."]
 
-. Localice el recurso que tiene los datos que desea restaurar y haga clic en *Ver todas las copias de seguridad* para mostrar todos los archivos de copia de seguridad que contienen el volumen, carpeta o archivo coincidentes.
+. Localice el recurso que tiene los datos que desea restaurar y seleccione *Ver todas las copias de seguridad* para mostrar todos los archivos de copia de seguridad que contienen el volumen, la carpeta o el archivo correspondiente.
 +
 image:screenshot_restore_step2_search_restore.png["Una captura de pantalla que muestra cómo ver todas las copias de seguridad que coinciden con los criterios de búsqueda."]
 
-. Localice el archivo de copia de seguridad que desea utilizar para restaurar los datos y haga clic en *Restaurar*.
+. Localice el archivo de respaldo que desea utilizar para restaurar los datos y seleccione *Restaurar*.
 +
 Tenga en cuenta que los resultados identifican copias Snapshot de volúmenes locales y volúmenes remotos replicados que contienen el archivo en la búsqueda. Puede elegir restaurar desde el archivo de backup en el cloud, desde la copia Snapshot o desde el volumen replicado.
 
-. Seleccione la ubicación de destino en la que desea restaurar el volumen, la carpeta o los archivos y haga clic en *Restaurar*.
+. Seleccione la ubicación de destino donde desea que se restaure el volumen, la carpeta o los archivos y seleccione *Restaurar*.
 +
 ** Para los volúmenes, es posible seleccionar el entorno de trabajo de destino original o bien seleccionar un entorno de trabajo alternativo. Cuando restaure un volumen de FlexGroup, debe elegir varios agregados.
 ** Para las carpetas, puede restaurar a la ubicación original o seleccionar una ubicación alternativa, incluido el entorno de trabajo, el volumen y la carpeta.
@@ -865,6 +869,6 @@ endif::gcp[]
 
 
 .Resultados
-Se restauran el volumen, la carpeta o los archivos y se devuelve a la consola de restauración para poder revisar el progreso de la operación de restauración. También puede hacer clic en la ficha *Supervisión de trabajos* para ver el progreso de la restauración.
+Se restauran el volumen, la carpeta o los archivos y se devuelve a la consola de restauración para poder revisar el progreso de la operación de restauración. También puede seleccionar la pestaña *Monitoreo de trabajos* para ver el progreso de la restauración.
 
 Para los volúmenes restaurados, es posible link:task-manage-backups-ontap.html["gestione la configuración de backup para este nuevo volumen"] según sea necesario.
