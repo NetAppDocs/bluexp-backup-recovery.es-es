@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, bluexp, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: Monitorear el estado de sus cargas de trabajo le permite estar al tanto de los problemas de protección de las cargas de trabajo y tomar medidas para resolverlos. Consulte el estado de sus copias de seguridad y restauraciones, y responda a las alertas que aparecen en el Panel de Copias de Seguridad y Recuperación de BlueXP . Puede revisar el Resumen de Protección, el Resumen de Restauración, el Resumen del Sistema y más. 
+---
+= Ver el estado de la protección en el Panel de BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitorear el estado de sus cargas de trabajo le permite estar al tanto de los problemas con la protección de las cargas de trabajo y tomar medidas para resolverlos. Consulte el estado de sus copias de seguridad y restauraciones en el Panel de control de BlueXP backup and recovery . Puede revisar el resumen del sistema, el resumen de protección, el resumen de trabajos, el resumen de restauraciones y más.
+
+*Rol obligatorio de BlueXP *: Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, Administrador de copias de seguridad de Backup and Recovery, Administrador de restauración de Backup and Recovery, Administrador de clones de Backup and Recovery o Rol de visualizador de Backup and Recovery. Más información. link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Panel de control*.
++
+image:screen-br-dashboard2.png["Panel de control de BlueXP backup and recovery"]
+
+
+
+
+
+== Ver el resumen general del sistema
+
+El resumen del sistema proporciona la siguiente información:
+
+* Número de hosts o máquinas virtuales descubiertos
+* Número de clústeres de Kubernetes descubiertos
+* Número de destinos de respaldo en el almacenamiento de objetos
+* Número de vCenters
+* Número de clústeres de almacenamiento en ONTAP
+
+
+
+
+== Ver el resumen de protección
+
+Revise la siguiente información en el Resumen de protección:
+
+* El número total de bases de datos protegidas y no protegidas.
++
+
+TIP: Una base de datos protegida es aquella que tiene una política de copias de seguridad asignada. Una base de datos desprotegida es aquella que no tiene una política de copias de seguridad asignada.
+
+* La cantidad de copias de seguridad que se realizaron correctamente, tuvieron una advertencia o fallaron.
+* La capacidad total detectada por el servicio de respaldo y la capacidad protegida y no protegida. Pase el cursor sobre el ícono "*i*" para ver los detalles.
+
+
+
+
+== Ver el resumen del trabajo
+
+Revise el total de trabajos completados, en ejecución o fallidos en el Resumen de trabajos.
+
+.Pasos
+. Para cada distribución de trabajo, cambie un filtro para mostrar el resumen de trabajos fallidos, en ejecución y completos según la cantidad de días, por ejemplo, los últimos 30 días, los últimos 7 días, las últimas 24 horas o el último año.
+. Vea los detalles de los trabajos fallidos, en ejecución y completados seleccionando *Ver monitoreo de trabajos*.
+
+
+
+
+== Ver el resumen de restauración
+
+Revise la siguiente información en el resumen de restauración:
+
+* El número total de trabajos de restauración realizados
+* La cantidad total de capacidad que se ha restaurado
+* Número de restauraciones realizadas en el almacenamiento local, secundario y de objetos. Pase el cursor sobre el gráfico para ver los detalles.
+

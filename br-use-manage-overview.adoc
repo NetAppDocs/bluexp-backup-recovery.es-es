@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Puede realizar copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde sistemas ONTAP locales a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando la protección de sus datos. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. Puede implementar una estrategia 3-2-1, donde tiene 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes y 1 copia en la nube. 
+---
+= Administre recursos con la descripción general de BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Administrar recursos en BlueXP backup and recovery es esencial para garantizar la protección de sus datos. Puede administrar recursos como copias de seguridad, bases de datos, instancias, hosts de aplicaciones y entornos de trabajo. Puede ver, editar y eliminar la configuración de protección de sus recursos.
+
+Puede realizar las siguientes tareas relacionadas con la gestión de sus recursos:
+
+* link:br-use-manage-inventory.html["Administrar inventario"].
+* link:br-use-manage-snapshots.html["Gestionar copias Snapshot"].
+* link:br-use-manage-kubernetes-clusters.html["Gestione clústeres de Kubernetes"].
+* link:br-use-manage-kubernetes-applications.html["Administrar aplicaciones de Kubernetes"].
+

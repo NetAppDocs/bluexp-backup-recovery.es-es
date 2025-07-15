@@ -1,0 +1,284 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-inventory.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: La BlueXP backup and recovery le permite administrar la información del host de su carga de trabajo, la información de la base de datos y la información de las instancias. Puede ver, editar y eliminar la configuración de protección de su inventario. 
+---
+= Administre el inventario de Microsoft SQL Server con la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La BlueXP backup and recovery le permite administrar la información del host de la carga de trabajo de Microsoft SQL Server, la información de la base de datos y la información de las instancias. Puede ver, editar y eliminar la configuración de protección de su inventario.
+
+Puede realizar las siguientes tareas relacionadas con la gestión de su inventario:
+
+* Administrar la información del host
++
+** Suspender horarios
+** Editar o eliminar hosts
+
+
+* Administrar información de instancias
++
+** Asociar credenciales a un recurso
+** Realice una copia de seguridad ahora iniciando una copia de seguridad a pedido
+** Editar la configuración de protección
+
+
+* Administrar la información de la base de datos
++
+** Proteger bases de datos
+** Restaurar bases de datos
+** Editar la configuración de protección
+** Realice una copia de seguridad ahora iniciando una copia de seguridad a pedido
+
+
+* Configure el directorio de registros (desde Inventario > Hosts). Si desea realizar una copia de seguridad de los registros de los hosts de su base de datos en la instantánea, primero configure los registros en BlueXP backup and recovery. Para obtener más información, consulte link:br-start-setup.html["Configurar los ajustes de BlueXP backup and recovery"].
+
+
+
+
+== Administrar la información del host
+
+Puedes administrar la información del host para garantizar la protección de los hosts correctos. Puedes ver, editar y eliminar información del host.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, Administrador de copias de seguridad de Backup and Recovery, Administrador de restauración de Backup and Recovery o Administrador de clones de Backup and Recovery.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+* Configurar el directorio de registro. Para obtener más información, consulte link:br-start-setup.html["Configurar los ajustes de BlueXP backup and recovery"].
+* Suspender horarios
+* Editar un host
+* Eliminar un host
+
+
+
+
+=== Suspender horarios
+
+Puede suspender las programaciones para detener las operaciones de copia de seguridad y restauración de un host. Esta opción es útil si necesita realizar tareas de mantenimiento en el host.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione el host en el que desea suspender las programaciones.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Suspender horarios*.
+. En el cuadro de diálogo de confirmación, seleccione *Suspender*.
+
+
+
+
+=== Editar un host
+
+Puede cambiar la información del servidor vCenter, las credenciales de registro del host y las opciones de configuración avanzada.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione el host que desea editar.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Editar host*.
++
+image:screen-br-inventory-hosts-edit.png["Editar host"]
+
+. Editar la información del host.
+. Seleccione *Listo*.
+
+
+
+
+=== Eliminar un host
+
+Puede eliminar la información del host para detener los cargos por servicio.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione el host que desea eliminar.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Eliminar host*.
+. Revise la información de confirmación y seleccione *Eliminar*.
+
+
+
+
+== Administrar información de instancias
+
+Puede administrar la información de instancias para garantizar que los recursos tengan las credenciales adecuadas para su protección y puede realizar copias de seguridad de los recursos de las siguientes maneras:
+
+* Proteger instancias
+* Credenciales de asociado
+* Disociar credenciales
+* Protección de edición
+* Realizar una copia de seguridad ahora
+
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, Administrador de copias de seguridad de Backup and Recovery, Administrador de restauración de Backup and Recovery o Administrador de clones de Backup and Recovery.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+
+
+=== Proteger instancias de base de datos
+
+Puede asignar una política a una instancia de base de datos utilizando políticas que rigen los cronogramas y la retención de la protección de recursos.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Instancias*.
+. Seleccione la instancia.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Proteger*.
+. Seleccione una política o cree una nueva.
++
+Para obtener detalles sobre cómo crear una política, consulte link:br-use-policies-create.html["Crear una política"] .
+
+. Proporcione información sobre los scripts que desea ejecutar antes y después de la copia de seguridad.
++
+** *Pre-script*: Ingrese el nombre de archivo y la ubicación del script para ejecutarlo automáticamente antes de que se active la acción de protección. Esto es útil para realizar tareas o configuraciones adicionales que deben ejecutarse antes del flujo de trabajo de protección.
+** *Postscript*: Ingrese el nombre y la ubicación del archivo de script para ejecutarlo automáticamente una vez finalizada la acción de protección. Esto resulta útil para realizar tareas o configuraciones adicionales que deban ejecutarse después del flujo de trabajo de protección.
+
+
+. Proporcione información sobre cómo desea que se verifique la instantánea:
++
+** Ubicación de almacenamiento: seleccione la ubicación donde se almacenará la instantánea de verificación.
+** Recurso de verificación: seleccione si el recurso que desea verificar está en la instantánea local y en el almacenamiento secundario de ONTAP .
+** Programación de verificación: seleccione la frecuencia: horaria, diaria, semanal, mensual o anual.
+
+
+
+
+
+
+=== Asociar credenciales a un recurso
+
+Puede asociar credenciales a un recurso para que pueda existir protección.
+
+Para obtener más información, consulte link:br-start-configure.html["Configurar los ajustes de BlueXP backup and recovery , incluidas las credenciales"].
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Instancias*.
+. Seleccione la instancia.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Credenciales de asociado*.
+. Utilice credenciales existentes o cree unas nuevas.
+
+
+
+
+=== Editar la configuración de protección
+
+Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Instancias*.
+. Seleccione la instancia.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Editar protección*.
++
+Para obtener detalles sobre cómo crear una política, consulte link:br-use-policies-create.html["Crear una política"] .
+
+
+
+
+
+=== Realizar una copia de seguridad ahora
+
+Puede hacer una copia de seguridad de sus datos ahora para garantizar que estén protegidos de inmediato.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Instancias*.
+. Seleccione la instancia.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Hacer copia de seguridad ahora*.
+. Seleccione el tipo de copia de seguridad y configure la programación.
++
+Para obtener detalles sobre cómo crear una copia de seguridad ad hoc, consulte link:br-use-mssql-backup.html["Crear una política"] .
+
+
+
+
+
+== Administrar la información de la base de datos
+
+Puede administrar la información de la base de datos de las siguientes maneras:
+
+* Proteger bases de datos
+* Restaurar bases de datos
+* Ver detalles de protección
+* Editar la configuración de protección
+* Realizar una copia de seguridad ahora
+
+
+
+
+=== Proteger bases de datos
+
+Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Copia de seguridad y recuperación, Rol de administrador de copias de seguridad de Copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Bases de datos*.
+. Seleccione la base de datos.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Proteger*.
++
+Para obtener detalles sobre cómo crear una política, consulte link:br-use-policies-create.html["Crear una política"] .
+
+
+
+
+
+=== Restaurar bases de datos
+
+Puede restaurar una base de datos para garantizar que sus datos estén protegidos.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de copia de seguridad y recuperación, Administrador de restauración de copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Bases de datos*.
+. Seleccione la base de datos.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Restaurar*.
++
+Para obtener información sobre cómo restaurar cargas de trabajo, consulte link:br-use-mssql-restore.html["Restaurar cargas de trabajo"] .
+
+
+
+
+
+=== Editar la configuración de protección
+
+Puede cambiar la política, crear una nueva política, establecer un cronograma y establecer configuraciones de retención.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Copia de seguridad y recuperación, Rol de administrador de copias de seguridad de Copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Bases de datos*.
+. Seleccione la base de datos.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Editar protección*.
++
+Para obtener detalles sobre cómo crear una política, consulte link:br-use-policies-create.html["Crear una política"] .
+
+
+
+
+
+=== Realizar una copia de seguridad ahora
+
+Puede realizar una copia de seguridad de sus instancias y bases de datos de Microsoft SQL Server ahora para garantizar que sus datos estén protegidos de inmediato.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Copia de seguridad y recuperación, Rol de administrador de copias de seguridad de Copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la carga de trabajo que desea ver y seleccione *Ver*.
+. Seleccione la pestaña *Instancias* o *Bases de datos*.
+. Seleccione la instancia o base de datos.
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Hacer copia de seguridad ahora*.
+

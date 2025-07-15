@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-snapshots.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Puede realizar copias de seguridad de los datos de las aplicaciones de Microsoft SQL Server desde sistemas ONTAP locales a Amazon Web Services, Microsoft Azure, Google Cloud Platform y StorageGRID, garantizando la protección de sus datos. Los backups se generan y almacenan automáticamente en un almacén de objetos en su cuenta de cloud público o privado. Puede implementar una estrategia 3-2-1, donde tiene 3 copias de sus datos de origen en 2 sistemas de almacenamiento diferentes y 1 copia en la nube. 
+---
+= Administre instantáneas de Microsoft SQL Server con la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede administrar las instantáneas de Microsoft SQL Server eliminándolas desde la BlueXP backup and recovery.
+
+
+
+== Eliminar una copia de Snapshot
+
+Puedes eliminar únicamente instantáneas locales.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Copia de seguridad y recuperación, Rol de administrador de copias de seguridad de Copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. En la BlueXP backup and recovery, seleccione *Inventario*.
+. Seleccione la carga de trabajo y seleccione *Ver*.
+. Seleccione la pestaña *Bases de datos*.
+. Seleccione la base de datos de la que desea eliminar una instantánea.
+. En el menú Acciones, seleccione *Ver detalles de protección*.
++
+image:screen-br-inventory-sql-protection-details.png["Ver detalles de protección"]
+
+. Seleccione la instantánea local que desea eliminar.
++
+
+TIP: El ícono de instantánea local en la columna *Ubicación* de esa fila debe aparecer en azul.
+
+. Seleccione las *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Eliminar instantánea local*.
+. En el cuadro de diálogo de confirmación, seleccione *Eliminar*.
+

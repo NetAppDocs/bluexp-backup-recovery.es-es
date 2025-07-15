@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-register-snapcenter.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Registre el SnapCenter Plug-in for VMware vSphere para usarlo con la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Debe registrar el complemento SnapCenter para el host VMware vSphere en la copia de seguridad y recuperación de BlueXP para que se muestren los almacenes de datos y las máquinas virtuales. Solo un usuario con acceso administrativo puede registrar el host del plugin de SnapCenter para VMware vSphere.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de BlueXP backup and recovery , consulte link:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de BlueXP backup and recovery"] .
+
+====
+.Pasos
+. En la interfaz de usuario de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En el menú desplegable *Configuración*, seleccione * SnapCenter Plug-in for VMware vSphere*.
+. Seleccione *Registrar SnapCenter Plug-in for VMware vSphere*.
+. Especifique los siguientes detalles:
++
+.. En el campo SnapCenter Plug-in for VMware vSphere, especifique la dirección FQDN o IP del host del plugin de SnapCenter para VMware vSphere.
+.. En el campo Port, especifique el número de puerto en el que ejecuta el host del plugin de SnapCenter para VMware vSphere.
++
+Debe asegurarse de que la comunicación esté abierta entre el host del plugin de SnapCenter para VMware vSphere en las instalaciones que se ejecuta en el puerto 8144 predeterminado y la instancia de conector de BlueXP, que puede estar ejecutándose en cualquier proveedor de cloud (Amazon Web Services, Microsoft Azure, Google Cloud Platform) o en las instalaciones.
+
+.. En el campo Username and Password, especifique las credenciales del usuario de vCenter con el rol administrator.
+
+
+. Seleccione *Registrar*.
+
+
+*Después de terminar*
+
+Seleccione *Copia de seguridad y recuperación* > *Máquinas virtuales* para ver todos los almacenes de datos y máquinas virtuales que están protegidos mediante el SnapCenter Plug-in for VMware vSphere .

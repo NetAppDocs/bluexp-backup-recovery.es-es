@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Administrar la protección de almacenes de datos y máquinas virtuales en la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede ver políticas, almacenes de datos y máquinas virtuales antes de realizar copias de seguridad y restaurar datos con BlueXP Backup and Recovery. En función de los cambios en la base de datos, políticas o grupos de recursos, podrás ver las actualizaciones en la interfaz de usuario de BlueXP.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de BlueXP backup and recovery , consulte link:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de BlueXP backup and recovery"] .
+
+====
+
+
+== Ver políticas
+
+Puede ver todas las directivas predefinidas predeterminadas. Para cada una de estas políticas, al ver los detalles, se enumeran todas las políticas y máquinas virtuales asociadas.
+
+. En la interfaz de usuario de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En el menú desplegable *Configuración*, seleccione *Políticas*.
+. Seleccione *Ver detalles* correspondiente a la póliza cuyos detalles desea ver.
+
+
+Se muestran las políticas y las máquinas virtuales asociadas.
+
+
+
+== Ver almacenes de datos y máquinas virtuales
+
+Se muestran los almacenes de datos y las máquinas virtuales que están protegidas mediante el host del plugin de SnapCenter para VMware vSphere registrado.
+
+.Pasos
+. En la interfaz de usuario de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales* > *Configuración* > * SnapCenter Plug-in for VMware vSphere*.
+. Seleccione el SnapCenter Plug-in for VMware vSphere para el cual desea ver los almacenes de datos y las máquinas virtuales.
+
+
+
+
+== Desproteger los almacenes de datos
+
+Es posible desproteger un almacén de datos que ya estaba protegido anteriormente. Puede anular la protección de un almacén de datos cuando desee eliminar los backups del cloud o ya no quiera hacerlo en el cloud. El almacén de datos puede volver a protegerse una vez que la desprotección se haya realizado correctamente.
+
+.Pasos
+. En la interfaz de usuario de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. Seleccione el icono Acciones image:icon-action.png["acción"] correspondiente al almacén de datos que desea desproteger y seleccione *Desproteger*.
+
+
+
+
+== Edite la instancia del plugin de SnapCenter para VMware vSphere
+
+Puede editar los detalles del host del plugin de SnapCenter para VMware vSphere en BlueXP.
+
+.Pasos
+. En la interfaz de usuario de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales* > *Configuración* > * SnapCenter Plug-in for VMware vSphere*.
+. Seleccione el icono Acciones image:icon-action.png["acción"] y seleccione *Editar*.
+. Modifique los detalles según sea necesario.
+. Seleccione *Guardar*.
+
+
+
+
+== Actualice los recursos y los backups
+
+Si desea ver los almacenes de datos y los backups más recientes que se han añadido a la aplicación, debe actualizar los recursos y los backups. De este modo, se iniciará la detección de los recursos y backups y se mostrarán los detalles más recientes.
+
+. Seleccione *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En el menú desplegable *Configuración*, seleccione * SnapCenter Plug-in for VMware vSphere*.
+. Seleccione el icono Acciones image:icon-action.png["acción"] correspondiente al SnapCenter Plug-in for VMware vSphere y seleccione *Actualizar recursos y copias de seguridad*.
+
+
+
+
+== Actualice la política o el grupo de recursos
+
+Si existe un cambio en la política o el grupo de recursos, debe actualizar la relación de protección.
+
+. Seleccione *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. Seleccione el icono Acciones image:icon-action.png["acción"] correspondiente al almacén de datos y seleccione *Actualizar protección*.
+
+
+
+
+== Cancele el registro del plugin de SnapCenter para el host de VMware vSphere
+
+Todos los almacenes de datos y máquinas virtuales asociados con el host del plugin de SnapCenter para VMware vSphere estarán desprotegidos.
+
+. Seleccione *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. En el menú desplegable *Configuración*, seleccione * SnapCenter Plug-in for VMware vSphere*.
+. Seleccione el icono Acciones image:icon-action.png["acción"] correspondiente al SnapCenter Plug-in for VMware vSphere y seleccione *Cancelar registro*.
+
+
+
+
+== Supervisar trabajos
+
+Se crean trabajos para todas las operaciones de backup y recuperación de BlueXP. Puede supervisar todos los trabajos y todas las subtareas que se realizan como parte de cada tarea.
+
+. Seleccione *Copia de seguridad y recuperación* > *Supervisión de trabajos*.
++
+Al iniciar una operación, aparece una ventana que indica que el trabajo se ha iniciado. Puede seleccionar el enlace para supervisar el trabajo.
+
+. Seleccione la tarea principal para ver las subtareas y el estado de cada una de estas subtareas.
+

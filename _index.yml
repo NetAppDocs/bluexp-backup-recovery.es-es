@@ -1,14 +1,12 @@
 ---
 indexpage:
   title: Documentación de backup y recuperación de BlueXP
-  summary: El servicio de backup y recuperación de datos de BlueXP  proporciona una
-    protección de datos eficiente, segura y rentable para los datos, bases de datos
-    y máquinas virtuales de NetApp ONTAP, tanto en las instalaciones como en el cloud.
-  keywords: bluexp, bluexp backup recovery, ontap, virtual machine, vm, on-premises,
-    data protection
-  lead: El servicio de backup y recuperación de datos de BlueXP ofrece una protección
-    de datos eficiente, segura y rentable para los datos, bases de datos y máquinas
-    virtuales de NetApp ONTAP, tanto en las instalaciones como en la nube.
+  summary: El servicio de BlueXP backup and recovery proporciona protección de datos
+    eficiente, segura y rentable para bases de datos, tanto locales como en la nube.
+  keywords: bluexp, bluexp backup recovery, ontap, on-premises, data protection, sql,
+    workloads, backup,
+  lead: El servicio de BlueXP backup and recovery proporciona protección de datos
+    eficiente, segura y rentable para bases de datos, tanto locales como en la nube.
   tiles:
   - title: Manos a la obra
     links:
@@ -16,89 +14,58 @@ indexpage:
       url: concept-backup-to-cloud.html
     - title: Novedades
       url: whats-new.html
-    - title: Configurar la licencia
-      url: task-licensing-cloud-backup.html
-    - title: Supervisar el estado de los trabajos de backup y restauración
-      url: task-monitor-backup-jobs.html
-    - title: Cree informes sobre la cobertura de protección de datos
-      url: task-report-inventory.html
-  - title: Realice backups de los datos de ONTAP en el cloud
+    - title: Requisitos previos
+      url: concept-start-prereq.html
+    - title: Configure los destinos de copia de seguridad antes de utilizar la BlueXP
+        backup and recovery
+      url: br-start-setup.html
+    - title: Configurar los ajustes de BlueXP backup and recovery
+      url: br-start-configure.html
+  - title: Administrar políticas para copias de seguridad y restauraciones
     links:
-    - title: Realice el backup de Cloud Volumes ONTAP en Amazon S3
-      url: task-backup-to-s3.html
-      flavor: aws
-    - title: Realice un backup de Cloud Volumes ONTAP en Azure Blob
-      url: task-backup-to-azure.html
-      flavor: azure
-    - title: Realice backups de Cloud Volumes ONTAP en Google Cloud
-      url: task-backup-to-gcp.html
-      flavor: gcp
-    - title: Realice backup de la ONTAP local en Amazon S3
-      url: task-backup-onprem-to-aws.html
-      flavor: aws
-    - title: Backup de ONTAP en las instalaciones a Azure Blob
-      url: task-backup-onprem-to-azure.html
-      flavor: azure
-    - title: Realice backup en las instalaciones de ONTAP en Google Cloud
-      url: task-backup-onprem-to-gcp.html
-      flavor: gcp
-    - title: Realice un backup del ONTAP en las instalaciones a ONTAP S3
-      url: task-backup-onprem-to-ontap-s3.html
-    - title: Realice backup en las instalaciones de ONTAP en StorageGRID
-      url: task-backup-onprem-private-cloud.html
-  - title: Gestionar los archivos de copia de seguridad de ONTAP
+    - title: Crear políticas para gobernar las copias de seguridad y restauraciones
+      url: br-use-policies-create.html
+    - title: Ver el estado de la protección en el Panel de Control
+      url: br-use-dashboard.html
+  - title: Proteger las cargas de trabajo de los volúmenes de ONTAP
     links:
-    - title: Gestione los backups de sus sistemas ONTAP
-      url: task-manage-backups-ontap.html
-    - title: Gestione políticas para volúmenes de ONTAP
-      url: task-create-policies-ontap.html
-    - title: Opciones de políticas de backup a objetos (protección DataLock y ransomware)
-      url: concept-cloud-backup-policies.html
-    - title: Gestione las opciones de copia de seguridad a objeto en Configuración
-        avanzada
-      url: task-manage-backup-settings-ontap.html
-    - title: Gestionar las relaciones de replicación
-      url: task-manage-backups-ontap.html#manage-the-replication-relationship-with-the-source-volume
-  - title: Realice backups de los datos de las aplicaciones en el cloud
+    - title: Descripción general de las cargas de trabajo de los volúmenes de Protect
+        ONTAP
+      url: prev-ontap-protect-overview.html
+    - title: Planifique su proceso de protección para las cargas de trabajo de volúmenes
+        de ONTAP
+      url: prev-ontap-protect-journey.html
+    - title: Administrar políticas para cargas de trabajo de volúmenes de ONTAP
+      url: prev-ontap-policy-manage.html
+    - title: Opciones de política de copia de seguridad a objeto para volúmenes ONTAP
+      url: prev-ontap-policy-object-options.html
+    - title: Restaurar cargas de trabajo de volúmenes ONTAP
+      url: prev-ontap-restore.html
+  - title: Proteger las cargas de trabajo de Microsoft SQL Server (versión preliminar)
     links:
-    - title: Realice backup de los datos de las aplicaciones en las instalaciones
-        en Amazon Web Services
-      flavor: aws
-      url: task-backup-app-data-to-aws.html
-    - title: Realice backups de los datos de las aplicaciones en las instalaciones
-        en Microsoft Azure
-      flavor: azure
-      url: task-backup-app-data-to-azure.html
-    - title: Realice backups de los datos de las aplicaciones en las instalaciones
-        en Google Cloud
-      flavor: gcp
-      url: task-backup-app-data-to-gcp.html
-    - title: Realice backups de los datos de las aplicaciones en las instalaciones
-        en StorageGRID
-      url: task-backup-app-data-to-storagegrid.html
-  - title: Haga backups de almacenes de datos en el cloud
+    - title: Descripción general de la protección de las cargas de trabajo de Microsoft
+        SQL Server
+      url: br-use-mssql-protect-overview.html
+    - title: Descubra las cargas de trabajo de Microsoft SQL Server y, opcionalmente,
+        importe recursos de SnapCenter
+      url: br-start-discover.html
+    - title: Realizar copias de seguridad de las cargas de trabajo de Microsoft SQL
+        Server
+      url: br-use-mssql-backup.html
+    - title: Restaurar cargas de trabajo de Microsoft SQL Server
+      url: br-use-mssql-restore.html
+    - title: Clonar cargas de trabajo de Microsoft SQL Server
+      url: br-use-mssql-clone.html
+  - title: Proteger las cargas de trabajo de las máquinas virtuales
     links:
-    - title: Backup de almacenes de datos en Amazon Web Services
-      flavor: aws
-      url: task-backup-vm-data-to-aws.html
-    - title: Backup de almacenes de datos en Microsoft Azure
-      flavor: azure
-      url: task-backup-vm-data-to-azure.html
-    - title: Realizar backups de almacenes de datos en Google Cloud Platform
-      flavor: gcp
-      url: task-backup-vm-data-to-gcp.html
-    - title: Realizar backup de almacenes de datos en StorageGRID
-      url: task-backup-vm-data-to-storagegrid.html
-  - title: Restaure datos del cloud
-    links:
-    - title: Restaurar datos de volúmenes ONTAP
-      url: task-restore-backups-ontap.html
-    - title: Restaure los datos de aplicaciones de Oracle en las instalaciones
-      url: task-restore-oracle-data.html
-    - title: Restaure datos de aplicaciones de SQL Server locales
-      url: task-restore-sql-data.html
-    - title: Restaurar datos de equipos virtuales
-      url: task-restore-vm-data.html
+    - title: Descripción general de las cargas de trabajo de protección de máquinas
+        virtuales
+      url: prev-vmware-protect-overview.html
+    - title: Crear una política para realizar copias de seguridad de las cargas de
+        trabajo de las máquinas virtuales
+      url: prev-vmware-policy-create.html
+    - title: Restaurar cargas de trabajo de máquinas virtuales
+      url: prev-vmware-restore.html
   - title: Blogs y comunidad
     links:
     - title: Comunidad de NetApp

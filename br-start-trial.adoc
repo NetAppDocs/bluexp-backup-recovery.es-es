@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: br-start-trial.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Inicie o finalice una prueba gratuita de BlueXP backup and recovery. La prueba gratuita está disponible durante 30 días después de contratar una suscripción de pago por uso a NetApp Intelligent Services en la plataforma de su proveedor de nube. 
+---
+= Comience una prueba gratuita de la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una prueba gratuita de 30 días de copia de seguridad y recuperación de BlueXP  está disponible si se registra para una suscripción de pago por uso en el mercado de su proveedor de nube a *Servicios inteligentes de NetApp*. La prueba gratuita comienza en el momento en que usted se suscribe a la lista del mercado. Tenga en cuenta que, si paga por la suscripción de mercado al implementar un sistema Cloud Volumes ONTAP y, a continuación, inicia la prueba gratuita de backup y recuperación de BlueXP 10 días más tarde, dispondrá de 20 días para usar la prueba gratuita.
+
+Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripción PAYGO sin interrupción. Si decide no continuar usando BlueXP backup and recovery, simplemente finalice la prueba gratuita.
+
+Puede comenzar la prueba gratuita de BlueXP backup and recovery después de iniciar sesión en BlueXP.
+
+.Pasos
+. Desde la navegación izquierda de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Si es la primera vez que inicia sesión en este servicio, ya tiene un entorno de trabajo en BlueXP, pero aún no ha comenzado la prueba gratuita, aparece la página de inicio "Bienvenido a la nueva BlueXP backup and recovery" y muestra una opción para *Iniciar prueba gratuita*.
++
+image:screen-br-landing-unified-start-trial.png["Captura de pantalla de la página de destino para la copia de seguridad y recuperación de BlueXP sin una prueba gratuita"]
+
+
+
+
+
+== El futuro
+
+Después de comenzar la prueba gratuita, podrá descubrir cargas de trabajo y crear políticas para realizar copias de seguridad de sus cargas de trabajo.
+
+Si es la primera vez que inicia sesión en este servicio, ya tiene un entorno de trabajo en BlueXP y comenzó la prueba gratuita, pero no descubrió ningún recurso, aparece la página de inicio "Bienvenido a la nueva BlueXP backup and recovery" y muestra una opción para *Descubrir recursos*.
+
+Para obtener detalles sobre cómo descubrir cargas de trabajo, consulte link:br-start-discover.html["Detectar cargas de trabajo"] .
+
+image:screen-br-landing-unified.png["Captura de pantalla de la página de destino de BlueXP Copia de seguridad y recuperación de BlueXP"]
+
+
+
+== Finalice la prueba gratuita
+
+Puedes finalizar la prueba gratuita en cualquier momento. Si lo haces, no se te cobrará por el servicio.
+
+.Pasos
+. Desde la navegación izquierda de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación*.
++
+image:screen-br-landing-unified.png["Captura de pantalla de la página de destino de BlueXP Copia de seguridad y recuperación de BlueXP"]
+
+. Desde la página de inicio "Bienvenido a la nueva BlueXP backup and recovery", seleccione *Ver detalles - prueba gratuita* o, desde la esquina superior derecha de la página, seleccione *Prueba gratuita*.
++
+image:screen-br-landing-unified-end-trial.png["Captura de pantalla de la página de inicio de BlueXP : prueba gratuita de copia de seguridad y recuperación de BlueXP"]
+
+. Seleccione *Finalizar prueba gratuita*.
+. En el cuadro de diálogo de confirmación para finalizar la prueba gratuita, escriba *Finalizar prueba*.
+. Seleccione *END*.
+

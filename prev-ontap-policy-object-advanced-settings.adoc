@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-object-advanced-settings.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Administrar las opciones de almacenamiento de copia de seguridad en objetos en la configuración avanzada de BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede cambiar la configuración de almacenamiento de backup en objetos y a nivel de clúster que estableció al activar el backup y la recuperación de BlueXP para cada sistema ONTAP mediante la página Configuración avanzada. También puede modificar algunos ajustes que se aplican como ajustes de copia de seguridad "predeterminados". Esto incluye cambiar la tasa de transferencia de los backups al almacenamiento de objetos, tanto si las copias de Snapshot históricas se exportan como archivos de backup como habilitar o deshabilitar los análisis de ransomware para un entorno de trabajo.
+
+
+NOTE: Estos ajustes solo están disponibles para el almacenamiento de backup en objetos. Ninguna de estas opciones afecta a la configuración Snapshot o de replicación.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de BlueXP backup and recovery , consulte link:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de BlueXP backup and recovery"] .
+
+====
+Puede cambiar las siguientes opciones en la página Configuración avanzada:
+
+* Cambio del ancho de banda de red asignado para cargar backups en el almacenamiento de objetos mediante la opción Tasa de transferencia máxima
+ifdef::aws[]
+
+
+endif::aws[]
+
+* Cambiar si las copias Snapshot históricas se exportan como archivos de backup y se incluyen en los archivos de backup básicos iniciales para volúmenes futuros
+* Cambiar si las copias Snapshot "anuales" se eliminan del sistema de origen
+* Habilitar o deshabilitar los análisis de ransomware para un entorno de trabajo, incluidos los análisis programados
+
+
+
+
+== Ver la configuración de backup en el nivel del clúster
+
+Es posible ver la configuración de backup a nivel de clúster de cada entorno de trabajo.
+
+.Pasos
+. En el menú BlueXP, seleccione *Protección > copia de seguridad y recuperación*.
+. En la ficha *Volumes*, seleccione *Configuración de copia de seguridad*.
++
+image:screenshot_backup_settings_button.png["Una captura de pantalla que muestra el botón Configuración de copia de seguridad para ver cómo se configura copia de seguridad para todos los entornos de trabajo."]
+
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el entorno de trabajo y seleccione *Configuración avanzada*.
++
+image:screenshot_backup_advanced_settings_button.png["Captura de pantalla que muestra el botón Configuración avanzada de la página Configuración de copia de seguridad."]
+
++
+La página _Advanced Settings_ muestra la configuración actual de ese entorno de trabajo.
+
++
+image:screenshot_backup_advanced_settings_page2.png["Captura de pantalla que muestra los valores de copia de seguridad de la configuración avanzada para un entorno de trabajo específico."]
+
+. Amplíe la opción y realice el cambio.
+
+
+Todas las operaciones de backup después del cambio utilizarán los nuevos valores.
+
+Tenga en cuenta que algunas opciones no están disponibles según la versión de ONTAP en el clúster de origen y basadas en el destino del proveedor de cloud en el que residen los backups.
+
+
+
+== Cambie el ancho de banda de red disponible para cargar backups en el almacenamiento de objetos
+
+Al activar el backup y la recuperación de BlueXP en un entorno de trabajo, de forma predeterminada, ONTAP puede usar una cantidad ilimitada de ancho de banda para transferir los datos de backup de los volúmenes del entorno de trabajo al almacenamiento de objetos. Si observa que el tráfico de backup afecta a las cargas de trabajo de usuario normales, puede reducir la cantidad de ancho de banda de red que se usa durante la transferencia mediante la opción Tasa de transferencia máxima de la página Advanced Settings.
+
+.Pasos
+. En la ficha *Volumes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el entorno de trabajo y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Tasa de transferencia máxima*.
++
+image:screenshot_backup_edit_transfer_rate.png["Captura de pantalla de la entrada máxima velocidad de transferencia en la página Configuración avanzada."]
+
+. Elija un valor entre 1 y 1.000 Mbps como velocidad de transferencia máxima.
+. Seleccione el botón de opción *limitado* e introduzca el ancho de banda máximo que puede utilizarse, o seleccione *ilimitado* para indicar que no hay límite.
+. Seleccione *aplicar*.
+
+
+Esta configuración no afecta al ancho de banda asignado a ninguna otra relación de replicación que se pueda configurar para volúmenes en el entorno de trabajo.
+
+ifdef::aws[]
+
+endif::aws[]
+
+
+
+== Cambiar si las copias de instantáneas históricas se exportan como archivos de respaldo
+
+Si hay copias de instantáneas locales para volúmenes que coinciden con la etiqueta de programación de respaldo que está utilizando en este entorno de trabajo (por ejemplo, diaria, semanal, etc.), puede exportar esas instantáneas históricas al almacenamiento de objetos como archivos de respaldo. Esto permite inicializar backups en el cloud al mover copias de Snapshot más antiguas a la copia de backup de referencia.
+
+Tenga en cuenta que esta opción solo se aplica a nuevos archivos de backup de nuevos volúmenes de lectura/escritura y no es compatible con volúmenes de protección de datos (DP).
+
+.Pasos
+. En la ficha *Volumes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el entorno de trabajo y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Exportar copias snapshot existentes*.
++
+image:screenshot_backup_edit_export_snapshots.png["Captura de pantalla de la entrada Exportar copias Snapshot existentes en la página Configuración avanzada."]
+
+. Seleccione si desea que se exporten las copias de Snapshot existentes.
+. Seleccione *aplicar*.
+
+
+
+
+== Cambie si las instantáneas "anuales" se eliminan del sistema de origen
+
+Cuando se selecciona la etiqueta de backup "anual" para una política de backup para cualquiera de los volúmenes, la copia de Snapshot que se crea es muy grande. De forma predeterminada, estas copias de Snapshot anuales se eliminan automáticamente del sistema de origen después de transferirse al almacenamiento de objetos. Puede cambiar este comportamiento predeterminado en la sección Eliminación anual de Snapshot.
+
+.Pasos
+. En la ficha *Volumes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el entorno de trabajo y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Eliminación de instantánea anual*.
++
+image:screenshot_backup_edit_yearly_snap_delete.png["Captura de pantalla de la entrada copias Snapshot anuales en la página Configuración avanzada."]
+
+. Seleccione *Desactivado* para conservar las instantáneas anuales en el sistema de origen.
+. Seleccione *aplicar*.
+
+
+
+
+== Habilitar o deshabilitar los análisis de ransomware
+
+Los análisis de protección contra ransomware están habilitados de forma predeterminada. La configuración predeterminada para la frecuencia de exploración es de 7 días. El análisis solo se realiza en la última instantánea. Puede habilitar o deshabilitar el análisis de ransomware en la última instantánea mediante la opción de la página Configuración avanzada. Si la activa, las exploraciones se realizan cada 7 días de forma predeterminada.
+
+Para obtener detalles sobre las opciones de DataLock y protección contra ransomware, consulte link:prev-ontap-policy-object-options.html["Opciones de bloqueo de datos y protección frente a ransomware"] .
+
+Puede cambiar esa programación a días o semanas o deshabilitarla, lo que ahorrará costes.
+
+
+TIP: Habilitar los análisis de ransomware incurrirá en cargos adicionales en función del proveedor de cloud.
+
+Los análisis de ransomware programados se ejecutan solo en la última copia instantánea.
+
+Si se deshabilitan los análisis programados de ransomware, puede seguir ejecutando análisis bajo demanda y seguir realizando el análisis durante una operación de restauración.
+
+Referirse a link:prev-ontap-policy-manage.html["Gestionar políticas"] para obtener detalles sobre la gestión de políticas que implementan la detección de ransomware.
+
+.Pasos
+. En la ficha *Volumes*, seleccione *Configuración de copia de seguridad*.
+. Desde la página _Configuración de copia de seguridad_, haga clic en image:icon-actions-horizontal.gif["Icono más"] para el entorno de trabajo y seleccione *Configuración avanzada*.
+. En la página Configuración avanzada, expanda la sección *Ransomware scan*.
+. Habilitar o deshabilitar el *análisis de ransomware*.
+. Seleccione *scheduled ransomware scan*.
+. De manera opcional, cambie el análisis predeterminado de cada semana a días o semanas.
+. Establezca la frecuencia en días o semanas que debe ejecutarse el análisis.
+. Seleccione *aplicar*.
+

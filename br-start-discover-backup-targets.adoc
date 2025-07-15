@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-backup-targets.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Microsoft SQL Server database, 
+summary: 'Siga estos pasos para descubrir destinos de copia de seguridad externos en BlueXP backup and recovery. Estos destinos pueden incluir Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage y StorageGRID.' 
+---
+= Descubra los destinos de copia de seguridad externos en la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Complete unos pocos pasos para descubrir o agregar manualmente destinos de respaldo externos en la BlueXP backup and recovery.
+
+
+
+== Descubra un destino de respaldo
+
+Antes de utilizar la BlueXP backup and recovery, debe configurar sus destinos de copia de seguridad de Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID.
+
+Puede descubrir estos objetivos automáticamente o agregarlos manualmente.
+
+Proporcione las credenciales necesarias para acceder al sistema de la cuenta de almacenamiento. Estas credenciales se utilizan para identificar las cargas de trabajo que desea respaldar.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione la pestaña *Destinos de copia de seguridad externos*.
++
+image:screen-br-inventory-offsite-backup-targets.png["Pestaña de objetivos de copia de seguridad externos"]
+
+. Seleccione *Descubrir destino de copia de seguridad*.
+. Seleccione uno de los tipos de destino de copia de seguridad: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
+. Ingrese la información. Esta varía según el tipo de destino de copia de seguridad seleccionado.
++
+** Para AWS:
++
+*** *Nombre de la credencial*: ingrese el nombre de la credencial de AWS.
+*** *Tecla de acceso*: Ingrese el secreto de AWS.
+*** *Clave secreta*: Ingrese la clave secreta de AWS.
+
+
+** Para Azure:
++
+*** *Nombre de la credencial*: ingrese el nombre de la credencial de Azure Blob Storage.
+*** *Secreto del cliente*: ingrese el secreto del cliente de Azure Blob Storage.
+*** *ID de aplicación (cliente)*: seleccione el ID de la aplicación de Azure Blob Storage.
+*** *ID de inquilino del directorio*: ingrese el ID de inquilino de Azure Blob Storage.
+
+
+** Para StorageGRID:
++
+*** *Nombre de la credencial*: Ingrese el nombre de la credencial de StorageGRID .
+*** *FQDN del nodo de puerta de enlace*: ingrese un nombre FQDN para StorageGRID.
+*** *Puerto*: Ingrese el número de puerto para StorageGRID.
+*** *Tecla de acceso*: Ingrese la clave de acceso de StorageGRID S3.
+*** *Clave secreta*: Ingrese la clave secreta de StorageGRID S3.
+
+
+** Para ONTAP S3:
++
+*** *Nombre de la credencial*: ingrese el nombre de la credencial de ONTAP S3.
+*** *FQDN del nodo de puerta de enlace*: ingrese un nombre FQDN para ONTAP S3.
+*** *Puerto*: Ingrese el número de puerto para ONTAP S3.
+*** *Tecla de acceso*: Ingrese la clave de acceso de ONTAP S3.
+*** *Clave secreta*: Ingrese la clave secreta de ONTAP S3.
+
+
+
+
+. Seleccione *Discover*.
+
+
+
+
+== Agregar un depósito para un objetivo de respaldo
+
+En lugar de que la BlueXP backup and recovery descubra los depósitos automáticamente, puede agregar manualmente un depósito a un destino de copia de seguridad externo.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione *Destinos de copia de seguridad externos*.
+. Seleccione el objetivo y a la derecha, seleccione *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Agregar depósito*.
+. Ingrese la información del depósito. Esta información varía según el tipo de destino de copia de seguridad seleccionado.
++
+** Para AWS:
++
+*** *Nombre del depósito*: Ingrese el nombre del depósito S3.
+*** *Cuenta de AWS*: ingrese el nombre de la cuenta de AWS.
+*** *Región del depósito*: Ingrese la región de AWS para el depósito.
+*** *Habilitar Bloqueo de Objetos S3*: Seleccione esta opción para habilitar el Bloqueo de Objetos S3 para el bucket. El Bloqueo de Objetos S3 impide que los objetos se eliminen o sobrescriban durante un periodo de retención específico, lo que proporciona una capa adicional de protección de datos. Puede habilitar esta opción solo al crear un bucket y no puede desactivarla posteriormente.
++
+**** *Modo de gobernanza*: Seleccione esta opción para habilitar el modo de gobernanza para el bucket S3 Object Lock. Este modo le permite proteger los objetos contra la eliminación o sobrescritura por parte de la mayoría de los usuarios, pero permite que ciertos usuarios modifiquen la configuración de retención.
+**** *Modo de cumplimiento*: Seleccione esta opción para habilitar el modo de cumplimiento para el contenedor S3 Object Lock. Este modo impide que cualquier usuario, incluido el usuario raíz, modifique la configuración de retención o elimine objetos hasta que expire el período de retención.
+
+
+*** Control de versiones: Seleccione esta opción para habilitar el control de versiones del bucket S3. El control de versiones permite mantener múltiples versiones de los objetos en el bucket, lo cual puede ser útil para realizar copias de seguridad y recuperar datos.
+*** *Etiquetas*: Seleccione las etiquetas para el bucket de S3. Las etiquetas son pares clave-valor que permiten organizar y administrar los recursos de S3.
+*** Cifrado: Seleccione el tipo de cifrado para el bucket S3. Las opciones son claves administradas por AWS S3 o claves de AWS Key Management Service. Si selecciona claves de AWS Key Management Service, debe proporcionar el ID de la clave.
+
+
+** Para Azure:
++
+*** *Suscripción*: seleccione el nombre del contenedor de Azure Blob Storage.
+*** *Grupo de recursos*: seleccione el nombre del grupo de recursos de Azure.
+*** *Detalles de la instancia*:
++
+**** *Nombre de la cuenta de almacenamiento*: ingrese el nombre del contenedor de Azure Blob Storage.
+**** *Región de Azure*: ingrese la región de Azure para el contenedor.
+**** *Tipo de rendimiento*: seleccione el tipo de rendimiento estándar o premium para el contenedor de Azure Blob Storage indicando el nivel de rendimiento requerido.
+**** Cifrado: Seleccione el tipo de cifrado para el contenedor de Azure Blob Storage. Las opciones son claves administradas por Microsoft o claves administradas por el cliente. Si selecciona claves administradas por el cliente, debe proporcionar el nombre del almacén de claves y el nombre de la clave.
+
+
+
+
+** Para StorageGRID:
++
+*** *Nombre del destino de la copia de seguridad*: seleccione el nombre del depósito StorageGRID .
+*** *Nombre del depósito*: Ingrese el nombre del depósito StorageGRID .
+*** *Región*: Ingrese la región StorageGRID para el depósito.
+*** *Habilitar control de versiones*: Seleccione esta opción para habilitar el control de versiones del bucket de StorageGRID . El control de versiones le permite mantener varias versiones de los objetos en el bucket, lo cual puede ser útil para fines de copia de seguridad y recuperación.
+*** Bloqueo de objetos: Seleccione esta opción para habilitar el bloqueo de objetos en el bucket de StorageGRID . Este bloqueo impide que los objetos se eliminen o sobrescriban durante un periodo de retención específico, lo que proporciona una capa adicional de protección de datos. Solo puede habilitarlo al crear un bucket y no puede desactivarlo posteriormente.
+*** *Capacidad*: Introduzca la capacidad del depósito de StorageGRID . Esta es la cantidad máxima de datos que se pueden almacenar en el depósito.
+
+
+** Para ONTAP S3:
++
+*** *Nombre del destino de respaldo*: seleccione el nombre del depósito ONTAP S3.
+*** *Nombre del destino del depósito*: ingrese el nombre del depósito ONTAP S3.
+*** *Capacidad*: Ingrese la capacidad del bucket de ONTAP S3. Esta es la cantidad máxima de datos que se pueden almacenar en el bucket.
+*** *Habilitar control de versiones*: Seleccione esta opción para habilitar el control de versiones del bucket de ONTAP S3. El control de versiones le permite mantener múltiples versiones de los objetos en el bucket, lo cual puede ser útil para fines de copia de seguridad y recuperación.
+*** Bloqueo de objetos: Seleccione esta opción para habilitar el bloqueo de objetos en el bucket de ONTAP S3. Este bloqueo impide que los objetos se eliminen o sobrescriban durante un periodo de retención específico, lo que proporciona una capa adicional de protección de datos. Puede habilitarlo solo al crear un bucket y no puede desactivarlo posteriormente.
+
+
+
+
+. Seleccione *Agregar*.
+
+
+
+
+== Cambiar las credenciales de un destino de respaldo
+
+Introduzca las credenciales necesarias para acceder al destino de respaldo.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
+. Seleccione *Destinos de copia de seguridad externos*.
+. Seleccione el objetivo y a la derecha, seleccione *Acciones* image:icon-action.png["El icono Actions"] icono y seleccione *Cambiar credenciales*.
+. Introduzca las nuevas credenciales para el destino de copia de seguridad. La información varía según el tipo de destino de copia de seguridad seleccionado.
+. Seleccione *Listo*.
+

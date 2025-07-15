@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-policy-create.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Cree una política para realizar copias de seguridad de almacenes de datos en la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede crear una política o utilizar una de las siguientes políticas predefinidas que están disponibles en la copia de seguridad y recuperación de BlueXP.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de BlueXP backup and recovery , consulte link:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de BlueXP backup and recovery"] .
+
+====
+.Antes de empezar
+* Debe crear políticas si no desea editar las políticas predefinidas.
+* Para mover backups del almacén de objetos al almacenamiento de archivado, debe ejecutar ONTAP 9.10.1 o una versión posterior y Amazon Web Services o Microsoft Azure debe ser el proveedor de cloud.
+* Debe configurar el nivel de acceso de archivado para cada proveedor de cloud.
+
+
+.Acerca de esta tarea
+BlueXP ofrece las siguientes políticas predefinidas:
+
+|===
+| Nombre de la directiva | Etiqueta | Valor de retención 
+
+
+ a| 
+LTR diario de 1 años (retención a largo plazo)
+ a| 
+Todos los días
+ a| 
+366
+
+
+
+ a| 
+5 años diarios
+ a| 
+Todos los días
+ a| 
+1830
+
+
+
+ a| 
+7 años de SERVICIO semanal
+ a| 
+Semanal
+ a| 
+370
+
+
+
+ a| 
+10 años cada mes LTR
+ a| 
+Mensual
+ a| 
+120
+
+|===
+.Pasos
+. En la página Virtual Machines, en la lista desplegable Settings, seleccione *Policies*.
+. Seleccione *Crear política*.
+. En la sección Policy Details, especifique el nombre de la política.
+. En la sección Retention, seleccione uno de los tipos de retención y especifique la cantidad de backups que desea retener.
+. Seleccione Primary o Secondary como origen de almacenamiento de backup.
+. (Opcional) Si desea mover backups del almacén de objetos al almacenamiento de archivado después de un determinado número de días para la optimización de costes, seleccione la casilla de verificación *Tier backups to Archival* e introduzca el número de días después de los cuales se debe archivar la copia de seguridad.
+. Seleccione *Crear*.
++
+
+NOTE: No es posible editar ni eliminar una política, que está asociada con un almacén de datos.
+
+

@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-backup-storagegrid.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Realice copias de seguridad de almacenes de datos en StorageGRID con BlueXP Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puede realizar una copia de seguridad de uno o más almacenes de datos en StorageGRID integrando el complemento SnapCenter para el host VMware vSphere con la copia de seguridad y recuperación de BlueXP. Esto ayudará a los administradores de VM a realizar backups y archivar datos de forma rápida y sencilla para lograr la eficiencia del almacenamiento, así como a acelerar la transición al cloud.
+
+[]
+====
+*NOTA* Para cambiar hacia y desde las cargas de trabajo de BlueXP backup and recovery , consulte link:br-start-switch-ui.html["Cambiar a diferentes cargas de trabajo de BlueXP backup and recovery"] .
+
+====
+.Antes de empezar
+Asegúrese de haber cumplido con todos los link:prev-vmware-prereqs.html["Requisitos de protección de máquinas virtuales"] antes de realizar copias de seguridad de los almacenes de datos en la nube.
+
+.Pasos
+. En la interfaz de usuario de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación* > *Máquinas virtuales*.
+. Seleccionar image:icon-action.png["acción"] correspondiente al almacén de datos que desea respaldar y haga clic en *Activar copia de seguridad*.
+. En la página Asignar política, seleccione la política y seleccione *Siguiente*.
+. Agregue el entorno de trabajo.
++
+Configura el LIF de gestión de clústeres que quieras que detecte BlueXP. Después de añadir el entorno de trabajo para uno de los almacenes de datos, se puede reutilizar para todos los demás almacenes de datos que residen en el mismo clúster de ONTAP.
+
++
+.. Seleccione *Agregar entorno de trabajo* correspondiente al SVM.
+.. En el asistente Agregar entorno de trabajo:
++
+... Especifique la dirección IP de la LIF de gestión del clúster.
+... Especifique las credenciales del usuario del clúster de ONTAP.
+
+
+.. Seleccione *Agregar entorno de trabajo*.
+
+
+. Seleccione *StorageGRID*.
++
+.. Especifique la IP del servidor de almacenamiento.
+.. Seleccione la clave de acceso y la clave secreta.
+
+
+. Revise los detalles y seleccione *Activar copia de seguridad*.
+

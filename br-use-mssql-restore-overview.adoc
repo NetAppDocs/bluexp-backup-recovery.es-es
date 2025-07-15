@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-restore-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Las copias de seguridad de sus datos se pueden restaurar desde las ubicaciones donde las creó, lo que incluye instantáneas, replicaciones y copias de seguridad en el almacenamiento de objetos. Revise las ubicaciones de restauración, los puntos de restauración y los tipos de recursos para restaurar. 
+---
+= Restaurar la descripción general de las cargas de trabajo de Microsoft SQL mediante la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Las copias de seguridad de sus datos de Microsoft SQL Server de BlueXP backup and recovery se pueden restaurar desde las ubicaciones donde las movió: instantáneas, replicaciones o copias de seguridad en el almacenamiento de objetos. Puede restaurar una carga de trabajo al entorno de trabajo original, a un entorno de trabajo diferente que use la misma cuenta en la nube o a un sistema ONTAP local. Revise las ubicaciones de restauración, los puntos de restauración y los tipos de recursos que desea restaurar.
+
+.Restaurar desde estas ubicaciones
+Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
+
+* Restaurar desde una ubicación principal
+* Restaurar desde un recurso replicado
+* Restaurar desde una copia de seguridad del almacén de objetos
+
+
+.Restaurar a estos puntos
+Puede restaurar datos a la última instantánea o a estos puntos:
+
+* Restaurar desde instantáneas
+* Restaurar a un punto específico en el tiempo. Esto es útil si conoce el nombre y la ubicación del archivo, así como la fecha de su última actualización.
+* Restaurar a la última copia de seguridad
+
+
+
+
+== El futuro
+
+Para obtener detalles sobre cómo restaurar cargas de trabajo, consulte link:br-use-mssql-restore.html["Restaurar cargas de trabajo"] .

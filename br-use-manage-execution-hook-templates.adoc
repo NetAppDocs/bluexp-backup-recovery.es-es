@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-execution-hook-templates.html 
+keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
+summary: La BlueXP backup and recovery le permite administrar los ganchos de ejecución para tomar medidas antes o después de las operaciones de protección de aplicaciones. 
+---
+= Administrar plantillas de gancho de ejecución de BlueXP backup and recovery para cargas de trabajo de Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Un gancho de ejecución es una acción personalizada que se puede configurar para ejecutarse junto con una operación de protección de datos de una aplicación de Kubernetes administrada. Por ejemplo, si dispone de una aplicación de base de datos, puede utilizar un enlace de ejecución para pausar todas las transacciones de la base de datos antes de realizar una instantánea y reanudar las transacciones una vez completada la instantánea. De este modo se garantiza la creación de instantáneas coherentes con la aplicación. Al crear una plantilla de gancho de ejecución, se puede especificar el tipo de gancho, el script que se ejecutará y los filtros que determinan a qué contenedores se aplica. Posteriormente, se puede usar la plantilla para asociar ganchos de ejecución con las aplicaciones.
+
+.Rol BlueXP requerido
+Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso a BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+
+
+== Tipos de enlaces de ejecución
+
+La BlueXP backup and recovery admite los siguientes tipos de ganchos de ejecución, según cuándo se puedan ejecutar:
+
+* Copia previa de Snapshot
+* Possnapshot
+* Previo al backup
+* Después del backup
+* Después de la restauración
+
+
+
+
+=== Orden de ejecución
+
+Cuando se ejecuta una operación de protección de datos, los eventos de enlace de ejecución tienen lugar en el siguiente orden:
+
+. Los ganchos de ejecución de preoperación personalizados aplicables se ejecutan en los contenedores adecuados. Puede crear y ejecutar tantos ganchos de prefuncionamiento personalizados como necesite, pero el orden de ejecución de estos enlaces antes de la operación no está garantizado ni configurable.
+. Si corresponde, se congelan los sistemas de archivos.
+. Se realiza la operación de protección de datos.
+. Los sistemas de archivos congelados se descongelan, si corresponde.
+. Los enlaces de ejecución de post-operación personalizados aplicables se ejecutan en los contenedores adecuados. Puede crear y ejecutar tantos enlaces de post-operación personalizados como necesite, pero el orden de ejecución de estos enlaces después de la operación no está garantizado ni configurable.
+
+
+Si crea varios enlaces de ejecución del mismo tipo (por ejemplo, presnapshot), no se garantiza el orden de ejecución de esos enlaces. Sin embargo, el orden de ejecución de ganchos de diferentes tipos está garantizado. Por ejemplo, el siguiente es el orden de ejecución de una configuración que tiene todos los diferentes tipos de ganchos:
+
+. Ganchos presnapshot ejecutados
+. Ganchos posteriores a la instantánea ejecutados
+. Ganchos de precopia de seguridad ejecutados
+. Se han ejecutado los enlaces posteriores a la copia de seguridad
+
+
+
+NOTE: El ejemplo de orden anterior solo se aplica cuando se ejecuta un backup que no utiliza una snapshot existente.
+
+
+NOTE: Siempre debe probar sus secuencias de comandos de ejecución de enlace antes de habilitarlas en un entorno de producción. Puede utilizar el comando 'kubectl exec' para probar cómodamente los scripts. Después de habilitar los enlaces de ejecución en un entorno de producción, pruebe las copias Snapshot y backups resultantes para garantizar que sean coherentes. Para ello, puede clonar la aplicación en un espacio de nombres temporal, restaurar la instantánea o la copia de seguridad y, a continuación, probar la aplicación.
+
+
+NOTE: Si un gancho de ejecución previo a la instantánea agrega, cambia o elimina recursos de Kubernetes, esos cambios se incluyen en la instantánea o la copia de seguridad y en cualquier operación de restauración posterior.
+
+
+
+== Notas importantes sobre los enlaces de ejecución personalizados
+
+Tenga en cuenta lo siguiente al planificar enlaces de ejecución para sus aplicaciones.
+
+* Un enlace de ejecución debe utilizar una secuencia de comandos para realizar acciones. Muchos enlaces de ejecución pueden hacer referencia al mismo script.
+* Los ganchos de ejecución deben escribirse en el formato de scripts de shell ejecutables.
+* El tamaño del script está limitado a 96 KB.
+* Las configuraciones de los ganchos de ejecución y cualquier criterio coincidente se utilizan para determinar qué ganchos son aplicables a una operación de instantánea, copia de seguridad o restauración.
+
+
+
+NOTE: Debido a que los enlaces de ejecución a menudo reducen o desactivan por completo la funcionalidad de la aplicación con la que se ejecutan, siempre debe intentar minimizar el tiempo que tardan los enlaces de ejecución personalizados. Si inicia una operación de copia de seguridad o de instantánea con los enlaces de ejecución asociados pero, a continuación, la cancela, los ganchos pueden ejecutarse si ya se ha iniciado la operación de copia de seguridad o de Snapshot. Esto significa que la lógica utilizada en un enlace de ejecución posterior a la copia de seguridad no puede suponer que la copia de seguridad se ha completado.
+
+
+
+== Filtros de gancho de ejecución
+
+Al agregar o editar un enlace de ejecución para una aplicación, puede agregar filtros al enlace de ejecución para gestionar qué contenedores coincidirá el enlace. Los filtros son útiles para aplicaciones que usan la misma imagen de contenedor en todos los contenedores, pero pueden usar cada imagen para un propósito diferente (como Elasticsearch). Los filtros le permiten crear escenarios donde los enlaces de ejecución se ejecutan en algunos, pero no necesariamente todos los contenedores idénticos. Si crea varios filtros para un único enlace de ejecución, se combinan con un operador y lógico. Puede tener hasta 10 filtros activos por gancho de ejecución.
+
+Cada filtro que agregue a un enlace de ejecución utiliza una expresión regular para hacer coincidir los contenedores del clúster. Cuando un gancho coincide con un contenedor, el gancho ejecutará su script asociado en ese contenedor. Las expresiones regulares para los filtros utilizan la sintaxis expresión regular 2 (RE2), que no admite la creación de un filtro que excluye contenedores de la lista de coincidencias. Para obtener información sobre la sintaxis que admite la BlueXP backup and recovery para las expresiones regulares en los filtros de gancho de ejecución, consulte  https://github.com/google/re2/wiki/Syntax["Soporte de sintaxis de expresión regular 2 (RE2)"^] .
+
+
+NOTE: Si se agrega un filtro de espacio de nombres a un enlace de ejecución que se ejecuta después de una operación de restauración o clonado y el origen y destino de la restauración o clonado se encuentran en diferentes espacios de nombres, el filtro de espacio de nombres solo se aplica al espacio de nombres de destino.
+
+
+
+== Ejemplos de gancho de ejecución
+
+Visite el https://github.com/NetApp/Verda["Proyecto Verda GitHub de NetApp"] para descargar ganchos de ejecución reales para aplicaciones populares como Apache Cassandra y Elasticsearch. También puede ver ejemplos y obtener ideas para estructurar sus propios enlaces de ejecución personalizados.
+
+
+
+== Crear una plantilla de gancho de ejecución
+
+Puede crear una plantilla de gancho de ejecución personalizada que pueda usar para realizar acciones antes o después de una operación de protección de datos en una aplicación.
+
+.Pasos
+. En BlueXP, vaya a *Protección* > *Copia de seguridad y recuperación*.
+. Seleccione la pestaña *Ajustes*.
+. Expande la sección *Plantilla de gancho de ejecución*.
+. Seleccione *Crear plantilla de gancho de ejecución*.
+. Introduzca un nombre para el gancho de ejecución.
+. Elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecutará una vez finalizada la operación.
+. En el cuadro de texto *Script*, introduzca el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución. Opcionalmente, puede seleccionar *Subir script* para subir un archivo de script.
+. Seleccione *Crear*.
++
+La plantilla se crea y aparece en la lista de plantillas en la sección *Plantilla de gancho de ejecución*.
+
+

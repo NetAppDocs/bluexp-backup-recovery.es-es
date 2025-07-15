@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: El servicio de BlueXP backup and recovery primero debe descubrir las cargas de trabajo para que usted pueda utilizar el servicio. 
+---
+= Descubra las cargas de trabajo de Microsoft SQL Server y, opcionalmente, impórtelas desde SnapCenter en la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+El servicio de BlueXP backup and recovery debe detectar primero las cargas de trabajo de Microsoft SQL Server para poder utilizarlo. Opcionalmente, puede importar datos y políticas de copia de seguridad desde SnapCenter si ya lo tiene instalado.
+
+*Rol requerido de BlueXP * Superadministrador de Copia de Seguridad y Recuperación. Más información link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+
+
+== Descubra las cargas de trabajo de Microsoft SQL Server y, opcionalmente, importe recursos de SnapCenter
+
+Durante el descubrimiento, la BlueXP backup and recovery analiza las instancias y bases de datos de Microsoft SQL Server en entornos de trabajo dentro de su organización.
+
+BlueXP backup and recovery evalúa las aplicaciones de Microsoft SQL Server. El servicio evalúa el nivel de protección existente, incluyendo las políticas de protección de copias de seguridad, las instantáneas y las opciones de copia de seguridad y recuperación.
+
+El descubrimiento se produce de las siguientes maneras:
+
+* Si ya tiene SnapCenter, importe los recursos de SnapCenter en la BlueXP backup and recovery mediante la interfaz de usuario de BlueXP backup and recovery .
++
+
+NOTE: Si ya tiene SnapCenter, asegúrese de cumplir con los requisitos previos antes de importar desde SnapCenter. Por ejemplo, debe crear entornos de trabajo en BlueXP Canvas para todo el almacenamiento local del clúster de SnapCenter antes de importar desde SnapCenter. Consulte link:concept-start-prereq-snapcenter-import.html["Requisitos previos para importar recursos desde SnapCenter"].
+
+* Si aún no tiene SnapCenter, aún puede descubrir cargas de trabajo dentro de sus entornos de trabajo agregando un vCenter manualmente y realizando el descubrimiento.
+
+
+
+
+=== Si SnapCenter ya está instalado, importe los recursos de SnapCenter en la BlueXP backup and recovery
+
+Si ya tiene instalado SnapCenter , importe los recursos de SnapCenter a la BlueXP backup and recovery siguiendo estos pasos. El servicio BlueXP detecta recursos, hosts, credenciales y programaciones de SnapCenter; no es necesario volver a crear toda esa información.
+
+Puedes hacerlo de las siguientes maneras:
+
+* Durante el descubrimiento, seleccione una opción para importar recursos desde SnapCenter.
+* Después del descubrimiento, desde la página Inventario, seleccione una opción para importar recursos de SnapCenter .
+* Después del descubrimiento, en el menú Configuración, seleccione una opción para importar recursos de SnapCenter . Para obtener más información, consulte link:br-start-configure.html["Configurar la BlueXP backup and recovery"].
+
+
+Este es un proceso de dos partes:
+
+* Importar recursos de host y aplicaciones de SnapCenter Server
+* Administrar recursos de host de SnapCenter seleccionados
+
+
+
+
+==== Importar recursos de host y aplicaciones de SnapCenter Server
+
+Este primer paso importa los recursos del host desde SnapCenter y los muestra en la página Inventario de BlueXP backup and recovery . En ese momento, BlueXP backup and recovery aún no administra los recursos.
+
+
+TIP: Tras importar los recursos del host de SnapCenter , BlueXP backup and recovery no asume automáticamente la gestión de la protección. Para ello, debe seleccionar explícitamente la administración de los recursos importados en BlueXP backup and recovery. Esto garantiza que esté listo para que BlueXP backup and recovery realice una copia de seguridad de esos recursos.
+
+.Pasos
+. Desde la navegación izquierda de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Desde el menú superior, seleccione *Inventario*.
++
+image:screen-br-inventory.png["Captura de pantalla de inventario para la BlueXP backup and recovery"]
+
+. Desde el menú superior, seleccione *Descubrir recursos*.
++
+image:../media/screen-br-discover-workloads.png["Captura de pantalla de Descubrir recursos de carga de trabajo"]
+
+. Desde la página de recursos de carga de trabajo de Discover de BlueXP backup and recovery , seleccione *Importar desde SnapCenter*.
++
+image:../media/screen-br-discover-import-snapcenter.png["Opción de configuración para importar recursos del servidor SnapCenter"]
+
+. Ingrese * credenciales de la aplicación SnapCenter *:
++
+.. * FQDN o dirección IP de SnapCenter *: ingrese el FQDN o la dirección IP de la aplicación SnapCenter .
+.. *Puerto*: Ingrese el número de puerto para el servidor SnapCenter .
+.. *Nombre de usuario* y *Contraseña*: Ingrese el nombre de usuario y la contraseña para el servidor SnapCenter .
+.. *Conector*: seleccione el conector BlueXP para SnapCenter.
+
+
+. Ingrese * credenciales del host del servidor SnapCenter *:
++
+.. *Credenciales existentes*: Si selecciona esta opción, puede usar las credenciales existentes que ya haya agregado. Elija el nombre de las credenciales.
+.. *Agregar nuevas credenciales*: Si no tiene credenciales de host de SnapCenter , puede agregar nuevas. Ingrese el nombre de las credenciales, el modo de autenticación, el nombre de usuario y la contraseña.
+
+
+. Seleccione *Importar* para validar sus entradas y registrar el servidor SnapCenter .
++
+
+NOTE: Si el servidor SnapCenter ya está registrado, puede actualizar los detalles de registro existentes.
+
+
+
+.Resultado
+La página Inventario muestra los recursos de SnapCenter importados que incluyen hosts, instancias y bases de datos de MS SQL.
+
+image:../media/screen-br-inventory.png["Página de inventario que muestra los recursos de SnapCenter importados"]
+
+Para ver los detalles de los recursos de SnapCenter importados, seleccione la opción *Ver detalles* en el menú Acciones. image:../media/screen-br-inventory-details.png["Página de inventario que muestra los recursos de SnapCenter importados y los detalles"]
+
+
+
+==== Administrar los recursos del host de SnapCenter
+
+Después de importar los recursos de SnapCenter , administre esos recursos del host en BlueXP backup and recovery. Una vez que seleccione esta opción, BlueXP backup and recovery podrá realizar copias de seguridad y recuperar los recursos importados de SnapCenter. Ya no tendrá que administrar esos recursos en SnapCenter Server.
+
+.Pasos
+. Después de importar los recursos de SnapCenter , en el menú superior, seleccione *Inventario*.
+. Desde la página Inventario, seleccione el host de SnapCenter importado que desea que BlueXP backup and recovery de ahora en adelante.
++
+image:../media/screen-br-inventory.png["Página de inventario que muestra los recursos de SnapCenter importados"]
+
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Ver detalles* para mostrar los detalles de la carga de trabajo.
++
+image:../media/screen-br-inventory-manage-option.png["Página de inventario que muestra los recursos de SnapCenter importados y la opción Administrar"]
+
+. Desde la página Inventario > carga de trabajo, seleccione el ícono Acciones image:../media/icon-action.png["Opción de acciones"] > *Administrar* para mostrar la página Administrar host.
+. Seleccione *gestionar*.
+. En la página Administrar host, seleccione utilizar un vCenter existente o agregar un nuevo vCenter.
+. Seleccione *gestionar*.
++
+La página Inventario muestra los recursos de SnapCenter recientemente administrados.
+
+
+
+Opcionalmente, puede crear un informe de los recursos administrados seleccionando la opción *Generar informes* del menú Acciones.
+
+
+
+==== Importar recursos de SnapCenter después del descubrimiento desde la página Inventario
+
+Si ya ha descubierto recursos, puede importar recursos de SnapCenter desde la página Inventario.
+
+.Pasos
+. Desde la navegación izquierda de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación*.
+. Desde el menú superior, seleccione *Inventario*.
++
+image:../media/screen-br-inventory.png["Página de inventario"]
+
+. Desde la página Inventario, seleccione *Importar recursos de SnapCenter *.
+. Siga los pasos de la sección *Importar recursos de SnapCenter * anterior para importar recursos de SnapCenter .
+
+
+
+
+=== Si no tiene instalado SnapCenter , agregue un vCenter y descubra recursos
+
+Si aún no tiene instalado SnapCenter , agregue la información de vCenter y configure BlueXP backup and recovery para detectar cargas de trabajo. En cada conector de BlueXP , seleccione los entornos de trabajo donde desea detectar cargas de trabajo.
+
+.Pasos
+. Desde la navegación izquierda de BlueXP , seleccione *Protección* > *Copia de seguridad y recuperación*.
++
+Si es la primera vez que inicia sesión en este servicio, ya tiene un entorno de trabajo en BlueXP, pero no ha descubierto ningún recurso, aparece la página de inicio "Bienvenido a la nueva BlueXP backup and recovery" y muestra una opción para *Descubrir recursos*.
+
++
+image:screen-br-landing-discover-import-buttons.png["Captura de pantalla de la página de destino para la copia de seguridad y recuperación de BlueXP sin recursos descubiertos"]
+
+. Seleccione *Descubrir recursos*.
++
+image:screen-br-discover-workloads.png["Captura de pantalla de Descubrir recursos de carga de trabajo"]
+
+. Introduzca la siguiente información:
++
+.. *Tipo de carga de trabajo*: Para esta versión, solo está disponible Microsoft SQL Server.
+.. *Configuración de vCenter*: Seleccione un vCenter existente o agregue uno nuevo. Para agregar un nuevo vCenter, introduzca el FQDN o la dirección IP de vCenter, el nombre de usuario, la contraseña, el puerto y el protocolo.
++
+
+TIP: Si ingresa información de vCenter, incluya la información de configuración de vCenter y la del registro del host. Si agregó o ingresó información de vCenter aquí, también deberá agregar la información del complemento en Configuración avanzada.
+
+.. *Registro de host*: seleccione *Agregar credenciales* e ingrese información sobre los hosts que contienen las cargas de trabajo que desea descubrir.
++
+
+TIP: Si está agregando un servidor independiente y no un servidor vCenter, ingrese solo la información del host.
+
+
+
+. Seleccione *Discover*.
++
+
+TIP: Este proceso puede tardar unos minutos.
+
+. Continuar con Configuración avanzada.
+
+
+
+
+==== Establezca las opciones de configuración avanzada durante el descubrimiento e instale el complemento
+
+Con la Configuración avanzada, puede instalar manualmente el agente del complemento en todos los servidores registrados. Esto le permite importar todas las cargas de trabajo de SnapCenter a BlueXP backup and recovery para que pueda administrar las copias de seguridad y restauraciones desde allí. BlueXP backup and recovery muestra los pasos necesarios para instalar el complemento.
+
+.Pasos
+. Desde la página Descubrir recursos, continúe a Configuración avanzada haciendo clic en la flecha hacia abajo a la derecha.
++
+image:screen-br-discover-workloads-newly-discovered2.png["Captura de pantalla de entornos de trabajo recién descubiertos"]
+
+. En la página Descubrir recursos de carga de trabajo, ingrese la siguiente información.
++
+** *Ingrese el número de puerto del complemento*: ingrese el número de puerto que utiliza el complemento.
+** *Ruta de instalación*: Ingrese la ruta donde se instalará el complemento.
+
+
+. Si desea instalar el agente de SnapCenter manualmente, marque las casillas de las siguientes opciones:
++
+** *Usar instalación manual*: Marque esta casilla para instalar el complemento manualmente.
+** *Agregar todos los hosts en el clúster*: marque esta casilla para agregar todos los hosts en el clúster a la BlueXP backup and recovery durante el descubrimiento.
+** *Omitir comprobaciones de preinstalación opcionales*: Marque esta casilla para omitir las comprobaciones de preinstalación opcionales. Puede ser útil, por ejemplo, si sabe que las consideraciones de memoria o espacio cambiarán próximamente y desea instalar el complemento ahora.
+
+
+. Seleccione *Discover*.
+
+
+
+
+==== Continúe al Panel de control de BlueXP backup and recovery
+
+. Para mostrar el Panel de control de BlueXP backup and recovery , desde el menú superior, seleccione *Panel de control*.
+. Revise el estado de la protección de datos. El número de cargas de trabajo en riesgo o protegidas aumenta según las nuevas cargas de trabajo detectadas, protegidas y respaldadas.
++
+image:screen-br-dashboard2.png["Panel de control de BlueXP backup and recovery"]
+
++
+link:br-use-dashboard.html["Descubra lo que le muestra el Dashboard"].
+
+

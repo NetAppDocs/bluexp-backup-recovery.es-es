@@ -1,0 +1,193 @@
+---
+sidebar: sidebar 
+permalink: br-use-monitor-tasks.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
+summary: Con la copia de seguridad y recuperación de BlueXP, supervise el estado de las instantáneas locales, las replicaciones y los trabajos de copia de seguridad en almacenamiento de objetos que usted inició, y restaure los trabajos que usted inició. 
+---
+= Supervisar trabajos en la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con la BlueXP backup and recovery, supervise el estado de las instantáneas locales, las replicaciones y los trabajos de copia de seguridad en almacenamiento de objetos que usted inició, y restaure los trabajos que usted inició. Puede ver los trabajos completados, en curso o fallidos para poder diagnosticar y corregir problemas. Con el Centro de notificaciones de BlueXP, puedes habilitar el envío de notificaciones por correo electrónico para que se te informe de la actividad importante del sistema incluso sin haber iniciado sesión en el sistema. Gracias a la línea de tiempo de BlueXP, puedes ver detalles de todas las acciones que se han iniciado a través de la interfaz de usuario o la API.
+
+*Rol obligatorio de BlueXP *: Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, Administrador de copias de seguridad de Backup and Recovery, Administrador de restauración de Backup and Recovery, Administrador de clones de Backup and Recovery o Rol de visualizador de Backup and Recovery. Más información. link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+
+
+== Ver el estado del trabajo en Job Monitor
+
+Puede ver una lista de todas las operaciones de instantáneas, replicación, copia de seguridad en almacenamiento de objetos y restauración y su estado actual en la pestaña *Supervisión de trabajos*. Esto incluye operaciones de tu Cloud Volumes ONTAP, ONTAP on-premises, aplicaciones y máquinas virtuales. Cada operación, o trabajo, tiene un ID exclusivo y un estado.
+
+El estado puede ser:
+
+* Correcto
+* En curso
+* En cola
+* Advertencia
+* Error
+
+
+Las instantáneas, replicaciones, copias de seguridad en almacenamiento de objetos y operaciones de restauración que usted inició desde la interfaz de usuario y la API de BlueXP backup and recovery están disponibles en la pestaña Supervisión de trabajos.
+
+
+NOTE: Si ha actualizado sus sistemas ONTAP a la versión 9,13.x y no ve las operaciones de backup programadas continuas en el Monitor de trabajos, deberá reiniciar el servicio de backup y recuperación de BlueXP. link:reference-restart-backup.html["Descubre cómo reiniciar el backup y la recuperación de datos de BlueXP"].
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione la pestaña *Monitoreo*.
+. Para mostrar columnas adicionales (Entorno de trabajo, SVM, Nombre de usuario, Carga de trabajo, Nombre de política, Etiqueta de instantánea), seleccione el signo más.
+
+
+
+
+=== Busque y filtre la lista de trabajos
+
+Puede filtrar las operaciones en la página Monitoreo de trabajos usando varios filtros, como política, etiqueta de instantánea, tipo de operación (protección, restauración, retención u otra) y tipo de protección (instantánea local, replicación o copia de seguridad en la nube).
+
+De forma predeterminada, la página Job Monitoring muestra los trabajos de protección y recuperación de las últimas 24 horas. Puede cambiar el marco temporal mediante el filtro de marco temporal.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione la pestaña *Monitoreo*.
+. Para ordenar los resultados de forma diferente, seleccione cada encabezado de columna para ordenar por estado, hora de inicio, Nombre de recurso y mucho más.
+. Si está buscando trabajos específicos, seleccione el área *Búsqueda y filtrado avanzados* para abrir el panel de búsqueda.
++
+Utilice este panel para introducir una búsqueda de texto libre para cualquier recurso; por ejemplo, "volumen 1" o "aplicación 3". También puede filtrar la lista de trabajos según los elementos de los menús desplegables.
+
++
+La mayoría de los filtros son autoexplicativos. El filtro de «Carga de trabajo» permite ver trabajos en las siguientes categorías:
+
++
+** Volúmenes ONTAP (Cloud Volumes ONTAP y volúmenes ONTAP locales)
+** Microsoft SQL Server
+** Equipos virtuales
+** Kubernetes
+
+
++
+[TIP]
+====
+** Puede buscar datos dentro de una "SVM" específica solo si ha seleccionado por primera vez un entorno de trabajo.
+** Puede buscar usando el filtro “Tipo de protección” solo cuando haya seleccionado el “Tipo” de “Protección”.
+
+
+====
+. Para actualizar la página inmediatamente, seleccione la image:button_refresh.png["Actualice"] botón. De lo contrario, esta página se actualiza cada 15 minutos para que siempre vea los resultados más recientes del estado del trabajo.
+
+
+
+
+=== Ver detalles del trabajo
+
+Puede ver los detalles correspondientes a un trabajo completado específico. Puede exportar detalles de un trabajo concreto en formato JSON.
+
+Puede ver detalles como el tipo de tarea (programada o bajo demanda), horas de inicio y finalización de tipo de backup de SnapMirror (inicial o periódica), duración, cantidad de datos transferidos desde el entorno de trabajo al almacenamiento de objetos, tasa de transferencia media, nombre de política, bloqueo de retención habilitado, análisis de ransomware realizado detalles del origen de protección y detalles de los objetivos de protección.
+
+Los trabajos de restauración muestran detalles como el proveedor de destino de la copia de seguridad (Amazon Web Services, Microsoft Azure, Google Cloud, local), el nombre del depósito S3, el nombre de SVM, el nombre del volumen de origen, el volumen de destino, la etiqueta de la instantánea, la cantidad de objetos recuperados, los nombres de los archivos, los tamaños de los archivos, la fecha de la última modificación y la ruta completa del archivo.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione la pestaña *Monitoreo*.
+. Seleccione el nombre del trabajo.
+. Seleccione el menú Actions image:icon-action.png["El icono Actions"] Y seleccione *Ver detalles*.
+. Expanda cada sección para ver los detalles.
+
+
+
+
+=== Descargar resultados de monitorización de trabajos como informe
+
+Puede descargar el contenido de la página principal Supervisión de trabajos como un informe después de refinarlo. El backup y recuperación de BlueXP genera y descarga un archivo .CSV que puede revisar y enviar a otros grupos según sea necesario. El archivo .CSV incluye hasta 10,000 filas de datos.
+
+Desde la información Detalles de supervisión de trabajos, puede descargar un archivo JSON que contiene detalles para un solo trabajo.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione la pestaña *Monitoreo*.
+. Para descargar un archivo CSV para todos los trabajos, seleccione el botón Descargar y ubique el archivo en su directorio de descargas.
+. Para descargar un archivo JSON para un solo trabajo, seleccione el menú acciones image:icon-action.png["El icono Actions"] Para el trabajo, seleccione *Descargar archivo JSON* y localice el archivo en su directorio de descarga.
+
+
+
+
+== Revisar trabajos de retención (ciclo de vida del backup)
+
+La supervisión de los flujos de retención (o _BACKUP lifecycle_) le ayuda con la integridad de las auditorías, la responsabilidad y la seguridad de las copias de seguridad. Para facilitar el seguimiento del ciclo de vida de backup, quizás desee identificar la caducidad de todas las copias de backup.
+
+Un trabajo de ciclo de vida de backup realiza un seguimiento de todas las copias de Snapshot que se han eliminado o en la cola que se van a eliminar. A partir de ONTAP 9,13, puede ver todos los tipos de trabajos denominados «Retención» en la página Supervisión de trabajos.
+
+El tipo de trabajo «Retención» captura todos los trabajos de eliminación de Snapshot iniciados en un volumen protegido por el backup y la recuperación de BlueXP.
+
+.Pasos
+. Desde el menú de BlueXP backup and recovery , seleccione la pestaña *Monitoreo*.
+. Seleccione el área *Búsqueda avanzada y filtrado* para abrir el panel de búsqueda.
+. Seleccione Retención como tipo de trabajo.
+
+
+
+
+== Revise las alertas de copia de seguridad y restauración en el Centro de notificación de BlueXP
+
+El Centro de notificación de BlueXP realiza un seguimiento del progreso de los trabajos de copia de seguridad y restauración que ha iniciado para que pueda comprobar si la operación se ha realizado correctamente o no.
+
+Además de ver las alertas en el Centro de notificaciones, puedes configurar BlueXP para que envíe ciertos tipos de notificaciones por correo electrónico como alertas, de modo que se te informe de la actividad importante del sistema incluso si no has iniciado sesión en el sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Obtenga más información sobre el centro de notificaciones y sobre cómo enviar correos electrónicos de alerta para trabajos de backup y restauración"^].
+
+El Centro de notificaciones muestra numerosos eventos de snapshot, replicación, backup en cloud y restauración, pero solo ciertos eventos activan alertas por correo electrónico:
+
+[cols="1,2,1,1"]
+|===
+| Tipo de operación | Evento | Nivel de alerta | Correo electrónico enviado 
+
+
+| Activación | Error en la activación de la copia de seguridad y la recuperación para el entorno de trabajo | Error | Sí 
+
+
+| Activación | Error de edición de copia de seguridad y recuperación para el entorno de trabajo | Error | Sí 
+
+
+| Instantánea local | Error en la creación de instantáneas ad hoc de BlueXP backup and recovery | Error | Sí 
+
+
+| Replicación | Error de los trabajos de replicación ad-hoc de backup y recuperación de BlueXP | Error | Sí 
+
+
+| Replicación | Error de las tareas de pausa de replicación de backup y recuperación de BlueXP | Error | No 
+
+
+| Replicación | Error de las tareas de interrupción de la replicación de backup y recuperación de BlueXP  | Error | No 
+
+
+| Replicación | La replicación del backup y recuperación de BlueXP vuelve a sincronizar el error de las tareas de sincronización | Error | No 
+
+
+| Replicación | La replicación del backup y la recuperación de BlueXP detiene el fallo de las tareas | Error | No 
+
+
+| Replicación | El backup y la replicación de recuperación de BlueXP invierten un error de resincronización de las tareas | Error | Sí 
+
+
+| Replicación | Error de las tareas de eliminación de replicación de backup y recuperación de BlueXP | Error | Sí 
+|===
+
+NOTE: A partir de ONTAP 9.13.0, todas las alertas aparecen para los sistemas Cloud Volumes ONTAP y ONTAP en las instalaciones. Para los sistemas con Cloud Volumes ONTAP 9.13.0 y ONTAP on-premises, solo aparece la alerta relacionada con «Trabajo de restauración completado, pero con advertencias».
+
+De forma predeterminada, los administradores de cuentas y organizaciones de BlueXP  reciben correos electrónicos para todas las alertas «críticas» y «recomendaciones». Todos los demás usuarios y destinatarios están configurados, de forma predeterminada, para no recibir ningún correo electrónico de notificación. Pueden enviarse correos electrónicos a usuarios de BlueXP que formen parte de su cuenta de cloud de NetApp o a cualquier otro destinatario que tenga que conocer la actividad de backup y restauración.
+
+Para recibir alertas por correo electrónico de backup y recuperación de BlueXP, tendrás que seleccionar los tipos de gravedad de notificaciones «Critical», «Warning» y «Error» en la página Configuración de alertas y notificaciones.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Aprenda a enviar correos electrónicos de alerta para trabajos de copia de seguridad y restauración"^].
+
+.Pasos
+. En la barra de menús de BlueXP, seleccione (image:icon_bell.png["timbre de notificación"]).
+. Revise las notificaciones.
+
+
+
+
+== Revisa la actividad de la operación en la línea de tiempo de BlueXP
+
+Puedes ver detalles de las operaciones de backup y restauración para profundizar en la línea de tiempo de BlueXP. La línea de tiempo de BlueXP ofrece detalles de cada evento, tanto si ha iniciado el usuario como si ha iniciado el sistema, y muestra las acciones que se han iniciado en la interfaz de usuario o a través de la API.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Obtenga información sobre las diferencias entre la línea de tiempo y el Centro de notificaciones"^].
