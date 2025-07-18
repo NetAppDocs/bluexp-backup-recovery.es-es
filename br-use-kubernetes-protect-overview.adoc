@@ -20,10 +20,3 @@ La gestión de cargas de trabajo de Kubernetes en BlueXP backup and recovery le 
 NOTE: ESTA DOCUMENTACIÓN SE PROPORCIONA COMO UNA PREVISUALIZACIÓN TECNOLÓGICA. Durante la vista previa, no se recomienda la funcionalidad de Kubernetes para cargas de trabajo de producción. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y la línea de tiempo de la oferta antes de la disponibilidad general.
 
 Puede realizar las siguientes tareas relacionadas con la administración de cargas de trabajo de Kubernetes:
-
-* link:br-start-discover.html#discover-kubernetes-workloads["Descubra las cargas de trabajo de Kubernetes"].
-* link:br-use-manage-kubernetes-clusters.html["Gestione clústeres de Kubernetes"].
-* link:br-use-protect-kubernetes-applications.html["Agregar y proteger aplicaciones de Kubernetes"].
-* link:br-use-manage-kubernetes-applications.html["Administrar aplicaciones de Kubernetes"].
-* link:br-use-restore-kubernetes-applications.html["Restaurar aplicaciones de Kubernetes"].
-

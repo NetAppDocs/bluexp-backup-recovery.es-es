@@ -15,15 +15,15 @@ Para poder utilizar el método de búsqueda y restauración de datos, debe activ
 
 El catálogo indexado puede luego rastrear cada volumen y archivo de respaldo, haciendo que sus búsquedas sean rápidas y eficientes.
 
-Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["Cómo restaurar los datos de ONTAP con la opción de  Restaurar"].
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["Habilitar indexación para búsqueda y restauración"].
 
 
 
 === Puntos de conexión de vínculo privado y puntos de conexión de servicio de Azure
 
-Normalmente, BlueXP Backup and Recovery establece un punto final privado con el proveedor de la nube para gestionar diversas tareas de protección. Esta versión incluye una configuración opcional que permite habilitar o deshabilitar la creación automática de un punto final privado por parte de BlueXP Backup and Recovery. Esto puede resultar útil si desea mayor control sobre el proceso de creación de puntos finales privados.
+Normalmente, la BlueXP backup and recovery establece un punto final privado con el proveedor de la nube para gestionar las tareas de protección. Esta versión incluye una configuración opcional que permite habilitar o deshabilitar la creación automática de un punto final privado por parte de BlueXP Backup and Recovery. Esto puede resultar útil si desea mayor control sobre el proceso de creación de puntos finales privados.
 
-Puede habilitar o deshabilitar esta opción al habilitar la protección o iniciar el proceso de restauración.
+Puede habilitar o deshabilitar esta opción cuando habilite la protección o inicie el proceso de restauración.
 
 Si deshabilita esta configuración, deberá crear manualmente el punto final privado para que la copia de seguridad y la recuperación de BlueXP funcionen correctamente. Sin una conectividad adecuada, es posible que no pueda realizar las tareas de copia de seguridad y recuperación correctamente.
 
@@ -39,4 +39,4 @@ La versión anterior introdujo compatibilidad con SnapMirror to Cloud Resync (SM
 
 Al crear archivos de copia de seguridad en el almacenamiento de objetos para un entorno de trabajo, BlueXP Backup and Recovery crea, de forma predeterminada, el contenedor (bucket o cuenta de almacenamiento) para los archivos de copia de seguridad en la cuenta de almacenamiento de objetos configurada. Anteriormente, podía anular esta configuración y especificar su propio contenedor para Amazon S3, Azure Blob Storage y Google Cloud Storage. Con esta versión, ahora puede usar su propio contenedor de almacenamiento de objetos de StorageGRID.
 
-Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Crea tu propio contenedor de almacenamiento de objetos"].
+Consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html["Crea tu propio contenedor de almacenamiento de objetos"].

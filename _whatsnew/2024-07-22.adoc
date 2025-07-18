@@ -14,7 +14,7 @@ Con esta versión, ahora puede restaurar volúmenes que creó en ONTAP que tenga
 
 La función DataLock protege los archivos de copia de seguridad de ser modificados o eliminados durante un período de tiempo especificado. Esto es útil para proteger sus archivos contra ataques de ransomware.
 
-Para obtener más información sobre DataLock y consejos sobre cómo mitigar los costes asociados, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["Configuración de políticas de backup en objeto"] .
+Para obtener más información sobre DataLock y consejos sobre cómo mitigar los costes asociados, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-policy-object-options.html["Configuración de políticas de backup en objeto"] .
 
 
 
@@ -26,7 +26,7 @@ Con esta versión, el soporte para el servicio AWS IAM Roles Anywhere es una vis
 
 ifdef::aws[]
 
-Esto se aplica a link:task-backup-to-s3.html["Backups de Cloud Volumes ONTAP en AWS"]. Esto se aplica a link:task-backup-onprem-to-aws.html["Realizar backups de los datos de ONTAP locales en AWS"].
+Esto se aplica a link:prev-ontap-backup-cvo-aws.html["Backups de Cloud Volumes ONTAP en AWS"].
 
 endif::aws[]
 
@@ -40,6 +40,6 @@ Anteriormente, se podían restaurar los volúmenes de FlexVol, pero no era posib
 
 Con esta versión, el soporte para la restauración de carpetas de FlexGroup es una vista previa de la tecnología.
 
-Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-browse-restore["Restaure carpetas y archivos utilizando examinar  Restore"] .
+Para obtener más información, consulte https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["Restaure carpetas y archivos utilizando examinar  Restore"] .
 
 Para obtener más información sobre cómo activarlo manualmente, consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Backup y recuperación de BlueXP Lanzamiento de julio de 2024"].
