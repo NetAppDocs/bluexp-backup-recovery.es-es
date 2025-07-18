@@ -128,8 +128,8 @@ sidebar:
         url: "/prev-vmware-prereqs.html"
       - title: Registre el host del plugin de SnapCenter para VMware vSphere
         url: "/prev-vmware-register-snapcenter.html"
-      - title: Crear una política para realizar copias de seguridad de los almacenes
-          de datos de VMware
+      - title: Crear una política para realizar copias de seguridad de los datos de
+          las máquinas virtuales
         url: "/prev-vmware-policy-create.html"
       - title: Backup de almacenes de datos en Amazon Web Services
         url: "/prev-vmware-backup-aws.html"
@@ -141,7 +141,7 @@ sidebar:
         url: "/prev-vmware-backup-storagegrid.html"
       - title: Gestionar la protección de datos de almacenes de datos y equipos virtuales
         url: "/prev-vmware-manage.html"
-      - title: Restaurar almacenes de datos de VMware
+      - title: Restaurar datos de máquinas virtuales y almacenes de datos
         url: "/prev-vmware-restore.html"
     - title: Supervisar trabajos
       url: "/br-use-monitor-tasks.html"

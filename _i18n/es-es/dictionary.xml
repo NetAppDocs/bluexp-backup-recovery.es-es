@@ -4228,17 +4228,8 @@ ifdef::aws[]</block>
   <block id="b06c9fd76246f4cfb339125284b25aa5" category="list-text">Si elige la etiqueta *Mensual* con recuento de retención 3, el período de retención de instantáneas es de 90 días.</block>
   <block id="efdf2d46dfa5c7a9f73d28bb893f836f" category="list-text">Si elige la etiqueta *Anual* con recuento de retención 1, el período de retención de instantáneas es de 365 días.</block>
   <block id="a60142749401298f0a788c8439772777" category="section-title">¿Qué es la Fecha de Retención hasta (RUD) y cómo se calcula?</block>
-  <block id="eeada300415ab437a13601d2e69f066a" category="paragraph">La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas.</block>
-  <block id="6984bab6fc7fe177ce259ff499fada58" category="list-text">La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.</block>
-  <block id="95ff93ddc0c74a02cf692e476561a39d" category="list-text">Buffer es el Buffer para el Tiempo de Transferencia (6 días) + Buffer para Optimización de Costos (8 días), lo que suma un total de 14 días.</block>
-  <block id="ac3a820fa3f3116f54715975be367471" category="list-text">La fecha mínima de retención hasta es de 30 días + 14 días.</block>
   <block id="c0dc453646abf19770644c4988b76265" category="paragraph">Estos son algunos ejemplos:</block>
-  <block id="19606e2b227c881953690cfcbb2621ad" category="list-text">Si crea un programa de respaldo mensual con 12 retenciones, sus respaldos se bloquean durante 12 meses (más 14 días) antes de eliminarse (reemplazarse por el próximo archivo de respaldo).</block>
   <block id="19703e6040b3a90f1ca1c6525c9432f8" category="list-text">Si crea una política de respaldo que crea 30 copias de seguridad diarias, 7 semanales y 12 mensuales, hay tres períodos de retención bloqueados:</block>
-  <block id="32e9736765675e582a92ea22621346f6" category="list-text">Las copias de seguridad "30 diarias" se conservan durante 44 días (30 días más 14 días de búfer).</block>
-  <block id="08725775ceb79bf9dd25c482670a47a4" category="list-text">Las copias de seguridad "7 semanales" se conservan durante 9 semanas (7 semanas más 14 días) y</block>
-  <block id="f0d1e71c852348fd449a59d2b4456479" category="list-text">Las copias de seguridad "12 mensuales" se conservan durante 12 meses (más 14 días).</block>
-  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">Si crea una programación de backup horaria con 24 retentions, puede pensar que los backups están bloqueados durante 24 horas. Sin embargo, dado que es inferior al mínimo de 30 días, cada backup se bloqueará y conservará durante 44 días (30 días más 14 días de búfer).</block>
   <block id="16ec215ee395a25e960a53b7cdcdc794" category="admonition">Las copias de seguridad antiguas se eliminan una vez que expira el período de retención de DataLock, no después del período de retención de la política de copia de seguridad.</block>
   <block id="b31b5b22923a2871f33f5a4b77d6be83" category="paragraph">La configuración de retención de DataLock anula la configuración de retención de políticas de su política de respaldo. Esto podría afectar a los costes de almacenamiento, ya que los archivos de backup se guardarán en el almacén de objetos durante un periodo de tiempo más largo.</block>
   <block id="010f0e105bcb6f73ab6c815fef84dd1c" category="section-title">Habilitar DataLock y la protección contra ransomware</block>
@@ -4532,11 +4523,19 @@ ifdef::aws[]</block>
   <block id="79cf38f604ea494dd925df57b6a906b6" category="sidebar">Proteger las cargas de trabajo de las máquinas virtuales</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Descripción general de la protección de cargas de trabajo de máquinas virtuales</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Requisitos previos para proteger las cargas de trabajo de las máquinas virtuales</block>
-  <block id="6a1574cd5135a4d659f7c25fd4102feb" category="sidebar">Crear una política para realizar copias de seguridad de los almacenes de datos de VMware</block>
-  <block id="6cc90c7021ed31cf57b48ce2a8946fd6" category="sidebar">Restaurar almacenes de datos de VMware</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">Supervisar trabajos</block>
   <block id="3e8569bed0b50d0e3ac8dd96195c94f1" category="sidebar">Políticas en SnapCenter comparadas con la BlueXP backup and recovery</block>
   <block id="f1518f15324a3922da2c43bf2d8a6950" category="sidebar">Roles y privilegios de BlueXP backup and recovery</block>
   <block id="62967cdcfc7912e3c1a9b3870580fe3f" category="sidebar">Niveles de almacenamiento de archivo de Azure compatibles</block>
   <block id="6af2225d62ab9c4b0de4dfa7f9e852f5" category="sidebar">Niveles de almacenamiento de archivos de Google Cloud compatibles</block>
+  <block id="33f34f378ec48f478eda58fa96594aa4" category="paragraph">La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas. La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.</block>
+  <block id="0b918c8e643ab519717fd0eec681371c" category="list-text">Buffer es el Buffer para el Tiempo de Transferencia (3 días) + Buffer para Optimización de Costos (28 días), lo que suma un total de 31 días.</block>
+  <block id="10040237b3e7b790c7f0c1983647279e" category="list-text">La fecha mínima de retención hasta es de 30 días + 31 días de margen = 61 días.</block>
+  <block id="f84724515a26602458b4cabf395689b0" category="list-text">Si crea un programa de respaldo mensual con 12 retenciones, sus respaldos se bloquean durante 12 meses (más 31 días) antes de eliminarse (reemplazarse por el próximo archivo de respaldo).</block>
+  <block id="dc1987905977bd763b00c2a0741b977b" category="list-text">Las copias de seguridad "30 diarias" se conservan durante 61 días (30 días más 31 días de búfer).</block>
+  <block id="dda5e0548944d946d7ab9e81fdd1296f" category="list-text">Las copias de seguridad "7 semanales" se conservan durante 11 semanas (7 semanas más 31 días) y</block>
+  <block id="b8400c37ab80692ef1ca26e1fa71d6f7" category="list-text">Las copias de seguridad "12 mensuales" se conservan durante 12 meses (más 31 días).</block>
+  <block id="52d355afb10d30259b33c1f1c1cd46c8" category="list-text">Si crea una programación de backup horaria con 24 retentions, puede pensar que los backups están bloqueados durante 24 horas. Sin embargo, dado que es inferior al mínimo de 30 días, cada backup se bloqueará y conservará durante 61 días (30 días más 31 días de búfer).</block>
+  <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">Crear una política para realizar copias de seguridad de los datos de las máquinas virtuales</block>
+  <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Restaurar datos de máquinas virtuales y almacenes de datos</block>
 </blocks>

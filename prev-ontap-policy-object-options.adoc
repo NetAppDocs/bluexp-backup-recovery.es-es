@@ -96,24 +96,23 @@ El período mínimo de retención de instantáneas es de 30 días. Veamos alguno
 
 === ¿Qué es la Fecha de Retención hasta (RUD) y cómo se calcula?
 
-La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas.
+La fecha de retención hasta (RUD) se determina en función del período de retención de instantáneas. La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.
 
-* La fecha de retención hasta se calcula sumando el período de retención de instantáneas y un búfer.
-* Buffer es el Buffer para el Tiempo de Transferencia (6 días) + Buffer para Optimización de Costos (8 días), lo que suma un total de 14 días.
-* La fecha mínima de retención hasta es de 30 días + 14 días.
+* Buffer es el Buffer para el Tiempo de Transferencia (3 días) + Buffer para Optimización de Costos (28 días), lo que suma un total de 31 días.
+* La fecha mínima de retención hasta es de 30 días + 31 días de margen = 61 días.
 
 
 Estos son algunos ejemplos:
 
-* Si crea un programa de respaldo mensual con 12 retenciones, sus respaldos se bloquean durante 12 meses (más 14 días) antes de eliminarse (reemplazarse por el próximo archivo de respaldo).
+* Si crea un programa de respaldo mensual con 12 retenciones, sus respaldos se bloquean durante 12 meses (más 31 días) antes de eliminarse (reemplazarse por el próximo archivo de respaldo).
 * Si crea una política de respaldo que crea 30 copias de seguridad diarias, 7 semanales y 12 mensuales, hay tres períodos de retención bloqueados:
 +
-** Las copias de seguridad "30 diarias" se conservan durante 44 días (30 días más 14 días de búfer).
-** Las copias de seguridad "7 semanales" se conservan durante 9 semanas (7 semanas más 14 días) y
-** Las copias de seguridad "12 mensuales" se conservan durante 12 meses (más 14 días).
+** Las copias de seguridad "30 diarias" se conservan durante 61 días (30 días más 31 días de búfer).
+** Las copias de seguridad "7 semanales" se conservan durante 11 semanas (7 semanas más 31 días) y
+** Las copias de seguridad "12 mensuales" se conservan durante 12 meses (más 31 días).
 
 
-* Si crea una programación de backup horaria con 24 retentions, puede pensar que los backups están bloqueados durante 24 horas. Sin embargo, dado que es inferior al mínimo de 30 días, cada backup se bloqueará y conservará durante 44 días (30 días más 14 días de búfer).
+* Si crea una programación de backup horaria con 24 retentions, puede pensar que los backups están bloqueados durante 24 horas. Sin embargo, dado que es inferior al mínimo de 30 días, cada backup se bloqueará y conservará durante 61 días (30 días más 31 días de búfer).
 
 
 
