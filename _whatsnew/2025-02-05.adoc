@@ -9,7 +9,7 @@
 Esta versión preliminar de BlueXP backup and recovery ofrece una interfaz de usuario actualizada que permite administrar las cargas de trabajo de Microsoft SQL Server mediante una estrategia de protección 3-2-1, similar a la del servicio de BlueXP backup and recovery . Con esta nueva versión, puede realizar copias de seguridad de estas cargas de trabajo en el almacenamiento principal, replicarlas en el almacenamiento secundario y respaldarlas en el almacenamiento de objetos en la nube.
 
 
-NOTE: ESTA DOCUMENTACIÓN SE PROPORCIONA COMO UNA PREVISUALIZACIÓN TECNOLÓGICA. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y la línea de tiempo de la oferta antes de la disponibilidad general.
+NOTE: Esta documentación se proporciona como una vista previa de la tecnología. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y la línea de tiempo de la oferta antes de la disponibilidad general.
 
 Esta versión de BlueXP backup and recovery Preview 2025 incluye las siguientes actualizaciones.
 
