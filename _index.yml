@@ -67,7 +67,7 @@ indexpage:
     - title: Descubra las cargas de trabajo de Kubernetes
       url: br-start-discover-kubernetes.html
     - title: Agregar y proteger aplicaciones de Kubernetes
-      url: link:br-use-protect-kubernetes-applications.html
+      url: br-use-protect-kubernetes-applications.html
     - title: Gestione clústeres de Kubernetes
       url: br-use-manage-kubernetes-clusters.html
     - title: Administrar aplicaciones de Kubernetes
