@@ -54,9 +54,6 @@ Si crea varios enlaces de ejecución del mismo tipo (por ejemplo, presnapshot), 
 
 
 
-NOTE: El ejemplo de orden anterior solo se aplica cuando se ejecuta un backup que no utiliza una snapshot existente.
-
-
 NOTE: Siempre debe probar sus secuencias de comandos de ejecución de enlace antes de habilitarlas en un entorno de producción. Puede utilizar el comando 'kubectl exec' para probar cómodamente los scripts. Después de habilitar los enlaces de ejecución en un entorno de producción, pruebe las copias Snapshot y backups resultantes para garantizar que sean coherentes. Para ello, puede clonar la aplicación en un espacio de nombres temporal, restaurar la instantánea o la copia de seguridad y, a continuación, probar la aplicación.
 
 
@@ -106,7 +103,7 @@ Puede crear una plantilla de gancho de ejecución personalizada que pueda usar p
 . Expande la sección *Plantilla de gancho de ejecución*.
 . Seleccione *Crear plantilla de gancho de ejecución*.
 . Introduzca un nombre para el gancho de ejecución.
-. Elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecutará una vez finalizada la operación.
+. Opcionalmente, elija un tipo de enlace. Por ejemplo, un enlace posterior a la restauración se ejecuta una vez finalizada la operación.
 . En el cuadro de texto *Script*, introduzca el script de shell ejecutable que desea ejecutar como parte de la plantilla de gancho de ejecución. Opcionalmente, puede seleccionar *Subir script* para subir un archivo de script.
 . Seleccione *Crear*.
 +

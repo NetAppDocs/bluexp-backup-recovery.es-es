@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: La BlueXP backup and recovery le permite administrar la información del host de su carga de trabajo, la información de la base de datos y la información de las instancias. Puede ver, editar y eliminar la configuración de protección de su inventario. 
+summary: La BlueXP backup and recovery le permite desproteger y eliminar sus aplicaciones de Kubernetes y los recursos asociados. 
 ---
 = Administrar aplicaciones de Kubernetes
 :hardbreaks:
@@ -14,35 +14,21 @@ summary: La BlueXP backup and recovery le permite administrar la información de
 
 
 [role="lead"]
-La BlueXP backup and recovery le permite administrar sus aplicaciones de Kubernetes y los recursos asociados. Puede crear, ver, editar y eliminar la configuración de protección de sus aplicaciones de Kubernetes.
+La BlueXP backup and recovery le permite desproteger y eliminar sus aplicaciones de Kubernetes y los recursos asociados.
 
 .Rol BlueXP requerido
 Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso a BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
 
 
 
-== Editar una aplicación de Kubernetes
-
-Puede modificar la configuración de una aplicación de Kubernetes existente si los recursos asociados con la aplicación han cambiado.
-
-.Pasos
-. En la BlueXP backup and recovery, seleccione *Inventario* > *Aplicaciones*.
-. En la lista de aplicaciones, elija una aplicación que desee editar y seleccione el menú Acciones asociado.
-. Seleccione *Editar*.
-. Realice los cambios necesarios en la definición de la aplicación, como el nombre o los recursos incluidos.
-. Cuando haya terminado, seleccione *Siguiente*.
-. Realice los cambios necesarios en la configuración de protección.
-. Cuando haya terminado, seleccione *Listo*.
-
-
-
-
 == Desproteger una aplicación de Kubernetes
 
-Puede desproteger una aplicación si ya no desea protegerla. Al desprotegerla, BlueXP backup and recovery deja de protegerla, pero conserva todas las copias de seguridad e instantáneas asociadas hasta que caduquen.
+Puede desproteger una aplicación si ya no desea protegerla. Al desprotegerla, BlueXP backup and recovery deja de protegerla, pero conserva todas las copias de seguridad e instantáneas asociadas.
 
 .Pasos
-. En la BlueXP backup and recovery, seleccione *Inventario* > *Aplicaciones*.
+. En la BlueXP backup and recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
 . En la lista de aplicaciones, elija una aplicación que desee desproteger y seleccione el menú Acciones asociado.
 . Seleccione *Desproteger*.
 . Lea el aviso y, cuando esté listo, seleccione *Desproteger*.
@@ -52,16 +38,18 @@ Puede desproteger una aplicación si ya no desea protegerla. Al desprotegerla, B
 
 == Eliminar una aplicación de Kubernetes
 
-Puedes eliminar una aplicación si ya no la necesitas. Al eliminar una aplicación, BlueXP backup and recovery deja de protegerla y, si decides hacerlo, elimina todas las copias de seguridad e instantáneas asociadas.
+Puedes eliminar una aplicación si ya no la necesitas. Al eliminar una aplicación, BlueXP backup and recovery deja de protegerla y elimina todas las copias de seguridad e instantáneas asociadas.
 
 .Pasos
-. En la BlueXP backup and recovery, seleccione *Inventario* > *Aplicaciones*.
+. En la BlueXP backup and recovery, seleccione *Inventario*.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
 . En la lista de aplicaciones, elija la aplicación que desee eliminar y seleccione el menú Acciones asociado.
 . Seleccione *Eliminar*.
-. Opcionalmente, habilite *Eliminar instantáneas y copias de seguridad* para eliminar todas las instantáneas y copias de seguridad de la aplicación.
+. Habilite *Eliminar instantáneas y copias de seguridad* para eliminar todas las instantáneas y copias de seguridad de la aplicación.
 +
 
-CAUTION: Si hace esto, ya no podrá restaurar la aplicación utilizando estas instantáneas y copias de seguridad.
+CAUTION: Ya no podrás restaurar la aplicación utilizando estas instantáneas y copias de seguridad.
 
 . Confirme la acción y seleccione *Eliminar*.
 

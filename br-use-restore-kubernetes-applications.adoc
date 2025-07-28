@@ -14,14 +14,15 @@ summary: La BlueXP backup and recovery le permite restaurar aplicaciones que hay
 
 
 [role="lead"]
-La BlueXP backup and recovery le permite restaurar aplicaciones protegidas con una política de protección. Para restaurar una aplicación, esta debe tener el estado de protección "Protegido" y una política de protección asociada. Para restaurar una aplicación, utilice un punto de restauración, que consta de la instantánea local, la instantánea secundaria y la copia de seguridad en el almacén de objetos. Puede restaurar una aplicación utilizando el archivo local, secundario o del almacén de objetos.
+La BlueXP backup and recovery le permite restaurar aplicaciones protegidas con una política de protección. Para restaurar una aplicación, esta debe tener al menos un punto de restauración disponible. Un punto de restauración puede ser la instantánea local o la copia de seguridad en el almacén de objetos (o ambas). Puede restaurar una aplicación utilizando el archivo local, secundario o del almacén de objetos.
 
 .Rol BlueXP requerido
 Administrador de la organización o administrador de SnapCenter . link:reference-roles.html["Obtenga información sobre los roles de acceso a BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
 
 .Pasos
 . En la BlueXP backup and recovery, seleccione *Inventario*.
-. Elija una carga de trabajo de Kubernetes y seleccione *Ver* en la columna Hosts para la carga de trabajo.
+. Elija una instancia de Kubernetes y seleccione *Ver* para ver los recursos asociados con esa instancia.
+. Seleccione la pestaña *Aplicaciones*.
 . En la lista de aplicaciones, elija la aplicación que desee restaurar y seleccione el menú Acciones asociado.
 . Seleccione *Ver y restaurar*.
 +
@@ -33,11 +34,11 @@ Aparece la lista de puntos de restauración.
 [discrete]
 ===== Configuración general
 
-. Seleccione la fuente desde la cual restaurar (local, secundaria o almacén de objetos).
+. Seleccione la fuente desde la cual restaurar (almacén local o de objetos).
 . Seleccione el clúster de destino de la lista *Clúster*.
-. Elija el espacio de nombres de destino de restauración (original o nuevo).
+. Seleccione el espacio de nombres de destino de restauración.
 +
-Tenga en cuenta que no se admite la restauración a un clúster diferente ni al espacio de nombres original.
+Puede restaurar el espacio de nombres original o restaurar uno nuevo.
 
 . Seleccione *Siguiente*.
 
@@ -67,6 +68,10 @@ Cada regla puede filtrar según criterios como el espacio de nombres del recurso
 
 . Seleccione *Guardar* para guardar cada regla.
 . Cuando haya agregado todas las reglas que necesita, seleccione *Buscar* para ver los recursos disponibles en el archivo de respaldo que coinciden con sus criterios de filtro.
++
+
+NOTE: Los recursos que se muestran son los recursos que existen actualmente en el clúster.
+
 . Cuando esté satisfecho con los resultados, seleccione *Siguiente*.
 
 
@@ -76,6 +81,6 @@ Cada regla puede filtrar según criterios como el espacio de nombres del recurso
 ===== Configuración de destino
 
 . Elija restaurar a la clase de almacenamiento predeterminada o a una clase de almacenamiento diferente.
-. Opcionalmente, si decide restaurar a una clase de almacenamiento diferente, seleccione una clase de almacenamiento de destino que coincida con cada clase de almacenamiento de origen. La clase de almacenamiento de destino debe estar disponible en el clúster de destino.
+. Opcionalmente, si elige restaurar a una clase de almacenamiento diferente, seleccione una clase de almacenamiento de destino que coincida con cada clase de almacenamiento de origen.
 . Seleccione *Restaurar*.
 

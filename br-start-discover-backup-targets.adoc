@@ -34,7 +34,9 @@ image:screen-br-inventory-offsite-backup-targets.png["Pestaña de objetivos de c
 
 . Seleccione *Descubrir destino de copia de seguridad*.
 . Seleccione uno de los tipos de destino de copia de seguridad: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
-. Ingrese la información. Esta varía según el tipo de destino de copia de seguridad seleccionado.
+. En la sección *Elegir ubicación de credenciales*, elija la ubicación donde residen las credenciales y luego elija cómo asociarlas.
+. Seleccione *Siguiente*.
+. Ingrese la información de las credenciales. Esta información varía según el tipo de destino de copia de seguridad seleccionado y la ubicación de las credenciales elegida.
 +
 ** Para AWS:
 +
