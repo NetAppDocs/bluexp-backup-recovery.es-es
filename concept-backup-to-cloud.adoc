@@ -192,6 +192,7 @@ El servicio protege las siguientes cargas de trabajo basadas en aplicaciones:
 * Volúmenes ONTAP
 * Instancias y bases de datos de Microsoft SQL Server para NFS físico, VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK) (versión preliminar)
 * Almacenes de datos VMware
+* Cargas de trabajo de Kubernetes (versión preliminar)
 
 
 .Entornos de trabajo compatibles
