@@ -16,7 +16,7 @@ summary: El servicio de BlueXP backup and recovery primero debe descubrir las ca
 [role="lead"]
 El servicio de BlueXP backup and recovery debe detectar primero las cargas de trabajo de Microsoft SQL Server para poder utilizarlo. Opcionalmente, puede importar datos y políticas de copia de seguridad desde SnapCenter si ya lo tiene instalado.
 
-*Rol requerido de BlueXP * Superadministrador de Copia de Seguridad y Recuperación. Más información link:reference-roles.html["Roles y privilegios de copia de seguridad y recuperación"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+*Rol de BlueXP requerido* Esta tarea requiere el rol de superadministrador de Copia de seguridad y recuperación de servicios de datos.  Conozca más sobrelink:reference-roles.html["Roles y privilegios de los servicios de copia de seguridad y recuperación de datos"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
 
 
 
