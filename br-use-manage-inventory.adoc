@@ -58,6 +58,45 @@ Puedes administrar la información del host para garantizar la protección de lo
 
 
 
+=== Gestionar hosts
+
+Puedes administrar los hosts detectados en tu entorno de trabajo. Puedes administrarlos por separado o en grupo.
+
+
+TIP: Solo puede administrar los hosts que muestran el estado "No administrado" en la columna Hosts. Si el estado es "Administrado", significa que el host ya está siendo administrado por BlueXP backup and recovery.
+
+Después de administrar los hosts en la BlueXP backup and recovery, SnapCenter ya no administra los recursos en esos hosts.
+
+*Rol de BlueXP requerido* Administrador de organización, administrador de carpeta o proyecto, o superadministrador de copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú, seleccione *Inventario*.
++
+image:screen-br-inventory.png["Captura de pantalla de inventario para la BlueXP backup and recovery"]
+
+. Seleccione una carga de trabajo para ver los detalles de protección.
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
++
+image:screen-br-inventory-sql.png["Captura de pantalla de la página de detalles de inventario para la BlueXP backup and recovery"]
+
+. Seleccione la pestaña *Hosts*.
+. Seleccione uno o más hosts. Si selecciona varios, aparecerá la opción "Acciones masivas" donde podrá seleccionar "Administrar (hasta 5 hosts)".
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Administrar*.
++
+image:screen-br-inventory-details-manage-hosts.png["Página de administración de hosts"]
+
+. Revise las dependencias del host:
++
+** Si no se muestra el vCenter, seleccione el ícono de lápiz para agregar o editar los detalles del vCenter.
+** Si agrega un vCenter, también debe registrarlo seleccionando *Registrar vCenter*.
+
+
+. Seleccione *Validar configuración* para probar su configuración.
+. Seleccione *Administrar* para administrar el host.
+
+
+
+
 === Suspender horarios
 
 Puede suspender las programaciones para detener las operaciones de copia de seguridad y restauración de un host. Esta opción es útil si necesita realizar tareas de mantenimiento en el host.

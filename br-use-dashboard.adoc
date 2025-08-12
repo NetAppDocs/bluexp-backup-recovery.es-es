@@ -21,7 +21,7 @@ Monitorear el estado de sus cargas de trabajo le permite estar al tanto de los p
 .Pasos
 . Desde el menú de BlueXP backup and recovery , seleccione *Panel de control*.
 +
-image:screen-br-dashboard2.png["Panel de control de BlueXP backup and recovery"]
+image:screen-br-dashboard3.png["Panel de control de BlueXP backup and recovery"]
 
 
 

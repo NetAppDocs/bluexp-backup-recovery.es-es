@@ -17,7 +17,7 @@ summary: El servicio de BlueXP backup and recovery proporciona protección de da
 El servicio de BlueXP backup and recovery proporciona protección de datos eficiente, segura y rentable para volúmenes ONTAP , instancias y bases de datos de Microsoft SQL Server (versión preliminar), cargas de trabajo de VMware y cargas de trabajo de Kubernetes (versión preliminar).
 
 
-NOTE: Esta documentación se proporciona como una vista previa de la tecnología. Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y la línea de tiempo de la oferta antes de la disponibilidad general.
+NOTE: Parte de esta documentación se proporciona como una vista previa de la tecnología.  Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de la disponibilidad general.
 
 
 
@@ -31,16 +31,17 @@ Utilice la BlueXP backup and recovery para lograr los siguientes objetivos:
 ** Cree copias de seguridad incrementales a nivel de bloque y permanentes que se almacenan en otro clúster de ONTAP y en el almacenamiento de objetos en la nube.
 
 
-* Cargas de trabajo de Microsoft SQL Server (versión preliminar):
+* Cargas de trabajo de Microsoft SQL Server:
 +
-** Realice copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde sistemas ONTAP locales o Cloud Volumes ONTAP .
-** Restaure las bases de datos de Microsoft SQL Server en el mismo host o en uno alternativo, lo que proporciona flexibilidad en la recuperación de datos.
+** Realice copias de seguridad de instancias y bases de datos de Microsoft SQL Server desde ONTAP local, Cloud Volumes ONTAP o Amazon FSx for NetApp ONTAP.
+** Restaurar bases de datos de Microsoft SQL Server.
+** Clonar bases de datos de Microsoft SQL Server.
 
 
-* Cargas de trabajo de VMware:
+* Cargas de trabajo de VM:
 +
 ** Realice copias de seguridad de almacenes de datos en Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform y StorageGRID y restaure máquinas virtuales en el host local del SnapCenter Plug-in for VMware vSphere .
-** Restaure los datos de las máquinas virtuales desde la nube al vCenter local con la BlueXP backup and recovery. Es posible restaurar el equipo virtual a la misma ubicación exacta desde donde se realizó el backup o a otra ubicación alternativa.
+** Restaure los datos de las máquinas virtuales desde la nube al vCenter local con la BlueXP backup and recovery.
 
 
 * Cargas de trabajo de Kubernetes (versión preliminar):
@@ -124,6 +125,9 @@ ifdef::gcp[]
 
 Los cargos por servicio se pagan a NetApp y cubren tanto el coste de _create_ backups en el almacenamiento de objetos como de _restore_ volúmenes, o archivos, a partir de dichos backups. Usted paga solo por los datos que protege en el almacenamiento de objetos, calculados según la capacidad lógica utilizada de origen (antes de las eficiencias de ONTAP ) de los volúmenes de ONTAP respaldados en el almacenamiento de objetos. Esta capacidad también se conoce como terabytes de interfaz (FETB).
 
+
+NOTE: Para Microsoft SQL Server, se aplican cargos cuando inicia la replicación de instantáneas a un destino ONTAP secundario o a un almacenamiento de objetos.
+
 Hay tres formas de pagar el servicio de Backup:
 
 * La primera opción es suscribirse a su proveedor de cloud, lo que le permite pagar por mes.
@@ -190,7 +194,7 @@ Cuando usa GCP, puede solicitar una oferta privada de NetApp y luego seleccionar
 El servicio protege las siguientes cargas de trabajo:
 
 * Volúmenes ONTAP
-* Instancias y bases de datos de Microsoft SQL Server para NFS físico, VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK) (versión preliminar)
+* Instancias y bases de datos de Microsoft SQL Server para NFS físico, VMware Virtual Machine File System (VMFS) y VMware Virtual Machine Disk (VMDK)
 * Almacenes de datos VMware
 * Cargas de trabajo de Kubernetes (versión preliminar)
 
@@ -213,7 +217,7 @@ El servicio protege las siguientes cargas de trabajo:
 
 
 
-== La BlueXP backup and recovery utiliza el complemento SnapCenter para Microsoft SQL Server
+== La BlueXP backup and recovery utiliza el complemento para Microsoft SQL Server
 
 El BlueXP backup and recovery instala el complemento para Microsoft SQL Server en el servidor que aloja Microsoft SQL Server. Este complemento es un componente del host que permite la gestión de la protección de datos de las bases de datos e instancias de Microsoft SQL Server, teniendo en cuenta las aplicaciones.
 

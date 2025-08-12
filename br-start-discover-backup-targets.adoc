@@ -26,6 +26,9 @@ Puede descubrir estos objetivos automáticamente o agregarlos manualmente.
 
 Proporcione las credenciales necesarias para acceder al sistema de la cuenta de almacenamiento. Estas credenciales se utilizan para identificar las cargas de trabajo que desea respaldar.
 
+.Antes de empezar
+Para agregar un destino de respaldo externo, se debe descubrir al menos una carga de trabajo.
+
 .Pasos
 . Desde el menú de BlueXP backup and recovery , seleccione *Inventario*.
 . Seleccione la pestaña *Destinos de copia de seguridad externos*.
@@ -90,7 +93,7 @@ En lugar de que la BlueXP backup and recovery descubra los depósitos automátic
 +
 ** Para AWS:
 +
-*** *Nombre del depósito*: Ingrese el nombre del depósito S3.
+*** *Nombre del depósito*: Ingrese el nombre del depósito S3.  El prefijo "netapp-backup" es un prefijo obligatorio y se agrega automáticamente al nombre que proporcione.
 *** *Cuenta de AWS*: ingrese el nombre de la cuenta de AWS.
 *** *Región del depósito*: Ingrese la región de AWS para el depósito.
 *** *Habilitar Bloqueo de Objetos S3*: Seleccione esta opción para habilitar el Bloqueo de Objetos S3 para el bucket. El Bloqueo de Objetos S3 impide que los objetos se eliminen o sobrescriban durante un periodo de retención específico, lo que proporciona una capa adicional de protección de datos. Puede habilitar esta opción solo al crear un bucket y no puede desactivarla posteriormente.

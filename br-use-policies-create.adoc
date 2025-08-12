@@ -81,7 +81,15 @@ image:screen-br-policies-new-nodata.png["Captura de pantalla de la creación de 
 +
 *** *Instantánea local*: Instantánea local del volumen seleccionado. Las instantáneas locales son un componente clave de las estrategias de protección de datos, ya que capturan el estado de sus datos en momentos específicos. Esto crea copias puntuales de solo lectura de los volúmenes de producción donde se ejecutan sus cargas de trabajo. La instantánea consume un espacio de almacenamiento mínimo y genera una sobrecarga de rendimiento insignificante, ya que solo registra los cambios en los archivos desde la última instantánea. Puede usar instantáneas locales para recuperarse de la pérdida o corrupción de datos, así como para crear copias de seguridad para la recuperación ante desastres.
 *** *Distribución 3-2-1*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco) a nube (almacén de objetos).  Crea múltiples copias de datos en diferentes sistemas de almacenamiento, como ONTAP a ONTAP y ONTAP a configuraciones de almacenamiento de objetos.  Este puede ser un almacén de objetos de hiperescalador en la nube o un almacén de objetos privado: StorageGRID.  Estas configuraciones ayudan a lograr una protección de datos óptima y una recuperación ante desastres.
++
+
+NOTE: Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
+
 *** *3-2-1 en cascada*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco) y almacenamiento principal (disco) a almacenamiento en la nube (almacén de objetos).  Este puede ser un almacén de objetos de hiperescalador en la nube o un almacén de objetos privado: StorageGRID.  Esto crea una cadena de replicación de datos en múltiples sistemas para garantizar la redundancia y la confiabilidad.
++
+
+NOTE: Esta opción no está disponible para Amazon FSx for NetApp ONTAP.
+
 *** *Disco a disco*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco).  La estrategia de protección de datos de ONTAP a ONTAP replica datos entre dos sistemas ONTAP para garantizar alta disponibilidad y recuperación ante desastres.  Esto normalmente se logra usando SnapMirror, que admite tanto la replicación sincrónica como la asincrónica.  Este método garantiza que sus datos se actualicen continuamente y estén disponibles en múltiples ubicaciones, lo que proporciona una protección sólida contra la pérdida de datos.
 *** *Almacenamiento de disco a objeto*: Almacenamiento principal (disco) a la nube (almacenamiento de objetos). Esto replica los datos de un sistema ONTAP a un sistema de almacenamiento de objetos, como AWS S3, Azure Blob Storage o StorageGRID. Esto se logra generalmente con SnapMirror Cloud, que proporciona copias de seguridad incrementales permanentes transfiriendo únicamente los bloques de datos modificados después de la transferencia inicial de referencia. Puede ser un almacén de objetos hiperescalable en la nube o un almacén de objetos privado ( StorageGRID). Este método es ideal para la retención y el archivado de datos a largo plazo, ofreciendo una solución rentable y escalable para la protección de datos.
 *** *Distribución de disco a disco*: (No disponible para cargas de trabajo de Kubernetes) Almacenamiento principal (disco) a almacenamiento secundario (disco) y almacenamiento principal (disco) a almacenamiento secundario (disco).
@@ -135,6 +143,7 @@ Proporcionar información para la replicación al almacenamiento secundario.  La
 ** Otras opciones: Si eliges una transferencia diferida, las transferencias no son inmediatas y puedes establecer un horario.
 
 
+* * Relación secundaria entre SnapMirror y SnapVault SMAS *: utilice las relaciones secundarias entre SnapMirror y SnapVault SMAS para las cargas de trabajo de SQL Server.
 
 
 
@@ -222,7 +231,7 @@ TIP: Si la frecuencia de las instantáneas se establece en 1 hora, la demora má
 
 
 
-* *Análisis de ransomware*: Seleccione si desea habilitar el análisis de ransomware en cada bucket. Esto habilita el bloqueo de instantáneas en la instantánea local, el bloqueo de instantáneas en el almacenamiento secundario y el bloqueo de DataLock en el almacenamiento de objetos. Introduzca la frecuencia del análisis en días.
+* *Análisis de ransomware*: seleccione si desea habilitar el análisis de ransomware en cada depósito.  Esto requiere el bloqueo de DataLock en el almacenamiento de objetos.  Introduzca la frecuencia del escaneo en días.  Esta opción se aplica al almacenamiento de objetos de AWS y Microsoft Azure.  Tenga en cuenta que esta opción puede generar cargos adicionales, según el proveedor de la nube.
 
 
 * Verificación de copias de seguridad: Seleccione si desea habilitar la verificación de copias de seguridad y si la desea inmediatamente o más tarde. Esta función garantiza que las copias de seguridad sean válidas y se puedan restaurar correctamente. Le recomendamos que active esta opción para garantizar la integridad de sus copias de seguridad. De forma predeterminada, la verificación de copias de seguridad se ejecuta desde el almacenamiento secundario si está configurado. Si no está configurado, se ejecuta desde el almacenamiento principal.
@@ -246,6 +255,12 @@ Además, configure las siguientes opciones:
 
 
 * *Notificación*: Seleccione si desea habilitar las notificaciones por correo electrónico para las operaciones de copia de seguridad. Esto es útil si desea recibir notificaciones cuando una operación de copia de seguridad se inicia, se completa o falla.
+
+
+* * Formato de SnapMirror y SnapMirror *: de manera opcional, ingrese su propio nombre de instantánea en una política que rija las copias de seguridad de las cargas de trabajo de Microsoft SQL Server.  Introduzca el formato y el texto personalizado.  Si elige realizar una copia de seguridad en un almacenamiento secundario, también puede agregar un prefijo y un sufijo de volumen SnapMirror .
++
+image:screen-br-sql-policy-create-advanced-snapmirror.png["Captura de pantalla de la configuración del formato de instantáneas y SnapMirror para las políticas de BlueXP backup and recovery"]
+
 
 
 

@@ -35,7 +35,7 @@ indexpage:
       url: prev-ontap-policy-object-options.html
     - title: Restaurar cargas de trabajo de volúmenes ONTAP
       url: prev-ontap-restore.html
-  - title: Proteger las cargas de trabajo de Microsoft SQL Server (versión preliminar)
+  - title: Proteger las cargas de trabajo de Microsoft SQL Server
     links:
     - title: Descripción general de la protección de las cargas de trabajo de Microsoft
         SQL Server

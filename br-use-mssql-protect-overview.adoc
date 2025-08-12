@@ -50,15 +50,18 @@ La BlueXP backup and recovery le permite realizar copias de seguridad de instanc
 
 
 | Cloud Volumes ONTAP en AWS | Cloud Volumes ONTAP en AWS
-Sistema ONTAP en las instalaciones | Amazon S3 
+Sistema ONTAP en las instalaciones | Amazon S3 ONTAP S3 
 
 
 | Cloud Volumes ONTAP en Azure | Cloud Volumes ONTAP en Azure
-Sistema ONTAP en las instalaciones | Azure Blob 
+Sistema ONTAP en las instalaciones | Azure Blob ONTAP S3 
 
 
 | Sistema ONTAP en las instalaciones | Cloud Volumes ONTAP
-Sistema ONTAP en las instalaciones | Amazon S3 Azure Blob NetApp StorageGRID ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+Sistema ONTAP en las instalaciones | Amazon S3 Azure Blob StorageGRID NetApp GRID ONTAP S3 
+
+
+| Amazon FSX para ONTAP de NetApp | Amazon FSX para ONTAP de NetApp | NA ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
 |===
 .Destinos de restauración admitidos
 Puede restaurar instancias y bases de datos de Microsoft SQL Server desde una copia de seguridad que resida en un almacenamiento principal o en un entorno de trabajo secundario (un volumen replicado) o en un almacenamiento de objetos (un archivo de copia de seguridad) en los siguientes entornos de trabajo. Las copias Snapshot residen en el entorno de trabajo de origen y se pueden restaurar únicamente en ese mismo sistema.
@@ -72,15 +75,18 @@ Puede restaurar instancias y bases de datos de Microsoft SQL Server desde una co
 
 
 | Amazon S3 | Cloud Volumes ONTAP en AWS
-Sistema ONTAP en las instalaciones | Volúmenes en la nube en el sistema ONTAP local de AWS 
+Sistema ONTAP en las instalaciones | Volúmenes en la nube en el sistema local ONTAP de AWS ONTAP S3 
 
 
 | Azure Blob | Cloud Volumes ONTAP en Azure
-Sistema ONTAP en las instalaciones | Cloud Volumes ONTAP en el sistema ONTAP local de Azure ifdef::gcp[] endif::gcp[] 
+Sistema ONTAP en las instalaciones | Cloud Volumes ONTAP en Azure Sistema ONTAP local ONTAP S3 ifdef::gcp[] endif::gcp[] 
 
 
 | StorageGRID | Cloud Volumes ONTAP
-Sistema ONTAP en las instalaciones | Sistema ONTAP en las instalaciones 
+Sistema ONTAP en las instalaciones | Sistema ONTAP local ONTAP S3 
+
+
+| Amazon FSX para ONTAP de NetApp | Amazon FSX para ONTAP de NetApp | N / A 
 |===
 
 NOTE: Las referencias a "sistemas ONTAP locales" incluyen los sistemas FAS y AFF .

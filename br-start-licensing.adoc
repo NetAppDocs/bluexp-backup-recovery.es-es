@@ -36,6 +36,25 @@ Cuando finalice la prueba gratuita, se cambiará automáticamente a la suscripci
 
 
 
+=== Finalice la prueba gratuita
+
+Si desea continuar usando la BlueXP backup and recovery una vez que finalice la prueba gratuita, deberá configurar una suscripción paga.  Puede hacerlo desde la interfaz de BlueXP navegando a la sección de facturación y seleccionando un plan de suscripción que se ajuste a sus necesidades.  Si no desea seguir usando la BlueXP backup and recovery, puede finalizar la prueba gratuita.
+
+Cuando finaliza la prueba gratuita sin suscribirse a un plan pago, sus datos se eliminan automáticamente 60 días después de que finalice la prueba gratuita.  Opcionalmente, puede hacer que el sistema elimine sus datos inmediatamente.
+
+.Pasos
+. Desde la página de inicio de BlueXP backup and recovery , seleccione *Ver prueba gratuita*.
++
+*PREGUNTA A LOS REVISORES*: ¿Cómo llegan los usuarios a la página de destino si están en otras páginas de BR?
+
+. Seleccione *Finalizar prueba gratuita*.
+. Seleccione *Eliminar datos inmediatamente después de finalizar mi prueba gratuita* para eliminar sus datos inmediatamente.
+. Escriba *finalizar prueba* en el cuadro.
+. Seleccione *Fin* para confirmar.
+
+
+
+
 == Utiliza una suscripción PAYGO de backup y recuperación de BlueXP
 
 En el modelo de pago por uso, pagará a su proveedor de cloud por los costes de almacenamiento de objetos y por los costes de licencias de backup de NetApp por horas en una única suscripción. Debes suscribirte a *Servicios Inteligentes de NetApp* en el Mercado incluso si tienes una prueba gratuita o si llevas tu propia licencia (BYOL):

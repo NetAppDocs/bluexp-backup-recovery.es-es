@@ -18,6 +18,16 @@ Las limitaciones conocidas identifican plataformas, dispositivos o funciones que
 
 
 
+== Soporte del ciclo de vida de los clones
+
+* No se admite la clonación desde el almacenamiento de objetos.
+* Las operaciones de clonación masiva no son compatibles con clones a pedido.
+* No se admite la selección de grupos I.
+* No se admite la selección de opciones de QOS (rendimiento máximo).
+
+
+
+
 == Solo modo de implementación estándar
 
 La versión de BlueXP backup and recovery solo funciona en el modo de implementación estándar, no en los modos restringido o privado.
