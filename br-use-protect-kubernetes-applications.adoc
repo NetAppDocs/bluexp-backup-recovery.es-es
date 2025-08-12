@@ -50,7 +50,7 @@ NOTE: BlueXP no almacena los parámetros ni los resultados de la búsqueda; los 
 
 . BlueXP muestra una lista de recursos que coinciden con sus criterios de búsqueda.
 . Si la lista contiene los recursos que desea proteger, seleccione *Siguiente*.
-. Opcionalmente, en el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva. Si no selecciona ninguna, la aplicación se creará sin política de protección. Puede agregar una política más adelante.
+. Opcionalmente, en el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva. Si no selecciona ninguna, la aplicación se creará sin política de protección. Puedelink:br-use-policies-create.html#create-a-policy["añadir una política de protección"] más tarde.
 . En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescripts o postscripts que desee ejecutar antes o después de las operaciones de copia de seguridad. Para habilitar prescripts o postscripts, debe haber creado al menos uno. link:br-use-manage-execution-hook-templates.html["plantilla de gancho de ejecución"] .
 . Seleccione *Crear*.
 
@@ -70,7 +70,7 @@ Habilite una política de protección en una aplicación de Kubernetes que ya ha
 . Seleccione la pestaña *Aplicaciones*.
 . En la lista de aplicaciones, elija la aplicación que desee proteger y seleccione el menú Acciones asociado.
 . Seleccione *Proteger*.
-. En el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva política.
+. En el área *Política*, elija una política de protección existente para proteger la aplicación o cree una nueva política.  Referirse alink:br-use-policies-create.html#create-a-policy["Crear una política"] para obtener más información sobre la creación de políticas de protección.
 . En el área *Prescripts y postscripts*, habilite y configure cualquier gancho de ejecución de prescript o postscript que desee ejecutar antes o después de las operaciones de copia de seguridad. Puede configurar el tipo de gancho de ejecución, la plantilla que utiliza, los argumentos y los selectores de etiquetas.
 . Seleccione *Listo*.
 
