@@ -14,7 +14,7 @@ summary: Con BlueXP backup and recovery, administre las copias de seguridad de s
 
 
 [role="lead"]
-Con la copia de seguridad y recuperación de BlueXP, administre las copias de seguridad de sus Cloud Volumes ONTAP y los sistemas ONTAP locales cambiando el programa de copia de seguridad, habilitando o deshabilitando las copias de seguridad de volúmenes, pausando las copias de seguridad, eliminando las copias de seguridad y más. Esto incluye todo tipo de copias de seguridad, incluyendo instantáneas, volúmenes replicados y archivos de copia de seguridad en el almacenamiento de objetos. También puede anular el registro de BlueXP backup and recovery.
+Con la BlueXP backup and recovery, administre las copias de seguridad de sus Cloud Volumes ONTAP y los sistemas ONTAP locales cambiando el programa de copia de seguridad, habilitando o deshabilitando las copias de seguridad de volumen, pausando las copias de seguridad, eliminando las copias de seguridad, forzando la eliminación de las copias de seguridad y más.  Esto incluye todos los tipos de copias de seguridad, incluidas copias instantáneas, volúmenes replicados y archivos de copia de seguridad en el almacenamiento de objetos.  También puedes anular el registro de la BlueXP backup and recovery.
 
 
 CAUTION: No gestione ni modifique los archivos de backup directamente en sus sistemas de almacenamiento ni desde su entorno de proveedor de cloud. Esto puede dañar los archivos y dar como resultado una configuración no compatible.
@@ -371,7 +371,20 @@ Tenga en cuenta que esta acción no afecta a las copias Snapshot ni a los volúm
 image:screenshot_backup_settings_button.png["Captura de pantalla que muestra el botón Configuración de copia de seguridad que está disponible después de seleccionar un entorno de trabajo."]
 
 . Seleccionar image:icon-actions-horizontal.gif["El icono Actions"] para el entorno de trabajo donde desea eliminar todas las copias de seguridad y seleccione *Eliminar todas las copias de seguridad*.
-. En el cuadro de diálogo de confirmación, ingrese el nombre del entorno de trabajo y seleccione *Eliminar*.
++
+image:screenshot_backup_delete_all_backups-working-env.png["Una captura de pantalla que muestra la opción Eliminar todas las copias de seguridad"]
+
+. En el cuadro de diálogo de confirmación, ingrese el nombre del entorno de trabajo.
+. Seleccione *Configuración avanzada*.
+. *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
++
+En algunos casos extremos, es posible que desee que la BlueXP backup and recovery ya no tenga acceso a las copias de seguridad. Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las desea. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
+
++
+
+CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza extremas.  La BlueXP backup and recovery ya no tendrá acceso a estas copias de seguridad incluso si no se eliminan del almacenamiento de objetos.  Necesitará ir a su proveedor de nube y eliminar manualmente las copias de seguridad.
+
+. Seleccione *Eliminar*.
 
 
 
@@ -392,7 +405,16 @@ Se muestra la lista de todos los archivos de copia de seguridad.
 +
 image:screenshot_backup_delete_all_backups.png["Una captura de pantalla que muestra la opción Eliminar todas las copias de seguridad"]
 
-. Ingrese el nombre del volumen e indique si desea o no forzar la eliminación de todas las copias de seguridad.
+. Introduzca el nombre del volumen.
+. Seleccione *Configuración avanzada*.
+. *Forzar eliminación de copias de seguridad*: indique si desea o no forzar la eliminación de todas las copias de seguridad.
++
+En algunos casos extremos, es posible que desee que la BlueXP backup and recovery ya no tenga acceso a las copias de seguridad.  Esto podría suceder, por ejemplo, si el servicio ya no tiene acceso al depósito de copias de seguridad o las copias de seguridad están protegidas por DataLock pero ya no las quiere. Anteriormente, no podía eliminarlos usted mismo y necesitaba llamar al soporte de NetApp . Con esta versión, puede utilizar la opción para forzar la eliminación de copias de seguridad (a nivel de volumen y entorno de trabajo).
+
++
+
+CAUTION: Utilice esta opción con cuidado y sólo en necesidades de limpieza extremas.  La BlueXP backup and recovery ya no tendrá acceso a estas copias de seguridad incluso si no se eliminan del almacenamiento de objetos.  Necesitará ir a su proveedor de nube y eliminar manualmente las copias de seguridad.
+
 . Seleccione *Eliminar*.
 
 

@@ -109,9 +109,3 @@ SnapCenter no asigna clústeres de almacenamiento ni máquinas virtuales de asig
 Si tiene una programación de políticas de SnapCenter que comienza a una hora determinada y se repite cada cierta cantidad de minutos, pero los minutos no están en intervalos de 15 minutos, la BlueXP backup and recovery no importará la programación.
 
 *Solución alternativa*: utilice SnapCenter para ajustar la política de modo que se repita en intervalos de 15 minutos.
-
-
-
-=== Retención de copias de seguridad de registros
-
-Con SnapCenter, puede tener varios valores de retención en varias políticas asociadas a un recurso. Sin embargo, la versión preliminar de BlueXP backup and recovery solo admite un único valor de retención para todas las políticas asociadas a un recurso.

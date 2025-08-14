@@ -114,7 +114,7 @@ Proporcionar información para la instantánea local.
 * *Retención de instantáneas*: ingrese la cantidad de instantáneas que desea conservar.
 * *Habilitar copia de seguridad de registros*: (No disponible para cargas de trabajo de Kubernetes) Marque la opción para realizar copias de seguridad de registros y configure la frecuencia y la retención de las copias de seguridad. Para ello, debe haber configurado previamente una copia de seguridad de registros. Consulte link:br-start-configure.html["Configurar directorios de registro"].
 * *Proveedor*: (solo cargas de trabajo de Kubernetes) Seleccione el proveedor de almacenamiento que aloja los recursos de la aplicación Kubernetes.
-* *Objetivo de respaldo*: (solo cargas de trabajo de Kubernetes) Seleccione el depósito de almacenamiento que aloja los recursos de la aplicación Kubernetes.  Las instantáneas se almacenarán en este depósito.  Asegúrese de que el depósito sea accesible dentro de su entorno de respaldo.
+* *Objetivo de respaldo*: (solo cargas de trabajo de Kubernetes) Seleccione el depósito de almacenamiento que aloja los recursos de la aplicación Kubernetes. Las definiciones de recursos de la aplicación en el momento de la instantánea se almacenan en este depósito. Asegúrese de que el depósito sea accesible dentro de su entorno de respaldo.
 * Opcionalmente, seleccione *Avanzado* a la derecha del programa para configurar la etiqueta SnapMirror y habilitar el bloqueo de instantáneas (no disponible para cargas de trabajo de Kubernetes).
 +
 ** Etiqueta de SnapMirror : La etiqueta sirve como marcador para transferir una instantánea específica según las reglas de retención de la relación. Al agregar una etiqueta a una instantánea, esta se marca como destino para la replicación de SnapMirror .

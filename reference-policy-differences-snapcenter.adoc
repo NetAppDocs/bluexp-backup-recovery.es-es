@@ -14,7 +14,9 @@ summary: Existen algunas diferencias entre las políticas utilizadas en la BlueX
 [role="lead"]
 Existen algunas diferencias entre las políticas utilizadas en SnapCenter y las utilizadas en la BlueXP backup and recovery que podrían afectar lo que ve después de importar recursos y políticas desde SnapCenter.
 
-Las BlueXP backup and recovery de SnapCenter y BlueXP utilizan programas de políticas ligeramente diferentes.
+
+
+== Niveles de programación
 
 SnapCenter utiliza los siguientes niveles de programación:
 
@@ -78,6 +80,12 @@ Si tiene un recurso en SnapCenter con múltiples políticas, la BlueXP backup an
 * Para "Copia de seguridad completa y registro" más "Copia de seguridad completa" en SnapCenter, la BlueXP backup and recovery utiliza el valor de retención "Copia de seguridad completa y registro".
 * Si solo tiene una copia de seguridad completa en SnapCenter, la BlueXP backup and recovery no habilita la copia de seguridad del registro.
 
+
+
+
+== Retención de copias de seguridad de registros
+
+Con SnapCenter, puede tener múltiples valores de retención en múltiples políticas asociadas a un recurso.  Sin embargo, la BlueXP backup and recovery solo admite un único valor de retención para todas las políticas asociadas a un recurso.
 
 
 
