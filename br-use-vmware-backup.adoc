@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Realice copias de seguridad de las cargas de trabajo de VMware con la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Realice copias de seguridad de máquinas virtuales y almacenes de datos de VMware desde sistemas ONTAP locales a Amazon Web Services o StorageGRID para garantizar que sus datos estén protegidos.  Las copias de seguridad se generan automáticamente y se almacenan en un almacén de objetos en su cuenta de nube pública o privada.
+
+* Para realizar copias de seguridad de cargas de trabajo según un cronograma, cree políticas que rijan las operaciones de copia de seguridad y restauración. Consulte link:br-use-policies-create.html["Crear políticas"] para obtener instrucciones.
+* Cree grupos de protección para administrar las operaciones de copia de seguridad y restauración de un conjunto de recursos. Ver link:br-use-vmware-protection-groups.html["Cree y administre grupos de protección para cargas de trabajo de VMware con la BlueXP backup and recovery"] Para más información.
+* Realice una copia de seguridad de las cargas de trabajo ahora (cree una copia de seguridad a pedido ahora).
+
+
+
+
+== Realice copias de seguridad de las cargas de trabajo ahora con una copia de seguridad a pedido
+
+Cree una copia de seguridad a demanda inmediatamente. Le recomendamos ejecutar una copia de seguridad a demanda si va a realizar cambios en su sistema y quiere asegurarse de tener una copia de seguridad antes de comenzar.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de Backup and Recovery, o Rol de administrador de copias de seguridad de Backup and Recovery.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú, seleccione *Inventario*.
++
+image:screen-vm-inventory-managed.png["Captura de pantalla de inventario para la BlueXP backup and recovery"]
+
+. Seleccione una carga de trabajo para ver los detalles de protección.
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Ver detalles*.
+. Seleccione la pestaña *Grupos de protección*, *Almacenes de datos* o *Máquinas virtuales*.
++
+image:screen-vm-inventory-protection-groups.png["Captura de pantalla de la pestaña Grupos de protección para la BlueXP backup and recovery"]
+
+. Seleccione el grupo de protección, los almacenes de datos o las máquinas virtuales que desea respaldar.
+. Seleccione el icono Acciones image:../media/icon-action.png["Opción de acciones"] > *Retroceda ahora*.
++
+image:screen-vm-inventory-backup-now.png["Copia de seguridad ahora: captura de pantalla para BlueXP backup and recovery"]
+
++
+
+NOTE: La política que se aplica a la copia de seguridad es la misma política que se asigna al grupo de protección, al almacén de datos o a la máquina virtual.
+
+. Seleccione el nivel de programación.
+. Seleccione *Hacer copia de seguridad ahora*.
+

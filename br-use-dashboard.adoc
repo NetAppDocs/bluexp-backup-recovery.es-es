@@ -44,7 +44,7 @@ El resumen del sistema proporciona la siguiente información:
 
 Revise la siguiente información en el Resumen de protección:
 
-* El número total de bases de datos protegidas y no protegidas.
+* El número total de bases de datos, máquinas virtuales y almacenes de datos protegidos y no protegidos.
 +
 
 TIP: Una base de datos protegida es aquella que tiene una política de copias de seguridad asignada. Una base de datos desprotegida es aquella que no tiene una política de copias de seguridad asignada.

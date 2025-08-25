@@ -29,10 +29,12 @@ sidebar:
     entries:
     - title: Novedades
       url: "/whats-new.html"
-    - title: Limitaciones conocidas para las cargas de trabajo de Microsoft SQL Server
-      url: "/br-limitations.html"
     - title: Limitaciones conocidas para las cargas de trabajo de volúmenes ONTAP
       url: "/br-reference-limitations.html"
+    - title: Limitaciones conocidas para las cargas de trabajo de Microsoft SQL Server
+      url: "/br-limitations.html"
+    - title: Limitaciones conocidas para las cargas de trabajo de VMware
+      url: "/br-limitations-vmware.html"
   - title: Manos a la obra
     entries:
     - title: Descubre el backup y la recuperación de BlueXP
@@ -119,7 +121,22 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Crear informes de Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Proteger las cargas de trabajo de las máquinas virtuales
+    - title: Proteger las cargas de trabajo de VMware (versión preliminar sin el complemento
+        SnapCenter para VMware)
+      entries:
+      - title: Descripción general de Protect VMware Workloads
+        url: "/br-use-vmware-protect-overview.html"
+      - title: Descubra las cargas de trabajo de VMware
+        url: "/br-use-vmware-discovery.html"
+      - title: Crear y administrar grupos de protección para cargas de trabajo de
+          VMware
+        url: "/br-use-vmware-protection-groups.html"
+      - title: Realizar copias de seguridad de las cargas de trabajo de VMware
+        url: "/br-use-vmware-backup.html"
+      - title: Restaurar cargas de trabajo de VMware
+        url: "/br-use-vmware-restore.html"
+    - title: Proteja las cargas de trabajo de VMware (con el complemento SnapCenter
+        para VMware)
       entries:
       - title: Descripción general de la protección de cargas de trabajo de máquinas
           virtuales
@@ -173,6 +190,8 @@ sidebar:
       url: "/reference-policy-differences-snapcenter.html"
     - title: Roles y privilegios de BlueXP backup and recovery
       url: "/reference-roles.html"
+    - title: Restaurar datos de BlueXP backup and recovery en un sitio oscuro
+      url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Niveles de almacenamiento de archivado compatibles con AWS
       url: "/prev-reference-aws-archive-storage-tiers.html"
     - title: Niveles de almacenamiento de archivo de Azure compatibles

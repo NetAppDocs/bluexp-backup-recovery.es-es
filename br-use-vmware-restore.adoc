@@ -1,0 +1,171 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore.html 
+keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja sus cargas de trabajo de VMware con la BlueXP backup and recovery de NetApp BlueXP. 
+---
+= Restaure las cargas de trabajo de VMware con la BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure cargas de trabajo de VMware desde copias instantáneas, desde una copia de seguridad de la carga de trabajo replicada en un almacenamiento secundario o desde copias de seguridad almacenadas en el almacenamiento de objetos mediante la BlueXP backup and recovery.
+
+.Restaurar desde estas ubicaciones
+Puede restaurar cargas de trabajo desde diferentes ubicaciones de inicio:
+
+* Restaurar desde una ubicación principal (instantánea local)
+* Restaurar desde un recurso replicado en un almacenamiento secundario
+* Restaurar desde una copia de seguridad de almacenamiento de objetos
+
+
+.Restaurar a estos puntos
+Puede restaurar datos en estos puntos:
+
+* Restaurar a la ubicación original
+
+
+.Consideraciones sobre la restauración desde el almacenamiento de objetos
+Si selecciona un archivo de copia de seguridad en el almacenamiento de objetos y la protección contra ransomware está activa para esa copia (si ha habilitado DataLock y la protección contra ransomware en la política de copias de seguridad), se le solicitará que realice una comprobación de integridad adicional del archivo de copia de seguridad antes de restaurar los datos. Le recomendamos que realice el análisis.
+
+
+TIP: Incurrirá en costos de salida adicionales de su proveedor de nube para acceder al contenido del archivo de respaldo.
+
+
+
+== Cómo funciona la restauración de cargas de trabajo
+
+Al restaurar cargas de trabajo, ocurre lo siguiente:
+
+* Cuando restaura una carga de trabajo desde un archivo de respaldo local, BlueXP backup and recovery crea un _nuevo_ recurso utilizando los datos del respaldo.
+* Al restaurar desde una carga de trabajo replicada, puede restaurar la carga de trabajo al entorno de trabajo original o a un sistema ONTAP local.
++
+image:diagram_browse_restore_volume-unified.png["Un diagrama que muestra el flujo para restaurar un recurso"]
+
+* Al restaurar una copia de seguridad desde el almacenamiento de objetos, puede restaurar los datos en el entorno de trabajo original o en un sistema ONTAP local.
+
+
+Desde la página Restaurar (también conocida como Buscar y restaurar)*, puedes restaurar un recurso, incluso si no recuerdas el nombre exacto, la ubicación en la que se encuentra o la fecha en la que estuvo en buenas condiciones por última vez.  Puede buscar la instantánea utilizando filtros.
+
+
+
+== Restaurar datos de carga de trabajo desde la opción Restaurar (Buscar y restaurar)
+
+Restaure cargas de trabajo de VMware mediante la opción Restaurar.  Puede buscar la instantánea por su nombre o utilizando filtros.
+
+*Rol de BlueXP requerido* Administrador de organización, Administrador de carpeta o proyecto, Superadministrador de copia de seguridad y recuperación, Administrador de restauración de copia de seguridad y recuperación.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+.Pasos
+. Desde el menú de copia de seguridad y restauración de BlueXP , seleccione *Restaurar*.
++
+image:screen-vm-restore-dropdown.png["Una captura de pantalla que muestra la página Restaurar."]
+
+. En la lista desplegable a la derecha del campo de búsqueda de nombre, seleccione *Máquinas virtuales*.
+. Ingrese el nombre del recurso que desea restaurar o filtre por el vCenter, centro de datos o almacén de datos donde se encuentra el recurso que desea restaurar.
++
+Aparecerá una lista de instantáneas que coinciden con sus criterios de búsqueda.
+
++
+image:screen-vm-restore-snapshot.png["Una captura de pantalla que muestra la lista de instantáneas para restaurar."]
+
+. Seleccione la instantánea que desea restaurar.
++
+Aparece una lista de opciones de ubicación de restauración.
+
++
+image:screen-vm-restore-location.png["Una captura de pantalla que muestra la página de opciones de restauración."]
+
+. Seleccione la ubicación de restauración donde desea restaurar la instantánea:
++
+** Local: restaura la instantánea a la ubicación original.
+** Almacenamiento secundario: restaura la instantánea a una ubicación de almacenamiento secundaria.
++
+Si elige almacenamiento secundario, ingrese la información de ubicación de origen y destino, y también la ubicación de origen y secundaria de los registros.
+
+** Almacenamiento de objetos: restaura la instantánea a una ubicación de almacenamiento de objetos.
++
+Si elige el almacenamiento de objetos, marque si desea escanear la instantánea nuevamente antes de restaurarla.
+
++
+image:screen-vm-restore-location-objectstore.png["Una captura de pantalla que muestra la página de opciones de restauración para el almacenamiento de objetos."]
+
+
+
+. Seleccione *Listo* o *Siguiente* para continuar a la página de configuración de destino de restauración.
++
+A continuación, puede elegir la configuración de destino y las opciones previas y posteriores a la restauración.
+
++
+image:screen-vm-restore-destination.png["Una captura de pantalla que muestra la página de detalles de destino de restauración."]
+
+
+
+
+
+===== Selección de destino
+
+. Elija la configuración de destino y las opciones previas y posteriores a la restauración.
+
+
+[role="tabbed-block"]
+====
+.Restaurar a la ubicación original
+--
+En la página de detalles de Destino de restauración, ingrese la siguiente información:
+
+. *Habilitar restauración rápida*: seleccione esta opción para realizar una operación de restauración rápida.  Los volúmenes y datos restaurados estarán disponibles de inmediato.  No utilice esto en volúmenes que requieran alto rendimiento porque durante el proceso de restauración rápida, el acceso a los datos podría ser más lento de lo habitual.
+. *Opciones previas a la restauración*: ingrese la ruta completa de un script que debe ejecutarse antes de la operación de restauración y cualquier argumento que tome el script.
+. *Opciones posteriores a la restauración*:
++
+** *Reiniciar VM*: seleccione esta opción para reiniciar la VM una vez completada la operación de restauración y después de que se aplique el script posterior a la restauración.
+** *Posdata*: Ingrese la ruta completa de un script que debe ejecutarse después de la operación de restauración y cualquier argumento que tome el script.
+
+
+. Sección de *Notificación*:
++
+** *Habilitar notificaciones por correo electrónico*: seleccione esta opción para recibir notificaciones por correo electrónico sobre la operación de restauración e indique qué tipo de notificaciones desea recibir.
+
+
+. Seleccione *Restaurar*.
+
+
+--
+.Restaurar a una ubicación alternativa
+--
+No disponible para la vista previa de VMware.
+
+. Seleccione *Restaurar*.
+
+
+--
+====
+Rol de administrador de organización, administrador de carpeta o proyecto, superadministrador de copia de seguridad y recuperación, administrador de restauración de copia de seguridad y recuperación. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso de BlueXP para todos los servicios"^] .
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

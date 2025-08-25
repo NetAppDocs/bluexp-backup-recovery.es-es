@@ -28,13 +28,14 @@ Se debe habilitar una licencia de ONTAP One en la instancia de ONTAP local.
 
 Para utilizar el almacenamiento de objetos como destino de respaldo, necesita una cuenta con AWS S3, Microsoft Azure Blob, StorageGRID u ONTAP y los permisos de acceso adecuados configurados.
 
-Verlink:br-start-setup.html["Configure los destinos de copia de seguridad antes de utilizar la BlueXP backup and recovery"] para obtener detalles sobre cómo configurar los destinos de copia de seguridad.
+* link:prev-ontap-protect-overview.html["Proteja sus datos de volumen de ONTAP"]
 
 
 
-== Requisitos de carga de trabajo de Microsoft SQL Server
 
-Para utilizar la BlueXP backup and recovery para cargas de trabajo de SQL Server, necesita los siguientes requisitos previos de tamaño, espacio y sistema host.
+== Requisitos para proteger las cargas de trabajo de Microsoft SQL Server
+
+Para utilizar la BlueXP backup and recovery para cargas de trabajo de Microsoft SQL Server, necesita los siguientes requisitos previos de tamaño, espacio y sistema host.
 
 [cols="33,66a"]
 |===
@@ -81,7 +82,50 @@ Para obtener la información más reciente sobre las versiones compatibles, cons
 |===
 
 
-== Requisitos de carga de trabajo de Kubernetes
+== Requisitos para proteger las cargas de trabajo de VMware
+
+Necesita requisitos específicos para descubrir y proteger sus cargas de trabajo de VMware.
+
+*Soporte de software*
+
+* Se admiten almacenes de datos NFS y VMFS. No se admiten vVols.
+* Versiones de NFS compatibles: NFS 3 y NFS 4.1
+* Versiones de VMware ESXi Server compatibles: 7.0U1 y superiores
+* Versiones de VMware vCenter vSphere compatibles: 7.0U1 y superiores
+* Direcciones IP: IPv4 e IPv6
+* VMware TLS: 1.2, 1.3
+
+
+*Requisitos de conexión y puerto para proteger las cargas de trabajo de VMware*
+
+[cols="33,66a"]
+|===
+| Tipo de puerto | Puerto preconfigurado 
+
+
+| Puerto del servidor VMware ESXi  a| 
+443 (HTTPS), bidireccional.  La función de restauración de archivos invitados utiliza este puerto.
+
+
+
+| Puerto de VMware vSphere vCenter Server  a| 
+Si está protegiendo máquinas virtuales vVol, debe utilizar el puerto 443.
+
+
+
+| Clúster de almacenamiento o puerto de máquina virtual de almacenamiento  a| 
+443 (HTTPS), bidireccional.  80 (HTTP), bidireccional.  Este puerto se utiliza para la comunicación entre el dispositivo virtual y la máquina virtual de almacenamiento o el clúster que contiene la máquina virtual de almacenamiento.
+
+|===
+*Requisitos de control de acceso basado en roles (RBAC) para proteger las cargas de trabajo de VMware*
+
+La cuenta de administrador de vCenter debe tener los privilegios de vCenter necesarios.
+
+Para obtener una lista de los privilegios de vCenter necesarios, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["SnapCenter Plug-in for VMware vSphere Se necesitan privilegios de vCenter"^] .
+
+
+
+== Requisitos para proteger las aplicaciones de Kubernetes
 
 Necesita requisitos específicos para descubrir recursos de Kubernetes y proteger sus aplicaciones de Kubernetes.
 

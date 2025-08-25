@@ -50,16 +50,18 @@ indexpage:
       url: br-use-mssql-restore.html
     - title: Clonar cargas de trabajo de Microsoft SQL Server
       url: br-use-mssql-clone.html
-  - title: Proteger las cargas de trabajo de las máquinas virtuales
+  - title: Proteger las cargas de trabajo de VMware (versión preliminar)
     links:
-    - title: Descripción general de las cargas de trabajo de protección de máquinas
-        virtuales
-      url: prev-vmware-protect-overview.html
-    - title: Crear una política para realizar copias de seguridad de las cargas de
-        trabajo de las máquinas virtuales
-      url: prev-vmware-policy-create.html
-    - title: Restaurar cargas de trabajo de máquinas virtuales
-      url: prev-vmware-restore.html
+    - title: Descripción general de Protect VMware Workloads
+      url: br-use-vmware-protect-overview.html
+    - title: Descubra las cargas de trabajo de VMware
+      url: br-use-vmware-discovery.html
+    - title: Crear y administrar grupos de protección para cargas de trabajo de VMware
+      url: br-use-vmware-protection-groups.html
+    - title: Realizar copias de seguridad de las cargas de trabajo de VMware
+      url: br-use-vmware-backup.html
+    - title: Restaurar cargas de trabajo de VMware
+      url: br-use-vmware-restore.html
   - title: Proteger las cargas de trabajo de Kubernetes (versión preliminar)
     links:
     - title: Descripción general de las cargas de trabajo de Protect Kubernetes
